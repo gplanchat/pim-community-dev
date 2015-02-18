@@ -44,6 +44,10 @@ class FileGuesserTest extends ConstraintGuesserTest
         $this->assertTrue(
             $this->target->supportAttribute($this->getAttributeMock(array('attributeType' => 'pim_catalog_image')))
         );
+
+        $this->assertTrue(
+            $this->target->supportAttribute($this->getAttributeMock(array('attributeType' => 'pim_catalog_imagegallery')))
+        );
     }
 
     /**

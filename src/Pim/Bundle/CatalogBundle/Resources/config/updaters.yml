@@ -22,6 +22,7 @@ parameters:
     pim_catalog.updater.copier.number_value.class:           Pim\Bundle\CatalogBundle\Updater\Copier\BaseValueCopier
     pim_catalog.updater.copier.date_value.class:             Pim\Bundle\CatalogBundle\Updater\Copier\BaseValueCopier
     pim_catalog.updater.copier.image_value.class:            Pim\Bundle\CatalogBundle\Updater\Copier\MediaValueCopier
+    pim_catalog.updater.copier.image_gallery_value.class:    Pim\Bundle\CatalogBundle\Updater\Copier\MediaGalleryValueCopier
     pim_catalog.updater.copier.file_value.class:             Pim\Bundle\CatalogBundle\Updater\Copier\MediaValueCopier
     pim_catalog.updater.copier.metric_value.class:           Pim\Bundle\CatalogBundle\Updater\Copier\MetricValueCopier
     pim_catalog.updater.copier.simpleselect_value.class:     Pim\Bundle\CatalogBundle\Updater\Copier\BaseValueCopier
@@ -128,7 +129,7 @@ services:
         arguments:
             - @pim_catalog.manager.media
             - @pim_catalog.factory.media
-            - ['pim_catalog_file', 'pim_catalog_image']
+            - ['pim_catalog_file', 'pim_catalog_image', 'pim_catalog_imagegallery']
             - %upload_dir%
         tags:
             - { name: 'pim_catalog.updater.setter' }
@@ -160,6 +161,17 @@ services:
             - @pim_catalog.factory.media
             - ['pim_catalog_image']
             - ['pim_catalog_image']
+        tags:
+            - { name: 'pim_catalog.updater.copier' }
+
+    pim_catalog.updater.copier.image_gallery_value:
+        class: %pim_catalog.updater.copier.image_gallery_value.class%
+        parent: pim_catalog.updater.copier.abstract
+        arguments:
+            - @pim_catalog.manager.media
+            - @pim_catalog.factory.media
+            - ['pim_catalog_imagegallery']
+            - ['pim_catalog_imagegallery']
         tags:
             - { name: 'pim_catalog.updater.copier' }
 

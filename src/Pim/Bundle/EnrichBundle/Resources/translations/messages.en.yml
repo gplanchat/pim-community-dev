@@ -711,6 +711,7 @@ pim_catalog_multiselect:      Multi select
 pim_catalog_simpleselect:     Simple select
 pim_catalog_file:             File
 pim_catalog_image:            Image
+pim_catalog_image:            Image gallery
 pim_catalog_boolean:          "Yes/No"
 pim_catalog_date:             Date
 pim_catalog_metric:           Metric

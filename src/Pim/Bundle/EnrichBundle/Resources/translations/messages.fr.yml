@@ -593,6 +593,7 @@ pim_catalog_multiselect: Liste à choix multiple
 pim_catalog_simpleselect: Liste à choix unique
 pim_catalog_file: Fichier
 pim_catalog_image: Image
+pim_catalog_image: Galerie d'images
 pim_catalog_boolean: Oui/Non
 pim_catalog_date: Date
 pim_catalog_metric: Unité de mesure

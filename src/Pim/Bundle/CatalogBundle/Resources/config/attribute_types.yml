@@ -12,6 +12,7 @@ parameters:
     pim_catalog.attribute_type.date.class:             Pim\Bundle\CatalogBundle\AttributeType\DateType
     pim_catalog.attribute_type.file.class:             Pim\Bundle\CatalogBundle\AttributeType\FileType
     pim_catalog.attribute_type.image.class:            Pim\Bundle\CatalogBundle\AttributeType\ImageType
+    pim_catalog.attribute_type.image_gallery.class:    Pim\Bundle\CatalogBundle\AttributeType\ImageGalleryType
     pim_catalog.attribute_type.metric.class:           Pim\Bundle\CatalogBundle\AttributeType\MetricType
 
 services:
@@ -117,6 +118,15 @@ services:
             - '@pim_catalog.validator.constraint_guesser.chained_attribute'
         tags:
             - { name: pim_catalog.attribute_type, alias: pim_catalog_image, entity: %pim_catalog.entity.product.class% }
+
+    pim_catalog.attributetype.image_gallery:
+        class: %pim_catalog.attribute_type.image_gallery.class%
+        arguments:
+            - media
+            - pim_enrich_imagegallery
+            - '@pim_catalog.validator.constraint_guesser.chained_attribute'
+        tags:
+            - { name: pim_catalog.attribute_type, alias: pim_catalog_imagegallery, entity: %pim_catalog.entity.product.class% }
 
     pim_catalog.attributetype.metric:
         class: %pim_catalog.attribute_type.metric.class%

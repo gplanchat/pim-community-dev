@@ -34,6 +34,7 @@ class FileGuesser implements ConstraintGuesserInterface
             array(
                 'pim_catalog_file',
                 'pim_catalog_image',
+                'pim_catalog_imagegallery',
             )
         );
     }

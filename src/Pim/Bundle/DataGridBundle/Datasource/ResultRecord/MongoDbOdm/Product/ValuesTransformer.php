@@ -78,7 +78,9 @@ class ValuesTransformer
         $attributeCode = $attribute['code'];
         $backendType = $attribute['backendType'];
         $value = $result[$attributeCode];
-        if ($attribute['attributeType'] === 'pim_catalog_image' && isset($value[$backendType])) {
+        if (($attribute['attributeType'] === 'pim_catalog_image' || $attribute['attributeType'] === 'pim_catalog_imagegallery') &&
+            isset($value[$backendType])
+        ) {
             $normalizedData = $result['normalizedData'];
             $value[$backendType] = $normalizedData[$attributeCode];
         }

@@ -255,7 +255,7 @@ services:
     pim_serializer.denormalizer.flat.media:
         class: %pim_serializer.denormalizer.flat.media.class%
         arguments:
-            - ['pim_catalog_image', 'pim_catalog_file']
+            - ['pim_catalog_image', 'pim_catalog_imagegallery', 'pim_catalog_file']
             - @pim_catalog.manager.media
         tags:
             - { name: pim_serializer.normalizer, priority: 90 }

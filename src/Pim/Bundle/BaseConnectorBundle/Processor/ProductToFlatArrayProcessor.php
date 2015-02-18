@@ -173,7 +173,7 @@ class ProductToFlatArrayProcessor extends AbstractConfigurableStepElement implem
         foreach ($product->getValues() as $value) {
             if (in_array(
                 $value->getAttribute()->getAttributeType(),
-                array('pim_catalog_image', 'pim_catalog_file')
+                array('pim_catalog_image', 'pim_catalog_imagegallery', 'pim_catalog_file')
             )) {
                 $media[] = $value->getData();
             }

@@ -130,7 +130,9 @@ class VariantGroupProcessor extends AbstractConfigurableStepElement implements I
 
         return $values->filter(
             function ($value) {
-                return in_array($value->getAttribute()->getAttributeType(), ['pim_catalog_image', 'pim_catalog_file']);
+                return in_array($value->getAttribute()->getAttributeType(), [
+                    'pim_catalog_image', 'pim_catalog_imagegallery', 'pim_catalog_file'
+                ]);
             }
         )->toArray();
     }

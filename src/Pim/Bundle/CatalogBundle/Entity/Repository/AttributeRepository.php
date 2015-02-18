@@ -181,11 +181,12 @@ class AttributeRepository extends EntityRepository implements
         $codes = $this
             ->createQueryBuilder('a')
             ->select('a.code')
-            ->andWhere('a.attributeType IN (:file_type, :image_type)')
+            ->andWhere('a.attributeType IN (:file_type, :image_type, :image_gallery_type)')
             ->setParameters(
                 array(
-                    ':file_type'  => 'pim_catalog_file',
-                    ':image_type' => 'pim_catalog_image',
+                    ':file_type'          => 'pim_catalog_file',
+                    ':image_type'         => 'pim_catalog_image',
+                    ':image_gallery_type' => 'pim_catalog_imagegallery',
                 )
             )
             ->getQuery()

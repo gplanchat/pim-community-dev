@@ -24,6 +24,7 @@ parameters:
     pim_enrich.form.type.association_type.class: Pim\Bundle\EnrichBundle\Form\Type\AssociationTypeType
 
     pim_enrich.form.type.image.class:                               Pim\Bundle\EnrichBundle\Form\Type\ImageType
+    pim_enrich.form.type.image_gallery.class:                       Pim\Bundle\EnrichBundle\Form\Type\ImageGalleryType
     pim_enrich.form.type.conversion_units.class:                    Pim\Bundle\EnrichBundle\Form\Type\ConversionUnitsType
     pim_enrich.form.type.attribute_option.class:                    Pim\Bundle\EnrichBundle\Form\Type\AttributeOptionType
     pim_enrich.form.type.attribute_option_create.class:             Pim\Bundle\EnrichBundle\Form\Type\AttributeOptionCreateType
@@ -286,6 +287,13 @@ services:
             - %pim_catalog.entity.product_media.class%
         tags:
             - { name: form.type, alias: pim_enrich_image }
+
+    pim_enrich.form.type.image_gallery:
+        class: %pim_enrich.form.type.image_gallery.class%
+        arguments:
+            - %pim_catalog.entity.product_media.class%
+        tags:
+            - { name: form.type, alias: pim_enrich_imagegallery }
 
     pim_enrich.form.type.light_entity:
         class: %pim_enrich.form.type.light_entity.class%

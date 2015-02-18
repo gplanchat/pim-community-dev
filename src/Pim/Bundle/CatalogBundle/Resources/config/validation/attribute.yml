@@ -82,6 +82,7 @@ Pim\Bundle\CatalogBundle\Entity\Attribute:
                     - pim_catalog_simpleselect
                     - pim_catalog_file
                     - pim_catalog_image
+                    - pim_catalog_imagegallery
                     - pim_catalog_boolean
                     - pim_catalog_date
                     - pim_catalog_metric
@@ -95,6 +96,7 @@ Pim\Bundle\CatalogBundle\Entity\Attribute:
                     - pim_catalog_multiselect
                     - pim_catalog_simpleselect
                     - pim_catalog_image
+                    - pim_catalog_imagegallery
                     - pim_catalog_file
                     - pim_catalog_metric
                     - pim_catalog_boolean
@@ -102,10 +104,10 @@ Pim\Bundle\CatalogBundle\Entity\Attribute:
             - Range:
                 min: 0.01
                 max: 9999.99
-                groups: [pim_catalog_file, pim_catalog_image]
+                groups: [pim_catalog_file, pim_catalog_image, pim_catalog_imagegallery]
             - Type:
                 type: numeric
-                groups: [pim_catalog_file, pim_catalog_image]
+                groups: [pim_catalog_file, pim_catalog_image, pim_catalog_imagegallery]
         dateMin:
             - DateTime:
                 groups: [pim_catalog_date]
@@ -128,6 +130,7 @@ Pim\Bundle\CatalogBundle\Entity\Attribute:
                     - pim_catalog_date
                     - pim_catalog_file
                     - pim_catalog_image
+                    - pim_catalog_imagegallery
                     - pim_catalog_metric
             - Pim\Bundle\CatalogBundle\Validator\Constraints\ValidRegex:
                 groups:
@@ -135,7 +138,7 @@ Pim\Bundle\CatalogBundle\Entity\Attribute:
                     - pim_catalog_identifier
         allowedExtensions:
             - NotNull:
-                groups: [pim_catalog_file, pim_catalog_image]
+                groups: [pim_catalog_file, pim_catalog_image, pim_catalog_imagegallery]
                 message: This value should not be blank
         translations:
             - Valid: ~

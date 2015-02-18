@@ -180,7 +180,7 @@ services:
         class: %pim_catalog.doctrine.query.filter.media.class%
         arguments:
             - @pim_catalog.validator.helper.attribute
-            - ['pim_catalog_image', 'pim_catalog_file']
+            - ['pim_catalog_image', 'pim_catalog_imagegallery', 'pim_catalog_file']
             - ['STARTS WITH', 'ENDS WITH', 'CONTAINS', 'DOES NOT CONTAIN', '=', 'EMPTY']
         tags:
             - { name: 'pim_catalog.doctrine.query.filter', priority: 30 }
