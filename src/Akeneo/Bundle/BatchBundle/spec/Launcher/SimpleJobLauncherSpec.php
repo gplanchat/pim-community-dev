@@ -20,6 +20,6 @@ class SimpleJobLauncherSpec extends ObjectBehavior
 
     function it_is_a_job_launcher()
     {
-        $this->shouldHaveType('Akeneo\Bundle\BatchBundle\Launcher\JobLauncherInterface');
+        $this->shouldHaveType('Akeneo\Component\Batch\Launcher\JobLauncherInterface');
     }
 }

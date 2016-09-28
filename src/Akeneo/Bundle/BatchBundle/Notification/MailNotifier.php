@@ -4,6 +4,7 @@ namespace Akeneo\Bundle\BatchBundle\Notification;
 
 use Akeneo\Bundle\BatchBundle\Monolog\Handler\BatchLogHandler;
 use Akeneo\Component\Batch\Model\JobExecution;
+use Akeneo\Component\Batch\Notification\Notifier;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**
@@ -26,12 +27,12 @@ class MailNotifier implements Notifier
     protected $tokenStorage;
 
     /**
-     * @var Twig_Environment $twig
+     * @var \Twig_Environment $twig
      */
     protected $twig;
 
     /**
-     * @var Swift_Mailer $mailer
+     * @var \Swift_Mailer $mailer
      */
     protected $mailer;
 

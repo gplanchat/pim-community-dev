@@ -1,6 +1,6 @@
 <?php
 
-namespace Akeneo\Bundle\BatchBundle\Item;
+namespace Akeneo\Component\Batch\Item;
 
 /**
  * Exception thrown when there is a problem parsig the current record,

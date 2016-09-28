@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Akeneo\Bundle\BatchBundle\Item\Support;
+namespace spec\Akeneo\Component\Batch\Item\Support;
 
 use PhpSpec\ObjectBehavior;
 

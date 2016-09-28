@@ -1,6 +1,6 @@
 <?php
 
-namespace Akeneo\Bundle\BatchBundle\Notification;
+namespace Akeneo\Component\Batch\Notification;
 
 use Akeneo\Component\Batch\Model\JobExecution;
 

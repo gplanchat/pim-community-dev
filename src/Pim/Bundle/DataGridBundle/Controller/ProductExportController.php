@@ -2,7 +2,7 @@
 
 namespace Pim\Bundle\DataGridBundle\Controller;
 
-use Akeneo\Bundle\BatchBundle\Launcher\JobLauncherInterface;
+use Akeneo\Component\Batch\Launcher\JobLauncherInterface;
 use Oro\Bundle\DataGridBundle\Datagrid\Manager as DataGridManager;
 use Pim\Bundle\DataGridBundle\Adapter\GridFilterAdapterInterface;
 use Pim\Bundle\DataGridBundle\Datasource\ProductDatasource;

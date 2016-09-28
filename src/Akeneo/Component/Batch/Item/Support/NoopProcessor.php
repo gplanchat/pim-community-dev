@@ -1,23 +1,23 @@
 <?php
 
-namespace Akeneo\Bundle\BatchBundle\Item\Support;
+namespace Akeneo\Component\Batch\Item\Support;
 
 use Akeneo\Component\Batch\Item\ItemProcessorInterface;
 
 /**
- * Very basic sample transformer that will put the first letter of each item in uppercase
+ * No operation processor that does not change anthing in the item
  *
  * @author    Benoit Jacquemont <benoit@akeneo.com>
  * @copyright 2013 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/MIT MIT
  */
-class UcfirstProcessor implements ItemProcessorInterface
+class NoopProcessor implements ItemProcessorInterface
 {
     /**
      * {@inheritdoc}
      */
     public function process($item)
     {
-        return ucfirst($item);
+        return $item;
     }
 }

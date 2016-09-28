@@ -1,6 +1,6 @@
 <?php
 
-namespace Akeneo\Bundle\BatchBundle\Item\Validator;
+namespace Akeneo\Component\Batch\Item\Validator;
 
 /**
  * This exception should be thrown when there are validation errors.

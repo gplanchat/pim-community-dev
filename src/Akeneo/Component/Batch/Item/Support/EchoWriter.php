@@ -1,6 +1,6 @@
 <?php
 
-namespace Akeneo\Bundle\BatchBundle\Item\Support;
+namespace Akeneo\Component\Batch\Item\Support;
 
 use Akeneo\Component\Batch\Item\ItemWriterInterface;
 
