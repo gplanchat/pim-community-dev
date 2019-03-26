@@ -3,6 +3,7 @@
 namespace Akeneo\Tool\Bundle\StorageUtilsBundle;
 
 use Akeneo\Tool\Bundle\StorageUtilsBundle\DependencyInjection\Compiler\ResolveDoctrineTargetRepositoryPass;
+use Akeneo\Tool\Bundle\StorageUtilsBundle\DependencyInjection\Compiler\IgnorePsalmAnnotationsPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -20,6 +21,7 @@ class AkeneoStorageUtilsBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
+        $container->addCompilerPass(new IgnorePsalmAnnotationsPass());
         $container->addCompilerPass(new ResolveDoctrineTargetRepositoryPass('akeneo_repository'));
     }
 }
