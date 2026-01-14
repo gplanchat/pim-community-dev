@@ -45,13 +45,12 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__ . '/frontend',
     ]);
 
-    // Phase 2.1: PHP 8.1 → 8.2 migration
-    // Apply PHP_82 rules to migrate codebase to PHP 8.2
-    $rectorConfig->sets([
-        SetList::PHP_82,
-    ]);
+    // Phase 2.2: PHP 8.2 → 8.3 migration
+    // NOTE: Rector 0.15.0 does not support PHP_83 or PHP_84 sets
+    // The codebase is already compatible with PHP 8.2 (no changes needed in Phase 2.1)
+    // For PHP 8.3 and 8.4, we verify compatibility manually by running tests
+    // No Rector rules applied - codebase verified compatible via testing
     
-    // Note: For subsequent phases, update this section:
-    // Phase 2.2: Replace SetList::PHP_82 with SetList::PHP_83
-    // Phase 2.3: Replace SetList::PHP_83 with SetList::PHP_84
+    // Note: Rector 0.15.0 only supports PHP_80, PHP_81, PHP_82
+    // To use PHP_83/PHP_84 sets, Rector would need to be upgraded to 1.x or 2.x
 };
