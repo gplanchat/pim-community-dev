@@ -10,18 +10,48 @@ This folder contains the complete documentation for migrating the Akeneo PIM Com
 4. **00-version-dependencies.md** - **CRITICAL**: Version dependencies matrix (read this first)
 5. **00-git-flow-strategy.md** - **CRITICAL**: Git Flow branch strategy (read this first)
 6. **00-commit-strategy.md** - **CRITICAL**: Atomic commit strategy with Conventional Commits (read this first)
-7. **01-technology-audit.md** - Complete technology audit
-6. **02-required-migrations.md** - Required migration details
-7. **03-action-plan.md** - Detailed action plan with checklist
-8. **04-php-tracking.md** - PHP migration tracking (8.1 → 8.4 → 8.5, split in 2 phases)
-9. **05-typescript-tracking.md** - TypeScript migration tracking 4.0 → 5.6
-10. **06-react-tracking.md** - React migration tracking 17 → 19
-11. **07-symfony-tracking.md** - Symfony migration tracking 5.4 → 8.0
-12. **08-tools-tracking.md** - Development tools migration tracking
-13. **09-final-validation.md** - Final validation and summary
-14. **COMMANDS.md** - Quick reference commands
-15. **prompt.md** - Session resume prompt
-16. **rector-example.php** - Rector configuration example
+7. **00-code-audit-dependencies.md** - **CRITICAL**: Code audit, missing dependencies, and cloud service migration plan
+8. **00-pre-migration-validation.md** - **CRITICAL**: Pre-migration validation (MUST complete Phase 0 first)
+9. **00-doctrine-orm-3-analysis.md** - Doctrine ORM 3 migration analysis (OPTIONAL - can be deferred)
+10. **00-dependencies-phase-mapping.md** - **CRITICAL**: Complete dependency phase mapping (which dependencies to update in which phase)
+11. **00-instance-migration-guide.md** - **CRITICAL**: Instance migration procedures (automated script and manual procedures)
+12. **00-mikado-method-guide.md** - **CRITICAL**: Mikado Method guide for handling complex dependencies
+13. **00-github-automation-guide.md** - **CRITICAL**: GitHub automation guide for autonomous PR and Issue management
+14. **12-mikado-graph-template.md** - Template for creating Mikado dependency graphs
+15. **12-mikado-graph-[phase-name].md** - Mikado graphs for specific phases (created as needed)
+16. **11-status-report-template.md** - Status report template with inconsistency detection
+17. **11-status-report.md** - Current status report (created/updated by AI assistant during migration)
+18. **10-error-tracking.md** - Error tracking and resolution plan
+11. **01-technology-audit.md** - Complete technology audit
+11. **02-required-migrations.md** - Required migration details
+12. **03-action-plan.md** - Detailed action plan with checklist
+13. **04-php-tracking.md** - PHP migration tracking (8.1 → 8.4 → 8.5, split in 2 phases)
+14. **05-typescript-tracking.md** - TypeScript migration tracking 4.0 → 5.6
+15. **06-react-tracking.md** - React migration tracking 17 → 19
+16. **07-symfony-tracking.md** - Symfony migration tracking 5.4 → 8.0
+17. **08-tools-tracking.md** - Development tools migration tracking
+18. **09-final-validation.md** - Final validation and summary
+19. **COMMANDS.md** - Quick reference commands
+20. **prompt.md** - Session resume prompt
+21. **rector-example.php** - Rector configuration example
+
+## Migration Phases Overview
+
+### Phase 0: Pre-Migration Validation ⚠️ MUST COMPLETE FIRST
+
+**Before starting any migration**, complete Phase 0 validation:
+1. Run PHPStan audit
+2. Run all test suites (PHPUnit, Behat, Jest)
+3. Categorize errors (Simple/Medium/Complex)
+4. Fix simple errors (Category A)
+5. Document baseline state
+6. Create error tracking document
+
+**See `00-pre-migration-validation.md` for complete guide.**
+
+**Do NOT proceed until Phase 0 is complete.**
+
+---
 
 ## Recommended Migration Order (Phased Approach)
 

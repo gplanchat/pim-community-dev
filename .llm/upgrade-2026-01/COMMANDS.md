@@ -59,14 +59,26 @@ vendor/bin/rector process --set=SYMFONY_80
 ### PHP Tests
 ```bash
 # PHP Tests (execute in this order: static analysis first, then runtime tests)
+# All commands should be run via Docker: docker compose run --rm php [command]
+
 # 1. PHPStan - Static analysis (validates code before runtime tests)
-vendor/bin/phpstan analyse
+docker compose run --rm php vendor/bin/phpstan analyse
+
+# Generate detailed reports (Phase 0)
+docker compose run --rm php vendor/bin/phpstan analyse --error-format=table > .llm/upgrade-2026-01/phpstan-baseline-table.txt
+docker compose run --rm php vendor/bin/phpstan analyse --error-format=json > .llm/upgrade-2026-01/phpstan-baseline.json
 
 # 2. PHPUnit - Unit tests
-vendor/bin/phpunit
+docker compose run --rm php vendor/bin/phpunit
+
+# Generate testdox report (Phase 0)
+docker compose run --rm php vendor/bin/phpunit --testdox > .llm/upgrade-2026-01/phpunit-baseline-testdox.txt
 
 # 3. Behat - Functional tests
-vendor/bin/behat
+docker compose run --rm php vendor/bin/behat
+
+# Generate Behat report (Phase 0)
+docker compose run --rm php vendor/bin/behat > .llm/upgrade-2026-01/behat-baseline-report.txt 2>&1
 
 # PHP-CS-Fixer (dry-run)
 vendor/bin/php-cs-fixer fix --dry-run

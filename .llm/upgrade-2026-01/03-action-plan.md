@@ -3,12 +3,40 @@
 Date: 2026-01-XX
 Project: Akeneo PIM Community Dev
 
+## Phase 0: Pre-Migration Validation ⚠️ MUST COMPLETE FIRST
+
+**⚠️ CRITICAL**: This phase must be completed before starting any migration work.
+
+**Objective**: Ensure codebase is fully functional or track all errors before migration starts.
+
+- [ ] **Read `00-pre-migration-validation.md`**: Complete guide for Phase 0
+- [ ] **Read `00-mikado-method-guide.md`**: Understand Mikado Method for complex dependencies
+- [ ] **Read `12-mikado-graph-template.md`**: Understand Mikado graph structure
+- [ ] **Run complete validation suite**: PHPStan, PHPUnit, Behat, JS/TS tests
+- [ ] **Categorize errors**: Simple fixes (Category A) vs Medium (Category B) vs Complex (Category C)
+- [ ] **Fix Category A errors**: Simple errors that can be fixed in < 30 minutes
+- [ ] **Create error tracking**: Document all errors in `10-error-tracking.md`
+- [ ] **Establish baseline**: Document current state metrics
+- [ ] **Merge simple fixes**: Create PR and merge to master before Phase 1
+
+**See `00-pre-migration-validation.md` for detailed steps.**
+
+**Do NOT proceed to Phase 1 until Phase 0 is complete.**
+
+---
+
 ## Phase 1: Preparation
 
+### 1.0 Code Audit and Dependency Analysis
+- [ ] **Review Phase 0 results**: Check `10-error-tracking.md` for remaining errors
+- [ ] **Review `00-code-audit-dependencies.md`**: Understand missing dependencies and cloud services
+- [ ] **Plan cloud service migrations**: Decide on open-source alternatives (MongoDB/PostgreSQL for Firestore, RabbitMQ/Redis for PubSub)
+- [ ] **Add missing dependencies** OR plan migration to open-source alternatives
+
 ### 1.1 Git Flow Setup
-- [ ] Verify you are on `develop` branch: `git checkout develop`
-- [ ] Pull latest changes: `git pull origin develop`
-- [ ] Verify all tests pass on develop branch
+- [ ] Verify you are on `master` branch: `git checkout master`
+- [ ] Pull latest changes: `git pull origin master`
+- [ ] Verify all tests pass on master branch
 - [ ] Document initial state in tracking files
 - [ ] **Create Phase 2 branch**: `git checkout -b feature/upgrade-2026-01-php-8.4`
 - [ ] Document branch creation in `04-php-tracking.md`
@@ -93,14 +121,33 @@ Project: Akeneo PIM Community Dev
 - [ ] **Verify all commits are atomic**: Each commit should pass validations independently
 - [ ] **No uncommitted changes**: All changes should be committed atomically
 - [ ] **Push branch to fork repository**: `git push origin feature/upgrade-2026-01-php-8.4`
-- [ ] **Create/Update pull request** on GitHub fork repository (https://github.com/gplanchat/pim-community-dev/):
+- [ ] **Read `00-github-automation-guide.md`**: Understand GitHub automation workflow
+- [ ] **Create phase issue** (using GitHub MCP/CLI/API):
+  - Title: `[Phase 2] PHP 8.1 → 8.4 Migration`
+  - Use phase issue template from `00-github-automation-guide.md`
+  - Labels: `migration`, `phase-2`, `php`
+  - Milestone: `Upgrade 2026-01`
+  - Store issue number in `11-status-report.md`
+- [ ] **Create phase PR** (using GitHub MCP/CLI/API):
+  - Title: `feat(upgrade): Phase 2 - PHP 8.1 → 8.4 Migration`
   - Base: `master`
   - Head: `feature/upgrade-2026-01-php-8.4`
-  - The AI assistant must create and update this PR
+  - Start as draft PR
+  - Link to phase issue (use `Closes #XXX` or `Related to #XXX`)
+  - Labels: `migration`, `phase-2`, `php`, `work-in-progress`
+  - Include phase objectives, prerequisites, and checklist in description
+  - Store PR number in `11-status-report.md`
 - [ ] **Update PR description** with final status, test results, and completion checklist
-- [ ] **Note**: Do NOT create a "complete migration" commit - all changes should already be committed atomically
-- [ ] Code review and approval (if required)
-- [ ] **Merge PR to master** on fork repository (via GitHub UI or CLI)
+- [ ] **Update PR status** (using GitHub MCP/CLI/API):
+  - Remove "work-in-progress" label
+  - Add "ready-for-review" label
+  - Change PR from draft to ready
+- [ ] **Request review** (if required): Add reviewers to PR using GitHub MCP/CLI/API
+- [ ] **After approval**: Merge PR to master using GitHub MCP/CLI/API
+  - Use merge method: "merge" (to preserve history)
+  - Commit message: "feat(upgrade): Complete Phase 2 - PHP 8.1 → 8.4 Migration"
+- [ ] **Close phase issue**: Update issue with completion summary, then close using GitHub MCP/CLI/API
+- [ ] **Close related issues**: Close any problem issues that were resolved
 - [ ] **After merge**: `git checkout master && git pull origin master`
 - [ ] Delete Phase 2 branch: `git branch -d feature/upgrade-2026-01-php-8.4`
 - [ ] Delete remote branch: `git push origin --delete feature/upgrade-2026-01-php-8.4`
@@ -192,6 +239,14 @@ Project: Akeneo PIM Community Dev
 
 **Migration order**: 5.4 → 6.0 → 6.4 → 7.0 → 8.0 (sequential, each step requires specific PHP version)
 
+**⚠️ NOTE**: If encountering complex dependencies during Symfony migration, use Mikado Method:
+- [ ] **Create Mikado graph**: `12-mikado-graph-symfony-8.0.md` (use `12-mikado-graph-template.md`)
+- [ ] **Set goal**: Migrate Symfony 5.4 → 8.0
+- [ ] **Document dependencies** as they are discovered
+- [ ] **Resolve dependencies iteratively** using Mikado Method workflow (see `00-mikado-method-guide.md`)
+- [ ] **Update graph** as dependencies are resolved
+- [ ] **Commit each dependency resolution** atomically
+
 ### 5.1 Symfony 5.4 → 6.0 Migration
 **Rule 1: SYMFONY_60 - Replace annotations with attributes**
 - [ ] Apply: `vendor/bin/rector process --set=SYMFONY_60 --dry-run`
@@ -215,9 +270,11 @@ Project: Akeneo PIM Community Dev
 - [ ] Run tests: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
 - [ ] Document in `07-symfony-tracking.md`
 
-**Rule 5: SYMFONY_60 - Doctrine migration**
-- [ ] Apply Doctrine migration rules
-- [ ] Run tests: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
+**Rule 5: SYMFONY_60 - Doctrine code migration (if applicable)**
+- [ ] **Note**: This project uses YAML mappings (`.orm.yml`), not PHP annotations
+- [ ] **No database schema migration needed**: Doctrine ORM/DBAL remains compatible across Symfony versions
+- [ ] **If using annotations elsewhere**: Apply Doctrine annotation → attribute migration rules
+- [ ] Run tests: `docker compose run --rm php vendor/bin/phpstan analyse && docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
 - [ ] Document in `07-symfony-tracking.md`
 
 ### 5.2 Symfony 6.0 Dependencies Update
@@ -255,10 +312,36 @@ Project: Akeneo PIM Community Dev
 - [ ] **Symfony 8.0 migration complete** - Ready for PHP 8.5 migration (Phase 6)
 
 ### 5.6 Third-Party Symfony Bundles Update
-- [ ] Check doctrine/doctrine-bundle compatibility with Symfony 8.0
-- [ ] Check friendsofsymfony/jsrouting-bundle compatibility with Symfony 8.0
-- [ ] Check friendsofsymfony/rest-bundle compatibility with Symfony 8.0
-- [ ] Check liip/imagine-bundle compatibility with Symfony 8.0
+- [ ] **Read `00-dependencies-phase-mapping.md`**: Complete dependency phase mapping guide
+- [ ] **Doctrine ORM**: Keep Doctrine ORM 2.x (compatible with Symfony 8.0, see `00-doctrine-orm-3-analysis.md`)
+  - [ ] Verify `doctrine/orm: ^2.9.0` works with Symfony 8.0
+  - [ ] Verify `doctrine/dbal: ^2.13.4` works with Symfony 8.0
+  - [ ] Verify `doctrine/doctrine-bundle: ^2.5.5` compatible with Symfony 8.0
+  - [ ] **Note**: Doctrine ORM 3 migration deferred to Phase 9 (see `00-doctrine-orm-3-analysis.md`)
+- [ ] **Monolog**: Update to Monolog 3.x (likely required for Symfony 8.0)
+  - [ ] Update `monolog/monolog`: `^2.8.0` → `^3.0`
+  - [ ] Update `symfony/monolog-bundle`: Check compatibility with Monolog 3.x
+- [ ] **Twig**: Update for Symfony 8.0 compatibility
+  - [ ] Update `twig/twig`: `^3.3.3` → Check Symfony 8.0 requirement (likely `^3.8` or `^4.0`)
+- [ ] **Third-Party Bundles** (see `00-dependencies-phase-mapping.md` for details):
+  - [ ] `friendsofsymfony/jsrouting-bundle`: `3.2.1` → Check Symfony 8.0 compatibility (latest: 3.6.1)
+  - [ ] `friendsofsymfony/rest-bundle`: `^3.4.0` → Check Symfony 8.0 compatibility (latest: 3.8.0)
+  - [ ] `liip/imagine-bundle`: `2.10.0` → Check Symfony 8.0 compatibility (latest: 2.17.1)
+  - [ ] `oneup/flysystem-bundle`: `^4.5.0` → Check Symfony 8.0 compatibility (latest: 4.14.1)
+  - [ ] `gedmo/doctrine-extensions`: `^3.2.0` → Check Symfony 8.0 + ORM 2.x compatibility (latest: 3.22.0)
+  - [ ] `symfony/acl-bundle`: `^2.1.0` → **WARNING**: May be deprecated, check if still needed
+  - [ ] `akeneo/oauth-server-bundle`: `^v3.0.0` → Check Symfony 8.0 compatibility
+- [ ] **Other Dependencies** (check compatibility):
+  - [ ] `elasticsearch/elasticsearch`: `7.11.0` → Check Symfony 8.0 compatibility (latest: 9.2.0, major jump)
+  - [ ] `guzzlehttp/guzzle`: `^7.5.0` → Update to latest (latest: 7.10.0)
+  - [ ] `league/flysystem`: `^3.11.0` → Update to latest (latest: 3.30.2)
+  - [ ] `dompdf/dompdf`: `2.0.3` → Check Symfony 8.0 compatibility (latest: 3.1.4, major jump)
+  - [ ] `openspout/openspout`: `^4.9.0` → Check Symfony 8.0 compatibility (latest: 5.2.1, major jump)
+  - [ ] `lcobucci/jwt`: `^4.2` → Check Symfony 8.0 compatibility (latest: 5.6.0, major jump)
+- [ ] **Run dependency check**: `docker compose run --rm php composer outdated`
+- [ ] **Update dependencies**: `docker compose run --rm php composer update [package] --with-all-dependencies`
+- [ ] **Test after each update**: `docker compose run --rm php vendor/bin/phpstan analyse && docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
+- [ ] **Commit atomically**: One dependency or logical group per commit
 - [ ] Update bundles if necessary
 - [ ] Run tests: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
 - [ ] Document in `07-symfony-tracking.md`
@@ -387,6 +470,32 @@ Project: Akeneo PIM Community Dev
 
 ## Phase 8: Final Tests and Validation
 
+### 8.0 Instance Migration Preparation
+
+**⚠️ CRITICAL**: Before deployment, prepare instance migration procedures.
+
+- [ ] **Read `00-instance-migration-guide.md`**: Understand migration procedures
+- [ ] **Create unified migration script**: `bin/migrate-instance.sh`
+  - [ ] Include pre-flight checks
+  - [ ] Include database migration steps
+  - [ ] Include cache clearing steps
+  - [ ] Include configuration update steps
+  - [ ] Include validation steps
+  - [ ] Include rollback capability
+  - [ ] Test script on staging environment
+- [ ] **Document manual procedures**: If automation not possible, document in `00-instance-migration-guide.md`
+  - [ ] Backup procedures
+  - [ ] Database migration steps
+  - [ ] Cache clearing steps
+  - [ ] Configuration update steps
+  - [ ] File system update steps
+  - [ ] Validation steps
+  - [ ] Rollback procedures
+- [ ] **Test migration procedures**: On staging environment before production
+- [ ] **Document any issues**: Update `00-instance-migration-guide.md` with findings
+- [ ] **Commit migration script**: `git commit -m "feat(migration): add unified instance migration script"`
+- [ ] **Commit documentation**: `git commit -m "docs(migration): add instance migration procedures"`
+
 ### 8.1 Complete Tests
 - [ ] Run all PHP tests: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
 - [ ] Run all JS/TS tests: `yarn test`
@@ -413,19 +522,19 @@ Project: Akeneo PIM Community Dev
 - [ ] Verify all tests pass
 - [ ] Document in `09-final-validation.md`
 
-## Phase 9: Deployment
+## Phase 10: Deployment
 
-### 8.1 Deployment Preparation
+### 10.1 Deployment Preparation
 - [ ] Create version tag if necessary
 - [ ] Prepare release notes
 - [ ] Verify everything is ready for deployment
 
-### 8.2 Merge with Main Branch
+### 10.2 Merge with Main Branch
 - [ ] Merge upgrade-2026-01 branch with main branch
 - [ ] Resolve any conflicts
 - [ ] Verify everything works after merge
 
-### 8.3 Deployment
+### 10.3 Deployment
 - [ ] Deploy to staging environment
 - [ ] Verify everything works in staging
 - [ ] Deploy to production

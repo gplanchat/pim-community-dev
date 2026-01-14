@@ -8,7 +8,7 @@ I am working on migrating the Akeneo PIM Community Dev project to the latest ver
 
 **⚠️ DOCKERFILE STRATEGY**: The project uses the **existing Dockerfile** (`Dockerfile`) that contains **only the current migration step versions** of PHP and Node.js. This Dockerfile must be updated sequentially at each migration step. See `DOCKERFILE-MIGRATION.md` for detailed instructions.
 
-**⚠️ GITHUB REPOSITORY**: All Pull Requests and merges must be created and performed on the fork repository: **https://github.com/gplanchat/pim-community-dev/**. Do NOT create PRs or merge to the original repository (akeneo/pim-community-dev). The AI assistant must create and update PRs on GitHub for each phase branch.
+**⚠️ GITHUB REPOSITORY**: All Pull Requests and merges must be created and performed on the fork repository: **https://github.com/gplanchat/pim-community-dev/**. Do NOT create PRs or merge to the original repository (akeneo/pim-community-dev). The AI assistant must autonomously create and update PRs and Issues on GitHub for each phase branch using GitHub MCP tools, GitHub CLI (`gh`), or GitHub API.
 
 ## Project Overview
 
@@ -52,6 +52,18 @@ All migration documentation is located in `./.llm/upgrade-2026-01/`:
 19. **DOCKERFILE-MIGRATION.md** - Dockerfile migration strategy (CRITICAL - read before updating Dockerfile)
 20. **PHASE2-NEXT-STEPS.md** - Phase 2 migration steps guide
 21. **GITHUB-PR-MANAGEMENT.md** - GitHub Pull Request management guide (CRITICAL - read before creating PRs)
+22. **00-code-audit-dependencies.md** - **CRITICAL**: Code audit, missing dependencies, and cloud service migration plan
+23. **00-pre-migration-validation.md** - **CRITICAL**: Pre-migration validation and error tracking (MUST complete Phase 0 first)
+24. **00-doctrine-orm-3-analysis.md** - Doctrine ORM 3 migration analysis (OPTIONAL - can be deferred, see analysis)
+25. **00-dependencies-phase-mapping.md** - **CRITICAL**: Complete dependency phase mapping (which dependencies to update in which phase)
+26. **00-instance-migration-guide.md** - **CRITICAL**: Instance migration procedures (automated script and manual procedures)
+27. **00-mikado-method-guide.md** - **CRITICAL**: Mikado Method guide for handling complex dependencies
+28. **00-github-automation-guide.md** - **CRITICAL**: GitHub automation guide for autonomous PR and Issue management
+29. **12-mikado-graph-template.md** - Template for creating Mikado dependency graphs
+30. **12-mikado-graph-[phase-name].md** - Mikado graphs for specific phases (created as needed)
+31. **11-status-report-template.md** - Status report template with inconsistency detection
+32. **11-status-report.md** - Current status report (created/updated by AI assistant)
+33. **10-error-tracking.md** - Error tracking and resolution plan
 
 ## Critical Prerequisites and Version Dependencies
 
@@ -165,7 +177,7 @@ Before continuing, verify:
 3. **Document progress** in the appropriate tracking file after each step
 4. **Run all tests** after each rule/transformation before proceeding
 
-### Step 4: Update Tracking Files
+### Step 4: Update Tracking Files and Status Report
 
 After completing each step:
 - [ ] **Get current system date** and use it for all date fields
@@ -175,6 +187,12 @@ After completing each step:
 - [ ] Document any issues encountered with timestamps
 - [ ] Document solutions applied with timestamps
 - [ ] Record test results with execution dates
+- [ ] **Update `11-status-report.md`**:
+  - Document inconsistencies detected (if any)
+  - Update current phase progress
+  - Record test results
+  - Document issues and resolutions
+  - Update next steps
 
 ## Git Flow Branch Strategy
 
@@ -287,9 +305,17 @@ When resuming this migration session:
 3. **Read `00-git-flow-strategy.md`** to understand Git Flow branch strategy
 4. **Read `00-commit-strategy.md`** to understand atomic commit strategy with Conventional Commits
 5. **Read `GITHUB-PR-MANAGEMENT.md`** to understand how to create and update PRs on GitHub fork repository
-6. **Read all tracking files** (04-09) to understand current progress
-4. **Check dates** in tracking files to understand timeline and identify recent activity
-5. **Identify current phase and branch**:
+6. **Read `00-code-audit-dependencies.md`** to understand missing dependencies and cloud service migration plan
+7. **Read `00-pre-migration-validation.md`** to understand Phase 0 validation requirements
+8. **Check `10-error-tracking.md`** to see current error status and resolution plan
+9. **Read all tracking files** (04-09) to understand current progress
+4. **Check Phase 0 status**: 
+   - Has Phase 0 validation been completed? (See `00-pre-migration-validation.md`)
+   - Are all Category A errors fixed? (See `10-error-tracking.md`)
+   - Is baseline established?
+   - **DO NOT proceed if Phase 0 is incomplete**
+5. **Check dates** in tracking files to understand timeline and identify recent activity
+6. **Identify current phase and branch**:
    - Check PHP version in `composer.json`
    - Check current Git branch name
    - If PHP < 8.4: You are in Phase 2 (PHP 8.1 → 8.4) - branch: `feature/upgrade-2026-01-php-8.4`
@@ -359,11 +385,18 @@ When resuming this migration session:
 16. **Have you read `00-git-flow-strategy.md`?** (Critical for understanding branch strategy)
 17. **Have you read `00-commit-strategy.md`?** (Critical for understanding atomic commit strategy)
 18. **Have you read `GITHUB-PR-MANAGEMENT.md`?** (Critical for understanding PR creation and updates)
-19. **Has the previous phase branch been merged to master?** (Required before starting next phase)
-20. **What is the current Git branch?** (Should match current phase branch name)
-21. **Are you committing atomically?** (One change per commit, all validations passing)
-22. **Have you created/updated the GitHub PR?** (PR must be on https://github.com/gplanchat/pim-community-dev/, not original repository)
-23. **Is the PR base branch correct?** (Should be `master`, not `develop`)
+19. **Have you read `00-code-audit-dependencies.md`?** (Critical for understanding missing dependencies and cloud services)
+20. **Have you read `00-pre-migration-validation.md`?** (Critical - Phase 0 must be completed first)
+21. **Has Phase 0 validation been completed?** (All validation steps, error categorization, simple fixes)
+22. **Are all Category A errors fixed?** (Check `10-error-tracking.md`)
+23. **Has baseline been established?** (Current state documented)
+24. **Has PHPStan audit been run?** (Required before migration - see `00-code-audit-dependencies.md`)
+25. **Are cloud service migrations planned?** (Firestore → MongoDB/PostgreSQL, PubSub → RabbitMQ/Redis)
+26. **Has the previous phase branch been merged to master?** (Required before starting next phase)
+23. **What is the current Git branch?** (Should match current phase branch name)
+24. **Are you committing atomically?** (One change per commit, all validations passing)
+25. **Have you created/updated the GitHub PR?** (PR must be on https://github.com/gplanchat/pim-community-dev/, not original repository)
+26. **Is the PR base branch correct?** (Should be `master`, not `develop`)
 
 ---
 
