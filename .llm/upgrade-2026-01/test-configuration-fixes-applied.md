@@ -48,14 +48,14 @@ protected function setUp(): void
 ## Résultats des tests
 
 ### PHPUnit
-- ✅ Les tests démarrent maintenant sans erreur `test.service_container`
-- ⚠️ Des warnings de dépréciation PHP 8.4 apparaissent (normal, liés à Symfony 5.4)
+- ✅ **RÉSOLU**: Les tests démarrent maintenant sans erreur `test.service_container`
 - ✅ L'environnement "test" est correctement chargé
+- ⚠️ Des warnings de dépréciation PHP 8.4 apparaissent (normal, liés à Symfony 5.4)
+- ⚠️ Nouvelle erreur détectée: Variable d'environnement `PUBSUB_SUBSCRIPTION_BUSINESS_EVENT` manquante (problème de configuration application, non lié à PHP 8.4)
 
 ### Behat
-- ⚠️ La suite "critical" n'existe pas dans behat.yml
-- ✅ Utiliser `--suite=legacy` pour les tests Behat
-- ⏳ À tester avec la bonne suite
+- ⚠️ Les suites Behat nécessitent le format `legacy:critical` (pas juste `critical` ou `legacy`)
+- ⏳ À tester avec le bon format de suite
 
 ## Prochaines étapes
 
