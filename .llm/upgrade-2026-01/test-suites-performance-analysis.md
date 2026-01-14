@@ -33,8 +33,9 @@ Date: 2026-01-14
 | Enrichment_Product | 129 | 132 | 1023.25 | ✅ OK |
 | Category | 142 | 178 | 1253.52 | ✅ OK |
 | Identifier_Generator_PhpUnit | 113 | 104 | 920.35 | ✅ OK |
-| PIM_Integration_Test | ~3000+ | >300 | N/A | ⏱️ TIMEOUT (>5min) |
-| End_to_End | ~500+ | >300 | N/A | ⏱️ TIMEOUT (>5min) |
+| PIM_Integration_Test | 3146 | >300 | N/A | ⏱️ TIMEOUT (>5min) |
+| End_to_End | 1182 | >300 | N/A | ⏱️ TIMEOUT (>5min) |
+| Akeneo_Connectivity_Connection_Integration | 236 | >300 | N/A | ⏱️ TIMEOUT (>5min) |
 
 ## Analyse
 
@@ -43,10 +44,17 @@ Date: 2026-01-14
 - **Temps total**: ~1,108 secondes (~18.5 minutes)
 - **Temps moyen par test**: ~1,175 ms (1.18 secondes)
 
+### Vue d'ensemble complète
+- **Total tests dans toutes les suites**: 5507 tests (943 exécutés + 4564 timeout)
+- **Pourcentage exécuté avec succès**: 17.1% (943/5507)
+- **Pourcentage timeout**: 82.9% (4564/5507)
+
 ### Tests timeout (> 5 minutes)
-- **Akeneo_Connectivity_Connection_Integration**: Timeout après 5 minutes (~300+ tests estimés)
-- **PIM_Integration_Test**: Timeout après 5 minutes (~3000+ tests estimés) - La plus grande suite
-- **End_to_End**: Timeout après 5 minutes (~500+ tests estimés)
+- **PIM_Integration_Test**: 3146 tests - Timeout après 5 minutes - La plus grande suite
+- **End_to_End**: 1182 tests - Timeout après 5 minutes
+- **Akeneo_Connectivity_Connection_Integration**: 236 tests - Timeout après 5 minutes
+
+**Total tests dans les suites timeout**: 4564 tests
 
 ### Statistiques par catégorie
 
@@ -76,17 +84,20 @@ Date: 2026-01-14
 ## Recommandations
 
 ### Pour les testsuites qui timeout
-1. **PIM_Integration_Test** (~3000+ tests): 
-   - Nécessite une exécution parallèle ou un timeout beaucoup plus long (>30 minutes estimé)
+1. **PIM_Integration_Test** (3146 tests): 
+   - Nécessite une exécution parallèle ou un timeout beaucoup plus long
+   - Estimation: ~62 minutes (3146 tests × 1.18s/test)
    - Considérer l'exécution par sous-répertoires
    
-2. **End_to_End** (~500+ tests):
-   - Nécessite un timeout plus long (>10 minutes estimé)
+2. **End_to_End** (1182 tests):
+   - Nécessite un timeout plus long
+   - Estimation: ~23 minutes (1182 tests × 1.18s/test)
    - Tests critiques à exécuter séparément
    
-3. **Akeneo_Connectivity_Connection_Integration** (~300+ tests):
-   - Nécessite un timeout plus long (>10 minutes estimé)
-   - Analyser les causes de lenteur
+3. **Akeneo_Connectivity_Connection_Integration** (236 tests):
+   - Nécessite un timeout plus long
+   - Estimation: ~5 minutes (236 tests × 1.18s/test) - Proche de la limite
+   - Analyser les causes de lenteur (peut-être des problèmes de fixtures)
 
 ### Optimisations possibles
 - Exécution parallèle des testsuites indépendantes
