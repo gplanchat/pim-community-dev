@@ -1,0 +1,12 @@
+time="2026-01-14T17:50:38+01:00" level=warning msg="/home/gplanchat/PhpstormProjects/kiboko/akeneo/pim-community-dev/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Note: Using configuration file /srv/pim/phpstan.neon.
+
+No rules detected
+
+You have the following choices:
+
+* while running the analyse option, use the --level option to adjust your rule level - the higher the stricter
+
+* create your own custom ruleset by selecting which rules you want to check by copying the service definitions from the built-in config level files in phar:///srv/pim/vendor/phpstan/phpstan/phpstan.phar/conf.
+  * in this case, don't forget to define parameter customRulesetUsed in your config file.
+
