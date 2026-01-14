@@ -31,7 +31,7 @@ LogicException: Could not find service "test.service_container". Try updating th
 
 ---
 
-## ⏳ Problème 2: Behat - FeatureContext EN COURS
+## ✅ Problème 2: Behat - FeatureContext RÉSOLU
 
 ### Symptôme initial
 ```
@@ -44,16 +44,12 @@ LogicException: Could not find service "test.service_container". Try updating th
    - Action: `composer dump-autoload`
    - Effet: Régénère l'autoloader pour s'assurer que toutes les classes sont chargées
 
-### Analyse
-- La classe `Context\FeatureContext` existe dans `tests/legacy/features/Context/FeatureContext.php`
-- L'autoloading fonctionne (testé avec `class_exists()`)
-- Le namespace `Context` est dans `autoload-dev` de `composer.json`
-- Le problème semble être lié à la configuration Behat ou à l'environnement d'exécution
+2. **Ajout des variables PubSub manquantes**
+   - Action: Ajout des variables dans docker-compose.yml et valeurs par défaut dans YAML
+   - Effet: Behat peut maintenant démarrer sans erreur de variables manquantes
 
-### Prochaines étapes
-1. Vérifier que Behat utilise le bon profil (`--profile=legacy`)
-2. Vérifier que l'autoloader est chargé dans l'environnement Behat
-3. Tester avec `--profile=legacy --suite=critical --dry-run`
+### Résultat
+✅ **RÉSOLU**: Behat fonctionne maintenant correctement. FeatureContext est trouvé et les features/scenarios sont détectés.
 
 ---
 
@@ -62,12 +58,14 @@ LogicException: Could not find service "test.service_container". Try updating th
 ### PHPUnit
 - ✅ Configuration corrigée
 - ✅ `test.service_container` fonctionne
-- ⚠️ Nouvelle erreur: Variable d'environnement manquante (non liée à PHP 8.4)
+- ✅ Variables d'environnement PubSub avec valeurs par défaut
+- ✅ Plus d'erreur "Environment variable not found"
 
 ### Behat
-- ⏳ Autoload régénéré
-- ⏳ À tester avec le bon profil/suite
-- ⏳ FeatureContext devrait être trouvé maintenant
+- ✅ Autoload régénéré
+- ✅ Variables d'environnement PubSub avec valeurs par défaut
+- ✅ FeatureContext trouvé et fonctionnel
+- ✅ Features et scenarios détectés correctement
 
 ---
 
@@ -87,9 +85,18 @@ LogicException: Could not find service "test.service_container". Try updating th
 
 ## 🎯 Conclusion
 
-Les problèmes de configuration des tests ont été identifiés et partiellement résolus :
+Les problèmes de configuration des tests ont été identifiés et **complètement résolus** :
 
 1. ✅ **PHPUnit**: Problème `test.service_container` RÉSOLU
-2. ⏳ **Behat**: En cours de résolution (autoload régénéré, à tester)
+2. ✅ **PHPUnit**: Variables d'environnement PubSub RÉSOLU
+3. ✅ **Behat**: FeatureContext RÉSOLU
+4. ✅ **Behat**: Variables d'environnement PubSub RÉSOLU
 
-Les modifications sont minimales et ciblées. Elles ne sont pas liées à PHP 8.4 mais à la configuration Symfony/Behat.
+Les modifications sont minimales et ciblées. Elles ne sont pas liées à PHP 8.4 mais à la configuration Symfony/Behat/PubSub.
+
+### Solutions appliquées
+- Ajout de `APP_ENV=test` dans phpunit.xml
+- Force de l'environnement "test" dans TestCase::setUp()
+- Régénération de l'autoload Composer
+- Ajout des variables PubSub dans docker-compose.yml avec valeurs par défaut
+- Ajout de valeurs par défaut dans les fichiers YAML de configuration Messenger
