@@ -100,6 +100,7 @@ final readonly class MessengerConfigBuilder
                         TransportType::DOCTRINE => $this->createDoctrineTransport($consumer['name']),
                         TransportType::IN_MEMORY => $this->createInMemoryTransport(),
                         TransportType::SYNC => $this->createSyncTransport(),
+                        TransportType::RABBITMQ => $this->createRabbitMQTransport($consumer['name']),
                         TransportType::PUB_SUB => throw new \Exception('PubSub cannot be handled here.'),
                     };
                 }
@@ -189,6 +190,36 @@ final readonly class MessengerConfigBuilder
     {
         return [
             'dsn' => 'sync://',
+            'retry_strategy' => [
+                'max_retries' => self::MAX_RETRIES_DEFAULT,
+            ],
+        ];
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function createRabbitMQTransport(string $queueName): array
+    {
+        // Use default RabbitMQ DSN if MESSENGER_TRANSPORT_DSN is not set
+        // Format: amqp://user:password@host:port/vhost/exchange
+        $dsn = '%env(default:MESSENGER_TRANSPORT_DSN:amqp://guest:guest@rabbitmq:5672/%2f/messages)%';
+        
+        return [
+            'dsn' => $dsn,
+            'options' => [
+                'exchange' => [
+                    'name' => 'messages',
+                    'type' => 'direct',
+                ],
+                'queues' => [
+                    $queueName => [
+                        'binding_keys' => [$queueName],
+                    ],
+                ],
+                'auto_setup' => \in_array($this->env, ['dev', 'test', 'test_fake', 'behat']),
+            ],
+            'serializer' => self::SERIALIZER,
             'retry_strategy' => [
                 'max_retries' => self::MAX_RETRIES_DEFAULT,
             ],

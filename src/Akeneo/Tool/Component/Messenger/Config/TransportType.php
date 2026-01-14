@@ -13,5 +13,6 @@ enum TransportType: string
     case DOCTRINE = 'DOCTRINE';
     case IN_MEMORY = 'IN_MEMORY';
     case PUB_SUB = 'PUB_SUB';
+    case RABBITMQ = 'RABBITMQ';
     case SYNC = 'SYNC';
 }

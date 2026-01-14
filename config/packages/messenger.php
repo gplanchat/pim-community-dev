@@ -11,7 +11,7 @@ use Akeneo\Tool\Component\Messenger\Config\TransportType;
  */
 return static function (ContainerConfigurator $containerConfigurator) {
     $transportType = match ($containerConfigurator->env()) {
-        'behat', 'test' => TransportType::PUB_SUB,
+        'behat', 'test' => TransportType::RABBITMQ,
         'test_fake' => TransportType::IN_MEMORY,
         default => TransportType::DOCTRINE,
     };

@@ -5,10 +5,10 @@ framework:
             business_event:
                 dsn: 'gps:'
                 options:
-                    project_id: '%env(GOOGLE_CLOUD_PROJECT)%'
-                    topic_name: '%env(PUBSUB_TOPIC_BUSINESS_EVENT)%'
-                    subscription_name: '%env(PUBSUB_SUBSCRIPTION_BUSINESS_EVENT)%'
-                    auto_setup: '%env(bool:PUBSUB_AUTO_SETUP)%'
+                    project_id: '%env(default::string:GOOGLE_CLOUD_PROJECT:test-project)%'
+                    topic_name: '%env(default::string:PUBSUB_TOPIC_BUSINESS_EVENT:test-business-event-topic)%'
+                    subscription_name: '%env(default::string:PUBSUB_SUBSCRIPTION_BUSINESS_EVENT:test-business-event-subscription)%'
+                    auto_setup: '%env(default::bool:PUBSUB_AUTO_SETUP:false)%'
                 retry_strategy:
                     max_retries: 0
                 serializer: pim_enrich.messenger.serializer.business_event
@@ -17,10 +17,10 @@ framework:
             webhook:
                 dsn: 'gps:'
                 options:
-                    project_id: '%env(GOOGLE_CLOUD_PROJECT)%'
-                    topic_name: '%env(PUBSUB_TOPIC_BUSINESS_EVENT)%'
-                    subscription_name: '%env(PUBSUB_SUBSCRIPTION_WEBHOOK)%'
-                    auto_setup: '%env(bool:PUBSUB_AUTO_SETUP)%'
+                    project_id: '%env(default::string:GOOGLE_CLOUD_PROJECT:test-project)%'
+                    topic_name: '%env(default::string:PUBSUB_TOPIC_BUSINESS_EVENT:test-business-event-topic)%'
+                    subscription_name: '%env(default::string:PUBSUB_SUBSCRIPTION_WEBHOOK:test-webhook-subscription)%'
+                    auto_setup: '%env(default::bool:PUBSUB_AUTO_SETUP:false)%'
                 retry_strategy:
                     max_retries: 0
                 serializer: pim_enrich.messenger.serializer.business_event
@@ -28,50 +28,50 @@ framework:
             ui_job:
                 dsn: 'gps:'
                 options:
-                    project_id: '%env(GOOGLE_CLOUD_PROJECT)%'
-                    topic_name: '%env(PUBSUB_TOPIC_JOB_QUEUE_UI)%'
-                    subscription_name: '%env(PUBSUB_SUBSCRIPTION_JOB_QUEUE_UI)%'
-                    auto_setup: '%env(bool:PUBSUB_AUTO_SETUP)%'
+                    project_id: '%env(default::string:GOOGLE_CLOUD_PROJECT:test-project)%'
+                    topic_name: '%env(default::string:PUBSUB_TOPIC_JOB_QUEUE_UI:test-ui-job-topic)%'
+                    subscription_name: '%env(default::string:PUBSUB_SUBSCRIPTION_JOB_QUEUE_UI:test-ui-job-subscription)%'
+                    auto_setup: '%env(default::bool:PUBSUB_AUTO_SETUP:false)%'
                 retry_strategy:
                     max_retries: 0
                 serializer: akeneo_batch_queue.messenger.serializer
             import_export_job:
                 dsn: 'gps:'
                 options:
-                    project_id: '%env(GOOGLE_CLOUD_PROJECT)%'
-                    topic_name: '%env(PUBSUB_TOPIC_JOB_QUEUE_IMPORT_EXPORT)%'
-                    subscription_name: '%env(PUBSUB_SUBSCRIPTION_JOB_QUEUE_IMPORT_EXPORT)%'
-                    auto_setup: '%env(bool:PUBSUB_AUTO_SETUP)%'
+                    project_id: '%env(default::string:GOOGLE_CLOUD_PROJECT:test-project)%'
+                    topic_name: '%env(default::string:PUBSUB_TOPIC_JOB_QUEUE_IMPORT_EXPORT:test-import-export-job-topic)%'
+                    subscription_name: '%env(default::string:PUBSUB_SUBSCRIPTION_JOB_QUEUE_IMPORT_EXPORT:test-import-export-job-subscription)%'
+                    auto_setup: '%env(default::bool:PUBSUB_AUTO_SETUP:false)%'
                 retry_strategy:
                     max_retries: 0
                 serializer: akeneo_batch_queue.messenger.serializer
             data_maintenance_job:
                 dsn: 'gps:'
                 options:
-                    project_id: '%env(GOOGLE_CLOUD_PROJECT)%'
-                    topic_name: '%env(PUBSUB_TOPIC_JOB_QUEUE_DATA_MAINTENANCE)%'
-                    subscription_name: '%env(PUBSUB_SUBSCRIPTION_JOB_QUEUE_DATA_MAINTENANCE)%'
-                    auto_setup: '%env(bool:PUBSUB_AUTO_SETUP)%'
+                    project_id: '%env(default::string:GOOGLE_CLOUD_PROJECT:test-project)%'
+                    topic_name: '%env(default::string:PUBSUB_TOPIC_JOB_QUEUE_DATA_MAINTENANCE:test-data-maintenance-job-topic)%'
+                    subscription_name: '%env(default::string:PUBSUB_SUBSCRIPTION_JOB_QUEUE_DATA_MAINTENANCE:test-data-maintenance-job-subscription)%'
+                    auto_setup: '%env(default::bool:PUBSUB_AUTO_SETUP:false)%'
                 retry_strategy:
                     max_retries: 0
                 serializer: akeneo_batch_queue.messenger.serializer
             scheduled_job:
                 dsn: 'gps:'
                 options:
-                    project_id: '%env(GOOGLE_CLOUD_PROJECT)%'
-                    topic_name: '%env(PUBSUB_TOPIC_JOB_QUEUE_SCHEDULED_JOB)%'
-                    subscription_name: '%env(PUBSUB_SUBSCRIPTION_JOB_QUEUE_SCHEDULED_JOB)%'
-                    auto_setup: '%env(bool:PUBSUB_AUTO_SETUP)%'
+                    project_id: '%env(default::string:GOOGLE_CLOUD_PROJECT:test-project)%'
+                    topic_name: '%env(default::string:PUBSUB_TOPIC_JOB_QUEUE_SCHEDULED_JOB:test-scheduled-job-topic)%'
+                    subscription_name: '%env(default::string:PUBSUB_SUBSCRIPTION_JOB_QUEUE_SCHEDULED_JOB:test-scheduled-job-subscription)%'
+                    auto_setup: '%env(default::bool:PUBSUB_AUTO_SETUP:false)%'
                 retry_strategy:
                     max_retries: 0
                 serializer: akeneo_batch_queue.messenger.serializer
             paused_job:
                 dsn: 'gps:'
                 options:
-                    project_id: '%env(GOOGLE_CLOUD_PROJECT)%'
-                    topic_name: '%env(PUBSUB_TOPIC_JOB_QUEUE_PAUSED_JOB)%'
-                    subscription_name: '%env(PUBSUB_SUBSCRIPTION_JOB_QUEUE_PAUSED_JOB)%'
-                    auto_setup: '%env(bool:PUBSUB_AUTO_SETUP)%'
+                    project_id: '%env(default::string:GOOGLE_CLOUD_PROJECT:test-project)%'
+                    topic_name: '%env(default::string:PUBSUB_TOPIC_JOB_QUEUE_PAUSED_JOB:test-paused-job-topic)%'
+                    subscription_name: '%env(default::string:PUBSUB_SUBSCRIPTION_JOB_QUEUE_PAUSED_JOB:test-paused-job-subscription)%'
+                    auto_setup: '%env(default::bool:PUBSUB_AUTO_SETUP:false)%'
                 retry_strategy:
                     max_retries: 0
                 serializer: akeneo_batch_queue.messenger.serializer
