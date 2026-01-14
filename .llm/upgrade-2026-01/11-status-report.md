@@ -98,16 +98,17 @@ Session: Resume 2026-01-14
 
 ### Current Phase PR and Issue
 
-- [x] **Phase PR Number**: #1 (merged)
+- [x] **Phase PR Number**: #2
+- [x] **Phase PR URL**: https://github.com/gplanchat/pim-community-dev/pull/2
 - [ ] **Phase Issue Number**: [To be created]
-- [x] **PR Status**: ✅ Merged
+- [x] **PR Status**: ✅ Open (created 2026-01-14)
 - [ ] **Issue Status**: [To be created]
 
-### Related Issues
+### Related Pull Requests
 
-| Issue # | Title | Status | Related To |
-|---------|-------|--------|------------|
-| #1 | feat(upgrade): Phase 2 - PHP 8.1 → 8.4 migration | ✅ Merged | Phase 2 |
+| PR # | Title | Status | Related To |
+|------|-------|--------|------------|
+| #2 | feat(upgrade): Phase 2 - PHP 8.1 → 8.4 migration | ✅ Open | Phase 2 |
 
 ## Current Phase Status
 
@@ -116,7 +117,8 @@ Session: Resume 2026-01-14
 **Start Date**: 2026-01-14
 **Target Completion**: [To be determined]
 **Current Status**: ✅ In Progress
-**PR Number**: #1 (merged)
+**PR Number**: #2
+**PR URL**: https://github.com/gplanchat/pim-community-dev/pull/2
 **Issue Number**: [To be created]
 
 #### Completed Steps
@@ -277,18 +279,19 @@ Session: Resume 2026-01-14
 
 ### Immediate Actions Required
 
-1. **Rebuild Docker images** to ensure PHP 8.4 is running in containers
-2. **Execute PHP 8.3 tests** (PHPStan, PHPUnit, Behat) and document results
-3. **Execute PHP 8.4 tests** (PHPStan, PHPUnit, Behat) and document results
-4. **Verify Phase 0 completion** (pre-migration validation)
-5. **Update tracking files** with test results
+1. ✅ **Rebuild Docker images** - Completed: 2026-01-14
+2. ✅ **Execute PHP 8.4 tests** - Completed: 2026-01-14
+3. ✅ **Update tracking files** - Completed: 2026-01-14
+4. ⏳ **Verify Phase 0 completion** (pre-migration validation) - Pending
+5. ⏳ **Review test results** and determine if Phase 2 is complete
 
 ### Upcoming Tasks
 
-1. Complete PHP 8.4 testing - Target: 2026-01-14
-2. Verify PHP 8.4.0+ requirement met - Target: 2026-01-14
-3. Merge Phase 2 branch to master (if needed) - Target: 2026-01-14
-4. Create Phase 5 branch for Symfony migration - Target: After Phase 2 completion
+1. ✅ Complete PHP 8.4 testing - Completed: 2026-01-14
+2. ✅ Verify PHP 8.4.0+ requirement met - Completed: 2026-01-14
+3. ⏳ Review Phase 2 completion status - Target: 2026-01-14
+4. ⏳ Merge Phase 2 branch to master (if Phase 2 complete) - Target: After review
+5. ⏳ Create Phase 5 branch for Symfony migration - Target: After Phase 2 merge
 
 ## Risks and Blockers
 

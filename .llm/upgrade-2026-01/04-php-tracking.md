@@ -14,8 +14,9 @@ End date: [To be completed]
 ### Phase 2 Branch: feature/upgrade-2026-01-php-8.4
 - [x] Branch created: 2026-01-14 10:56:33 CET
 - [x] Branch pushed to fork repository: 2026-01-14
-- [ ] GitHub PR created: [To be completed] (Repository: https://github.com/gplanchat/pim-community-dev/)
-- [ ] PR URL: [To be completed]
+- [x] GitHub PR created: 2026-01-14 (Repository: https://github.com/gplanchat/pim-community-dev/)
+- [x] PR Number: #2
+- [x] PR URL: https://github.com/gplanchat/pim-community-dev/pull/2
 - [ ] Branch merged to master: [To be completed]
 - [ ] Merge date: [To be completed]
 
