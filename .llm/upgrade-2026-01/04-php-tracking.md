@@ -6,14 +6,14 @@
 - **Phase 6**: PHP 8.4 → 8.5 (MUST be done after Symfony 8.0 is stable)
   - **Git branch**: `feature/upgrade-2026-01-php-8.5`
 
-Start date: [To be completed]
+Start date: 2026-01-14
 End date: [To be completed]
 
 ## Git Flow Branch Information
 
 ### Phase 2 Branch: feature/upgrade-2026-01-php-8.4
-- [ ] Branch created: [To be completed]
-- [ ] Branch merged to develop: [To be completed]
+- [x] Branch created: 2026-01-14 10:56:33 CET
+- [ ] Branch merged to master: [To be completed]
 - [ ] Merge date: [To be completed]
 - [ ] Pull request URL: [To be completed]
 
@@ -28,6 +28,28 @@ End date: [To be completed]
 - Target PHP version Phase 2: 8.4.* (required for Symfony 8.0)
 - Target PHP version Phase 6: 8.5.* (latest stable version, after Symfony 8.0)
 - **Note**: Docker stack is used - system PHP version is irrelevant
+- Rector configuration: ✅ Created and validated (2026-01-14)
+
+## Phase 1: Preparation Status
+
+### 1.1 Git Flow Setup
+- [x] Branch created: 2026-01-14 10:56:33 CET
+- [x] Initial state documented in tracking files: 2026-01-14
+- [x] Branch creation documented: 2026-01-14
+
+### 1.2 Dependency Installation
+- [ ] Composer dependencies: ⚠️ To be installed via Docker when environment is ready
+- [ ] Yarn dependencies: ⚠️ To be installed via Docker when environment is ready
+- [ ] Initial tests verification: ⚠️ To be executed via Docker when environment is ready
+
+### 1.3 Rector Configuration
+- [x] Rector.php file created: 2026-01-14
+- [x] Configuration validated (PHP syntax): 2026-01-14
+- [x] Paths configured: src/, tests/, upgrades/, components/
+- [x] Skip paths configured: std-build/migration, vendor/, var/, front-packages/, frontend/
+- [ ] Rector dry-run test: ⚠️ To be executed via Docker when environment is ready
+
+**Note**: Docker stack is required for full validation. Configuration file syntax is valid and ready for use.
 
 ## Applied Rector Rules
 
