@@ -2,8 +2,8 @@
 # This file contains ONLY the current migration step versions
 # Update PHP and Node versions sequentially as migration progresses
 #
-# Current migration step: Phase 2.2 - PHP 8.2 → 8.3
-# Current PHP version: 8.3
+# Current migration step: Phase 2.3 - PHP 8.3 → 8.4
+# Current PHP version: 8.4
 # Current Node version: 18
 #
 # Note: FrankenPHP migration planned for Phase 6 (PHP 8.4 → 8.5)
@@ -35,35 +35,35 @@ RUN echo 'APT::Install-Recommends "0" ; APT::Install-Suggests "0" ;' > /etc/apt/
     apt-get --yes install imagemagick \
         libmagickcore-6.q16-6-extra \
         ghostscript \
-        php8.3-fpm \
-        php8.3-cli \
-        php8.3-intl \
-        php8.3-opcache \
-        php8.3-mysql \
-        php8.3-zip \
-        php8.3-xml \
-        php8.3-gd \
-        php8.3-grpc \
-        php8.3-curl \
-        php8.3-mbstring \
-        php8.3-bcmath \
-        php8.3-imagick \
-        php8.3-apcu \
-        php8.3-exif \
-        php8.3-memcached \
+        php8.4-fpm \
+        php8.4-cli \
+        php8.4-intl \
+        php8.4-opcache \
+        php8.4-mysql \
+        php8.4-zip \
+        php8.4-xml \
+        php8.4-gd \
+        php8.4-grpc \
+        php8.4-curl \
+        php8.4-mbstring \
+        php8.4-bcmath \
+        php8.4-imagick \
+        php8.4-apcu \
+        php8.4-exif \
+        php8.4-memcached \
         openssh-client \
         aspell \
         aspell-en aspell-es aspell-de aspell-fr && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    ln -s /usr/sbin/php-fpm8.3 /usr/local/sbin/php-fpm && \
+    ln -s /usr/sbin/php-fpm8.4 /usr/local/sbin/php-fpm && \
     usermod --uid 1000 www-data && groupmod --gid 1000 www-data && \
     mkdir /srv/pim && \
-    sed -i "s#listen = /run/php/php8.3-fpm.sock#listen = 9000#g" /etc/php/8.3/fpm/pool.d/www.conf && \
+    sed -i "s#listen = /run/php/php8.4-fpm.sock#listen = 9000#g" /etc/php/8.4/fpm/pool.d/www.conf && \
     mkdir -p /run/php
 
-COPY docker/build/akeneo.ini /etc/php/8.3/cli/conf.d/99-akeneo.ini
-COPY docker/build/akeneo.ini /etc/php/8.3/fpm/conf.d/99-akeneo.ini
+COPY docker/build/akeneo.ini /etc/php/8.4/cli/conf.d/99-akeneo.ini
+COPY docker/build/akeneo.ini /etc/php/8.4/fpm/conf.d/99-akeneo.ini
 
 CMD ["/usr/bin/supervisord", "-c", "docker/supervisord.conf"]
 
@@ -84,16 +84,16 @@ RUN apt-get update && \
         default-mysql-client \
         git \
         perceptualdiff \
-        php8.3-xdebug \
+        php8.4-xdebug \
         procps \
         unzip &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY docker/build/xdebug.ini /etc/php/8.3/cli/conf.d/99-akeneo-xdebug.ini
-COPY docker/build/xdebug.ini /etc/php/8.3/fpm/conf.d/99-akeneo-xdebug.ini
-COPY docker/build/blackfire.ini /etc/php/8.3/cli/conf.d/99-akeneo-blackfire.ini
-COPY docker/build/blackfire.ini /etc/php/8.3/fpm/conf.d/99-akeneo-blackfire.ini
+COPY docker/build/xdebug.ini /etc/php/8.4/cli/conf.d/99-akeneo-xdebug.ini
+COPY docker/build/xdebug.ini /etc/php/8.4/fpm/conf.d/99-akeneo-xdebug.ini
+COPY docker/build/blackfire.ini /etc/php/8.4/cli/conf.d/99-akeneo-blackfire.ini
+COPY docker/build/blackfire.ini /etc/php/8.4/fpm/conf.d/99-akeneo-blackfire.ini
 
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
