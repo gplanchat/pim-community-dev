@@ -37,6 +37,7 @@ class AttributeGroupNormalizerSpec extends ObjectBehavior
         $normalizedAttribute->shouldHaveLabels($data);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

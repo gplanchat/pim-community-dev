@@ -45,6 +45,7 @@ final class UpdateAttributeGroupActivationSubscriber implements EventSubscriberI
         $this->logger = $logger;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

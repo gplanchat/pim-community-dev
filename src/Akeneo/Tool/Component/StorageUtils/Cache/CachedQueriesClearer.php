@@ -18,6 +18,7 @@ final class CachedQueriesClearer implements CachedQueriesClearerInterface
         $this->cachedQueries = $cachedQueries;
     }
 
+    #[\Override]
     public function clear(): void
     {
         foreach ($this->cachedQueries as $cachedQuery) {

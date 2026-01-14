@@ -47,6 +47,7 @@ final class HeterogeneousAttributeCopier implements AttributeCopierInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttributes(AttributeInterface $fromAttribute, AttributeInterface $toAttribute): bool
     {
         return $fromAttribute->getType() !== $toAttribute->getType() &&
@@ -56,6 +57,7 @@ final class HeterogeneousAttributeCopier implements AttributeCopierInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function copyAttributeData(
         EntityWithValuesInterface $fromEntityWithValues,
         EntityWithValuesInterface $toEntityWithValues,

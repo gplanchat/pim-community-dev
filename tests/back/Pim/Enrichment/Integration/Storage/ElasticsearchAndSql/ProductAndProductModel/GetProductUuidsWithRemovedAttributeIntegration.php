@@ -10,6 +10,7 @@ class GetProductUuidsWithRemovedAttributeIntegration extends TestCase
 {
     private array $productIdentifierToUuidMapping;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -40,6 +41,7 @@ class GetProductUuidsWithRemovedAttributeIntegration extends TestCase
         self::assertEquals(1, $batchCount);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

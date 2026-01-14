@@ -64,6 +64,7 @@ class SqlMarkJobExecutionAsFailedWhenInterruptedIntegration extends TestCase
         Assert::assertFalse($this->executionFailed($runningExecutionIdsWithHealthCheck));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -74,6 +75,7 @@ class SqlMarkJobExecutionAsFailedWhenInterruptedIntegration extends TestCase
         $this->createJobInstance('another_job');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

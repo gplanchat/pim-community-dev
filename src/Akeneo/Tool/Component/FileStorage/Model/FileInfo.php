@@ -46,6 +46,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -54,6 +55,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setId($id)
     {
         $this->id = $id;
@@ -64,6 +66,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOriginalFilename()
     {
         return $this->originalFilename;
@@ -72,6 +75,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setOriginalFilename($originalFilename)
     {
         $this->originalFilename = $originalFilename;
@@ -82,6 +86,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMimeType()
     {
         return $this->mimeType;
@@ -90,6 +95,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMimeType($mimeType)
     {
         $this->mimeType = $mimeType;
@@ -100,6 +106,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSize()
     {
         return $this->size;
@@ -108,6 +115,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setSize($size)
     {
         $this->size = $size;
@@ -118,6 +126,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getExtension()
     {
         return $this->extension;
@@ -126,6 +135,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setExtension($extension)
     {
         $this->extension = $extension;
@@ -136,6 +146,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getHash()
     {
         return $this->hash;
@@ -144,6 +155,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setHash($hash)
     {
         $this->hash = $hash;
@@ -154,6 +166,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getStorage()
     {
         return $this->storage;
@@ -162,6 +175,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStorage($storage)
     {
         $this->storage = $storage;
@@ -172,6 +186,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getKey()
     {
         return $this->key;
@@ -180,6 +195,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setKey($key)
     {
         $this->key = $key;
@@ -190,6 +206,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUploadedFile()
     {
         return $this->uploadedFile;
@@ -198,7 +215,8 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
-    public function setUploadedFile(UploadedFile $uploadedFile = null)
+    #[\Override]
+    public function setUploadedFile(?UploadedFile $uploadedFile = null)
     {
         $this->uploadedFile = $uploadedFile;
 
@@ -208,6 +226,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRemoved($removed)
     {
         $this->removed = $removed;
@@ -218,6 +237,7 @@ class FileInfo implements FileInfoInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isRemoved()
     {
         return $this->removed;
@@ -226,6 +246,7 @@ class FileInfo implements FileInfoInterface
     /**
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return $this->getOriginalFilename();

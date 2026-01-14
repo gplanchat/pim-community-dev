@@ -36,6 +36,7 @@ class EventsApiDebugLogger implements
         $this->defaultEventNormalizer = new EventNormalizer();
     }
 
+    #[\Override]
     public function logEventSubscriptionSkippedOwnEvent(
         string $connectionCode,
         EventInterface $event
@@ -52,6 +53,7 @@ class EventsApiDebugLogger implements
         ]);
     }
 
+    #[\Override]
     public function logEventsApiRequestSucceed(
         string $connectionCode,
         array $events,
@@ -74,6 +76,7 @@ class EventsApiDebugLogger implements
         ]);
     }
 
+    #[\Override]
     public function logLimitOfEventsApiRequestsReached(): void
     {
         $this->repository->persist([
@@ -86,6 +89,7 @@ class EventsApiDebugLogger implements
         ]);
     }
 
+    #[\Override]
     public function logResourceNotFoundOrAccessDenied(
         string $connectionCode,
         EventInterface $event
@@ -109,6 +113,7 @@ class EventsApiDebugLogger implements
      * @param int $statusCode
      * @param array<array<string>> $headers
      */
+    #[\Override]
     public function logEventsApiRequestFailed(string $connectionCode, array $webhookEvents, string $url, int $statusCode, array $headers): void
     {
         $this->repository->persist([
@@ -126,6 +131,7 @@ class EventsApiDebugLogger implements
         ]);
     }
 
+    #[\Override]
     public function logEventsApiRequestTimedOut(
         string $connectionCode,
         array $events,

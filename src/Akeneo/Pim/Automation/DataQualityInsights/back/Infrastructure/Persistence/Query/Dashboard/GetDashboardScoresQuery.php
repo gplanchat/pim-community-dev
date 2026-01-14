@@ -24,6 +24,7 @@ final class GetDashboardScoresQuery implements GetDashboardScoresQueryInterface
         $this->db = $db;
     }
 
+    #[\Override]
     public function byCatalog(ChannelCode $channel, LocaleCode $locale, TimePeriod $timePeriod): ?Read\DashboardRates
     {
         $sql = <<<'SQL'
@@ -37,6 +38,7 @@ SQL;
         return $this->buildResult($stmt, $channel, $locale, $timePeriod);
     }
 
+    #[\Override]
     public function byCategory(ChannelCode $channel, LocaleCode $locale, TimePeriod $timePeriod, CategoryCode $category): ?Read\DashboardRates
     {
         $sql = <<<'SQL'
@@ -54,6 +56,7 @@ SQL;
         return $this->buildResult($stmt, $channel, $locale, $timePeriod);
     }
 
+    #[\Override]
     public function byFamily(ChannelCode $channel, LocaleCode $locale, TimePeriod $timePeriod, FamilyCode $family): ?Read\DashboardRates
     {
         $sql = <<<'SQL'

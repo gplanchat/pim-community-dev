@@ -31,6 +31,7 @@ class ProductCreatedAndUpdatedEventDataBuilder implements EventDataBuilderInterf
     ) {
     }
 
+    #[\Override]
     public function supports(BulkEventInterface $event): bool
     {
         if (false === $event instanceof BulkEventInterface) {
@@ -46,6 +47,7 @@ class ProductCreatedAndUpdatedEventDataBuilder implements EventDataBuilderInterf
         return true;
     }
 
+    #[\Override]
     public function build(BulkEventInterface $bulkEvent, Context $context): EventDataCollection
     {
         $products = $this->getConnectorProducts(

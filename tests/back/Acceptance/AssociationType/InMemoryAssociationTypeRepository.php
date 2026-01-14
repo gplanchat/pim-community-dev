@@ -23,6 +23,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($associationType, array $options = [])
     {
         if (!$associationType instanceof AssociationTypeInterface) {
@@ -34,6 +35,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->associationType->get($identifier);
@@ -42,6 +44,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -50,6 +53,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findMissingAssociationTypes(EntityWithAssociationsInterface $entity)
     {
         $associations = $entity->getAssociations();
@@ -69,6 +73,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countAll(): int
     {
         throw new NotImplementedException(__METHOD__);
@@ -77,6 +82,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -85,6 +91,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll(): array
     {
         return $this->associationType->toArray();
@@ -93,7 +100,8 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         throw new NotImplementedException(__METHOD__);
     }
@@ -101,6 +109,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
@@ -109,6 +118,7 @@ class InMemoryAssociationTypeRepository implements AssociationTypeRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);

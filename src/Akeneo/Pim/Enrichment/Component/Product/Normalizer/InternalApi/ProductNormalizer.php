@@ -106,6 +106,7 @@ class ProductNormalizer implements NormalizerInterface, CacheableSupportsMethodI
      *
      * @param ProductInterface $product
      */
+    #[\Override]
     public function normalize($product, $format = null, array $context = [])
     {
         $this->missingAssociationAdder->addMissingAssociations($product);
@@ -169,11 +170,13 @@ class ProductNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ProductInterface && in_array($format, $this->supportedFormat);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -185,7 +188,7 @@ class ProductNormalizer implements NormalizerInterface, CacheableSupportsMethodI
      *
      * @return array
      */
-    protected function getLabels(ProductInterface $product, string $scopeCode = null)
+    protected function getLabels(ProductInterface $product, ?string $scopeCode = null)
     {
         $labels = [];
 

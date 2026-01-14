@@ -46,6 +46,7 @@ final class ProductScoreRepository implements ProductScoreRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function saveAll(array $productsScores): void
     {
         if (empty($productsScores)) {

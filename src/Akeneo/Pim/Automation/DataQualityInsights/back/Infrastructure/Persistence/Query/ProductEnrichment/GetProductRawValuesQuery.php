@@ -24,6 +24,7 @@ class GetProductRawValuesQuery implements GetProductRawValuesQueryInterface
         $this->db = $db;
     }
 
+    #[\Override]
     public function execute(ProductEntityIdInterface $productId): array
     {
         Assert::isInstanceOf($productId, ProductUuid::class);

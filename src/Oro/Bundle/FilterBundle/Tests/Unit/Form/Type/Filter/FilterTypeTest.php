@@ -12,6 +12,7 @@ class FilterTypeTest extends AbstractTypeTestCase
      */
     protected $type;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -22,6 +23,7 @@ class FilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function getTestFormType()
     {
         return $this->type;
@@ -35,6 +37,7 @@ class FilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptionsDataProvider()
     {
         return [
@@ -62,6 +65,7 @@ class FilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function bindDataProvider()
     {
         return [

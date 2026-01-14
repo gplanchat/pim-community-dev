@@ -22,6 +22,7 @@ class UpdateEventSubscriptionEndToEnd extends WebTestCase
     private ConnectionLoader $connectionLoader;
     private WebhookLoader $webhookLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -282,6 +283,7 @@ class UpdateEventSubscriptionEndToEnd extends WebTestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

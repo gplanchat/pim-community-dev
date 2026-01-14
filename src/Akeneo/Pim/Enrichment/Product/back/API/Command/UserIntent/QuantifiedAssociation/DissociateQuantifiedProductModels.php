@@ -22,6 +22,7 @@ final class DissociateQuantifiedProductModels implements QuantifiedAssociationUs
         Assert::allStringNotEmpty($productModelCodes);
     }
 
+    #[\Override]
     public function associationType(): string
     {
         return $this->associationType;

@@ -169,6 +169,7 @@ class CategoryRepositoryApiResourceIntegration extends TestCase
         Assert::assertEquals('ring', $categories[1]->getCode());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -24,6 +24,7 @@ final class SqlSaveCompletenesses implements SaveProductCompletenesses
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save(ProductCompletenessWithMissingAttributeCodesCollection $completenesses): void
     {
         $this->saveAll([$completenesses]);
@@ -32,6 +33,7 @@ final class SqlSaveCompletenesses implements SaveProductCompletenesses
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function saveAll(array $productCompletenessCollections): void
     {
         $params = \implode(', ', \array_fill(0, count($productCompletenessCollections), '(?, ?)'));

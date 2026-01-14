@@ -25,11 +25,13 @@ final class ComputeFamilyVariantStructureChangesTaskletIntegration extends TestC
     /** @var ComputeFamilyVariantStructureChangesTasklet */
     private $computeFamilyVariantStructureChangesTasklet;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();
     }
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

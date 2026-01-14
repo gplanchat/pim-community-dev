@@ -23,6 +23,7 @@ class ComparatorRegistry implements ComparatorRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeComparator($attributeType)
     {
         foreach ($this->getComparators(self::COMPARATOR_ATTRIBUTE) as $comparator) {
@@ -43,6 +44,7 @@ class ComparatorRegistry implements ComparatorRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeComparator(ComparatorInterface $comparator, $priority)
     {
         $this->comparators[self::COMPARATOR_ATTRIBUTE][$priority][] = $comparator;
@@ -51,6 +53,7 @@ class ComparatorRegistry implements ComparatorRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFieldComparator($field)
     {
         foreach ($this->getComparators(self::COMPARATOR_FIELD) as $comparator) {
@@ -71,6 +74,7 @@ class ComparatorRegistry implements ComparatorRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldComparator(ComparatorInterface $comparator, $priority)
     {
         $this->comparators[self::COMPARATOR_FIELD][$priority][] = $comparator;

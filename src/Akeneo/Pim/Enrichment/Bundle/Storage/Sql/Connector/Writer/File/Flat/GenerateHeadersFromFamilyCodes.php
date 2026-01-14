@@ -28,6 +28,7 @@ final class GenerateHeadersFromFamilyCodes implements GenerateFlatHeadersFromFam
      *
      * @return FlatFileHeader[]
      */
+    #[\Override]
     public function __invoke(
         array $familyCodes,
         string $channelCode,

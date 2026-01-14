@@ -74,7 +74,8 @@ class ProductEditForm extends Form
      * @param string  $value
      * @param Element $element
      */
-    public function fillField($label, $value, Element $element = null)
+    #[\Override]
+    public function fillField($label, $value, ?Element $element = null)
     {
         $isLabel = false;
 
@@ -123,6 +124,7 @@ class ProductEditForm extends Form
      *
      * @return NodeElement
      */
+    #[\Override]
     public function findFieldContainer($label)
     {
         if (1 === preg_match('/ in (.{1,3})$/', $label)) {
@@ -156,6 +158,7 @@ class ProductEditForm extends Form
      *
      * @return NodeElement
      */
+    #[\Override]
     public function findField($label, $copy = false)
     {
         if (1 === preg_match('/ in (.{1,3})$/', $label)) {
@@ -220,6 +223,7 @@ class ProductEditForm extends Form
      * @param NodeElement $fieldContainer
      * @param string      $value
      */
+    #[\Override]
     protected function fillSelectField(NodeElement $fieldContainer, $value)
     {
         $element = $this->spin(function () use ($fieldContainer) {
@@ -244,6 +248,7 @@ class ProductEditForm extends Form
      *
      * @throws \InvalidArgumentException
      */
+    #[\Override]
     protected function fillMetricField(NodeElement $fieldContainer, $value)
     {
         if (false !== strpos($value, ' ')) {
@@ -389,6 +394,7 @@ class ProductEditForm extends Form
      *
      * @return string
      */
+    #[\Override]
     protected function getFieldType($fieldContainer, $isLabel = false)
     {
         if (null === $fieldContainer || !$fieldContainer instanceof NodeElement) {
@@ -440,6 +446,7 @@ class ProductEditForm extends Form
      *
      * @throws ElementNotFoundException
      */
+    #[\Override]
     protected function fillTextField(NodeElement $fieldContainerOrLabel, $value)
     {
         $field = $fieldContainerOrLabel->find('css', 'div.field-input input');
@@ -471,6 +478,7 @@ class ProductEditForm extends Form
      *
      * @return null|Element
      */
+    #[\Override]
     public function findValidationTooltip(string $text)
     {
         return $this->spin(function () use ($text) {
@@ -787,6 +795,7 @@ class ProductEditForm extends Form
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save()
     {
         $element = $this->getElement('Save');

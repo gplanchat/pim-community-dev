@@ -36,6 +36,7 @@ class Manager implements ManagerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getDatagrid($name)
     {
         // prepare for work with current grid
@@ -49,6 +50,7 @@ class Manager implements ManagerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getConfigurationForGrid($name)
     {
         return $this->configurationProvider->getConfiguration($name);

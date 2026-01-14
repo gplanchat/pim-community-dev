@@ -21,6 +21,7 @@ use AkeneoTest\Pim\Enrichment\Integration\PQB\AbstractProductQueryBuilderTestCas
  */
 class GridCompletenessFilterIntegration extends AbstractProductQueryBuilderTestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -141,6 +142,7 @@ class GridCompletenessFilterIntegration extends AbstractProductQueryBuilderTestC
      *
      * @return CursorInterface
      */
+    #[\Override]
     protected function executeFilter(array $filters)
     {
         $pqb = $this->get('pim_enrich.query.product_and_product_model_query_builder_from_size_factory')->create(

@@ -20,6 +20,7 @@ class RestoreAdminRolePermissionsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function configure()
     {
         $this
@@ -33,6 +34,7 @@ class RestoreAdminRolePermissionsCommand extends Command
         ;
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         /** @var QuestionHelper $helper **/

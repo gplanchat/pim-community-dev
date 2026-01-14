@@ -51,6 +51,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Flushabl
         $this->isFirstWriting = true;
     }
 
+    #[\Override]
     public function initialize()
     {
         $filePath = $this->state['file_path'] ?? null;
@@ -67,6 +68,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Flushabl
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items): void
     {
         $flatItems = [];
@@ -96,6 +98,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Flushabl
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function flush(): void
     {
         if (false === $this->isFirstWriting) {
@@ -161,6 +164,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Flushabl
         }
     }
 
+    #[\Override]
     public function getState(): array
     {
         $filePath = $this->getPath();
@@ -170,6 +174,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Flushabl
             'file_path' => $filePath,
         ];
     }
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

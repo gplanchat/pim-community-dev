@@ -47,6 +47,7 @@ class ProductNormalizer implements NormalizerInterface, NormalizerAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($product, $format = null, array $context = [])
     {
         if (!$this->normalizer instanceof NormalizerInterface) {
@@ -81,11 +82,13 @@ class ProductNormalizer implements NormalizerInterface, NormalizerAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ProductInterface && 'datagrid' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

@@ -32,6 +32,7 @@ class DbalSelectPeriodErrorCountPerConnectionQueryIntegration extends TestCase
     /** @var SelectPeriodErrorCountPerConnectionQueryInterface */
     private $selectPeriodErrorCountPerConnectionQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -103,6 +104,7 @@ class DbalSelectPeriodErrorCountPerConnectionQueryIntegration extends TestCase
         Assert::assertEquals($expectedResult, $result);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

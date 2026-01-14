@@ -19,6 +19,7 @@ class AttributeCode
         Assert::maxLength($code, 100);
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->code;

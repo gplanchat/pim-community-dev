@@ -29,6 +29,7 @@ class OrmSorterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $columns = $config->offsetGetByPath(Configuration::COLUMNS_PATH);
@@ -41,6 +42,7 @@ class OrmSorterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function processConfigs(DatagridConfiguration $config)
     {
         $this->validateConfiguration(
@@ -52,6 +54,7 @@ class OrmSorterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitDatasource(DatagridConfiguration $config, DatasourceInterface $datasource)
     {
         $sorters = $this->getSortersToApply($config);
@@ -73,6 +76,7 @@ class OrmSorterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         $multisort = $config->offsetGetByPath(Configuration::MULTISORT_PATH, false);
@@ -108,6 +112,7 @@ class OrmSorterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getPriority()
     {
         // should visit after all extensions

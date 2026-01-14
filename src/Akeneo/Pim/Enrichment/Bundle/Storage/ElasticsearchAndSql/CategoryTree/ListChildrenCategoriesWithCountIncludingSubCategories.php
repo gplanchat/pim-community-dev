@@ -35,6 +35,7 @@ class ListChildrenCategoriesWithCountIncludingSubCategories implements Query\Lis
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function list(
         string $translationLocaleCode,
         int $userId,

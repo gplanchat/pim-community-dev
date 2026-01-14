@@ -16,6 +16,7 @@ use Akeneo\Category\Domain\Query\UpdateCategoryUpdatedDate;
 class UpdateCategoryUpdatedDateSqlIntegration extends CategoryTestCase
 {
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

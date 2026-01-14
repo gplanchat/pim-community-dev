@@ -17,6 +17,7 @@ final class GetConnectedAppRoleIdentifierQuery implements GetConnectedAppRoleIde
     {
     }
 
+    #[\Override]
     public function execute(string $appId): ?string
     {
         $query = <<<SQL

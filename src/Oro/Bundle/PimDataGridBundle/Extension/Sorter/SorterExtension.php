@@ -33,6 +33,7 @@ class SorterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $columns = $config->offsetGetByPath(Configuration::COLUMNS_PATH);
@@ -43,6 +44,7 @@ class SorterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function processConfigs(DatagridConfiguration $config)
     {
         $this->validateConfiguration(
@@ -54,6 +56,7 @@ class SorterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function visitDatasource(DatagridConfiguration $config, DatasourceInterface $datasource)
     {
         $sorters = $this->getSortersToApply($config);
@@ -82,6 +85,7 @@ class SorterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         $multisort = $config->offsetGetByPath(Configuration::MULTISORT_PATH, false);
@@ -117,6 +121,7 @@ class SorterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPriority()
     {
         // should visit after all extensions

@@ -24,6 +24,7 @@ class SqlCategoryTemplateSaver implements CategoryTemplateSaver
     /**
      * @throws Exception
      */
+    #[\Override]
     public function insert(Template $templateModel): void
     {
         $query = <<< SQL
@@ -49,6 +50,7 @@ class SqlCategoryTemplateSaver implements CategoryTemplateSaver
         );
     }
 
+    #[\Override]
     public function update(Template $templateModel): void
     {
         $query = <<< SQL

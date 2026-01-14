@@ -15,6 +15,7 @@ class SqlFindFamilyCodesIntegration extends TestCase
 {
     private SqlFindFamilyCodes $sqlFindFamilyCodes;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -163,6 +164,7 @@ class SqlFindFamilyCodesIntegration extends TestCase
         self::assertEqualsCanonicalizing($expectedCodes, $actualCodes);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

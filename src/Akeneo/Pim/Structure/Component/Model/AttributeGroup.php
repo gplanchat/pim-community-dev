@@ -70,6 +70,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString()
     {
         return $this->getLabel();
@@ -78,6 +79,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -86,6 +88,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setId($id)
     {
         $this->id = $id;
@@ -96,6 +99,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -104,6 +108,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -114,6 +119,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSortOrder()
     {
         return $this->sortOrder;
@@ -122,6 +128,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setSortOrder($sortOrder)
     {
         $this->sortOrder = $sortOrder;
@@ -132,6 +139,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCreated()
     {
         return $this->created;
@@ -140,6 +148,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCreated($created)
     {
         $this->created = $created;
@@ -150,6 +159,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUpdated()
     {
         return $this->updated;
@@ -158,6 +168,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUpdated($updated)
     {
         $this->updated = $updated;
@@ -168,6 +179,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttribute(AttributeInterface $attribute)
     {
         $this->attributes[] = $attribute;
@@ -179,6 +191,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeAttribute(AttributeInterface $attribute)
     {
         $this->attributes->removeElement($attribute);
@@ -190,6 +203,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributes()
     {
         return $this->attributes;
@@ -198,6 +212,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttribute(AttributeInterface $attribute)
     {
         return $this->attributes->contains($attribute);
@@ -206,6 +221,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaxAttributeSortOrder()
     {
         $max = 0;
@@ -219,6 +235,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -229,6 +246,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslations()
     {
         return $this->translations;
@@ -237,6 +255,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslation(?string $locale = null): ?AttributeGroupTranslationInterface
     {
         $locale = $locale ?: $this->locale;
@@ -261,6 +280,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->translations->contains($translation)) {
@@ -273,6 +293,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeTranslation(TranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
@@ -283,6 +304,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslationFQCN()
     {
         return AttributeGroupTranslation::class;
@@ -291,6 +313,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         $translated = $this->getTranslation() ? $this->getTranslation()->getLabel() : null;
@@ -301,6 +324,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->getTranslation()->setLabel($label);
@@ -311,6 +335,7 @@ class AttributeGroup implements AttributeGroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;

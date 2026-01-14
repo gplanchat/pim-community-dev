@@ -22,6 +22,7 @@ class TrackUsageOfLoadPredefinedAttributesControllerEndToEnd extends ControllerI
 {
     private TemplateUuid $templateUuid;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -115,6 +116,7 @@ class TrackUsageOfLoadPredefinedAttributesControllerEndToEnd extends ControllerI
         $this->get(CategoryTreeTemplateSaver::class)->insert($templateModel);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

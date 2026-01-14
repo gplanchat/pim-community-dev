@@ -8,12 +8,14 @@ use Twig\Environment;
 
 class DefaultProductValueRenderer implements ProductValueRenderer
 {
+    #[\Override]
     public function render(Environment $environment, AttributeInterface $attribute, ?ValueInterface $value, string $localeCode): ?string
     {
         /** @phpstan-ignore-next-line */
         return \twig_escape_filter($environment, $value);
     }
 
+    #[\Override]
     public function supportsAttributeType(string $attributeType): bool
     {
         return true;

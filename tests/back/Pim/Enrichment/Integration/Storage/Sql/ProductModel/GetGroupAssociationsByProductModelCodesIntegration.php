@@ -22,6 +22,7 @@ class GetGroupAssociationsByProductModelCodesIntegration extends TestCase
     /** @var EntityBuilder */
     private $entityBuilder;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -261,6 +262,7 @@ class GetGroupAssociationsByProductModelCodesIntegration extends TestCase
         }
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

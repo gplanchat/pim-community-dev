@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 final class Version_6_0_20210908142400_add_product_web_api_acl extends AbstractMigration implements ContainerAwareInterface
 {
-    private const ACLS = [
+    private const array ACLS = [
         'pim_api_product_list' => true,
         'pim_api_product_edit' => true,
         'pim_api_product_remove' => true,
@@ -24,6 +24,7 @@ final class Version_6_0_20210908142400_add_product_web_api_acl extends AbstractM
 
     private ?ContainerInterface $container;
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->disableMigrationWarning();
@@ -292,6 +293,7 @@ SQL
         $this->addSql('SELECT 1');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
@@ -300,7 +302,8 @@ SQL
     /**
      * {@inheritdoc}
      */
-    public function setContainer(ContainerInterface $container = null): void
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }

@@ -23,6 +23,7 @@ final class DbalSelectConnectionWithCredentialsByCodeQuery implements SelectConn
     {
     }
 
+    #[\Override]
     public function execute(string $code): ?ConnectionWithCredentials
     {
         $selectSQL = <<<SQL

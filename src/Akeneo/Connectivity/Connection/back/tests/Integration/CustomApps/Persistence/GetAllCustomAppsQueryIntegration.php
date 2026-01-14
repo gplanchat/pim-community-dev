@@ -24,6 +24,7 @@ class GetAllCustomAppsQueryIntegration extends TestCase
     private ?ConnectedAppLoader $connectedAppLoader;
     private ?GetAllCustomAppsQuery $getAllCustomAppsQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ class GetAllCustomAppsQueryIntegration extends TestCase
         $this->getAllCustomAppsQuery = $this->get(GetAllCustomAppsQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

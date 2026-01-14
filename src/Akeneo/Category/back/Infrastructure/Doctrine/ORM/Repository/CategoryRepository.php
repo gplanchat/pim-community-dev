@@ -23,6 +23,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoriesByIds(array $categoriesIds = [])
     {
         if (empty($categoriesIds)) {
@@ -48,6 +49,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoriesByCodes(array $categoriesCodes = [])
     {
         if (empty($categoriesCodes)) {
@@ -73,6 +75,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTreeFromParents(array $parentsIds)
     {
         if (\count($parentsIds) === 0) {
@@ -98,6 +101,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFilledTree(CategoryInterface $root, Collection $categories)
     {
         $parentsIds = [];
@@ -120,6 +124,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllChildrenIds(CategoryInterface $parent, $includeNode = false)
     {
         $categoryQb = $this->getAllChildrenQueryBuilder($parent, $includeNode);
@@ -135,6 +140,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllChildrenCodes(CategoryInterface $parent, $includeNode = false)
     {
         $categoryQb = $this->getAllChildrenQueryBuilder($parent, $includeNode);
@@ -156,6 +162,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoryIdsByCodes(array $categoriesCodes)
     {
         if (empty($categoriesCodes)) {
@@ -184,6 +191,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['code' => $code]);
@@ -192,6 +200,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -200,6 +209,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildrenByParentId($parentId)
     {
         $parent = $this->find($parentId);
@@ -210,6 +220,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildrenGrantedByParentId(CategoryInterface $parent, array $grantedCategoryIds = [])
     {
         return $this->getChildrenQueryBuilder($parent, true)
@@ -222,6 +233,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildrenTreeByParentId($parentId, $selectNodeId = false, array $grantedCategoryIds = [])
     {
         $children = [];
@@ -268,6 +280,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildTreeNode(array $nodes)
     {
         $vectorMap = [];
@@ -340,6 +353,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTrees()
     {
         return $this->getChildren(null, true, 'created', 'DESC');
@@ -348,6 +362,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGrantedTrees(array $grantedCategoryIds = [])
     {
         $qb = $this->getChildrenQueryBuilder(null, true, 'created', 'DESC');
@@ -363,6 +378,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isAncestor(CategoryInterface $parentNode, CategoryInterface $childNode)
     {
         $sameRoot = $parentNode->getRoot() === $childNode->getRoot();
@@ -376,6 +392,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOrderedAndSortedByTreeCategories()
     {
         $queryBuilder = $this->createQueryBuilder('c');
@@ -401,6 +418,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
      * persistAsNextSiblingOf is working with the magic method __call()
      * To pass the PHP checking, we have to do this trick.
      */
+    #[\Override]
     public function persistAsNextSiblingOf(CategoryInterface $node, CategoryInterface $sibling)
     {
         parent::persistAsNextSiblingOf($node, $sibling);
@@ -410,6 +428,7 @@ class CategoryRepository extends NestedTreeRepository implements IdentifiableObj
      * persistAsFirstChildOf is working with the magic method __call()
      * To pass the PHP checking, we have to do this trick.
      */
+    #[\Override]
     public function persistAsFirstChildOf(CategoryInterface $node, CategoryInterface $parent)
     {
         parent::persistAsFirstChildOf($node, $parent);

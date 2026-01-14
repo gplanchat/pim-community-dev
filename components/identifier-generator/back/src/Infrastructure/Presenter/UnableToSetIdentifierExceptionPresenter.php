@@ -23,6 +23,7 @@ final class UnableToSetIdentifierExceptionPresenter implements UnableToSetIdenti
     /**
      * @return array<array{'path': string|null, "message": string}>
      */
+    #[\Override]
     public function present(UnableToSetIdentifierException $exception): array
     {
         return \array_map(fn (Error $error): array => $this->presentError($error), $exception->getErrors()->toArray());

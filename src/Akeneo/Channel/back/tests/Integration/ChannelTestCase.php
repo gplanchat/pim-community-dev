@@ -13,6 +13,7 @@ use PHPUnit\Framework\Assert;
 
 class ChannelTestCase extends TestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

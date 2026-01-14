@@ -37,6 +37,7 @@ class IsMaintenanceModeEnabledTest extends TestCase
         $this->assertTrue($isMaintenanceModeEnabled);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

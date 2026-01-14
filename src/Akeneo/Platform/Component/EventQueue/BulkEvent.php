@@ -29,16 +29,19 @@ class BulkEvent implements BulkEventInterface
     /**
      * @return array<EventInterface>
      */
+    #[\Override]
     public function getEvents(): array
     {
         return $this->events;
     }
 
+    #[\Override]
     public function getTenantId(): ?string
     {
         return $this->tenantId;
     }
 
+    #[\Override]
     public function setTenantId(string $tenantId): void
     {
         $this->tenantId = $tenantId;

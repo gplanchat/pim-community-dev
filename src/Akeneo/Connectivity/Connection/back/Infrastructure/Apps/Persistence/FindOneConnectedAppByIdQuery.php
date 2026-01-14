@@ -21,6 +21,7 @@ final class FindOneConnectedAppByIdQuery implements FindOneConnectedAppByIdQuery
     {
     }
 
+    #[\Override]
     public function execute(string $appId): ?ConnectedApp
     {
         $selectQuery = <<<SQL

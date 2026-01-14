@@ -23,6 +23,7 @@ class SqlFindAllViewableLocalesForUser implements FindAllViewableLocalesForUser
     /**
      * @return Locale[]
      */
+    #[\Override]
     public function findAll(int $userId): array
     {
         $sql = <<<SQL

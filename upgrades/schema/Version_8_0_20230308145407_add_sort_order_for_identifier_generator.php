@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230308145407_add_sort_order_for_identifier_generator extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Adds a sort_order column for pim_catalog_identifier_generator table';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -29,6 +31,7 @@ final class Version_8_0_20230308145407_add_sort_order_for_identifier_generator e
 
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

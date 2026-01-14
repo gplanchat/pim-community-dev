@@ -23,7 +23,7 @@ use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
  */
 class AddDefaultPrivilegesSubscriber implements EventSubscriberInterface
 {
-    private const FIXTURE_ROLE_JOB_NAME = 'fixtures_user_role_csv';
+    private const string FIXTURE_ROLE_JOB_NAME = 'fixtures_user_role_csv';
 
     private ObjectRepository $roleRepository;
     private AclManager $aclManager;
@@ -34,6 +34,7 @@ class AddDefaultPrivilegesSubscriber implements EventSubscriberInterface
         $this->aclManager = $aclManager;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -30,6 +30,7 @@ class ConfigureMappingsSubscriber implements EventSubscriber
     /**
      * @return array
      */
+    #[\Override]
     public function getSubscribedEvents()
     {
         return [

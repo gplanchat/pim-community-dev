@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_8_0_20230126141000_add_mass_delete_attributes_jobs extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $sql = <<<SQL
@@ -41,6 +42,7 @@ final class Version_8_0_20230126141000_add_mass_delete_attributes_jobs extends A
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

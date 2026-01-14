@@ -21,7 +21,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class PopulateProductModelScoresAndKeyIndicatorsCommand extends Command
 {
-    private const BULK_SIZE = 1000;
+    private const int BULK_SIZE = 1000;
     protected static $defaultName = 'pim:data-quality-insights:populate-product-models-scores-and-ki';
 
     public function __construct(
@@ -32,11 +32,13 @@ class PopulateProductModelScoresAndKeyIndicatorsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function configure(): void
     {
         $this->setDescription('Populate scores and key indicators for existing product models');
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$this->commandCanBeStarted()) {

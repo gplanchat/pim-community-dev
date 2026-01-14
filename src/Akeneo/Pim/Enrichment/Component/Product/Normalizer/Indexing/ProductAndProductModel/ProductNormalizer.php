@@ -21,9 +21,9 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
  */
 class ProductNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
 {
-    private const FIELD_ATTRIBUTES_OF_ANCESTORS = 'attributes_of_ancestors';
-    private const FIELD_DOCUMENT_TYPE = 'document_type';
-    private const FIELD_ATTRIBUTES_IN_LEVEL = 'attributes_for_this_level';
+    private const string FIELD_ATTRIBUTES_OF_ANCESTORS = 'attributes_of_ancestors';
+    private const string FIELD_DOCUMENT_TYPE = 'document_type';
+    private const string FIELD_ATTRIBUTES_IN_LEVEL = 'attributes_for_this_level';
 
     /** @var NormalizerInterface */
     private $propertiesNormalizer;
@@ -46,6 +46,7 @@ class ProductNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($product, $format = null, array $context = [])
     {
         $data = $this->propertiesNormalizer->normalize($product, $format, $context);
@@ -60,12 +61,14 @@ class ProductNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return ValueCollectionNormalizer::INDEXING_FORMAT_PRODUCT_AND_MODEL_INDEX === $format &&
             $data instanceof ProductInterface;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

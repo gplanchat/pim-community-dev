@@ -48,6 +48,7 @@ class GetCategoryTemplateByCategoryTreeSqlIntegration extends CategoryTestCase
         $this->assertNull($retrievedTemplate);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

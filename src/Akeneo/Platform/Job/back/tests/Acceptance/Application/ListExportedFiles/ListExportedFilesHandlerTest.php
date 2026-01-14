@@ -19,6 +19,7 @@ class ListExportedFilesHandlerTest extends TestCase
 {
     const JOB_INSTANCE_CODE = 'csv_product_export';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -101,6 +102,7 @@ class ListExportedFilesHandlerTest extends TestCase
         $this->get('akeneo_elasticsearch.client.product_and_product_model')->refreshIndex();
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

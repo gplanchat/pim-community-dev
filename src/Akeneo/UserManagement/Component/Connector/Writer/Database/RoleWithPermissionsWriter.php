@@ -28,6 +28,7 @@ final class RoleWithPermissionsWriter implements ItemWriterInterface, StepExecut
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $rolesWithPermissions): void
     {
         Assert::allIsInstanceOf($rolesWithPermissions, RoleWithPermissions::class);
@@ -39,6 +40,7 @@ final class RoleWithPermissionsWriter implements ItemWriterInterface, StepExecut
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;

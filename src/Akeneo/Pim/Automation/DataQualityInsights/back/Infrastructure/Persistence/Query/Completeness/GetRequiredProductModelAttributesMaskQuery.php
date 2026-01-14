@@ -24,6 +24,7 @@ final class GetRequiredProductModelAttributesMaskQuery implements GetProductMode
     ) {
     }
 
+    #[\Override]
     public function execute(ProductModelId $productModelId): ?RequiredAttributesMask
     {
         $sql = "

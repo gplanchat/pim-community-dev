@@ -30,6 +30,7 @@ class ProductDomainErrorNormalizer implements NormalizerInterface, CacheableSupp
      * @param string $format
      * @param array $context
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = []): array
     {
         $data = [
@@ -65,11 +66,13 @@ class ProductDomainErrorNormalizer implements NormalizerInterface, CacheableSupp
         return $data;
     }
 
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof DomainErrorInterface;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

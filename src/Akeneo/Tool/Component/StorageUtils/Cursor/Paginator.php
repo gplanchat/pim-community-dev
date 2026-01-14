@@ -40,6 +40,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPageSize()
     {
         return $this->pageSize;
@@ -48,6 +49,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
@@ -58,6 +60,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPageNumber()
     {
         return $this->pageNumber;
@@ -66,6 +69,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function current(): mixed
     {
         return $this->pageData;
@@ -74,6 +78,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function next(): void
     {
         if ($this->valid()) {
@@ -87,6 +92,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function key(): ?int
     {
         if ($this->valid()) {
@@ -99,6 +105,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function valid(): bool
     {
         return $this->pageNumber < $this->count();
@@ -107,6 +114,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function rewind(): void
     {
         $this->cursor->rewind();
@@ -117,6 +125,7 @@ class Paginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(): int
     {
         return intval(ceil($this->cursor->count() / $this->pageSize));

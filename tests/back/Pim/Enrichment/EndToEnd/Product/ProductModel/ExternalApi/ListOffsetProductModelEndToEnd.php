@@ -118,7 +118,7 @@ JSON;
         $expected = <<<JSON
 {
     "code":422,
-    "message":"${message}",
+    "message":"{$message}",
     "_links":{
         "documentation":{
             "href": "http:\/\/api.akeneo.com\/documentation\/pagination.html#the-search-after-method"
@@ -140,8 +140,8 @@ JSON;
         $expected = <<<JSON
 {
     "_links": {
-        "self" : {"href" : "http://localhost/api/rest/v1/product-models?page=1&with_count=true&pagination_type=page&limit=10&search=${encodedSearch}"},
-        "first" : {"href" : "http://localhost/api/rest/v1/product-models?page=1&with_count=true&pagination_type=page&limit=10&search=${encodedSearch}"}
+        "self" : {"href" : "http://localhost/api/rest/v1/product-models?page=1&with_count=true&pagination_type=page&limit=10&search={$encodedSearch}"},
+        "first" : {"href" : "http://localhost/api/rest/v1/product-models?page=1&with_count=true&pagination_type=page&limit=10&search={$encodedSearch}"}
     },
     "current_page" : 1,
     "items_count"  : 0,
@@ -168,8 +168,8 @@ JSON;
         $expected = <<<JSON
 {
     "_links": {
-        "self" : {"href" : "http://localhost/api/rest/v1/product-models?page=1&with_count=true&pagination_type=page&limit=10&search=${encodedSearch}"},
-        "first" : {"href" : "http://localhost/api/rest/v1/product-models?page=1&with_count=true&pagination_type=page&limit=10&search=${encodedSearch}"}
+        "self" : {"href" : "http://localhost/api/rest/v1/product-models?page=1&with_count=true&pagination_type=page&limit=10&search={$encodedSearch}"},
+        "first" : {"href" : "http://localhost/api/rest/v1/product-models?page=1&with_count=true&pagination_type=page&limit=10&search={$encodedSearch}"}
     },
     "current_page" : 1,
     "items_count"  : 6,

@@ -102,6 +102,7 @@ class ComputeDataRelatedToFamilyRootProductModelsTasklet implements TaskletInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -110,6 +111,7 @@ class ComputeDataRelatedToFamilyRootProductModelsTasklet implements TaskletInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute()
     {
         $this->initialize();
@@ -149,6 +151,7 @@ class ComputeDataRelatedToFamilyRootProductModelsTasklet implements TaskletInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize()
     {
         $this->cacheClearer->clear();
@@ -221,6 +224,7 @@ class ComputeDataRelatedToFamilyRootProductModelsTasklet implements TaskletInter
         return $pqb->execute();
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;

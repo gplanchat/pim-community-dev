@@ -16,12 +16,12 @@ use Doctrine\DBAL\Types\Types;
  * @copyright 2018 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class FetchProductModelRowsFromCodes implements FetchProductModelRowsFromCodesInterface
+final readonly class FetchProductModelRowsFromCodes implements FetchProductModelRowsFromCodesInterface
 {
     public function __construct(
-        private readonly Connection $connection,
-        private readonly WriteValueCollectionFactory $valueCollectionFactory,
-        private readonly ProductModelImagesFromCodes $productModelImagesFromCodes
+        private Connection $connection,
+        private WriteValueCollectionFactory $valueCollectionFactory,
+        private ProductModelImagesFromCodes $productModelImagesFromCodes
     ) {
     }
 
@@ -33,6 +33,7 @@ final class FetchProductModelRowsFromCodes implements FetchProductModelRowsFromC
      *
      * @return ReadModel\Row[]
      */
+    #[\Override]
     public function __invoke(array $codes, array $attributeCodes, string $channelCode, string $localeCode): array
     {
         if (empty($codes)) {

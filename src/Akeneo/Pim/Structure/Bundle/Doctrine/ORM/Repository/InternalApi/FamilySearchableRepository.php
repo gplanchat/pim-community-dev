@@ -37,6 +37,7 @@ class FamilySearchableRepository implements SearchableRepositoryInterface
      *
      * @return FamilyInterface[]
      */
+    #[\Override]
     public function findBySearch($search = null, array $options = [])
     {
         $qb = $this->entityManager->createQueryBuilder()->select('f')->from($this->entityName, 'f');

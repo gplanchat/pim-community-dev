@@ -18,7 +18,7 @@ use Doctrine\DBAL\Connection;
  */
 class SearchJobExecution implements SearchJobExecutionInterface
 {
-    private const SEARCH_PART_PARAM_SUFFIX = 'search_part';
+    private const string SEARCH_PART_PARAM_SUFFIX = 'search_part';
 
     public function __construct(
         private Connection $connection,
@@ -26,6 +26,7 @@ class SearchJobExecution implements SearchJobExecutionInterface
     ) {
     }
 
+    #[\Override]
     public function search(SearchJobExecutionQuery $query): array
     {
         $sql = $this->buildSqlQuery($query);
@@ -33,6 +34,7 @@ class SearchJobExecution implements SearchJobExecutionInterface
         return $this->fetchJobExecutionRows($sql, $query);
     }
 
+    #[\Override]
     public function count(SearchJobExecutionQuery $query): int
     {
         $sql = <<<SQL

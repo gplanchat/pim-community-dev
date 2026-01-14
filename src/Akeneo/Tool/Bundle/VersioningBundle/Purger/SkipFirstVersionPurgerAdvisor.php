@@ -24,6 +24,7 @@ class SkipFirstVersionPurgerAdvisor implements VersionPurgerAdvisorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(PurgeableVersionList $version)
     {
         return true;
@@ -32,6 +33,7 @@ class SkipFirstVersionPurgerAdvisor implements VersionPurgerAdvisorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isPurgeable(PurgeableVersionList $versionList): PurgeableVersionList
     {
         $firstVersionIds = $this->getFirstVersionsByIdsQuery->execute($versionList->getVersionIds());

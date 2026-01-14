@@ -16,6 +16,7 @@ class OSDataCollector implements DataCollectorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function collect()
     {
         return [

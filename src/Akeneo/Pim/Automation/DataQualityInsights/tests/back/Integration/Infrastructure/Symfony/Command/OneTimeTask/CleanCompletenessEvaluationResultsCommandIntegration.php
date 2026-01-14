@@ -21,8 +21,9 @@ final class CleanCompletenessEvaluationResultsCommandIntegration extends DataQua
 {
     use OneTimeTaskCommandTrait;
 
-    private const COMMAND_NAME = 'pim:data-quality-insights:clean-completeness-evaluation-results';
+    private const string COMMAND_NAME = 'pim:data-quality-insights:clean-completeness-evaluation-results';
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

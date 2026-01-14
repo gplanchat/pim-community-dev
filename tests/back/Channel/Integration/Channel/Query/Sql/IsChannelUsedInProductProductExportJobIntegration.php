@@ -103,6 +103,7 @@ class IsChannelUsedInProductProductExportJobIntegration extends TestCase
         $this->get('akeneo_batch.saver.job_instance')->save($job);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

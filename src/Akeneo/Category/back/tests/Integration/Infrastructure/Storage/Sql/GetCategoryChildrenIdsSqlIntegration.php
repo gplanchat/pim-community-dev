@@ -13,6 +13,7 @@ use Akeneo\Category\back\tests\Integration\Helper\CategoryTestCase;
  */
 class GetCategoryChildrenIdsSqlIntegration extends CategoryTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

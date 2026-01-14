@@ -11,10 +11,11 @@ final class Version_8_0_20230131125133_create_identifier_generator_family_nomenc
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230131125133_create_identifier_generator_family_nomenclature_tables';
+    private const string MIGRATION_LABEL = '_8_0_20230131125133_create_identifier_generator_family_nomenclature_tables';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -32,6 +33,7 @@ final class Version_8_0_20230131125133_create_identifier_generator_family_nomenc
         Assert::assertTrue($this->tablesExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

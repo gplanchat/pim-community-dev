@@ -50,6 +50,7 @@ class AssociationType implements ArrayConverterInterface
      *      'is_quantified' => false,
      * ]
      */
+    #[\Override]
     public function convert(array $item, array $options = [])
     {
         $this->fieldChecker->checkFieldsPresence($item, ['code']);

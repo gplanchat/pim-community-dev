@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230215115800_add_clean_category_template_enriched_values_job_instance extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Adds the clean_category_template_and_enriched_values job instance';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         if (!$this->jobInstanceExists('clean_category_template_and_enriched_values')) {
@@ -40,6 +42,7 @@ final class Version_8_0_20230215115800_add_clean_category_template_enriched_valu
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

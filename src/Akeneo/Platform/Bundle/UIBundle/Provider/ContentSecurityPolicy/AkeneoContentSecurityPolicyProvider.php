@@ -6,12 +6,13 @@ namespace Akeneo\Platform\Bundle\UIBundle\Provider\ContentSecurityPolicy;
 
 use Akeneo\Platform\Bundle\UIBundle\EventListener\ScriptNonceGenerator;
 
-final class AkeneoContentSecurityPolicyProvider implements ContentSecurityPolicyProviderInterface
+final readonly class AkeneoContentSecurityPolicyProvider implements ContentSecurityPolicyProviderInterface
 {
-    public function __construct(private readonly ScriptNonceGenerator $nonceGenerator)
+    public function __construct(private ScriptNonceGenerator $nonceGenerator)
     {
     }
 
+    #[\Override]
     public function getContentSecurityPolicy(): array
     {
         $generatedNonce = $this->nonceGenerator->getGeneratedNonce();

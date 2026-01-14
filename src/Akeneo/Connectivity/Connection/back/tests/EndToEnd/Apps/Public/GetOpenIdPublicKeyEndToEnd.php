@@ -25,6 +25,7 @@ class GetOpenIdPublicKeyEndToEnd extends WebTestCase
     private PimConfigurationLoader $pimConfigurationLoader;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ class GetOpenIdPublicKeyEndToEnd extends WebTestCase
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -18,6 +18,7 @@ final class TransformCompletenessResultDataIds implements TransformResultDataIds
     ) {
     }
 
+    #[\Override]
     public function transformToCodes(array $resultData): array
     {
         $dataByCodes = [];

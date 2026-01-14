@@ -47,6 +47,7 @@ class CheckRequirementsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -56,6 +57,7 @@ class CheckRequirementsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         foreach ($this->configurationRegistry->all() as $configuration) {

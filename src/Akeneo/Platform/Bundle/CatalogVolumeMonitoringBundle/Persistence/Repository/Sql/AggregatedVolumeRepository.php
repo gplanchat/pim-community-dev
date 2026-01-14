@@ -30,6 +30,7 @@ class AggregatedVolumeRepository implements AggregatedVolumeRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function add(AggregatedVolume $aggregatedVolume): void
     {
         $sql = <<<SQL

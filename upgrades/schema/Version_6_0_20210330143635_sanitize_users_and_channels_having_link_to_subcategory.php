@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210330143635_sanitize_users_and_channels_having_link_to_subcategory extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         // Sanitize users having link to subcategory
@@ -42,6 +43,7 @@ final class Version_6_0_20210330143635_sanitize_users_and_channels_having_link_t
         SQL);
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

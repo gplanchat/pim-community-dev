@@ -32,6 +32,7 @@ class TextAreaFilter extends AbstractAttributeFilter implements AttributeFilterI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeFilter(
         AttributeInterface $attribute,
         $operator,

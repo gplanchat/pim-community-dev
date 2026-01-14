@@ -24,6 +24,7 @@ final class ReferenceEntityPropertyShouldBeValidValidator extends ConstraintVali
     ) {
     }
 
+    #[\Override]
     public function validate($property, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, ReferenceEntityPropertyShouldBeValid::class);

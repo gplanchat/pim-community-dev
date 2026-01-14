@@ -250,6 +250,7 @@ class SqlGetCompletenessProductMasksIntegration extends TestCase
         $this->assertSameCompletenessProductMasks($expected, [$result]);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalSqlCatalog();

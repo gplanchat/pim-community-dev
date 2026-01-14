@@ -39,6 +39,7 @@ class CategoryFilter extends AbstractFieldFilter implements FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter($field, $operator, $value, $locale = null, $channel = null, $options = [])
     {
         if (null === $this->searchQueryBuilder) {

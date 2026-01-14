@@ -8,6 +8,7 @@ use Akeneo\Tool\Component\Analytics\IsDemoCatalogQuery;
 
 class IsDemoCatalogInMemory implements IsDemoCatalogQuery
 {
+    #[\Override]
     public function fetch(): bool
     {
         return true;

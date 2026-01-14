@@ -513,6 +513,7 @@ class AssociatedProductDatasourceSpec extends ObjectBehavior
         $results['data'][1]->getValue('id')->shouldReturn('product-0cc93a87-0b93-4246-939a-9d9d7a84302d');
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

@@ -26,6 +26,7 @@ class AddCategoriesApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $addCategories, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($addCategories, AddCategories::class);
@@ -41,6 +42,7 @@ class AddCategoriesApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [AddCategories::class];

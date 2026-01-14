@@ -25,6 +25,7 @@ class InMemoryUniqueEntityValidator extends ConstraintValidator
         $this->repositories = $repositories;
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof UniqueEntity) {

@@ -16,6 +16,7 @@ class SqlGetJobExecutionStatus implements GetJobExecutionStatusInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function getByJobExecutionId(int $jobExecutionId): ?BatchStatus
     {
         $sql = <<<SQL

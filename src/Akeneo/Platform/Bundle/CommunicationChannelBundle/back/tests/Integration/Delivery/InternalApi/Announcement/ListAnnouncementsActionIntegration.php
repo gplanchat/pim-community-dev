@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ListAnnouncementsActionIntegration extends WebTestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setup();
@@ -54,6 +55,7 @@ class ListAnnouncementsActionIntegration extends WebTestCase
         $this->assertFirstItem($searchAfter, $expectedAnnouncements['data'], $content['items']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

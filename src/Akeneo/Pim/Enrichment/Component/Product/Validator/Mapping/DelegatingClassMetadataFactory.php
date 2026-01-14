@@ -30,6 +30,7 @@ class DelegatingClassMetadataFactory implements MetadataFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMetadataFor($value)
     {
         foreach ($this->factories as $factory) {
@@ -44,6 +45,7 @@ class DelegatingClassMetadataFactory implements MetadataFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasMetadataFor($value)
     {
         foreach ($this->factories as $factory) {

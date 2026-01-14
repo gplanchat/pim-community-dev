@@ -44,6 +44,7 @@ final class ComputeEntityRawValuesSubscriber implements EventSubscriberInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [StorageEvents::PRE_SAVE => 'computeRawValues'];

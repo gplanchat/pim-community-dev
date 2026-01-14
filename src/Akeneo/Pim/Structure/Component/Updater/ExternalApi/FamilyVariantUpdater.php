@@ -35,6 +35,7 @@ class FamilyVariantUpdater implements ObjectUpdaterInterface
      *
      * @throws PropertyException
      */
+    #[\Override]
     public function update($familyVariant, array $data, array $options = []): ObjectUpdaterInterface
     {
         if (isset($data['family'])) {

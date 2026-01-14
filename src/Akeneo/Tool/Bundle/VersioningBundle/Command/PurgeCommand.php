@@ -27,7 +27,7 @@ class PurgeCommand extends Command
     protected static $defaultName = 'pim:versioning:purge';
     protected static $defaultDescription = 'Purge versions of entities, except first and last versions.';
 
-    private const JOB_CODE = 'versioning_purge';
+    private const string JOB_CODE = 'versioning_purge';
 
     const DEFAULT_MORE_THAN_DAYS = 90;
 
@@ -43,6 +43,7 @@ class PurgeCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -82,6 +83,7 @@ class PurgeCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function interact(InputInterface $input, OutputInterface $output)
     {
         if (null !== $input->getOption('more-than-days') && null !== $input->getOption('less-than-days')) {
@@ -134,6 +136,7 @@ class PurgeCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->logger->pushHandler(new StreamHandler('php://stdout'));

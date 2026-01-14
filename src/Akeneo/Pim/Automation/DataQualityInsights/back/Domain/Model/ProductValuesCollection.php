@@ -85,6 +85,7 @@ final class ProductValuesCollection implements \IteratorAggregate
         }
     }
 
+    #[\Override]
     public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->productValuesByAttribute);

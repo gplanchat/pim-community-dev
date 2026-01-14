@@ -24,6 +24,7 @@ abstract class AbstractProcessor implements StepExecutionAwareInterface, ItemPro
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -34,6 +35,7 @@ abstract class AbstractProcessor implements StepExecutionAwareInterface, ItemPro
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     abstract public function process($item);
 
     /**

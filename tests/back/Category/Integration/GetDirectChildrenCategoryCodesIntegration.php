@@ -17,6 +17,7 @@ class GetDirectChildrenCategoryCodesIntegration extends TestCase
 {
     private GetDirectChildrenCategoryCodes $getDirectChildrenCategoryCodes;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -106,6 +107,7 @@ class GetDirectChildrenCategoryCodesIntegration extends TestCase
         Assert::assertEquals($position, $children[$categoryCode]['row_num']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

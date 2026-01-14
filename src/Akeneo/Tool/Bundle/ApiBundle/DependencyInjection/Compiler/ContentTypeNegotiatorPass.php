@@ -21,6 +21,7 @@ class ContentTypeNegotiatorPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition('pim_api.negotiator.content_type_negotiator')) {
@@ -59,7 +60,7 @@ class ContentTypeNegotiatorPass implements CompilerPassInterface
      *
      * @return Reference
      */
-    private function createRequestMatcher(ContainerBuilder $container, $path = null, $host = null, array $methods = null)
+    private function createRequestMatcher(ContainerBuilder $container, $path = null, $host = null, ?array $methods = null)
     {
         $arguments = [$path, $host, $methods];
         $serialized = serialize($arguments);

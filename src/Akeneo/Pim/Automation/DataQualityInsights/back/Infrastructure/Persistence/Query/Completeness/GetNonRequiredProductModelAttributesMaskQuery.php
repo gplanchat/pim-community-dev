@@ -24,6 +24,7 @@ class GetNonRequiredProductModelAttributesMaskQuery implements GetProductModelAt
     ) {
     }
 
+    #[\Override]
     public function execute(ProductModelId $productModelId): ?RequiredAttributesMask
     {
         $sql = "

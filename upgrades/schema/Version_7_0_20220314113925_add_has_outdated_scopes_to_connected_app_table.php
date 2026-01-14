@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220314113925_add_has_outdated_scopes_to_connected_app_table extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $table = $schema->getTable('akeneo_connectivity_connected_app');
@@ -20,6 +21,7 @@ final class Version_7_0_20220314113925_add_has_outdated_scopes_to_connected_app_
         $this->addSql("ALTER TABLE akeneo_connectivity_connected_app ADD has_outdated_scopes TINYINT DEFAULT 0 NOT NULL");
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

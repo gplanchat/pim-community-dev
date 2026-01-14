@@ -7,6 +7,7 @@ use Akeneo\Category\back\tests\Integration\Helper\CategoryTestCase;
 
 class GetEnrichedValuesPerCategoryCodeSqlIntegration extends CategoryTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -42,6 +42,7 @@ class JsonSerializer implements SerializerInterface
      * Expected header keys:
      * - `class` (string) - The FQCN of the Message object to instanciate
      */
+    #[\Override]
     public function decode(array $encodedEnvelope): Envelope
     {
         if (empty($encodedEnvelope['body']) || empty($encodedEnvelope['headers'])) {
@@ -88,6 +89,7 @@ class JsonSerializer implements SerializerInterface
         return new Envelope($message, $stamps);
     }
 
+    #[\Override]
     public function encode(Envelope $envelope): array
     {
         $body = $this->serializer->serialize($envelope->getMessage(), 'json');

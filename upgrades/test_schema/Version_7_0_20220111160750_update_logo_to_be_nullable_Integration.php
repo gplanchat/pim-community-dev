@@ -13,7 +13,7 @@ class Version_7_0_20220111160750_update_logo_to_be_nullable_Integration extends 
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220111160750_update_logo_to_be_nullable';
+    private const string MIGRATION_LABEL = '_7_0_20220111160750_update_logo_to_be_nullable';
 
     public function test_it_modify_columns_and_keep_the_data(): void
     {
@@ -29,6 +29,7 @@ SQL;
         $this->assertAuthorColumnIsNullable(true);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

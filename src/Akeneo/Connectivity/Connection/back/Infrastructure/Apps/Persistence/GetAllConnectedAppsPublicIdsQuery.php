@@ -20,6 +20,7 @@ final class GetAllConnectedAppsPublicIdsQuery implements GetAllConnectedAppsPubl
     /**
      * @return string[]
      */
+    #[\Override]
     public function execute(): array
     {
         $query = <<<SQL

@@ -34,6 +34,7 @@ class CopierRegistry implements CopierRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(CopierInterface $copier)
     {
         if ($copier instanceof FieldCopierInterface) {
@@ -49,6 +50,7 @@ class CopierRegistry implements CopierRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCopier($fromProperty, $toProperty)
     {
         $fromAttribute = $this->getAttribute($fromProperty);
@@ -65,6 +67,7 @@ class CopierRegistry implements CopierRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFieldCopier($fromField, $toField)
     {
         foreach ($this->fieldCopiers as $copier) {
@@ -79,6 +82,7 @@ class CopierRegistry implements CopierRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeCopier(AttributeInterface $fromAttribute, AttributeInterface $toAttribute)
     {
         foreach ($this->attributeCopiers as $copier) {

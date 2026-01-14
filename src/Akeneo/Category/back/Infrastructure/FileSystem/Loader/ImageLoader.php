@@ -27,6 +27,7 @@ class ImageLoader implements LoaderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($path)
     {
         if (!$this->filesystem->fileExists($path)) {

@@ -20,6 +20,7 @@ class CategoryQueryHandler implements CategoryQueryInterface
     ) {
     }
 
+    #[\Override]
     public function byId(int $categoryId): Category
     {
         $category = $this->getCategory->byId($categoryId);
@@ -40,6 +41,7 @@ class CategoryQueryHandler implements CategoryQueryInterface
         );
     }
 
+    #[\Override]
     public function byCode(string $categoryCode): Category
     {
         $category = $this->getCategory->byCode($categoryCode);
@@ -65,6 +67,7 @@ class CategoryQueryHandler implements CategoryQueryInterface
      *
      * @return \Generator<Category>
      */
+    #[\Override]
     public function byCodes(array $categoryCodes): \Generator
     {
         $categories = $this->getCategory->byCodes(array_values($categoryCodes));
@@ -87,6 +90,7 @@ class CategoryQueryHandler implements CategoryQueryInterface
      *
      * @return \Generator<Category>
      */
+    #[\Override]
     public function byIds(array $categoryIds): \Generator
     {
         $categories = $this->getCategory->byIds(array_values($categoryIds));

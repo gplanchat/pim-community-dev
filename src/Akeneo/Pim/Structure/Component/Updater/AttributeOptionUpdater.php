@@ -49,6 +49,7 @@ class AttributeOptionUpdater implements ObjectUpdaterInterface
      *     }
      * }
      */
+    #[\Override]
     public function update($attributeOption, array $data, array $options = [])
     {
         if (!$attributeOption instanceof AttributeOptionInterface) {

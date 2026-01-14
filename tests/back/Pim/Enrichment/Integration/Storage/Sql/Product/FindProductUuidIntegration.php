@@ -29,6 +29,7 @@ class FindProductUuidIntegration extends TestCase
         Assert::assertNull($this->findProductUuid->fromIdentifier('non_existing_product'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -38,6 +39,7 @@ class FindProductUuidIntegration extends TestCase
         $this->product = $productFoo;
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

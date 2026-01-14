@@ -27,6 +27,7 @@ class CreateMeasurementFamilyTest extends AcceptanceTestCase
     private InMemoryIsThereAtLeastOneAttributeConfiguredWithMeasurementFamilyStub $isThereAtLeastOneAttributeConfiguredWithMeasurementFamily;
     private EventDispatcherMock $eventDispatcherMock;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

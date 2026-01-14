@@ -26,6 +26,7 @@ class GetCategoryTemplateByCategoryTreeSql implements GetCategoryTemplateByCateg
      * @throws \Doctrine\DBAL\Exception
      * @throws \JsonException
      */
+    #[\Override]
     public function __invoke(CategoryId $categoryTreeId): ?Template
     {
         $query = <<<SQL

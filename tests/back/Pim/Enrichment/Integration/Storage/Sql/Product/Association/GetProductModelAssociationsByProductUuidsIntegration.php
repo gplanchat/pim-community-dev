@@ -23,6 +23,7 @@ class GetProductModelAssociationsByProductUuidsIntegration extends TestCase
     /** @var EntityBuilder */
     private $entityBuilder;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -268,6 +269,7 @@ class GetProductModelAssociationsByProductUuidsIntegration extends TestCase
         $this->get('pim_catalog.saver.family')->saveAll($families);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

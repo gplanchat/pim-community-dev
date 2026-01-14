@@ -18,6 +18,7 @@ final class IsAttributeCodeBlacklisted implements IsAttributeCodeBlacklistedInte
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(string $attributeCode): bool
     {
         $sql = <<<SQL

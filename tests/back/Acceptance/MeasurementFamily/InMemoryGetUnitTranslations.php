@@ -16,6 +16,7 @@ class InMemoryGetUnitTranslations implements GetUnitTranslations
 {
     private static array $unitTranslations = [];
 
+    #[\Override]
     public function byMeasurementFamilyCodeAndLocale(string $measurementFamilyCode, string $localeCode): array
     {
         $key = static::buildKey($measurementFamilyCode, $localeCode);

@@ -284,6 +284,7 @@ final class GetAvailableConditionsControllerEndToEnd extends ControllerEndToEndT
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

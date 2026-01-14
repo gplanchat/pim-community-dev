@@ -17,6 +17,7 @@ use PHPUnit\Framework\Assert;
  */
 class GetEnrichedValuesByTemplateUuidSqlIntegration extends CategoryTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

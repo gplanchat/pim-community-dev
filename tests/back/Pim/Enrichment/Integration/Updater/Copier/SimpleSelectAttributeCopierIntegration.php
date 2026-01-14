@@ -47,6 +47,7 @@ class SimpleSelectAttributeCopierIntegration extends AbstractCopierTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

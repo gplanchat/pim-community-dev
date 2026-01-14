@@ -15,11 +15,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230511113912_fix_oro_access_tables_columns_length extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Fix label and role column length to 255 in oro_access_role table and name column length to 255 in oro_access_group table';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(<<<SQL
@@ -49,6 +51,7 @@ final class Version_8_0_20230511113912_fix_oro_access_tables_columns_length exte
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

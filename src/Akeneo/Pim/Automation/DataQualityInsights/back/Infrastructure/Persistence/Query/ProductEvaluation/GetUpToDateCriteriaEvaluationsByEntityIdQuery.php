@@ -21,6 +21,7 @@ final class GetUpToDateCriteriaEvaluationsByEntityIdQuery implements GetCriteria
     ) {
     }
 
+    #[\Override]
     public function execute(ProductEntityIdInterface $entityId): Read\CriterionEvaluationCollection
     {
         if (false === $this->hasUpToDateEvaluationQuery->forEntityId($entityId)) {

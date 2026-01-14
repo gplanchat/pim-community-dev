@@ -18,6 +18,7 @@ class DateTimeSorterWithDifferentTimezoneIntegration extends AbstractProductQuer
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -60,6 +61,7 @@ class DateTimeSorterWithDifferentTimezoneIntegration extends AbstractProductQuer
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function tearDownAfterClass(): void
     {
         parent::tearDownAfterClass();

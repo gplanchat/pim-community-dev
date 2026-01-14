@@ -16,9 +16,10 @@ use Webmozart\Assert\Assert;
  */
 class GetValuesAndPropertiesFromProductUuidsIntegration extends TestCase
 {
-    private const CREATED = '2012-10-05 22:49:48';
-    private const UPDATED = '2012-10-28 23:50:49';
+    private const string CREATED = '2012-10-05 22:49:48';
+    private const string UPDATED = '2012-10-28 23:50:49';
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -197,6 +198,7 @@ class GetValuesAndPropertiesFromProductUuidsIntegration extends TestCase
         return $this->get('Akeneo\Pim\Enrichment\Bundle\Storage\Sql\Product\GetValuesAndPropertiesFromProductUuids');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

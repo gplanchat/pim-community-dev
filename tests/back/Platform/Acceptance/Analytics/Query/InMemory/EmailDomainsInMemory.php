@@ -8,6 +8,7 @@ use Akeneo\Tool\Component\Analytics\EmailDomainsQuery;
 
 class EmailDomainsInMemory implements EmailDomainsQuery
 {
+    #[\Override]
     public function fetch(): string
     {
         return "example.com,example2.com";

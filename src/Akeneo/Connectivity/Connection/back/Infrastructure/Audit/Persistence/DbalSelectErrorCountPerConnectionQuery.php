@@ -23,6 +23,7 @@ class DbalSelectErrorCountPerConnectionQuery implements SelectErrorCountPerConne
     {
     }
 
+    #[\Override]
     public function execute(
         ErrorType $errorType,
         \DateTimeImmutable $fromDateTime,

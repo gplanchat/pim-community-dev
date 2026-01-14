@@ -14,14 +14,15 @@ use Akeneo\Platform\Job\ServiceApi\JobInstance\DeleteJobInstance\CannotDeleteJob
 use Akeneo\Platform\Job\ServiceApi\JobInstance\DeleteJobInstance\DeleteJobInstanceCommand;
 use Akeneo\Platform\Job\ServiceApi\JobInstance\DeleteJobInstance\DeleteJobInstanceHandlerInterface;
 
-final class DeleteJobInstanceHandler implements DeleteJobInstanceHandlerInterface
+final readonly class DeleteJobInstanceHandler implements DeleteJobInstanceHandlerInterface
 {
     public function __construct(
-        private readonly DeleteJobInstanceInterface $deleteJobInstance,
-        private readonly SecurityFacadeInterface $securityFacade,
+        private DeleteJobInstanceInterface $deleteJobInstance,
+        private SecurityFacadeInterface $securityFacade,
     ) {
     }
 
+    #[\Override]
     public function handle(DeleteJobInstanceCommand $command): void
     {
         if (!$this->securityFacade->isGranted('pim_importexport_export_profile_remove')) {

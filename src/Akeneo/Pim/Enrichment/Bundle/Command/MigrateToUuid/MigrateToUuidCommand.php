@@ -21,8 +21,8 @@ class MigrateToUuidCommand extends Command
 
     protected static $defaultName = 'pim:product:migrate-to-uuid';
 
-    private const DQI_JOB_NAME = 'data_quality_insights_evaluations';
-    private const WAIT_TIME_IN_SECONDS = 30;
+    private const string DQI_JOB_NAME = 'data_quality_insights_evaluations';
+    private const int WAIT_TIME_IN_SECONDS = 30;
 
     /** @var array<MigrateToUuidStep> */
     private array $steps;
@@ -56,6 +56,7 @@ class MigrateToUuidCommand extends Command
         ];
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->setDescription('Migrate databases to product uuids');
@@ -65,6 +66,7 @@ class MigrateToUuidCommand extends Command
         $this->addOption('lock-tables', 'a', InputOption::VALUE_NEGATABLE, 'Locks table during migration. This option speeds up migration.', false);
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$this->columnExists('pim_catalog_category_product', 'product_id')) {

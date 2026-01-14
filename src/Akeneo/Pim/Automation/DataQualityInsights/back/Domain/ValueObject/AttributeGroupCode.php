@@ -22,6 +22,7 @@ final class AttributeGroupCode
         $this->code = $code;
     }
 
+    #[\Override]
     public function __toString()
     {
         return $this->code;

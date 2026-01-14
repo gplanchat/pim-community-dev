@@ -36,6 +36,7 @@ final class IsAttributeCodeBlacklistedIntegration extends TestCase
         $this->assertTrue($result);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

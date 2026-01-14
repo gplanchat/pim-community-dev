@@ -15,11 +15,12 @@ final class Version_7_0_20220914143410_update_job_instance_parameter_user_to_not
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220914143410_update_job_instance_parameter_user_to_notify_for_quick_export';
+    private const string MIGRATION_LABEL = '_7_0_20220914143410_update_job_instance_parameter_user_to_notify_for_quick_export';
 
     private Connection $connection;
     private JobInstanceRepository $jobInstanceRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -55,6 +56,7 @@ final class Version_7_0_20220914143410_update_job_instance_parameter_user_to_not
         $this->assertTrue($this->jobIsMigrated('another_quick_export', []));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

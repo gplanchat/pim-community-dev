@@ -59,6 +59,7 @@ class ProductQueryBuilderFactory implements ProductQueryBuilderFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create(array $options = []): ProductQueryBuilderInterface
     {
         $options = $this->resolveOptions($options);

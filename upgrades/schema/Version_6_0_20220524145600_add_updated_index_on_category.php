@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20220524145600_add_updated_index_on_category extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf($this->indexExists(), 'Indexed updated_idx already exists in pim_catalog_category');
@@ -20,6 +21,7 @@ final class Version_6_0_20220524145600_add_updated_index_on_category extends Abs
         $this->addSql('CREATE INDEX updated_idx ON pim_catalog_category (updated)');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

@@ -42,6 +42,7 @@ class VariantNavigationNormalizer implements NormalizerInterface, CacheableSuppo
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($entity, $format = null, array $context = [])
     {
         if (!$entity instanceof ProductModelInterface && !$entity instanceof ProductInterface) {
@@ -85,11 +86,13 @@ class VariantNavigationNormalizer implements NormalizerInterface, CacheableSuppo
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof EntityWithFamilyVariantInterface && in_array($format, $this->supportedFormat);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

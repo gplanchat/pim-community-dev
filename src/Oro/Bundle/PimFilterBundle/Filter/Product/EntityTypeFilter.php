@@ -18,6 +18,7 @@ class EntityTypeFilter extends ChoiceFilter
 {
     const ENTITY_TYPE_PRODUCT = 'product';
 
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data)
     {
         $data = $this->parseData($data);

@@ -18,11 +18,13 @@ class GetConnectedAppRoleIdentifierQueryIntegration extends TestCase
     private GetConnectedAppRoleIdentifierQuery $query;
     private ConnectedAppLoader $connectedAppLoader;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

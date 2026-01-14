@@ -14,7 +14,7 @@ use Doctrine\DBAL\Connection;
  */
 final class SqlGetAttributeOptions implements GetAttributeOptions
 {
-    private const BATCH_QUERY_SIZE = 1000;
+    private const int BATCH_QUERY_SIZE = 1000;
 
     private Connection $connection;
 
@@ -23,6 +23,7 @@ final class SqlGetAttributeOptions implements GetAttributeOptions
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function forAttributeCode(string $attributeCode): iterable
     {
         $sql = <<<SQL

@@ -18,7 +18,8 @@ final class AttributesWereCreatedOrUpdatedNormalizer implements NormalizerInterf
     /**
      * {@inerhitDoc}
      */
-    public function denormalize($data, string $type, string $format = null, array $context = []): AttributesWereCreatedOrUpdated
+    #[\Override]
+    public function denormalize($data, string $type, ?string $format = null, array $context = []): AttributesWereCreatedOrUpdated
     {
         return AttributesWereCreatedOrUpdated::denormalize($data);
     }
@@ -26,7 +27,8 @@ final class AttributesWereCreatedOrUpdatedNormalizer implements NormalizerInterf
     /**
      * {@inerhitDoc}
      */
-    public function supportsDenormalization($data, string $type, string $format = null): bool
+    #[\Override]
+    public function supportsDenormalization($data, string $type, ?string $format = null): bool
     {
         return $type === AttributesWereCreatedOrUpdated::class;
     }
@@ -34,7 +36,8 @@ final class AttributesWereCreatedOrUpdatedNormalizer implements NormalizerInterf
     /**
      * {@inerhitDoc}
      */
-    public function normalize($object, string $format = null, array $context = []): array
+    #[\Override]
+    public function normalize($object, ?string $format = null, array $context = []): array
     {
         Assert::isInstanceOf($object, AttributesWereCreatedOrUpdated::class);
 
@@ -44,7 +47,8 @@ final class AttributesWereCreatedOrUpdatedNormalizer implements NormalizerInterf
     /**
      * {@inerhitDoc}
      */
-    public function supportsNormalization($data, string $format = null): bool
+    #[\Override]
+    public function supportsNormalization($data, ?string $format = null): bool
     {
         return $data instanceof AttributesWereCreatedOrUpdated;
     }

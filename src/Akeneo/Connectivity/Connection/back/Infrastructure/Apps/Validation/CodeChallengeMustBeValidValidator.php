@@ -25,6 +25,7 @@ class CodeChallengeMustBeValidValidator extends ConstraintValidator
     ) {
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof CodeChallengeMustBeValid) {

@@ -28,6 +28,7 @@ abstract class EndToEndTestCase extends TestCase
     private UserInterface $admin;
     protected static string $DEFAULT_FAMILY = 'my_family';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -61,6 +61,7 @@ class ProductAndProductModelDatasource extends Datasource
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResults()
     {
         $attributesToDisplay = $this->getAttributeCodesToDisplay();
@@ -123,6 +124,7 @@ class ProductAndProductModelDatasource extends Datasource
      *
      * @return Datasource
      */
+    #[\Override]
     protected function initializeQueryBuilder($method, array $config = [])
     {
         $factoryConfig['repository_parameters'] = $config;

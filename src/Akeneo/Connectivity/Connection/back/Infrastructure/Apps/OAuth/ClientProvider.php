@@ -19,6 +19,7 @@ class ClientProvider implements ClientProviderInterface
     {
     }
 
+    #[\Override]
     public function findOrCreateClient(App $app): Client
     {
         $client = $this->findClientByAppId($app->getId());
@@ -41,6 +42,7 @@ class ClientProvider implements ClientProviderInterface
         return $client;
     }
 
+    #[\Override]
     public function findClientByAppId(string $appId): ?Client
     {
         $client = $this->clientManager->findClientBy(['marketplacePublicAppId' => $appId]);

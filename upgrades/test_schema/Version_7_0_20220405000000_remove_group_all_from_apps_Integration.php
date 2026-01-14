@@ -14,11 +14,12 @@ class Version_7_0_20220405000000_remove_group_all_from_apps_Integration extends 
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220405000000_remove_group_all_from_apps';
+    private const string MIGRATION_LABEL = '_7_0_20220405000000_remove_group_all_from_apps';
 
     private ?Connection $connection;
     private ?ConnectedAppLoader $connectedAppLoader;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -27,6 +28,7 @@ class Version_7_0_20220405000000_remove_group_all_from_apps_Integration extends 
         $this->connectedAppLoader = $this->get('akeneo_connectivity.connection.fixtures.connected_app_loader');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

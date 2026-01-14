@@ -14,7 +14,7 @@ use Akeneo\Tool\Component\Connector\Step\TaskletInterface;
 
 class CleanProductTasklet implements TaskletInterface, TrackableTaskletInterface
 {
-    private const BATCH_SIZE = 100;
+    private const int BATCH_SIZE = 100;
 
     private StepExecution $stepExecution;
 
@@ -26,11 +26,13 @@ class CleanProductTasklet implements TaskletInterface, TrackableTaskletInterface
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;
@@ -39,6 +41,7 @@ class CleanProductTasklet implements TaskletInterface, TrackableTaskletInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute()
     {
         $attributeCodes = $this->stepExecution->getJobParameters()->get('attribute_codes');

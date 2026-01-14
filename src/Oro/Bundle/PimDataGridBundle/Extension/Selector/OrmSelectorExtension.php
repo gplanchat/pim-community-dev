@@ -38,7 +38,7 @@ class OrmSelectorExtension extends AbstractExtension
      *
      * @param RequestParameters $requestParams
      */
-    public function __construct(RequestParameters $requestParams = null)
+    public function __construct(?RequestParameters $requestParams = null)
     {
         $this->requestParams = $requestParams;
     }
@@ -46,6 +46,7 @@ class OrmSelectorExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $datasourceType = $config->offsetGetByPath(Builder::DATASOURCE_TYPE_PATH);
@@ -71,6 +72,7 @@ class OrmSelectorExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function visitDatasource(DatagridConfiguration $config, OroDatasourceInterface $datasource)
     {
         $selectors = $this->getSelectorsToApply($config);
@@ -82,6 +84,7 @@ class OrmSelectorExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPriority()
     {
         return -400;

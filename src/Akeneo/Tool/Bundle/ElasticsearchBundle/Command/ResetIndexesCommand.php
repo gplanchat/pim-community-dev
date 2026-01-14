@@ -39,6 +39,7 @@ class ResetIndexesCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -55,6 +56,7 @@ class ResetIndexesCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$this->userConfirmation($input, $output)) {

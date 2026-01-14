@@ -59,6 +59,7 @@ class Processor extends AbstractProcessor implements ItemProcessorInterface, Ste
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item)
     {
         $itemIdentifier = $this->getItemIdentifier($this->repository, $item);

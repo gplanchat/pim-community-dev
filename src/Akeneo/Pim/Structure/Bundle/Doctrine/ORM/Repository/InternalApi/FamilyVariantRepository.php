@@ -24,6 +24,7 @@ class FamilyVariantRepository implements DatagridRepositoryInterface
         $this->entityName = $entityName;
     }
 
+    #[\Override]
     public function createDatagridQueryBuilder(array $parameters = []): QueryBuilder
     {
         $qb = $this->entityManager->createQueryBuilder()->select('fv')->from($this->entityName, 'fv');

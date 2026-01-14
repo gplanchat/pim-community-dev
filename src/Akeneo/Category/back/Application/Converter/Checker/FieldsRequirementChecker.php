@@ -22,6 +22,7 @@ class FieldsRequirementChecker implements RequirementChecker
      *
      * @throws ArrayConversionException
      */
+    #[\Override]
     public function check(array $data): void
     {
         $this->checkFieldsExist($data);

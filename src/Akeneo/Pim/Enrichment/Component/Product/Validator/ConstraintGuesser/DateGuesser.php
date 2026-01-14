@@ -19,6 +19,7 @@ class DateGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAttribute(AttributeInterface $attribute)
     {
         return AttributeTypes::DATE === $attribute->getType();
@@ -27,6 +28,7 @@ class DateGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessConstraints(AttributeInterface $attribute)
     {
         return [new Date(['attributeCode' => $attribute->getCode()])];

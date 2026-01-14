@@ -12,6 +12,7 @@ final class Version_7_0_20221026090000_add_scheduled_job_update_audit_data_Integ
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ final class Version_7_0_20221026090000_add_scheduled_job_update_audit_data_Integ
         $this->assertEquals($jobInstanceId, $this->jobInstanceId('update_connectivity_audit_data'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

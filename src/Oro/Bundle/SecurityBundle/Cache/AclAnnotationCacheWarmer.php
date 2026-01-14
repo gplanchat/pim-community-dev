@@ -25,6 +25,7 @@ class AclAnnotationCacheWarmer implements CacheWarmerInterface
     /**
      * {inheritdoc}
      */
+    #[\Override]
     public function warmUp($cacheDir): array
     {
         $this->provider->warmUpCache();
@@ -35,6 +36,7 @@ class AclAnnotationCacheWarmer implements CacheWarmerInterface
     /**
      * {inheritdoc}
      */
+    #[\Override]
     public function isOptional(): bool
     {
         return true;

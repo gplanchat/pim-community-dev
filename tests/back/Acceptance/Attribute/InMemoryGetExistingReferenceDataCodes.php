@@ -16,6 +16,7 @@ final class InMemoryGetExistingReferenceDataCodes implements GetExistingReferenc
     /** @var array */
     private $referenceDataCodesIndexedByReferenceDataName = [];
 
+    #[\Override]
     public function fromReferenceDataNameAndCodes(string $referenceDataName, array $codes): array
     {
         if (!\array_key_exists($referenceDataName, $this->referenceDataCodesIndexedByReferenceDataName)) {

@@ -30,6 +30,7 @@ class AttributeSetter extends AbstractAttributeSetter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAttributeData(
         EntityWithValuesInterface $entityWithValues,
         AttributeInterface $attribute,

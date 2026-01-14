@@ -57,6 +57,7 @@ class CategoryNormalizerSpec extends ObjectBehavior
         $normalizedCategory->shouldHavePosition($aPosition);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

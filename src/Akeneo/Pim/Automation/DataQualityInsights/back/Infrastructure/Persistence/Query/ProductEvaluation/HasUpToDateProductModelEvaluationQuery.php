@@ -24,6 +24,7 @@ final class HasUpToDateProductModelEvaluationQuery implements HasUpToDateEvaluat
     ) {
     }
 
+    #[\Override]
     public function forEntityId(ProductEntityIdInterface $productId): bool
     {
         $productModelIdCollection = $this->factory->createCollection([(string)$productId]);
@@ -31,6 +32,7 @@ final class HasUpToDateProductModelEvaluationQuery implements HasUpToDateEvaluat
         return !is_null($upToDateProducts);
     }
 
+    #[\Override]
     public function forEntityIdCollection(ProductEntityIdCollection $productIdCollection): ?ProductModelIdCollection
     {
         if ($productIdCollection->isEmpty()) {

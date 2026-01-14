@@ -47,6 +47,7 @@ class UiLocaleProvider implements LocaleProviderInterface
      *
      * @return LocaleInterface[]
      */
+    #[\Override]
     public function getLocales()
     {
         $fallbackLocales = $this->translator->getFallbackLocales();

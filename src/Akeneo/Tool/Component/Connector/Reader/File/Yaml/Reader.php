@@ -70,11 +70,13 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function totalItems(): int
     {
         return count($this->getFileData() ?? []);
@@ -83,6 +85,7 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read()
     {
         if (!$this->initYaml()) {
@@ -171,6 +174,7 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize(): void
     {
         if (!$this->initYaml()) {
@@ -191,6 +195,7 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function flush()
     {
         $this->yaml = null;
@@ -228,11 +233,13 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
         );
     }
 
+    #[\Override]
     public function getState(): array
     {
         return null !== $this->yaml ? ['position' => $this->yaml->key()] : [];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

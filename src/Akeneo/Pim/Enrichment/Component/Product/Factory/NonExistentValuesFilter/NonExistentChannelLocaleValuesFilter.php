@@ -23,6 +23,7 @@ class NonExistentChannelLocaleValuesFilter implements NonExistentValuesFilter
     ) {
     }
 
+    #[\Override]
     public function filter(OnGoingFilteredRawValues $onGoingFilteredRawValues): OnGoingFilteredRawValues
     {
         $filteredRawValues = [];

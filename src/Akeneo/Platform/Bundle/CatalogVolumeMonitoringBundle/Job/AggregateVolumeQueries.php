@@ -17,7 +17,7 @@ use Akeneo\Tool\Component\Connector\Step\TaskletInterface;
  */
 final class AggregateVolumeQueries implements TaskletInterface
 {
-    protected const JOB_CODE = 'aggregate_volume_queries';
+    protected const string JOB_CODE = 'aggregate_volume_queries';
 
     protected StepExecution $stepExecution;
 
@@ -25,11 +25,13 @@ final class AggregateVolumeQueries implements TaskletInterface
     {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function execute(): void
     {
         $this->volumeAggregation->aggregate();

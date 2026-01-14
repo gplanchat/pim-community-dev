@@ -16,6 +16,7 @@ final class Version_8_0_20230627173000_remove_instant_cols extends AbstractMigra
 {
     private ?ContainerInterface $container = null;
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->disableMigrationWarning();
@@ -26,12 +27,14 @@ final class Version_8_0_20230627173000_remove_instant_cols extends AbstractMigra
         $this->getMigration()->migrateNotZdd();
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
     }
 
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }

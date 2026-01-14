@@ -17,6 +17,7 @@ class DoesImageExistQuery implements DoesImageExistQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $filePath): bool
     {
         $selectSQL = <<<SQL

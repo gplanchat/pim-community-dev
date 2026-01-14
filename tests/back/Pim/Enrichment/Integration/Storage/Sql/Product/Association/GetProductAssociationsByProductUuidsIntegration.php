@@ -20,6 +20,7 @@ class GetProductAssociationsByProductUuidsIntegration extends TestCase
 {
     private $uuids = [];
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -224,6 +225,7 @@ class GetProductAssociationsByProductUuidsIntegration extends TestCase
         return array_map(fn (UuidInterface $uuid): array => ['uuid' => $uuid->toString(), 'identifier' => $this->getProductIdentifier($uuid)], $uuids);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

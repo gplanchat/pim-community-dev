@@ -18,6 +18,7 @@ class SaveConnectedAppOutdatedScopesFlagQuery implements SaveConnectedAppOutdate
     {
     }
 
+    #[\Override]
     public function execute(string $connectedAppId, bool $hasOutdatedScopes): void
     {
         $query = <<<SQL

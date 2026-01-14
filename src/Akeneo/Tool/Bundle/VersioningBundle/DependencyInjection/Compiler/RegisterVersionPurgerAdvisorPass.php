@@ -22,6 +22,7 @@ class RegisterVersionPurgerAdvisorPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition(self::REGISTRY_ID)) {

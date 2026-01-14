@@ -12,8 +12,8 @@ use Ramsey\Uuid\UuidInterface;
 
 class InMemoryGetProductUuidsSpec extends ObjectBehavior
 {
-    private const FOO_UUID = 'de18ff6f-29a6-4b2a-9c38-0135aad32dbb';
-    private const BAZ_UUID = 'a5ba5f6b-3307-4f44-8a98-0ac4d1370245';
+    private const string FOO_UUID = 'de18ff6f-29a6-4b2a-9c38-0135aad32dbb';
+    private const string BAZ_UUID = 'a5ba5f6b-3307-4f44-8a98-0ac4d1370245';
 
     function let(ProductRepositoryInterface $productRepository)
     {

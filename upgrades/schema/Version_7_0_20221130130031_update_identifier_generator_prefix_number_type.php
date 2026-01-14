@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_7_0_20221130130031_update_identifier_generator_prefix_number_type extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Updates `number` column type of pim_catalog_identifier_generator_prefixes from INT to BIGINT UNSIGNED';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(<<<SQL
@@ -26,6 +28,7 @@ ALTER TABLE pim_catalog_identifier_generator_prefixes
 SQL);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

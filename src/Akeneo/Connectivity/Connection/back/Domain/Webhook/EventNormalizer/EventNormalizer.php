@@ -12,6 +12,7 @@ use Akeneo\Platform\Component\EventQueue\EventInterface;
  */
 final class EventNormalizer implements EventNormalizerInterface
 {
+    #[\Override]
     public function supports(EventInterface $event): bool
     {
         return $event instanceof EventInterface;
@@ -20,6 +21,7 @@ final class EventNormalizer implements EventNormalizerInterface
     /**
      * @return array{action: string, event_id: string, event_datetime: string, author: string, author_type: string}
      */
+    #[\Override]
     public function normalize(EventInterface $event): array
     {
         return [

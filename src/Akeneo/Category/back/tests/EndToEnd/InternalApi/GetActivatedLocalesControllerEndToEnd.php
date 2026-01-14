@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GetActivatedLocalesControllerEndToEnd extends ControllerIntegrationTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -38,6 +39,7 @@ class GetActivatedLocalesControllerEndToEnd extends ControllerIntegrationTestCas
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

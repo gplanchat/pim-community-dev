@@ -25,7 +25,7 @@ class SynchronousJobLauncher implements JobLauncherInterface
     /**
      * Interval in seconds before checking if the process is still running.
      */
-    private const RUNNING_PROCESS_CHECK_INTERVAL = 5;
+    private const int RUNNING_PROCESS_CHECK_INTERVAL = 5;
 
     public function __construct(
         private JobExecutionManager $executionManager,
@@ -37,6 +37,7 @@ class SynchronousJobLauncher implements JobLauncherInterface
     ) {
     }
 
+    #[\Override]
     public function launch(JobInstance $jobInstance, ?UserInterface $user, array $configuration = []): JobExecution
     {
         $jobExecution = $this->createJobExecution($jobInstance, $user, $configuration);

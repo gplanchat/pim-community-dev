@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220907143028_add_connection_webhook_is_using_uuid_flag extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         if ($schema->getTable('akeneo_connectivity_connection')->hasColumn('webhook_is_using_uuid')) {
@@ -24,6 +25,7 @@ final class Version_7_0_20220907143028_add_connection_webhook_is_using_uuid_flag
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

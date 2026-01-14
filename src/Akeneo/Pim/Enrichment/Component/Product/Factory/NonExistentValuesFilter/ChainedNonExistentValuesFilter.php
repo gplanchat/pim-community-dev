@@ -28,6 +28,7 @@ class ChainedNonExistentValuesFilter implements ChainedNonExistentValuesFilterIn
     ) {
     }
 
+    #[\Override]
     public function filterAll(array $rawValuesCollection): array
     {
         $rawValueCollectionsIndexedByType = $this->transformRawValuesCollections->toValueCollectionsIndexedByType($rawValuesCollection);

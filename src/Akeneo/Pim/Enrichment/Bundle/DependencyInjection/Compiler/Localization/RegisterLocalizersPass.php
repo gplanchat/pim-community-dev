@@ -22,6 +22,7 @@ class RegisterLocalizersPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition(self::LOCALIZATION_LOCALIZER_REGISTRY)) {

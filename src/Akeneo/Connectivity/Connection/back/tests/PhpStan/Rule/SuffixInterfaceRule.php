@@ -12,13 +12,15 @@ use PHPStan\Rules\Rule;
 
 final class SuffixInterfaceRule implements Rule
 {
-    private const ERROR_MESSAGE = 'Interface must be suffixed with "Interface" exclusively';
+    private const string ERROR_MESSAGE = 'Interface must be suffixed with "Interface" exclusively';
 
+    #[\Override]
     public function getNodeType(): string
     {
         return Node::class;
     }
 
+    #[\Override]
     public function processNode(Node $node, Scope $scope): array
     {
         if (!$node instanceof ClassLike) {

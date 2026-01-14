@@ -41,6 +41,7 @@ class ConnectionContext implements ConnectionContextInterface
         $this->username = $username;
     }
 
+    #[\Override]
     public function getConnection(): ?Connection
     {
         if (null !== $this->connection) {
@@ -59,6 +60,7 @@ class ConnectionContext implements ConnectionContextInterface
         return $this->connection = $this->connectionRepository->findOneByCode($connectionCode);
     }
 
+    #[\Override]
     public function isCollectable(): bool
     {
         if (null !== $this->collectable) {
@@ -72,6 +74,7 @@ class ConnectionContext implements ConnectionContextInterface
         return $this->collectable = $this->getConnection()->auditable() && $this->areCredentialsValidCombination();
     }
 
+    #[\Override]
     public function areCredentialsValidCombination(): bool
     {
         if (null !== $this->areCredentialsValidCombination) {

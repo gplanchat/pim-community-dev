@@ -39,6 +39,7 @@ class FamilyNormalizerSpec extends ObjectBehavior
         $normalizedFamily->shouldHaveAttributeRequirements($data);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

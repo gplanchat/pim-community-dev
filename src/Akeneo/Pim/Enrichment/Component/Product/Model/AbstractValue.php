@@ -69,6 +69,7 @@ abstract class AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasData(): bool
     {
         return !is_null($this->getData());
@@ -77,6 +78,7 @@ abstract class AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeCode(): string
     {
         return $this->attributeCode;
@@ -85,6 +87,7 @@ abstract class AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLocaleCode(): ?string
     {
         return $this->localeCode;
@@ -93,11 +96,13 @@ abstract class AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     abstract public function isEqual(ValueInterface $value): bool;
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getScopeCode(): ?string
     {
         return $this->scopeCode;
@@ -106,6 +111,7 @@ abstract class AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isLocalizable(): bool
     {
         return null !== $this->localeCode;
@@ -114,6 +120,7 @@ abstract class AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isScopable(): bool
     {
         return null !== $this->scopeCode;

@@ -18,6 +18,7 @@ class IsIdentifierUsableAsGridFilterValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($attribute, Constraint $constraint)
     {
         if (!$constraint instanceof IsIdentifierUsableAsGridFilter) {

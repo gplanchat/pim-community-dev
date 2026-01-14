@@ -25,11 +25,13 @@ class UpdateTemplateControllerEndToEnd extends ControllerIntegrationTestCase
     private CategoryTemplateSaver $categoryTemplateSaver;
     private CategoryTreeTemplateSaver $categoryTreeTemplateSaver;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

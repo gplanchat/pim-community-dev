@@ -11,6 +11,7 @@ abstract class AcceptanceTestCase extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         static::bootKernel(['debug' => false, 'environment' => 'test_fake']);
@@ -24,6 +25,7 @@ abstract class AcceptanceTestCase extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         $this->ensureKernelShutdown();

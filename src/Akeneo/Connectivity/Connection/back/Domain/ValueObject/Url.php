@@ -14,6 +14,7 @@ class Url implements \Stringable
     {
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->url;

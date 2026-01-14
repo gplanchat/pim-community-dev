@@ -18,6 +18,7 @@ class GetIdMappingFromProductModelIdsQueryIntegration extends TestCase
     /** @var GetIdMappingFromProductModelIdsQueryInterface */
     private $getIdMappingFromProductModelIdsQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -39,6 +40,7 @@ class GetIdMappingFromProductModelIdsQueryIntegration extends TestCase
         self::assertEquals($expectedProductModelCode, $actualProductModelCode);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

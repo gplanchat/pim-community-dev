@@ -49,6 +49,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         return in_array($attribute->getType(), $this->supportedAttributeTypes);
@@ -57,6 +58,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsField($field)
     {
         return in_array($field, $this->supportedFields);
@@ -65,6 +67,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsOperator($operator)
     {
         return in_array($operator, $this->supportedOperators);
@@ -73,6 +76,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeFilter(
         AttributeInterface $attribute,
         $operator,
@@ -87,6 +91,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter($field, $operator, $value, $locale = null, $scope = null, $options = [])
     {
         return $this;
@@ -95,6 +100,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeTypes()
     {
         return $this->supportedAttributeTypes;
@@ -103,6 +109,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFields()
     {
         return $this->supportedFields;
@@ -111,6 +118,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOperators()
     {
         return $this->supportedOperators;
@@ -119,6 +127,7 @@ class DummyFilter implements AttributeFilterInterface, FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setQueryBuilder($queryBuilder)
     {
         $this->queryBuilder = $queryBuilder;

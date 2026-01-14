@@ -20,6 +20,7 @@ class ProduceEventOnSingleProductUpdateIntegration extends TestCase
 
     private ProductLoader $productLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -40,6 +41,7 @@ class ProduceEventOnSingleProductUpdateIntegration extends TestCase
         $this->assertEventCount(1, ProductUpdated::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -45,6 +45,7 @@ class ProductEditDataFilter implements CollectionFilterInterface
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function filterCollection($collection, $type, array $options = [])
     {
         $newProductData = [];
@@ -62,6 +63,7 @@ class ProductEditDataFilter implements CollectionFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsCollection($collection, $type, array $options = [])
     {
         return false;

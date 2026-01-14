@@ -44,6 +44,7 @@ class ProductNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($product, $format = null, array $context = [])
     {
         $productStandard = $this->productNormalizer->normalize($product, 'standard', $context);
@@ -85,11 +86,13 @@ class ProductNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ProductInterface && 'external_api' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

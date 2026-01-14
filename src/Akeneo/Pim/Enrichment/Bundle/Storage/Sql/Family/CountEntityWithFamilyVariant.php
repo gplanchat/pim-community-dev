@@ -24,6 +24,7 @@ final class CountEntityWithFamilyVariant implements CountEntityWithFamilyVariant
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function belongingToFamilyVariant(FamilyVariantInterface $familyVariant): int
     {
         $productModelCount = $this->countProductModels($familyVariant);

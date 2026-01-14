@@ -34,6 +34,7 @@ class MediaFilter extends AbstractAttributeFilter implements AttributeFilterInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeFilter(
         AttributeInterface $attribute,
         $operator,

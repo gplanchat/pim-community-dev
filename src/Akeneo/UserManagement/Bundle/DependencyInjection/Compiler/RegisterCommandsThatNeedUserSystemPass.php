@@ -14,6 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 final class RegisterCommandsThatNeedUserSystemPass implements CompilerPassInterface
 {
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $registerDefinition = $container->findDefinition(AuthenticatedAsAdminCommandRegistry::class);

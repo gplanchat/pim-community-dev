@@ -23,7 +23,7 @@ class Version_6_0_20211028125410_add_type_to_connection_Integration extends Test
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211028125410_add_type_to_connection';
+    private const string MIGRATION_LABEL = '_6_0_20211028125410_add_type_to_connection';
 
     private Connection $connection;
     private ValidatorInterface $validator;
@@ -31,11 +31,13 @@ class Version_6_0_20211028125410_add_type_to_connection_Integration extends Test
     private ObjectUpdaterInterface $userUpdater;
     private SaverInterface $userSaver;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

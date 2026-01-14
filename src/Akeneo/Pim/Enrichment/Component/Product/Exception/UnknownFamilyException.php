@@ -34,6 +34,7 @@ final class UnknownFamilyException extends InvalidPropertyException implements
         );
     }
 
+    #[\Override]
     public function getTemplatedErrorMessage(): TemplatedErrorMessage
     {
         return $this->templatedErrorMessage;

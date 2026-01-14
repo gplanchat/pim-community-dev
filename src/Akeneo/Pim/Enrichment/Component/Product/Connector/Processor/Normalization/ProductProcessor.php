@@ -38,6 +38,7 @@ class ProductProcessor implements ItemProcessorInterface, StepExecutionAwareInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($product): array
     {
         $parameters = $this->stepExecution->getJobParameters();
@@ -80,6 +81,7 @@ class ProductProcessor implements ItemProcessorInterface, StepExecutionAwareInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;

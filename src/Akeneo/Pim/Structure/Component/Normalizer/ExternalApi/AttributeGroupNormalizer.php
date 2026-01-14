@@ -27,6 +27,7 @@ class AttributeGroupNormalizer implements NormalizerInterface, CacheableSupports
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($group, $format = null, array $context = [])
     {
         $normalizedGroup = $this->stdNormalizer->normalize($group, 'standard', $context);
@@ -41,11 +42,13 @@ class AttributeGroupNormalizer implements NormalizerInterface, CacheableSupports
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof AttributeGroupInterface && 'external_api' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

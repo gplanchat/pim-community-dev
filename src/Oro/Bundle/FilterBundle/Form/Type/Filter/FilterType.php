@@ -28,6 +28,7 @@ class FilterType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return self::NAME;
@@ -36,6 +37,7 @@ class FilterType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $emptyChoice = false;
@@ -92,6 +94,7 @@ class FilterType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $children = $form->all();
@@ -103,6 +106,7 @@ class FilterType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(

@@ -17,15 +17,17 @@ class Version_6_0_20220524145600_add_updated_index_on_category_Integration exten
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20220524145600_add_updated_index_on_category';
+    private const string MIGRATION_LABEL = '_6_0_20220524145600_add_updated_index_on_category';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

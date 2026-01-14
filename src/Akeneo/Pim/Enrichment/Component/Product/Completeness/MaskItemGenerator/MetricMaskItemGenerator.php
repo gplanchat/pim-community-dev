@@ -13,6 +13,7 @@ use Akeneo\Pim\Structure\Component\AttributeTypes;
  */
 class MetricMaskItemGenerator implements MaskItemGeneratorForAttributeType
 {
+    #[\Override]
     public function forRawValue(string $attributeCode, string $channelCode, string $localeCode, $value): array
     {
         if (
@@ -38,6 +39,7 @@ class MetricMaskItemGenerator implements MaskItemGeneratorForAttributeType
         ];
     }
 
+    #[\Override]
     public function supportedAttributeTypes(): array
     {
         return [AttributeTypes::METRIC];

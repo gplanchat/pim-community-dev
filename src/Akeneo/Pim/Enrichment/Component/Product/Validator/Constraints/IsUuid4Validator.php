@@ -14,6 +14,7 @@ use Webmozart\Assert\Assert;
  */
 class IsUuid4Validator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, IsUuid4::class);

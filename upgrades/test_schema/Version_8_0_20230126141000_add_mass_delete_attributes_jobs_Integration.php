@@ -10,10 +10,11 @@ final class Version_8_0_20230126141000_add_mass_delete_attributes_jobs_Integrati
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230126141000_add_mass_delete_attributes_jobs';
+    private const string MIGRATION_LABEL = '_8_0_20230126141000_add_mass_delete_attributes_jobs';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ final class Version_8_0_20230126141000_add_mass_delete_attributes_jobs_Integrati
         $this->assertEquals($jobInstanceId, $this->jobInstanceId('delete_attributes'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

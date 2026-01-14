@@ -14,6 +14,7 @@ class MediaExporterPathGenerator implements FileExporterPathGeneratorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function generate($value, array $options = [])
     {
         $identifier = str_replace(DIRECTORY_SEPARATOR, '_', $options['identifier']);

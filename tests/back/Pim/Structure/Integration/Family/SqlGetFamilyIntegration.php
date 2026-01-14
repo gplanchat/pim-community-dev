@@ -13,6 +13,7 @@ use Webmozart\Assert\Assert;
 
 final class SqlGetFamilyIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -124,6 +125,7 @@ final class SqlGetFamilyIntegration extends TestCase
         $this->assertNull($actual);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -13,6 +13,7 @@ class NotBlankValidator extends ConstraintValidator
      *
      * Copy of Symfony NotBlankValidator to add custom violation parameters.
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof NotBlank) {

@@ -7,6 +7,7 @@ use Akeneo\Pim\Structure\Component\AttributeTypes;
 
 class GetAttributeTypesMasksQueryIntegration extends CompletenessTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

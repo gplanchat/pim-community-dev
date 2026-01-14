@@ -17,13 +17,13 @@ use Ramsey\Uuid\UuidInterface;
  *
  * Fetches all product documents in the ES index that are not present in the DB anymore
  */
-final class GetDeletedProductDocumentIds
+final readonly class GetDeletedProductDocumentIds
 {
-    private const CHUNK_SIZE = 500;
+    private const int CHUNK_SIZE = 500;
 
     public function __construct(
-        private readonly Client $client,
-        private readonly GetProductUuids $getProductUuids,
+        private Client $client,
+        private GetProductUuids $getProductUuids,
     ) {
     }
 

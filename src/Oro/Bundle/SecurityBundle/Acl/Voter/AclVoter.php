@@ -54,6 +54,7 @@ class AclVoter extends BaseAclVoter implements PermissionGrantingStrategyContext
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function vote(TokenInterface $token, $object, array $attributes): int
     {
         $this->securityToken = $token;
@@ -86,6 +87,7 @@ class AclVoter extends BaseAclVoter implements PermissionGrantingStrategyContext
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getObject()
     {
         return $this->object;
@@ -94,6 +96,7 @@ class AclVoter extends BaseAclVoter implements PermissionGrantingStrategyContext
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSecurityToken()
     {
         return $this->securityToken;
@@ -102,6 +105,7 @@ class AclVoter extends BaseAclVoter implements PermissionGrantingStrategyContext
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAclExtension()
     {
         return $this->extension;

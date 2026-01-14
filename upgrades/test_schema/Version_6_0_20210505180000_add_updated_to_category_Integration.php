@@ -18,7 +18,7 @@ class Version_6_0_20210505180000_add_updated_to_category_Integration extends Tes
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20210505180000_add_updated_to_category';
+    private const string MIGRATION_LABEL = '_6_0_20210505180000_add_updated_to_category';
 
     public function test_it_adds_a_new_updated_column_to_the_category_table(): void
     {
@@ -34,6 +34,7 @@ class Version_6_0_20210505180000_add_updated_to_category_Integration extends Tes
         Assert::assertEquals($row['created'], $row['updated']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

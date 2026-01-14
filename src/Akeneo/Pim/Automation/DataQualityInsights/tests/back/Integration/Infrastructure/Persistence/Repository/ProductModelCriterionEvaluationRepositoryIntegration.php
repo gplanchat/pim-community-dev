@@ -33,6 +33,7 @@ final class ProductModelCriterionEvaluationRepositoryIntegration extends DataQua
     /** @var CriterionEvaluationRepositoryInterface */
     private $productModelCriterionEvaluationRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -184,6 +185,7 @@ final class ProductModelCriterionEvaluationRepositoryIntegration extends DataQua
         return $evaluations->get($criterionCode);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

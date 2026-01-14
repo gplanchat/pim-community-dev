@@ -72,6 +72,7 @@ class ProductModel implements ArrayConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(array $flatProductModel, array $options = []): array
     {
         $mappedFlatProductModel = $this->mapFields($flatProductModel, $options);

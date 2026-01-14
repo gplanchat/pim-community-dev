@@ -41,6 +41,7 @@ class GetEvaluableProductValuesQuery implements GetEvaluableProductValuesQueryIn
         $this->localesByChannelQuery = $localesByChannelQuery;
     }
 
+    #[\Override]
     public function byProductId(ProductEntityIdInterface $productId): ProductValuesCollection
     {
         $productValuesCollection = new ProductValuesCollection();

@@ -25,6 +25,7 @@ class GetCategorySql implements GetCategoryInterface
     ) {
     }
 
+    #[\Override]
     public function byId(int $categoryId): ?Category
     {
         $condition['sqlWhere'] = 'category.id = :category_id';
@@ -34,6 +35,7 @@ class GetCategorySql implements GetCategoryInterface
         return $this->executeOne($condition);
     }
 
+    #[\Override]
     public function byCode(string $categoryCode): ?Category
     {
         $condition['sqlWhere'] = 'category.code = :category_code';
@@ -48,6 +50,7 @@ class GetCategorySql implements GetCategoryInterface
      *
      * @return \Generator<Category>
      */
+    #[\Override]
     public function byCodes(array $categoryCodes): \Generator
     {
         $condition['sqlWhere'] = 'category.code IN (:category_codes)';
@@ -62,6 +65,7 @@ class GetCategorySql implements GetCategoryInterface
      *
      * @return \Generator<Category>
      */
+    #[\Override]
     public function byIds(array $categoryIds): \Generator
     {
         $condition['sqlWhere'] = 'category.id IN (:category_ids)';

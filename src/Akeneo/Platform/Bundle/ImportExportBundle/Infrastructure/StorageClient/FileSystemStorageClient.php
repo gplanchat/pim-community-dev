@@ -18,6 +18,7 @@ class FileSystemStorageClient implements StorageClientInterface
     {
     }
 
+    #[\Override]
     public function fileExists(string $filePath): bool
     {
         return $this->filesystemOperator->fileExists($filePath);
@@ -26,6 +27,7 @@ class FileSystemStorageClient implements StorageClientInterface
     /**
      * @return resource
      */
+    #[\Override]
     public function readStream(string $filePath)
     {
         return $this->filesystemOperator->readStream($filePath);
@@ -34,21 +36,25 @@ class FileSystemStorageClient implements StorageClientInterface
     /**
      * @param resource $content
      */
+    #[\Override]
     public function writeStream(string $filePath, $content): void
     {
         $this->filesystemOperator->writeStream($filePath, $content);
     }
 
+    #[\Override]
     public function getFileSize(string $filePath): int
     {
         return $this->filesystemOperator->fileSize($filePath);
     }
 
+    #[\Override]
     public function move(string $sourceFilePath, string $destinationFilePath): void
     {
         $this->filesystemOperator->move($sourceFilePath, $destinationFilePath);
     }
 
+    #[\Override]
     public function delete(string $filePath): void
     {
         $this->filesystemOperator->delete($filePath);

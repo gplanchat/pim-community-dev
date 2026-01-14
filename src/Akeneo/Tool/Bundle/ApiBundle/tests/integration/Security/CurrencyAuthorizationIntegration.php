@@ -85,6 +85,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

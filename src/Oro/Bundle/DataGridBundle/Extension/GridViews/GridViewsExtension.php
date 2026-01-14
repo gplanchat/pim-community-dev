@@ -16,6 +16,7 @@ class GridViewsExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $list = $config->offsetGetOr(self::VIEWS_LIST_KEY, false);
@@ -37,6 +38,7 @@ class GridViewsExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         $params = $this->getRequestParams()->get(RequestParameters::ADDITIONAL_PARAMETERS);

@@ -32,6 +32,7 @@ class ScalarValue extends AbstractValue implements ValueInterface
     /**
      * @return mixed
      */
+    #[\Override]
     public function getData()
     {
         return $this->data;
@@ -40,6 +41,7 @@ class ScalarValue extends AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         if (is_bool($this->data)) {
@@ -51,6 +53,7 @@ class ScalarValue extends AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof ScalarValue) {

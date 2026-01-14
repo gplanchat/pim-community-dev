@@ -20,6 +20,7 @@ class DeleteClient implements DeleteClientInterface
     {
     }
 
+    #[\Override]
     public function execute(ClientId $clientId): void
     {
         $fosClient = $this->findClient($clientId);

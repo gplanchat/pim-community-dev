@@ -8,6 +8,7 @@ namespace Akeneo\Pim\Structure\Bundle\Application\SwitchMainIdentifier;
  */
 class CommunityPublishedProductExists implements PublishedProductExists
 {
+    #[\Override]
     public function __invoke(): bool
     {
         return false;

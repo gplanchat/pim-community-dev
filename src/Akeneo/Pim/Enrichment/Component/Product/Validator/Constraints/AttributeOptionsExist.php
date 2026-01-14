@@ -21,6 +21,7 @@ class AttributeOptionsExist extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validatedBy(): string
     {
         return 'attribute_options_exist_validator';

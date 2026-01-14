@@ -13,6 +13,7 @@ class GetCategoryCodesByProductUuidsIntegration extends TestCase
     /** @var EntityBuilder */
     private $entityBuilder;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -161,6 +162,7 @@ class GetCategoryCodesByProductUuidsIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

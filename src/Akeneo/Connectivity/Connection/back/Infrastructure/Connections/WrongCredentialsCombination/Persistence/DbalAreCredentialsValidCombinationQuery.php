@@ -17,6 +17,7 @@ class DbalAreCredentialsValidCombinationQuery implements AreCredentialsValidComb
     {
     }
 
+    #[\Override]
     public function execute(string $clientId, string $username): bool
     {
         $sqlQuery = <<<SQL

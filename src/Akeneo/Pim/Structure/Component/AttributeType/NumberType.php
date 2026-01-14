@@ -16,6 +16,7 @@ class NumberType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return AttributeTypes::NUMBER;

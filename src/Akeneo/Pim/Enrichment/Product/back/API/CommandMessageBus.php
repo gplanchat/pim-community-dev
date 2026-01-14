@@ -32,6 +32,7 @@ final class CommandMessageBus implements MessageBusInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function dispatch(object $message, array $stamps = []): Envelope
     {
         $handler = $this->handlers[get_class($message)] ?? null;

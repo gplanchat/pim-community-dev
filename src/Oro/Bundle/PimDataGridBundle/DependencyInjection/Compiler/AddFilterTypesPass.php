@@ -24,6 +24,7 @@ class AddFilterTypesPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $extension = $container->getDefinition(self::FILTER_EXTENSION_ID);

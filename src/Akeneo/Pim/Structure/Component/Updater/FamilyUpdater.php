@@ -47,6 +47,7 @@ class FamilyUpdater implements ObjectUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function update($family, array $data, array $options = [])
     {
         if (!$family instanceof FamilyInterface) {

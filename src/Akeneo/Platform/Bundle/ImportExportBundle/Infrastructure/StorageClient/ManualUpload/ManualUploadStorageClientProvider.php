@@ -23,6 +23,7 @@ final class ManualUploadStorageClientProvider implements StorageClientProviderIn
     ) {
     }
 
+    #[\Override]
     public function getFromStorage(StorageInterface $storage): StorageClientInterface
     {
         if (!$storage instanceof ManualUploadStorage) {
@@ -32,6 +33,7 @@ final class ManualUploadStorageClientProvider implements StorageClientProviderIn
         return new FileSystemStorageClient($this->jobFilesystemOperator);
     }
 
+    #[\Override]
     public function supports(StorageInterface $storage): bool
     {
         return $storage instanceof ManualUploadStorage;

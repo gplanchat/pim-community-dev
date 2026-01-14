@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class CleanRemovedProductsCommand extends Command
 {
-    private const DEFAULT_BATCH_SIZE = 100;
+    private const int DEFAULT_BATCH_SIZE = 100;
 
     protected static $defaultName = 'pim:product:clean-removed-products';
     protected static $defaultDescription = 'Erase documents present in Elasticsearch but missing in MySQL';
@@ -32,6 +32,7 @@ class CleanRemovedProductsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->checkIndexExists();

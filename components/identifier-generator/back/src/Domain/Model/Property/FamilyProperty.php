@@ -15,15 +15,16 @@ use Webmozart\Assert\Assert;
  * @phpstan-import-type ProcessNormalized from Process
  * @phpstan-type FamilyPropertyNormalized array{type: 'family', process: ProcessNormalized}
  */
-final class FamilyProperty implements PropertyInterface
+final readonly class FamilyProperty implements PropertyInterface
 {
-    public const TYPE = 'family';
+    public const string TYPE = 'family';
 
     private function __construct(
-        private readonly Process $process,
+        private Process $process,
     ) {
     }
 
+    #[\Override]
     public static function type(): string
     {
         return self::TYPE;
@@ -37,6 +38,7 @@ final class FamilyProperty implements PropertyInterface
     /**
      * @return FamilyPropertyNormalized
      */
+    #[\Override]
     public function normalize(): array
     {
         return [
@@ -45,6 +47,7 @@ final class FamilyProperty implements PropertyInterface
         ];
     }
 
+    #[\Override]
     public static function fromNormalized(array $normalizedProperty): PropertyInterface
     {
         Assert::keyExists($normalizedProperty, 'type');
@@ -55,6 +58,7 @@ final class FamilyProperty implements PropertyInterface
         return new self(Process::fromNormalized($normalizedProperty['process']));
     }
 
+    #[\Override]
     public function getImplicitCondition(): ?ConditionInterface
     {
         return Family::fromNormalized([

@@ -40,6 +40,7 @@ class AddDefaultValuesSubscriber implements EventSubscriberInterface
         $this->getChannelWithLocales = $getChannelWithLocales;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -63,6 +63,7 @@ class ProductModelController extends AbstractListCategoryController
      *
      * @return ProductModelInterface
      */
+    #[\Override]
     protected function findEntityWithCategoriesOr404(string $id)
     {
         $productModel = $this->productModelRepository->find($id);

@@ -33,6 +33,7 @@ class ProductCategoryRepository extends AbstractItemCategoryRepository implement
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -41,6 +42,7 @@ class ProductCategoryRepository extends AbstractItemCategoryRepository implement
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         $qb = $this->em->createQueryBuilder()

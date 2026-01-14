@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210715082931_add_product_web_api_acl extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         // This migration has been disabled, it was using services and was, in consequence, not future-proof.
@@ -20,6 +21,7 @@ final class Version_6_0_20210715082931_add_product_web_api_acl extends AbstractM
         $this->addSql('SELECT 1');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

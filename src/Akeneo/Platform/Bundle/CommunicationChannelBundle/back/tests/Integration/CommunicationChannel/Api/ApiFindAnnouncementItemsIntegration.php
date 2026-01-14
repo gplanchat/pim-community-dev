@@ -18,6 +18,7 @@ class ApiFindAnnouncementItemsIntegration extends KernelTestCase
     /** @var Process */
     private $process;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -29,6 +30,7 @@ class ApiFindAnnouncementItemsIntegration extends KernelTestCase
         $this->waitServerUp();
     }
 
+    #[\Override]
     public function tearDown(): void
     {
         parent::tearDown();

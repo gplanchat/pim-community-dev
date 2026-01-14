@@ -155,6 +155,7 @@ class ProductUpdater implements ObjectUpdaterInterface
      *      },
      * }
      */
+    #[\Override]
     public function update($product, array $data, array $options = []): ProductUpdater
     {
         if (!$product instanceof ProductInterface) {

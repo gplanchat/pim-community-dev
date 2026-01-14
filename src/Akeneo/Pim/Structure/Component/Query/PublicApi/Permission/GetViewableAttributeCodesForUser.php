@@ -10,6 +10,7 @@ namespace Akeneo\Pim\Structure\Component\Query\PublicApi\Permission;
 
 class GetViewableAttributeCodesForUser implements GetViewableAttributeCodesForUserInterface
 {
+    #[\Override]
     public function forAttributeCodes(array $attributeCodes, int $userId): array
     {
         return $attributeCodes;

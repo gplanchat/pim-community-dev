@@ -14,18 +14,20 @@ use PHPUnit\Framework\Assert;
  */
 class PimUrlIntegration extends TestCase
 {
-    private const DEFAULT_AKENEO_PIM_URL_IN_DOTENV = 'http://localhost:8080';
+    private const string DEFAULT_AKENEO_PIM_URL_IN_DOTENV = 'http://localhost:8080';
 
     private PimUrl $pimUrl;
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

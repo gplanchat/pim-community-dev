@@ -41,6 +41,7 @@ class ListJobsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -57,6 +58,7 @@ class ListJobsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $criteria = [];

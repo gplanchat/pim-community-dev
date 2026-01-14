@@ -43,6 +43,7 @@ final class GetCategoryChildrenCodesQueryIntegration extends TestCase
         $this->assertEqualsCanonicalizing($expectedCodes, $categoryCodes);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

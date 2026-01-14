@@ -25,6 +25,7 @@ final class DescendantProductUuidsQuery implements DescendantProductUuidsQueryIn
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function fetchFromProductModelIds(array $productModelIds): array
     {
         if (empty($productModelIds)) {

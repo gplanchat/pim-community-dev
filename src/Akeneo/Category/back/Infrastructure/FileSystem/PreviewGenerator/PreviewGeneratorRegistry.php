@@ -30,11 +30,13 @@ class PreviewGeneratorRegistry implements PreviewGeneratorInterface
         $this->previewGenerators[] = $previewGenerator;
     }
 
+    #[\Override]
     public function supportsMimeType(string $mimeType): bool
     {
         return true;
     }
 
+    #[\Override]
     public function supports(string $data, Attribute $attribute, string $type): bool
     {
         foreach ($this->previewGenerators as $previewGenerator) {
@@ -46,6 +48,7 @@ class PreviewGeneratorRegistry implements PreviewGeneratorInterface
         return false;
     }
 
+    #[\Override]
     public function generate(string $data, Attribute $attribute, string $type): string
     {
         foreach ($this->previewGenerators as $previewGenerator) {
@@ -57,6 +60,7 @@ class PreviewGeneratorRegistry implements PreviewGeneratorInterface
         throw new \RuntimeException(sprintf('There was no generator found to get the preview of attribute "%s" with type "%s"', $attribute->getCode(), $type));
     }
 
+    #[\Override]
     public function remove(string $data, string $type)
     {
         foreach ($this->previewGenerators as $previewGenerator) {

@@ -46,6 +46,7 @@ class ChannelNormalizer implements NormalizerInterface, CacheableSupportsMethodI
      *
      * @return array
      */
+    #[\Override]
     public function normalize($channel, $format = null, array $context = [])
     {
         $standardChannel = $this->standardNormalizer->normalize($channel, 'standard', $context);
@@ -69,11 +70,13 @@ class ChannelNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ChannelInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

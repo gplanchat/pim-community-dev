@@ -17,6 +17,7 @@ class Family extends AbstractSimpleArrayConverter implements ArrayConverterInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function convertProperty($property, $data, array $convertedItem, array $options)
     {
         switch ($property) {

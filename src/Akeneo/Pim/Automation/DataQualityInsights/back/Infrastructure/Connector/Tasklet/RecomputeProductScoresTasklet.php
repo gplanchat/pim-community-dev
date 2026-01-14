@@ -21,8 +21,8 @@ final class RecomputeProductScoresTasklet implements TaskletInterface
 {
     private StepExecution $stepExecution;
 
-    private const TIMEBOX_IN_SECONDS_ALLOWED = 900; // 15 minutes
-    private const BULK_SIZE = 1000;
+    private const int TIMEBOX_IN_SECONDS_ALLOWED = 900; // 15 minutes
+    private const int BULK_SIZE = 1000;
 
     public function __construct(
         private readonly ConsolidateProductScores $consolidateProductScores,
@@ -34,6 +34,7 @@ final class RecomputeProductScoresTasklet implements TaskletInterface
     ) {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $startTime = time();
@@ -111,6 +112,7 @@ final class RecomputeProductScoresTasklet implements TaskletInterface
         return $jobInstance;
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;

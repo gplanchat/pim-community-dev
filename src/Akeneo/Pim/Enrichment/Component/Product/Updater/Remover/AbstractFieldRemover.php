@@ -17,6 +17,7 @@ abstract class AbstractFieldRemover implements FieldRemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsField($field)
     {
         return in_array($field, $this->supportedFields);

@@ -16,6 +16,7 @@ class PriceCollectionType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return AttributeTypes::PRICE_COLLECTION;

@@ -46,6 +46,7 @@ class GroupsFilter extends AjaxChoiceFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data)
     {
         $data = $this->parseData($data);
@@ -62,6 +63,7 @@ class GroupsFilter extends AjaxChoiceFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getFormOptions()
     {
         return array_merge(

@@ -21,6 +21,7 @@ class UTCDateTimeType extends DateTimeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
         if (null === $value) {
@@ -35,6 +36,7 @@ class UTCDateTimeType extends DateTimeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
         if (null === $value || $value instanceof \DateTimeInterface) {

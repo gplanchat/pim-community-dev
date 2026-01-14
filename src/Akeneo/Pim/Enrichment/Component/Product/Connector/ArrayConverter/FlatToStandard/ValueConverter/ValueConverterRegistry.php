@@ -20,6 +20,7 @@ class ValueConverterRegistry implements ValueConverterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(ValueConverterInterface $converter)
     {
         $this->converters[] = $converter;
@@ -30,6 +31,7 @@ class ValueConverterRegistry implements ValueConverterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConverter($attributeType)
     {
         if (isset($this->convertersByAttributeType[$attributeType])) {

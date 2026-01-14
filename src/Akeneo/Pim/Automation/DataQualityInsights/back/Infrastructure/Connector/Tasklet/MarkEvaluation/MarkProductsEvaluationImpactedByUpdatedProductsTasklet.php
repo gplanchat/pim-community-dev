@@ -20,6 +20,7 @@ final class MarkProductsEvaluationImpactedByUpdatedProductsTasklet extends Abstr
     ) {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $countMarkedProducts = 0;

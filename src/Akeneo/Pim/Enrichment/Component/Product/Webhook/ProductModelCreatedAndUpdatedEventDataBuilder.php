@@ -33,6 +33,7 @@ class ProductModelCreatedAndUpdatedEventDataBuilder implements EventDataBuilderI
         $this->connectorProductModelNormalizer = $connectorProductModelNormalizer;
     }
 
+    #[\Override]
     public function supports(BulkEventInterface $event): bool
     {
         if (false === $event instanceof BulkEventInterface) {
@@ -48,6 +49,7 @@ class ProductModelCreatedAndUpdatedEventDataBuilder implements EventDataBuilderI
         return true;
     }
 
+    #[\Override]
     public function build(BulkEventInterface $bulkEvent, Context $context): EventDataCollection
     {
         $productModels = $this->getConnectorProductModels(

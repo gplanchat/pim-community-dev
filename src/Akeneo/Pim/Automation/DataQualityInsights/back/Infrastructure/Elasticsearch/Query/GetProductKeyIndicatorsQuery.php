@@ -30,11 +30,13 @@ final class GetProductKeyIndicatorsQuery implements GetProductKeyIndicatorsQuery
     ) {
     }
 
+    #[\Override]
     public function all(ChannelCode $channelCode, LocaleCode $localeCode, KeyIndicatorCode ...$keyIndicatorCodes): array
     {
         return $this->executeQuery($channelCode, $localeCode, $keyIndicatorCodes);
     }
 
+    #[\Override]
     public function byFamily(ChannelCode $channelCode, LocaleCode $localeCode, FamilyCode $family, KeyIndicatorCode ...$keyIndicatorCodes): array
     {
         $terms = [['term' => ['family.code' => (string)$family]]];
@@ -42,6 +44,7 @@ final class GetProductKeyIndicatorsQuery implements GetProductKeyIndicatorsQuery
         return $this->executeQuery($channelCode, $localeCode, $keyIndicatorCodes, $terms);
     }
 
+    #[\Override]
     public function byCategory(ChannelCode $channelCode, LocaleCode $localeCode, CategoryCode $category, KeyIndicatorCode ...$keyIndicatorCodes): array
     {
         $categoryCode = (string)$category;

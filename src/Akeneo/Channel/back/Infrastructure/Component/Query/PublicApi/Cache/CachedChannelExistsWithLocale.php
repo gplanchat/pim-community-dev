@@ -60,6 +60,7 @@ final class CachedChannelExistsWithLocale implements ChannelExistsWithLocaleInte
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function doesChannelExist(string $channelCode): bool
     {
         $this->initializeCache();
@@ -70,6 +71,7 @@ final class CachedChannelExistsWithLocale implements ChannelExistsWithLocaleInte
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isLocaleActive(string $localeCode): bool
     {
         $this->initializeCache();
@@ -81,6 +83,7 @@ final class CachedChannelExistsWithLocale implements ChannelExistsWithLocaleInte
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isLocaleBoundToChannel(string $localeCode, string $channelCode): bool
     {
         $this->initializeCache();
@@ -90,6 +93,7 @@ final class CachedChannelExistsWithLocale implements ChannelExistsWithLocaleInte
             \in_array(\mb_strtolower($localeCode), $this->indexedChannelsWithLocales[\mb_strtolower($channelCode)]);
     }
 
+    #[\Override]
     public function forLocaleCode(string $localeCode): string
     {
         $this->initializeCache();
@@ -103,6 +107,7 @@ final class CachedChannelExistsWithLocale implements ChannelExistsWithLocaleInte
         return $this->indexedLocales[$lowercaseLocaleCode];
     }
 
+    #[\Override]
     public function forChannelCode(string $channelCode): string
     {
         $this->initializeCache();
@@ -127,6 +132,7 @@ final class CachedChannelExistsWithLocale implements ChannelExistsWithLocaleInte
      * The correct way to handle that is to clear the cache after saving a channel.
      * As it never occurs in real use case (except tests), it will not impact performance
      */
+    #[\Override]
     public function clearCache(): void
     {
         $this->indexedChannelsWithLocales = null;

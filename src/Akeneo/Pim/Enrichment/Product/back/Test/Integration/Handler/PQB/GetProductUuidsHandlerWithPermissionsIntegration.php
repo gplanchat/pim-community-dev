@@ -22,6 +22,7 @@ final class GetProductUuidsHandlerWithPermissionsIntegration extends EnrichmentP
 {
     private ProductRepositoryInterface $productRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         FeatureHelper::skipIntegrationTestWhenPermissionFeatureIsNotAvailable();
@@ -42,6 +43,7 @@ final class GetProductUuidsHandlerWithPermissionsIntegration extends EnrichmentP
         $this->refreshIndex();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

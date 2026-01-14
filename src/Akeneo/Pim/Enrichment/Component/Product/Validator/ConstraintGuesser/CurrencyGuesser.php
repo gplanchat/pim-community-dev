@@ -19,6 +19,7 @@ class CurrencyGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessConstraints(AttributeInterface $attribute)
     {
         return [
@@ -29,6 +30,7 @@ class CurrencyGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAttribute(AttributeInterface $attribute)
     {
         return AttributeTypes::PRICE_COLLECTION === $attribute->getType();

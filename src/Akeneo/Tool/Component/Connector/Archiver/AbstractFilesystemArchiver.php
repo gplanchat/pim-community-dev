@@ -30,6 +30,7 @@ abstract class AbstractFilesystemArchiver implements ArchiverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getArchives(JobExecution $jobExecution, bool $deep = false): iterable
     {
         if (!$this->supportsJobExecution($jobExecution)) {
@@ -49,6 +50,7 @@ abstract class AbstractFilesystemArchiver implements ArchiverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getArchive(JobExecution $jobExecution, string $key)
     {
         $archives = $this->getArchives($jobExecution, true);

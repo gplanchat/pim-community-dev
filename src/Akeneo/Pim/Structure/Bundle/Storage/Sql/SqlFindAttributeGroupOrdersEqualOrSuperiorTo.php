@@ -25,6 +25,7 @@ class SqlFindAttributeGroupOrdersEqualOrSuperiorTo implements FindAttributeGroup
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(AttributeGroup $attributeGroup): array
     {
         $sql = <<<SQL

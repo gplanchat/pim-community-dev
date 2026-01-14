@@ -45,6 +45,7 @@ class SqlGetConnectorProducts implements Query\GetConnectorProducts
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromProductQueryBuilder(
         ProductQueryBuilderInterface $pqb,
         int $userId,
@@ -82,6 +83,7 @@ class SqlGetConnectorProducts implements Query\GetConnectorProducts
         );
     }
 
+    #[\Override]
     public function fromProductUuid(UuidInterface $productUuid, int $userId): ConnectorProduct
     {
         $products = $this->fromProductUuids([$productUuid], $userId, null, null, null);
@@ -92,6 +94,7 @@ class SqlGetConnectorProducts implements Query\GetConnectorProducts
         return $products->connectorProducts()[0];
     }
 
+    #[\Override]
     public function fromProductUuids(
         array $productUuids,
         int $userId,

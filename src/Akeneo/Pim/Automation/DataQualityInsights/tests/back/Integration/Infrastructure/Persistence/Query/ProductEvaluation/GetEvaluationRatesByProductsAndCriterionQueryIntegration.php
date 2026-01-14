@@ -27,6 +27,7 @@ final class GetEvaluationRatesByProductsAndCriterionQueryIntegration extends Dat
 {
     private CriterionEvaluationRepositoryInterface $productCriterionEvaluationRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

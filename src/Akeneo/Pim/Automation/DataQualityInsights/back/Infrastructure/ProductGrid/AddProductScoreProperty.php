@@ -21,6 +21,7 @@ final class AddProductScoreProperty implements AddAdditionalProductProperties
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function add(FetchProductAndProductModelRowsParameters $fetchProductAndProductModelRowsParameters, array $rows): array
     {
         return ($this->addScoresToProductAndProductModelRows)(

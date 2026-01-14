@@ -7,6 +7,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20211129163800_add_index_on_is_visible_in_job_execution extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->skipIf($this->indexExists(), 'Indexed is_visible_idx already exists in akeneo_batch_job_execution');
@@ -14,6 +15,7 @@ final class Version_6_0_20211129163800_add_index_on_is_visible_in_job_execution 
         $this->addSql('CREATE INDEX is_visible_idx ON akeneo_batch_job_execution (is_visible)');
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

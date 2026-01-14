@@ -20,6 +20,7 @@ final class CachedFindLocales implements FindLocales, CachedQueryInterface
     ) {
     }
 
+    #[\Override]
     public function find(string $localeCode): ?Locale
     {
         if (null === $this->indexedCache || !$this->isLocaleCached($localeCode)) {
@@ -29,6 +30,7 @@ final class CachedFindLocales implements FindLocales, CachedQueryInterface
         return $this->indexedCache[$localeCode];
     }
 
+    #[\Override]
     public function findAllActivated(): array
     {
         if (null === $this->cache) {
@@ -38,6 +40,7 @@ final class CachedFindLocales implements FindLocales, CachedQueryInterface
         return $this->cache;
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->indexedCache = null;

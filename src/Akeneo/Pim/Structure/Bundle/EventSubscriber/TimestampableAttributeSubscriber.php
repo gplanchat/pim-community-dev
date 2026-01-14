@@ -30,6 +30,7 @@ class TimestampableAttributeSubscriber implements EventSubscriberInterface
      *
      * @return string[]
      */
+    #[\Override]
     public static function getSubscribedEvents()
     {
         return [StorageEvents::PRE_SAVE => 'setAttributeUpdatedDate', StorageEvents::PRE_REMOVE => 'setAttributeUpdatedDate'];

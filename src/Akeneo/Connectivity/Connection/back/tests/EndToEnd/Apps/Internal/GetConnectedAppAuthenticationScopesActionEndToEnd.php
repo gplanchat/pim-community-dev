@@ -20,11 +20,13 @@ class GetConnectedAppAuthenticationScopesActionEndToEnd extends WebTestCase
     private ConnectedAppLoader $connectedAppLoader;
     private CreateUserConsentQuery $createUserConsentQuery;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

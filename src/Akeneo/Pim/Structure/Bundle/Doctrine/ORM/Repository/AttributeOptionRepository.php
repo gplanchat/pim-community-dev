@@ -127,6 +127,7 @@ class AttributeOptionRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         list($attributeCode, $optionCode) = explode('.', $code);
@@ -144,6 +145,7 @@ class AttributeOptionRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findCodesByIdentifiers($code, array $optionCodes)
     {
         return $this->createQueryBuilder('o')
@@ -160,6 +162,7 @@ class AttributeOptionRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['attribute', 'code'];

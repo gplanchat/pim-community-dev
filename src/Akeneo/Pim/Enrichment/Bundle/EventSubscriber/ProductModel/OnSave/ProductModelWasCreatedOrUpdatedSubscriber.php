@@ -36,6 +36,7 @@ class ProductModelWasCreatedOrUpdatedSubscriber implements EventSubscriberInterf
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents()
     {
         return [

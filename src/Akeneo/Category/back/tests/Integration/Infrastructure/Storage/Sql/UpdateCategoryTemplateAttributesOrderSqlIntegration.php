@@ -35,6 +35,7 @@ class UpdateCategoryTemplateAttributesOrderSqlIntegration  extends CategoryTestC
     private CategoryTemplateAttributeSaver $categoryTemplateAttributeSaver;
     private GetAttribute $getAttribute;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

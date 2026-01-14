@@ -13,11 +13,12 @@ final class Version_7_0_20221116131232_add_prefixes_identifier_generator_table_I
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20221116131232_add_prefixes_identifier_generator_table';
-    private const TABLE_NAME = 'pim_catalog_identifier_generator_prefixes';
+    private const string MIGRATION_LABEL = '_7_0_20221116131232_add_prefixes_identifier_generator_table';
+    private const string TABLE_NAME = 'pim_catalog_identifier_generator_prefixes';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -42,6 +43,7 @@ final class Version_7_0_20221116131232_add_prefixes_identifier_generator_table_I
         Assert::assertTrue($this->tableExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

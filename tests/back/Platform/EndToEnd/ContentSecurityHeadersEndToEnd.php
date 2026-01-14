@@ -45,6 +45,7 @@ class ContentSecurityHeadersEndToEnd extends WebTestCase
         Assert::assertStringContainsString("connect-src 'self'", $cspHeaders);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

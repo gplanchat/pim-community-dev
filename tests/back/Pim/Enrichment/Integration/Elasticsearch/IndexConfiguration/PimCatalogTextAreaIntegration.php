@@ -228,6 +228,7 @@ class PimCatalogTextAreaIntegration extends AbstractPimCatalogTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function addDocuments()
     {
         $products = [

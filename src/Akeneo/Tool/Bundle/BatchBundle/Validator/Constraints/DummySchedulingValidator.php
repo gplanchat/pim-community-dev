@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 final class DummySchedulingValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof Scheduling) {

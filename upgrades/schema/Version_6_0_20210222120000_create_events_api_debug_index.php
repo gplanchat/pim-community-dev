@@ -22,11 +22,13 @@ implements ContainerAwareInterface
     /** @var ContainerInterface */
     private $container;
 
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $builder = $this->container->get('akeneo_elasticsearch.client_builder');
@@ -44,6 +46,7 @@ implements ContainerAwareInterface
         $client->createIndex();
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

@@ -10,10 +10,11 @@ final class Version_7_0_20221024171500_add_scheduled_jobs_integration extends Te
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20221024171500_add_scheduled_jobs';
+    private const string MIGRATION_LABEL = '_7_0_20221024171500_add_scheduled_jobs';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ final class Version_7_0_20221024171500_add_scheduled_jobs_integration extends Te
         $this->assertEquals($jobInstanceId, $this->jobInstanceId('schedule_dqi_periodic_tasks'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

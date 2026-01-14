@@ -361,6 +361,7 @@ class PimCatalogMetricIntegration extends AbstractPimCatalogTestCase
      * In this precise case, some data might not be catched by our dynamic mapping, but ES is capable of casting them
      * and the queries are still working.
      */
+    #[\Override]
     protected function addDocuments()
     {
         $products = [

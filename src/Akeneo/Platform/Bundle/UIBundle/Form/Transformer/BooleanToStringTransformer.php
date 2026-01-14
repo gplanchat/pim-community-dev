@@ -17,6 +17,7 @@ class BooleanToStringTransformer extends BaseBooleanToStringTransformer
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function reverseTransform($value)
     {
         if ('' === $value || '0' === $value) {

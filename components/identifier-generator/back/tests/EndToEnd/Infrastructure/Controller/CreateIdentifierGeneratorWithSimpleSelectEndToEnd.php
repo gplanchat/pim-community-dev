@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 final class CreateIdentifierGeneratorWithSimpleSelectEndToEnd extends ControllerEndToEndTestCase
 {
-    private const VALID_IDENTIFIER = [
+    private const array VALID_IDENTIFIER = [
         'code' => 'my_new_generator',
         'labels' => [
             'en_US' => 'My new generator',

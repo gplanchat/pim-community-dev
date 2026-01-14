@@ -40,6 +40,7 @@ class ProductAndProductModelQueryBuilder implements ProductQueryBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFilter($field, $operator, $value, array $context = [])
     {
         return $this->pqb->addFilter($field, $operator, $value, $context);
@@ -48,6 +49,7 @@ class ProductAndProductModelQueryBuilder implements ProductQueryBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addSorter($field, $direction, array $context = [])
     {
         return $this->pqb->addSorter($field, $direction, $context);
@@ -56,6 +58,7 @@ class ProductAndProductModelQueryBuilder implements ProductQueryBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRawFilters()
     {
         return $this->pqb->getRawFilters();
@@ -64,6 +67,7 @@ class ProductAndProductModelQueryBuilder implements ProductQueryBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getQueryBuilder()
     {
         return $this->pqb->getQueryBuilder();
@@ -72,6 +76,7 @@ class ProductAndProductModelQueryBuilder implements ProductQueryBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setQueryBuilder($queryBuilder)
     {
         return $this->pqb->setQueryBuilder($queryBuilder);
@@ -80,6 +85,7 @@ class ProductAndProductModelQueryBuilder implements ProductQueryBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute()
     {
         if ($this->shouldFilterOnlyOnProducts()) {

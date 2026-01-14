@@ -29,6 +29,7 @@ class RefreshVersioning implements TaskletInterface
     ) {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $batchSize = $this->stepExecution->getJobParameters()->get('batch_size');
@@ -76,7 +77,7 @@ class RefreshVersioning implements TaskletInterface
         $this->logger->info(sprintf('<info>%d created versions.</info>', $totalPendings));
     }
 
-    protected function createVersion(Version $version, Version $previousVersion = null): ?Version
+    protected function createVersion(Version $version, ?Version $previousVersion = null): ?Version
     {
         $version = $this->versionManager->buildPendingVersion($version, $previousVersion);
 
@@ -93,6 +94,7 @@ class RefreshVersioning implements TaskletInterface
         return null;
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;

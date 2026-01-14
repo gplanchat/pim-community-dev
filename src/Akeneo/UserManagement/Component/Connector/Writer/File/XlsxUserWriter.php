@@ -10,6 +10,7 @@ namespace Akeneo\UserManagement\Component\Connector\Writer\File;
  */
 class XlsxUserWriter extends AbstractUserWriter
 {
+    #[\Override]
     protected function getWriterConfiguration(): array
     {
         return ['type' => 'xlsx'];

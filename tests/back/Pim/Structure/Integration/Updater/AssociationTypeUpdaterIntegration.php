@@ -95,6 +95,7 @@ class AssociationTypeUpdaterIntegration extends TestCase
         return $this->get('pim_catalog.updater.association_type');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

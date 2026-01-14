@@ -19,6 +19,7 @@ class ProductAndProductModelIdentifierFilterIntegration extends AbstractProductA
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -223,6 +224,7 @@ class ProductAndProductModelIdentifierFilterIntegration extends AbstractProductA
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

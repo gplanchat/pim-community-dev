@@ -10,10 +10,11 @@ final class Version_7_0_20221121160755_clean_family_codes_from_export_job_filter
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20221121160755_clean_family_codes_from_export_job_filters';
+    private const string MIGRATION_LABEL = '_7_0_20221121160755_clean_family_codes_from_export_job_filters';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -164,6 +165,7 @@ SQL;
         return !empty($familyFilter) ? $familyFilter[0] : null;
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

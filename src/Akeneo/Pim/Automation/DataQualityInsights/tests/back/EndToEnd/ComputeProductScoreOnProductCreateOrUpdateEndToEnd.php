@@ -18,10 +18,11 @@ use Ramsey\Uuid\UuidInterface;
  */
 final class ComputeProductScoreOnProductCreateOrUpdateEndToEnd extends MessengerTestCase
 {
-    private const CONSUMER_NAME = 'dqi_product_score_compute';
+    private const string CONSUMER_NAME = 'dqi_product_score_compute';
 
     private PubSubQueueStatus $productScoreComputeOnUpsertQueueStatus;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->productScoreComputeOnUpsertQueueStatus = $this->get('akeneo_integration_tests.pub_sub_queue_status.dqi_product_score_compute_on_upsert');

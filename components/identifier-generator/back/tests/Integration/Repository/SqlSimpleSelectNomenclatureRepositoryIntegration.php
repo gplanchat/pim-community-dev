@@ -22,6 +22,7 @@ class SqlSimpleSelectNomenclatureRepositoryIntegration extends TestCase
     private SimpleSelectNomenclatureRepository $simpleSelectNomenclatureRepository;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -131,6 +132,7 @@ class SqlSimpleSelectNomenclatureRepositoryIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog(['identifier_generator']);

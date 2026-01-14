@@ -25,6 +25,7 @@ class RemoveFromGroupsApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $groupUserIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($groupUserIntent, RemoveFromGroups::class);
@@ -42,6 +43,7 @@ class RemoveFromGroupsApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [RemoveFromGroups::class];

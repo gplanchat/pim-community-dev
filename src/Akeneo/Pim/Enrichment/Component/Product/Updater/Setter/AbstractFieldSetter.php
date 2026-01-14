@@ -17,6 +17,7 @@ abstract class AbstractFieldSetter implements FieldSetterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsField($field)
     {
         return in_array($field, $this->supportedFields, true);

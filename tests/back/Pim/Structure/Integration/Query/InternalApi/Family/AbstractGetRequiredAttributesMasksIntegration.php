@@ -19,6 +19,7 @@ use Webmozart\Assert\Assert;
 
 abstract class AbstractGetRequiredAttributesMasksIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
@@ -27,6 +28,7 @@ abstract class AbstractGetRequiredAttributesMasksIntegration extends TestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -12,15 +12,16 @@ use Symfony\Component\Messenger\Transport\InMemoryTransport;
  */
 final class InMemorySpyTransport extends InMemoryTransport
 {
-    public const GET_EVENT = 'get_event';
-    public const ACK_EVENT = 'ack_event';
-    public const SEND_EVENT = 'send_event';
+    public const string GET_EVENT = 'get_event';
+    public const string ACK_EVENT = 'ack_event';
+    public const string SEND_EVENT = 'send_event';
 
     private array $events = [];
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function get(): iterable
     {
         $this->events[] = self::GET_EVENT;
@@ -30,6 +31,7 @@ final class InMemorySpyTransport extends InMemoryTransport
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function ack(Envelope $envelope): void
     {
         $this->events[] = self::ACK_EVENT;
@@ -39,6 +41,7 @@ final class InMemorySpyTransport extends InMemoryTransport
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function send(Envelope $envelope): Envelope
     {
         $this->events[] = self::SEND_EVENT;

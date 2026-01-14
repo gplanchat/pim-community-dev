@@ -57,6 +57,7 @@ final class AttributeAdditionalProperties implements \IteratorAggregate
     /**
      * @return \ArrayIterator<string, mixed>
      */
+    #[\Override]
     public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->additionalProperties);

@@ -17,11 +17,12 @@ use PHPUnit\Framework\Assert;
  */
 final class ESGetProductAndProductModelIdentifiersWithValuesIgnoringLocaleAndScopeIntegration extends TestCase
 {
-    private const SERVICE_NAME = 'akeneo.pim.enrichment.product.query.get_product_and_product_model_identifiers_with_values_ignoring_locale_and_scope';
+    private const string SERVICE_NAME = 'akeneo.pim.enrichment.product.query.get_product_and_product_model_identifiers_with_values_ignoring_locale_and_scope';
 
     /** @var ESGetProductAndProductModelIdentifiersWithValuesIgnoringLocaleAndScope */
     private $eSGetProductAndProductModelIdentifiers;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -119,6 +120,7 @@ final class ESGetProductAndProductModelIdentifiersWithValuesIgnoringLocaleAndSco
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

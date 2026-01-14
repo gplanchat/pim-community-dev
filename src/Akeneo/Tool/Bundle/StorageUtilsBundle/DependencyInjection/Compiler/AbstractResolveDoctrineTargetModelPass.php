@@ -18,6 +18,7 @@ abstract class AbstractResolveDoctrineTargetModelPass implements CompilerPassInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $this->resolveTargetEntities($container);

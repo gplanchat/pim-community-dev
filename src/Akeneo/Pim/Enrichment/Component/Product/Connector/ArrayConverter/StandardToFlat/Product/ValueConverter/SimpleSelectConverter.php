@@ -31,6 +31,7 @@ class SimpleSelectConverter extends AbstractValueConverter implements ValueConve
      *     'gift_type-de_DE-ecommerce' => 'trip',
      * ]
      */
+    #[\Override]
     public function convert($attributeCode, $data)
     {
         $convertedItem = [];

@@ -12,6 +12,7 @@ final class AttributeFilter extends AbstractFilter
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data): bool
     {
         if (!$ds instanceof PimFilterDatasourceAdapterInterface) {
@@ -53,6 +54,7 @@ final class AttributeFilter extends AbstractFilter
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function getFormType()
     {
         return TextFilterType::class;

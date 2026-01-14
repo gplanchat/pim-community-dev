@@ -113,6 +113,7 @@ class Form extends Base
      *
      * @return NodeElement|null
      */
+    #[\Override]
     public function getFormTab($tab)
     {
         $tabs = $this->getPageTabs();
@@ -262,6 +263,7 @@ class Form extends Base
      * @param string $name
      * {@inheritdoc}
      */
+    #[\Override]
     public function findField($name)
     {
         return $this->spin(function () use ($name) {
@@ -356,6 +358,7 @@ class Form extends Base
      * @throws ElementNotFoundException
      * @throws TimeoutException
      */
+    #[\Override]
     public function attachFileToField($locator, $path)
     {
         $this->spin(function () use ($locator) {
@@ -404,7 +407,8 @@ class Form extends Base
      * @param string  $value
      * @param Element $element
      */
-    public function fillField($field, $value, Element $element = null)
+    #[\Override]
+    public function fillField($field, $value, ?Element $element = null)
     {
         $label     = $this->extractLabelElement($field, $element);
         $fieldType = $this->getFieldType($label);
@@ -650,7 +654,7 @@ class Form extends Base
      *
      * @return \Behat\Mink\Element\NodeElement
      */
-    protected function extractLabelElement($field, ElementInterface $element = null)
+    protected function extractLabelElement($field, ?ElementInterface $element = null)
     {
         $subLabelContent = null;
         $channel         = null;

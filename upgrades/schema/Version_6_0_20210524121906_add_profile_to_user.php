@@ -7,11 +7,13 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20210524121906_add_profile_to_user extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->addSql('ALTER TABLE oro_user ADD profile VARCHAR(255) NULL');
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

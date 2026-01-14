@@ -17,6 +17,7 @@ final class GetUserConsentedAuthenticationUuidQuery implements GetUserConsentedA
     {
     }
 
+    #[\Override]
     public function execute(int $userId, string $appId): string
     {
         $query = <<<SQL

@@ -16,6 +16,7 @@ final class SqlGetExistingCategoriesIntegration extends TestCase
 {
     private GetViewableCategories $getViewableCategories;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -45,6 +46,7 @@ final class SqlGetExistingCategoriesIntegration extends TestCase
         $this->getViewableCategories->forUserId(['toto', 42], 1);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

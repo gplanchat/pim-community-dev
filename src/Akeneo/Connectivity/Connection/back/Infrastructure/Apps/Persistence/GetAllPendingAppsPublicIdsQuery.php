@@ -18,6 +18,7 @@ final class GetAllPendingAppsPublicIdsQuery implements GetAllPendingAppsPublicId
     {
     }
 
+    #[\Override]
     public function execute(): array
     {
         $sql = <<<SQL

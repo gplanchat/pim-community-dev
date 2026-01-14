@@ -30,6 +30,7 @@ abstract class JobExecutionMessage implements JobExecutionMessageInterface
     /**
      * Create a new JobExecutionMessage that has never been persisted into database.
      */
+    #[\Override]
     public static function createJobExecutionMessage(
         int $jobExecutionId,
         array $options
@@ -39,6 +40,7 @@ abstract class JobExecutionMessage implements JobExecutionMessageInterface
         return new static(Uuid::uuid4(), $jobExecutionId, $createTime, null, $options);
     }
 
+    #[\Override]
     public static function createJobExecutionMessageFromNormalized(array $normalized): JobExecutionMessageInterface
     {
         return new static(
@@ -52,36 +54,43 @@ abstract class JobExecutionMessage implements JobExecutionMessageInterface
         );
     }
 
+    #[\Override]
     public function getId(): UuidInterface
     {
         return $this->id;
     }
 
+    #[\Override]
     public function getJobExecutionId(): ?int
     {
         return $this->jobExecutionId;
     }
 
+    #[\Override]
     public function getCreateTime(): \DateTime
     {
         return $this->createTime;
     }
 
+    #[\Override]
     public function getUpdatedTime(): ?\DateTime
     {
         return $this->updatedTime;
     }
 
+    #[\Override]
     public function getOptions(): array
     {
         return $this->options;
     }
 
+    #[\Override]
     public function getTenantId(): ?string
     {
         return $this->tenantId;
     }
 
+    #[\Override]
     public function setTenantId(string $tenantId): void
     {
         $this->tenantId = $tenantId;

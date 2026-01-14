@@ -27,6 +27,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
     /** @var PubSubQueueStatus */
     private array $pubSubQueueStatuses;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -39,6 +40,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
         $this->flushQueues();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -92,6 +94,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
         Assert::assertSame(0, $process->getExitCode(), 'An error occurred: ' . $process->getErrorOutput());
     }
 
+    #[\Override]
     protected function assertProductScoreIsComputed(
         ProductUuid $productUuid,
         \DateTimeImmutable $evaluatedAt = new \DateTimeImmutable('now')
@@ -102,6 +105,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
         );
     }
 
+    #[\Override]
     protected function assertProductScoreIsNotComputed(
         ProductUuid $productUuid,
         \DateTimeImmutable $evaluatedAt = new \DateTimeImmutable('now')
@@ -112,6 +116,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
         );
     }
 
+    #[\Override]
     protected function isProductScoreComputed(
         ProductUuid $productUuid,
         \DateTimeImmutable $evaluatedAt = new \DateTimeImmutable('now')
@@ -126,6 +131,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
         )->fetchOne();
     }
 
+    #[\Override]
     protected function assertProductModelScoreIsComputed(
         ProductModelId $productModelId,
         \DateTimeImmutable $evaluatedAt = new \DateTimeImmutable('now')
@@ -136,6 +142,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
         );
     }
 
+    #[\Override]
     protected function assertProductModelScoreIsNotComputed(
         ProductModelId $productModelId,
         \DateTimeImmutable $evaluatedAt = new \DateTimeImmutable('now')
@@ -146,6 +153,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
         );
     }
 
+    #[\Override]
     protected function isProductModelScoreComputed(
         ProductModelId $productModelId,
         \DateTimeImmutable $evaluatedAt = new \DateTimeImmutable('now')

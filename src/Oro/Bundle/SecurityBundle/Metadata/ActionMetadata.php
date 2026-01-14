@@ -41,6 +41,7 @@ class ActionMetadata implements AclClassInfo, \Serializable
      *
      * @return string
      */
+    #[\Override]
     public function getClassName()
     {
         return $this->name;
@@ -51,6 +52,7 @@ class ActionMetadata implements AclClassInfo, \Serializable
      *
      * @return string
      */
+    #[\Override]
     public function getGroup()
     {
         return $this->group;
@@ -61,11 +63,13 @@ class ActionMetadata implements AclClassInfo, \Serializable
      *
      * @return string
      */
+    #[\Override]
     public function getLabel()
     {
         return $this->label;
     }
 
+    #[\Override]
     public function isEnabledAtCreation(): bool
     {
         return $this->isEnabledAtCreation;
@@ -87,11 +91,13 @@ class ActionMetadata implements AclClassInfo, \Serializable
         $this->visible = $visible;
     }
 
+    #[\Override]
     public function getOrder(): int
     {
         return $this->order;
     }
 
+    #[\Override]
     public function isVisible(): bool
     {
         return $this->visible;
@@ -100,6 +106,7 @@ class ActionMetadata implements AclClassInfo, \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function serialize()
     {
         return serialize(
@@ -117,6 +124,7 @@ class ActionMetadata implements AclClassInfo, \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function unserialize($serialized)
     {
         list(

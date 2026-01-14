@@ -15,6 +15,7 @@ class DateRangeFilterTypeTest extends AbstractTypeTestCase
      */
     private $type;
 
+    #[\Override]
     protected function setUp(): void
     {
         $translator = $this->createMockTranslator();
@@ -33,6 +34,7 @@ class DateRangeFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function getTestFormType()
     {
         return $this->type;
@@ -46,6 +48,7 @@ class DateRangeFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptionsDataProvider()
     {
         return [
@@ -73,6 +76,7 @@ class DateRangeFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function bindDataProvider()
     {
         return [

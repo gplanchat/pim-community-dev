@@ -16,6 +16,7 @@ class ImageType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return AttributeTypes::IMAGE;

@@ -36,6 +36,7 @@ class ConversionUnitsValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($conversionUnits, Constraint $constraint)
     {
         if (null !== $conversionUnits && is_array($conversionUnits)) {

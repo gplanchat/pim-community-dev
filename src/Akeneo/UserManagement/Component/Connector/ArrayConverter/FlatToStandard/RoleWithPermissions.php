@@ -13,7 +13,7 @@ use Akeneo\Tool\Component\Connector\ArrayConverter\FieldsRequirementChecker;
  */
 final class RoleWithPermissions implements ArrayConverterInterface
 {
-    private const FIELDS_PRESENCE = ['role'];
+    private const array FIELDS_PRESENCE = ['role'];
 
     private FieldsRequirementChecker $fieldsRequirementChecker;
 
@@ -42,6 +42,7 @@ final class RoleWithPermissions implements ArrayConverterInterface
      *      ],
      * ]
      */
+    #[\Override]
     public function convert(array $item, array $options = []): array
     {
         $this->fieldsRequirementChecker->checkFieldsPresence($item, self::FIELDS_PRESENCE);

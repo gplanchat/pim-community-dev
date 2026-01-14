@@ -37,6 +37,7 @@ class GroupFieldRemover extends AbstractFieldRemover
      *
      * Expected data input format : ["group_code", "another_group_code"]
      */
+    #[\Override]
     public function removeFieldData($product, $field, $data, array $options = [])
     {
         if (!$product instanceof ProductInterface) {

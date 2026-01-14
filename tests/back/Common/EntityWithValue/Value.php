@@ -6,8 +6,8 @@ namespace Akeneo\Test\Common\EntityWithValue;
 
 final class Value
 {
-    private const ALL_CHANNELS = 'all-channels';
-    private const ALL_LOCALES = 'all-locales';
+    private const string ALL_CHANNELS = 'all-channels';
+    private const string ALL_LOCALES = 'all-locales';
 
     /** @var Code */
     private $attribute;

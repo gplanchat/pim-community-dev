@@ -29,6 +29,7 @@ class EditRolePermissionsRoleQueryIntegration extends TestCase
     private UnitOfWorkAndRepositoriesClearer $cacheClearer;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -109,6 +110,7 @@ class EditRolePermissionsRoleQueryIntegration extends TestCase
             ['roles' => Connection::PARAM_STR_ARRAY]
         );
     }
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

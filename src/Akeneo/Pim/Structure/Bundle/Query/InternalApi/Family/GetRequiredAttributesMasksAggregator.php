@@ -30,6 +30,7 @@ final class GetRequiredAttributesMasksAggregator implements GetRequiredAttribute
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromFamilyCodes(array $familyCodes): array
     {
         $result = [];

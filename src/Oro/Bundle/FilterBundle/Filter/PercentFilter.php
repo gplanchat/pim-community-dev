@@ -9,6 +9,7 @@ class PercentFilter extends NumberFilter
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function init($name, array $params)
     {
         $params[FilterUtility::FRONTEND_TYPE_KEY] = 'number';
@@ -21,6 +22,7 @@ class PercentFilter extends NumberFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function parseData($data)
     {
         $data = parent::parseData($data);

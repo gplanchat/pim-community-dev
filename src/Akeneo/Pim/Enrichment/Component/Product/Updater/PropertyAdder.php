@@ -42,6 +42,7 @@ class PropertyAdder implements PropertyAdderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addData($product, $field, $data, array $options = [])
     {
         if (!$product instanceof EntityWithValuesInterface) {

@@ -18,6 +18,7 @@ final class BulkUpdateProductModelQualityScoresIndexSubscriber implements EventS
     {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

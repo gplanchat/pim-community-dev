@@ -37,6 +37,7 @@ final class FlattenExceptionNormalizer implements NormalizerInterface
         $this->normalizer = $normalizer;
     }
 
+    #[\Override]
     public function normalize($exception, $format = null, array $context = [])
     {
         $contextException = $context['exception'] ?? null;
@@ -47,6 +48,7 @@ final class FlattenExceptionNormalizer implements NormalizerInterface
         return $this->fosRestNormalizer->normalize($exception, $format, $context);
     }
 
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof FlattenException;

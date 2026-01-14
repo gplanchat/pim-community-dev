@@ -10,6 +10,7 @@ namespace Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Persistence\Q
  */
 class AddPriceCollectionCase implements AttributeCase
 {
+    #[\Override]
     public function getCase(): string
     {
         return "

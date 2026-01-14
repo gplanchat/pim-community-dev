@@ -19,8 +19,8 @@ use Twig\Environment;
  */
 class MailNotifier implements Notifier
 {
-    private const SUCCESS_SUBJECT_TEMPLATE = 'Akeneo successfully completed your "%s" job';
-    private const FAILURE_SUBJECT_TEMPLATE = 'Akeneo completed your "%s" job with errors';
+    private const string SUCCESS_SUBJECT_TEMPLATE = 'Akeneo successfully completed your "%s" job';
+    private const string FAILURE_SUBJECT_TEMPLATE = 'Akeneo completed your "%s" job with errors';
 
     private array $recipientEmails = [];
 
@@ -32,6 +32,7 @@ class MailNotifier implements Notifier
     ) {
     }
 
+    #[\Override]
     public function notify(JobExecution $jobExecution): void
     {
         $emailsToNotify = $this->getEmailsToNotify();
@@ -39,6 +40,7 @@ class MailNotifier implements Notifier
         $this->sendMail($jobExecution, $emailsToNotify);
     }
 
+    #[\Override]
     public function setRecipients(array $recipients): void
     {
         $this->recipientEmails = $recipients;

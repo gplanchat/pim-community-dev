@@ -35,6 +35,7 @@ class RequestParametersExtractor implements RequestParametersExtractorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParameter($key)
     {
         $param = $this->requestParams->get($key, null);
@@ -51,6 +52,7 @@ class RequestParametersExtractor implements RequestParametersExtractorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDatagridParameter($key, $defaultValue = null)
     {
         return $this->requestParams->get($key, $defaultValue);
@@ -59,6 +61,7 @@ class RequestParametersExtractor implements RequestParametersExtractorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRequestParameter($key, $defaultValue = null)
     {
         return $this->getRequest()->get($key, $defaultValue);

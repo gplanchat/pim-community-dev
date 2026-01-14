@@ -19,6 +19,7 @@ class ElasticsearchEventsApiDebugRepositoryIntegration extends TestCase
     private ElasticsearchEventsApiDebugRepository $elasticsearchEventsApiDebugRepository;
     private Client $elasticsearchClient;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -91,6 +92,7 @@ class ElasticsearchEventsApiDebugRepositoryIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

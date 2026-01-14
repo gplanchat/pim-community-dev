@@ -21,6 +21,7 @@ class ProduceEventOnBulkProductCreationIntegration extends TestCase
     private ProductBuilderInterface $productBuilder;
     private BulkSaverInterface $productSaver;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -41,6 +42,7 @@ class ProduceEventOnBulkProductCreationIntegration extends TestCase
         $this->assertEventCount($count, ProductCreated::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

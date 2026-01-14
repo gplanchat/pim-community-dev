@@ -46,6 +46,7 @@ class BaseRemover implements RemoverInterface, BulkRemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function remove($object, array $options = [])
     {
         $this->validateObject($object);
@@ -65,6 +66,7 @@ class BaseRemover implements RemoverInterface, BulkRemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeAll(array $objects, array $options = [])
     {
         if (empty($objects)) {

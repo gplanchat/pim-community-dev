@@ -352,6 +352,7 @@ class FeatureContext extends MinkContext
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function assertCheckboxChecked($checkbox)
     {
         $this->spin(function () use ($checkbox) {
@@ -364,6 +365,7 @@ class FeatureContext extends MinkContext
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function assertCheckboxNotChecked($checkbox)
     {
         $this->spin(function () use ($checkbox) {

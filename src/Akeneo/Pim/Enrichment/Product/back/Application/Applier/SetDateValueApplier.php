@@ -21,6 +21,7 @@ final class SetDateValueApplier implements UserIntentApplier
     ) {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, SetDateValue::class);
@@ -37,6 +38,7 @@ final class SetDateValueApplier implements UserIntentApplier
         ]);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetDateValue::class];

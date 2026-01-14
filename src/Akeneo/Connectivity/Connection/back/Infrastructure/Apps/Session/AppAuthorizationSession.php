@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
  */
 class AppAuthorizationSession implements AppAuthorizationSessionInterface
 {
-    private const SESSION_PREFIX = '_app_auth_';
+    private const string SESSION_PREFIX = '_app_auth_';
 
     public function __construct(private SessionInterface $session)
     {
@@ -24,6 +24,7 @@ class AppAuthorizationSession implements AppAuthorizationSessionInterface
      * The App authorization request, on initialization, is stored in session.
      * This way, it can be accessed and updated during all the steps of the activation wizard.
      */
+    #[\Override]
     public function initialize(AppAuthorization $authorization): void
     {
         $key = $this->getSessionKey($authorization->clientId);
@@ -37,6 +38,7 @@ class AppAuthorizationSession implements AppAuthorizationSessionInterface
      * @param string $clientId
      * @return AppAuthorization|null returns null if none found
      */
+    #[\Override]
     public function getAppAuthorization(string $clientId): ?AppAuthorization
     {
         $key = $this->getSessionKey($clientId);

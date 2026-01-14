@@ -29,6 +29,7 @@ class UnknownProductException extends \Exception implements
         parent::__construct((string) $this->templatedErrorMessage);
     }
 
+    #[\Override]
     public function getTemplatedErrorMessage(): TemplatedErrorMessage
     {
         return $this->templatedErrorMessage;

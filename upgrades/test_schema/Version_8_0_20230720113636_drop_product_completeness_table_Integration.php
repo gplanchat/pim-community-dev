@@ -14,13 +14,14 @@ use Doctrine\DBAL\Connection;
  */
 final class Version_8_0_20230720113636_drop_product_completeness_table_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230720113636_drop_product_completeness_table';
-    private const TABLE_NAME = 'pim_catalog_completeness';
+    private const string MIGRATION_NAME = '_8_0_20230720113636_drop_product_completeness_table';
+    private const string TABLE_NAME = 'pim_catalog_completeness';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -53,6 +54,7 @@ final class Version_8_0_20230720113636_drop_product_completeness_table_Integrati
         $this->assertFalse($this->tableExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

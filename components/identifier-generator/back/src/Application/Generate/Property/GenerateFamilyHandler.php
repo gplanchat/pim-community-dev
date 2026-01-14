@@ -14,13 +14,14 @@ use Webmozart\Assert\Assert;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class GenerateFamilyHandler implements GeneratePropertyHandlerInterface
+final readonly class GenerateFamilyHandler implements GeneratePropertyHandlerInterface
 {
     public function __construct(
-        private readonly PropertyProcessApplier $processApplier,
+        private PropertyProcessApplier $processApplier,
     ) {
     }
 
+    #[\Override]
     public function __invoke(
         PropertyInterface $familyProperty,
         IdentifierGenerator $identifierGenerator,
@@ -39,6 +40,7 @@ final class GenerateFamilyHandler implements GeneratePropertyHandlerInterface
         );
     }
 
+    #[\Override]
     public function getPropertyClass(): string
     {
         return FamilyProperty::class;

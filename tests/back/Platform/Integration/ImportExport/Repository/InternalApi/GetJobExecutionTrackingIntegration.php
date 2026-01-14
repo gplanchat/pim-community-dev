@@ -18,6 +18,7 @@ class GetJobExecutionTrackingIntegration extends TestCase
     private GetJobExecutionTracking $getJobExecutionTracking;
     private FrozenClock $clock;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -87,6 +88,7 @@ class GetJobExecutionTrackingIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

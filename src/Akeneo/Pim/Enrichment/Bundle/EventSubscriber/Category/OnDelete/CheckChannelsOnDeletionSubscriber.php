@@ -28,6 +28,7 @@ final class CheckChannelsOnDeletionSubscriber implements EventSubscriberInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

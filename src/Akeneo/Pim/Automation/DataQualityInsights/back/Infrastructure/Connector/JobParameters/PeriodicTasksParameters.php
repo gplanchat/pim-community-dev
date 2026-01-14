@@ -15,9 +15,10 @@ use Symfony\Component\Validator\Constraints;
  */
 final class PeriodicTasksParameters implements ConstraintCollectionProviderInterface, DefaultValuesProviderInterface
 {
-    public const DATE_FIELD = 'date';
-    public const DATE_FORMAT = 'Y-m-d H:i:s';
+    public const string DATE_FIELD = 'date';
+    public const string DATE_FORMAT = 'Y-m-d H:i:s';
 
+    #[\Override]
     public function getConstraintCollection(): Constraints\Collection
     {
         $dateConstraint = new Constraints\DateTime();
@@ -32,6 +33,7 @@ final class PeriodicTasksParameters implements ConstraintCollectionProviderInter
         );
     }
 
+    #[\Override]
     public function getDefaultValues(): array
     {
         return [
@@ -39,6 +41,7 @@ final class PeriodicTasksParameters implements ConstraintCollectionProviderInter
         ];
     }
 
+    #[\Override]
     public function supports(JobInterface $job)
     {
         return $job->getName() === 'data_quality_insights_periodic_tasks';

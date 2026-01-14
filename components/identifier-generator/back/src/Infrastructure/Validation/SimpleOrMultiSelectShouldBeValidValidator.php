@@ -29,6 +29,7 @@ final class SimpleOrMultiSelectShouldBeValidValidator extends ConstraintValidato
     ) {
     }
 
+    #[\Override]
     public function validate($condition, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, SimpleOrMultiSelectShouldBeValid::class);

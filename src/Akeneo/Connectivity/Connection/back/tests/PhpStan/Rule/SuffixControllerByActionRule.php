@@ -10,11 +10,12 @@ use PHPStan\Analyser\Scope;
 
 final class SuffixControllerByActionRule extends AbstractControllerRule
 {
-    private const ERROR_MESSAGE = 'Controller must be suffixed with "Action"';
+    private const string ERROR_MESSAGE = 'Controller must be suffixed with "Action"';
 
     /**
      * @param Class_ $node
      */
+    #[\Override]
     public function processNode(Node $node, Scope $scope): array
     {
         if (!$this->isInControllerNamespace($scope)) {

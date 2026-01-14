@@ -21,6 +21,7 @@ class ReferenceDataConfigurationNormalizer implements NormalizerInterface, Cache
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($config, $format = null, array $context = [])
     {
         return [
@@ -33,11 +34,13 @@ class ReferenceDataConfigurationNormalizer implements NormalizerInterface, Cache
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ReferenceDataConfiguration && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

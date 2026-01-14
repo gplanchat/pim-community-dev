@@ -53,6 +53,7 @@ class DatabaseCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -90,6 +91,7 @@ class DatabaseCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
         $this->commandExecutor = new CommandExecutor(
@@ -102,6 +104,7 @@ class DatabaseCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->logger->info('Prepare database schema');

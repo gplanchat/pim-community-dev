@@ -23,6 +23,7 @@ final class GetAttributeGroupActivationQuery implements GetAttributeGroupActivat
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function byCode(AttributeGroupCode $attributeGroupCode): ?AttributeGroupActivation
     {
         $query = <<<SQL

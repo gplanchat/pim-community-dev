@@ -11,6 +11,7 @@ use Webmozart\Assert\Assert;
 
 final class Version_6_0_20210816123500_add_index_migration_table extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $sql = <<<SQL
@@ -26,6 +27,7 @@ final class Version_6_0_20210816123500_add_index_migration_table extends Abstrac
         $this->addSql($sql);
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

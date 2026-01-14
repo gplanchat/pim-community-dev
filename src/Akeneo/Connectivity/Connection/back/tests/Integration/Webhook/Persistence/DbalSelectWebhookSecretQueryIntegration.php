@@ -56,11 +56,13 @@ class DbalSelectWebhookSecretQueryIntegration extends TestCase
         Assert::assertNull($secret);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -38,6 +38,7 @@ class Creation extends Form
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAvailableAttributes(array $attributes = [])
     {
         $this->spin(function () {

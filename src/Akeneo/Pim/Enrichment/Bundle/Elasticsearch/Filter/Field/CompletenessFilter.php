@@ -37,6 +37,7 @@ class CompletenessFilter extends AbstractFieldFilter implements FieldFilterInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter($field, $operator, $value, $locale = null, $channel = null, $options = [])
     {
         if (empty($locale) && empty($options['locales'])) {

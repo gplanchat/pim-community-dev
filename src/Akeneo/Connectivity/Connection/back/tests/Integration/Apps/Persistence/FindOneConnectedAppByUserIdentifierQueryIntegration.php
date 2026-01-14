@@ -22,11 +22,13 @@ class FindOneConnectedAppByUserIdentifierQueryIntegration extends TestCase
     private ConnectedAppLoader $connectedAppLoader;
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

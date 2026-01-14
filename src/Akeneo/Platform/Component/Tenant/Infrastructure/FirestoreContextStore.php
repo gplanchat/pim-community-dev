@@ -24,17 +24,18 @@ use Webmozart\Assert\Assert;
  *
  * @author  JM Leroux <jmleroux.pro@gmail.com>
  */
-final class FirestoreContextStore implements ContextStoreInterface
+final readonly class FirestoreContextStore implements ContextStoreInterface
 {
-    private const MAX_RETRY = 5;
+    private const int MAX_RETRY = 5;
 
     public function __construct(
-        private readonly FirestoreClient $firestoreClient,
-        private readonly string $collection,
+        private FirestoreClient $firestoreClient,
+        private string $collection,
     ) {
         Assert::notEmpty($collection, 'The collection name must not be empty');
     }
 
+    #[\Override]
     public function findDocumentById(string $documentId): array
     {
         $retry = 0;

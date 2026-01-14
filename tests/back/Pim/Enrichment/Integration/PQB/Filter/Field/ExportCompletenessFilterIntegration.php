@@ -20,6 +20,7 @@ use AkeneoTest\Pim\Enrichment\Integration\PQB\AbstractProductQueryBuilderTestCas
  */
 class ExportCompletenessFilterIntegration extends AbstractProductQueryBuilderTestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -143,6 +144,7 @@ class ExportCompletenessFilterIntegration extends AbstractProductQueryBuilderTes
      *
      * @return CursorInterface
      */
+    #[\Override]
     protected function executeFilter(array $filters)
     {
         $pqb = $this->get('pim_catalog.query.product_model_query_builder_factory')->create();

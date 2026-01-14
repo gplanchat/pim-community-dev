@@ -21,6 +21,7 @@ class GetAllExtensionsQueryIntegration extends TestCase
     private GetAllExtensionsQuery $query;
     private FakeWebMarketplaceApi $webMarketplaceApi;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -31,6 +32,7 @@ class GetAllExtensionsQueryIntegration extends TestCase
         $this->loadExtensionsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

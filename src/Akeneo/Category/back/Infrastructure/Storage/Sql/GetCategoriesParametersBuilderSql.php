@@ -19,6 +19,7 @@ class GetCategoriesParametersBuilderSql implements GetCategoriesParametersBuilde
     ) {
     }
 
+    #[\Override]
     public function build(
         array $searchFilters,
         int $limit,

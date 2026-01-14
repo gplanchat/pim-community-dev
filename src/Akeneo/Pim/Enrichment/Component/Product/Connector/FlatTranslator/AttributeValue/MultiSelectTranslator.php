@@ -23,11 +23,13 @@ class MultiSelectTranslator implements FlatAttributeValueTranslatorInterface
         $this->getExistingAttributeOptionsWithValues = $getExistingAttributeOptionsWithValues;
     }
 
+    #[\Override]
     public function supports(string $attributeType, string $columnName): bool
     {
         return $attributeType === AttributeTypes::OPTION_MULTI_SELECT;
     }
 
+    #[\Override]
     public function translate(string $attributeCode, array $properties, array $values, string $locale): array
     {
         $optionKeys = $this->generateOptionKeys($values, $attributeCode);

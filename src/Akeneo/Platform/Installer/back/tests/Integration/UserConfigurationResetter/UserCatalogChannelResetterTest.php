@@ -15,6 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class UserCatalogChannelResetterTest extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,6 +44,7 @@ class UserCatalogChannelResetterTest extends TestCase
         $this->assertUserCatalogChannel('ecommerce');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

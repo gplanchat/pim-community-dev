@@ -41,8 +41,8 @@ use Symfony\Component\Security\Core\User\User;
 class CleanRemovedAttributesFromProductAndProductModelCommand extends Command
 {
     protected static $defaultName = 'pim:product:clean-removed-attributes';
-    private const JOB_NAME = 'clean_removed_attribute_job';
-    private const JOB_TRACKER_ROUTE = 'akeneo_job_process_tracker_details';
+    private const string JOB_NAME = 'clean_removed_attribute_job';
+    private const string JOB_TRACKER_ROUTE = 'akeneo_job_process_tracker_details';
 
     private EntityManagerClearerInterface $entityManagerClearer;
     private ProductQueryBuilderFactoryInterface $productQueryBuilderFactory;
@@ -96,6 +96,7 @@ class CleanRemovedAttributesFromProductAndProductModelCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -107,6 +108,7 @@ class CleanRemovedAttributesFromProductAndProductModelCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);

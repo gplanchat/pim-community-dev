@@ -25,6 +25,7 @@ final class SqlGetExistingAttributeOptionsWithValues implements GetExistingAttri
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function fromAttributeCodeAndOptionCodes(array $keys): array
     {
         if (empty($keys)) {

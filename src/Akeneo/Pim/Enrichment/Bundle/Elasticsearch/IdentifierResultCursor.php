@@ -35,6 +35,7 @@ class IdentifierResultCursor implements CursorInterface, ResultAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(): int
     {
         return $this->totalCount;
@@ -43,6 +44,7 @@ class IdentifierResultCursor implements CursorInterface, ResultAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function current(): mixed
     {
         return $this->identifiers->current();
@@ -51,6 +53,7 @@ class IdentifierResultCursor implements CursorInterface, ResultAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function key(): mixed
     {
         return $this->identifiers->key();
@@ -59,6 +62,7 @@ class IdentifierResultCursor implements CursorInterface, ResultAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function next(): void
     {
         $this->identifiers->next();
@@ -67,6 +71,7 @@ class IdentifierResultCursor implements CursorInterface, ResultAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function rewind(): void
     {
         $this->identifiers->rewind();
@@ -75,6 +80,7 @@ class IdentifierResultCursor implements CursorInterface, ResultAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function valid(): bool
     {
         return $this->identifiers->valid();
@@ -83,6 +89,7 @@ class IdentifierResultCursor implements CursorInterface, ResultAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResult(): ResultInterface
     {
         return $this->result;

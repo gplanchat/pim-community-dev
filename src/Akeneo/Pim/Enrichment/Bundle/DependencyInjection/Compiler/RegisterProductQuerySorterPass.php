@@ -27,6 +27,7 @@ class RegisterProductQuerySorterPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $this->registerSorters($container);

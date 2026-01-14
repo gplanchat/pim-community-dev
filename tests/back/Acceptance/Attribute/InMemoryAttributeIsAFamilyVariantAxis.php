@@ -14,6 +14,7 @@ final class InMemoryAttributeIsAFamilyVariantAxis implements AttributeIsAFamilyV
 {
     private array $familyVariantAxisMap = [];
 
+    #[\Override]
     public function execute(string $attributeCode): bool
     {
         return $this->familyVariantAxisMap[$attributeCode] ?? false;

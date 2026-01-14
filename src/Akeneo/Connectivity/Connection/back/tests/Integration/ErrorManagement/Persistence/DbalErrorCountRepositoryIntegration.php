@@ -82,6 +82,7 @@ SQL;
         $this->repository->upsert($hourlyErrorCount);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -90,6 +91,7 @@ SQL;
         $this->repository = $this->get(DbalErrorCountRepository::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

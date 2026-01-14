@@ -40,6 +40,7 @@ class UpdateMappingIndexCommand extends Command
         parent::__construct(self::$defaultName);
     }
 
+    #[\Override]
     public function configure()
     {
         $this
@@ -52,6 +53,7 @@ class UpdateMappingIndexCommand extends Command
         $this->addOption('all', 'a', InputOption::VALUE_NONE, "Use --all if you want to update all mappings of all indices", null);
     }
 
+    #[\Override]
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $indices = $input->getOption('all') ? [] : $input->getArgument('indices');

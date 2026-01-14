@@ -20,6 +20,7 @@ class OptionFilterIntegration extends AbstractProductQueryBuilderTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

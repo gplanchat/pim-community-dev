@@ -54,6 +54,7 @@ class TemplatedErrorMessage
         return $this->parameters;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         $message = $this->template;

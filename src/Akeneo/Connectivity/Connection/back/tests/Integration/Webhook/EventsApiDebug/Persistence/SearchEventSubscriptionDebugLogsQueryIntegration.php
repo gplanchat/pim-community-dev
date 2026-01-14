@@ -24,6 +24,7 @@ class SearchEventSubscriptionDebugLogsQueryIntegration extends TestCase
     private SearchEventSubscriptionDebugLogsQuery $query;
     private FakeClock $clock;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -722,6 +723,7 @@ class SearchEventSubscriptionDebugLogsQueryIntegration extends TestCase
         $this->eventSubscriptionLogLoader->bulkInsert($logs);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -29,6 +29,7 @@ class RegenerateConnectionPasswordEndToEnd extends WebTestCase
         Assert::assertNotSame($connection->password(), $result['password']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

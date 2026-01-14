@@ -26,6 +26,7 @@ abstract class AbstractFieldFilter implements FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsField($field)
     {
         return in_array($field, $this->supportedFields);
@@ -34,6 +35,7 @@ abstract class AbstractFieldFilter implements FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsOperator($operator)
     {
         return in_array($operator, $this->supportedOperators);
@@ -42,6 +44,7 @@ abstract class AbstractFieldFilter implements FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOperators()
     {
         return $this->supportedOperators;
@@ -50,6 +53,7 @@ abstract class AbstractFieldFilter implements FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFields()
     {
         return $this->supportedFields;
@@ -58,6 +62,7 @@ abstract class AbstractFieldFilter implements FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setQueryBuilder($searchQueryBuilder)
     {
         if (!$searchQueryBuilder instanceof SearchQueryBuilder) {

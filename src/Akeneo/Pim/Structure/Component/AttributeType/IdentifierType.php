@@ -16,6 +16,7 @@ class IdentifierType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return AttributeTypes::IDENTIFIER;
@@ -24,6 +25,7 @@ class IdentifierType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isUnique()
     {
         return true;

@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210917103700_add_user_group_default_permissions extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $table = $schema->getTable('oro_access_group');
@@ -25,6 +26,7 @@ final class Version_6_0_20210917103700_add_user_group_default_permissions extend
         $this->addSql('ALTER TABLE oro_access_group ADD default_permissions JSON NULL DEFAULT NULL');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

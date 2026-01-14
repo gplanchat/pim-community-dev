@@ -24,6 +24,7 @@ class RemoveAttributesFromFamilyVariantsOnFamilyUpdateSubscriber implements Even
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

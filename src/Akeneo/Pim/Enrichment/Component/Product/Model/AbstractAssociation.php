@@ -49,6 +49,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -57,6 +58,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAssociationType(AssociationTypeInterface $associationType)
     {
         $this->associationType = $associationType;
@@ -67,6 +69,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAssociationType()
     {
         return $this->associationType;
@@ -75,6 +78,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setOwner(EntityWithAssociationsInterface $owner)
     {
         if (!$this->owner) {
@@ -87,6 +91,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOwner()
     {
         return $this->owner;
@@ -95,6 +100,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setProducts($products)
     {
         $this->products = $products;
@@ -105,6 +111,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProducts()
     {
         return $this->products;
@@ -113,6 +120,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addProduct(ProductInterface $product)
     {
         if (!$this->products->contains($product)) {
@@ -125,6 +133,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasProduct(ProductInterface $product)
     {
         return $this->products->contains($product);
@@ -133,6 +142,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeProduct(ProductInterface $product)
     {
         $this->products->removeElement($product);
@@ -143,6 +153,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProductModels(): Collection
     {
         return $this->productModels;
@@ -151,6 +162,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addProductModel(ProductModelInterface $productModel): void
     {
         if (!$this->productModels->contains($productModel)) {
@@ -161,6 +173,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeProductModel(ProductModelInterface $productModel): void
     {
         $this->productModels->removeElement($productModel);
@@ -169,6 +182,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setProductModels($productModels): void
     {
         $this->productModels = $productModels;
@@ -177,6 +191,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setGroups($groups)
     {
         $this->groups = $groups;
@@ -187,6 +202,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroups()
     {
         return $this->groups;
@@ -195,6 +211,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addGroup(GroupInterface $group)
     {
         if (!$this->groups->contains($group)) {
@@ -207,6 +224,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeGroup(GroupInterface $group)
     {
         $this->groups->removeElement($group);
@@ -217,6 +235,7 @@ abstract class AbstractAssociation implements AssociationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         if (!$this->owner) {

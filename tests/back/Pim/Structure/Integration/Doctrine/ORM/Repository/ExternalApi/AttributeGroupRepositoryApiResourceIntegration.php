@@ -133,6 +133,7 @@ class AttributeGroupRepositoryApiResourceIntegration extends TestCase
         Assert::assertEquals('technical', $since2019Groups[2]->getCode());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

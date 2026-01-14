@@ -20,6 +20,7 @@ class ProductCompletenessNormalizer implements NormalizerInterface, CacheableSup
      *
      * @param ProductCompletenessWithMissingAttributeCodes $completeness
      */
+    #[\Override]
     public function normalize($completeness, $format = null, array $context = []): array
     {
         return [
@@ -34,11 +35,13 @@ class ProductCompletenessNormalizer implements NormalizerInterface, CacheableSup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ProductCompletenessWithMissingAttributeCodes && $format === 'internal_api';
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

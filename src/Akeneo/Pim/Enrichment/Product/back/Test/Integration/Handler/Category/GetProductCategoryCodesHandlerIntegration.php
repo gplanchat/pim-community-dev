@@ -20,9 +20,9 @@ use Symfony\Component\Messenger\Stamp\HandledStamp;
  */
 final class GetProductCategoryCodesHandlerIntegration extends EnrichmentProductTestCase
 {
-    private const UUID_FOO = 'eac5393e-8de8-4d3a-90db-93bbba8b4ffb';
-    private const UUID_BAR = '49aa038f-b7d9-465c-b12d-88f048d60dd4';
-    private const UUID_BAZ = 'a76cbde9-929b-4d2c-8ff1-a69e48cf063d';
+    private const string UUID_FOO = 'eac5393e-8de8-4d3a-90db-93bbba8b4ffb';
+    private const string UUID_BAR = '49aa038f-b7d9-465c-b12d-88f048d60dd4';
+    private const string UUID_BAZ = 'a76cbde9-929b-4d2c-8ff1-a69e48cf063d';
 
     /** @test */
     public function it_gets_category_codes_from_product_uuids()
@@ -48,6 +48,7 @@ final class GetProductCategoryCodesHandlerIntegration extends EnrichmentProductT
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

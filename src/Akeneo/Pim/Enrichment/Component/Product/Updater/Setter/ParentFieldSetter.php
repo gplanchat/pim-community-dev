@@ -36,6 +36,7 @@ class ParentFieldSetter extends AbstractFieldSetter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setFieldData($product, $field, $data, array $options = []): void
     {
         if (!$product instanceof ProductInterface) {

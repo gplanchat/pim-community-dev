@@ -26,6 +26,7 @@ final class ListUsersHandler implements ListUsersHandlerInterface
     ) {
     }
 
+    #[\Override]
     public function fromQuery(UsersQuery $query): array
     {
         $result = ($this->findUsers)(

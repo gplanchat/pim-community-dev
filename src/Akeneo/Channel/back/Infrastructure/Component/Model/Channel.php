@@ -58,6 +58,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -80,6 +81,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -88,6 +90,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -98,6 +101,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -108,6 +112,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslation(?string $locale = null)
     {
         $locale = $locale ?: $this->locale;
@@ -132,6 +137,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslations()
     {
         return $this->translations;
@@ -140,6 +146,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->translations->contains($translation)) {
@@ -152,6 +159,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeTranslation(TranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
@@ -162,6 +170,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslationFQCN()
     {
         return ChannelTranslation::class;
@@ -170,6 +179,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         $translated = ($this->getTranslation()) ? $this->getTranslation()->getLabel() : null;
@@ -180,6 +190,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->getTranslation()->setLabel($label);
@@ -190,6 +201,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategory()
     {
         return $this->category;
@@ -198,6 +210,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCategory(CategoryInterface $category)
     {
         if ($this->category === null) {
@@ -218,6 +231,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCurrencies()
     {
         return $this->currencies;
@@ -226,6 +240,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCurrencies(array $currencies)
     {
         foreach ($this->currencies as $currency) {
@@ -242,6 +257,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addCurrency(CurrencyInterface $currency)
     {
         if (!$this->hasCurrency($currency)) {
@@ -254,6 +270,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeCurrency(CurrencyInterface $currency)
     {
         $this->currencies->removeElement($currency);
@@ -264,6 +281,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLocales()
     {
         return $this->locales;
@@ -272,6 +290,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLocaleCodes()
     {
         return $this->locales->map(
@@ -284,6 +303,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocales(array $locales)
     {
         foreach ($this->locales as $locale) {
@@ -300,6 +320,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addLocale(LocaleInterface $locale)
     {
         if (!$this->hasLocale($locale)) {
@@ -313,6 +334,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeLocale(LocaleInterface $locale)
     {
         if ($this->locales->removeElement($locale)) {
@@ -325,6 +347,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasLocale(LocaleInterface $locale)
     {
         return $this->locales->contains($locale);
@@ -333,6 +356,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasCurrency(CurrencyInterface $currency)
     {
         return $this->currencies->contains($currency);
@@ -341,6 +365,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setConversionUnits(array $conversionUnits)
     {
         $this->conversionUnits = $conversionUnits;
@@ -351,6 +376,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConversionUnits()
     {
         return $this->conversionUnits;
@@ -359,6 +385,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString()
     {
         return $this->getLabel();
@@ -367,6 +394,7 @@ class Channel implements ChannelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;
@@ -375,6 +403,7 @@ class Channel implements ChannelInterface
     /**
      * @return array|ChannelEvent[]
      */
+    #[\Override]
     public function popEvents(): array
     {
         $events = $this->events;

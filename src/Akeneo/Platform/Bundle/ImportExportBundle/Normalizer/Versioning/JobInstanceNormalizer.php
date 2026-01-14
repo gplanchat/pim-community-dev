@@ -31,6 +31,7 @@ class JobInstanceNormalizer implements NormalizerInterface, CacheableSupportsMet
      *
      * @return array
      */
+    #[\Override]
     public function normalize($jobInstance, $format = null, array $context = [])
     {
         $parameters = $jobInstance->getRawParameters();
@@ -51,11 +52,13 @@ class JobInstanceNormalizer implements NormalizerInterface, CacheableSupportsMet
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof JobInstance && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

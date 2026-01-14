@@ -20,6 +20,7 @@ class AttributeGroupRepository extends EntityRepository implements AttributeGrou
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdToLabelOrderedBySortOrder()
     {
         $groups = $this->buildAllOrderedBySortOrder()->getQuery()->execute();
@@ -34,6 +35,7 @@ class AttributeGroupRepository extends EntityRepository implements AttributeGrou
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findDefaultAttributeGroup()
     {
         return $this->findOneBy(['code' => AttributeGroupInterface::DEFAULT_CODE]);
@@ -42,6 +44,7 @@ class AttributeGroupRepository extends EntityRepository implements AttributeGrou
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaxSortOrder()
     {
         return (int) $this->createQueryBuilder('ag')
@@ -53,6 +56,7 @@ class AttributeGroupRepository extends EntityRepository implements AttributeGrou
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['code' => $code]);
@@ -61,6 +65,7 @@ class AttributeGroupRepository extends EntityRepository implements AttributeGrou
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -75,6 +80,7 @@ class AttributeGroupRepository extends EntityRepository implements AttributeGrou
             ->orderBy('attribute_group.sortOrder');
     }
 
+    #[\Override]
     public function countAll(): int
     {
         return $this->count([]);

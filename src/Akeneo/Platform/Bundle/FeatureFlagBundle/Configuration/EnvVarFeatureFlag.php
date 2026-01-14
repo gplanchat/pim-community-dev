@@ -14,6 +14,7 @@ class EnvVarFeatureFlag implements FeatureFlag
         $this->envVar = boolval($envVar);
     }
 
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return boolval($this->envVar);

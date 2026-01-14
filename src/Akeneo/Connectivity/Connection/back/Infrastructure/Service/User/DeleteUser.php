@@ -20,6 +20,7 @@ class DeleteUser implements DeleteUserInterface
     {
     }
 
+    #[\Override]
     public function execute(UserId $userId): void
     {
         $user = $this->repository->find($userId->id());

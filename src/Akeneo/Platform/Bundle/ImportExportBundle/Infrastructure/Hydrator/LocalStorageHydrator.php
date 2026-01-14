@@ -15,11 +15,13 @@ use Akeneo\Platform\Bundle\ImportExportBundle\Domain\StorageHydratorInterface;
 
 final class LocalStorageHydrator implements StorageHydratorInterface
 {
+    #[\Override]
     public function hydrate(array $normalizedStorage): StorageInterface
     {
         return new LocalStorage($normalizedStorage['file_path']);
     }
 
+    #[\Override]
     public function supports(array $normalizedStorage): bool
     {
         return array_key_exists('type', $normalizedStorage) && LocalStorage::TYPE === $normalizedStorage['type'];

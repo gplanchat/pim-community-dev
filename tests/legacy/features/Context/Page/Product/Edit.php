@@ -156,6 +156,7 @@ class Edit extends ProductEditForm
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getHistoryRows()
     {
         return $this->findAll('css', '.entity-version');
@@ -233,7 +234,8 @@ class Edit extends ProductEditForm
     /**
      * {@inheritdoc}
      */
-    protected function extractLabelElement($field, ElementInterface $element = null)
+    #[\Override]
+    protected function extractLabelElement($field, ?ElementInterface $element = null)
     {
         $subLabelContent = null;
         $labelContent    = $field;

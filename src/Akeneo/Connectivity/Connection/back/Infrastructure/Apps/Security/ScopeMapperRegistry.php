@@ -46,6 +46,7 @@ final class ScopeMapperRegistry implements ScopeMapperRegistryInterface
     /**
      * @return string[]
      */
+    #[\Override]
     public function getAllScopes(): array
     {
         return \array_keys($this->scopeMappers);
@@ -67,6 +68,7 @@ final class ScopeMapperRegistry implements ScopeMapperRegistryInterface
      *     }
      * >
      */
+    #[\Override]
     public function getMessages(array $scopeList): array
     {
         \sort($scopeList);
@@ -97,6 +99,7 @@ final class ScopeMapperRegistry implements ScopeMapperRegistryInterface
      *
      * @return string[]
      */
+    #[\Override]
     public function getAcls(array $scopeList): array
     {
         \sort($scopeList);
@@ -130,6 +133,7 @@ final class ScopeMapperRegistry implements ScopeMapperRegistryInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function getExhaustiveScopes(array $scopeList): array
     {
         $fullScopes = $scopeList;

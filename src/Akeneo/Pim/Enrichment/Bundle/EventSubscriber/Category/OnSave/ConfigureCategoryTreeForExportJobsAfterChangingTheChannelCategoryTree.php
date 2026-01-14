@@ -30,6 +30,7 @@ final class ConfigureCategoryTreeForExportJobsAfterChangingTheChannelCategoryTre
     /** @var array|string[] */
     private $supportedJobNames;
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -47,6 +47,7 @@ class JSONFileBuffer implements BufferInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write($item, array $options = [])
     {
         if (!is_array($item) && !is_scalar($item)) {
@@ -61,6 +62,7 @@ class JSONFileBuffer implements BufferInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function current(): mixed
     {
         $rawLine = $this->file->current();
@@ -71,6 +73,7 @@ class JSONFileBuffer implements BufferInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function next(): void
     {
         $this->file->next();
@@ -79,6 +82,7 @@ class JSONFileBuffer implements BufferInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function key(): int
     {
         return $this->file->key();
@@ -87,6 +91,7 @@ class JSONFileBuffer implements BufferInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function valid(): bool
     {
         return $this->file->valid();
@@ -95,6 +100,7 @@ class JSONFileBuffer implements BufferInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function rewind(): void
     {
         $this->file->rewind();

@@ -64,6 +64,7 @@ class PublishJobToQueueCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -99,6 +100,7 @@ class PublishJobToQueueCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $jobInstanceCode = $input->getArgument('code');

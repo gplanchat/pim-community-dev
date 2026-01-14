@@ -17,6 +17,7 @@ class FieldChainedProvider implements FieldProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getField($element)
     {
         foreach ($this->providers as $provider) {
@@ -31,6 +32,7 @@ class FieldChainedProvider implements FieldProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element)
     {
         foreach ($this->providers as $provider) {

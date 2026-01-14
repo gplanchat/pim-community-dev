@@ -13,6 +13,7 @@ class GetProductModelQuantifiedAssociationsByProductModelCodesIntegration extend
 {
     use QuantifiedAssociationsTestCaseTrait;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -313,6 +314,7 @@ class GetProductModelQuantifiedAssociationsByProductModelCodesIntegration extend
         $this->assertSame([], $actual);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

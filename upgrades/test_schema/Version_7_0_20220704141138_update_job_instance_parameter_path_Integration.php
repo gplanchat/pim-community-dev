@@ -15,12 +15,13 @@ final class Version_7_0_20220704141138_update_job_instance_parameter_path_Integr
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220704141138_update_job_instance_parameter_path';
+    private const string MIGRATION_LABEL = '_7_0_20220704141138_update_job_instance_parameter_path';
 
     private Connection $connection;
     private JobInstanceRepository $jobInstanceRepository;
     private VersionProviderInterface $versionProvider;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -55,6 +56,7 @@ final class Version_7_0_20220704141138_update_job_instance_parameter_path_Integr
         $this->assertTrue($this->jobContainsStorage('csv_product_export', '/tmp/export_%job_label%_%datetime%.csv'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

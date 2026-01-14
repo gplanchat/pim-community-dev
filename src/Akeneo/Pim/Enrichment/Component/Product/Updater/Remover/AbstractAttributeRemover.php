@@ -37,6 +37,7 @@ abstract class AbstractAttributeRemover implements AttributeRemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         return in_array($attribute->getType(), $this->supportedTypes);

@@ -16,6 +16,7 @@ class MetricType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return AttributeTypes::METRIC;

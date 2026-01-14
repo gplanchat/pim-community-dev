@@ -25,6 +25,7 @@ class RegisterRendererPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $registryId = static::REGISTRY_ID;

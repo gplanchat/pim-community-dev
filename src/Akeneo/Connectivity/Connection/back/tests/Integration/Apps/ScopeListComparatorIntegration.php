@@ -15,6 +15,7 @@ use Akeneo\Test\Integration\TestCase;
 class ScopeListComparatorIntegration extends TestCase
 {
     private ScopeListComparator $scopeListComparator;
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -22,6 +23,7 @@ class ScopeListComparatorIntegration extends TestCase
         $this->scopeListComparator = $this->get(ScopeListComparator::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): ?Configuration
     {
         return null;

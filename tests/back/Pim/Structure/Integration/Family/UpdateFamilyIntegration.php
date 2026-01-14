@@ -71,6 +71,7 @@ class UpdateFamilyIntegration extends TestCase
     /**
      * @return Configuration
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

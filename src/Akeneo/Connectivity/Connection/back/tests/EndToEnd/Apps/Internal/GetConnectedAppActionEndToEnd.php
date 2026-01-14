@@ -22,6 +22,7 @@ class GetConnectedAppActionEndToEnd extends WebTestCase
 {
     private FilePersistedFeatureFlags $featureFlags;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -29,6 +30,7 @@ class GetConnectedAppActionEndToEnd extends WebTestCase
         $this->featureFlags = $this->get('feature_flags');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

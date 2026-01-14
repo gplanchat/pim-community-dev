@@ -22,12 +22,14 @@ class V20221214GiveNewCategoryAclToUserWithOldCategoryAclZddMigrationIntegration
 {
     private V20221214GiveNewCategoryAclToUserWithOldCategoryAclZddMigration $migration;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->migration = $this->get(V20221214GiveNewCategoryAclToUserWithOldCategoryAclZddMigration::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -50,6 +50,7 @@ class FilterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $filters = $config->offsetGetByPath(Configuration::COLUMNS_PATH, []);
@@ -65,6 +66,7 @@ class FilterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function processConfigs(DatagridConfiguration $config)
     {
         // validate extension configuration
@@ -77,6 +79,7 @@ class FilterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function visitDatasource(DatagridConfiguration $config, DatasourceInterface $datasource)
     {
         $filters = $this->getFiltersToApply($config);
@@ -104,6 +107,7 @@ class FilterExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         $filtersState = $data->offsetGetByPath('[state][filters]', []);

@@ -28,6 +28,7 @@ class DeleteOrphanJobExecutionDirectoriesIntegration extends TestCase
     /** @var DeleteOrphanJobExecutionDirectories */
     private $deleteOrphansJobExecutionFiles;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -79,6 +80,7 @@ class DeleteOrphanJobExecutionDirectoriesIntegration extends TestCase
         Assert::assertFalse($this->archivistFilesystem->fileExists(\dirname($orphanFile4)));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

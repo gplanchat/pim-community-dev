@@ -20,6 +20,7 @@ class CheckRequirementsCommand extends Command
     protected static $defaultName = 'pim:installer:check-requirements';
     protected static $defaultDescription = 'heck requirements for Akeneo PIM';
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('<info>Akeneo PIM requirements check:</info>');

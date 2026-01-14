@@ -17,11 +17,13 @@ class EnabledTranslator implements FlatPropertyValueTranslatorInterface
         $this->labelTranslator = $labelTranslator;
     }
 
+    #[\Override]
     public function supports(string $columnName): bool
     {
         return 'enabled' === $columnName;
     }
 
+    #[\Override]
     public function translate(array $values, string $locale, string $scope): array
     {
         $result = [];

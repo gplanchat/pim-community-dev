@@ -33,6 +33,7 @@ class ReferenceDataCollectionNormalizer implements NormalizerInterface, Cacheabl
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($referenceDataCollectionValue, $format = null, array $context = [])
     {
         $attribute = $this->attributeRepository->findOneByIdentifier($referenceDataCollectionValue->getAttributeCode());
@@ -65,11 +66,13 @@ class ReferenceDataCollectionNormalizer implements NormalizerInterface, Cacheabl
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return 'datagrid' === $format && $data instanceof ReferenceDataCollectionValueInterface;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

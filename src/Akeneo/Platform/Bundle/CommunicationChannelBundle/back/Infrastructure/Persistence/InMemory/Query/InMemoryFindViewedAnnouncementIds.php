@@ -22,6 +22,7 @@ class InMemoryFindViewedAnnouncementIds implements FindViewedAnnouncementIdsInte
         $this->viewedAnnouncementRepository = $viewedAnnouncementRepository;
     }
 
+    #[\Override]
     public function byUserId(int $userId): array
     {
         $viewedAnnouncements = array_filter($this->viewedAnnouncementRepository->dataRows, function ($row) use ($userId) {

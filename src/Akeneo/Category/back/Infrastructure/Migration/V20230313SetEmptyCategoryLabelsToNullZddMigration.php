@@ -22,6 +22,7 @@ class V20230313SetEmptyCategoryLabelsToNullZddMigration implements ZddMigration
     /**
      * @throws Exception
      */
+    #[\Override]
     public function migrate(): void
     {
         $this->connection->executeQuery(<<<SQL
@@ -31,11 +32,13 @@ class V20230313SetEmptyCategoryLabelsToNullZddMigration implements ZddMigration
         SQL);
     }
 
+    #[\Override]
     public function migrateNotZdd(): void
     {
         // Do nothing
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'SetEmptyCategoryLabelsToNull';

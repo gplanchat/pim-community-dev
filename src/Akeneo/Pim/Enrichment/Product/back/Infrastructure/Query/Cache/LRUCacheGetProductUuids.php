@@ -25,6 +25,7 @@ class LRUCacheGetProductUuids implements GetProductUuids, CachedQueryInterface
         $this->cacheByUuids = new LRUCache(1000);
     }
 
+    #[\Override]
     public function fromIdentifier(string $identifier): ?UuidInterface
     {
         return $this->cacheByIdentifiers->getForKey(
@@ -33,6 +34,7 @@ class LRUCacheGetProductUuids implements GetProductUuids, CachedQueryInterface
         );
     }
 
+    #[\Override]
     public function fromIdentifiers(array $identifiers): array
     {
         return $this->cacheByIdentifiers->getForKeys(
@@ -41,6 +43,7 @@ class LRUCacheGetProductUuids implements GetProductUuids, CachedQueryInterface
         );
     }
 
+    #[\Override]
     public function fromUuid(UuidInterface $uuid): ?UuidInterface
     {
         return $this->cacheByUuids->getForKey(
@@ -49,6 +52,7 @@ class LRUCacheGetProductUuids implements GetProductUuids, CachedQueryInterface
         );
     }
 
+    #[\Override]
     public function fromUuids(array $uuids): array
     {
         return $this->cacheByUuids->getForKeys(
@@ -62,6 +66,7 @@ class LRUCacheGetProductUuids implements GetProductUuids, CachedQueryInterface
         );
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->cacheByIdentifiers = new LRUCache(1000);

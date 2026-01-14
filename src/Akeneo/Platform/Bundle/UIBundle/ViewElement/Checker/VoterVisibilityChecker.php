@@ -28,6 +28,7 @@ class VoterVisibilityChecker implements VisibilityCheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isVisible(array $config = [], array $context = [])
     {
         if (!isset($config['attribute'])) {

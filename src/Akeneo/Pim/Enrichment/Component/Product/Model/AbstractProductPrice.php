@@ -32,6 +32,7 @@ abstract class AbstractProductPrice implements ProductPriceInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData()
     {
         return $this->data;
@@ -40,6 +41,7 @@ abstract class AbstractProductPrice implements ProductPriceInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCurrency()
     {
         return $this->currency;
@@ -48,6 +50,7 @@ abstract class AbstractProductPrice implements ProductPriceInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ProductPriceInterface $price)
     {
         return $price->getData() === $this->data && $price->getCurrency() === $this->currency;
@@ -56,6 +59,7 @@ abstract class AbstractProductPrice implements ProductPriceInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString()
     {
         return ($this->data !== null) ? sprintf('%.2F %s', $this->data, $this->currency) : '';

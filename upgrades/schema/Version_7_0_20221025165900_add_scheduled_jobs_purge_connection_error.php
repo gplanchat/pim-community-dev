@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20221025165900_add_scheduled_jobs_purge_connection_error extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addScheduledJob(
@@ -43,6 +44,7 @@ final class Version_7_0_20221025165900_add_scheduled_jobs_purge_connection_error
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

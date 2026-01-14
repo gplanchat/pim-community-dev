@@ -16,7 +16,7 @@ use PhpSpec\ObjectBehavior;
  */
 class GetAllExtensionsQuerySpec extends ObjectBehavior
 {
-    private const PAGINATION = 2;
+    private const int PAGINATION = 2;
 
     public function let(
         WebMarketplaceApiInterface $webMarketplaceApi

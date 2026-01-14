@@ -16,6 +16,7 @@ final class GetBlacklistedAttributeJobExecutionId implements GetBlacklistedAttri
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function forAttributeCode(string $attributeCode): ?int
     {
         $sql = <<<SQL

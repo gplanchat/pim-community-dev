@@ -25,6 +25,7 @@ final class GetOutdatedProductUuidsByDateAndCriteriaQuery implements GetOutdated
      * Retrieves the products that have at least one criterion from a given list that has not been evaluated since a given date
      * If the given criteria list is empty, it will check the date of all criteria
      */
+    #[\Override]
     public function __invoke(ProductUuidCollection $productUuids, \DateTimeImmutable $evaluationDate, array $criteria): ProductUuidCollection
     {
         if ($productUuids->isEmpty()) {

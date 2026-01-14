@@ -12,6 +12,7 @@ class V20230324153137AddIndexOnFileInfoZddMigrationIntegration extends TestCase
     private V20230324153137AddIndexOnFileInfoZddMigration $migration;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -57,6 +58,7 @@ SQL;
         $this->connection->executeQuery($sql);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

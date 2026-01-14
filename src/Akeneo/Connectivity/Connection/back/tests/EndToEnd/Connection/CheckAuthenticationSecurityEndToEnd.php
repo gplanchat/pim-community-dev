@@ -281,6 +281,7 @@ class CheckAuthenticationSecurityEndToEnd extends ApiTestCase
     /**
      * @return Configuration
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

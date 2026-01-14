@@ -36,6 +36,7 @@ class FamilyRemover implements RemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function remove($family, array $options = []): void
     {
         $this->ensureIsFamily($family);

@@ -33,6 +33,7 @@ class ProductModelCsvImport implements DefaultValuesProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultValues(): array
     {
         $parameters = $this->simpleProvider->getDefaultValues();
@@ -50,6 +51,7 @@ class ProductModelCsvImport implements DefaultValuesProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return in_array($job->getName(), $this->supportedJobNames);

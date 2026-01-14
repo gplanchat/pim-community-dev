@@ -74,6 +74,7 @@ class SearchOnAttributesAndCategoriesIntegration extends AbstractProductQueryBui
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -423,6 +424,7 @@ class SearchOnAttributesAndCategoriesIntegration extends AbstractProductQueryBui
      *
      * @return CursorInterface
      */
+    #[\Override]
     protected function executeFilter(array $filters)
     {
         $pqb = $this->get('pim_enrich.query.product_and_product_model_query_builder_from_size_factory')->create(
@@ -441,6 +443,7 @@ class SearchOnAttributesAndCategoriesIntegration extends AbstractProductQueryBui
      * @param CursorInterface $result
      * @param array           $expected
      */
+    #[\Override]
     protected function assert(CursorInterface $result, array $expected)
     {
         $entities = [];
@@ -458,6 +461,7 @@ class SearchOnAttributesAndCategoriesIntegration extends AbstractProductQueryBui
         $this->assertSame($expected, $entities);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

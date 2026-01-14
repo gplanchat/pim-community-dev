@@ -34,6 +34,7 @@ class InvalidDateAttributeException extends InvalidPropertyException implements
         );
     }
 
+    #[\Override]
     public function getTemplatedErrorMessage(): TemplatedErrorMessage
     {
         return $this->templatedMessage;

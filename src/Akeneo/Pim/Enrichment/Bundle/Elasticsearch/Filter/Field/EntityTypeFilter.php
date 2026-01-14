@@ -22,7 +22,7 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  */
 class EntityTypeFilter extends AbstractFieldFilter implements FieldFilterInterface
 {
-    private const ES_FIELD = 'document_type';
+    private const string ES_FIELD = 'document_type';
 
     /**
      * @param array $supportedFields
@@ -42,6 +42,7 @@ class EntityTypeFilter extends AbstractFieldFilter implements FieldFilterInterfa
      * @throws InvalidArgumentException
      * @throws InvalidPropertyTypeException
      */
+    #[\Override]
     public function addFieldFilter($field, $operator, $value, $locale = null, $channel = null, $options = [])
     {
         if (null === $this->searchQueryBuilder) {

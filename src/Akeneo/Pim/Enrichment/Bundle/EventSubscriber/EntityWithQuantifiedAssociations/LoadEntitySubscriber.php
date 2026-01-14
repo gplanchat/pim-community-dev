@@ -30,6 +30,7 @@ final class LoadEntitySubscriber implements EventSubscriber
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSubscribedEvents()
     {
         return [

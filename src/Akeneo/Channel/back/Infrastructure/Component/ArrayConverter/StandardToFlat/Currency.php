@@ -17,6 +17,7 @@ class Currency extends AbstractSimpleArrayConverter implements ArrayConverterInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function convertProperty($property, $data, array $convertedItem, array $options)
     {
         switch ($property) {

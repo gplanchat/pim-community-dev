@@ -16,14 +16,14 @@ use PhpSpec\ObjectBehavior;
 
 class MeasurementFamilySpec extends ObjectBehavior
 {
-    private const MEASUREMENT_FAMILY_CODE = 'area';
-    private const MEASUREMENT_FAMILY_LABEL = ['fr_FR' => 'Aire', 'en_US' => 'area'];
-    private const METER_UNIT_CODE = 'meter';
-    private const METER_SYMBOL = 'm';
-    private const CENTIMETER_UNIT_CODE = 'centimeter';
-    private const CENTIMETER_SYMBOL = 'cm';
-    private const METER_LABELS = ['fr_FR' => 'Mètre', 'en_US' => 'Meter'];
-    private const CENTIMETER_LABELS = ['fr_FR' => 'centimètre', 'en_US' => 'mètre'];
+    private const string MEASUREMENT_FAMILY_CODE = 'area';
+    private const array MEASUREMENT_FAMILY_LABEL = ['fr_FR' => 'Aire', 'en_US' => 'area'];
+    private const string METER_UNIT_CODE = 'meter';
+    private const string METER_SYMBOL = 'm';
+    private const string CENTIMETER_UNIT_CODE = 'centimeter';
+    private const string CENTIMETER_SYMBOL = 'cm';
+    private const array METER_LABELS = ['fr_FR' => 'Mètre', 'en_US' => 'Meter'];
+    private const array CENTIMETER_LABELS = ['fr_FR' => 'centimètre', 'en_US' => 'mètre'];
 
     function let()
     {

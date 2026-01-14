@@ -27,6 +27,7 @@ class ClientRepository extends EntityRepository implements DatagridRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $qb = $this->createQueryBuilder('cl');

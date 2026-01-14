@@ -25,6 +25,7 @@ class UserRolePrivilegesValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, UserRolePrivileges::class);

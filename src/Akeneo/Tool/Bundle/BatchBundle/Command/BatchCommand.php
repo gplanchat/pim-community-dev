@@ -54,6 +54,7 @@ class BatchCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -89,6 +90,7 @@ class BatchCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $noLog = $input->getOption('no-log');

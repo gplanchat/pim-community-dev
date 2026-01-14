@@ -14,9 +14,9 @@ use Akeneo\Platform\CommunicationChannel\Domain\Announcement\Query\FindAnnouncem
  */
 final class LocalFilestorageFindAnnouncementItems implements FindAnnouncementItemsInterface
 {
-    public const LIMIT = 10;
+    public const int LIMIT = 10;
 
-    private const FILENAME = 'serenity-updates.json';
+    private const string FILENAME = 'serenity-updates.json';
 
     /** @var string */
     private $externalJson;
@@ -26,6 +26,7 @@ final class LocalFilestorageFindAnnouncementItems implements FindAnnouncementIte
         $this->externalJson = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . self::FILENAME);
     }
 
+    #[\Override]
     public function byPimVersion(string $pimEdition, string $pimVersion, string $locale, ?string $searchAfter): array
     {
         $content = json_decode($this->externalJson, true);
@@ -52,7 +53,7 @@ final class LocalFilestorageFindAnnouncementItems implements FindAnnouncementIte
         );
     }
 
-    private function paginateItems(array $content, int $limit, string $searchAfter = null): array
+    private function paginateItems(array $content, int $limit, ?string $searchAfter = null): array
     {
         $paginatedItems = $content['data'];
         if (null === $searchAfter) {

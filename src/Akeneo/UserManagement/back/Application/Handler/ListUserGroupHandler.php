@@ -23,6 +23,7 @@ class ListUserGroupHandler implements ListUserGroupInterface
 
     /**
      * @return UserGroup[]     */
+    #[\Override]
     public function fromQuery(UserGroupQuery $query): array
     {
         $result = ($this->findUserGroups)(

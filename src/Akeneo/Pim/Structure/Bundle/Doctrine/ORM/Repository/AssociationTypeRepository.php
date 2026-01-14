@@ -18,6 +18,7 @@ class AssociationTypeRepository extends EntityRepository implements AssociationT
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findMissingAssociationTypes(EntityWithAssociationsInterface $entity)
     {
         $qb = $this->createQueryBuilder('a');
@@ -43,6 +44,7 @@ class AssociationTypeRepository extends EntityRepository implements AssociationT
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countAll(): int
     {
         $qb = $this->createQueryBuilder('a')
@@ -56,6 +58,7 @@ class AssociationTypeRepository extends EntityRepository implements AssociationT
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['code' => $code]);
@@ -64,6 +67,7 @@ class AssociationTypeRepository extends EntityRepository implements AssociationT
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];

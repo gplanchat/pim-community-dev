@@ -45,6 +45,7 @@ class DeleteUniqueValueInDatabaseIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
@@ -97,6 +98,7 @@ class DeleteUniqueValueInDatabaseIntegration extends TestCase
         return $this->get('akeneo_integration_tests.base.attribute.builder');
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

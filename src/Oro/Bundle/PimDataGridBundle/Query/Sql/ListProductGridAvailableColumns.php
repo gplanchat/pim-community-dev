@@ -36,6 +36,7 @@ class ListProductGridAvailableColumns implements ListProductGridAvailableColumns
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(string $locale, int $page, string $groupCode, string $searchOnLabel, int $userId): array
     {
         $page = max($page, 1);

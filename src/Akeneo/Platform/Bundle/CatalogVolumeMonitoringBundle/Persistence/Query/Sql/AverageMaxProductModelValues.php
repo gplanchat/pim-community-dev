@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class AverageMaxProductModelValues implements AverageMaxQuery
 {
-    private const VOLUME_NAME = 'average_max_product_model_values';
+    private const string VOLUME_NAME = 'average_max_product_model_values';
 
     /** @var Connection */
     private $connection;
@@ -31,6 +31,7 @@ class AverageMaxProductModelValues implements AverageMaxQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): AverageMaxVolumes
     {
         $sql = <<<SQL

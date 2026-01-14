@@ -19,6 +19,7 @@ class GetAllCustomAppsQuery implements GetAllCustomAppsQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(): GetAllCustomAppsResult
     {
         $query = <<<SQL

@@ -19,6 +19,7 @@ class DbalCountActiveEventSubscriptionsQueryIntegration extends TestCase
     private WebhookLoader $webhookLoader;
     private CountActiveEventSubscriptionsQueryInterface $countActiveEventSubscriptionQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -44,6 +45,7 @@ class DbalCountActiveEventSubscriptionsQueryIntegration extends TestCase
         Assert::assertEquals(2, $count);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

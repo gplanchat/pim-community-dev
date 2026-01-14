@@ -19,6 +19,7 @@ class UpdateConnectionWebhookQuery implements UpdateConnectionWebhookQueryInterf
     {
     }
 
+    #[\Override]
     public function execute(ConnectionWebhook $connectionWebhook): int
     {
         $query = <<<SQL

@@ -15,11 +15,13 @@ final class Version_7_0_20221114112755_clean_family_codes_from_export_job_filter
 {
     private ?ContainerInterface $container;
 
-    public function setContainer(ContainerInterface $container = null): void
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $familyCodes = $this->fetchFamilyCodes();
@@ -34,6 +36,7 @@ final class Version_7_0_20221114112755_clean_family_codes_from_export_job_filter
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

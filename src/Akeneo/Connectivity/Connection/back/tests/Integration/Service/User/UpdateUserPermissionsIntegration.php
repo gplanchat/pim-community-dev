@@ -70,6 +70,7 @@ SQL;
         Assert::assertEquals(1, $groupsCount);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

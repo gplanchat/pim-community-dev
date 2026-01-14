@@ -23,6 +23,7 @@ final class UuidFilter extends AbstractFieldFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter(
         $field,
         $operator,

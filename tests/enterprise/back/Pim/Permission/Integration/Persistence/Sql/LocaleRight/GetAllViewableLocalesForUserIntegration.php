@@ -25,6 +25,7 @@ class GetAllViewableLocalesForUserIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog(featureFlags: ['permission']);

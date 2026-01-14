@@ -22,6 +22,7 @@ class MarkJobExecutionAsFailedWhenInterruptedCommand extends Command
         $this->markJobExecutionAsFailedWhenInterrupted = $markJobExecutionAsFailedWhenInterrupted;
     }
 
+    #[\Override]
     protected function configure()
     {
         $this
@@ -35,6 +36,7 @@ class MarkJobExecutionAsFailedWhenInterruptedCommand extends Command
             );
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $jobCodes = $input->getArgument('jobCodes');

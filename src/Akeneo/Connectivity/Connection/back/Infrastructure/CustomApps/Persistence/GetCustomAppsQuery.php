@@ -21,6 +21,7 @@ class GetCustomAppsQuery implements GetCustomAppsQueryInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function execute(int $userId): array
     {
         $query = <<<SQL

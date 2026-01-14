@@ -17,7 +17,7 @@ use Doctrine\DBAL\Connection;
  */
 class CountProductModelValues implements CountQuery
 {
-    private const VOLUME_NAME = 'count_product_model_values';
+    private const string VOLUME_NAME = 'count_product_model_values';
 
     /** @var Connection */
     private $connection;
@@ -33,6 +33,7 @@ class CountProductModelValues implements CountQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): CountVolume
     {
         $sql = <<<SQL

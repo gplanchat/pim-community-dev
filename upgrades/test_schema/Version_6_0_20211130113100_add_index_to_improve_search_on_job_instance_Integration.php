@@ -17,15 +17,17 @@ class Version_6_0_20211130113100_add_index_to_improve_search_on_job_instance_Int
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211130113100_add_index_to_improve_search_on_job_instance';
+    private const string MIGRATION_LABEL = '_6_0_20211130113100_add_index_to_improve_search_on_job_instance';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

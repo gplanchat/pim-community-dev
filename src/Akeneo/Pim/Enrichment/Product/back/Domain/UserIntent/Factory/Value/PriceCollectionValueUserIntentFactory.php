@@ -21,11 +21,13 @@ class PriceCollectionValueUserIntentFactory implements ValueUserIntentFactory
 {
     use ValidateDataTrait;
 
+    #[\Override]
     public function getSupportedAttributeTypes(): array
     {
         return [AttributeTypes::PRICE_COLLECTION];
     }
 
+    #[\Override]
     public function create(string $attributeType, string $attributeCode, mixed $data): ValueUserIntent
     {
         $priceValues = [];

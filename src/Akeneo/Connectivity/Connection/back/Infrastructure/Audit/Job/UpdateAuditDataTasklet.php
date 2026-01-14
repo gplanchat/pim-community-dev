@@ -16,10 +16,12 @@ class UpdateAuditDataTasklet implements TaskletInterface
     {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $this->updateAuditData->execute();

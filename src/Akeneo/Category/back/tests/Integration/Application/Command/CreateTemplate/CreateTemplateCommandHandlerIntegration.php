@@ -22,6 +22,7 @@ class CreateTemplateCommandHandlerIntegration extends CategoryTestCase
     private GetCategoryInterface $getCategory;
     private GetCategoryTemplateByCategoryTree $getTemplate;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,6 +55,7 @@ class CreateTemplateCommandHandlerIntegration extends CategoryTestCase
         $this->assertEquals('e-commerce', $template->getLabelCollection()->getTranslation('en_US'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

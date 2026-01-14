@@ -18,8 +18,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class SwitchMainIdentifierControllerEndToEnd extends WebTestCase
 {
-    private const ROUTE = 'pim_enrich_attribute_rest_switch_main_identifier';
-    private const HEADERS = [
+    private const string ROUTE = 'pim_enrich_attribute_rest_switch_main_identifier';
+    private const array HEADERS = [
         'HTTP_X-Requested-With' => 'XMLHttpRequest',
         'CONTENT_TYPE' => 'application/json',
     ];
@@ -129,6 +129,7 @@ final class SwitchMainIdentifierControllerEndToEnd extends WebTestCase
         Assert::assertSame(Response::HTTP_OK, $response->getStatusCode());
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient(['environment' => 'test', 'debug' => false]);

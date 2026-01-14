@@ -30,6 +30,7 @@ class DbalSelectPeriodEventCountPerConnectionQuery implements SelectPeriodEventC
     /**
      * @return PeriodEventCount[]
      */
+    #[\Override]
     public function execute(
         string $eventType,
         DateTimePeriod $period

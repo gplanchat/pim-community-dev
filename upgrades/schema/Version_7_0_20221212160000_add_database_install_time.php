@@ -14,11 +14,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_7_0_20221212160000_add_database_install_time extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Initialize the database install time if not present';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf($this->installDataExists(), 'Install data already exists');
@@ -35,6 +37,7 @@ final class Version_7_0_20221212160000_add_database_install_time extends Abstrac
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

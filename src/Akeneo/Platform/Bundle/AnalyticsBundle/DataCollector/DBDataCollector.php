@@ -112,6 +112,7 @@ class DBDataCollector implements DataCollectorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function collect()
     {
         $activatedAppIds = $this->getConnectedAppsIdentifiersQuery->execute();

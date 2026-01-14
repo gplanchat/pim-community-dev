@@ -17,6 +17,7 @@ final class ValidateApiRequestQueryParametersSubscriber implements EventSubscrib
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

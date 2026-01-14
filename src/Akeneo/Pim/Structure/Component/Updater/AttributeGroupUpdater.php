@@ -61,6 +61,7 @@ class AttributeGroupUpdater implements ObjectUpdaterInterface
      *     ]
      * ]
      */
+    #[\Override]
     public function update($attributeGroup, array $data, array $options = [])
     {
         if (!$attributeGroup instanceof AttributeGroupInterface) {

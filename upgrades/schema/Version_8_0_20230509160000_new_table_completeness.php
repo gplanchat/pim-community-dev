@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230509160000_new_table_completeness extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Create the new table for completeness with json values';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $sql = <<<'SQL'
@@ -32,6 +34,7 @@ final class Version_8_0_20230509160000_new_table_completeness extends AbstractMi
         $this->addSql($sql);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

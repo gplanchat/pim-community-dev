@@ -11,7 +11,7 @@ class Version_6_0_20220518134914_set_not_null_fields_for_job_and_step_execution_
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20220518134914_set_not_null_fields_for_job_and_step_execution_tables';
+    private const string MIGRATION_LABEL = '_6_0_20220518134914_set_not_null_fields_for_job_and_step_execution_tables';
 
     public function test_does_nothing_when_launched_in_sass_version(): void
     {
@@ -92,6 +92,7 @@ class Version_6_0_20220518134914_set_not_null_fields_for_job_and_step_execution_
         return $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

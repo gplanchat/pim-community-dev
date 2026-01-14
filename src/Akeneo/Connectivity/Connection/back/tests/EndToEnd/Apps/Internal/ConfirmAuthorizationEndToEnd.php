@@ -28,6 +28,7 @@ class ConfirmAuthorizationEndToEnd extends WebTestCase
     private ClientProvider $clientProvider;
     private RequestAppAuthorizationHandler $appAuthorizationHandler;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -39,6 +40,7 @@ class ConfirmAuthorizationEndToEnd extends WebTestCase
         $this->loadAppsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

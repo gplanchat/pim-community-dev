@@ -75,6 +75,7 @@ class FamilyNormalizer implements NormalizerInterface, CacheableSupportsMethodIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($family, $format = null, array $context = array())
     {
         $fullAttributes = array_key_exists('full_attributes', $context)
@@ -123,12 +124,14 @@ class FamilyNormalizer implements NormalizerInterface, CacheableSupportsMethodIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($family, $format = null): bool
     {
         return $family instanceof FamilyInterface &&
             in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

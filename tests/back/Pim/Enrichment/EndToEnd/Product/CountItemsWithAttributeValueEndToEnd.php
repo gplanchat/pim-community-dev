@@ -16,8 +16,9 @@ class CountItemsWithAttributeValueEndToEnd extends InternalApiTestCase
     private EntityBuilder $entityBuilder;
     private UserRepositoryInterface $userRepository;
 
-    private const ENDPOINT_URL = 'rest/product-and-product-model/count_items_with_attribute_value';
+    private const string ENDPOINT_URL = 'rest/product-and-product-model/count_items_with_attribute_value';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -50,6 +51,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

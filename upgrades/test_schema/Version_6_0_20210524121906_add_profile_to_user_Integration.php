@@ -13,7 +13,7 @@ class Version_6_0_20210524121906_add_profile_to_user_Integration extends TestCas
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20210524121906_add_profile_to_user';
+    private const string MIGRATION_LABEL = '_6_0_20210524121906_add_profile_to_user';
 
     public function test_it_adds_a_profile_column_to_the_oro_user_table(): void
     {
@@ -26,6 +26,7 @@ class Version_6_0_20210524121906_add_profile_to_user_Integration extends TestCas
         Assert::assertTrue($this->updatedColumnExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

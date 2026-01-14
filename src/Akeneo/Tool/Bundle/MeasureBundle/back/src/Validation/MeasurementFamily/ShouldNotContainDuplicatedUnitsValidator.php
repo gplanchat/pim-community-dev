@@ -14,6 +14,7 @@ use Symfony\Component\Validator\ConstraintValidator;
  */
 class ShouldNotContainDuplicatedUnitsValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($units, Constraint $constraint)
     {
         $unitCodes = $this->unitCodes($units);

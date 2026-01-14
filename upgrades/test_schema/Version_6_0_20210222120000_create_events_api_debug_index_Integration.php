@@ -16,13 +16,15 @@ class Version_6_0_20210222120000_create_events_api_debug_index_Integration exten
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20210222120000_create_events_api_debug_index';
+    private const string MIGRATION_LABEL = '_6_0_20210222120000_create_events_api_debug_index';
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

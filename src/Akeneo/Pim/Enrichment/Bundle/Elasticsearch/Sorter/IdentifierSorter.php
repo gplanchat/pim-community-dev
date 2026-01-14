@@ -35,6 +35,7 @@ class IdentifierSorter extends BaseFieldSorter implements AttributeSorterInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeSorter(AttributeInterface $attribute, $direction, $locale = null, $channel = null)
     {
         $this->addFieldSorter('identifier', $direction);
@@ -45,6 +46,7 @@ class IdentifierSorter extends BaseFieldSorter implements AttributeSorterInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         return in_array($attribute->getType(), $this->supportedAttributes);

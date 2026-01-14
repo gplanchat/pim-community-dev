@@ -19,6 +19,7 @@ class SqlGetProductCompletenessRatio implements GetProductCompletenessRatio
     ) {
     }
 
+    #[\Override]
     public function forChannelCodeAndLocaleCode(UuidInterface $productUuid, string $channelCode, string $localeCode): ?int
     {
         $completenessCollection = $this->getProductCompletenesses->fromProductUuids([$productUuid], $channelCode, [$localeCode]);

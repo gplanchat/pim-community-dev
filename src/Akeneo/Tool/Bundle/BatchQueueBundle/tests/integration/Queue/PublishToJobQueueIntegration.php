@@ -23,6 +23,7 @@ class PublishToJobQueueIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -200,6 +201,7 @@ class PublishToJobQueueIntegration extends TestCase
         return $product;
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

@@ -82,6 +82,7 @@ class CheckAttributeIsNotAFamilyVariantAxisOnDeletionSubscriberIntegration exten
         $this->get('pim_catalog.saver.family_variant')->save($familyVariant);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

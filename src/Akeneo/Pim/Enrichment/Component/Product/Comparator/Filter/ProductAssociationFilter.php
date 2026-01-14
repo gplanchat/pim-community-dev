@@ -47,6 +47,7 @@ class ProductAssociationFilter implements FilterInterface
      * The filtered values should contain products or product_uuids. We normalize the original product associations
      * with products or product_uuids to filter items.
      */
+    #[\Override]
     public function filter(EntityWithValuesInterface $product, array $newValues): array
     {
         $isImportingByUuids = null;

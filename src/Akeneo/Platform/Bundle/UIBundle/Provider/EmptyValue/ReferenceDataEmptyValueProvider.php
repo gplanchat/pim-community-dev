@@ -16,6 +16,7 @@ class ReferenceDataEmptyValueProvider implements EmptyValueProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getEmptyValue($attribute)
     {
         return 'pim_reference_data_multiselect' === $attribute->getType() ? [] : null;
@@ -24,6 +25,7 @@ class ReferenceDataEmptyValueProvider implements EmptyValueProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element)
     {
         return $element instanceof AttributeInterface &&

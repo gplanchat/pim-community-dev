@@ -20,6 +20,7 @@ final class EventsApiLoggingSubscriber implements EventSubscriberInterface
     {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

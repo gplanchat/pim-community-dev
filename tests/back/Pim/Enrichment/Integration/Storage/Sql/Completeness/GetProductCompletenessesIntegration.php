@@ -24,6 +24,7 @@ class GetProductCompletenessesIntegration extends TestCase
 
     private ChannelExistsWithLocaleInterface $channelExistsWithLocale;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -224,6 +225,7 @@ class GetProductCompletenessesIntegration extends TestCase
         Assert::assertNull($completenesses[$idProd->toString()]->getCompletenessForChannelAndLocale('tablet', 'de_DE'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

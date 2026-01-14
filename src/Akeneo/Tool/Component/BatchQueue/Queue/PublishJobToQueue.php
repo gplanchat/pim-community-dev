@@ -38,6 +38,7 @@ class PublishJobToQueue implements PublishJobToQueueInterface
     ) {
     }
 
+    #[\Override]
     public function publish(
         string $jobInstanceCode,
         array $config,

@@ -39,6 +39,7 @@ class ProductValueNormalizer implements NormalizerInterface, CacheableSupportsMe
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($entity, $format = null, array $context = []): array
     {
         $isCollection = $entity instanceof OptionsValueInterface
@@ -58,11 +59,13 @@ class ProductValueNormalizer implements NormalizerInterface, CacheableSupportsMe
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ValueInterface && 'standard' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

@@ -14,6 +14,7 @@ class BaseAttributeSorter extends AbstractAttributeSorter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getAttributePathSuffix()
     {
         return null;

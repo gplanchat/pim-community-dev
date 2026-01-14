@@ -10,8 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GetJobUserActionTest extends ControllerIntegrationTestCase
 {
-    private const ROUTE = 'akeneo_job_get_job_user_action';
+    private const string ROUTE = 'akeneo_job_get_job_user_action';
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

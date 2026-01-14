@@ -24,6 +24,7 @@ class UpdateIndexVersionIntegration extends TestCase
 {
     private string $productAndProductModelIndexName;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -58,6 +59,7 @@ class UpdateIndexVersionIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

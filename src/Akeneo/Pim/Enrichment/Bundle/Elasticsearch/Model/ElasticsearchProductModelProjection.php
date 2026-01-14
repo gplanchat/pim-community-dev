@@ -13,7 +13,7 @@ use Akeneo\Pim\Enrichment\Component\Product\Model\ProductModelInterface;
  */
 final class ElasticsearchProductModelProjection
 {
-    private const INDEX_DATE_FORMAT = 'c';
+    private const string INDEX_DATE_FORMAT = 'c';
 
     private int $id;
     private string $code;

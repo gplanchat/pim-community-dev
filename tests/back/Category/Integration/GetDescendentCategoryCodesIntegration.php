@@ -15,6 +15,7 @@ use PHPUnit\Framework\Assert;
  */
 class GetDescendentCategoryCodesIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -67,6 +68,7 @@ class GetDescendentCategoryCodesIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

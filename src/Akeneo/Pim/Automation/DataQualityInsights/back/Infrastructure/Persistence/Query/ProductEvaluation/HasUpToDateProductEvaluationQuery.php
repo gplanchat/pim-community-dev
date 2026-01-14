@@ -25,6 +25,7 @@ final class HasUpToDateProductEvaluationQuery implements HasUpToDateEvaluationQu
     ) {
     }
 
+    #[\Override]
     public function forEntityId(ProductEntityIdInterface $productUuid): bool
     {
         Assert::isInstanceOf($productUuid, ProductUuid::class);
@@ -35,6 +36,7 @@ final class HasUpToDateProductEvaluationQuery implements HasUpToDateEvaluationQu
         return !is_null($upToDateProducts);
     }
 
+    #[\Override]
     public function forEntityIdCollection(ProductEntityIdCollection $productUuidCollection): ?ProductUuidCollection
     {
         Assert::isInstanceOf($productUuidCollection, ProductUuidCollection::class);

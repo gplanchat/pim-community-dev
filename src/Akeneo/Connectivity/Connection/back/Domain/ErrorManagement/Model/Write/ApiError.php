@@ -17,7 +17,7 @@ abstract class ApiError implements ApiErrorInterface
     private string $content;
     private \DateTimeImmutable $dateTime;
 
-    public function __construct(string $content, \DateTimeImmutable $dateTime = null)
+    public function __construct(string $content, ?\DateTimeImmutable $dateTime = null)
     {
         try {
             $decoded = \json_decode($content, true, 512, JSON_THROW_ON_ERROR);
@@ -48,16 +48,19 @@ abstract class ApiError implements ApiErrorInterface
         return  $this->id;
     }
 
+    #[\Override]
     public function content(): string
     {
         return $this->content;
     }
 
+    #[\Override]
     abstract public function type(): ErrorType;
 
     /**
      * @return array{id: string, content: mixed, error_datetime: string}
      */
+    #[\Override]
     public function normalize(): array
     {
         return [

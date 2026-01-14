@@ -39,6 +39,7 @@ final class ProductWasCreatedOrUpdatedSubscriber implements EventSubscriberInter
         Assert::greaterThanEq($this->batchSize, 1);
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

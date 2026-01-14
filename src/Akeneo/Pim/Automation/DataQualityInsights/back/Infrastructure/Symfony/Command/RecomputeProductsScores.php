@@ -40,11 +40,13 @@ final class RecomputeProductsScores extends Command
         $this->jobInstanceRepository = $jobInstanceRepository;
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->setHidden(true);
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (! $this->featureFlag->isEnabled()) {

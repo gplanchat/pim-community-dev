@@ -63,6 +63,7 @@ class UserUpdater implements ObjectUpdaterInterface
      *     'tree': 'master'
      * }
      */
+    #[\Override]
     public function update($user, array $data, array $options = [])
     {
         if (!$user instanceof UserInterface) {

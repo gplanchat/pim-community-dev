@@ -34,6 +34,7 @@ class CheckCategoryTrees extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -68,6 +69,7 @@ class CheckCategoryTrees extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $inputOptionDumpCorruptions = (bool) $input->getOption('dump-corruptions');

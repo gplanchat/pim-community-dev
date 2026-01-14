@@ -27,6 +27,7 @@ class AllowedExtensionsValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof FileAllowedExtensions && !$constraint instanceof ImageAllowedExtensions) {

@@ -19,6 +19,7 @@ class GetDirectChildrenCategoryCodes implements GetDirectChildrenCategoryCodesIn
     /**
      * @return array<string, array{code: string, row_num: int}>
      */
+    #[\Override]
     public function execute(int $categoryId): array
     {
         $sql = <<<SQL

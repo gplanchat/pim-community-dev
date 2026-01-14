@@ -37,6 +37,7 @@ class CreateConnectionCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure(): void
     {
         $this
@@ -83,6 +84,7 @@ class CreateConnectionCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $code = $input->getArgument('code');

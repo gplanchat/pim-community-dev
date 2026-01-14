@@ -34,7 +34,7 @@ final class ImportExportFileContext extends PimContext implements SnippetAccepti
     private ?JobInstance $jobInstance;
     private ?JobExecution $jobExecution;
 
-    private const USERNAME_FOR_JOB_LAUNCH = 'admin';
+    private const string USERNAME_FOR_JOB_LAUNCH = 'admin';
 
     /**
      * @When /^the (.*) are imported via the job ([\w\_]+)$/

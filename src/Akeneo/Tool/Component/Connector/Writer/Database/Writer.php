@@ -41,6 +41,7 @@ class Writer implements ItemWriterInterface, StepExecutionAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $objects)
     {
         $this->incrementCount($objects);
@@ -51,6 +52,7 @@ class Writer implements ItemWriterInterface, StepExecutionAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;

@@ -9,7 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20211122154203_add_step_count_in_job_execution extends AbstractMigration
 {
-    private const STEP_COUNT_MAP = [
+    private const array STEP_COUNT_MAP = [
         0 => ['akeneo_shared_catalog'],
         1 => [
             'csv_user_group_export',
@@ -192,6 +192,7 @@ final class Version_6_0_20211122154203_add_step_count_in_job_execution extends A
         ],
     ];
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -212,6 +213,7 @@ final class Version_6_0_20211122154203_add_step_count_in_job_execution extends A
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

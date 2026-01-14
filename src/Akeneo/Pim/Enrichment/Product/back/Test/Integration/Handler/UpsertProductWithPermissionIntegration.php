@@ -36,6 +36,7 @@ final class UpsertProductWithPermissionIntegration extends EnrichmentProductTest
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         FeatureHelper::skipIntegrationTestWhenPermissionFeatureIsNotAvailable();

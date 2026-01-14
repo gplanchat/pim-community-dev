@@ -18,6 +18,7 @@ class DeleteCategoryTreeTemplateByTemplateUuidSqlIntegration extends CategoryTes
 {
     private DeleteCategoryTreeTemplateByTemplateUuid $deleteCategoryTreeTemplateByTemplateUuid;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

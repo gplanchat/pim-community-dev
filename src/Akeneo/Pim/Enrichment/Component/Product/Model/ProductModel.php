@@ -67,6 +67,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +76,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode(): ?string
     {
         return $this->code;
@@ -83,6 +85,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifier(): ?string
     {
         return $this->getCode();
@@ -91,6 +94,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode(string $code): ProductModelInterface
     {
         if ($code !== $this->code) {
@@ -106,6 +110,7 @@ class ProductModel implements ProductModelInterface
      *
      * @see ProductModel::setRawValues()
      */
+    #[\Override]
     public function getRawValues(): array
     {
         if (is_object($this->rawValues)) {
@@ -124,6 +129,7 @@ class ProductModel implements ProductModelInterface
      * We have to trick a little bit before saving the value in database, by setting the raw value to an object, it
      * will be saved as {} and avoid issues with JSON_MERGE.
      */
+    #[\Override]
     public function setRawValues(array $rawValues): ProductModelInterface
     {
         if ([] === $rawValues) {
@@ -137,6 +143,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValues(): WriteValueCollection
     {
         $values = clone $this->values;
@@ -147,6 +154,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValuesForVariation(): WriteValueCollection
     {
         return clone $this->values;
@@ -155,6 +163,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setValues(WriteValueCollection $values)
     {
         $formerValues = WriteValueCollection::fromCollection($this->values ?? new WriteValueCollection());
@@ -182,6 +191,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValue($attributeCode, $localeCode = null, $scopeCode = null): ?ValueInterface
     {
         $result = $this->values->getByCodes($attributeCode, $scopeCode, $localeCode);
@@ -199,6 +209,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addValue(ValueInterface $value)
     {
         if (true === $this->values->add($value)) {
@@ -211,6 +222,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeValue(ValueInterface $value)
     {
         if (true === $this->values->remove($value)) {
@@ -223,6 +235,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttribute(string $attributeCode): bool
     {
         return in_array($attributeCode, $this->getValues()->getAttributeCodes(), true);
@@ -231,6 +244,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUsedAttributeCodes(): array
     {
         return $this->getValues()->getAttributeCodes();
@@ -239,6 +253,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCreated(): ?\DateTimeInterface
     {
         return $this->created;
@@ -247,6 +262,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCreated($created): ProductModelInterface
     {
         $this->created = $created;
@@ -257,6 +273,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUpdated(): \DateTimeInterface
     {
         return $this->updated;
@@ -265,6 +282,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUpdated($updated): ProductModelInterface
     {
         $this->updated = $updated;
@@ -275,6 +293,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategories(): Collection
     {
         $categories = new ArrayCollection($this->categories->toArray());
@@ -285,6 +304,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeCategory(CategoryInterface $category)
     {
         if (true === $this->categories->removeElement($category)) {
@@ -297,6 +317,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addCategory(CategoryInterface $category)
     {
         if (!$this->categories->contains($category) && !$this->hasAncestryCategory($category)) {
@@ -310,6 +331,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCategories(Collection $categories): void
     {
         $formerCategories = $this->getCategories();
@@ -336,6 +358,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoryCodes(): array
     {
         $codes = $this->getCategories()->map(function (CategoryInterface $category) {
@@ -350,6 +373,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProducts(): Collection
     {
         return $this->products;
@@ -358,6 +382,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addProduct(ProductInterface $product): ProductModelInterface
     {
         $product->setParent($this);
@@ -371,6 +396,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeProduct(ProductInterface $product): ProductModelInterface
     {
         if (true === $this->products->removeElement($product)) {
@@ -383,6 +409,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isRoot(): bool
     {
         return (null === $this->getParent());
@@ -391,7 +418,8 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
-    public function setParent(ProductModelInterface $parent = null): void
+    #[\Override]
+    public function setParent(?ProductModelInterface $parent = null): void
     {
         $formerParentCode = $this->parent ? $this->parent->getCode() : null;
         $newParentCode = $parent ? $parent->getCode() : null;
@@ -404,6 +432,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?ProductModelInterface
     {
         return $this->parent;
@@ -412,6 +441,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addProductModel(ProductModelInterface $child): ProductModelInterface
     {
         if (!$this->productModels->contains($child)) {
@@ -425,6 +455,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeProductModel(ProductModelInterface $children): ProductModelInterface
     {
         if (true === $this->productModels->removeElement($children)) {
@@ -437,6 +468,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasProductModels(): bool
     {
         return false === $this->getProductModels()->isEmpty();
@@ -445,6 +477,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProductModels(): Collection
     {
         return $this->productModels;
@@ -453,6 +486,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamilyVariant(): ?FamilyVariantInterface
     {
         return $this->familyVariant;
@@ -461,6 +495,7 @@ class ProductModel implements ProductModelInterface
     /**
      * @param FamilyVariantInterface $familyVariant
      */
+    #[\Override]
     public function setFamilyVariant(FamilyVariantInterface $familyVariant): void
     {
         $formerFamilyVariantCode = $this->familyVariant ? $this->familyVariant->getCode() : null;
@@ -474,6 +509,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getVariationLevel(): int
     {
         $entity = $this;
@@ -494,6 +530,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isRootProductModel(): bool
     {
         return null === $this->parent;
@@ -502,7 +539,8 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
-    public function getLabel(string $localeCode = null, string $scopeCode = null): string
+    #[\Override]
+    public function getLabel(?string $localeCode = null, ?string $scopeCode = null): string
     {
         $code = (string) $this->getCode();
         $familyVariant = $this->familyVariant;
@@ -537,6 +575,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getImage(): ?ValueInterface
     {
         $attributeAsImage = $this->familyVariant->getFamily()->getAttributeAsImage();
@@ -551,6 +590,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamily(): ?FamilyInterface
     {
         return null !== $this->getFamilyVariant() ? $this->getFamilyVariant()->getFamily() : null;
@@ -559,6 +599,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAssociation(AssociationInterface $newAssociation): EntityWithAssociationsInterface
     {
         $currentAssociation = $this->getSimilarAssociation($newAssociation);
@@ -587,6 +628,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeAssociation(AssociationInterface $association): EntityWithAssociationsInterface
     {
         $similarAssociation = $this->getSimilarAssociation($association);
@@ -608,6 +650,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAssociations()
     {
         return new ArrayCollection($this->associations->toArray());
@@ -616,6 +659,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getQuantifiedAssociations(): QuantifiedAssociationCollection
     {
         return clone $this->quantifiedAssociationCollection;
@@ -624,6 +668,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filterQuantifiedAssociations(
         array $productIdentifiersToKeep,
         array $productUuidsToKeep,
@@ -646,6 +691,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function mergeQuantifiedAssociations(QuantifiedAssociationCollection $quantifiedAssociations): void
     {
         if ($this->quantifiedAssociationCollection === null) {
@@ -662,6 +708,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function patchQuantifiedAssociations(array $submittedQuantifiedAssociations): void
     {
         if (null === $this->quantifiedAssociationCollection) {
@@ -680,6 +727,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function clearQuantifiedAssociations(): void
     {
         if (null === $this->quantifiedAssociationCollection) {
@@ -696,6 +744,7 @@ class ProductModel implements ProductModelInterface
     /**
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return (string) $this->getLabel();
@@ -704,6 +753,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllAssociations()
     {
         $clonedAssociations = [];
@@ -743,6 +793,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isDirty(): bool
     {
         return $this->dirty;
@@ -751,6 +802,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function cleanup(): void
     {
         $this->dirty = false;
@@ -767,11 +819,13 @@ class ProductModel implements ProductModelInterface
         $this->quantifiedAssociationCollection = clone $this->quantifiedAssociationCollection;
     }
 
+    #[\Override]
     public function hasAssociationForTypeCode(string $associationTypeCode): bool
     {
         return null !== $this->getAssociationForTypeCode($associationTypeCode);
     }
 
+    #[\Override]
     public function addAssociatedProduct(ProductInterface $product, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -791,6 +845,7 @@ class ProductModel implements ProductModelInterface
         }
     }
 
+    #[\Override]
     public function removeAssociatedProduct(ProductInterface $product, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -801,6 +856,7 @@ class ProductModel implements ProductModelInterface
         }
     }
 
+    #[\Override]
     public function getAssociatedProducts(string $associationTypeCode): ?Collection
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -808,6 +864,7 @@ class ProductModel implements ProductModelInterface
         return $association ? clone $association->getProducts() : null;
     }
 
+    #[\Override]
     public function addAssociatedProductModel(ProductModelInterface $productModel, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -827,6 +884,7 @@ class ProductModel implements ProductModelInterface
         }
     }
 
+    #[\Override]
     public function removeAssociatedProductModel(ProductModelInterface $productModel, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -837,6 +895,7 @@ class ProductModel implements ProductModelInterface
         }
     }
 
+    #[\Override]
     public function getAssociatedProductModels(string $associationTypeCode): ?Collection
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -844,6 +903,7 @@ class ProductModel implements ProductModelInterface
         return $association ? clone $association->getProductModels() : null;
     }
 
+    #[\Override]
     public function addAssociatedGroup(GroupInterface $group, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -863,6 +923,7 @@ class ProductModel implements ProductModelInterface
         }
     }
 
+    #[\Override]
     public function removeAssociatedGroup(GroupInterface $group, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -873,6 +934,7 @@ class ProductModel implements ProductModelInterface
         }
     }
 
+    #[\Override]
     public function getAssociatedGroups(string $associationTypeCode): ?Collection
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -894,6 +956,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getCategoriesForCurrentLevel(): Collection
     {
         return new ArrayCollection($this->categories->toArray());
@@ -996,6 +1059,7 @@ class ProductModel implements ProductModelInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isNew(): bool
     {
         return null === $this->id;

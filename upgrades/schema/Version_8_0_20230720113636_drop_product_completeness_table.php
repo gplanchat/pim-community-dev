@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230720113636_drop_product_completeness_table extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Drops the product completeness table';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->connection->executeStatement(<<<SQL
@@ -26,6 +28,7 @@ final class Version_8_0_20230720113636_drop_product_completeness_table extends A
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

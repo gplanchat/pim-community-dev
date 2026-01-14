@@ -29,7 +29,7 @@ class WebhookReachabilityChecker implements UrlReachabilityCheckerInterface
 
     /** @var string */
     public const CONNECTION_FAILED = 'Failed to connect to server';
-    private const PROHIBITED_REDIRECTION = 'Server response contains a redirection. This is not allowed.';
+    private const string PROHIBITED_REDIRECTION = 'Server response contains a redirection. This is not allowed.';
 
     public function __construct(
         private readonly ClientInterface $client,
@@ -39,6 +39,7 @@ class WebhookReachabilityChecker implements UrlReachabilityCheckerInterface
     ) {
     }
 
+    #[\Override]
     public function check(string $url, string $secret): UrlReachabilityStatus
     {
         $violations = $this->validator->validate($url, [

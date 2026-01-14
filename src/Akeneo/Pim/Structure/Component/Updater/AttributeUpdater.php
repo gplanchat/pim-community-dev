@@ -76,6 +76,7 @@ class AttributeUpdater implements ObjectUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function update($attribute, array $data, array $options = [])
     {
         if (!$attribute instanceof AttributeInterface) {

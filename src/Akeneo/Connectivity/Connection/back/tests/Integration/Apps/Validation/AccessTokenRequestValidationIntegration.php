@@ -141,6 +141,7 @@ class AccessTokenRequestValidationIntegration extends WebTestCase
         $this->assertHasViolation($violations, 'codeChallenge', 'invalid_client');
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -156,6 +157,7 @@ class AccessTokenRequestValidationIntegration extends WebTestCase
         $this->loadAppsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -21,11 +21,13 @@ class IsCustomAppsNumberLimitReachedQueryIntegration extends WebTestCase
     private GetCustomAppsNumberLimit $getCustomAppsNumberLimit;
     private ?CustomAppLoader $customAppLoader;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

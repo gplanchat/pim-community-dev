@@ -135,6 +135,7 @@ final class ConfigureCategoryTreeForExportJobsAfterChangingTheChannelCategoryTre
         Assert::assertSame([$categoryCode], $parameters['filters']['data'][0]['value']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

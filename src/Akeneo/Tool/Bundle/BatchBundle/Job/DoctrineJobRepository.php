@@ -99,6 +99,7 @@ class DoctrineJobRepository implements JobRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createJobExecution(
         JobInterface $job,
         JobInstance $jobInstance,
@@ -135,6 +136,7 @@ class DoctrineJobRepository implements JobRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function updateJobExecution(JobExecution $jobExecution): void
     {
         $this->jobManager->persist($jobExecution);
@@ -144,6 +146,7 @@ class DoctrineJobRepository implements JobRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function updateStepExecution(StepExecution $stepExecution): void
     {
         $this->jobManager->persist($stepExecution);
@@ -153,6 +156,7 @@ class DoctrineJobRepository implements JobRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLastJobExecution(JobInstance $jobInstance, $status): ?JobExecution
     {
         return $this->jobManager->createQueryBuilder()
@@ -171,6 +175,7 @@ class DoctrineJobRepository implements JobRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function remove(array $jobsExecutions): void
     {
         foreach ($jobsExecutions as $i => $jobsExecution) {
@@ -195,6 +200,7 @@ class DoctrineJobRepository implements JobRepositoryInterface
      * As the warnings are extra-lazy, in a persistent collection, this do not
      * cause a new memory leak.
      */
+    #[\Override]
     public function addWarning(Warning $warning): void
     {
         $sqlQuery = <<<SQL
@@ -219,6 +225,7 @@ SQL;
         }
     }
 
+    #[\Override]
     public function addWarnings(StepExecution $stepExecution, array $warnings): void
     {
         if (0 === count($warnings)) {

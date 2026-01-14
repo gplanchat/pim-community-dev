@@ -32,6 +32,7 @@ class PurgeDoctrineQueueIntegration extends TestCase
         Assert::assertContains('product_created', $results);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -40,6 +41,7 @@ class PurgeDoctrineQueueIntegration extends TestCase
         $this->purgeDoctrineQueueQuery = $this->get('akeneo_messenger.query.purge');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

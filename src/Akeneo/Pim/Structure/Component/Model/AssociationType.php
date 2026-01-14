@@ -54,6 +54,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -62,6 +63,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setId($id)
     {
         $this->id = $id;
@@ -72,6 +74,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -80,6 +83,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -90,6 +94,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCreated()
     {
         return $this->created;
@@ -98,6 +103,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCreated($created)
     {
         $this->created = $created;
@@ -108,6 +114,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUpdated()
     {
         return $this->updated;
@@ -116,6 +123,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUpdated($updated)
     {
         $this->updated = $updated;
@@ -126,6 +134,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -136,6 +145,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslations()
     {
         return $this->translations;
@@ -144,6 +154,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslation(?string $locale = null): ?AssociationTypeTranslationInterface
     {
         $locale = $locale ?: $this->locale;
@@ -168,6 +179,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->translations->contains($translation)) {
@@ -180,6 +192,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeTranslation(TranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
@@ -190,6 +203,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslationFQCN()
     {
         return AssociationTypeTranslation::class;
@@ -198,6 +212,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         $translated = $this->getTranslation() ? $this->getTranslation()->getLabel() : null;
@@ -208,6 +223,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->getTranslation()->setLabel($label);
@@ -218,6 +234,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString()
     {
         return $this->getLabel();
@@ -226,6 +243,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;
@@ -234,6 +252,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function isTwoWay(): bool
     {
         return $this->isTwoWay;
@@ -242,6 +261,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function setIsTwoWay(bool $isTwoWay): void
     {
         $this->isTwoWay = $isTwoWay;
@@ -250,6 +270,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function setIsQuantified(bool $isQuantified): void
     {
         $this->isQuantified = $isQuantified;
@@ -258,6 +279,7 @@ class AssociationType implements AssociationTypeInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function isQuantified(): bool
     {
         return $this->isQuantified;

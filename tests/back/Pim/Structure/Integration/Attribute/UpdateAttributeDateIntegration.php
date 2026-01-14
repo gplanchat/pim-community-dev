@@ -68,6 +68,7 @@ final class UpdateAttributeDateIntegration extends TestCase
         Assert::assertNotEquals($initialUpdateDate, $this->getAttributeUpdateDate('ean'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

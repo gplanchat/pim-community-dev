@@ -26,6 +26,7 @@ class DbalFindViewedAnnouncementIds implements FindViewedAnnouncementIdsInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function byUserId(int $userId): array
     {
         $query = <<<SQL

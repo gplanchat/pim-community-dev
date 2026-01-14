@@ -22,6 +22,7 @@ class UserRole extends AbstractReader
         $this->userRoleRepository = $userRoleRepository;
     }
 
+    #[\Override]
     protected function getResults(): \ArrayIterator
     {
         return new \ArrayIterator(

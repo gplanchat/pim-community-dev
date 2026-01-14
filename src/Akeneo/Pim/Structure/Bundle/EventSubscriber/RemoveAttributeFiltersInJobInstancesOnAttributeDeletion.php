@@ -31,6 +31,7 @@ class RemoveAttributeFiltersInJobInstancesOnAttributeDeletion implements EventSu
         $this->bulkSaver = $bulkSaver;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

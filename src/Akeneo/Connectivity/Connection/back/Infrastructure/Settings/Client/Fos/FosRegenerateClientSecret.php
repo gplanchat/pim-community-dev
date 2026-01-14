@@ -22,6 +22,7 @@ class FosRegenerateClientSecret implements RegenerateClientSecretInterface
     {
     }
 
+    #[\Override]
     public function execute(ClientId $clientId): void
     {
         $fosClient = $this->findClient($clientId);

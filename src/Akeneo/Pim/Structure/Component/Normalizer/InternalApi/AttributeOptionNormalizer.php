@@ -44,6 +44,7 @@ class AttributeOptionNormalizer implements NormalizerInterface, NormalizerAwareI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         $optionsValues = $context['onlyActivatedLocales'] ?
@@ -62,11 +63,13 @@ class AttributeOptionNormalizer implements NormalizerInterface, NormalizerAwareI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof AttributeOptionInterface && in_array($format, $this->supportedFormat);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

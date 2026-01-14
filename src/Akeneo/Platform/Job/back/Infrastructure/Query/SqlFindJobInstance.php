@@ -23,6 +23,7 @@ class SqlFindJobInstance implements FindJobInstanceInterface
     ) {
     }
 
+    #[\Override]
     public function fromQuery(JobInstanceQuery $query): array
     {
         $sql = $this->buildSqlQuery($query);

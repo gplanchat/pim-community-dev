@@ -21,6 +21,7 @@ final class SqlGetAttributes implements GetAttributes
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function forCodes(array $attributeCodes): array
     {
         if (empty($attributeCodes)) {
@@ -96,6 +97,7 @@ SQL;
         return array_replace(array_fill_keys($attributeCodes, null), $attributes);
     }
 
+    #[\Override]
     public function forCode(string $attributeCode): ?Attribute
     {
         $forCodes = $this->forCodes([$attributeCode]);
@@ -107,6 +109,7 @@ SQL;
         return array_pop($forCodes);
     }
 
+    #[\Override]
     public function forType(string $attributeType): array
     {
         $query = <<<SQL

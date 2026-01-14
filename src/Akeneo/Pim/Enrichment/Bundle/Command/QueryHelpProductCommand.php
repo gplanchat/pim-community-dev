@@ -36,6 +36,7 @@ class QueryHelpProductCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -45,6 +46,7 @@ class QueryHelpProductCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->fieldDumper->dump($output);

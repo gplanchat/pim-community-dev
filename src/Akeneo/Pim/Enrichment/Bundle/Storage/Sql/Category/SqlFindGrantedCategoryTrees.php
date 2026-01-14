@@ -28,6 +28,7 @@ class SqlFindGrantedCategoryTrees implements FindGrantedCategoryTrees
     /**
      * @return CategoryTree[]
      */
+    #[\Override]
     public function execute(): array
     {
         $categories = $this->categoryRepository->findBy(['parent' => null]);

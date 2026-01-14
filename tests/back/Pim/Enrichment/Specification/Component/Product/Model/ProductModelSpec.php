@@ -33,8 +33,8 @@ use PhpSpec\ObjectBehavior;
 
 class ProductModelSpec extends ObjectBehavior
 {
-    private const UUID1 = '2ad984c7-8aa0-4ecf-95ce-e670fb8b7593';
-    private const UUID2 = '17c9248c-566d-49c5-b5a6-1b63dd07a9c3';
+    private const string UUID1 = '2ad984c7-8aa0-4ecf-95ce-e670fb8b7593';
+    private const string UUID2 = '17c9248c-566d-49c5-b5a6-1b63dd07a9c3';
 
     function it_is_a_product_model()
     {

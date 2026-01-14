@@ -35,6 +35,7 @@ class ListChildrenCategoriesWithCountNotIncludingSubCategories implements Query\
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function list(
         string $translationLocaleCode,
         int $userId,

@@ -27,6 +27,7 @@ final class LaunchProductAndProductModelEvaluationsHandlerIntegration extends Da
     private Connection $dbConnection;
     private Clock $clock;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

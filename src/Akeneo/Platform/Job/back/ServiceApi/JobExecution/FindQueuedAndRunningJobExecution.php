@@ -13,7 +13,7 @@ use Akeneo\Platform\Job\Application\SearchJobExecution\SearchJobExecutionQuery;
  */
 class FindQueuedAndRunningJobExecution implements FindQueuedAndRunningJobExecutionInterface
 {
-    private const QUEUED_AND_RUNNING_STATUS = ['STARTING', 'IN_PROGRESS'];
+    private const array QUEUED_AND_RUNNING_STATUS = ['STARTING', 'IN_PROGRESS'];
 
     public function __construct(
         private readonly SearchJobExecutionInterface $searchJobExecution,
@@ -23,6 +23,7 @@ class FindQueuedAndRunningJobExecution implements FindQueuedAndRunningJobExecuti
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(int $size = 25): int
     {
         $query = new SearchJobExecutionQuery();

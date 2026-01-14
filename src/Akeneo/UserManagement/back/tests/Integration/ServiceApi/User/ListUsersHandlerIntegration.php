@@ -29,6 +29,7 @@ final class ListUsersHandlerIntegration extends TestCase
     private GroupRepositoryInterface $groupRepository;
     private LocaleRepositoryInterface $localeRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -107,6 +108,7 @@ final class ListUsersHandlerIntegration extends TestCase
         return $this->get(ListUsersHandlerInterface::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

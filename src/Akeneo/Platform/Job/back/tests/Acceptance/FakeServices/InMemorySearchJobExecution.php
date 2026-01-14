@@ -20,11 +20,13 @@ class InMemorySearchJobExecution implements SearchJobExecutionInterface
         $this->jobExecutionRows = $jobExecutionRows;
     }
 
+    #[\Override]
     public function search(SearchJobExecutionQuery $query): array
     {
         return $this->jobExecutionRows;
     }
 
+    #[\Override]
     public function count(SearchJobExecutionQuery $query): int
     {
         return count($this->jobExecutionRows);

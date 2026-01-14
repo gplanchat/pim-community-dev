@@ -10,7 +10,7 @@ use Akeneo\Tool\Bundle\MeasureBundle\ServiceApi\GetUnitTranslations;
 
 class MetricTranslator implements FlatAttributeValueTranslatorInterface
 {
-    private const UNIT_SUFFIX = '-unit';
+    private const string UNIT_SUFFIX = '-unit';
 
     private GetUnitTranslations $getUnitTranslations;
 
@@ -19,6 +19,7 @@ class MetricTranslator implements FlatAttributeValueTranslatorInterface
         $this->getUnitTranslations = $getUnitTranslations;
     }
 
+    #[\Override]
     public function supports(string $attributeType, string $columnName): bool
     {
         $isEndingWithUnit = str_ends_with($columnName, self::UNIT_SUFFIX);
@@ -26,6 +27,7 @@ class MetricTranslator implements FlatAttributeValueTranslatorInterface
         return $attributeType === AttributeTypes::METRIC && $isEndingWithUnit;
     }
 
+    #[\Override]
     public function translate(string $attributeCode, array $properties, array $values, string $localeCode): array
     {
         if (!isset($properties['measurement_family_code'])) {

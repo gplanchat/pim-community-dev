@@ -41,6 +41,7 @@ class ValidMetricValidator extends ConstraintValidator
      *
      * @throws \Exception
      */
+    #[\Override]
     public function validate($object, Constraint $constraint)
     {
         if (!$constraint instanceof ValidMetric) {

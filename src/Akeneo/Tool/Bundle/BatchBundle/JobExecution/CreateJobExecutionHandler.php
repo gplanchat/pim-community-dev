@@ -38,6 +38,7 @@ class CreateJobExecutionHandler implements CreateJobExecutionHandlerInterface
     ) {
     }
 
+    #[\Override]
     public function createFromBatchCode(
         string $batchCode,
         array $jobExecutionConfig,
@@ -53,6 +54,7 @@ class CreateJobExecutionHandler implements CreateJobExecutionHandlerInterface
         return $this->createFromJobInstance($jobInstance, $jobExecutionConfig, $username);
     }
 
+    #[\Override]
     public function createFromJobInstance(
         JobInstance $jobInstance,
         array $jobExecutionConfig,

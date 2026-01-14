@@ -40,6 +40,7 @@ class FieldConverter implements FieldConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(string $fieldName, $value): ConvertedField
     {
         $associationFields = $this->assocFieldResolver->resolveAssociationColumns();

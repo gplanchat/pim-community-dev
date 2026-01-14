@@ -83,6 +83,7 @@ class SimpleJobLauncher implements JobLauncherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function launch(JobInstance $jobInstance, ?UserInterface $user, array $configuration = []) : JobExecution
     {
         $emailParameter = '';

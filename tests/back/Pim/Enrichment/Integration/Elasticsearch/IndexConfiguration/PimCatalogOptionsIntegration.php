@@ -151,6 +151,7 @@ class PimCatalogOptionsIntegration extends AbstractPimCatalogTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function addDocuments()
     {
         $products = [

@@ -27,6 +27,7 @@ class CountValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($saveMeasurementFamilyCommand, Constraint $constraint)
     {
         if (!$constraint instanceof Count) {

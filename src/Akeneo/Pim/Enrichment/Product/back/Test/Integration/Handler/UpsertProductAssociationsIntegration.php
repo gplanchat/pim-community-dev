@@ -33,6 +33,7 @@ class UpsertProductAssociationsIntegration extends EnrichmentProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

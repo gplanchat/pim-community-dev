@@ -27,6 +27,7 @@ class GetCustomAppQuery implements GetCustomAppQueryInterface
      *     connected: bool,
      * }|null
      */
+    #[\Override]
     public function execute(string $id): ?array
     {
         $query = <<<SQL

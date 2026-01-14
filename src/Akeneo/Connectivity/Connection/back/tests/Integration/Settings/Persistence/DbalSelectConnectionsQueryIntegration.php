@@ -24,6 +24,7 @@ class DbalSelectConnectionsQueryIntegration extends TestCase
     private ConnectionLoader $connectionLoader;
     private SelectConnectionsQueryInterface $selectConnectionsQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -60,6 +61,7 @@ class DbalSelectConnectionsQueryIntegration extends TestCase
         Assert::assertCount(0, $connections);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -58,6 +58,7 @@ class AttributeGroupIntegration extends TestCase
         $this->assert('attributeGroupB', $expected);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

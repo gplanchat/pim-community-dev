@@ -34,6 +34,7 @@ class InternalApiRequirementChecker implements RequirementChecker
      *
      * @throws ArrayConversionException
      */
+    #[\Override]
     public function check(array $data): void
     {
         $this->checkArrayStructure($data);

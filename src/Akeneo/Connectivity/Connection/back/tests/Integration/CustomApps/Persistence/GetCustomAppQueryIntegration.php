@@ -22,6 +22,7 @@ class GetCustomAppQueryIntegration extends TestCase
     private ?ConnectedAppLoader $connectedAppLoader;
     private ?GetCustomAppQuery $getCustomAppQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -31,6 +32,7 @@ class GetCustomAppQueryIntegration extends TestCase
         $this->getCustomAppQuery = $this->get(GetCustomAppQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

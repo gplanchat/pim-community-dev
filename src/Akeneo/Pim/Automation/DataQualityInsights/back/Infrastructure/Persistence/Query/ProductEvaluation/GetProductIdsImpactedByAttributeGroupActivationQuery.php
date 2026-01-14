@@ -17,18 +17,19 @@ use Doctrine\DBAL\Connection;
  * @copyright 2020 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class GetProductIdsImpactedByAttributeGroupActivationQuery implements GetEntityIdsImpactedByAttributeGroupActivationQueryInterface
+final readonly class GetProductIdsImpactedByAttributeGroupActivationQuery implements GetEntityIdsImpactedByAttributeGroupActivationQueryInterface
 {
     public function __construct(
-        private readonly Connection $dbConnection,
-        private readonly ProductEntityIdFactoryInterface $idFactory,
-        private readonly GetFamilyIds $getFamilyIds,
+        private Connection $dbConnection,
+        private ProductEntityIdFactoryInterface $idFactory,
+        private GetFamilyIds $getFamilyIds,
     ) {
     }
 
     /**
      * @return \Generator<int, ProductEntityIdCollection>
      */
+    #[\Override]
     public function updatedSince(\DateTimeImmutable $updatedSince, int $bulkSize): \Generator
     {
         $impactedFamilies = $this->retrieveFamiliesWithAttributeGroupActivationUpdatedSince($updatedSince);
@@ -81,6 +82,7 @@ SQL;
     /**
      * @return \Generator<int, ProductEntityIdCollection>
      */
+    #[\Override]
     public function forAttributeGroup(AttributeGroupCode $attributeGroupCode, int $bulkSize): \Generator
     {
         $impactedFamilies = \iterator_to_array($this->getFamilyIds->fromAttributeGroupCode($attributeGroupCode));

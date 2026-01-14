@@ -130,6 +130,7 @@ class ApiErrorCollectionSpec extends ObjectBehavior
     /**
      * @return array{matchErrorTypes: Closure(mixed):bool}
      */
+    #[\Override]
     public function getMatchers(): array
     {
         return [

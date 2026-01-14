@@ -20,6 +20,7 @@ class GetCategoryTemplateSql implements GetTemplate
     {
     }
 
+    #[\Override]
     public function byUuid(TemplateUuid $uuid): Template
     {
         $query = <<<SQL

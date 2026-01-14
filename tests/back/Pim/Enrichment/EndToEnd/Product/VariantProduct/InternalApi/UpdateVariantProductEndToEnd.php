@@ -69,6 +69,7 @@ class UpdateVariantProductEndToEnd extends InternalApiTestCase
         return json_decode($this->client->getResponse()->getContent(), true);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -108,6 +109,7 @@ class UpdateVariantProductEndToEnd extends InternalApiTestCase
         return self::getContainer()->get('pim_user.repository.user')->findOneByIdentifier('admin');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

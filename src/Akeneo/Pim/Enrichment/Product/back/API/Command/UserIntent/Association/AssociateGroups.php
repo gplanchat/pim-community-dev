@@ -26,6 +26,7 @@ final class AssociateGroups implements AssociationUserIntent
         Assert::stringNotEmpty($this->associationType);
     }
 
+    #[\Override]
     public function associationType(): string
     {
         return $this->associationType;

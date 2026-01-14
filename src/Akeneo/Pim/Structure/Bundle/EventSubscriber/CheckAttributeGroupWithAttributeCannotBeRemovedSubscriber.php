@@ -18,6 +18,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class CheckAttributeGroupWithAttributeCannotBeRemovedSubscriber implements EventSubscriberInterface
 {
+    #[\Override]
     public static function getSubscribedEvents()
     {
         return [

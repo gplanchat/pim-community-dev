@@ -35,6 +35,7 @@ class CategoryFieldRemover extends AbstractFieldRemover
      *
      * Expected data input format : ["category_code", "another_category_code"]
      */
+    #[\Override]
     public function removeFieldData($product, $field, $data, array $options = [])
     {
         $this->checkData($field, $data);

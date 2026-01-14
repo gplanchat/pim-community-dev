@@ -20,6 +20,7 @@ class ScopableValues extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validatedBy(): string
     {
         return 'pim_scopable_values_validator';

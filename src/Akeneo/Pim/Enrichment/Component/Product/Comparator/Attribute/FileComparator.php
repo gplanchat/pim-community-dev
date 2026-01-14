@@ -33,6 +33,7 @@ class FileComparator implements ComparatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($type)
     {
         return in_array($type, $this->types);
@@ -41,6 +42,7 @@ class FileComparator implements ComparatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function compare($data, $originals)
     {
         $default = ['locale' => null, 'scope' => null, 'data' => null];

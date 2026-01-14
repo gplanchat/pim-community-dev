@@ -62,6 +62,7 @@ class FakeObject
     /** @var string */
     public $property;
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->property;

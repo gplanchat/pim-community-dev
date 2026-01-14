@@ -71,6 +71,7 @@ class Family implements FamilyInterface
      *
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return $this->getLabel();
@@ -79,6 +80,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -89,6 +91,7 @@ class Family implements FamilyInterface
      *
      * @return \DateTime
      */
+    #[\Override]
     public function getCreated()
     {
         return $this->created;
@@ -101,6 +104,7 @@ class Family implements FamilyInterface
      *
      * @return Family
      */
+    #[\Override]
     public function setCreated($created)
     {
         $this->created = $created;
@@ -113,6 +117,7 @@ class Family implements FamilyInterface
      *
      * @return \DateTime
      */
+    #[\Override]
     public function getUpdated()
     {
         return $this->updated;
@@ -125,6 +130,7 @@ class Family implements FamilyInterface
      *
      * @return Family
      */
+    #[\Override]
     public function setUpdated($updated)
     {
         $this->updated = $updated;
@@ -135,6 +141,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -143,6 +150,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -153,6 +161,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttribute(AttributeInterface $attribute)
     {
         if (!$this->attributes->contains($attribute)) {
@@ -167,6 +176,7 @@ class Family implements FamilyInterface
      *
      * @throws \InvalidArgumentException
      */
+    #[\Override]
     public function removeAttribute(AttributeInterface $attribute)
     {
         $this->attributes->removeElement($attribute);
@@ -177,6 +187,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributes()
     {
         return $this->attributes;
@@ -185,6 +196,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeCodes()
     {
         $codes = [];
@@ -198,6 +210,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroupedAttributes()
     {
         $result = [];
@@ -211,6 +224,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttribute(AttributeInterface $attribute)
     {
         return $this->hasAttributeCode($attribute->getCode());
@@ -219,6 +233,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttributeCode($attributeCode)
     {
         return in_array($attributeCode, $this->getAttributeCodes());
@@ -227,6 +242,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAttributeAsLabel(AttributeInterface $attributeAsLabel)
     {
         $this->attributeAsLabel = $attributeAsLabel;
@@ -237,6 +253,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeAsLabel()
     {
         return $this->attributeAsLabel;
@@ -245,6 +262,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAttributeAsImage(?AttributeInterface $attributeAsImage): FamilyInterface
     {
         $this->attributeAsImage = $attributeAsImage;
@@ -255,6 +273,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeAsImage(): ?AttributeInterface
     {
         return $this->attributeAsImage;
@@ -263,6 +282,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeAsLabelChoices()
     {
         return $this->attributes->filter(
@@ -278,6 +298,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -288,6 +309,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslations()
     {
         return $this->translations;
@@ -296,6 +318,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslation(?string $locale = null): ?FamilyTranslationInterface
     {
         $locale = $locale ?: $this->locale;
@@ -320,6 +343,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->translations->contains($translation)) {
@@ -332,6 +356,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeTranslation(TranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
@@ -342,6 +367,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslationFQCN()
     {
         return FamilyTranslation::class;
@@ -350,6 +376,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         $translated = $this->getTranslation() ? $this->getTranslation()->getLabel() : null;
@@ -360,6 +387,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->getTranslation()->setLabel($label);
@@ -370,6 +398,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeRequirement(AttributeRequirementInterface $requirement)
     {
         $requirementKey = $this->getAttributeRequirementKey($requirement);
@@ -388,6 +417,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeAttributeRequirement(AttributeRequirementInterface $requirement)
     {
         $this->requirements->removeElement($requirement);
@@ -398,6 +428,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAttributeRequirements(array $requirements)
     {
         foreach ($requirements as $requirement) {
@@ -411,6 +442,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeRequirements()
     {
         $result = [];
@@ -426,6 +458,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeRequirementKey(AttributeRequirementInterface $requirement)
     {
         return sprintf(
@@ -438,6 +471,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;
@@ -446,6 +480,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamilyVariants(): Collection
     {
         return $this->familyVariants;
@@ -454,6 +489,7 @@ class Family implements FamilyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setFamilyVariants(Collection $familyVariants): void
     {
         $this->familyVariants = $familyVariants;
@@ -463,6 +499,7 @@ class Family implements FamilyInterface
      * @param AttributeInterface[] $attributes
      * @return void
      */
+    #[\Override]
     public function updateAttributes(array $attributes = []): void
     {
         Assert::allIsInstanceOf($attributes, AttributeInterface::class);

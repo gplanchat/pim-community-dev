@@ -29,6 +29,7 @@ final class LruCachedGetExistingAttributeOptionsWithValues implements GetExistin
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function fromAttributeCodeAndOptionCodes(array $optionKeys): array
     {
         if (empty($optionKeys)) {

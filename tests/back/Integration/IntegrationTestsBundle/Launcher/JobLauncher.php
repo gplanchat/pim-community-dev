@@ -31,8 +31,8 @@ use Webmozart\Assert\Assert;
  */
 class JobLauncher
 {
-    private const MESSENGER_COMMAND_NAME = 'messenger:consume';
-    private const MESSENGER_RECEIVERS = ['data_maintenance_job', 'import_export_job', 'ui_job'];
+    private const string MESSENGER_COMMAND_NAME = 'messenger:consume';
+    private const array MESSENGER_RECEIVERS = ['data_maintenance_job', 'import_export_job', 'ui_job'];
 
     const EXPORT_DIRECTORY = 'pim-integration-tests-export';
 
@@ -69,7 +69,7 @@ class JobLauncher
      *
      * @return string
      */
-    public function launchExport(string $jobCode, string $username = null, array $config = [], string $format = 'csv') : string
+    public function launchExport(string $jobCode, ?string $username = null, array $config = [], string $format = 'csv') : string
     {
         $this->featureFlags->enable('import_export_local_storage');
         Assert::stringNotEmpty($format);
@@ -123,7 +123,7 @@ class JobLauncher
      *
      * @return string
      */
-    public function launchAuthenticatedExport(string $jobCode, string $username = null, array $config = []) : string
+    public function launchAuthenticatedExport(string $jobCode, ?string $username = null, array $config = []) : string
     {
         $config['is_user_authenticated'] = true;
 
@@ -144,7 +144,7 @@ class JobLauncher
      *
      * @return string
      */
-    public function launchSubProcessExport(string $jobCode, string $username = null, array $config = []) : string
+    public function launchSubProcessExport(string $jobCode, ?string $username = null, array $config = []) : string
     {
         $this->featureFlags->enable('import_export_local_storage');
         $filePath = sys_get_temp_dir() . DIRECTORY_SEPARATOR. self::EXPORT_DIRECTORY . DIRECTORY_SEPARATOR . 'export_.csv';
@@ -194,7 +194,7 @@ class JobLauncher
     public function launchImport(
         string $jobCode,
         string $content,
-        string $username = null,
+        ?string $username = null,
         array $fixturePaths = [],
         array $config = [],
         string $format = 'csv'
@@ -255,7 +255,7 @@ class JobLauncher
     public function launchAuthenticatedImport(
         string $jobCode,
         string $content,
-        string $username = null,
+        ?string $username = null,
         array $fixturePaths = [],
         array $config = []
     ) :void {
@@ -366,7 +366,7 @@ class JobLauncher
      *
      * @see https://github.com/symfony/symfony/issues/5759
      */
-    public function launchConsumerOnceInBackground(int $timeLimitInSeconds = null): Process
+    public function launchConsumerOnceInBackground(?int $timeLimitInSeconds = null): Process
     {
         $command = array_merge(
             [

@@ -17,6 +17,7 @@ class ProductFormProvider implements FormProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getForm($product): string
     {
         return 'pim-product-edit-form';
@@ -25,6 +26,7 @@ class ProductFormProvider implements FormProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element): bool
     {
         return $element instanceof ProductInterface;

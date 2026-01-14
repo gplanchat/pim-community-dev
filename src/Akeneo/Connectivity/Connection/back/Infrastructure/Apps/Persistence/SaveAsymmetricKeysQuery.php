@@ -15,7 +15,7 @@ use Doctrine\DBAL\Types\Types;
  */
 final class SaveAsymmetricKeysQuery implements SaveAsymmetricKeysQueryInterface
 {
-    public const OPTION_CODE = 'OPENID_ASYMMETRIC_KEYS';
+    public const string OPTION_CODE = 'OPENID_ASYMMETRIC_KEYS';
 
     public function __construct(
         private Connection $connection,
@@ -23,6 +23,7 @@ final class SaveAsymmetricKeysQuery implements SaveAsymmetricKeysQueryInterface
     ) {
     }
 
+    #[\Override]
     public function execute(AsymmetricKeys $asymmetricKeys): void
     {
         $query = <<<SQL

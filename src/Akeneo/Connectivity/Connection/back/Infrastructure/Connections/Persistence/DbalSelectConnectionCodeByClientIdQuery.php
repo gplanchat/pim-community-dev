@@ -13,6 +13,7 @@ class DbalSelectConnectionCodeByClientIdQuery implements SelectConnectionCodeByC
     {
     }
 
+    #[\Override]
     public function execute(string $clientId): ?string
     {
         $sqlQuery = <<<SQL

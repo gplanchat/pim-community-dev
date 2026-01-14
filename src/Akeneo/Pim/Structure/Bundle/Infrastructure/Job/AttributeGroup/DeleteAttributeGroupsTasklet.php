@@ -35,11 +35,13 @@ final class DeleteAttributeGroupsTasklet implements TaskletInterface, TrackableT
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function execute()
     {
         if (null === $this->stepExecution) {
@@ -99,6 +101,7 @@ final class DeleteAttributeGroupsTasklet implements TaskletInterface, TrackableT
         $this->stepExecution->incrementProcessedItems();
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;

@@ -16,6 +16,7 @@ class FileNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($file, $format = null, array $context = [])
     {
         $fileData = null;
@@ -38,11 +39,13 @@ class FileNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return 'datagrid' === $format && $data instanceof MediaValueInterface;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

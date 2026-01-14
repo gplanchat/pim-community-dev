@@ -22,6 +22,7 @@ class NonExistentMultiSelectValuesFilter implements NonExistentValuesFilter
     {
     }
 
+    #[\Override]
     public function filter(OnGoingFilteredRawValues $onGoingFilteredRawValues): OnGoingFilteredRawValues
     {
         $selectValues = $onGoingFilteredRawValues->notFilteredValuesOfTypes(AttributeTypes::OPTION_MULTI_SELECT);

@@ -9,6 +9,7 @@ use Symfony\Component\Intl\Languages;
 
 class LanguageTranslator implements LanguageTranslatorInterface
 {
+    #[\Override]
     public function translate(string $localeCode, string $locale, string $fallback): string
     {
         $displayLocale = \Locale::getPrimaryLanguage($locale);

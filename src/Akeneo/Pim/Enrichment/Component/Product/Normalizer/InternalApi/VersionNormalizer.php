@@ -39,7 +39,7 @@ class VersionNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     protected AttributeRepositoryInterface $attributeRepository;
     protected UserContext $userContext;
 
-    private const ATTRIBUTE_HEADER_SEPARATOR = '-';
+    private const string ATTRIBUTE_HEADER_SEPARATOR = '-';
 
     public function __construct(
         UserManager $userManager,
@@ -62,6 +62,7 @@ class VersionNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($version, $format = null, array $context = [])
     {
         $context = array_merge($context, ['locale' => $this->localeAware->getLocale()]);
@@ -89,11 +90,13 @@ class VersionNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof Version && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

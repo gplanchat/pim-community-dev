@@ -25,6 +25,7 @@ class IsDemoCatalog implements IsDemoCatalogQuery
      * By requiring only one of the user email of the demo catalog, it's robust to some changes such as email modification
      * or deletion of one of the user.
      */
+    #[\Override]
     public function fetch(): bool
     {
         $query = "SELECT DISTINCT true FROM oro_user WHERE email IN('Julia@example.com', 'Peter@example.com', 'Sandra@example.com')";

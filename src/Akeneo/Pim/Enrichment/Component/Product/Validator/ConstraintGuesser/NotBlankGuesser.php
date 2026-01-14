@@ -18,6 +18,7 @@ class NotBlankGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAttribute(AttributeInterface $attribute)
     {
         return true;
@@ -26,6 +27,7 @@ class NotBlankGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessConstraints(AttributeInterface $attribute)
     {
         $constraints = [];

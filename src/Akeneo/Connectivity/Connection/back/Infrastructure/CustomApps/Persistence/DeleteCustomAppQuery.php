@@ -13,6 +13,7 @@ class DeleteCustomAppQuery implements DeleteCustomAppQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $clientId): void
     {
         $query = <<<SQL

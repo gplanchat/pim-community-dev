@@ -34,6 +34,7 @@ class InMemoryProductRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['identifier'];
@@ -42,6 +43,7 @@ class InMemoryProductRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         foreach ($this->products as $product) {
@@ -56,6 +58,7 @@ class InMemoryProductRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($product, array $options = [])
     {
         if (!$product instanceof ProductInterface) {
@@ -65,6 +68,7 @@ class InMemoryProductRepository implements
         $this->products->set($product->getUuid()->toString(), $product);
     }
 
+    #[\Override]
     public function saveAll(array $products, array $options = [])
     {
         foreach ($products as $product) {
@@ -72,6 +76,7 @@ class InMemoryProductRepository implements
         }
     }
 
+    #[\Override]
     public function find($uuid)
     {
         if ($uuid instanceof UuidInterface) {
@@ -81,6 +86,7 @@ class InMemoryProductRepository implements
         return $this->products->get($uuid);
     }
 
+    #[\Override]
     public function findAll()
     {
         return $this->products->toArray();
@@ -90,11 +96,13 @@ class InMemoryProductRepository implements
      * We implement this method for onboarder v1 because we need it for an event subscriber
      * and there is some integration tests that are using inmemory implem
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         return $this->products->filter(fn (ProductInterface $product) => $product->getIdentifier() === $criteria['identifier'])->toArray();
     }
 
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         Assert::count($criteria, 1);
@@ -118,41 +126,49 @@ class InMemoryProductRepository implements
         return null;
     }
 
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function getAvailableAttributeIdsToExport(array $productIds)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function getProductsByGroup(GroupInterface $group, $maxResults)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function getProductCountByGroup(GroupInterface $group)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function countAll(): int
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function hasAttributeInFamily($productUuidOrId, $attributeCode)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function searchAfter(?ProductInterface $product, int $limit): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function getItemsFromIdentifiers(array $identifiers)
     {
         $items = [];
@@ -167,6 +183,7 @@ class InMemoryProductRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getItemsFromUuids(array $uuids): array
     {
         return $this->products->filter(

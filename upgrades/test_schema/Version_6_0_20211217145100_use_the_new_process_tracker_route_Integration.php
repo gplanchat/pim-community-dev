@@ -13,7 +13,7 @@ class Version_6_0_20211217145100_use_the_new_process_tracker_route_Integration e
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211217145100_use_the_new_process_tracker_route';
+    private const string MIGRATION_LABEL = '_6_0_20211217145100_use_the_new_process_tracker_route';
 
     public function test_it_adds_a_default_role_type_to_oro_access_role(): void
     {
@@ -24,6 +24,7 @@ class Version_6_0_20211217145100_use_the_new_process_tracker_route_Integration e
         $this->assertFalse($this->notificationTableContainOldProcessTrackerRoute());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

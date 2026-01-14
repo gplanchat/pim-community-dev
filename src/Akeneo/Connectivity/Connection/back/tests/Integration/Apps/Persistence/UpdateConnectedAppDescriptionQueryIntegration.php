@@ -21,11 +21,13 @@ class UpdateConnectedAppDescriptionQueryIntegration extends TestCase
     private UpdateConnectedAppDescriptionQuery $query;
     private FindOneConnectedAppByIdQuery $findOneConnectedAppByIdQuery;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

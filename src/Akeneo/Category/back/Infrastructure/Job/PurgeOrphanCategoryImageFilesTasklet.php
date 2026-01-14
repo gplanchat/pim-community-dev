@@ -26,11 +26,13 @@ class PurgeOrphanCategoryImageFilesTasklet implements TaskletInterface
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function execute(): void
     {
         if (null === $this->stepExecution) {

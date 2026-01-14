@@ -43,6 +43,7 @@ final class SqlGetGroupTranslationsIntegration extends TestCase
         $this->assertEqualsCanonicalizing($expected, $actual);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

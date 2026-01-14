@@ -17,6 +17,7 @@ class UrlGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAttribute(AttributeInterface $attribute)
     {
         return AttributeTypes::TEXT === $attribute->getType();
@@ -25,6 +26,7 @@ class UrlGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessConstraints(AttributeInterface $attribute)
     {
         $constraints = [];

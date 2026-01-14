@@ -24,11 +24,13 @@ class Version_7_0_20221027152057_add_id_field_to_connection_error_index_mapping_
     private NativeClient $nativeClient;
     private Client $connectionErrorClient;
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

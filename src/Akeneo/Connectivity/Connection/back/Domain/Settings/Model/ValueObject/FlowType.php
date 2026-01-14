@@ -15,7 +15,7 @@ class FlowType implements \Stringable
     public const DATA_DESTINATION = 'data_destination';
     public const OTHER = 'other';
 
-    private const CONSTRAINT_KEY = 'akeneo_connectivity.connection.connection.constraint.flow_type.%s';
+    private const string CONSTRAINT_KEY = 'akeneo_connectivity.connection.connection.constraint.flow_type.%s';
 
     /** @var FlowType::* */
     private string $flowType;
@@ -33,6 +33,7 @@ class FlowType implements \Stringable
     /**
      * @return FlowType::*
      */
+    #[\Override]
     public function __toString(): string
     {
         return $this->flowType;

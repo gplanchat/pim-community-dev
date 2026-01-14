@@ -21,7 +21,8 @@ final class ProductModelsWereCreatedOrUpdatedNormalizer implements NormalizerInt
     /**
      * {@inheritDoc}
      */
-    public function denormalize($data, string $type, string $format = null, array $context = []): ProductModelsWereCreatedOrUpdated
+    #[\Override]
+    public function denormalize($data, string $type, ?string $format = null, array $context = []): ProductModelsWereCreatedOrUpdated
     {
         Assert::keyExists($data, 'events', 'Normalized ProductModelsWereUpdatedMessage must contains a key "events"');
         Assert::isArray($data['events'], 'Normalized ProductModelsWereUpdatedMessage events property must be an array');
@@ -53,7 +54,8 @@ final class ProductModelsWereCreatedOrUpdatedNormalizer implements NormalizerInt
     /**
      * {@inheritDoc}
      */
-    public function supportsDenormalization($data, string $type, string $format = null): bool
+    #[\Override]
+    public function supportsDenormalization($data, string $type, ?string $format = null): bool
     {
         return $type === ProductModelsWereCreatedOrUpdated::class;
     }
@@ -61,7 +63,8 @@ final class ProductModelsWereCreatedOrUpdatedNormalizer implements NormalizerInt
     /**
      * {@inheritDoc}
      */
-    public function normalize($object, string $format = null, array $context = []): array
+    #[\Override]
+    public function normalize($object, ?string $format = null, array $context = []): array
     {
         Assert::isInstanceOf($object, ProductModelsWereCreatedOrUpdated::class);
 
@@ -82,7 +85,8 @@ final class ProductModelsWereCreatedOrUpdatedNormalizer implements NormalizerInt
     /**
      * {@inheritDoc}
      */
-    public function supportsNormalization($data, string $format = null): bool
+    #[\Override]
+    public function supportsNormalization($data, ?string $format = null): bool
     {
         return $data instanceof ProductModelsWereCreatedOrUpdated;
     }

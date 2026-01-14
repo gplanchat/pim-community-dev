@@ -18,6 +18,7 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
  */
 class UnknownCurrency implements DocumentationBuilderInterface
 {
+    #[\Override]
     public function support($object): bool
     {
         if (
@@ -32,6 +33,7 @@ class UnknownCurrency implements DocumentationBuilderInterface
     /**
      * @param ConstraintViolationInterface $constraintViolation
      */
+    #[\Override]
     public function buildDocumentation($constraintViolation): DocumentationCollection
     {
         if (false === $this->support($constraintViolation)) {

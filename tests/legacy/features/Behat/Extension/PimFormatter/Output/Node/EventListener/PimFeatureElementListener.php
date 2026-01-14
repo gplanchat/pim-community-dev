@@ -70,6 +70,7 @@ final class PimFeatureElementListener implements EventListener
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function listenEvent(Formatter $formatter, Event $event, $eventName)
     {
         if ($event instanceof ScenarioTested) {

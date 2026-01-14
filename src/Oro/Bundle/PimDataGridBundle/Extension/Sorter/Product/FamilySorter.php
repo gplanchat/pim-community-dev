@@ -17,6 +17,7 @@ class FamilySorter implements SorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(DatasourceInterface $datasource, $field, $direction)
     {
         $datasource->getProductQueryBuilder()->addSorter('family', $direction);

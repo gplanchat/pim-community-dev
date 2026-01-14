@@ -22,6 +22,7 @@ final class LocaleShouldBeEditableByUserValidator extends ConstraintValidator
     {
     }
 
+    #[\Override]
     public function validate($valueUserIntent, Constraint $constraint): void
     {
         Assert::isInstanceOf($valueUserIntent, ValueUserIntent::class);

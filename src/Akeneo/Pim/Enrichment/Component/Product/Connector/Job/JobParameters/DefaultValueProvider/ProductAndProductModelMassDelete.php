@@ -28,6 +28,7 @@ class ProductAndProductModelMassDelete implements DefaultValuesProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultValues(): array
     {
         return [
@@ -42,6 +43,7 @@ class ProductAndProductModelMassDelete implements DefaultValuesProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return in_array($job->getName(), $this->supportedJobNames);

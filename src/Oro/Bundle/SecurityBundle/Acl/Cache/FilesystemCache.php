@@ -14,6 +14,7 @@ class FilesystemCache extends BaseFilesystemCache
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getFilename($id)
     {
         $id = preg_replace('@[\\\/:"*?<>|]+@', '', $id);

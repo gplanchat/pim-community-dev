@@ -38,6 +38,7 @@ class OrmFilterProductDatasourceAdapter extends OrmFilterDatasourceAdapter imple
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProductQueryBuilder()
     {
         return $this->pqb;
@@ -50,6 +51,7 @@ class OrmFilterProductDatasourceAdapter extends OrmFilterDatasourceAdapter imple
      *
      * @return string
      */
+    #[\Override]
     public function getFormatByComparisonType($comparisonType)
     {
         return '%s';

@@ -27,6 +27,7 @@ class PaginationParametersValidator implements ParameterValidatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate(array $parameters, array $options = [])
     {
         if (!isset($parameters['pagination_type'])) {

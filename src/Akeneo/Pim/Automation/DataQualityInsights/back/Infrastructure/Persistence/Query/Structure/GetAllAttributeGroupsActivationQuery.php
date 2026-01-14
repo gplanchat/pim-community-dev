@@ -21,6 +21,7 @@ final class GetAllAttributeGroupsActivationQuery implements GetAllAttributeGroup
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function execute(): array
     {
         $query = <<<SQL

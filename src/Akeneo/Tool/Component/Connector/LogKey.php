@@ -25,6 +25,7 @@ final class LogKey
         }
     }
 
+    #[\Override]
     public function __toString(): string
     {
         $jobInstance = $this->jobExecution->getJobInstance();

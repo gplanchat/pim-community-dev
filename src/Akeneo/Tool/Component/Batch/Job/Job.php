@@ -55,11 +55,13 @@ class Job implements JobInterface, StoppableJobInterface, PausableJobInterface, 
         $this->filesystem = new Filesystem();
     }
 
+    #[\Override]
     public function getName(): string
     {
         return $this->name;
     }
 
+    #[\Override]
     public function getSteps(): array
     {
         return $this->steps;
@@ -93,11 +95,13 @@ class Job implements JobInterface, StoppableJobInterface, PausableJobInterface, 
         return $names;
     }
 
+    #[\Override]
     public function getJobRepository(): JobRepositoryInterface
     {
         return $this->jobRepository;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return get_class($this) . ': [name=' . $this->name . ']';
@@ -114,6 +118,7 @@ class Job implements JobInterface, StoppableJobInterface, PausableJobInterface, 
      * The working directory is created in the temporary filesystem. Its pathname is placed in the JobExecutionContext
      * via the key {@link \Akeneo\Tool\Component\Batch\Job\JobInterface::WORKING_DIRECTORY_PARAMETER}
      */
+    #[\Override]
     final public function execute(JobExecution $jobExecution): void
     {
         try {
@@ -183,16 +188,19 @@ class Job implements JobInterface, StoppableJobInterface, PausableJobInterface, 
         }
     }
 
+    #[\Override]
     public function isStoppable(): bool
     {
         return $this->isStoppable;
     }
 
+    #[\Override]
     public function isVisible(): bool
     {
         return $this->isVisible;
     }
 
+    #[\Override]
     public function isPausable(): bool
     {
         return $this->isPausable;

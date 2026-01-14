@@ -24,6 +24,7 @@ final class ReplaceAssociatedQuantifiedProducts implements QuantifiedAssociation
         Assert::allIsInstanceOf($quantifiedProducts, QuantifiedEntity::class);
     }
 
+    #[\Override]
     public function associationType(): string
     {
         return $this->associationType;

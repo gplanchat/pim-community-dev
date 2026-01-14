@@ -16,6 +16,7 @@ class DummyItemReader implements ItemReaderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read()
     {
         return null;

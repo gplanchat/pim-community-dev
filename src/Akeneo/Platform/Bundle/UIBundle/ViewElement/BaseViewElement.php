@@ -40,6 +40,7 @@ class BaseViewElement implements ViewElementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAlias()
     {
         return $this->alias;
@@ -48,6 +49,7 @@ class BaseViewElement implements ViewElementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTemplate()
     {
         return $this->template;
@@ -56,6 +58,7 @@ class BaseViewElement implements ViewElementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParameters(array $context = [])
     {
         return $this->parameters;
@@ -64,6 +67,7 @@ class BaseViewElement implements ViewElementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isVisible(array $context = [])
     {
         foreach ($this->visibilityCheckers as $item) {
@@ -79,6 +83,7 @@ class BaseViewElement implements ViewElementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addVisibilityChecker(VisibilityCheckerInterface $checker, array $config = [])
     {
         $this->visibilityCheckers[] = [$checker, $config];
@@ -89,6 +94,7 @@ class BaseViewElement implements ViewElementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setVisibilityCheckers(array $checkers)
     {
         $this->visibilityCheckers = $checkers;

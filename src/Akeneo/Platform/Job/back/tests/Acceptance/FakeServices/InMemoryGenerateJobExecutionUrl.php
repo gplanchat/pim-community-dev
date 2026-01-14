@@ -6,6 +6,7 @@ use Akeneo\Platform\Job\Application\LaunchJobInstance\GenerateJobExecutionUrlInt
 
 class InMemoryGenerateJobExecutionUrl implements GenerateJobExecutionUrlInterface
 {
+    #[\Override]
     public function fromJobExecutionId(int $jobExecutionId): string
     {
         return sprintf('/job/show/%d', $jobExecutionId);

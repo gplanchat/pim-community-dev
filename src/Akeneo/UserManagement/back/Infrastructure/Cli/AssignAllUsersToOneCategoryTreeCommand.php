@@ -30,6 +30,7 @@ final class AssignAllUsersToOneCategoryTreeCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure(): void
     {
         $this->setDescription('Sets the default category tree to the tree (category code) passed as parameter for all users');
@@ -42,6 +43,7 @@ final class AssignAllUsersToOneCategoryTreeCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $categoryCode = $input->getOption('category-tree-code');

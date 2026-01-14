@@ -18,6 +18,7 @@ class RegisterNotifiersPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->has('akeneo_batch.notification_subscriber')) {

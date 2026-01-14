@@ -15,6 +15,7 @@ use Akeneo\Platform\Component\EventQueue\EventInterface;
  */
 final class ProductModelEventNormalizer implements EventNormalizerInterface
 {
+    #[\Override]
     public function supports(EventInterface $event): bool
     {
         return $event instanceof ProductModelCreated
@@ -27,6 +28,7 @@ final class ProductModelEventNormalizer implements EventNormalizerInterface
      *
      * @return array{product_model_code: string, action: string, event_id: string, event_datetime: string, author: string, author_type: string}
      */
+    #[\Override]
     public function normalize(EventInterface $event): array
     {
         $normalizer = new EventNormalizer();

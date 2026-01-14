@@ -16,6 +16,7 @@ use Webmozart\Assert\Assert;
  */
 final class GenerateFreeTextHandler implements GeneratePropertyHandlerInterface
 {
+    #[\Override]
     public function __invoke(
         PropertyInterface $freeText,
         IdentifierGenerator $identifierGenerator,
@@ -27,6 +28,7 @@ final class GenerateFreeTextHandler implements GeneratePropertyHandlerInterface
         return $freeText->asString();
     }
 
+    #[\Override]
     public function getPropertyClass(): string
     {
         return FreeText::class;

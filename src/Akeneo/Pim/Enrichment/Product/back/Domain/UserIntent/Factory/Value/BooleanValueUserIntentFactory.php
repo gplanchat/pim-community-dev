@@ -20,11 +20,13 @@ class BooleanValueUserIntentFactory implements ValueUserIntentFactory
 {
     use ValidateDataTrait;
 
+    #[\Override]
     public function getSupportedAttributeTypes(): array
     {
         return [AttributeTypes::BOOLEAN];
     }
 
+    #[\Override]
     public function create(string $attributeType, string $attributeCode, mixed $data): ValueUserIntent
     {
         $this->validateValueStructure($attributeCode, $data);

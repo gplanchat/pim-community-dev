@@ -17,10 +17,11 @@ final class Version_8_0_20230627173000_remove_instant_cols_Integration extends T
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230627173000_remove_instant_cols';
+    private const string MIGRATION_LABEL = '_8_0_20230627173000_remove_instant_cols';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ final class Version_8_0_20230627173000_remove_instant_cols_Integration extends T
         $this->reExecuteMigration(self::MIGRATION_LABEL);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

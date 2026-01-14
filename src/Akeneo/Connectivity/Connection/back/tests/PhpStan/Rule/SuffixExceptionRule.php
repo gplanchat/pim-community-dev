@@ -11,8 +11,9 @@ use PHPStan\Rules\Rule;
 
 final class SuffixExceptionRule implements Rule
 {
-    private const ERROR_MESSAGE = 'Exception must be suffixed with "Exception" exclusively';
+    private const string ERROR_MESSAGE = 'Exception must be suffixed with "Exception" exclusively';
 
+    #[\Override]
     public function getNodeType(): string
     {
         return InClassNode::class;
@@ -21,6 +22,7 @@ final class SuffixExceptionRule implements Rule
     /**
      * @param InClassNode $node
      */
+    #[\Override]
     public function processNode(Node $node, Scope $scope): array
     {
         $classReflection = $scope->getClassReflection();

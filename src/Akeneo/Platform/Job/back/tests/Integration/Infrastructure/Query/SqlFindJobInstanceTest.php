@@ -15,6 +15,7 @@ class SqlFindJobInstanceTest extends IntegrationTestCase
     public array $expectedJobInstances;
     private FindJobInstanceInterface $findJobInstanceQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

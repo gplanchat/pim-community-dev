@@ -44,6 +44,7 @@ class ResultRecord implements ResultRecordInterface
      * @throws \LogicException When cannot get value
      * @return mixed
      */
+    #[\Override]
     public function getValue($name)
     {
         foreach ($this->valueContainers as $data) {
@@ -100,6 +101,7 @@ class ResultRecord implements ResultRecordInterface
      *
      * @return object|null
      */
+    #[\Override]
     public function getRootEntity()
     {
         if (array_key_exists(0, $this->valueContainers) && is_object($this->valueContainers[0])) {

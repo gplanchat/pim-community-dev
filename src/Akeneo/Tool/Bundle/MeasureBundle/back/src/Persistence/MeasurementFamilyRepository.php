@@ -36,6 +36,7 @@ class MeasurementFamilyRepository implements MeasurementFamilyRepositoryInterfac
         $this->sqlConnection = $sqlConnection;
     }
 
+    #[\Override]
     public function all(): array
     {
         if ($this->allMeasurementFamiliesCache === []) {
@@ -45,6 +46,7 @@ class MeasurementFamilyRepository implements MeasurementFamilyRepositoryInterfac
         return array_values($this->allMeasurementFamiliesCache);
     }
 
+    #[\Override]
     public function getByCode(MeasurementFamilyCode $measurementFamilyCode): MeasurementFamily
     {
         $normalizedMeasurementFamilyCode = $measurementFamilyCode->normalize();
@@ -55,6 +57,7 @@ class MeasurementFamilyRepository implements MeasurementFamilyRepositoryInterfac
         return $this->measurementFamilyCache[$normalizedMeasurementFamilyCode];
     }
 
+    #[\Override]
     public function save(MeasurementFamily $measurementFamily)
     {
         $updateSql = <<<SQL
@@ -91,6 +94,7 @@ SQL;
         $this->measurementFamilyCache[$normalizedMeasurementFamily['code']] = $measurementFamily;
     }
 
+    #[\Override]
     public function countAllOthers(MeasurementFamilyCode $excludedMeasurementFamilyCode): int
     {
         $countQuery = <<<SQL
@@ -106,12 +110,14 @@ SQL;
         return (int) $statement->fetch(\PDO::FETCH_COLUMN);
     }
 
+    #[\Override]
     public function clear(): void
     {
         $this->allMeasurementFamiliesCache = [];
         $this->measurementFamilyCache = [];
     }
 
+    #[\Override]
     public function deleteByCode(MeasurementFamilyCode $measurementFamilyCode)
     {
         $sql = <<<SQL

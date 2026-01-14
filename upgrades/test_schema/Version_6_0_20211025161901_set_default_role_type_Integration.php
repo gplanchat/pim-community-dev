@@ -13,7 +13,7 @@ class Version_6_0_20211025161901_set_default_role_type_Integration extends TestC
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211025161901_set_default_role_type';
+    private const string MIGRATION_LABEL = '_6_0_20211025161901_set_default_role_type';
 
     public function test_it_adds_a_default_role_type_to_oro_access_role(): void
     {
@@ -36,6 +36,7 @@ class Version_6_0_20211025161901_set_default_role_type_Integration extends TestC
         Assert::assertEquals('default', $columns['type']->getDefault());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

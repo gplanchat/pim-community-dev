@@ -64,6 +64,7 @@ class QueueJobLauncher implements JobLauncherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function launch(JobInstance $jobInstance, ?UserInterface $user, array $configuration = []): JobExecution
     {
         $options = ['env' => $this->environment];

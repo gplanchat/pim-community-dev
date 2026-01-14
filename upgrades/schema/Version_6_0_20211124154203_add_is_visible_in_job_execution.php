@@ -9,7 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20211124154203_add_is_visible_in_job_execution extends AbstractMigration
 {
-    const NON_VISIBLE_JOBS = [
+    const array NON_VISIBLE_JOBS = [
         'compute_completeness_of_products_family',
         'compute_family_variant_structure_changes',
         'data_quality_insights_evaluations',
@@ -22,6 +22,7 @@ final class Version_6_0_20211124154203_add_is_visible_in_job_execution extends A
         'remove_non_existing_product_values',
     ];
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -34,6 +35,7 @@ final class Version_6_0_20211124154203_add_is_visible_in_job_execution extends A
             . implode("', '", self::NON_VISIBLE_JOBS) . "'))");
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

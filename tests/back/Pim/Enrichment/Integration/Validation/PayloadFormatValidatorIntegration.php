@@ -17,6 +17,7 @@ final class PayloadFormatValidatorIntegration extends TestCase
 {
     private ValidatorInterface $validator;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();
@@ -140,6 +141,7 @@ final class PayloadFormatValidatorIntegration extends TestCase
         self::assertSame(0, $violations->count(), \sprintf('Violations are found: %s', $violations));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -22,6 +22,7 @@ class CleanCategoriesTemplateEnrichedValuesTasklet implements TaskletInterface
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): self
     {
         $this->stepExecution = $stepExecution;
@@ -29,6 +30,7 @@ class CleanCategoriesTemplateEnrichedValuesTasklet implements TaskletInterface
         return $this;
     }
 
+    #[\Override]
     public function execute(): void
     {
         $jobParameters = $this->stepExecution->getJobParameters();

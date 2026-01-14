@@ -13,6 +13,7 @@ use Symfony\Component\Console\Output\BufferedOutput;
 
 final class Version_7_0_20220629142647_dqi_update_pk_on_product_score extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -53,6 +54,7 @@ final class Version_7_0_20220629142647_dqi_update_pk_on_product_score extends Ab
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

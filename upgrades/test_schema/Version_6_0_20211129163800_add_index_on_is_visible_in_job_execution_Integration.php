@@ -17,15 +17,17 @@ class Version_6_0_20211129163800_add_index_on_is_visible_in_job_execution_Integr
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211129163800_add_index_on_is_visible_in_job_execution';
+    private const string MIGRATION_LABEL = '_6_0_20211129163800_add_index_on_is_visible_in_job_execution';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

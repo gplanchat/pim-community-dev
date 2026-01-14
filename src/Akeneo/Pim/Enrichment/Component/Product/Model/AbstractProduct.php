@@ -87,11 +87,13 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         throw new \LogicException('Product getId() should not be called');
     }
 
+    #[\Override]
     public function getUuid(): UuidInterface
     {
         return $this->uuid;
@@ -100,6 +102,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCreated()
     {
         return $this->created;
@@ -108,6 +111,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCreated($created)
     {
         $this->created = $created;
@@ -118,6 +122,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUpdated()
     {
         return $this->updated;
@@ -126,6 +131,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUpdated($updated)
     {
         $this->updated = $updated;
@@ -136,6 +142,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addValue(ValueInterface $value)
     {
         if ($value instanceof IdentifierValueInterface && $value->isMainIdentifier()) {
@@ -151,6 +158,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeValue(ValueInterface $value)
     {
         if ($value instanceof IdentifierValueInterface && $value->isMainIdentifier()) {
@@ -166,6 +174,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUsedAttributeCodes(): array
     {
         return $this->getValues()->getAttributeCodes();
@@ -174,6 +183,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValue($attributeCode, $localeCode = null, $scopeCode = null)
     {
         $value = $this->values->getByCodes($attributeCode, $scopeCode, $localeCode);
@@ -191,6 +201,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRawValues()
     {
         return $this->rawValues;
@@ -199,6 +210,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRawValues(array $rawValues)
     {
         $this->rawValues = $rawValues;
@@ -209,6 +221,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttribute(string $attributeCode): bool
     {
         return in_array($attributeCode, $this->getValues()->getAttributeCodes(), true);
@@ -217,6 +230,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamily(): ?FamilyInterface
     {
         return $this->family;
@@ -225,7 +239,8 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
-    public function setFamily(FamilyInterface $family = null)
+    #[\Override]
+    public function setFamily(?FamilyInterface $family = null)
     {
         $formerFamilyCode = $this->family ? $this->family->getCode() : null;
         $newFamilyCode = $family ? $family->getCode() : null;
@@ -240,6 +255,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamilyId()
     {
         return $this->family ? $this->family->getId() : null;
@@ -248,6 +264,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifier()
     {
         if (null === $this->identifier) {
@@ -265,6 +282,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setIdentifier(?string $identifierValue): ProductInterface
     {
         if ($identifierValue !== $this->identifier) {
@@ -278,6 +296,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValues(): WriteValueCollection
     {
         $values = clone $this->values;
@@ -291,6 +310,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setValues(WriteValueCollection $values)
     {
         $formerValues = WriteValueCollection::fromCollection($this->values ?? new WriteValueCollection());
@@ -323,6 +343,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getImage()
     {
         if (null === $this->family) {
@@ -341,6 +362,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel($locale = null, $scope = null)
     {
         $identifier = (string) $this->getIdentifier();
@@ -375,6 +397,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategories()
     {
         $categories = new ArrayCollection($this->categories->toArray());
@@ -385,6 +408,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addCategory(BaseCategoryInterface $category)
     {
         if (!$this->categories->contains($category) && !$this->hasAncestryCategory($category)) {
@@ -398,6 +422,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCategories(Collection $categories): void
     {
         $formerCategories = $this->getCategories();
@@ -422,6 +447,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeCategory(BaseCategoryInterface $category)
     {
         if (true === $this->categories->removeElement($category)) {
@@ -434,6 +460,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoryCodes()
     {
         $codes = $this->getCategories()->map(function (CategoryInterface $category): string {
@@ -447,6 +474,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroupCodes()
     {
         $codes = $this->groups->map(function (GroupInterface $group): string {
@@ -460,6 +488,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setGroups(Collection $groups): void
     {
         $formerGroups = $this->getGroups();
@@ -480,6 +509,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEnabled()
     {
         return $this->enabled;
@@ -488,6 +518,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setEnabled($enabled)
     {
         if ($enabled !== $this->enabled) {
@@ -501,6 +532,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttributeInFamily(AttributeInterface $attribute)
     {
         return null !== $this->family && $this->family->getAttributes()->contains($attribute);
@@ -509,6 +541,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isAttributeRemovable(AttributeInterface $attribute)
     {
         if ($this->hasAttributeInFamily($attribute)) {
@@ -521,6 +554,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isAttributeEditable(AttributeInterface $attribute)
     {
         if (!$this->hasAttributeInFamily($attribute)) {
@@ -533,6 +567,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroups()
     {
         return new ArrayCollection($this->groups->toArray());
@@ -541,6 +576,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addGroup(GroupInterface $group)
     {
         if (!$this->groups->contains($group)) {
@@ -554,6 +590,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeGroup(GroupInterface $group)
     {
         if (true === $this->groups->removeElement($group)) {
@@ -566,16 +603,19 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return (string) $this->getLabel();
     }
 
+    #[\Override]
     public function hasAssociationForTypeCode(string $associationTypeCode): bool
     {
         return null !== $this->getAssociationForTypeCode($associationTypeCode);
     }
 
+    #[\Override]
     public function addAssociatedProduct(ProductInterface $product, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -595,6 +635,7 @@ abstract class AbstractProduct implements ProductInterface
         }
     }
 
+    #[\Override]
     public function removeAssociatedProduct(ProductInterface $product, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -604,6 +645,7 @@ abstract class AbstractProduct implements ProductInterface
         }
     }
 
+    #[\Override]
     public function getAssociatedProducts(string $associationTypeCode): ?Collection
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -611,6 +653,7 @@ abstract class AbstractProduct implements ProductInterface
         return $association ? clone $association->getProducts() : null;
     }
 
+    #[\Override]
     public function addAssociatedProductModel(ProductModelInterface $productModel, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -630,6 +673,7 @@ abstract class AbstractProduct implements ProductInterface
         }
     }
 
+    #[\Override]
     public function removeAssociatedProductModel(ProductModelInterface $productModel, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -639,6 +683,7 @@ abstract class AbstractProduct implements ProductInterface
         }
     }
 
+    #[\Override]
     public function getAssociatedProductModels(string $associationTypeCode): ?Collection
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -646,6 +691,7 @@ abstract class AbstractProduct implements ProductInterface
         return $association ? clone $association->getProductModels() : null;
     }
 
+    #[\Override]
     public function addAssociatedGroup(GroupInterface $group, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -665,6 +711,7 @@ abstract class AbstractProduct implements ProductInterface
         }
     }
 
+    #[\Override]
     public function removeAssociatedGroup(GroupInterface $group, string $associationTypeCode): void
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -675,6 +722,7 @@ abstract class AbstractProduct implements ProductInterface
         }
     }
 
+    #[\Override]
     public function getAssociatedGroups(string $associationTypeCode): ?Collection
     {
         $association = $this->getAssociationForTypeCode($associationTypeCode);
@@ -685,6 +733,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAssociation(AssociationInterface $newAssociation): EntityWithAssociationsInterface
     {
         $currentAssociation = $this->getAssociationForTypeCode($newAssociation->getAssociationType()->getCode());
@@ -713,6 +762,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeAssociation(AssociationInterface $association): EntityWithAssociationsInterface
     {
         $similarAssociation = $this->getAssociationForTypeCode($association->getAssociationType()->getCode());
@@ -734,6 +784,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAssociations()
     {
         return new ArrayCollection($this->associations->toArray());
@@ -742,6 +793,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllAssociations()
     {
         $clonedAssociations = [];
@@ -782,6 +834,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->getIdentifier();
@@ -790,6 +843,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * @return ArrayCollection
      */
+    #[\Override]
     public function getUniqueData()
     {
         return $this->uniqueData;
@@ -800,6 +854,7 @@ abstract class AbstractProduct implements ProductInterface
      *
      * @return ProductInterface
      */
+    #[\Override]
     public function addUniqueData(ProductUniqueDataInterface $uniqueData)
     {
         $this->uniqueData->add($uniqueData);
@@ -810,6 +865,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUniqueData(Collection $data): void
     {
         $this->uniqueData = $data;
@@ -818,6 +874,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?ProductModelInterface
     {
         return $this->parent;
@@ -826,7 +883,8 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
-    public function setParent(ProductModelInterface $parent = null): void
+    #[\Override]
+    public function setParent(?ProductModelInterface $parent = null): void
     {
         $formerParentCode = $this->parent ? $this->parent->getCode() : null;
         $newParentCode = $parent ? $parent->getCode() : null;
@@ -842,6 +900,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamilyVariant(): ?FamilyVariantInterface
     {
         return $this->familyVariant;
@@ -850,6 +909,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setFamilyVariant(FamilyVariantInterface $familyVariant): void
     {
         $formerFamilyVariantCode = $this->familyVariant ? $this->familyVariant->getCode() : null;
@@ -863,6 +923,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getVariationLevel(): int
     {
         return $this->getParent() !== null ? $this->getParent()->getVariationLevel() + 1 : self::ROOT_VARIATION_LEVEL;
@@ -871,6 +932,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValuesForVariation(): WriteValueCollection
     {
         return clone $this->values;
@@ -879,6 +941,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoriesForVariation(): Collection
     {
         return new ArrayCollection($this->categories->toArray());
@@ -887,6 +950,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isVariant(): bool
     {
         return null !== $this->getParent();
@@ -895,6 +959,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getQuantifiedAssociations(): QuantifiedAssociationCollection
     {
         return clone $this->quantifiedAssociationCollection;
@@ -903,6 +968,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filterQuantifiedAssociations(
         array $productIdentifiersToKeep,
         array $productUuidsToKeep,
@@ -925,6 +991,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function mergeQuantifiedAssociations(QuantifiedAssociationCollection $quantifiedAssociations): void
     {
         if ($this->quantifiedAssociationCollection === null) {
@@ -941,6 +1008,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function patchQuantifiedAssociations(array $submittedQuantifiedAssociations): void
     {
         if (null === $this->quantifiedAssociationCollection) {
@@ -959,6 +1027,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function clearQuantifiedAssociations(): void
     {
         if (null === $this->quantifiedAssociationCollection) {
@@ -975,6 +1044,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isDirty(): bool
     {
         return $this->dirty;
@@ -983,6 +1053,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function cleanup(): void
     {
         $this->dirty = false;
@@ -1086,6 +1157,7 @@ abstract class AbstractProduct implements ProductInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isNew(): bool
     {
         return null === $this->created;

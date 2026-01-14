@@ -22,8 +22,8 @@ final class Version_8_0_20230628104642_fill_new_completeness_table_Integration e
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230628104642_fill_new_completeness_table';
-    private const PRODUCT_UUID = '3618bf0c-cee5-4d24-8802-6a97faa0356c';
+    private const string MIGRATION_LABEL = '_8_0_20230628104642_fill_new_completeness_table';
+    private const string PRODUCT_UUID = '3618bf0c-cee5-4d24-8802-6a97faa0356c';
 
     private Connection $connection;
 
@@ -71,6 +71,7 @@ final class Version_8_0_20230628104642_fill_new_completeness_table_Integration e
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -78,6 +79,7 @@ final class Version_8_0_20230628104642_fill_new_completeness_table_Integration e
         $this->loadFixtures();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $this->createNewTableIfNotExists();
@@ -86,6 +88,7 @@ final class Version_8_0_20230628104642_fill_new_completeness_table_Integration e
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

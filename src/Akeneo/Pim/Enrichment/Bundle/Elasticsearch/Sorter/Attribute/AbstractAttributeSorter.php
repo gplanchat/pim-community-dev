@@ -45,6 +45,7 @@ abstract class AbstractAttributeSorter implements AttributeSorterInterface
      *
      * About "unmapped_type", see https://www.elastic.co/guide/en/elasticsearch/reference/5.x/search-request-sort.html#_ignoring_unmapped_fields
      */
+    #[\Override]
     public function addAttributeSorter(AttributeInterface $attribute, $direction, $locale = null, $channel = null)
     {
         if (null === $this->searchQueryBuilder) {
@@ -94,6 +95,7 @@ abstract class AbstractAttributeSorter implements AttributeSorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         return in_array($attribute->getType(), $this->supportedAttributeTypes);
@@ -102,6 +104,7 @@ abstract class AbstractAttributeSorter implements AttributeSorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setQueryBuilder($searchQueryBuilder)
     {
         if (!$searchQueryBuilder instanceof SearchQueryBuilder) {

@@ -17,6 +17,7 @@ class GroupSavingOptionsResolver implements SavingOptionsResolverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function resolveSaveOptions(array $options)
     {
         $resolver = $this->createOptionsResolver();
@@ -36,6 +37,7 @@ class GroupSavingOptionsResolver implements SavingOptionsResolverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function resolveSaveAllOptions(array $options)
     {
         return array_merge($this->resolveSaveOptions($options), ['unitary' => false]);

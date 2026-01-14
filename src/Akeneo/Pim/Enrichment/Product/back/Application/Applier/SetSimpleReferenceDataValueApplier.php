@@ -20,6 +20,7 @@ final class SetSimpleReferenceDataValueApplier implements UserIntentApplier
     {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, SetSimpleReferenceDataValue::class);
@@ -36,6 +37,7 @@ final class SetSimpleReferenceDataValueApplier implements UserIntentApplier
         ]);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetSimpleReferenceDataValue::class];

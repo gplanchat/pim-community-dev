@@ -56,6 +56,7 @@ class AllAttributesUseableInGridConfigurator implements ConfiguratorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configure(DatagridConfiguration $configuration)
     {
         $this->addAttributesIds($configuration);

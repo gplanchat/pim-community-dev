@@ -14,17 +14,20 @@ final class Version_7_0_20230201143500_set_product_identifier_nullable extends A
 {
     private ?ContainerInterface $container = null;
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->getMigration()->migrateNotZdd();
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
     }
 
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }

@@ -24,18 +24,18 @@ class ProductModelNormalizer implements NormalizerInterface, NormalizerAwareInte
     use NormalizerAwareTrait;
 
     /** @staticvar string */
-    private const FIELD_CATEGORY = 'categories';
+    private const string FIELD_CATEGORY = 'categories';
 
     /** @staticvar string */
-    private const FIELD_FAMILY_VARIANT = 'family_variant';
+    private const string FIELD_FAMILY_VARIANT = 'family_variant';
 
     /** @staticvar string */
-    private const FIELD_CODE = 'code';
+    private const string FIELD_CODE = 'code';
 
-    private const FIELD_PARENT = 'parent';
+    private const string FIELD_PARENT = 'parent';
 
     /** @staticvar string */
-    private const ITEM_SEPARATOR = ',';
+    private const string ITEM_SEPARATOR = ',';
 
     private $quantifiedAssociationsNormalizer;
 
@@ -47,6 +47,7 @@ class ProductModelNormalizer implements NormalizerInterface, NormalizerAwareInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = array()): array
     {
         $context = $this->resolveContext($context);
@@ -67,11 +68,13 @@ class ProductModelNormalizer implements NormalizerInterface, NormalizerAwareInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ProductModelInterface && in_array($format, ['flat']);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -84,7 +87,7 @@ class ProductModelNormalizer implements NormalizerInterface, NormalizerAwareInte
      *
      * @return string
      */
-    private function normalizeParent(ProductModelInterface $parent = null): string
+    private function normalizeParent(?ProductModelInterface $parent = null): string
     {
         return $parent ? $parent->getCode() : '';
     }

@@ -40,6 +40,7 @@ class AclAncestor implements \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function serialize()
     {
         return serialize(
@@ -52,6 +53,7 @@ class AclAncestor implements \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function unserialize($serialized)
     {
         list(

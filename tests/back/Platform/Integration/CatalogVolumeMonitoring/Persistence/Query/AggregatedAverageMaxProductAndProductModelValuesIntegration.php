@@ -12,6 +12,7 @@ class AggregatedAverageMaxProductAndProductModelValuesIntegration extends TestCa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

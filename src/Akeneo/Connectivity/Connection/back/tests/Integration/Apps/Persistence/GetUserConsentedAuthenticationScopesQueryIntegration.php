@@ -29,11 +29,13 @@ class GetUserConsentedAuthenticationScopesQueryIntegration extends WebTestCase
     private ConnectedAppLoader $connectedAppLoader;
     private UserGroupLoader $groupLoader;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

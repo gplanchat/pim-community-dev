@@ -30,6 +30,7 @@ final class FakeFeatureFlag implements FeatureFlag
         $this->enabled = false;
     }
 
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return $this->enabled;

@@ -44,6 +44,7 @@ class AttributeConverter implements AttributeConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convertToDefaultFormats(array $items, array $options = [])
     {
         $this->violations = new ConstraintViolationList();
@@ -72,6 +73,7 @@ class AttributeConverter implements AttributeConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getViolations()
     {
         return $this->violations;
@@ -130,6 +132,7 @@ class AttributeConverter implements AttributeConverterInterface
      *     }]
      *     [...]
      */
+    #[\Override]
     public function convertToLocalizedFormats(array $items, array $options = [])
     {
         $this->cacheAttributeTypeByCodes(array_keys($items));

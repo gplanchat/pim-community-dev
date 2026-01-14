@@ -22,6 +22,7 @@ class DummyPager implements PagerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function init()
     {
     }
@@ -29,6 +30,7 @@ class DummyPager implements PagerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMaxPerPage($maxPerPage)
     {
     }
@@ -36,6 +38,7 @@ class DummyPager implements PagerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaxPerPage()
     {
     }
@@ -43,6 +46,7 @@ class DummyPager implements PagerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setPage($page)
     {
     }
@@ -50,6 +54,7 @@ class DummyPager implements PagerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPage()
     {
     }
@@ -57,6 +62,7 @@ class DummyPager implements PagerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNbResults()
     {
     }

@@ -13,6 +13,7 @@ class GetUserProfileQuery implements GetUserProfileQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $username): ?string
     {
         $sql = <<<SQL

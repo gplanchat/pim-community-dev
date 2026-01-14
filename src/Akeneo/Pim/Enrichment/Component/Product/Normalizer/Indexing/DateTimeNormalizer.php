@@ -34,6 +34,7 @@ class DateTimeNormalizer implements NormalizerInterface, CacheableSupportsMethod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($date, $format = null, array $context = [])
     {
         return $this->standardNormalizer->normalize($date, $format, $context);
@@ -42,6 +43,7 @@ class DateTimeNormalizer implements NormalizerInterface, CacheableSupportsMethod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof \DateTime && (
@@ -49,6 +51,7 @@ class DateTimeNormalizer implements NormalizerInterface, CacheableSupportsMethod
         );
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

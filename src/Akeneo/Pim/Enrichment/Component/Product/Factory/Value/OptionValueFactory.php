@@ -16,6 +16,7 @@ use Akeneo\Pim\Structure\Component\Query\PublicApi\AttributeType\Attribute;
  */
 final class OptionValueFactory implements ValueFactory
 {
+    #[\Override]
     public function createWithoutCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         $attributeCode = $attribute->code();
@@ -35,6 +36,7 @@ final class OptionValueFactory implements ValueFactory
         return OptionValue::value($attributeCode, $data);
     }
 
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_string($data)) {
@@ -48,6 +50,7 @@ final class OptionValueFactory implements ValueFactory
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::OPTION_SIMPLE_SELECT;

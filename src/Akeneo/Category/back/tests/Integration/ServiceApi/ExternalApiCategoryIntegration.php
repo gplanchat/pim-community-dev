@@ -17,6 +17,7 @@ class ExternalApiCategoryIntegration extends CategoryTestCase
     /** @phpstan-ignore-next-line   */
     private array $categoryDatabaseData;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

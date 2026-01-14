@@ -26,6 +26,7 @@ class GetCompletenessPerChannelAndLocaleIntegration extends AbstractProductQuery
     /** @var GetCompletenessPerChannelAndLocale */
     private $getCompletenessPerChannelAndLocale;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -75,6 +76,7 @@ class GetCompletenessPerChannelAndLocaleIntegration extends AbstractProductQuery
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -19,6 +19,7 @@ class DatagridViewRepositoryIntegration extends TestCase
     private DatagridViewRepositoryInterface $datagridViewRepository;
     private UserRepositoryInterface $userRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -29,6 +30,7 @@ class DatagridViewRepositoryIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

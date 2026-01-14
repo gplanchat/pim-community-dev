@@ -27,6 +27,7 @@ class LocaleNormalizer implements NormalizerInterface, CacheableSupportsMethodIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($locale, $format = null, array $context = [])
     {
         return $this->stdNormalizer->normalize($locale, 'standard', $context);
@@ -35,11 +36,13 @@ class LocaleNormalizer implements NormalizerInterface, CacheableSupportsMethodIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof LocaleInterface && 'external_api' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

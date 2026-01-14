@@ -29,6 +29,7 @@ class AssociationTypeNormalizer implements NormalizerInterface, CacheableSupport
      * @param AssociationTypeInterface $object
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         $result = $this->normalizer->normalize($object, 'standard', $context);
@@ -58,11 +59,13 @@ class AssociationTypeNormalizer implements NormalizerInterface, CacheableSupport
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof AssociationTypeInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

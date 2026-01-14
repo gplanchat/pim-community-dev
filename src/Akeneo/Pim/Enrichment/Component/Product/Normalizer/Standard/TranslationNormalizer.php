@@ -20,7 +20,7 @@ class TranslationNormalizer implements NormalizerInterface, CacheableSupportsMet
     /**
      * @param IdentifiableObjectRepositoryInterface|null $localeRepository
      */
-    public function __construct(IdentifiableObjectRepositoryInterface $localeRepository = null)
+    public function __construct(?IdentifiableObjectRepositoryInterface $localeRepository = null)
     {
         $this->localeRepository = $localeRepository;
     }
@@ -28,6 +28,7 @@ class TranslationNormalizer implements NormalizerInterface, CacheableSupportsMet
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         $context = array_merge(
@@ -65,11 +66,13 @@ class TranslationNormalizer implements NormalizerInterface, CacheableSupportsMet
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof TranslatableInterface && 'standard' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

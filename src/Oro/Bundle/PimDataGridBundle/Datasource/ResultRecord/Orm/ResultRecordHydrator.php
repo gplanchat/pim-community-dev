@@ -17,6 +17,7 @@ class ResultRecordHydrator implements HydratorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hydrate($qb, array $options = [])
     {
         $records = [];

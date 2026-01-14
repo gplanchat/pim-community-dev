@@ -103,6 +103,7 @@ class ConvertStandardFormatIntoUserIntentsHandlerIntegration extends EnrichmentP
         ], $handledStamp->getResult());
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -134,6 +135,7 @@ class ConvertStandardFormatIntoUserIntentsHandlerIntegration extends EnrichmentP
         ]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -27,6 +27,7 @@ class SqlGetAllViewableLocalesForUser implements GetAllViewableLocalesForUserInt
         $this->sqlConnection = $sqlConnection;
     }
 
+    #[\Override]
     public function fetchAll(int $userId): array
     {
         if (null === $this->cache) {
@@ -41,6 +42,7 @@ class SqlGetAllViewableLocalesForUser implements GetAllViewableLocalesForUserInt
         return $this->cache;
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->cache = null;

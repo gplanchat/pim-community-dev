@@ -15,13 +15,14 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_8_0_20230615085833_drop_product_identifiers_table_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230615085833_drop_product_identifiers_table';
-    private const TABLE_NAME = 'pim_catalog_product_identifiers';
+    private const string MIGRATION_NAME = '_8_0_20230615085833_drop_product_identifiers_table';
+    private const string TABLE_NAME = 'pim_catalog_product_identifiers';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,6 +55,7 @@ final class Version_8_0_20230615085833_drop_product_identifiers_table_Integratio
         $this->assertFalse($this->tableExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

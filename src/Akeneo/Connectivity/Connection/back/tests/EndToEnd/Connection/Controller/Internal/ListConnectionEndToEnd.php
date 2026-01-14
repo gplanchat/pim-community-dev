@@ -48,6 +48,7 @@ class ListConnectionEndToEnd extends WebTestCase
         Assert::assertEqualsCanonicalizing($expectedResult, $result);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

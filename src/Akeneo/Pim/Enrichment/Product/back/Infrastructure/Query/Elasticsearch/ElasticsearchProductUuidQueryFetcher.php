@@ -30,6 +30,7 @@ final class ElasticsearchProductUuidQueryFetcher implements ProductUuidQueryFetc
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function initialize(array $esQuery): void
     {
         if (!\in_array('id', $esQuery['_source'] ?? [])) {
@@ -46,6 +47,7 @@ final class ElasticsearchProductUuidQueryFetcher implements ProductUuidQueryFetc
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function reset(): void
     {
         $this->searchAfter = [];
@@ -54,6 +56,7 @@ final class ElasticsearchProductUuidQueryFetcher implements ProductUuidQueryFetc
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNextResults(): ProductResults
     {
         Assert::notNull($this->esQuery, 'The query is not instantiated');

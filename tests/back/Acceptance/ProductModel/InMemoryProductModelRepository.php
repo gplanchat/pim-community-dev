@@ -22,16 +22,19 @@ class InMemoryProductModelRepository implements IdentifiableObjectRepositoryInte
         $this->productModels = new ArrayCollection($productModels);
     }
 
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
     }
 
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->productModels->get($identifier);
     }
 
+    #[\Override]
     public function save($object, array $options = [])
     {
         if (!$object instanceof ProductModelInterface) {
@@ -41,86 +44,103 @@ class InMemoryProductModelRepository implements IdentifiableObjectRepositoryInte
         $this->productModels->set($object->getCode(), $object);
     }
 
+    #[\Override]
     public function findFirstCreatedVariantProductModel(ProductModelInterface $productModel): ?ProductModelInterface
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function getItemsFromIdentifiers(array $identifiers)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findAll()
     {
         return $this->productModels->toArray();
     }
 
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findSiblingsProductModels(ProductModelInterface $productModel): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function countRootProductModels(): int
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findChildrenProductModels(ProductModelInterface $productModel): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findDescendantProductIdentifiers(ProductModelInterface $productModel): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findByIdentifiers(array $codes): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findChildrenProducts(ProductModelInterface $productModel): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function searchRootProductModelsAfter(?ProductModelInterface $product, int $limit): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findSubProductModels(FamilyVariantInterface $familyVariant): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findRootProductModels(FamilyVariantInterface $familyVariant): array
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findProductModelsForFamilyVariant(
         FamilyVariantInterface $familyVariant,
         ?string $search = null,
@@ -130,6 +150,7 @@ class InMemoryProductModelRepository implements IdentifiableObjectRepositoryInte
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function searchLastLevelByCode(
         FamilyVariantInterface $familyVariant,
         string $search,

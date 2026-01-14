@@ -129,6 +129,7 @@ class CompletenessForLocalisableAttributeIntegration extends AbstractCompletenes
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -143,6 +144,7 @@ class CompletenessForLocalisableAttributeIntegration extends AbstractCompletenes
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

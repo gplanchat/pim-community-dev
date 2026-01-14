@@ -31,6 +31,7 @@ class ListAttributesUseableInProductGrid implements ListAttributesUseableInProdu
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(string $locale, int $page, string $searchOnLabel, int $userId): array
     {
         $page = max($page, 1);

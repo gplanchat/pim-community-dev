@@ -35,6 +35,7 @@ class DbalSelectPeriodEventCountPerConnectionQueryIntegration extends TestCase
     /** @var SelectPeriodEventCountPerConnectionQueryInterface */
     private $selectPeriodEventCountPerConnectionQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -107,6 +108,7 @@ class DbalSelectPeriodEventCountPerConnectionQueryIntegration extends TestCase
         Assert::assertEquals($expectedResult, $result);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

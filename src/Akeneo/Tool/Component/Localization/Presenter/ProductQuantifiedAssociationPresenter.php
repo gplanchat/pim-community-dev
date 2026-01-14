@@ -26,6 +26,7 @@ class ProductQuantifiedAssociationPresenter implements PresenterInterface
      * @param array $options
      * @return string
      */
+    #[\Override]
     public function present($value, array $options = []): string
     {
         Assert::string($value);
@@ -48,6 +49,7 @@ class ProductQuantifiedAssociationPresenter implements PresenterInterface
      * @param string $propertyName
      * @return bool
      */
+    #[\Override]
     public function supports($propertyName): bool
     {
         $quantifiedAssociationNames = $this->associationColumnsResolver->resolveQuantifiedIdentifierAssociationColumns();

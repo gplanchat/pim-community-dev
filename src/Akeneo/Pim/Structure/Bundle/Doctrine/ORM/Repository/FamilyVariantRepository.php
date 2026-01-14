@@ -16,6 +16,7 @@ class FamilyVariantRepository extends EntityRepository implements FamilyVariantR
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -24,6 +25,7 @@ class FamilyVariantRepository extends EntityRepository implements FamilyVariantR
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->findOneBy(['code' => $identifier]);

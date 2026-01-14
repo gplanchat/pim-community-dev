@@ -39,6 +39,7 @@ class ValidatorStep extends AbstractStep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function doExecute(StepExecution $stepExecution)
     {
         $this->charsetValidator->setStepExecution($stepExecution);

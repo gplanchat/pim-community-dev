@@ -34,6 +34,7 @@ class FilterRegistry implements FilterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(FilterInterface $filter)
     {
         if ($filter instanceof FieldFilterInterface) {
@@ -47,6 +48,7 @@ class FilterRegistry implements FilterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFilter($code, $operator)
     {
         $attribute = $this->attributeRepository->findOneBy(['code' => FieldFilterHelper::getCode($code)]);
@@ -61,6 +63,7 @@ class FilterRegistry implements FilterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFieldFilter($field, $operator)
     {
         foreach ($this->fieldFilters as $filter) {
@@ -75,6 +78,7 @@ class FilterRegistry implements FilterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeFilter(AttributeInterface $attribute, $operator)
     {
         foreach ($this->attributeFilters as $filter) {
@@ -89,6 +93,7 @@ class FilterRegistry implements FilterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFieldFilters()
     {
         return $this->fieldFilters;
@@ -97,6 +102,7 @@ class FilterRegistry implements FilterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeFilters()
     {
         return $this->attributeFilters;

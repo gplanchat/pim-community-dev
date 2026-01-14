@@ -42,6 +42,7 @@ class FileInfoFactorySpec extends ObjectBehavior
         $file->shouldBeValidFile();
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

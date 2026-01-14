@@ -15,10 +15,12 @@ use Webmozart\Assert\Assert;
  */
 final class MatchFamilyHandler implements MatchConditionHandler
 {
+    #[\Override]
     public function getConditionClass(): string
     {
         return Family::class;
     }
+    #[\Override]
     public function __invoke(ConditionInterface $condition, ProductProjection $productProjection): bool
     {
         Assert::isInstanceOf($condition, Family::class);

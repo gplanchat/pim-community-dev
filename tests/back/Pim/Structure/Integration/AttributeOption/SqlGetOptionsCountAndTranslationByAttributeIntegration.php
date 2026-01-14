@@ -12,6 +12,7 @@ use Webmozart\Assert\Assert;
 
 class SqlGetOptionsCountAndTranslationByAttributeIntegration extends TestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -148,6 +149,7 @@ class SqlGetOptionsCountAndTranslationByAttributeIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

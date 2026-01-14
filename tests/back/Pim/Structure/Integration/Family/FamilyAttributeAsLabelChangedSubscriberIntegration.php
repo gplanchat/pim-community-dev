@@ -17,6 +17,7 @@ class FamilyAttributeAsLabelChangedSubscriberIntegration extends AbstractProduct
 {
     private Client $esClient;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -73,6 +74,7 @@ class FamilyAttributeAsLabelChangedSubscriberIntegration extends AbstractProduct
     /**
      * @return Configuration
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

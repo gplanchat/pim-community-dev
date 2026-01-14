@@ -26,6 +26,7 @@ class MappingsOverrideConfigurator implements MappingsOverrideConfiguratorInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configure(ClassMetadata $metadata, array $mappingOverrides, $configuration)
     {
         if (!$metadata instanceof ClassMetadataInfo) {

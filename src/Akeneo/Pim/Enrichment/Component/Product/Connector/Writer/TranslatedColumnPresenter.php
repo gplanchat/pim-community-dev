@@ -9,6 +9,7 @@ use Akeneo\Tool\Component\Connector\Writer\File\ColumnPresenterInterface;
 
 class TranslatedColumnPresenter implements ColumnPresenterInterface
 {
+    #[\Override]
     public function present(array $columns, array $context): array
     {
         $columns = \array_combine($columns, $columns);

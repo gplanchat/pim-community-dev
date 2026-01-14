@@ -12,6 +12,7 @@ use Doctrine\DBAL\FetchMode;
 
 class GetJobExecutionIdsIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

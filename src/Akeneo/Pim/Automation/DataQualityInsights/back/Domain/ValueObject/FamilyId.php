@@ -26,6 +26,7 @@ final class FamilyId
         return $this->id;
     }
 
+    #[\Override]
     public function __toString()
     {
         return strval($this->id);

@@ -23,6 +23,7 @@ class RefreshConnectedAppActionEndToEnd extends WebTestCase
     private ConnectedAppLoader $connectedAppLoader;
     private FakeWebMarketplaceApi $webMarketplaceApi;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ class RefreshConnectedAppActionEndToEnd extends WebTestCase
         $this->webMarketplaceApi = $this->get(WebMarketplaceApi::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

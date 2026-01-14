@@ -13,11 +13,13 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  */
 class EnabledUserIntentFactory implements UserIntentFactory
 {
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['enabled'];
     }
 
+    #[\Override]
     public function create(string $fieldName, mixed $data): array
     {
         if (!\is_bool($data)) {

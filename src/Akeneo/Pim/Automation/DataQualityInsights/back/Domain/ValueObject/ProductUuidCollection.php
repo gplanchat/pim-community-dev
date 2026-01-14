@@ -22,6 +22,7 @@ final class ProductUuidCollection implements ProductEntityIdCollection
         $this->productUuids = array_values(array_unique($productUuids));
     }
 
+    #[\Override]
     public static function fromStrings(array $productUuids): self
     {
         Assert::allString($productUuids);
@@ -51,26 +52,31 @@ final class ProductUuidCollection implements ProductEntityIdCollection
     /**
      * @return array<ProductEntityIdInterface>
      */
+    #[\Override]
     public function toArray(): array
     {
         return $this->productUuids;
     }
 
+    #[\Override]
     public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->productUuids);
     }
 
+    #[\Override]
     public function count(): int
     {
         return count($this->productUuids);
     }
 
+    #[\Override]
     public function isEmpty(): bool
     {
         return empty($this->productUuids);
     }
 
+    #[\Override]
     public function toArrayString(): array
     {
         return array_map(fn (ProductEntityIdInterface $productUuid) => (string) $productUuid, $this->productUuids);

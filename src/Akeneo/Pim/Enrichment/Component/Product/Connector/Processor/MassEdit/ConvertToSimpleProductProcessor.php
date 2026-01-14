@@ -29,6 +29,7 @@ class ConvertToSimpleProductProcessor extends AbstractProcessor
         $this->validator = $validator;
     }
 
+    #[\Override]
     public function process($product)
     {
         Assert::isInstanceOf($product, ProductInterface::class);

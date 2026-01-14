@@ -40,6 +40,7 @@ class ConsumeProductEventEndToEnd extends ApiTestCase
     private ProductLoader $productLoader;
     private GuzzleJsonHistoryContainer $historyContainer;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -334,6 +335,7 @@ class ConsumeProductEventEndToEnd extends ApiTestCase
         ]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

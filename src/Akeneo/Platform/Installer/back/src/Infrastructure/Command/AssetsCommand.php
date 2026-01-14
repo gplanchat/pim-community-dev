@@ -55,6 +55,7 @@ class AssetsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -66,6 +67,7 @@ class AssetsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
         $this->commandExecutor = new CommandExecutor(
@@ -78,6 +80,7 @@ class AssetsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('<info>Akeneo PIM assets</info>');

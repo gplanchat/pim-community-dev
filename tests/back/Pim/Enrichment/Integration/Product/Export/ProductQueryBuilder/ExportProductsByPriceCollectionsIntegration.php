@@ -11,6 +11,7 @@ class ExportProductsByPriceCollectionsIntegration extends AbstractExportTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createProduct('product_1', [

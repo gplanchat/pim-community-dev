@@ -15,6 +15,7 @@ use Akeneo\Pim\Structure\Component\Query\PublicApi\AttributeType\Attribute;
  */
 final class TextValueFactory extends ScalarValueFactory implements ValueFactory
 {
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_scalar($data) || (\is_string($data) && '' === \trim($data))) {
@@ -28,6 +29,7 @@ final class TextValueFactory extends ScalarValueFactory implements ValueFactory
         return parent::createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::TEXT;

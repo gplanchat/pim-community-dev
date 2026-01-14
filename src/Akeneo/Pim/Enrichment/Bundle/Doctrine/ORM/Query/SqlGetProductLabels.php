@@ -18,6 +18,7 @@ class SqlGetProductLabels implements GetProductLabelsInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byIdentifiersAndLocaleAndScope(array $identifiers, string $locale, string $channel): array
     {
         $query = <<<SQL
@@ -65,6 +66,7 @@ SQL;
         return $labels;
     }
 
+    #[\Override]
     public function byUuidsAndLocaleAndScope(array $uuids, string $locale, string $channel): array
     {
         $query = <<<SQL

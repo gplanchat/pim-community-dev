@@ -20,6 +20,7 @@ class InMemoryGetExistingAttributeOptionCodes implements GetExistingAttributeOpt
         $this->attributeOptionRepository = $attributeOptionRepository;
     }
 
+    #[\Override]
     public function fromOptionCodesByAttributeCode(array $optionCodesIndexedByAttributeCodes): array
     {
         $existingATtributeOptionCodes = array_fill_keys(array_keys($optionCodesIndexedByAttributeCodes), []);

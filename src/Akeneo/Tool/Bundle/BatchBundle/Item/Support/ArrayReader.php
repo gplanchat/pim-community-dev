@@ -31,6 +31,7 @@ class ArrayReader implements ItemReaderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read()
     {
         $item = null;

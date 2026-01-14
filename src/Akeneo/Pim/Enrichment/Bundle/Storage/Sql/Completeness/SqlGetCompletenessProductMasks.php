@@ -49,6 +49,7 @@ final class SqlGetCompletenessProductMasks implements GetCompletenessProductMask
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromProductUuids(array $productUuids): array
     {
         // TODO - TIP-1212: Replace the first LEFT JOIN (to pim_catalog_family) by an INNER JOIN
@@ -98,6 +99,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromValueCollection(
         $id,
         string $familyCode,

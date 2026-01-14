@@ -17,6 +17,7 @@ class CreateCustomAppCommandValidationIntegration extends TestCase
     private ?ValidatorInterface $validator;
     private GetCustomAppsNumberLimit $getCustomAppsNumberLimit;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -26,6 +27,7 @@ class CreateCustomAppCommandValidationIntegration extends TestCase
         $this->getCustomAppsNumberLimit->setLimit(20);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

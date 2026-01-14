@@ -26,6 +26,7 @@ class AjaxChoiceFilterType extends ChoiceFilterType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return self::NAME;
@@ -34,6 +35,7 @@ class AjaxChoiceFilterType extends ChoiceFilterType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return ChoiceFilterType::class;
@@ -42,6 +44,7 @@ class AjaxChoiceFilterType extends ChoiceFilterType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
@@ -53,6 +56,7 @@ class AjaxChoiceFilterType extends ChoiceFilterType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         parent::configureOptions($resolver);
@@ -71,6 +75,7 @@ class AjaxChoiceFilterType extends ChoiceFilterType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function finishView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['choices'] = $view->children['valueChoices']->vars['choices'];

@@ -28,6 +28,7 @@ class DbalSelectActiveWebhooksQueryIntegration extends TestCase
     private ?DbalConnection $dbalConnection;
     private ?UpdateConnectionHandler $updateConnectionHandler;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -124,6 +125,7 @@ SQL;
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

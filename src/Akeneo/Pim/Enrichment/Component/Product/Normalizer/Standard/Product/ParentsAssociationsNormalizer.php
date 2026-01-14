@@ -20,6 +20,7 @@ class ParentsAssociationsNormalizer implements NormalizerInterface, CacheableSup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($associationAwareEntity, $format = null, array $context = [])
     {
         $parentAssociations = $this->getParentAssociations($associationAwareEntity);
@@ -57,11 +58,13 @@ class ParentsAssociationsNormalizer implements NormalizerInterface, CacheableSup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof EntityWithAssociationsInterface && 'standard' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

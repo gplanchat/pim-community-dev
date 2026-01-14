@@ -43,6 +43,7 @@ abstract class AbstractFilter implements FilterInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function init($name, array $params)
     {
         $this->name = $name;
@@ -52,6 +53,7 @@ abstract class AbstractFilter implements FilterInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getForm()
     {
         if (!$this->form) {
@@ -68,6 +70,7 @@ abstract class AbstractFilter implements FilterInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getName()
     {
         return $this->name;
@@ -76,6 +79,7 @@ abstract class AbstractFilter implements FilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMetadata()
     {
         $formBuilderType = $this->getFormBuilder()->get('type');

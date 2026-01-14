@@ -29,6 +29,7 @@ class ExecuteJobExecutionHandler implements ExecuteJobExecutionHandlerInterface
     ) {
     }
 
+    #[\Override]
     public function executeFromJobExecutionId(int $executionId): JobExecution
     {
         /** @var JobExecution $jobExecution */

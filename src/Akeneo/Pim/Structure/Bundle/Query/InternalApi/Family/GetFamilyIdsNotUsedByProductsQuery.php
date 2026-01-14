@@ -16,6 +16,7 @@ final class GetFamilyIdsNotUsedByProductsQuery implements GetFamilyIdsNotUsedByP
     {
     }
 
+    #[\Override]
     public function execute(): array
     {
         $query = <<<SQL

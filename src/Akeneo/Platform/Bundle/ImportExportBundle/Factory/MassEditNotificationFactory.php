@@ -35,6 +35,7 @@ class MassEditNotificationFactory extends AbstractNotificationFactory implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create($jobExecution)
     {
         if (!$jobExecution instanceof JobExecution) {
@@ -59,6 +60,7 @@ class MassEditNotificationFactory extends AbstractNotificationFactory implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($type)
     {
         return in_array($type, $this->notificationTypes);

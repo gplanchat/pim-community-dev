@@ -17,6 +17,7 @@ class AccessLevelToBooleanTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function transform($value)
     {
         if (null === $value) {
@@ -29,6 +30,7 @@ class AccessLevelToBooleanTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function reverseTransform($value)
     {
         if ('' === $value) {

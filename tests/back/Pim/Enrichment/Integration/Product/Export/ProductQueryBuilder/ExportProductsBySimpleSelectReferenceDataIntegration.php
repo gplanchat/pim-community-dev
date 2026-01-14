@@ -12,6 +12,7 @@ class ExportProductsBySimpleSelectReferenceDataIntegration extends AbstractExpor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createFamily([

@@ -23,6 +23,7 @@ final class DefaultSqlGetRequiredAttributesMasksIntegration extends AbstractGetR
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

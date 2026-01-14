@@ -46,6 +46,7 @@ class DefaultImageProvider implements DefaultImageProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getImageUrl($fileType, $filter)
     {
         $fileKey = sprintf('%s_default_image', $fileType);

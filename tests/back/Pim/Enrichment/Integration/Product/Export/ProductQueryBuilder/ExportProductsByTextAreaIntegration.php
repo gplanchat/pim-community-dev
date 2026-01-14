@@ -11,6 +11,7 @@ class ExportProductsByTextAreaIntegration extends AbstractExportTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createFamily([

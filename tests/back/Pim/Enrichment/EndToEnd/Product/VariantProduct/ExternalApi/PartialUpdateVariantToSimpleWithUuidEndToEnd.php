@@ -271,11 +271,13 @@ JSON;
         $this->assertProductModelCompleteness($this->subProductModelId, $expectedAllComplete, $expectedAllIncomplete);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

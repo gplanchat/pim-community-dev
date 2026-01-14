@@ -22,6 +22,7 @@ class DbalWrongCredentialsCombinationRepositoryIntegration extends TestCase
     private WrongCredentialsCombinationRepositoryInterface $repository;
     private DbalConnection $dbalConnection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -30,6 +31,7 @@ class DbalWrongCredentialsCombinationRepositoryIntegration extends TestCase
         $this->repository = $this->get(DbalWrongCredentialsCombinationRepository::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -20,6 +20,7 @@ final class TransformCommonCriterionResultDataIds implements TransformResultData
     ) {
     }
 
+    #[\Override]
     public function transformToCodes(array $resultData): array
     {
         $dataByCodes = [];

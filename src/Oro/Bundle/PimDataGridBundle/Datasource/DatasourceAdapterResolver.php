@@ -43,6 +43,7 @@ class DatasourceAdapterResolver implements DatasourceAdapterResolverInterface
      *
      * @return string
      */
+    #[\Override]
     public function getAdapterClass($datasourceType): string
     {
         if (in_array($datasourceType, $this->productDatasources)) {
@@ -57,6 +58,7 @@ class DatasourceAdapterResolver implements DatasourceAdapterResolverInterface
      *
      * @param mixed $datasource
      */
+    #[\Override]
     public function addProductDatasource($datasource): void
     {
         $this->productDatasources[] = $datasource;

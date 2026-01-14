@@ -89,6 +89,7 @@ class Version implements VersionInterface
      *
      * @return int
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -101,6 +102,7 @@ class Version implements VersionInterface
      *
      * @return Version
      */
+    #[\Override]
     public function setId($id)
     {
         $this->id = $id;
@@ -118,6 +120,7 @@ class Version implements VersionInterface
      *
      * @return string
      */
+    #[\Override]
     public function getAuthor()
     {
         return $this->author;
@@ -128,6 +131,7 @@ class Version implements VersionInterface
      *
      * @return string
      */
+    #[\Override]
     public function getResourceId()
     {
         return $this->resourceId;
@@ -138,6 +142,7 @@ class Version implements VersionInterface
      *
      * @return string
      */
+    #[\Override]
     public function getResourceName()
     {
         return $this->resourceName;
@@ -148,6 +153,7 @@ class Version implements VersionInterface
      *
      * @return int
      */
+    #[\Override]
     public function getVersion()
     {
         return $this->version;
@@ -160,6 +166,7 @@ class Version implements VersionInterface
      *
      * @return Version
      */
+    #[\Override]
     public function setVersion($version)
     {
         $this->version = $version;
@@ -172,6 +179,7 @@ class Version implements VersionInterface
      *
      * @return array
      */
+    #[\Override]
     public function getSnapshot()
     {
         return $this->snapshot;
@@ -184,6 +192,7 @@ class Version implements VersionInterface
      *
      * @return Version
      */
+    #[\Override]
     public function setSnapshot(array $snapshot)
     {
         if (!empty($snapshot)) {
@@ -200,6 +209,7 @@ class Version implements VersionInterface
      *
      * @return array
      */
+    #[\Override]
     public function getChangeset()
     {
         return $this->changeset;
@@ -212,6 +222,7 @@ class Version implements VersionInterface
      *
      * @return Version
      */
+    #[\Override]
     public function setChangeset(array $changeset)
     {
         $this->changeset = $changeset;
@@ -224,6 +235,7 @@ class Version implements VersionInterface
      *
      * @return string
      */
+    #[\Override]
     public function getContext()
     {
         return $this->context;
@@ -232,6 +244,7 @@ class Version implements VersionInterface
     /**
      * @return \DateTime
      */
+    #[\Override]
     public function getLoggedAt()
     {
         return $this->loggedAt;
@@ -240,6 +253,7 @@ class Version implements VersionInterface
     /**
      * @return bool
      */
+    #[\Override]
     public function isPending()
     {
         return $this->pending;

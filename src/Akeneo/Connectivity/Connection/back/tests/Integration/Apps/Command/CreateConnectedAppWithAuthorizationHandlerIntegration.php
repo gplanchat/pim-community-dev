@@ -47,11 +47,13 @@ class CreateConnectedAppWithAuthorizationHandlerIntegration extends TestCase
     private RoleWithPermissionsRepository $roleWithPermissionsRepository;
     private ScopeMapperRegistry $scopeMapperRegistry;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

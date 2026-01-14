@@ -22,6 +22,7 @@ final class AttributeGroupShouldBeEditableValidator extends ConstraintValidator
     {
     }
 
+    #[\Override]
     public function validate($valueUserIntent, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, AttributeGroupShouldBeEditable::class);

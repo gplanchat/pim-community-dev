@@ -16,6 +16,7 @@ final class ValidateAlwaysGrantedProperties implements ValidateGrantedProperties
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate(array $search): void
     {
     }

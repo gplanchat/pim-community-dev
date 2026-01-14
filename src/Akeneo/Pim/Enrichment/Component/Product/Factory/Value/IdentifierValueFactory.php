@@ -17,6 +17,7 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  */
 final class IdentifierValueFactory implements ValueFactory
 {
+    #[\Override]
     public function createWithoutCheckingData(
         Attribute $attribute,
         ?string $channelCode,
@@ -32,6 +33,7 @@ final class IdentifierValueFactory implements ValueFactory
         return IdentifierValue::value($attributeCode, $attribute->isMainIdentifier(), $data);
     }
 
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_string($data)) {
@@ -52,6 +54,7 @@ final class IdentifierValueFactory implements ValueFactory
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::IDENTIFIER;

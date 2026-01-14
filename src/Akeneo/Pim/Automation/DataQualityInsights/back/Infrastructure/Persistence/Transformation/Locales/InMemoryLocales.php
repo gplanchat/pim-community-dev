@@ -22,11 +22,13 @@ final class InMemoryLocales implements LocalesInterface
         $this->localesCodesByIds = array_flip($localesIdsByCodes);
     }
 
+    #[\Override]
     public function getIdByCode(string $code): ?int
     {
         return $this->localesIdsByCodes[$code] ?? null;
     }
 
+    #[\Override]
     public function getCodeById(int $id): ?string
     {
         return $this->localesCodesByIds[$id] ?? null;

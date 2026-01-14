@@ -32,6 +32,7 @@ class RemoveParent implements RemoveParentInterface
         $this->eventDispatcher = $eventDispatcher;
     }
 
+    #[\Override]
     public function from(ProductInterface $product): void
     {
         Assert::true($product->isVariant(), 'Cannot remove parent from a non variant product');

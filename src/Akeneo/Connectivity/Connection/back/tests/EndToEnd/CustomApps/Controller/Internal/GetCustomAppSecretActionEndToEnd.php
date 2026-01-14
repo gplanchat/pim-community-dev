@@ -25,6 +25,7 @@ class GetCustomAppSecretActionEndToEnd extends WebTestCase
     private CustomAppLoader $customAppLoader;
     private GetCustomAppSecretQuery $getCustomAppSecretQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ class GetCustomAppSecretActionEndToEnd extends WebTestCase
         $this->getCustomAppSecretQuery = $this->get(GetCustomAppSecretQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

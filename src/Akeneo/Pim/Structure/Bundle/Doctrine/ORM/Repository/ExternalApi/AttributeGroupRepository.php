@@ -30,16 +30,19 @@ class AttributeGroupRepository extends EntityRepository implements ApiResourceRe
         parent::__construct($entityManager, $entityManager->getClassMetadata($className));
     }
 
+    #[\Override]
     public function getIdentifierProperties(): array
     {
         return $this->attributeGroupRepository->getIdentifierProperties();
     }
 
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->attributeGroupRepository->findOneByIdentifier($identifier);
     }
 
+    #[\Override]
     public function searchAfterOffset(array $searchFilters, array $orders, $limit, $offset)
     {
         $qb = $this->createQueryBuilder('r');
@@ -58,6 +61,7 @@ class AttributeGroupRepository extends EntityRepository implements ApiResourceRe
             ->execute();
     }
 
+    #[\Override]
     public function count(array $searchFilters = []): int
     {
         try {

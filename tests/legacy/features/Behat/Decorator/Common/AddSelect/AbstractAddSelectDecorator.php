@@ -27,6 +27,7 @@ abstract class AbstractAddSelectDecorator extends ElementDecorator implements Ad
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addOptions(array $options)
     {
         $this->openDropList();
@@ -51,6 +52,7 @@ abstract class AbstractAddSelectDecorator extends ElementDecorator implements Ad
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasOption($item)
     {
         $result = $this->openDropList()

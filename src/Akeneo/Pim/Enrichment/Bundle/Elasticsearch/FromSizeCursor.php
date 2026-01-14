@@ -44,6 +44,7 @@ class FromSizeCursor extends AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function next(): void
     {
         if (false === next($this->items)) {
@@ -56,6 +57,7 @@ class FromSizeCursor extends AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function rewind(): void
     {
         $this->from = $this->initialFrom;
@@ -69,6 +71,7 @@ class FromSizeCursor extends AbstractCursor implements CursorInterface
      *
      * {@see https://www.elastic.co/guide/en/elasticsearch/reference/5.x/search-request-from-size.html}
      */
+    #[\Override]
     protected function getNextIdentifiers(array $esQuery): IdentifierResults
     {
         $size = min(($this->to - $this->from), $this->pageSize);

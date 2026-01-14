@@ -15,6 +15,7 @@ use Symfony\Component\Console\Tester\CommandTester;
  */
 class CheckCategoryTreesIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

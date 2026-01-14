@@ -26,6 +26,7 @@ class RemoveCategoriesApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $removeCategories, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($removeCategories, RemoveCategories::class);
@@ -41,6 +42,7 @@ class RemoveCategoriesApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [RemoveCategories::class];

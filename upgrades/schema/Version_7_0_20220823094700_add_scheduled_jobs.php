@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220822173400_add_scheduled_jobs extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addScheduledJob('versioning_purge', 'Purge versions of entities', []);
@@ -39,6 +40,7 @@ final class Version_7_0_20220822173400_add_scheduled_jobs extends AbstractMigrat
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

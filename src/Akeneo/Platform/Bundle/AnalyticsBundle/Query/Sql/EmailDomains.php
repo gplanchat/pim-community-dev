@@ -22,6 +22,7 @@ class EmailDomains implements EmailDomainsQuery
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function fetch(): string
     {
         $query = <<<SQL

@@ -19,6 +19,7 @@ class FindJobType implements FindJobTypeInterface
     ) {
     }
 
+    #[\Override]
     public function visible(): array
     {
         $sql = <<<SQL

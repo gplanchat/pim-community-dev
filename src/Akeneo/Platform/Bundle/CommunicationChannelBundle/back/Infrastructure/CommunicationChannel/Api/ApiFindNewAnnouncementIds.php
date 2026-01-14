@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
  */
 final class ApiFindNewAnnouncementIds implements FindNewAnnouncementIdsInterface
 {
-    private const BASE_URI = '/new_announcements';
+    private const string BASE_URI = '/new_announcements';
 
     /** @var Client */
     private $client;
@@ -24,6 +24,7 @@ final class ApiFindNewAnnouncementIds implements FindNewAnnouncementIdsInterface
         $this->client = new Client(['base_uri' => $apiUrl]);
     }
 
+    #[\Override]
     public function find(string $pimEdition, string $pimVersion, string $locale): array
     {
         $queryParameters = [

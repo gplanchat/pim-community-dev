@@ -21,6 +21,7 @@ final class ProductsWereCreatedOrUpdatedMessageIntegration extends EnrichmentPro
 {
     private PubSubQueueStatus $pubSubQueueStatus;
 
+    #[\Override]
     protected function setUp(): void
     {
         \putenv('FLAG_DATA_QUALITY_INSIGHTS_UCS_EVENT_ENABLED=1');
@@ -31,6 +32,7 @@ final class ProductsWereCreatedOrUpdatedMessageIntegration extends EnrichmentPro
         $this->pubSubQueueStatus->flushJobQueue();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         parent::tearDown();

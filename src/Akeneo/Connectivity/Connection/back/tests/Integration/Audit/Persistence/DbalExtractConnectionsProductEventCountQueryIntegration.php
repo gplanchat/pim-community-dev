@@ -34,6 +34,7 @@ class DbalExtractConnectionsProductEventCountQueryIntegration extends TestCase
     private ?DbalConnection $dbalConnection;
     private ?string $productClass;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -155,6 +156,7 @@ SQL;
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

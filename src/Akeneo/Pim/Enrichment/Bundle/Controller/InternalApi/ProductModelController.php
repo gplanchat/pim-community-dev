@@ -40,7 +40,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class ProductModelController
 {
-    private const PRODUCT_MODELS_LIMIT = 20;
+    private const int PRODUCT_MODELS_LIMIT = 20;
 
     private NormalizerInterface $normalizer;
     private UserContext $userContext;

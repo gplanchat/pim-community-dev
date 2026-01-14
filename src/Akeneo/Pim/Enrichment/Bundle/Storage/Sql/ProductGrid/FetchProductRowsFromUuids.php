@@ -19,12 +19,12 @@ use Ramsey\Uuid\UuidInterface;
  * @copyright 2018 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class FetchProductRowsFromUuids implements FetchProductRowsFromUuidsInterface
+final readonly class FetchProductRowsFromUuids implements FetchProductRowsFromUuidsInterface
 {
     public function __construct(
-        private readonly Connection $connection,
-        private readonly WriteValueCollectionFactory $valueCollectionFactory,
-        private readonly GetProductCompletenesses $getProductCompletenesses,
+        private Connection $connection,
+        private WriteValueCollectionFactory $valueCollectionFactory,
+        private GetProductCompletenesses $getProductCompletenesses,
     ) {
     }
 
@@ -36,6 +36,7 @@ final class FetchProductRowsFromUuids implements FetchProductRowsFromUuidsInterf
      *
      * @return ReadModel\Row[]
      */
+    #[\Override]
     public function __invoke(array $uuids, array $attributeCodes, string $channelCode, string $localeCode): array
     {
         if (empty($uuids)) {

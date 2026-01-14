@@ -17,11 +17,13 @@ use Akeneo\Pim\Enrichment\Component\Product\Exception\InvalidAssociationProductI
  */
 final class InvalidAssociationProductIdentifier implements DocumentationBuilderInterface
 {
+    #[\Override]
     public function support($object): bool
     {
         return $object instanceof InvalidAssociationProductIdentifierException;
     }
 
+    #[\Override]
     public function buildDocumentation($object): DocumentationCollection
     {
         if (false === $this->support($object)) {

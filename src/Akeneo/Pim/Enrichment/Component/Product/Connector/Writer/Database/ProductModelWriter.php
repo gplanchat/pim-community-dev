@@ -42,6 +42,7 @@ class ProductModelWriter implements ItemWriterInterface, StepExecutionAwareInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items)
     {
         $jobParameters = $this->stepExecution->getJobParameters();
@@ -58,6 +59,7 @@ class ProductModelWriter implements ItemWriterInterface, StepExecutionAwareInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;

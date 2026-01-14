@@ -21,6 +21,7 @@ final class GroupNormalizer implements NormalizerInterface, CacheableSupportsMet
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($group, $format = null, array $context = [])
     {
         Assert::isInstanceOf($group, GroupInterface::class);
@@ -33,6 +34,7 @@ final class GroupNormalizer implements NormalizerInterface, CacheableSupportsMet
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof GroupInterface && in_array($format, $this->supportedFormats);
@@ -41,6 +43,7 @@ final class GroupNormalizer implements NormalizerInterface, CacheableSupportsMet
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

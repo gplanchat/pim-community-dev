@@ -12,13 +12,15 @@ use PHPStan\Rules\Rule;
 
 final class SuffixTraitRule implements Rule
 {
-    private const ERROR_MESSAGE = 'Trait must be suffixed with "Trait" exclusively';
+    private const string ERROR_MESSAGE = 'Trait must be suffixed with "Trait" exclusively';
 
+    #[\Override]
     public function getNodeType(): string
     {
         return ClassLike::class;
     }
 
+    #[\Override]
     public function processNode(Node $node, Scope $scope): array
     {
         if (\str_ends_with((string) $node->name, 'Trait')) {

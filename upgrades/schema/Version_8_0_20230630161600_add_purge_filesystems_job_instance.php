@@ -14,6 +14,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_8_0_20230630161600_add_purge_filesystems_job_instance extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $sql = <<<SQL
@@ -46,6 +47,7 @@ final class Version_8_0_20230630161600_add_purge_filesystems_job_instance extend
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

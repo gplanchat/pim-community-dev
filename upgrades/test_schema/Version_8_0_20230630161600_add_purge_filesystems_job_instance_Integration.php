@@ -17,10 +17,11 @@ final class Version_8_0_20230630161600_add_purge_filesystems_job_instance_Integr
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230630161600_add_purge_filesystems_job_instance';
+    private const string MIGRATION_LABEL = '_8_0_20230630161600_add_purge_filesystems_job_instance';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,6 +44,7 @@ final class Version_8_0_20230630161600_add_purge_filesystems_job_instance_Integr
         $this->assertEquals($jobInstanceId, $this->jobInstanceId('purge_filesystems'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

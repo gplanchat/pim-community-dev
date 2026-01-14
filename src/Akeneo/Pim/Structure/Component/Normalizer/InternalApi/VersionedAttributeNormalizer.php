@@ -54,6 +54,7 @@ class VersionedAttributeNormalizer implements NormalizerInterface, CacheableSupp
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($attribute, $format = null, array $context = [])
     {
         $normalizedAttribute = $this->normalizer->normalize($attribute, 'internal_api', $context);
@@ -79,11 +80,13 @@ class VersionedAttributeNormalizer implements NormalizerInterface, CacheableSupp
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof AttributeInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

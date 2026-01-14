@@ -28,6 +28,7 @@ final class SqlChannels implements ChannelsInterface
         $this->channelsLoaded = false;
     }
 
+    #[\Override]
     public function getIdByCode(string $code): ?int
     {
         if (false === $this->channelsLoaded) {
@@ -37,6 +38,7 @@ final class SqlChannels implements ChannelsInterface
         return $this->channelIdsByCodes[$code] ?? null;
     }
 
+    #[\Override]
     public function getCodeById(int $id): ?string
     {
         if (false === $this->channelsLoaded) {

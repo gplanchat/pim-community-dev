@@ -167,6 +167,7 @@ class CreateEntityWithDefaultValuesIntegration extends TestCase
         Assert::assertNull($product->getValue('a_yes_no_with_default_value'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -185,6 +186,7 @@ class CreateEntityWithDefaultValuesIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

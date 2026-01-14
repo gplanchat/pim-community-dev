@@ -21,6 +21,7 @@ class CreateClient implements CreateClientInterface
     {
     }
 
+    #[\Override]
     public function execute(string $label): Client
     {
         /** @var ApiClient */

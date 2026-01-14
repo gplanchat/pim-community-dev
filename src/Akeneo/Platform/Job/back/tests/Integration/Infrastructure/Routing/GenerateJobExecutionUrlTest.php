@@ -10,6 +10,7 @@ class GenerateJobExecutionUrlTest extends IntegrationTestCase
 {
     private GenerateJobExecutionUrl $generateJobExecutionUrl;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

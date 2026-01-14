@@ -36,6 +36,7 @@ class CompletenessWidget implements WidgetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAlias(): string
     {
         return 'completeness';
@@ -44,6 +45,7 @@ class CompletenessWidget implements WidgetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTemplate(): string
     {
         return '';
@@ -52,6 +54,7 @@ class CompletenessWidget implements WidgetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParameters(): array
     {
         return [];
@@ -60,6 +63,7 @@ class CompletenessWidget implements WidgetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData(): array
     {
         $translationLocaleCode = $this->userContext->getUiLocaleCode();

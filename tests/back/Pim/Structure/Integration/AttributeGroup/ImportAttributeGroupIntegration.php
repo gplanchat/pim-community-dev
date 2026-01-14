@@ -19,7 +19,7 @@ use Doctrine\DBAL\Connection;
  */
 final class ImportAttributeGroupIntegration extends TestCase
 {
-    private const CSV_IMPORT_JOB_CODE = 'csv_footwear_attribute_group_import';
+    private const string CSV_IMPORT_JOB_CODE = 'csv_footwear_attribute_group_import';
 
     private JobLauncher $jobLauncher;
     private AttributeGroupRepositoryInterface $attributeGroupRepository;
@@ -28,6 +28,7 @@ final class ImportAttributeGroupIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -81,6 +82,7 @@ final class ImportAttributeGroupIntegration extends TestCase
         $this->jobLauncher->launchImport(static::CSV_IMPORT_JOB_CODE, $content);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('footwear');

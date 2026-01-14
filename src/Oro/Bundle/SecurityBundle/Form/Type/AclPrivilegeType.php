@@ -14,6 +14,7 @@ class AclPrivilegeType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add(
@@ -42,6 +43,7 @@ class AclPrivilegeType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['privileges_config'] = $options['privileges_config'];
@@ -50,6 +52,7 @@ class AclPrivilegeType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
@@ -63,6 +66,7 @@ class AclPrivilegeType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'oro_acl_privilege';

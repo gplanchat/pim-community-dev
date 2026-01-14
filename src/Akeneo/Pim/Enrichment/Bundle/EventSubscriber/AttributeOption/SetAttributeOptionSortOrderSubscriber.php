@@ -25,6 +25,7 @@ class SetAttributeOptionSortOrderSubscriber implements EventSubscriberInterface
         $this->getAttributeOptionsMaxSortOrder = $getAttributeOptionsMaxSortOrder;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

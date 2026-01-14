@@ -22,11 +22,13 @@ class InMemoryIdentifierGeneratorRepository implements IdentifierGeneratorReposi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save(IdentifierGenerator $identifierGenerator): void
     {
         $this->generators[] = $identifierGenerator;
     }
 
+    #[\Override]
     public function update(IdentifierGenerator $identifierGenerator): void
     {
         $this->generators[$this->getGeneratorIndex($identifierGenerator->code()->asString())] = $identifierGenerator;
@@ -35,6 +37,7 @@ class InMemoryIdentifierGeneratorRepository implements IdentifierGeneratorReposi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function get(string $identifierGeneratorCode): IdentifierGenerator
     {
         $index = $this->getGeneratorIndex($identifierGeneratorCode);
@@ -48,6 +51,7 @@ class InMemoryIdentifierGeneratorRepository implements IdentifierGeneratorReposi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAll(): array
     {
         return \array_values($this->generators);
@@ -56,11 +60,13 @@ class InMemoryIdentifierGeneratorRepository implements IdentifierGeneratorReposi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNextId(): IdentifierGeneratorId
     {
         return IdentifierGeneratorId::fromString(Uuid::uuid4()->toString());
     }
 
+    #[\Override]
     public function count(): int
     {
         return \count($this->generators);
@@ -69,6 +75,7 @@ class InMemoryIdentifierGeneratorRepository implements IdentifierGeneratorReposi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function delete(string $identifierGeneratorCode): void
     {
         unset($this->generators[$this->getGeneratorIndex($identifierGeneratorCode)]);

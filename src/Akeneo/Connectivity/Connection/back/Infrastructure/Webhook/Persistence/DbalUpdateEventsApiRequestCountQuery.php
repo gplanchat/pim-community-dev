@@ -23,6 +23,7 @@ class DbalUpdateEventsApiRequestCountQuery implements UpdateEventsApiRequestCoun
      * `$dateTime` minute is used to determine the minute to update and to set the last `updated` date.
      * If the previous `updated` date is not from the current hour, then the count is reinitialized with the new count.
      */
+    #[\Override]
     public function execute(\DateTimeImmutable $dateTime, int $eventCount): int
     {
         $upsertQuery = <<<SQL

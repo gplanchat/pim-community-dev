@@ -23,6 +23,7 @@ class IndexProductModelDescendantsIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -81,6 +82,7 @@ class IndexProductModelDescendantsIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

@@ -44,6 +44,7 @@ class EntityWithValuesFieldFilter implements FilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filter(EntityWithValuesInterface $entity, array $newFields): array
     {
         $originalEntity = $this->normalizer->normalize($entity, 'standard');

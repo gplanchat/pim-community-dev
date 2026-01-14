@@ -17,11 +17,13 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class CreateCustomAppActionEndToEnd extends WebTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

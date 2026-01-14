@@ -23,6 +23,7 @@ class SetCategoriesApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $setCategories, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($setCategories, SetCategories::class);
@@ -36,6 +37,7 @@ class SetCategoriesApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetCategories::class];

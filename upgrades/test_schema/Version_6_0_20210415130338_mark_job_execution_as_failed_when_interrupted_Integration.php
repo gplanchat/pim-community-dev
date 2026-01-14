@@ -21,9 +21,9 @@ class Version_6_0_20210415130338_mark_job_execution_as_failed_when_interrupted_I
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20210415130338_mark_job_execution_as_failed_when_interrupted';
-    private const RULE_EXECUTION_JOB_NAME = 'rule_engine_execute_rules';
-    private const PROJECT_CALCULATION_JOB_NAME = 'project_calculation';
+    private const string MIGRATION_LABEL = '_6_0_20210415130338_mark_job_execution_as_failed_when_interrupted';
+    private const string RULE_EXECUTION_JOB_NAME = 'rule_engine_execute_rules';
+    private const string PROJECT_CALCULATION_JOB_NAME = 'project_calculation';
 
     private Connection $connection;
     private ?int $jobInstanceId = null;
@@ -76,6 +76,7 @@ class Version_6_0_20210415130338_mark_job_execution_as_failed_when_interrupted_I
         Assert::assertFalse($this->executionFailed($runningExecutionIdsWithHealthCheck));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -85,6 +86,7 @@ class Version_6_0_20210415130338_mark_job_execution_as_failed_when_interrupted_I
         $this->createJobInstance(self::RULE_EXECUTION_JOB_NAME);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

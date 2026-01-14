@@ -16,6 +16,7 @@ class InMemorySearchJobUser implements SearchJobUserInterface
         $this->jobUsers = $jobUsers;
     }
 
+    #[\Override]
     public function search(SearchJobUserQuery $query): array
     {
         return $this->jobUsers;

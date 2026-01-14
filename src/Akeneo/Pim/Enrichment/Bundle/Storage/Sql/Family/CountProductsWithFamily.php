@@ -25,6 +25,7 @@ final class CountProductsWithFamily implements CountProductsWithFamilyInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function count(FamilyInterface $family): int
     {
         return (int) $this->connection->executeQuery(

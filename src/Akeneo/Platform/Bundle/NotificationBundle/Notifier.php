@@ -52,6 +52,7 @@ class Notifier implements NotifierInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function notify(NotificationInterface $notification, array $users)
     {
         $userNotifications = [];

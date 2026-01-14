@@ -31,6 +31,7 @@ abstract class AbstractValueConverter implements ValueConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         return in_array($attribute->getType(), $this->supportedAttributeTypes);

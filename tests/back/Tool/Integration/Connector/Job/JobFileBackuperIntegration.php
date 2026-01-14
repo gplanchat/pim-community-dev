@@ -12,6 +12,7 @@ class JobFileBackuperIntegration extends TestCase
 {
     private FilesystemOperator $archivistFilesystem;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -71,6 +72,7 @@ class JobFileBackuperIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -15,6 +15,7 @@ class GroupsUserIntentFactory implements UserIntentFactory
 {
     use ValidateDataTrait;
 
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['groups'];
@@ -23,6 +24,7 @@ class GroupsUserIntentFactory implements UserIntentFactory
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function create(string $fieldName, mixed $data): array
     {
         $this->validateScalarArray($fieldName, $data);

@@ -54,6 +54,7 @@ class GetCategoryTemplateSqlIntegration extends CategoryTestCase
         $this->get(GetTemplate::class)->byUuid(TemplateUuid::fromString($templateUuid));
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

@@ -22,6 +22,7 @@ class SorterRegistry implements SorterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(SorterInterface $sorter)
     {
         if ($sorter instanceof FieldSorterInterface) {
@@ -35,6 +36,7 @@ class SorterRegistry implements SorterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFieldSorter($field)
     {
         foreach ($this->fieldSorters as $sorter) {
@@ -49,6 +51,7 @@ class SorterRegistry implements SorterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeSorter(AttributeInterface $attribute)
     {
         foreach ($this->attributeSorters as $sorter) {

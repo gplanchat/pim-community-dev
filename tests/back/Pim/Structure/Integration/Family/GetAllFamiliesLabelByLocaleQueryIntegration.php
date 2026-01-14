@@ -24,6 +24,7 @@ final class GetAllFamiliesLabelByLocaleQueryIntegration extends TestCase
         ], $results);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

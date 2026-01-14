@@ -19,6 +19,7 @@ class GetProductUuidsToEvaluateQueryIntegration extends DataQualityInsightsTestC
 
     private CriterionEvaluationRepositoryInterface $productCriterionEvaluationRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -28,6 +28,7 @@ final class GetProductCriterionEvaluationByProductIdAndCriterionCodeQuery implem
     ) {
     }
 
+    #[\Override]
     public function execute(ProductEntityIdInterface $productUuid, CriterionCode $criterionCode): ?Read\CriterionEvaluation
     {
         Assert::isInstanceOf($productUuid, ProductUuid::class);

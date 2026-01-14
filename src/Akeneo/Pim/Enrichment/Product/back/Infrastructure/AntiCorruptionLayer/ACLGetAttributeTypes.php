@@ -18,6 +18,7 @@ final class ACLGetAttributeTypes implements GetAttributeTypes
     {
     }
 
+    #[\Override]
     public function fromAttributeCodes(array $attributeCodes): array
     {
         if ([] === $attributeCodes) {

@@ -32,6 +32,7 @@ class CommandResult implements CommandResultInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCommandOutput()
     {
         return $this->commandOutput;
@@ -40,6 +41,7 @@ class CommandResult implements CommandResultInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCommandStatus()
     {
         return $this->commandStatus;

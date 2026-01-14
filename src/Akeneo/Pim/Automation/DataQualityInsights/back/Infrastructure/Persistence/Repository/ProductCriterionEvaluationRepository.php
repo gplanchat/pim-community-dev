@@ -20,12 +20,14 @@ final class ProductCriterionEvaluationRepository implements CriterionEvaluationR
         $this->repository = $repository;
     }
 
+    #[\Override]
     public function create(Write\CriterionEvaluationCollection $criteriaEvaluations): void
     {
         $this->repository->createCriterionEvaluationsForProducts($criteriaEvaluations);
     }
 
 
+    #[\Override]
     public function update(Write\CriterionEvaluationCollection $criteriaEvaluations): void
     {
         $this->repository->updateCriterionEvaluationsForProducts($criteriaEvaluations);

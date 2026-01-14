@@ -18,6 +18,7 @@ class DeleteCategoryTreeTemplateByTemplateUuidSql implements DeleteCategoryTreeT
     {
     }
 
+    #[\Override]
     public function __invoke(TemplateUuid $templateUuid): void
     {
         $this->connection->transactional(function (Connection $connection) use ($templateUuid) {

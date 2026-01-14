@@ -33,6 +33,7 @@ class AjaxReferenceDataTransformerFactory implements TransformerFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create(array $options)
     {
         $repository = $this->doctrine->getRepository($options['class']);

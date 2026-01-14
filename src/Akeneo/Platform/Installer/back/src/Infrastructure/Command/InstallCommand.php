@@ -33,6 +33,7 @@ class InstallCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -50,6 +51,7 @@ class InstallCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
         $this->commandExecutor = new CommandExecutor(
@@ -62,6 +64,7 @@ class InstallCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $forceInstall = $input->getOption('force');

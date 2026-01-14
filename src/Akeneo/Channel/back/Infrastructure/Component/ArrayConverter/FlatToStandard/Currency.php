@@ -42,6 +42,7 @@ class Currency implements ArrayConverterInterface
      *     'enabled' => true,
      * ]
      */
+    #[\Override]
     public function convert(array $item, array $options = [])
     {
         $this->fieldChecker->checkFieldsPresence($item, ['code']);

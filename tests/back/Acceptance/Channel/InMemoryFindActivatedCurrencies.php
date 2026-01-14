@@ -21,6 +21,7 @@ final class InMemoryFindActivatedCurrencies implements FindActivatedCurrenciesIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function forChannel(string $channelCode): array
     {
         $channel = $this->channelRepository->findOneByIdentifier($channelCode);
@@ -36,6 +37,7 @@ final class InMemoryFindActivatedCurrencies implements FindActivatedCurrenciesIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function forAllChannels(): array
     {
         $currencies = [];
@@ -51,6 +53,7 @@ final class InMemoryFindActivatedCurrencies implements FindActivatedCurrenciesIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function forAllChannelsIndexedByChannelCode(): array
     {
         $currenciesByChannel = [];

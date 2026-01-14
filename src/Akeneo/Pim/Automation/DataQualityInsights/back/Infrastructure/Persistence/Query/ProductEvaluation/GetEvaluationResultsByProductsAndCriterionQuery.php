@@ -28,6 +28,7 @@ final class GetEvaluationResultsByProductsAndCriterionQuery implements GetEvalua
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute(ProductEntityIdCollection $productIdCollection, CriterionCode $criterionCode): array
     {
         Assert::isInstanceOf($productIdCollection, ProductUuidCollection::class);

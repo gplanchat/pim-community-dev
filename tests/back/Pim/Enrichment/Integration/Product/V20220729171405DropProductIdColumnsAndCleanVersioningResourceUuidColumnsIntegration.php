@@ -26,6 +26,7 @@ class V20220729171405DropProductIdColumnsAndCleanVersioningResourceUuidColumnsIn
     private readonly Connection $connection;
     private readonly V20220729171405DropProductIdColumnsAndCleanVersioningResourceUuidColumns $migrationToTest;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -35,6 +36,7 @@ class V20220729171405DropProductIdColumnsAndCleanVersioningResourceUuidColumnsIn
         $this->nonProductVersionId = null;
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $this->cleanDatabase();
@@ -63,6 +65,7 @@ class V20220729171405DropProductIdColumnsAndCleanVersioningResourceUuidColumnsIn
         $this->assertNonProductRelatedVersionHasNoResourceUuid();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

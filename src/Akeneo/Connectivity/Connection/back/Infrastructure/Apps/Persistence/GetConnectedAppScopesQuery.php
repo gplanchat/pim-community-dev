@@ -17,6 +17,7 @@ final class GetConnectedAppScopesQuery implements GetConnectedAppScopesQueryInte
     {
     }
 
+    #[\Override]
     public function execute(string $appId): array
     {
         $query = <<<SQL

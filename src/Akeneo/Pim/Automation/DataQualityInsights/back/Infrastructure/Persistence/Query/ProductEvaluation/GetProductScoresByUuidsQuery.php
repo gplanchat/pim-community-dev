@@ -23,6 +23,7 @@ final class GetProductScoresByUuidsQuery implements GetProductScoresByUuidsQuery
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function byProductUuid(UuidInterface $uuid): Read\Scores
     {
         $productScores = $this->byProductUuids([$uuid]);
@@ -33,6 +34,7 @@ final class GetProductScoresByUuidsQuery implements GetProductScoresByUuidsQuery
         );
     }
 
+    #[\Override]
     public function byProductUuids(array $productUuids): array
     {
         if (empty($productUuids)) {

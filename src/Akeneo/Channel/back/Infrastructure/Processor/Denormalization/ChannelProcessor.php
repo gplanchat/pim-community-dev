@@ -30,6 +30,7 @@ class ChannelProcessor extends AbstractProcessor implements ItemProcessorInterfa
         parent::__construct($repository);
     }
 
+    #[\Override]
     public function process($item)
     {
         $itemIdentifier = $this->getItemIdentifier($this->repository, $item);

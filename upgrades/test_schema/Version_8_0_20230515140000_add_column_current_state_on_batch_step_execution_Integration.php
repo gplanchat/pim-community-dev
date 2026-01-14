@@ -15,12 +15,13 @@ use Pim\Upgrade\Schema\Tests\ExecuteMigrationTrait;
  */
 final class Version_8_0_20230515140000_add_column_current_state_on_batch_step_execution_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230515140000_add_column_current_state_on_batch_step_execution';
+    private const string MIGRATION_NAME = '_8_0_20230515140000_add_column_current_state_on_batch_step_execution';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -55,6 +56,7 @@ final class Version_8_0_20230515140000_add_column_current_state_on_batch_step_ex
         $this->assertTrue($this->hasCurrentStateColumn());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

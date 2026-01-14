@@ -15,7 +15,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class RefreshVersioningSubscriber implements EventSubscriberInterface
 {
-    private const JOB_CODE = 'versioning_refresh';
+    private const string JOB_CODE = 'versioning_refresh';
 
     public function __construct(
         private ExecuteJobExecutionHandlerInterface $jobExecutionRunner,
@@ -23,6 +23,7 @@ class RefreshVersioningSubscriber implements EventSubscriberInterface
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

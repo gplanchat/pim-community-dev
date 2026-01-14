@@ -17,6 +17,7 @@ class GroupRepository extends EntityRepository implements GroupRepositoryInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOptions($dataLocale, $collectionId = null, $search = '', array $options = [])
     {
         $identifier = isset($options['type']) && 'code' === $options['type'] ? 'code' : 'id';
@@ -64,6 +65,7 @@ class GroupRepository extends EntityRepository implements GroupRepositoryInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createAssociationDatagridQueryBuilder()
     {
         $qb = $this->createQueryBuilder('g');
@@ -95,6 +97,7 @@ class GroupRepository extends EntityRepository implements GroupRepositoryInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['code' => $code]);
@@ -103,6 +106,7 @@ class GroupRepository extends EntityRepository implements GroupRepositoryInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];

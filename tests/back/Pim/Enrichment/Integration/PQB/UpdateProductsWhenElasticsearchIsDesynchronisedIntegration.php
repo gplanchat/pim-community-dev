@@ -19,6 +19,7 @@ use Akeneo\Test\Integration\Configuration;
 
 final class UpdateProductsWhenElasticsearchIsDesynchronisedIntegration extends AbstractProductQueryBuilderTestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();
@@ -64,6 +65,7 @@ final class UpdateProductsWhenElasticsearchIsDesynchronisedIntegration extends A
         }
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

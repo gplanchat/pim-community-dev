@@ -17,6 +17,7 @@ use Webmozart\Assert\Assert;
  */
 final class SqlGetAttributesIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -121,6 +122,7 @@ final class SqlGetAttributesIntegration extends TestCase
     /**
      * @return Configuration
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

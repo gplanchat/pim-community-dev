@@ -12,6 +12,7 @@ class UpdateCustomAppSecretQuery implements UpdateCustomAppSecretQueryInterface
     ) {
     }
 
+    #[\Override]
     public function execute($clientId, $clientSecret): void
     {
         $query = <<<SQL

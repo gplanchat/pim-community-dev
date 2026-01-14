@@ -33,6 +33,7 @@ class MaintenanceModeSubscriber implements EventSubscriberInterface
     /**
      * @return array<string, string>
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

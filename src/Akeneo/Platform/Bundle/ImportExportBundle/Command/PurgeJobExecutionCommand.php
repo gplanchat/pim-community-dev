@@ -24,7 +24,7 @@ class PurgeJobExecutionCommand extends Command
     protected static $defaultDescription = 'Purge all jobs execution before a given date.
              If the value is equals to 0, it will delete everything. By default 90 days, minimum is 0 day';
 
-    private const DEFAULT_NUMBER_OF_DAYS = 90;
+    private const int DEFAULT_NUMBER_OF_DAYS = 90;
 
     public function __construct(
         private PurgeJobExecution $purgeJobExecution,
@@ -35,6 +35,7 @@ class PurgeJobExecutionCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -63,6 +64,7 @@ class PurgeJobExecutionCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $days = $this->getDays($input, $output);

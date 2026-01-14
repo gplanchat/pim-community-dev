@@ -33,6 +33,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -41,6 +42,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->attributeGroups->get($identifier);
@@ -49,6 +51,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($attributeGroup, array $options = [])
     {
         if (!$attributeGroup instanceof AttributeGroupInterface) {
@@ -61,6 +64,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdToLabelOrderedBySortOrder()
     {
         throw new NotImplementedException(__METHOD__);
@@ -69,6 +73,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findDefaultAttributeGroup()
     {
         throw new NotImplementedException(__METHOD__);
@@ -77,6 +82,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaxSortOrder()
     {
         throw new NotImplementedException(__METHOD__);
@@ -85,6 +91,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -93,6 +100,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return $this->attributeGroups->toArray();
@@ -101,7 +109,8 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $attributeGroups = [];
         foreach ($this->attributeGroups as $attributeGroup) {
@@ -124,6 +133,7 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
@@ -132,11 +142,13 @@ class InMemoryAttributeGroupRepository implements AttributeGroupRepositoryInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function countAll(): int
     {
         return $this->attributeGroups->count();

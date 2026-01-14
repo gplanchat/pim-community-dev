@@ -15,7 +15,7 @@ use Akeneo\Tool\Component\Connector\Step\TaskletInterface;
  */
 final class PurgeVersioning implements TaskletInterface
 {
-    protected const JOB_CODE = 'versioning_purge';
+    protected const string JOB_CODE = 'versioning_purge';
 
     protected StepExecution $stepExecution;
 
@@ -24,11 +24,13 @@ final class PurgeVersioning implements TaskletInterface
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function execute(): void
     {
         $purgeOptions['batch_size'] = (int)$this->stepExecution->getJobParameters()->get('batch-size');

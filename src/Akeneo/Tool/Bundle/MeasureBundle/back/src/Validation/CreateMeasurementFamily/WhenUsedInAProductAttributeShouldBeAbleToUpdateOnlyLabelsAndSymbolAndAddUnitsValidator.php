@@ -38,6 +38,7 @@ class WhenUsedInAProductAttributeShouldBeAbleToUpdateOnlyLabelsAndSymbolAndAddUn
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function validate($saveMeasurementFamily, Constraint $constraint)
     {
         $isMeasureFamilyLockedForUpdates = $this->isThereAtLeastOneAttributeConfiguredWithMeasurementFamily

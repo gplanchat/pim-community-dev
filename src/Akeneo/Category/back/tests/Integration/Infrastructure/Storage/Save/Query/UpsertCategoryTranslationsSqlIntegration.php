@@ -19,6 +19,7 @@ class UpsertCategoryTranslationsSqlIntegration extends CategoryTestCase
     private GetCategoryInterface $getCategory;
     private UpsertCategoryTranslations $upsertCategoryTranslations;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -86,6 +87,7 @@ class UpsertCategoryTranslationsSqlIntegration extends CategoryTestCase
         $this->assertNull($createdCategory->getLabels()->getTranslation('fr_FR'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -26,6 +26,7 @@ final class NumberToStringDataConverter implements ValueDataConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttributes(AttributeInterface $sourceAttribute, AttributeInterface $targetAttribute): bool
     {
         return isset($this->supportedAttributeTypes[$sourceAttribute->getType()][$targetAttribute->getType()]);
@@ -34,6 +35,7 @@ final class NumberToStringDataConverter implements ValueDataConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(ValueInterface $sourceValue, AttributeInterface $targetAttribute): string
     {
         Assert::numeric($sourceValue->getData());

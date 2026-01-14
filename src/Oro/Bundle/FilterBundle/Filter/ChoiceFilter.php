@@ -15,6 +15,7 @@ class ChoiceFilter extends AbstractFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getFormType()
     {
         return ChoiceFilterType::class;
@@ -23,6 +24,7 @@ class ChoiceFilter extends AbstractFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data)
     {
         $data = $this->parseData($data);
@@ -48,6 +50,7 @@ class ChoiceFilter extends AbstractFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMetadata()
     {
         $formView = $this->getForm()->createView();

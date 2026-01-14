@@ -30,11 +30,13 @@ class GetAppConfirmationQueryIntegration extends TestCase
     private CreateUserGroup $createUserGroup;
     private CreateUser $createUser;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

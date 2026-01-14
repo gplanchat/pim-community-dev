@@ -21,11 +21,13 @@ class DeleteExpiredTokens implements TaskletInterface
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function execute(): void
     {
         $this->deleteExpiredTokensHandler->handle();

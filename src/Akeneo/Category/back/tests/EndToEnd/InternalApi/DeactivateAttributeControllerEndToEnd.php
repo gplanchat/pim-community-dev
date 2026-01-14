@@ -35,6 +35,7 @@ class DeactivateAttributeControllerEndToEnd extends ControllerIntegrationTestCas
 {
     private TemplateUuid $templateUuid;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -274,6 +275,7 @@ class DeactivateAttributeControllerEndToEnd extends ControllerIntegrationTestCas
         ]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

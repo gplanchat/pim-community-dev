@@ -62,6 +62,7 @@ class DataGridContext extends PimContext implements PageObjectAware
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setPageObjectFactory(PageObjectFactory $pageObjectFactory)
     {
         $this->pageFactory = $pageObjectFactory;
@@ -1342,7 +1343,8 @@ class DataGridContext extends PimContext implements PageObjectAware
      *
      * @param string|null $condition
      */
-    protected function wait(string $condition = null)
+    #[\Override]
+    protected function wait(?string $condition = null)
     {
         $this->getMainContext()->wait($condition);
     }
@@ -1350,11 +1352,13 @@ class DataGridContext extends PimContext implements PageObjectAware
     /**
      * @return \Behat\Behat\Context\ExtendedContextInterface
      */
+    #[\Override]
     protected function getNavigationContext(): NavigationContext
     {
         return $this->getMainContext()->getSubcontext('navigation');
     }
 
+    #[\Override]
     protected function getFixturesContext(): FixturesContext
     {
         return $this->getMainContext()->getSubcontext('fixtures');
@@ -1372,6 +1376,7 @@ class DataGridContext extends PimContext implements PageObjectAware
         return $this->datagrid;
     }
 
+    #[\Override]
     public function getCurrentPage(): PageObject
     {
         return $this->getNavigationContext()->getCurrentPage();

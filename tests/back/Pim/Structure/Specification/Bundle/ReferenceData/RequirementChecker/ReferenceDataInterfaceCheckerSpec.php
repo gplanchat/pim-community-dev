@@ -34,21 +34,27 @@ class ReferenceDataInterfaceCheckerSpec extends ObjectBehavior
 
 class ReferenceDataColor implements ReferenceDataInterface
 {
+    #[\Override]
     public function getId()
     {
     }
+    #[\Override]
     public function getCode()
     {
     }
+    #[\Override]
     public function setCode($code)
     {
     }
+    #[\Override]
     public function getSortOrder()
     {
     }
+    #[\Override]
     public static function getLabelProperty()
     {
     }
+    #[\Override]
     public function __toString()
     {
     }

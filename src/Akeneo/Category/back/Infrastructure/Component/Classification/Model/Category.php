@@ -46,6 +46,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -54,6 +55,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -64,6 +66,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -72,6 +75,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLeft($left)
     {
         $this->left = $left;
@@ -82,6 +86,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLeft()
     {
         return $this->left;
@@ -90,6 +95,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLevel($level)
     {
         $this->level = $level;
@@ -100,6 +106,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLevel()
     {
         return $this->level;
@@ -108,6 +115,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRight($right)
     {
         $this->right = $right;
@@ -118,6 +126,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRight()
     {
         return $this->right;
@@ -126,6 +135,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRoot($root)
     {
         $this->root = $root;
@@ -136,6 +146,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRoot()
     {
         return $this->root;
@@ -144,7 +155,8 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
-    public function setParent(CategoryInterface $parent = null)
+    #[\Override]
+    public function setParent(?CategoryInterface $parent = null)
     {
         $this->parent = $parent;
 
@@ -154,6 +166,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent()
     {
         return $this->parent;
@@ -162,6 +175,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addChild(CategoryInterface $child)
     {
         $child->setParent($this);
@@ -173,6 +187,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeChild(CategoryInterface $children)
     {
         $this->children->removeElement($children);
@@ -183,6 +198,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasChildren()
     {
         return count($this->getChildren()) > 0;
@@ -191,6 +207,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildren()
     {
         return $this->children;
@@ -199,6 +216,7 @@ class Category implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isRoot()
     {
         return null === $this->getParent();

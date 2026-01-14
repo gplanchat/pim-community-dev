@@ -34,6 +34,7 @@ class RemoverRegistry implements RemoverRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(RemoverInterface $remover)
     {
         if ($remover instanceof FieldRemoverInterface) {
@@ -49,6 +50,7 @@ class RemoverRegistry implements RemoverRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRemover($property)
     {
         $attribute = $this->getAttribute($property);
@@ -64,6 +66,7 @@ class RemoverRegistry implements RemoverRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFieldRemover($field)
     {
         foreach ($this->fieldRemovers as $remover) {
@@ -78,6 +81,7 @@ class RemoverRegistry implements RemoverRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeRemover(AttributeInterface $attribute)
     {
         foreach ($this->attributeRemovers as $remover) {

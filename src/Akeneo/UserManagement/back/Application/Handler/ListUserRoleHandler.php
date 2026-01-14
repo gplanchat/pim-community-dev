@@ -23,6 +23,7 @@ class ListUserRoleHandler implements ListUserRoleInterface
     /**
      * @return UserRole[]
      */
+    #[\Override]
     public function all(): array
     {
         $result = ($this->findAllUserRoles)();

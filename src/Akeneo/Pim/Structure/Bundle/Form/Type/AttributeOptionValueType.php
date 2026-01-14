@@ -30,6 +30,7 @@ class AttributeOptionValueType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $this->addFieldId($builder);
@@ -72,6 +73,7 @@ class AttributeOptionValueType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
@@ -84,6 +86,7 @@ class AttributeOptionValueType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_enrich_attribute_option_value';

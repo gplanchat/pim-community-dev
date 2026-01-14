@@ -207,6 +207,7 @@ class ProductAndProductModelDatasourceSpec extends ObjectBehavior
         );
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

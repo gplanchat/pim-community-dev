@@ -84,6 +84,7 @@ class AttributeDataCollector implements DataCollectorInterface
     /**
      * @return array
      */
+    #[\Override]
     public function collect(): array
     {
         $data = [

@@ -32,6 +32,7 @@ class FilesystemPurgeTest extends TestCase
         $this->assertFilesystemEmpty($filesystem);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

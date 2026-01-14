@@ -76,6 +76,7 @@ class CheckAttributeIsNotUsedAsLabelOnDeletionSubscriberIntegration extends Test
         $this->assertNotNull($this->get('pim_catalog.repository.attribute')->findOneByIdentifier('title'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

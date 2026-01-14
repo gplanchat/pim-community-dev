@@ -24,11 +24,13 @@ final class GetAverageRanksQuery implements GetAverageRanksQueryInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byFamilies(ChannelCode $channelCode, LocaleCode $localeCode, array $familyCodes): array
     {
         return $this->fetchByCodes($channelCode, $localeCode, DashboardProjectionType::FAMILY, $familyCodes);
     }
 
+    #[\Override]
     public function byCategories(ChannelCode $channelCode, LocaleCode $localeCode, array $categoryCodes): array
     {
         return $this->fetchByCodes($channelCode, $localeCode, DashboardProjectionType::CATEGORY, $categoryCodes);

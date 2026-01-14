@@ -13,8 +13,8 @@ use Webmozart\Assert\Assert;
 
 final class EnrichmentFollowUpContext implements Context
 {
-    private const IN_MEMORY_PRODUCT_TOTAL = 1259;
-    private const IN_MEMORY_INCOMPLETE_PRODUCT_TOTAL = 978;
+    private const int IN_MEMORY_PRODUCT_TOTAL = 1259;
+    private const int IN_MEMORY_INCOMPLETE_PRODUCT_TOTAL = 978;
 
     /** @var ChannelCompleteness[] */
     private $channelCompletenesses;

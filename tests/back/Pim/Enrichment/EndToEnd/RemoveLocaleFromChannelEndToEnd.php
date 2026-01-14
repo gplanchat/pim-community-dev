@@ -23,6 +23,7 @@ class RemoveLocaleFromChannelEndToEnd extends InternalApiTestCase
     private GetProductCompletenessRatio $getCompletenessRatio;
     private LocaleRepositoryInterface $localeRepository;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -152,6 +153,7 @@ JSON;
         $this->assertEquals($this->isActivatedLocale('br_FR'), false);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

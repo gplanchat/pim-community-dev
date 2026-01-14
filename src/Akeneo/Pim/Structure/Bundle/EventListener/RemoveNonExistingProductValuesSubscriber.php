@@ -49,6 +49,7 @@ final class RemoveNonExistingProductValuesSubscriber implements EventSubscriberI
         $this->createJobInstance = $createJobInstance;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

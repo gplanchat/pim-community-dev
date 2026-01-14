@@ -30,6 +30,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getItemsFromIdentifiers(array $identifiers)
     {
         $uuidsAsBytes = $this->getEntityManager()->getConnection()->fetchFirstColumn(
@@ -55,6 +56,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getItemsFromUuids(array $uuids): array
     {
         if ([] === $uuids) {
@@ -76,6 +78,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['identifier'];
@@ -84,6 +87,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         if (null === $identifier) {
@@ -101,6 +105,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAvailableAttributeIdsToExport(array $productIds)
     {
         $qb = $this->createQueryBuilder('p');
@@ -123,6 +128,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProductsByGroup(GroupInterface $group, $maxResults)
     {
         $products = $this
@@ -139,6 +145,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProductCountByGroup(GroupInterface $group)
     {
         $count = $this->createQueryBuilder('p')
@@ -154,6 +161,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countAll(): int
     {
         $qb = $this->createQueryBuilder('p')
@@ -167,6 +175,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttributeInFamily($productUuid, $attributeCode)
     {
         $queryBuilder = $this->createQueryBuilder('p')
@@ -186,6 +195,7 @@ class ProductRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function searchAfter(?ProductInterface $product, int $limit): array
     {
         $qb = $this->createQueryBuilder('p')

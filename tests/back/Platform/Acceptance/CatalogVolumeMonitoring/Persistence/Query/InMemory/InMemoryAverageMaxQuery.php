@@ -31,6 +31,7 @@ class InMemoryAverageMaxQuery implements AverageMaxQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): AverageMaxVolumes
     {
         $averageVolume = empty($this->values) ? 0 : intval(array_sum($this->values) / count($this->values));

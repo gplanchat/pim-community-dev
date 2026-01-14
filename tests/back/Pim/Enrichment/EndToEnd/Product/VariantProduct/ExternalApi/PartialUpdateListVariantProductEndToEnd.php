@@ -17,6 +17,7 @@ class PartialUpdateListVariantProductEndToEnd extends AbstractProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -267,6 +268,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

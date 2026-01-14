@@ -56,6 +56,7 @@ class UniqueValueValidator extends ConstraintValidator
      *
      * @see \Akeneo\Pim\Enrichment\Component\Product\Validator\ConstraintGuesser\UniqueValueGuesser
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof UniqueValue) {

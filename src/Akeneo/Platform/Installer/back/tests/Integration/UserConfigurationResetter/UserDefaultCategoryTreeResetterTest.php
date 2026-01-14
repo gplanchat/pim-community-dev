@@ -15,6 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class UserDefaultCategoryTreeResetterTest extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,6 +44,7 @@ class UserDefaultCategoryTreeResetterTest extends TestCase
         $this->assertUserDefaultCategoryTree('master');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

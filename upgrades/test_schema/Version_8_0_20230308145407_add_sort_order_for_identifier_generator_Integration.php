@@ -14,12 +14,13 @@ use Doctrine\DBAL\Connection;
  */
 final class Version_8_0_20230308145407_add_sort_order_for_identifier_generator_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230308145407_add_sort_order_for_identifier_generator';
+    private const string MIGRATION_NAME = '_8_0_20230308145407_add_sort_order_for_identifier_generator';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ final class Version_8_0_20230308145407_add_sort_order_for_identifier_generator_I
         $this->assertTrue($this->hasSortOrderColumn());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

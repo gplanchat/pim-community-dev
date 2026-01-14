@@ -30,11 +30,13 @@ class CategoryRepository extends EntityRepository implements ApiResourceReposito
         parent::__construct($entityManager, $entityManager->getClassMetadata($className));
     }
 
+    #[\Override]
     public function getIdentifierProperties()
     {
         return $this->categoryRepository->getIdentifierProperties();
     }
 
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->categoryRepository->findOneByIdentifier($identifier);
@@ -49,6 +51,7 @@ class CategoryRepository extends EntityRepository implements ApiResourceReposito
      *
      * @return array
      */
+    #[\Override]
     public function searchAfterOffset(array $searchFilters, array $orders, $limit, $offset)
     {
         $qb = $this->createQueryBuilder('r');
@@ -70,6 +73,7 @@ class CategoryRepository extends EntityRepository implements ApiResourceReposito
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(array $searchFilters = []): int
     {
         try {

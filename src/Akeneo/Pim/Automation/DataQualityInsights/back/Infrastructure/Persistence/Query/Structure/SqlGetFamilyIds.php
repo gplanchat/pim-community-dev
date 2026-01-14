@@ -27,6 +27,7 @@ final class SqlGetFamilyIds implements GetFamilyIds
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function fromActivatedAttributeIds(array $attributeIds): \Generator
     {
         if ([] === $attributeIds) {
@@ -53,6 +54,7 @@ SQL;
         }
     }
 
+    #[\Override]
     public function fromAttributeGroupCode(AttributeGroupCode $attributeGroupCode): \Generator
     {
         $query = <<<SQL

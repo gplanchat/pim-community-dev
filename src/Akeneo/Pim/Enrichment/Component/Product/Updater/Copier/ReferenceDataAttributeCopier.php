@@ -37,6 +37,7 @@ class ReferenceDataAttributeCopier extends AbstractAttributeCopier
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function copyAttributeData(
         EntityWithValuesInterface $fromEntityWithValues,
         EntityWithValuesInterface $toEntityWithValues,
@@ -68,6 +69,7 @@ class ReferenceDataAttributeCopier extends AbstractAttributeCopier
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttributes(AttributeInterface $fromAttribute, AttributeInterface $toAttribute)
     {
         $supportsFrom = in_array($fromAttribute->getType(), $this->supportedFromTypes);

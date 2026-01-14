@@ -36,6 +36,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -44,6 +45,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setId($id)
     {
         $this->id = $id;
@@ -54,6 +56,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setOption(AttributeOptionInterface $option)
     {
         $this->option = $option;
@@ -64,6 +67,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOption()
     {
         return $this->option;
@@ -72,6 +76,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLocale()
     {
         return $this->locale;
@@ -80,6 +85,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -90,6 +96,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setValue($value)
     {
         $this->value = $value;
@@ -100,6 +107,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValue()
     {
         return $this->value;
@@ -108,6 +116,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         return $this->value;
@@ -116,6 +125,7 @@ class AttributeOptionValue implements AttributeOptionValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->value = (string) $label;

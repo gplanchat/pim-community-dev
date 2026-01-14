@@ -59,6 +59,7 @@ class MediaAttributeCopier extends AbstractAttributeCopier
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function copyAttributeData(
         EntityWithValuesInterface $fromEntityWithValues,
         EntityWithValuesInterface $toEntityWithValues,

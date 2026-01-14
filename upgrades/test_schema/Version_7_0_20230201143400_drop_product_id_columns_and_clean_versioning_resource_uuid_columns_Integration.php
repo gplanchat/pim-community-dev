@@ -18,15 +18,17 @@ class Version_7_0_20230201143400_drop_product_id_columns_and_clean_versioning_re
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20230201143400_drop_product_id_columns_and_clean_versioning_resource_uuid_columns';
+    private const string MIGRATION_LABEL = '_7_0_20230201143400_drop_product_id_columns_and_clean_versioning_resource_uuid_columns';
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $this->cleanDatabase();
@@ -55,6 +57,7 @@ class Version_7_0_20230201143400_drop_product_id_columns_and_clean_versioning_re
         $this->assertNonProductRelatedVersionHasNoResourceUuid($nonProductVersionId);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -60,6 +60,7 @@ class JobParameters implements \IteratorAggregate, \Countable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->parameters);
@@ -68,6 +69,7 @@ class JobParameters implements \IteratorAggregate, \Countable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(): int
     {
         return count($this->parameters);

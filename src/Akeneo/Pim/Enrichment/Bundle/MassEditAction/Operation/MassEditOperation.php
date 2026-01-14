@@ -35,6 +35,7 @@ class MassEditOperation implements BatchableOperationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBatchConfig(): array
     {
         return [
@@ -46,6 +47,7 @@ class MassEditOperation implements BatchableOperationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getJobInstanceCode(): string
     {
         return $this->jobInstanceCode;

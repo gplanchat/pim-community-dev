@@ -19,6 +19,7 @@ class AsymmetricKeysGenerator implements AsymmetricKeysGeneratorInterface
     {
     }
 
+    #[\Override]
     public function generate(): AsymmetricKeys
     {
         /*

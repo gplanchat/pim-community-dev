@@ -20,6 +20,7 @@ class CsvInvalidItemWriter extends AbstractInvalidItemWriter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName(): string
     {
         return 'invalid_csv';
@@ -28,6 +29,7 @@ class CsvInvalidItemWriter extends AbstractInvalidItemWriter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getFilename(): string
     {
         return 'invalid_items.csv';
@@ -37,6 +39,7 @@ class CsvInvalidItemWriter extends AbstractInvalidItemWriter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getInputFileIterator(JobParameters $jobParameters): FileIteratorInterface
     {
         $filePath = $jobParameters->get('storage')['file_path'];

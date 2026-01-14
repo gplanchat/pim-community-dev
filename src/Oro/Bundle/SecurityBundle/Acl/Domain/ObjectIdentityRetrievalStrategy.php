@@ -28,6 +28,7 @@ class ObjectIdentityRetrievalStrategy implements ObjectIdentityRetrievalStrategy
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getObjectIdentity($domainObject)
     {
         try {

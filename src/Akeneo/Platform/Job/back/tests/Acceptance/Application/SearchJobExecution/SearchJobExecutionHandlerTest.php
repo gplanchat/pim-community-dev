@@ -19,6 +19,7 @@ class SearchJobExecutionHandlerTest extends AcceptanceTestCase
     private InMemorySearchJobExecution $searchJobExecution;
     private SearchJobExecutionHandler $handler;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->searchJobExecution = $this->get(SearchJobExecutionInterface::class);

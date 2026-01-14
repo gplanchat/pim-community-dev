@@ -13,6 +13,7 @@ use Akeneo\Tool\Component\Analytics\ActiveEventSubscriptionCountQuery;
  */
 class ActiveEventSubscriptionCountInMemory implements ActiveEventSubscriptionCountQuery
 {
+    #[\Override]
     public function fetch(): int
     {
         return 666;

@@ -29,6 +29,7 @@ class UpsertCategoryBaseSql implements UpsertCategoryBase
     ) {
     }
 
+    #[\Override]
     public function execute(Category $categoryModel): void
     {
         if ($this->getCategory->byCode((string) $categoryModel->getCode())) {

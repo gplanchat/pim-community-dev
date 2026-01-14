@@ -26,6 +26,7 @@ class PurgeAuditErrorCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $before = new \DateTimeImmutable('now - 10 days', new \DateTimeZone('UTC'));

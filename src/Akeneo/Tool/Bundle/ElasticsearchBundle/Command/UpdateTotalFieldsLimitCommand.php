@@ -39,6 +39,7 @@ class UpdateTotalFieldsLimitCommand extends Command
         $this->indexesToUpdate = $indexesToUpdate;
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $newIndexLimit = $this->getTotalFieldsLimit->getLimit();

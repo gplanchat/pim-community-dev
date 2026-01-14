@@ -20,6 +20,7 @@ class DbalSelectConnectionCodeByClientIdQueryIntegration extends TestCase
     private ConnectionLoader $connectionLoader;
     private DbalSelectConnectionCodeByClientIdQuery $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -28,6 +29,7 @@ class DbalSelectConnectionCodeByClientIdQueryIntegration extends TestCase
         $this->query = $this->get(DbalSelectConnectionCodeByClientIdQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

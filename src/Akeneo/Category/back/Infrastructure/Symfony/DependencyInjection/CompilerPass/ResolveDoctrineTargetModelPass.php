@@ -20,6 +20,7 @@ class ResolveDoctrineTargetModelPass extends AbstractResolveDoctrineTargetModelP
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getParametersMapping(): array
     {
         return [

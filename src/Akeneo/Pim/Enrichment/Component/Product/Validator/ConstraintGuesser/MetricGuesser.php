@@ -19,6 +19,7 @@ class MetricGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessConstraints(AttributeInterface $attribute)
     {
         $numericGuesser = new NumericGuesser();
@@ -29,6 +30,7 @@ class MetricGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAttribute(AttributeInterface $attribute)
     {
         return AttributeTypes::METRIC === $attribute->getType();

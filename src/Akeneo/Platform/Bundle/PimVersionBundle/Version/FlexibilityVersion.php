@@ -18,29 +18,33 @@ namespace Akeneo\Platform\Bundle\PimVersionBundle\Version;
 final class FlexibilityVersion implements PimVersion
 {
     /** @staticvar string */
-    const VERSION_CODENAME = 'Buckwheat';
+    const string VERSION_CODENAME = 'Buckwheat';
 
     /** @staticvar string */
-    const EDITION_NAME = 'EE';
+    const string EDITION_NAME = 'EE';
 
     /** @staticvar string **/
-    private const EDITION_CODE = 'flexibility_instance';
+    private const string EDITION_CODE = 'flexibility_instance';
 
+    #[\Override]
     public function versionCodename(): string
     {
         return self::VERSION_CODENAME;
     }
 
+    #[\Override]
     public function editionName(): string
     {
         return self::EDITION_NAME;
     }
 
+    #[\Override]
     public function isSaas(): bool
     {
         return false;
     }
 
+    #[\Override]
     public function isEditionCode(string $editionCode): bool
     {
         return $editionCode === self::EDITION_CODE;

@@ -22,6 +22,7 @@ class EventSubscriptionsLimitValidator extends ConstraintValidator
     {
     }
 
+    #[\Override]
     public function validate($eventSubscription, Constraint $constraint): void
     {
         if (!$constraint instanceof EventSubscriptionsLimit) {

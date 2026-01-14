@@ -14,6 +14,7 @@ class InMemoryJobInstanceSaver implements SaverInterface
     /**
      * @param JobInstance $jobInstance
      */
+    #[\Override]
     public function save($jobInstance, array $options = []): void
     {
         $this->jobInstances[$jobInstance->getCode()] = $jobInstance;

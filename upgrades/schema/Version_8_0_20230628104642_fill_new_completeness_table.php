@@ -19,6 +19,7 @@ final class Version_8_0_20230628104642_fill_new_completeness_table extends Abstr
 {
     private ?ContainerInterface $container = null;
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Fills the pim_catalog_completeness table based on the data of the pim_catalog_completeness table';
@@ -27,6 +28,7 @@ final class Version_8_0_20230628104642_fill_new_completeness_table extends Abstr
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -58,6 +60,7 @@ final class Version_8_0_20230628104642_fill_new_completeness_table extends Abstr
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
@@ -66,7 +69,8 @@ final class Version_8_0_20230628104642_fill_new_completeness_table extends Abstr
     /**
      * {@inheritdoc}
      */
-    public function setContainer(ContainerInterface $container = null): void
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }

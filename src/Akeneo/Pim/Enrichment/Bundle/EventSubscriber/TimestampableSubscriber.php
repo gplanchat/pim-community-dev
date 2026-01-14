@@ -21,6 +21,7 @@ class TimestampableSubscriber implements EventSubscriber
      *
      * @return array
      */
+    #[\Override]
     public function getSubscribedEvents()
     {
         return [

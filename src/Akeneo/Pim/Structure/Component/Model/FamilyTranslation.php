@@ -24,6 +24,7 @@ class FamilyTranslation extends AbstractTranslation implements FamilyTranslation
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->label = $label;
@@ -34,6 +35,7 @@ class FamilyTranslation extends AbstractTranslation implements FamilyTranslation
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         return $this->label;

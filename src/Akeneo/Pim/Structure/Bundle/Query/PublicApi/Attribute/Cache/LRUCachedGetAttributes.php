@@ -30,6 +30,7 @@ final class LRUCachedGetAttributes implements GetAttributes, CachedQueryInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function forCodes(array $attributeCodes): array
     {
         if (empty($attributeCodes)) {
@@ -48,6 +49,7 @@ final class LRUCachedGetAttributes implements GetAttributes, CachedQueryInterfac
      *
      * This method does not use the forCodes method for performance reason
      */
+    #[\Override]
     public function forCode(string $attributeCode): ?Attribute
     {
         $fetchNonFoundAttributeCodes = function (string $attributeCode): ?Attribute {
@@ -57,11 +59,13 @@ final class LRUCachedGetAttributes implements GetAttributes, CachedQueryInterfac
         return $this->cache->getForKey($attributeCode, $fetchNonFoundAttributeCodes);
     }
 
+    #[\Override]
     public function forType(string $attributeType): array
     {
         return $this->getAttributes->forType($attributeType);
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->cache = new LRUCache(1000);

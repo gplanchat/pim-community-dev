@@ -24,6 +24,7 @@ final class InMemoryGetOwnedCategories implements GetOwnedCategories
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function forUserId(array $categoryCodes, int $userId): array
     {
         /** @var UserInterface $user */

@@ -12,11 +12,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230131125133_create_identifier_generator_family_nomenclature_tables extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Create identifier generator family nomenclature tables';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(<<<SQL
@@ -38,6 +40,7 @@ final class Version_8_0_20230131125133_create_identifier_generator_family_nomenc
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

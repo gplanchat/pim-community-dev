@@ -18,12 +18,13 @@ use Doctrine\DBAL\Connection;
 
 class UserUiLocaleResetter implements UserConfigurationResetterInterface
 {
-    private const DEFAULT_UI_LOCALE_CODE = 'en_US';
+    private const string DEFAULT_UI_LOCALE_CODE = 'en_US';
 
     public function __construct(private readonly Connection $connection)
     {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $this->connection->executeStatement(<<<SQL

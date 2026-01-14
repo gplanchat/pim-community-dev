@@ -28,6 +28,7 @@ class GroupTypeUpdater implements ObjectUpdaterInterface
      *     ]
      * ]
      */
+    #[\Override]
     public function update($groupType, array $data, array $options = [])
     {
         if (!$groupType instanceof GroupTypeInterface) {

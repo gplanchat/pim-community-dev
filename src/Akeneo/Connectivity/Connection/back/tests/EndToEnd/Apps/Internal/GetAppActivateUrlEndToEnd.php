@@ -19,6 +19,7 @@ class GetAppActivateUrlEndToEnd extends WebTestCase
 {
     private FakeWebMarketplaceApi $webMarketplaceApi;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -28,6 +29,7 @@ class GetAppActivateUrlEndToEnd extends WebTestCase
         $this->get('feature_flags')->enable('marketplace_activate');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

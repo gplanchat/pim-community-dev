@@ -17,6 +17,7 @@ class FieldProperty extends AbstractProperty
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function initialize()
     {
         if ($this->getOr(self::FRONTEND_TYPE_KEY) === self::TYPE_SELECT) {
@@ -37,6 +38,7 @@ class FieldProperty extends AbstractProperty
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getRawValue(ResultRecordInterface $record)
     {
         try {

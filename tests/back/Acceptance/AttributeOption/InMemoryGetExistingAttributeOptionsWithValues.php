@@ -23,6 +23,7 @@ final class InMemoryGetExistingAttributeOptionsWithValues implements GetExisting
         $this->attributeOptionRepository = $attributeOptionRepository;
     }
 
+    #[\Override]
     public function fromAttributeCodeAndOptionCodes(array $keys): array
     {
         $attributeOptions = $this->attributeOptionRepository->findAll();

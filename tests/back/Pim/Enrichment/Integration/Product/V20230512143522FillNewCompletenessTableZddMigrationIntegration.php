@@ -48,6 +48,7 @@ final class V20230512143522FillNewCompletenessTableZddMigrationIntegration exten
         }
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -61,6 +62,7 @@ final class V20230512143522FillNewCompletenessTableZddMigrationIntegration exten
         }
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $kernel = new \Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
@@ -82,6 +84,7 @@ final class V20230512143522FillNewCompletenessTableZddMigrationIntegration exten
         $consoleApp->run($input, $output);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

@@ -41,6 +41,7 @@ class AclRoleType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         foreach ($options['privilegeConfigOption'] as $fieldName => $config) {
@@ -130,6 +131,7 @@ class AclRoleType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
@@ -144,6 +146,7 @@ class AclRoleType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_user_role_form';

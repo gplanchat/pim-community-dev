@@ -25,6 +25,7 @@ class OptionsNormalizer implements NormalizerInterface, CacheableSupportsMethodI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($optionsValue, $format = null, array $context = [])
     {
         $locale = isset($context['data_locale']) ? $context['data_locale'] : null;
@@ -51,11 +52,13 @@ class OptionsNormalizer implements NormalizerInterface, CacheableSupportsMethodI
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return 'datagrid' === $format && $data instanceof OptionsValueInterface;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

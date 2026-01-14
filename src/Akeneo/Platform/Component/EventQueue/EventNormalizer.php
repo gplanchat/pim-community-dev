@@ -15,11 +15,13 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
  */
 class EventNormalizer implements NormalizerInterface, DenormalizerInterface
 {
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof Event;
     }
 
+    #[\Override]
     public function supportsDenormalization($data, $type, $format = null): bool
     {
         return is_subclass_of($type, Event::class);
@@ -28,6 +30,7 @@ class EventNormalizer implements NormalizerInterface, DenormalizerInterface
     /**
      * @param Event $object
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = []): array
     {
         if (false === $this->supportsNormalization($object, $format)) {
@@ -45,6 +48,7 @@ class EventNormalizer implements NormalizerInterface, DenormalizerInterface
         ];
     }
 
+    #[\Override]
     public function denormalize($data, $type, $format = null, array $context = []): Event
     {
         if (false === $this->supportsDenormalization($data, $type, $format)) {

@@ -15,12 +15,13 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_8_0_20230110131126_update_target_column_for_identifier_generators_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230110131126_update_target_column_for_identifier_generators';
+    private const string MIGRATION_NAME = '_8_0_20230110131126_update_target_column_for_identifier_generators';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -73,6 +74,7 @@ SQL);
         return count($rows) >= 1;
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

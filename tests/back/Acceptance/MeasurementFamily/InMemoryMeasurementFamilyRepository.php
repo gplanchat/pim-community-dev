@@ -23,6 +23,7 @@ class InMemoryMeasurementFamilyRepository implements MeasurementFamilyRepository
     /** @var MeasurementFamily[] */
     private $measurementFamilies = [];
 
+    #[\Override]
     public function all(): array
     {
         if (empty($this->measurementFamilies)) {
@@ -32,6 +33,7 @@ class InMemoryMeasurementFamilyRepository implements MeasurementFamilyRepository
         return $this->measurementFamilies;
     }
 
+    #[\Override]
     public function getByCode(MeasurementFamilyCode $measurementFamilyCode): MeasurementFamily
     {
         if (empty($this->measurementFamilies)) {
@@ -69,11 +71,13 @@ class InMemoryMeasurementFamilyRepository implements MeasurementFamilyRepository
         ];
     }
 
+    #[\Override]
     public function save(MeasurementFamily $measurementFamily)
     {
         $this->measurementFamilies[$measurementFamily->normalize()['code']] = $measurementFamily;
     }
 
+    #[\Override]
     public function countAllOthers(MeasurementFamilyCode $excludedMeasurementFamilyCode): int
     {
         if (empty($this->measurementFamilies)) {
@@ -85,6 +89,7 @@ class InMemoryMeasurementFamilyRepository implements MeasurementFamilyRepository
             : count($this->measurementFamilies);
     }
 
+    #[\Override]
     public function deleteByCode(MeasurementFamilyCode $measurementFamilyCode)
     {
         if (!isset($this->measurementFamilies[$measurementFamilyCode->normalize()])) {
@@ -94,6 +99,7 @@ class InMemoryMeasurementFamilyRepository implements MeasurementFamilyRepository
         unset($this->measurementFamilies[$measurementFamilyCode->normalize()]);
     }
 
+    #[\Override]
     public function clear(): void
     {
         $this->measurementFamilies = [];

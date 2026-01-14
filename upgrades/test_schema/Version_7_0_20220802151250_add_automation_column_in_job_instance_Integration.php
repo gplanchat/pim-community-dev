@@ -21,11 +21,12 @@ final class Version_7_0_20220802151250_add_automation_column_in_job_instance_Int
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220802151250_add_automation_column_in_job_instance';
-    private const TABLE_NAME = 'akeneo_batch_job_instance';
+    private const string MIGRATION_LABEL = '_7_0_20220802151250_add_automation_column_in_job_instance';
+    private const string TABLE_NAME = 'akeneo_batch_job_instance';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -117,6 +118,7 @@ final class Version_7_0_20220802151250_add_automation_column_in_job_instance_Int
         return count($rows) >= 1;
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

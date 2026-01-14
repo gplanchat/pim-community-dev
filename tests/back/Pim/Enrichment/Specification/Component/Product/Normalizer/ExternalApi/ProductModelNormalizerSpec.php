@@ -144,6 +144,7 @@ class ProductModelNormalizerSpec extends ObjectBehavior
         $normalizedProduct->shouldHaveValues($productStandard);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

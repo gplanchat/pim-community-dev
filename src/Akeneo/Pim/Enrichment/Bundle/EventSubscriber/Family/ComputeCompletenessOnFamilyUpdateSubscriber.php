@@ -77,6 +77,7 @@ final class ComputeCompletenessOnFamilyUpdateSubscriber implements EventSubscrib
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

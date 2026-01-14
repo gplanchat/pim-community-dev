@@ -35,6 +35,7 @@ class DatagridControllerIntegration extends ControllerIntegrationTestCase
         Assert::assertContains('Redactor', $groupNames);
     }
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -48,6 +49,7 @@ class DatagridControllerIntegration extends ControllerIntegrationTestCase
         $this->get('pim_connector.doctrine.cache_clearer')->clear();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

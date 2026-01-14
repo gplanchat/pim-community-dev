@@ -19,6 +19,7 @@ final class FakeNotifier implements NotifierInterface
 
     private $notificationSent = [];
 
+    #[\Override]
     public function notify(NotificationInterface $notification, array $users)
     {
         foreach ($users as $user) {

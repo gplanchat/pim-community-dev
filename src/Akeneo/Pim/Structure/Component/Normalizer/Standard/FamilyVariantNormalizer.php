@@ -31,6 +31,7 @@ class FamilyVariantNormalizer implements NormalizerInterface, CacheableSupportsM
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($familyVariant, $format = null, array $context = []): array
     {
         return [
@@ -44,11 +45,13 @@ class FamilyVariantNormalizer implements NormalizerInterface, CacheableSupportsM
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof FamilyVariantInterface && 'standard' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

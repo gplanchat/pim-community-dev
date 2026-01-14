@@ -24,6 +24,7 @@ class CollectProductValidationErrorEndToEnd extends ApiTestCase
     private ?FamilyLoader $familyLoader;
     private ?Client $elasticsearch;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ class CollectProductValidationErrorEndToEnd extends ApiTestCase
         $this->elasticsearch = $this->get('akeneo_connectivity.client.connection_error');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -37,6 +37,7 @@ class CreateAttributeRequirementSubscriber implements EventSubscriber
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSubscribedEvents()
     {
         return ['prePersist'];

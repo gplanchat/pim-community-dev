@@ -28,6 +28,7 @@ class ResolveDoctrineTargetRepositoryPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $this->resolveTargetRepositories($container);

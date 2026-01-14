@@ -49,6 +49,7 @@ class FilePersistedFeatureFlags implements FeatureFlags
         file_put_contents($this->filepath, json_encode($enabledFeatures));
     }
 
+    #[\Override]
     public function isEnabled($feature): bool
     {
         $this->throwExceptionIfFlagDoesNotExist($feature);
@@ -57,6 +58,7 @@ class FilePersistedFeatureFlags implements FeatureFlags
         return isset($content[$feature]);
     }
 
+    #[\Override]
     public function all(): array
     {
         $featureFlagNames = array_keys($this->registry->all());

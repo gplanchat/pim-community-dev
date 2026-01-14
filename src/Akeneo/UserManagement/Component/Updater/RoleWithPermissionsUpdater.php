@@ -18,7 +18,7 @@ use Webmozart\Assert\Assert;
  */
 final class RoleWithPermissionsUpdater implements ObjectUpdaterInterface
 {
-    private const ACL_DEFAULT_EXTENSION = 'action';
+    private const string ACL_DEFAULT_EXTENSION = 'action';
 
     private ObjectUpdaterInterface $roleUpdater;
     private AclManager $aclManager;
@@ -29,6 +29,7 @@ final class RoleWithPermissionsUpdater implements ObjectUpdaterInterface
         $this->aclManager = $aclManager;
     }
 
+    #[\Override]
     public function update($roleWithPermissions, array $data, array $options = []): self
     {
         Assert::isInstanceOf($roleWithPermissions, RoleWithPermissions::class);

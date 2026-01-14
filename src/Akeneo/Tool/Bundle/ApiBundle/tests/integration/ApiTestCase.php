@@ -52,6 +52,7 @@ abstract class ApiTestCase extends WebTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         static::bootKernel(['debug' => false]);
@@ -248,6 +249,7 @@ abstract class ApiTestCase extends WebTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         $connectionCloser = $this->get('akeneo_integration_tests.doctrine.connection.connection_closer');

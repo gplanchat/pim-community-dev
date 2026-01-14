@@ -107,6 +107,7 @@ class ClassifyProductModelIntegration extends TestCase
         $this->assertEquals($category->getCode(), 'supplier_zaro');
     }
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -143,6 +144,7 @@ class ClassifyProductModelIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

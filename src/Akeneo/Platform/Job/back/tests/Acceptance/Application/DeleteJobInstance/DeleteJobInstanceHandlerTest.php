@@ -23,6 +23,7 @@ final class DeleteJobInstanceHandlerTest extends AcceptanceTestCase
     private InMemoryDeleteJobInstance $deleteJobInstance;
     private InMemorySecurityFacade $securityFacade;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

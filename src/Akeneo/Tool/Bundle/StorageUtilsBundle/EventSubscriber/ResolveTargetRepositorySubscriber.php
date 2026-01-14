@@ -22,6 +22,7 @@ class ResolveTargetRepositorySubscriber implements EventSubscriber
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSubscribedEvents()
     {
         return [

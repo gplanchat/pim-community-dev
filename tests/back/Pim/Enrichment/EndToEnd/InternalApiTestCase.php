@@ -21,6 +21,7 @@ abstract class InternalApiTestCase extends TestCase
     /** @var HttpKernelBrowser */
     protected $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

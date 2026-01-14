@@ -26,6 +26,7 @@ class OroSecurityExtension extends AbstractExtension
      *
      * @return array An array of functions
      */
+    #[\Override]
     public function getFunctions()
     {
         return [

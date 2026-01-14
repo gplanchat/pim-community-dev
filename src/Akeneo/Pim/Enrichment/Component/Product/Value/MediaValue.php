@@ -31,6 +31,7 @@ class MediaValue extends AbstractValue implements MediaValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData(): ?FileInfoInterface
     {
         return $this->data;
@@ -39,6 +40,7 @@ class MediaValue extends AbstractValue implements MediaValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         return null !== $this->data ? $this->data->getKey() : '';
@@ -47,6 +49,7 @@ class MediaValue extends AbstractValue implements MediaValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof MediaValueInterface ||

@@ -21,6 +21,7 @@ class ProductCompletenessCollectionNormalizer implements NormalizerInterface, Ca
      *
      * @param ProductCompletenessCollection $completenesses
      */
+    #[\Override]
     public function normalize($completenesses, $format = null, array $context = [])
     {
         $data = [];
@@ -37,6 +38,7 @@ class ProductCompletenessCollectionNormalizer implements NormalizerInterface, Ca
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return
@@ -46,6 +48,7 @@ class ProductCompletenessCollectionNormalizer implements NormalizerInterface, Ca
             $data instanceof ProductCompletenessCollection;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

@@ -25,6 +25,7 @@ class ProduceEventOnSingleProductModelDeletionIntegration extends TestCase
     private ObjectUpdaterInterface $productModelUpdater;
     private RemoverInterface $productModelRemover;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -48,6 +49,7 @@ class ProduceEventOnSingleProductModelDeletionIntegration extends TestCase
         $this->assertEventCount(1, ProductModelRemoved::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

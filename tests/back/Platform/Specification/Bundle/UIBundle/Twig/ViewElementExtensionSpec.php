@@ -184,6 +184,7 @@ class ViewElementExtensionSpec extends ObjectBehavior
         $this->getViewElementAliases([], 'foo')->shouldReturn([]);
     }
 
+    #[\Override]
     function getMatchers(): array
     {
         return [

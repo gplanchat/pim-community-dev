@@ -16,7 +16,7 @@ class MigrateToUuidFillProductUuid implements MigrateToUuidStep
     use MigrateToUuidTrait;
     use StatusAwareTrait;
 
-    private const BATCH_SIZE = 1000;
+    private const int BATCH_SIZE = 1000;
 
     public function __construct(
         private Connection $connection,
@@ -24,21 +24,25 @@ class MigrateToUuidFillProductUuid implements MigrateToUuidStep
     ) {
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Generates uuid4 for every product';
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'fill_product_uuid';
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         return $this->getMissingProductUuidCount();
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         $sql = <<<SQL
@@ -53,6 +57,7 @@ class MigrateToUuidFillProductUuid implements MigrateToUuidStep
         return (bool) $this->connection->fetchOne($sql);
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $logContext = $context->logContext;

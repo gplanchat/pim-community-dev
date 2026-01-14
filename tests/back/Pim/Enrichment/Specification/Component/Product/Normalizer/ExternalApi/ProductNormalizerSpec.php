@@ -192,6 +192,7 @@ class ProductNormalizerSpec extends ObjectBehavior
         $normalizedProduct->shouldHaveAssociations($productStandard);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

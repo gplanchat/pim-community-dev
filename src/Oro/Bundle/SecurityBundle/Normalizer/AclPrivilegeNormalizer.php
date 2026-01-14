@@ -21,6 +21,7 @@ final class AclPrivilegeNormalizer implements NormalizerInterface, CacheableSupp
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof AclPrivilege && in_array($format, $this->supportedFormats);
@@ -29,6 +30,7 @@ final class AclPrivilegeNormalizer implements NormalizerInterface, CacheableSupp
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($privilege, $format = null, array $context = [])
     {
         Assert::isInstanceOf($privilege, AclPrivilege::class);
@@ -53,6 +55,7 @@ final class AclPrivilegeNormalizer implements NormalizerInterface, CacheableSupp
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

@@ -59,6 +59,7 @@ class MediaCount implements MediaCountQuery
         $this->client = $client;
     }
 
+    #[\Override]
     public function countFiles(): int
     {
         $fieldPaths = $this->fetchESFieldPathsForAttributesOfType('pim_catalog_file');
@@ -66,6 +67,7 @@ class MediaCount implements MediaCountQuery
         return $this->countMediasFromES($fieldPaths);
     }
 
+    #[\Override]
     public function countImages(): int
     {
         $fieldPaths = $this->fetchESFieldPathsForAttributesOfType('pim_catalog_image');

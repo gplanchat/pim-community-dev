@@ -34,6 +34,7 @@ class BinaryImageGeneratorIntegration extends TestCase
     private AttributeImage $attributeImage;
     private FileInfoInterface $fileInfo;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -222,6 +223,7 @@ class BinaryImageGeneratorIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

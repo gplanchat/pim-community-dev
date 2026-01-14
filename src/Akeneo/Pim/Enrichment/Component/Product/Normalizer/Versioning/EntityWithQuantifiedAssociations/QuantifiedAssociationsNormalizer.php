@@ -15,6 +15,7 @@ class QuantifiedAssociationsNormalizer implements NormalizerInterface, Cacheable
      *
      * @param EntityWithQuantifiedAssociationsInterface $entityWithQuantifiedAssociations
      */
+    #[\Override]
     public function normalize($entityWithQuantifiedAssociations, $format = null, array $context = [])
     {
         $quantifiedAssociationsNormalized = $entityWithQuantifiedAssociations->normalizeQuantifiedAssociations();
@@ -58,11 +59,13 @@ class QuantifiedAssociationsNormalizer implements NormalizerInterface, Cacheable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof EntityWithQuantifiedAssociationsInterface && $format === 'flat';
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

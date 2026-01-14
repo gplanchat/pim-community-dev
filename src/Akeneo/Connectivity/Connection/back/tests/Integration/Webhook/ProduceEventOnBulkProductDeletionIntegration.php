@@ -23,6 +23,7 @@ class ProduceEventOnBulkProductDeletionIntegration extends TestCase
     private BulkSaverInterface $productSaver;
     private BulkRemoverInterface $productRemover;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -45,6 +46,7 @@ class ProduceEventOnBulkProductDeletionIntegration extends TestCase
         $this->assertEventCount($count, ProductRemoved::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

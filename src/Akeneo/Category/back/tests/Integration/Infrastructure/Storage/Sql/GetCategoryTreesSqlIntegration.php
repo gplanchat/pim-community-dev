@@ -17,10 +17,11 @@ use Akeneo\Test\Integration\Configuration;
  */
 class GetCategoryTreesSqlIntegration extends CategoryTestCase
 {
-    private const TEMPLATE_UUID = '02274dac-e99a-4e1d-8f9b-794d4c3ba330';
+    private const string TEMPLATE_UUID = '02274dac-e99a-4e1d-8f9b-794d4c3ba330';
 
     private CategoryDoctrine|CategoryTree $categoryParent;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -119,6 +120,7 @@ class GetCategoryTreesSqlIntegration extends CategoryTestCase
         ]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -127,6 +127,7 @@ class Index extends Grid
         return $this;
     }
 
+    #[\Override]
     public function findField($locator)
     {
         if ($locator === 'Include sub-categories') {
@@ -189,6 +190,7 @@ class Index extends Grid
      *
      * This method is overridden in this class because we have to wait modal to be display before continue
      */
+    #[\Override]
     public function clickCreationLink()
     {
         $this->spin(function () {

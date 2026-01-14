@@ -26,11 +26,13 @@ class MetricNormalizer extends AbstractValueDataNormalizer implements CacheableS
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof MetricInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -41,6 +43,7 @@ class MetricNormalizer extends AbstractValueDataNormalizer implements CacheableS
      *
      * @param MetricInterface $object
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         $context = $this->resolveContext($context);
@@ -67,6 +70,7 @@ class MetricNormalizer extends AbstractValueDataNormalizer implements CacheableS
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function doNormalize($object, $format = null, array $context = [])
     {
         Assert::implementsInterface($object, MetricInterface::class);

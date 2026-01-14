@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_8_0_20230127150758_add_ondelete_cascade_on_category_template_attributes extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(
@@ -24,6 +25,7 @@ final class Version_8_0_20230127150758_add_ondelete_cascade_on_category_template
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

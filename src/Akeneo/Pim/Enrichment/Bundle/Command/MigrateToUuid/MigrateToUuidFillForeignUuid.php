@@ -15,7 +15,7 @@ class MigrateToUuidFillForeignUuid implements MigrateToUuidStep
     use MigrateToUuidTrait;
     use StatusAwareTrait;
 
-    private const BATCH_SIZE = 10000;
+    private const int BATCH_SIZE = 10000;
 
     public function __construct(
         private Connection $connection,
@@ -23,16 +23,19 @@ class MigrateToUuidFillForeignUuid implements MigrateToUuidStep
     ) {
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Fill foreign tables with product uuids';
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'fill_foreign_uuid';
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         foreach ($this->getTablesWithoutProductTable() as $tableName => $columnNames) {
@@ -44,6 +47,7 @@ class MigrateToUuidFillForeignUuid implements MigrateToUuidStep
         return false;
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         $count = 0;
@@ -55,6 +59,7 @@ class MigrateToUuidFillForeignUuid implements MigrateToUuidStep
         return $count;
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $logContext = $context->logContext;

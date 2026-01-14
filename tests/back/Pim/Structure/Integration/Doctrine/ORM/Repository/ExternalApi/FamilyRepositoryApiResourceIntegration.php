@@ -162,6 +162,7 @@ class FamilyRepositoryApiResourceIntegration extends TestCase
         Assert::assertEquals('other', $families[0]->getCode());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

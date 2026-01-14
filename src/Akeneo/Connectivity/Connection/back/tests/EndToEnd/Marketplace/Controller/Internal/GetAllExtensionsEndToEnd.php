@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class GetAllExtensionsEndToEnd extends WebTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -24,6 +25,7 @@ class GetAllExtensionsEndToEnd extends WebTestCase
         $this->loadExtensionsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

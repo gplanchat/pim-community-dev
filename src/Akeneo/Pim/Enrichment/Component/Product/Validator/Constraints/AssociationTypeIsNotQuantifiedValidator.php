@@ -12,6 +12,7 @@ class AssociationTypeIsNotQuantifiedValidator extends ConstraintValidator
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$value instanceof AssociationInterface) {

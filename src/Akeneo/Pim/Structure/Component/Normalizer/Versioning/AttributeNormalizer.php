@@ -22,7 +22,7 @@ class AttributeNormalizer implements NormalizerInterface, CacheableSupportsMetho
     const GLOBAL_SCOPE = 'Global';
     const CHANNEL_SCOPE = 'Channel';
 
-    private const MAX_NUMBER_OF_ATTRIBUTE_OPTIONS_CODE = 10000;
+    private const int MAX_NUMBER_OF_ATTRIBUTE_OPTIONS_CODE = 10000;
 
     /** @var string[] */
     protected array $supportedFormats = ['flat'];
@@ -43,6 +43,7 @@ class AttributeNormalizer implements NormalizerInterface, CacheableSupportsMetho
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($attribute, $format = null, array $context = [])
     {
         $standardAttribute = $this->standardNormalizer->normalize($attribute, 'standard', $context);
@@ -73,11 +74,13 @@ class AttributeNormalizer implements NormalizerInterface, CacheableSupportsMetho
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof AttributeInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

@@ -18,6 +18,7 @@ class OptionsGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAttribute(AttributeInterface $attribute): bool
     {
         return AttributeTypes::OPTION_MULTI_SELECT === $attribute->getType();
@@ -26,6 +27,7 @@ class OptionsGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessConstraints(AttributeInterface $attribute): array
     {
         return [

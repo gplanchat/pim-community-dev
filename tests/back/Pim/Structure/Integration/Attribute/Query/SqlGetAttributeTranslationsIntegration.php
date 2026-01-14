@@ -12,6 +12,7 @@ use Webmozart\Assert\Assert;
 
 final class SqlGetAttributeTranslationsIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -70,6 +71,7 @@ final class SqlGetAttributeTranslationsIntegration extends TestCase
         $this->assertEqualsCanonicalizing($expected, $actual);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

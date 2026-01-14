@@ -16,6 +16,7 @@ class IsRootCategoryValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($category, Constraint $constraint)
     {
         if (null === $category) {

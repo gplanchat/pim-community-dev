@@ -22,6 +22,7 @@ class StandardFormatToUserIntents implements StandardFormatToUserIntentsInterfac
      *
      * @return UserIntent[]
      */
+    #[\Override]
     public function convert(array $standardFormat): array
     {
         $userIntents = [];

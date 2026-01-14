@@ -37,7 +37,7 @@ class ProductValueMetadataFactory implements MetadataFactoryInterface
     public function __construct(
         ConstraintGuesserInterface $guesser,
         IdentifiableObjectRepositoryInterface $attributeRepository,
-        ClassMetadataFactory $factory = null
+        ?ClassMetadataFactory $factory = null
     ) {
         $this->guesser = $guesser;
         $this->attributeRepository = $attributeRepository;
@@ -48,6 +48,7 @@ class ProductValueMetadataFactory implements MetadataFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMetadataFor($value)
     {
         if (!$value instanceof ValueInterface) {
@@ -62,6 +63,7 @@ class ProductValueMetadataFactory implements MetadataFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasMetadataFor($value)
     {
         if ($value instanceof ValueInterface) {

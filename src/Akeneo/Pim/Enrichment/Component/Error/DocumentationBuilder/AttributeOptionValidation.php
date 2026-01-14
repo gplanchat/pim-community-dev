@@ -19,6 +19,7 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
  */
 final class AttributeOptionValidation implements DocumentationBuilderInterface
 {
+    #[\Override]
     public function support($object): bool
     {
         if ($object instanceof ConstraintViolationInterface) {
@@ -36,6 +37,7 @@ final class AttributeOptionValidation implements DocumentationBuilderInterface
     /**
      * @param ConstraintViolationInterface $constraintViolation
      */
+    #[\Override]
     public function buildDocumentation($constraintViolation): DocumentationCollection
     {
         if (false === $this->support($constraintViolation)) {

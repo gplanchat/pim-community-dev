@@ -31,6 +31,7 @@ final class GetDataQualityInsightsPropertiesForProductProjection implements GetA
      *
      * @return array<string, array{data_quality_insights: array{scores: array, key_indicators: array}}>
      */
+    #[\Override]
     public function fromProductUuids(array $productUuids, array $context = []): array
     {
         $productUuidCollection = $this->idFactory->createCollection(array_map(fn (UuidInterface $productUuid) => $productUuid->toString(), array_values($productUuids)));

@@ -17,8 +17,9 @@ final class Version_7_0_20221212160000_add_database_install_time_Integration ext
     use ExecuteMigrationTrait;
 
     private Connection $connection;
-    private const MIGRATION_LABEL = '_7_0_20221212160000_add_database_install_time';
+    private const string MIGRATION_LABEL = '_7_0_20221212160000_add_database_install_time';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ final class Version_7_0_20221212160000_add_database_install_time_Integration ext
         Assert::assertArrayHasKey('database_installed_at', \json_decode($this->getInstallData(), true));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

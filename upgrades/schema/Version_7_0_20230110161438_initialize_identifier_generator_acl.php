@@ -14,19 +14,21 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 final class Version_7_0_20230110161438_initialize_identifier_generator_acl extends AbstractMigration implements ContainerAwareInterface
 {
-    private const ACL_IDENTIFIER_GENERATOR_VIEW = 'pim_identifier_generator_view';
-    private const ACL_IDENTIFIER_GENERATOR_MANAGE = 'pim_identifier_generator_manage';
-    private const ACL_RULE_ENGINE_VIEW = 'pimee_catalog_rule_rule_view_permissions';
-    private const ACL_RULE_ENGINE_EDIT = 'pimee_catalog_rule_rule_edit_permissions';
+    private const string ACL_IDENTIFIER_GENERATOR_VIEW = 'pim_identifier_generator_view';
+    private const string ACL_IDENTIFIER_GENERATOR_MANAGE = 'pim_identifier_generator_manage';
+    private const string ACL_RULE_ENGINE_VIEW = 'pimee_catalog_rule_rule_view_permissions';
+    private const string ACL_RULE_ENGINE_EDIT = 'pimee_catalog_rule_rule_edit_permissions';
 
     /** @var ContainerInterface */
     private $container;
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Sets the `pim_identifier_generator_manage` and `pim_identifier_generator_view` ACLs according to the rule engine permissions';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $aclManager = $this->container->get('oro_security.acl.manager');
@@ -62,6 +64,7 @@ final class Version_7_0_20230110161438_initialize_identifier_generator_acl exten
         $aclManager->clearCache();
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
@@ -70,7 +73,8 @@ final class Version_7_0_20230110161438_initialize_identifier_generator_acl exten
     /**
      * {@inheritdoc}
      */
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }

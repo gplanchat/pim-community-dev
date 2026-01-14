@@ -15,7 +15,7 @@ class MigrateToUuidCreateIndexes implements MigrateToUuidStep
     use MigrateToUuidTrait;
     use StatusAwareTrait;
 
-    private const DEFAULT_INDEX_NAME = 'product_uuid';
+    private const string DEFAULT_INDEX_NAME = 'product_uuid';
 
     public function __construct(
         private Connection $connection,
@@ -23,21 +23,25 @@ class MigrateToUuidCreateIndexes implements MigrateToUuidStep
     ) {
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Add indexes on uuid columns for pim_catalog_product table and every foreign table';
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'create_uuid_indexes';
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         return 0 < $this->getMissingCount();
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         $count = 0;
@@ -60,6 +64,7 @@ class MigrateToUuidCreateIndexes implements MigrateToUuidStep
         return $count;
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $logContext = $context->logContext;

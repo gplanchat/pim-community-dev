@@ -23,11 +23,13 @@ final class ComputeProductsWithImageQuery implements ComputeProductsKeyIndicator
     ) {
     }
 
+    #[\Override]
     public function getCode(): KeyIndicatorCode
     {
         return new KeyIndicatorCode(ProductsWithImage::CODE);
     }
 
+    #[\Override]
     public function compute(ProductEntityIdCollection $entityIdCollection): array
     {
         $productsWithImageRates = $this->getEvaluationRatesByProductAndCriterionQuery->execute(

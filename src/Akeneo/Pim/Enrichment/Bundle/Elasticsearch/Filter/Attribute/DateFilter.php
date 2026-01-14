@@ -37,6 +37,7 @@ class DateFilter extends AbstractAttributeFilter implements AttributeFilterInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeFilter(
         AttributeInterface $attribute,
         $operator,

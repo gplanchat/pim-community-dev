@@ -16,9 +16,9 @@ use Webmozart\Assert\Assert;
  */
 final class FreeText implements PropertyInterface
 {
-    public const LENGTH_LIMIT = 100;
+    public const int LENGTH_LIMIT = 100;
 
-    private const TYPE = 'free_text';
+    private const string TYPE = 'free_text';
 
     private function __construct(
         private string $value,
@@ -27,6 +27,7 @@ final class FreeText implements PropertyInterface
         Assert::maxLength($value, self::LENGTH_LIMIT);
     }
 
+    #[\Override]
     public static function type(): string
     {
         return self::TYPE;
@@ -35,6 +36,7 @@ final class FreeText implements PropertyInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public static function fromNormalized(array $normalizedProperty): PropertyInterface
     {
         Assert::keyExists($normalizedProperty, 'type');
@@ -48,6 +50,7 @@ final class FreeText implements PropertyInterface
     /**
      * @return FreeTextNormalized
      */
+    #[\Override]
     public function normalize(): array
     {
         return [
@@ -66,6 +69,7 @@ final class FreeText implements PropertyInterface
         return $this->value;
     }
 
+    #[\Override]
     public function getImplicitCondition(): ?ConditionInterface
     {
         return null;

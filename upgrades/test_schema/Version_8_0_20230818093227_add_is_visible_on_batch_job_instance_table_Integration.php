@@ -13,18 +13,20 @@ final class Version_8_0_20230818093227_add_is_visible_on_batch_job_instance_tabl
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230818093227_add_is_visible_on_batch_job_instance_table';
-    private const TABLE_NAME = 'akeneo_batch_job_instance';
-    private const IS_VISIBLE_COLUMN = 'is_visible';
+    private const string MIGRATION_LABEL = '_8_0_20230818093227_add_is_visible_on_batch_job_instance_table';
+    private const string TABLE_NAME = 'akeneo_batch_job_instance';
+    private const string IS_VISIBLE_COLUMN = 'is_visible';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

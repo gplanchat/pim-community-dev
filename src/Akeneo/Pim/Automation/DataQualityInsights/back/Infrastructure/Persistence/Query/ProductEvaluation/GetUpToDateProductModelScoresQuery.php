@@ -24,6 +24,7 @@ class GetUpToDateProductModelScoresQuery implements GetProductModelScoresQueryIn
     ) {
     }
 
+    #[\Override]
     public function byProductModelId(ProductModelId $productModelId): Read\Scores
     {
         if ($this->hasUpToDateEvaluationQuery->forEntityId($productModelId)) {
@@ -33,6 +34,7 @@ class GetUpToDateProductModelScoresQuery implements GetProductModelScoresQueryIn
         return new Read\Scores(new ChannelLocaleRateCollection(), new ChannelLocaleRateCollection());
     }
 
+    #[\Override]
     public function byProductModelIdCollection(ProductModelIdCollection $productModelIdCollection): array
     {
         $upToDateProductModels = $this->hasUpToDateEvaluationQuery->forEntityIdCollection($productModelIdCollection);

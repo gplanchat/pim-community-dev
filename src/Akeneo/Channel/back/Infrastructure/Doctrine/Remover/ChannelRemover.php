@@ -48,6 +48,7 @@ class ChannelRemover implements RemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function remove($object, array $options = [])
     {
         $this->validateObject($object);

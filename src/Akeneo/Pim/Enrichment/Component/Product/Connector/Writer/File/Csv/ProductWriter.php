@@ -69,6 +69,7 @@ class ProductWriter extends AbstractItemMediaWriter implements ItemWriterInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize(): void
     {
         $this->familyCodes = [];
@@ -80,6 +81,7 @@ class ProductWriter extends AbstractItemMediaWriter implements ItemWriterInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items): void
     {
         $this->hasItems = true;
@@ -96,6 +98,7 @@ class ProductWriter extends AbstractItemMediaWriter implements ItemWriterInterfa
      * Return additional headers, based on the requested attributes if any,
      * and from the families definition
      */
+    #[\Override]
     protected function getAdditionalHeaders(): array
     {
         $parameters = $this->stepExecution->getJobParameters();
@@ -139,6 +142,7 @@ class ProductWriter extends AbstractItemMediaWriter implements ItemWriterInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getWriterConfiguration(): array
     {
         $parameters = $this->stepExecution->getJobParameters();
@@ -154,6 +158,7 @@ class ProductWriter extends AbstractItemMediaWriter implements ItemWriterInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getItemIdentifier(array $product): string
     {
         return $product['identifier'] ?? $product['uuid'];
@@ -162,6 +167,7 @@ class ProductWriter extends AbstractItemMediaWriter implements ItemWriterInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConverterOptions(JobParameters $parameters): array
     {
         $converterOptions =  parent::getConverterOptions($parameters);

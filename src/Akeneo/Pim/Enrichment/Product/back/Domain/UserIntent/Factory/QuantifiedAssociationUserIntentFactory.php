@@ -23,6 +23,7 @@ class QuantifiedAssociationUserIntentFactory implements UserIntentFactory
     ) {
     }
 
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['quantified_associations'];
@@ -31,6 +32,7 @@ class QuantifiedAssociationUserIntentFactory implements UserIntentFactory
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function create(string $fieldName, mixed $data): array
     {
         $this->quantifiedAssociationsStructureValidator->validate($fieldName, $data);

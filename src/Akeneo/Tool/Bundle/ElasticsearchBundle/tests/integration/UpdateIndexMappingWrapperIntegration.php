@@ -62,6 +62,7 @@ class UpdateIndexMappingWrapperIntegration extends TestCase
         return $product;
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

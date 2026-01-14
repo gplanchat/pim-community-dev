@@ -25,6 +25,7 @@ class VersionBuilderIntegration extends TestCase
     private ObjectManager $objectManager;
     private LegacyVersionBuilder $legacyVersionBuilder;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -252,6 +253,7 @@ class VersionBuilderIntegration extends TestCase
         $this->assertEquals($expectedVersion->isPending(), $version->isPending());
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

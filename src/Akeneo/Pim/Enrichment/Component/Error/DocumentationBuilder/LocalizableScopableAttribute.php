@@ -21,6 +21,7 @@ use Akeneo\Pim\Enrichment\Component\Product\Exception\NotLocalizableAndScopableA
  */
 final class LocalizableScopableAttribute implements DocumentationBuilderInterface
 {
+    #[\Override]
     public function support($object): bool
     {
         return $object instanceof LocalizableAndNotScopableAttributeException ||
@@ -29,6 +30,7 @@ final class LocalizableScopableAttribute implements DocumentationBuilderInterfac
             $object instanceof NotLocalizableAndNotScopableAttributeException;
     }
 
+    #[\Override]
     public function buildDocumentation($object): DocumentationCollection
     {
         if (false === $this->support($object)) {

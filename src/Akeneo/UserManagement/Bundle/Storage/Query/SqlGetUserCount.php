@@ -20,6 +20,7 @@ final class SqlGetUserCount implements GetUserCountInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function forUsersHavingOnlyRole(string $role): int
     {
         $sql = <<<SQL

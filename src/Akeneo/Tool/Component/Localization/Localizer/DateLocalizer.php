@@ -42,6 +42,7 @@ class DateLocalizer implements LocalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($date, $attributeCode, array $options = [])
     {
         if (null === $date || '' === $date || $date instanceof \DateTime) {
@@ -64,6 +65,7 @@ class DateLocalizer implements LocalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function delocalize($date, array $options = [])
     {
         if (null === $date || '' === $date) {
@@ -90,6 +92,7 @@ class DateLocalizer implements LocalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function localize($date, array $options = [])
     {
         if (null === $date || '' === $date) {
@@ -107,6 +110,7 @@ class DateLocalizer implements LocalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($attributeType)
     {
         return in_array($attributeType, $this->attributeTypes);

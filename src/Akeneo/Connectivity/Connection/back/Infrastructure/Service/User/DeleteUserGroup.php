@@ -18,6 +18,7 @@ class DeleteUserGroup implements DeleteUserGroupInterface
     {
     }
 
+    #[\Override]
     public function execute(string $name): void
     {
         $userGroup = $this->repository->findOneByIdentifier($name);

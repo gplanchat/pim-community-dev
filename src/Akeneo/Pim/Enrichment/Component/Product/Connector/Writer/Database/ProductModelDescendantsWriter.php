@@ -35,6 +35,7 @@ class ProductModelDescendantsWriter implements ItemWriterInterface, StepExecutio
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $productModels)
     {
         foreach ($productModels as $productModel) {
@@ -48,6 +49,7 @@ class ProductModelDescendantsWriter implements ItemWriterInterface, StepExecutio
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;

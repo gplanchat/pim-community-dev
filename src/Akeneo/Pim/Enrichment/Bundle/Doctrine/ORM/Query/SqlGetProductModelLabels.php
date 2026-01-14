@@ -17,6 +17,7 @@ class SqlGetProductModelLabels implements GetProductModelLabelsInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byCodesAndLocaleAndScope(array $codes, string $locale, string $scope): array
     {
         $query = <<<SQL

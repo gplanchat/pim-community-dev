@@ -16,7 +16,7 @@ final class Version_8_0_20230511113912_fix_oro_access_tables_columns_length_Inte
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230511113912_fix_oro_access_tables_columns_length';
+    private const string MIGRATION_LABEL = '_8_0_20230511113912_fix_oro_access_tables_columns_length';
 
     private Connection $connection;
 
@@ -70,12 +70,14 @@ final class Version_8_0_20230511113912_fix_oro_access_tables_columns_length_Inte
         Assert::assertEquals(255, $this->countColumnLength('oro_access_group', 'name'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

@@ -12,6 +12,7 @@ use Akeneo\Connectivity\Connection\Application\Webhook\Service\DnsLookupInterfac
  */
 class FakeDnsLookup implements DnsLookupInterface
 {
+    #[\Override]
     public function ip(string $host): ?string
     {
         return '168.212.226.204';

@@ -16,6 +16,7 @@ use Akeneo\Category\Domain\ValueObject\ValueCollection;
  */
 class SetImageApplier implements UserIntentApplier
 {
+    #[\Override]
     public function apply(UserIntent $userIntent, Category $category): void
     {
         if (!$userIntent instanceof SetImage) {
@@ -36,6 +37,7 @@ class SetImageApplier implements UserIntentApplier
         $category->setAttributes($attributes);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetImage::class];

@@ -18,6 +18,7 @@ final class InMemoryIsAttributeEditable implements IsAttributeEditable
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function forCode(string $attributeCode, int $userId): bool
     {
         return !\in_array($attributeCode, $this->notEditableAttributeCodesPerUser[$userId] ?? []);

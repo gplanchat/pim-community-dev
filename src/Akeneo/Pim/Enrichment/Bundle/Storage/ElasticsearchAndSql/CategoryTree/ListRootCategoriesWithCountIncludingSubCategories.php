@@ -34,6 +34,7 @@ class ListRootCategoriesWithCountIncludingSubCategories implements Query\ListRoo
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function list(string $translationLocaleCode, int $userId, int $rootCategoryIdToExpand): array
     {
         $categoriesWithoutCount = $this->getRootCategories($translationLocaleCode);

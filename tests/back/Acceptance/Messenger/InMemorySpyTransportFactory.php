@@ -17,16 +17,19 @@ final class InMemorySpyTransportFactory implements TransportFactoryInterface, Re
     /** @var InMemorySpyTransport[] */
     private array $createdTransports = [];
 
+    #[\Override]
     public function createTransport(string $dsn, array $options, SerializerInterface $serializer): TransportInterface
     {
         return $this->createdTransports[] = new InMemorySpyTransport();
     }
 
+    #[\Override]
     public function supports(string $dsn, array $options): bool
     {
         return 0 === strpos($dsn, 'in-memory-spy://');
     }
 
+    #[\Override]
     public function reset()
     {
         foreach ($this->createdTransports as $transport) {

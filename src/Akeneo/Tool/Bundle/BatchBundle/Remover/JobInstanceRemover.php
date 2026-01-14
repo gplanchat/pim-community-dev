@@ -27,6 +27,7 @@ class JobInstanceRemover implements RemoverInterface, BulkRemoverInterface
     /**
      * @param JobInstance $object
      */
+    #[\Override]
     public function remove(mixed $object, array $options = []): void
     {
         $options['unitary'] = true;
@@ -46,6 +47,7 @@ class JobInstanceRemover implements RemoverInterface, BulkRemoverInterface
     /**
      * @param JobInstance[] $objects
      */
+    #[\Override]
     public function removeAll(array $objects, array $options = []): void
     {
         if (empty($objects)) {

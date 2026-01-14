@@ -34,6 +34,7 @@ class FilterStructureLocaleValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof FilterStructureLocale) {

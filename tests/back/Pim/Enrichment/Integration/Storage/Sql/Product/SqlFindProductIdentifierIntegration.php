@@ -59,6 +59,7 @@ class SqlFindProductIdentifierIntegration extends TestCase
         $findIdentifier->fromUuids(['invalid_uuid']);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -83,6 +84,7 @@ SQL;
         $this->fooUuid = $product->getUuid()->toString();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

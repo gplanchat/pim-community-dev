@@ -29,6 +29,7 @@ class GroupViolationNormalizer implements NormalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($violations, $format = null, array $context = [])
     {
         $normalizedViolations = [];
@@ -56,6 +57,7 @@ class GroupViolationNormalizer implements NormalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return false;

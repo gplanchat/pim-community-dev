@@ -37,6 +37,7 @@ class UpdateCategoryControllerEndToEnd extends ControllerIntegrationTestCase
 {
     private ?CategoryId $categoryID;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -301,6 +302,7 @@ class UpdateCategoryControllerEndToEnd extends ControllerIntegrationTestCase
         }
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

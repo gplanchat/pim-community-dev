@@ -16,6 +16,7 @@ class FrozenClock implements ClockInterface
         $this->dateTime = $dateTime;
     }
 
+    #[\Override]
     public function now(): \DateTimeInterface
     {
         if (!$this->dateTime) {

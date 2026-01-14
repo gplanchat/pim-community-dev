@@ -25,6 +25,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class UnstructuredType extends AbstractType
 {
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

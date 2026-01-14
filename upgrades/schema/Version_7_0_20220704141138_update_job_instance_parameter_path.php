@@ -14,11 +14,13 @@ final class Version_7_0_20220704141138_update_job_instance_parameter_path extend
 {
     private ?ContainerInterface $container;
 
-    public function setContainer(ContainerInterface $container = null): void
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $jobInstances = $this->getJobInstances();
@@ -31,6 +33,7 @@ final class Version_7_0_20220704141138_update_job_instance_parameter_path extend
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

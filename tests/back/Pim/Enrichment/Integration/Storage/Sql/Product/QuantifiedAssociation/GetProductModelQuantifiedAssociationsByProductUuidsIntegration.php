@@ -14,6 +14,7 @@ class GetProductModelQuantifiedAssociationsByProductUuidsIntegration extends Abs
 {
     use QuantifiedAssociationsTestCaseTrait;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -360,6 +361,7 @@ class GetProductModelQuantifiedAssociationsByProductUuidsIntegration extends Abs
         $this->assertSame([], $actual);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

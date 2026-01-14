@@ -17,6 +17,7 @@ class GetDeactivatedCategoryTemplateAttributeSqlIntegration extends CategoryTest
 {
     private GetDeactivatedAttribute $getDeactivateAttribute;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

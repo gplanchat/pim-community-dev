@@ -13,8 +13,8 @@ use Akeneo\UserManagement\Component\Repository\UserRepositoryInterface;
 
 final class ExportUserIntegration extends TestCase
 {
-    private const CSV_EXPORT_JOB_CODE = 'csv_user_export';
-    private const XLSX_EXPORT_JOB_CODE = 'xlsx_user_export';
+    private const string CSV_EXPORT_JOB_CODE = 'csv_user_export';
+    private const string XLSX_EXPORT_JOB_CODE = 'xlsx_user_export';
 
     private JobLauncher $jobLauncher;
     private UserRepositoryInterface $userRepository;
@@ -23,6 +23,7 @@ final class ExportUserIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -95,6 +96,7 @@ final class ExportUserIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -17,6 +17,7 @@ class VersionProviderIntegration extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         static::bootKernel(['debug' => false]);
@@ -168,6 +169,7 @@ class VersionProviderIntegration extends KernelTestCase
         Assert::assertSame('master', $versionProvider->getVersion());
     }
 
+    #[\Override]
     public function tearDown(): void
     {
         parent::tearDown();
@@ -191,21 +193,25 @@ class TestCommunityVersion implements PimVersion
         return self::VERSION;
     }
 
+    #[\Override]
     public function versionCodename(): string
     {
         return self::VERSION_CODENAME;
     }
 
+    #[\Override]
     public function editionName(): string
     {
         return self::EDITION_NAME;
     }
 
+    #[\Override]
     public function isSaas(): bool
     {
         return false;
     }
 
+    #[\Override]
     public function isEditionCode(string $editionCode): bool
     {
         return $editionCode === 'community_edition_instance';
@@ -228,21 +234,25 @@ class TestSerenityVersion implements PimVersion
         return self::VERSION;
     }
 
+    #[\Override]
     public function versionCodename(): string
     {
         return self::VERSION_CODENAME;
     }
 
+    #[\Override]
     public function editionName(): string
     {
         return self::EDITION_NAME;
     }
 
+    #[\Override]
     public function isSaas(): bool
     {
         return true;
     }
 
+    #[\Override]
     public function isEditionCode(string $editionCode): bool
     {
         return $editionCode === 'serenity_instance';

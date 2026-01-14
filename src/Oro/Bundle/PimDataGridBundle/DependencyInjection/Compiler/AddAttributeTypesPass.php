@@ -23,6 +23,7 @@ class AddAttributeTypesPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $registry = $container->getDefinition(self::REGISTRY_ID);

@@ -20,6 +20,7 @@ class ExportBuilderContext extends PimContext implements PageObjectAware
     /**
      * @param PageObjectFactory $pageFactory
      */
+    #[\Override]
     public function setPageObjectFactory(PageObjectFactory $pageFactory)
     {
         $this->pageFactory = $pageFactory;

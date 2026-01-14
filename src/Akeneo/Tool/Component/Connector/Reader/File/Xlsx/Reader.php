@@ -58,6 +58,7 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
         $this->options = $options;
     }
 
+    #[\Override]
     public function totalItems(): int
     {
         $totalItems = max(iterator_count($this->fileIterator) - 1, 0);
@@ -69,6 +70,7 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read()
     {
         $jobParameters = $this->stepExecution->getJobParameters();
@@ -120,6 +122,7 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -128,6 +131,7 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function flush()
     {
         $this->fileIterator = null;
@@ -199,16 +203,19 @@ class Reader implements FileReaderInterface, TrackableItemReaderInterface, Initi
         }
     }
 
+    #[\Override]
     public function getState(): array
     {
         return null !== $this->fileIterator ? ['position' => $this->fileIterator->key()] : [];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;
     }
 
+    #[\Override]
     public function initialize(): void
     {
         $jobParameters = $this->stepExecution->getJobParameters();

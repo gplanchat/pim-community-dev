@@ -53,6 +53,7 @@ class PriceCollectionAttributeAdder extends AbstractAttributeAdder
      *     }
      * ]
      */
+    #[\Override]
     public function addAttributeData(
         EntityWithValuesInterface $entityWithValues,
         AttributeInterface $attribute,

@@ -32,6 +32,7 @@ final class GetDataQualityInsightsPropertiesForProductModelProjection implements
      *
      * @return array<string, array{data_quality_insights: array{scores: array}}>
      */
+    #[\Override]
     public function fromProductModelCodes(array $productModelCodes, array $context = []): array
     {
         $productModelCodesIds = $this->getProductModelIdsFromProductModelCodesQuery->execute($productModelCodes);

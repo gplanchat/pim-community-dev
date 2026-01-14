@@ -26,6 +26,7 @@ class PartialUpdateProductEndToEnd extends AbstractProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -905,7 +906,7 @@ JSON;
             "a_localizable_image": [{
                 "locale": "zh_CN",
                 "scope": null,
-                "data": "${akeneoJpgPath}"
+                "data": "{$akeneoJpgPath}"
             }]
         }
     }
@@ -959,7 +960,7 @@ JSON;
             "a_localizable_image": [{
                 "locale": "en_US",
                 "scope": null,
-                "data": "${ziggyPngPath}"
+                "data": "{$ziggyPngPath}"
             }]
         }
     }
@@ -1672,6 +1673,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

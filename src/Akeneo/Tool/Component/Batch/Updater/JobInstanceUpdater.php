@@ -34,6 +34,7 @@ class JobInstanceUpdater implements ObjectUpdaterInterface
      *
      * @param JobInstance $jobInstance
      */
+    #[\Override]
     public function update($jobInstance, array $data, array $options = []): void
     {
         if (!$jobInstance instanceof JobInstance) {

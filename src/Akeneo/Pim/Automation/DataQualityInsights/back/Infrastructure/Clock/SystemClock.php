@@ -20,16 +20,19 @@ final class SystemClock implements Clock
         $this->timeZone = new \DateTimeZone('UTC');
     }
 
+    #[\Override]
     public function getCurrentTime(): \DateTimeImmutable
     {
         return new \DateTimeImmutable('now', $this->timeZone);
     }
 
+    #[\Override]
     public function fromString(string $date): \DateTimeImmutable
     {
         return new \DateTimeImmutable($date, $this->timeZone);
     }
 
+    #[\Override]
     public function fromTimestamp(int $timestamp): \DateTimeImmutable
     {
         return (new \DateTimeImmutable())->setTimestamp($timestamp);

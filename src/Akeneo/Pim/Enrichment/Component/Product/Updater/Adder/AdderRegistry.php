@@ -34,6 +34,7 @@ class AdderRegistry implements AdderRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(AdderInterface $adder)
     {
         if ($adder instanceof FieldAdderInterface) {
@@ -49,6 +50,7 @@ class AdderRegistry implements AdderRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAdder($property)
     {
         $attribute = $this->getAttribute($property);
@@ -64,6 +66,7 @@ class AdderRegistry implements AdderRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFieldAdder($field)
     {
         foreach ($this->fieldAdders as $adder) {
@@ -78,6 +81,7 @@ class AdderRegistry implements AdderRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeAdder(AttributeInterface $attribute)
     {
         foreach ($this->attributeAdders as $adder) {

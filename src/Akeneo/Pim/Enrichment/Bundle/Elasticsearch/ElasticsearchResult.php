@@ -21,6 +21,7 @@ class ElasticsearchResult implements ResultInterface
         $this->rawResult = $rawResult;
     }
 
+    #[\Override]
     public function getRawResult(): array
     {
         return $this->rawResult;

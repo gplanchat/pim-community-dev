@@ -16,6 +16,7 @@ class InMemoryFindFamilyCodes implements FindFamilyCodes
     /** @var string[] $familyCodes */
     private array $familyCodes = [];
 
+    #[\Override]
     public function fromQuery(FamilyQuery $query): array
     {
         return $this->familyCodes;

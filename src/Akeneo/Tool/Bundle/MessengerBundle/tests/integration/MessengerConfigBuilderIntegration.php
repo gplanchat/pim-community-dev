@@ -20,6 +20,7 @@ final class MessengerConfigBuilderIntegration extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         static::bootKernel(['debug' => (bool)($_SERVER['APP_DEBUG'] ?? false)]);

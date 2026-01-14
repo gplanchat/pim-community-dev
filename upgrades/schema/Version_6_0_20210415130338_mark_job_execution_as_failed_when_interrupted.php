@@ -21,6 +21,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210415130338_mark_job_execution_as_failed_when_interrupted extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(
@@ -41,6 +42,7 @@ SQL,
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

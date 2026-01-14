@@ -20,15 +20,16 @@ use Psr\Log\LoggerInterface;
 /**
  * @author  JM Leroux <jmleroux.pro@gmail.com>
  */
-final class TenantContextFetcher implements TenantContextFetcherInterface
+final readonly class TenantContextFetcher implements TenantContextFetcherInterface
 {
     public function __construct(
-        private readonly LoggerInterface $logger,
-        private readonly ContextValueDecrypterInterface $tenantContextDecoder,
-        private readonly int $cacheTtl = 30
+        private LoggerInterface $logger,
+        private ContextValueDecrypterInterface $tenantContextDecoder,
+        private int $cacheTtl = 30
     ) {
     }
 
+    #[\Override]
     public function getTenantContext(string $tenantId, ContextStoreInterface $contextStore): array
     {
         try {

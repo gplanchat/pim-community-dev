@@ -22,6 +22,7 @@ final class SqlGetChannelCodeWithLocaleCodes implements GetChannelCodeWithLocale
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function findAll(): array
     {
         $sql = <<<SQL

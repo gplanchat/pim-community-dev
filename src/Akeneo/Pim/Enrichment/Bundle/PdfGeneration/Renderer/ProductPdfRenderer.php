@@ -57,6 +57,7 @@ class ProductPdfRenderer implements RendererInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function render($object, $format, array $context = [])
     {
         $resolver = new OptionsResolver();
@@ -86,6 +87,7 @@ class ProductPdfRenderer implements RendererInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($object, $format)
     {
         return $object instanceof ProductInterface && $format === static::PDF_FORMAT;

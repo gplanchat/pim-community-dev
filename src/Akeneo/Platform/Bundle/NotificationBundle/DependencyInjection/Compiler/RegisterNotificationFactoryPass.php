@@ -24,6 +24,7 @@ class RegisterNotificationFactoryPass implements CompilerPassInterface
     /**
      * @param ContainerBuilder $container
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $this->registerFactories($container);

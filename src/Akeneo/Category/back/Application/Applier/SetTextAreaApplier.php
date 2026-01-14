@@ -19,6 +19,7 @@ class SetTextAreaApplier implements UserIntentApplier
     /**
      * @param SetTextArea $userIntent
      */
+    #[\Override]
     public function apply(UserIntent $userIntent, Category $category): void
     {
         if (!$userIntent instanceof SetTextArea) {
@@ -39,6 +40,7 @@ class SetTextAreaApplier implements UserIntentApplier
         $category->setAttributes($attributes);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetTextArea::class];

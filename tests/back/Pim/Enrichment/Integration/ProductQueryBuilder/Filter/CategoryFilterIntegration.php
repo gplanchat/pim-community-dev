@@ -67,6 +67,7 @@ class CategoryFilterIntegration extends AbstractProductQueryBuilderTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -328,6 +329,7 @@ class CategoryFilterIntegration extends AbstractProductQueryBuilderTestCase
      *
      * @return CursorInterface
      */
+    #[\Override]
     protected function executeFilter(array $filters)
     {
         $pqb = $this->get('pim_enrich.query.product_and_product_model_query_builder_from_size_factory')->create(
@@ -346,6 +348,7 @@ class CategoryFilterIntegration extends AbstractProductQueryBuilderTestCase
      * @param CursorInterface $result
      * @param array           $expected
      */
+    #[\Override]
     protected function assert(CursorInterface $result, array $expected)
     {
         $entities = [];
@@ -363,6 +366,7 @@ class CategoryFilterIntegration extends AbstractProductQueryBuilderTestCase
         $this->assertSame($expected, $entities);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

@@ -19,6 +19,7 @@ final class UpdateConnectedAppDescriptionQuery implements UpdateConnectedAppDesc
     {
     }
 
+    #[\Override]
     public function execute(ConnectedApp $app): void
     {
         $query = <<<SQL

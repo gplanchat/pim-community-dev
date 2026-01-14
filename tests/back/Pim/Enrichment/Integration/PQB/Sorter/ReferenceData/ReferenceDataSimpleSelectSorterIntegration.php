@@ -19,6 +19,7 @@ class ReferenceDataSimpleSelectSorterIntegration extends AbstractProductQueryBui
     /**
      * @{@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -63,6 +64,7 @@ class ReferenceDataSimpleSelectSorterIntegration extends AbstractProductQueryBui
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

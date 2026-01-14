@@ -18,6 +18,7 @@ class ReferenceDataUniqueCodeChecker extends AbstractReferenceDataUniqueCodeChec
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getCodeFieldMapping($referenceDataClass)
     {
         $metadata = $this->om->getClassMetadata($referenceDataClass);

@@ -21,12 +21,14 @@ final class RemoveFamilyApplier implements UserIntentApplier
     ) {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, RemoveFamily::class);
         $this->productUpdater->update($product, ['family' => null]);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [RemoveFamily::class];

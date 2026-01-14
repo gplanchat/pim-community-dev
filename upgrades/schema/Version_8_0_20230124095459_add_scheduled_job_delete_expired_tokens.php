@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_8_0_20230124095459_add_scheduled_job_delete_expired_tokens extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addScheduledJob('delete_expired_tokens', 'Delete expired tokens', []);
@@ -38,6 +39,7 @@ final class Version_8_0_20230124095459_add_scheduled_job_delete_expired_tokens e
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

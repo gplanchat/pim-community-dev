@@ -17,6 +17,7 @@ class SqlGetCategoryTranslations implements GetCategoryTranslations
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byCategoryCodesAndLocale(array $categoryCodes, string $locale): array
     {
         if (empty($categoryCodes)) {

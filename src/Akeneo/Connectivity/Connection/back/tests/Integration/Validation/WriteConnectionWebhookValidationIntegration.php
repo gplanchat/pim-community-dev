@@ -14,6 +14,7 @@ class WriteConnectionWebhookValidationIntegration extends TestCase
 {
     private ValidatorInterface $validator;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -25,6 +26,7 @@ class WriteConnectionWebhookValidationIntegration extends TestCase
         $connectionLoader->createConnection('magento', 'Magento Connector', FlowType::DATA_DESTINATION, false);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

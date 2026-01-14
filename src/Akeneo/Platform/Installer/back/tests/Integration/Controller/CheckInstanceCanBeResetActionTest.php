@@ -13,10 +13,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CheckInstanceCanBeResetActionTest extends ControllerIntegrationTestCase
 {
-    private const ROUTE = 'akeneo_installer_check_reset_instance';
+    private const string ROUTE = 'akeneo_installer_check_reset_instance';
 
     private Connection $connection;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -64,6 +65,7 @@ SQL;
         $this->connection->executeStatement($insertJobExecution, ['job_instance_id' => $jobInstanceId]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

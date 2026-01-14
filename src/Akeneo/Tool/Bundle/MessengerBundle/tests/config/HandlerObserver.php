@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 final class HandlerObserver
 {
-    private const PIM_CONF_CODE = 'messenger.handler_observer';
+    private const string PIM_CONF_CODE = 'messenger.handler_observer';
 
     private array $executedHandlers = [];
 

@@ -37,6 +37,7 @@ class CategorySaverProcessor implements SaveCategory
     /**
      * @param UserIntent[] $userIntents
      */
+    #[\Override]
     public function save(Category $category, array $userIntents): void
     {
         foreach ($userIntents as $userIntent) {

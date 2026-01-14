@@ -122,6 +122,7 @@ class GetCategoryEndToEnd extends ApiTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

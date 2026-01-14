@@ -18,6 +18,7 @@ class RegisterWidgetsPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition('pim_dashboard.widget.registry')) {

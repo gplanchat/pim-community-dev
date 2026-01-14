@@ -10,6 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220214101647_add_dqi_product_model_score_table extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(<<<SQL
@@ -22,6 +23,7 @@ CREATE TABLE pim_data_quality_insights_product_model_score (
 SQL);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

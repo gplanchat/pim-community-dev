@@ -16,11 +16,13 @@ class InMemoryReferenceEntityNomenclatureRepository implements ReferenceEntityNo
     /** @var array<string, NomenclatureDefinition> */
     public array $nomenclatureDefinitions = [];
 
+    #[\Override]
     public function get(string $attributeCode): ?NomenclatureDefinition
     {
         return $this->nomenclatureDefinitions[\mb_strtolower($attributeCode)] ?? null;
     }
 
+    #[\Override]
     public function update(string $attributeCode, NomenclatureDefinition $nomenclatureDefinition): void
     {
         if (\array_key_exists(\mb_strtolower($attributeCode), $this->nomenclatureDefinitions)) {

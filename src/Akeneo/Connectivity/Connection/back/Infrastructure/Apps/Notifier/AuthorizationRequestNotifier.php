@@ -23,6 +23,7 @@ final class AuthorizationRequestNotifier implements AuthorizationRequestNotifier
     ) {
     }
 
+    #[\Override]
     public function notify(ConnectedApp $connectedApp): void
     {
         $usersToNotify = $this->findAllUsernamesWithAclQuery->execute('akeneo_connectivity_connection_manage_apps');

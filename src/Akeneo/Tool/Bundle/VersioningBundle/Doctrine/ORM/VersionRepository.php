@@ -28,6 +28,7 @@ class VersionRepository extends EntityRepository implements VersionRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLogEntries(string $resourceName, ?string $resourceId, ?UuidInterface $resourceUuid, ?int $limit = null)
     {
         $params = [
@@ -46,6 +47,7 @@ class VersionRepository extends EntityRepository implements VersionRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOldestLogEntry($resourceName, $resourceId, ?UuidInterface $resourceUuid, $pending = false)
     {
         return $this->getOneLogEntry($resourceName, $resourceId, $resourceUuid, $pending, 'asc');
@@ -54,6 +56,7 @@ class VersionRepository extends EntityRepository implements VersionRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNewestLogEntry($resourceName, $resourceId, ?UuidInterface $resourceUuid, $pending = false)
     {
         return $this->getOneLogEntry($resourceName, $resourceId, $resourceUuid, $pending, 'desc');
@@ -62,6 +65,7 @@ class VersionRepository extends EntityRepository implements VersionRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNewestLogEntryForRessources($resourceNames)
     {
         return $this->findOneBy(['resourceName' => $resourceNames], ['loggedAt' => 'desc']);
@@ -70,6 +74,7 @@ class VersionRepository extends EntityRepository implements VersionRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPendingVersions($limit = null)
     {
         return $this->findBy(['pending' => true], ['version' => 'asc'], $limit);
@@ -80,6 +85,7 @@ class VersionRepository extends EntityRepository implements VersionRepositoryInt
      *
      * @return int
      */
+    #[\Override]
     public function getPendingVersionsCount()
     {
         $qb = $this->createQueryBuilder('v')
@@ -138,6 +144,7 @@ class VersionRepository extends EntityRepository implements VersionRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findPotentiallyPurgeableBy(array $options = [])
     {
         $connection = $this->_em->getConnection();
@@ -170,6 +177,7 @@ class VersionRepository extends EntityRepository implements VersionRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findByIds(array $versionIds)
     {
         if (empty($versionIds)) {

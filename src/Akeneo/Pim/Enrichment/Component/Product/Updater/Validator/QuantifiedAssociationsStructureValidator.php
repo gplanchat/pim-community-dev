@@ -9,6 +9,7 @@ use Ramsey\Uuid\Uuid;
 
 class QuantifiedAssociationsStructureValidator implements QuantifiedAssociationsStructureValidatorInterface
 {
+    #[\Override]
     public function validate(string $field, $data): void
     {
         if (!is_array($data)) {

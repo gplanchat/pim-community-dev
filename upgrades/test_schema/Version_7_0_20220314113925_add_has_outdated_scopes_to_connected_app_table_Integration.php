@@ -28,11 +28,13 @@ class Version_7_0_20220314113925_add_has_outdated_scopes_to_connected_app_table_
     private ObjectUpdaterInterface $userUpdater;
     private SaverInterface $userSaver;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

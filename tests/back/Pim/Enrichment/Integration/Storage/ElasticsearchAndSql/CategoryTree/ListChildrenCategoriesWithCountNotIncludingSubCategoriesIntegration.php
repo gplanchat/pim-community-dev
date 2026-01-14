@@ -14,6 +14,7 @@ class ListChildrenCategoriesWithCountNotIncludingSubCategoriesIntegration extend
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -124,6 +125,7 @@ class ListChildrenCategoriesWithCountNotIncludingSubCategoriesIntegration extend
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

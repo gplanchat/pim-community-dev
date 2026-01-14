@@ -18,6 +18,7 @@ class GetAttributeGroupsActivationQuery implements GetAttributeGroupsActivationQ
     ) {
     }
 
+    #[\Override]
     public function all(): AttributeGroupsActivation
     {
         $rawAttributeGroupsActivation = $this->getAllAttributeGroupsActivationQuery->execute();

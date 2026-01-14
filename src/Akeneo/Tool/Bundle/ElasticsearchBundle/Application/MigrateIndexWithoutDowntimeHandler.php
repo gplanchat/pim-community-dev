@@ -32,6 +32,7 @@ class MigrateIndexWithoutDowntimeHandler implements MigrateIndexWithoutDowntimeH
         $this->indexMigrationRepository = $indexMigrationRepository;
     }
 
+    #[\Override]
     public function handle(MigrateIndexWithoutDowntime $command)
     {
         $currentDatetime = $this->clock->now();

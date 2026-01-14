@@ -39,6 +39,7 @@ final class LocalizableValuesValidator extends ConstraintValidator
      * @param object     $values
      * @param Constraint $constraint
      */
+    #[\Override]
     public function validate($values, Constraint $constraint)
     {
         if (!$constraint instanceof LocalizableValues) {

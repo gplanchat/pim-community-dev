@@ -24,6 +24,7 @@ class GetAllAppsQueryIntegration extends TestCase
     private FakeWebMarketplaceApi $webMarketplaceApi;
     private ConnectedAppLoader $connectedAppLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -35,6 +36,7 @@ class GetAllAppsQueryIntegration extends TestCase
         $this->loadAppsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

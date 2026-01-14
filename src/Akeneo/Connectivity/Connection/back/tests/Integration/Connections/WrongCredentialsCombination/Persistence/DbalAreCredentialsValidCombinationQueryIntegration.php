@@ -20,6 +20,7 @@ class DbalAreCredentialsValidCombinationQueryIntegration extends TestCase
     private ConnectionLoader $connectionLoader;
     private DbalAreCredentialsValidCombinationQuery $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -28,6 +29,7 @@ class DbalAreCredentialsValidCombinationQueryIntegration extends TestCase
         $this->query = $this->get(DbalAreCredentialsValidCombinationQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

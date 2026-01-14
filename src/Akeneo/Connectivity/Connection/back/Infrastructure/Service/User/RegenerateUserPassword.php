@@ -21,6 +21,7 @@ class RegenerateUserPassword implements RegenerateUserPasswordInterface
     {
     }
 
+    #[\Override]
     public function execute(UserId $userId): string
     {
         $user = $this->findUser($userId);

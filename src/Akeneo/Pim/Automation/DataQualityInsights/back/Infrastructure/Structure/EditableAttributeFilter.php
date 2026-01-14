@@ -17,6 +17,7 @@ class EditableAttributeFilter extends \FilterIterator
         parent::__construct(new \ArrayIterator($attributes));
     }
 
+    #[\Override]
     public function accept(): bool
     {
         $attribute = $this->getInnerIterator()->current();

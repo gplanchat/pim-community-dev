@@ -139,6 +139,7 @@ class ProductQueryBuilderIntegration extends AbstractProductQueryBuilderTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();
@@ -155,6 +156,7 @@ class ProductQueryBuilderIntegration extends AbstractProductQueryBuilderTestCase
      *
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

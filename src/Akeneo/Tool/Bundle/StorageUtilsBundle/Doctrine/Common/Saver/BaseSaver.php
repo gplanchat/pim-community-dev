@@ -31,6 +31,7 @@ class BaseSaver implements SaverInterface, BulkSaverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($object, array $options = []): void
     {
         $this->validateObject($object);
@@ -53,6 +54,7 @@ class BaseSaver implements SaverInterface, BulkSaverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function saveAll(array $objects, array $options = []): void
     {
         if (empty($objects)) {

@@ -34,6 +34,7 @@ class IsTemplateDeactivatedSqlIntegration extends CategoryTestCase
         $this->assertTrue($isTemplateDeactivated);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

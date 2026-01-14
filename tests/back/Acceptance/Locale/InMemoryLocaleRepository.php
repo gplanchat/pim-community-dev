@@ -24,6 +24,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -32,6 +33,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->locales->get($code);
@@ -40,6 +42,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($locale, array $options = [])
     {
         $this->locales->set($locale->getCode(), $locale);
@@ -48,7 +51,8 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $locales = [];
         foreach ($this->locales as $locale) {
@@ -71,6 +75,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getActivatedLocales()
     {
         return $this->locales->getValues();
@@ -79,6 +84,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getActivatedLocaleCodes()
     {
         $localeCodes = [];
@@ -94,6 +100,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getActivatedLocalesQB()
     {
         throw new NotImplementedException(__METHOD__);
@@ -102,6 +109,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDeletedLocalesForChannel(ChannelInterface $channel)
     {
         throw new NotImplementedException(__METHOD__);
@@ -110,6 +118,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countAllActivated()
     {
         throw new NotImplementedException(__METHOD__);
@@ -118,6 +127,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -126,6 +136,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return $this->locales->toArray();
@@ -134,6 +145,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         $keepThisLocale = true;
@@ -156,6 +168,7 @@ final class InMemoryLocaleRepository implements LocaleRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);

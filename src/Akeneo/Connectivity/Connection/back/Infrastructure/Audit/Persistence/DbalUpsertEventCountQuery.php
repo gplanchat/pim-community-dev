@@ -19,6 +19,7 @@ class DbalUpsertEventCountQuery implements UpsertEventCountQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(HourlyEventCount $hourlyEventCount): void
     {
         $upsertQuery = <<<SQL

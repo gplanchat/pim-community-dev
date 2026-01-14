@@ -22,6 +22,7 @@ class FamilyRepository extends EntityRepository implements FamilyRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFullRequirementsQB(FamilyInterface $family, $localeCode)
     {
         $repository = $this->getEntityManager()->getRepository(AttributeRequirement::class);
@@ -48,7 +49,8 @@ class FamilyRepository extends EntityRepository implements FamilyRepositoryInter
     /**
      * {@inheritdoc}
      */
-    public function getWithVariants(string $search = null, array $options = [], int $limit = null): array
+    #[\Override]
+    public function getWithVariants(?string $search = null, array $options = [], ?int $limit = null): array
     {
         $qb = $this->createQueryBuilder('f')->where('f.familyVariants IS NOT EMPTY');
 
@@ -79,7 +81,8 @@ class FamilyRepository extends EntityRepository implements FamilyRepositoryInter
     /**
      * {@inheritdoc}
      */
-    public function getFullFamilies(FamilyInterface $family = null, ChannelInterface $channel = null)
+    #[\Override]
+    public function getFullFamilies(?FamilyInterface $family = null, ?ChannelInterface $channel = null)
     {
         $qb = $this->createQueryBuilder('f')
             ->select('f')
@@ -104,6 +107,7 @@ class FamilyRepository extends EntityRepository implements FamilyRepositoryInter
     /**
      * {@inheritdoc}*
      */
+    #[\Override]
     public function findByIds(array $familyIds)
     {
         if (empty($familyIds)) {
@@ -120,6 +124,7 @@ class FamilyRepository extends EntityRepository implements FamilyRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['code' => $code]);
@@ -128,6 +133,7 @@ class FamilyRepository extends EntityRepository implements FamilyRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -136,6 +142,7 @@ class FamilyRepository extends EntityRepository implements FamilyRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttribute($id, $attributeCode)
     {
         $queryBuilder = $this->createQueryBuilder('f')

@@ -18,6 +18,7 @@ final class NumberToMetricDataConverter implements ValueDataConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttributes(AttributeInterface $sourceAttribute, AttributeInterface $targetAttribute): bool
     {
         return AttributeTypes::NUMBER === $sourceAttribute->getType() &&
@@ -27,6 +28,7 @@ final class NumberToMetricDataConverter implements ValueDataConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(ValueInterface $sourceValue, AttributeInterface $targetAttribute)
     {
         Assert::numeric($sourceValue->getData());

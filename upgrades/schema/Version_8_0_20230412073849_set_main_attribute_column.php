@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230412073849_set_main_attribute_column extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Sets the is_main_identifier column with the first identifier found';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -44,6 +46,7 @@ SQL
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

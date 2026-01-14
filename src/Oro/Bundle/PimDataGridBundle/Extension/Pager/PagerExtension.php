@@ -46,6 +46,7 @@ class PagerExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         return true;
@@ -54,6 +55,7 @@ class PagerExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function visitDatasource(DatagridConfiguration $config, DatasourceInterface $datasource)
     {
         $defaultPerPage = $config->offsetGetByPath(ToolbarExtension::PAGER_DEFAULT_PER_PAGE_OPTION_PATH, 10);
@@ -69,6 +71,7 @@ class PagerExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function visitResult(DatagridConfiguration $config, ResultsIterableObject $result)
     {
         $result->offsetAddToArray('options', [self::TOTAL_PARAM => $this->getPager($config)->getNbResults()]);
@@ -77,6 +80,7 @@ class PagerExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         $defaultPerPage = $config->offsetGetByPath(ToolbarExtension::PAGER_DEFAULT_PER_PAGE_OPTION_PATH, 10);
@@ -94,6 +98,7 @@ class PagerExtension extends AbstractExtension
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPriority()
     {
         return -300;

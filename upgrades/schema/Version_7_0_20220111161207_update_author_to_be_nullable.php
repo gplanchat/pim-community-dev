@@ -14,6 +14,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_7_0_20220111161207_update_author_to_be_nullable extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(<<<SQL
@@ -23,6 +24,7 @@ final class Version_7_0_20220111161207_update_author_to_be_nullable extends Abst
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

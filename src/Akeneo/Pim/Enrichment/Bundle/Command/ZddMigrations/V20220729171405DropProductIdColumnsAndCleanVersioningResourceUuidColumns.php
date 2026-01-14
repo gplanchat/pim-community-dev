@@ -134,11 +134,13 @@ class V20220729171405DropProductIdColumnsAndCleanVersioningResourceUuidColumns i
     {
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'DropProductIdColumnsAndCleanVersioningResourceUuidColumns';
     }
 
+    #[\Override]
     public function migrate(): void
     {
         $this->log(sprintf('Starting %s', $this->getName()));
@@ -150,6 +152,7 @@ class V20220729171405DropProductIdColumnsAndCleanVersioningResourceUuidColumns i
     }
 
 
+    #[\Override]
     public function migrateNotZdd(): void
     {
         $this->shouldLog = false;

@@ -10,7 +10,7 @@ use Akeneo\Platform\Bundle\PimVersionBundle\VersionProviderInterface;
 
 final class MarketplaceUrlGenerator implements MarketplaceUrlGeneratorInterface
 {
-    private const START_QUERY = '/?';
+    private const string START_QUERY = '/?';
     private string $marketplaceUrl;
 
     public function __construct(
@@ -25,6 +25,7 @@ final class MarketplaceUrlGenerator implements MarketplaceUrlGeneratorInterface
         $this->marketplaceUrl = $marketplaceUrl;
     }
 
+    #[\Override]
     public function generateUrl(string $username): string
     {
         $profile = $this->getUserProfileQuery->execute($username);

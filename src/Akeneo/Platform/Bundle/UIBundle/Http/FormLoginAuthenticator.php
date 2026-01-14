@@ -72,11 +72,13 @@ class FormLoginAuthenticator extends AbstractLoginFormAuthenticator
         ], $options);
     }
 
+    #[\Override]
     protected function getLoginUrl(Request $request): string
     {
         return $this->httpUtils->generateUri($request, $this->options['login_path']);
     }
 
+    #[\Override]
     public function supports(Request $request): bool
     {
         return ($this->options['post_only'] ? $request->isMethod('POST') : true)
@@ -84,6 +86,7 @@ class FormLoginAuthenticator extends AbstractLoginFormAuthenticator
             && ($this->options['form_only'] ? 'form' === $request->getContentType() : true);
     }
 
+    #[\Override]
     public function authenticate(Request $request): Passport
     {
         $credentials = $this->getCredentials($request);
@@ -115,6 +118,7 @@ class FormLoginAuthenticator extends AbstractLoginFormAuthenticator
     /**
      * @deprecated since Symfony 5.4, use {@link createToken()} instead
      */
+    #[\Override]
     public function createAuthenticatedToken(PassportInterface $passport, string $firewallName): TokenInterface
     {
         trigger_deprecation('symfony/security-http', '5.4', 'Method "%s()" is deprecated, use "%s::createToken()" instead.', __METHOD__, __CLASS__);
@@ -122,16 +126,19 @@ class FormLoginAuthenticator extends AbstractLoginFormAuthenticator
         return $this->createToken($passport, $firewallName);
     }
 
+    #[\Override]
     public function createToken(Passport $passport, string $firewallName): TokenInterface
     {
         return new UsernamePasswordToken($passport->getUser(), $firewallName, $passport->getUser()->getRoles());
     }
 
+    #[\Override]
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         return $this->successHandler->onAuthenticationSuccess($request, $token);
     }
 
+    #[\Override]
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): Response
     {
         return $this->failureHandler->onAuthenticationFailure($request, $exception);
@@ -170,7 +177,8 @@ class FormLoginAuthenticator extends AbstractLoginFormAuthenticator
         $this->httpKernel = $httpKernel;
     }
 
-    public function start(Request $request, AuthenticationException $authException = null): Response
+    #[\Override]
+    public function start(Request $request, ?AuthenticationException $authException = null): Response
     {
         if (!$this->options['use_forward']) {
             return parent::start($request, $authException);

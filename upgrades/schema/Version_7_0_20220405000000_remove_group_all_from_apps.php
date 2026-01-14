@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220405000000_remove_group_all_from_apps extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(
@@ -30,11 +31,13 @@ SQL
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Remove the UserGroup ALL from connected Apps';

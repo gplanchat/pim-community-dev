@@ -22,6 +22,7 @@ final class FamilyCode
         $this->code = $code;
     }
 
+    #[\Override]
     public function __toString()
     {
         return $this->code;

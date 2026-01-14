@@ -71,6 +71,7 @@ class PurgeConnectionErrorsQueryIntegration extends TestCase
             ]
         ]);
     }
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -79,6 +80,7 @@ class PurgeConnectionErrorsQueryIntegration extends TestCase
         $this->esClient = $this->get('akeneo_connectivity.client.connection_error');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

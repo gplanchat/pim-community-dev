@@ -31,6 +31,7 @@ class FlatItemBuffer extends JSONFileBuffer implements BufferInterface, \Countab
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write($items, array $options = [])
     {
         foreach ($items as $item) {
@@ -44,6 +45,7 @@ class FlatItemBuffer extends JSONFileBuffer implements BufferInterface, \Countab
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(): int
     {
         return $this->count;

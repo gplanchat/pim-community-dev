@@ -27,6 +27,7 @@ class Datagrid implements DatagridInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getName()
     {
         return $this->name;
@@ -35,6 +36,7 @@ class Datagrid implements DatagridInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getData()
     {
         /** @var array $rows */
@@ -49,6 +51,7 @@ class Datagrid implements DatagridInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getMetadata()
     {
         $data = MetadataIterableObject::createNamed($this->getName(), []);
@@ -60,6 +63,7 @@ class Datagrid implements DatagridInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function setDatasource(DatasourceInterface $source)
     {
         $this->datasource = $source;
@@ -70,6 +74,7 @@ class Datagrid implements DatagridInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getDatasource()
     {
         return $this->datasource;
@@ -78,6 +83,7 @@ class Datagrid implements DatagridInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getAcceptedDatasource()
     {
         $this->acceptor->acceptDatasource($this->getDatasource());
@@ -88,6 +94,7 @@ class Datagrid implements DatagridInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getAcceptor()
     {
         return $this->acceptor;
@@ -96,6 +103,7 @@ class Datagrid implements DatagridInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function setAcceptor(Acceptor $acceptor)
     {
         $this->acceptor = $acceptor;

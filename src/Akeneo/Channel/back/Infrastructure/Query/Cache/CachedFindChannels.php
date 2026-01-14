@@ -18,6 +18,7 @@ final class CachedFindChannels implements FindChannels, CachedQueryInterface
     ) {
     }
 
+    #[\Override]
     public function findAll(): array
     {
         if (null === $this->cache) {
@@ -27,6 +28,7 @@ final class CachedFindChannels implements FindChannels, CachedQueryInterface
         return $this->cache;
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->cache = null;

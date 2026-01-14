@@ -42,6 +42,7 @@ class PagerResolver implements PagerResolverInterface
      *
      * @return PagerInterface
      */
+    #[\Override]
     public function getPager($datagridName): PagerInterface
     {
         if (in_array($datagridName, $this->gridsWithDummyPager)) {

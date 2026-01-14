@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_7_0_20221129093347_add_cascade_on_prefixes extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Adds DELETE CASCADE on pim_catalog_identifier_generator_prefixes foreign keys';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql('SELECT 1');
@@ -50,6 +52,7 @@ SQL;
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

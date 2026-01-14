@@ -23,6 +23,7 @@ abstract class SqlIntegrationTestCase extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         static::bootKernel(['debug' => false]);
@@ -49,6 +50,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         $connectionCloser = $this->get('akeneo_integration_tests.doctrine.connection.connection_closer');

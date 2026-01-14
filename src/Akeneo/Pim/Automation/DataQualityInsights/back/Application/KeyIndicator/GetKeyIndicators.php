@@ -30,6 +30,7 @@ final class GetKeyIndicators implements GetKeyIndicatorsInterface
         $this->keyIndicatorCodes = $productKeyIndicatorsRegistry->getCodes();
     }
 
+    #[\Override]
     public function all(ChannelCode $channelCode, LocaleCode $localeCode): array
     {
         $productKeyIndicators = $this->getProductKeyIndicatorsQuery->all($channelCode, $localeCode, ...$this->keyIndicatorCodes);
@@ -37,6 +38,7 @@ final class GetKeyIndicators implements GetKeyIndicatorsInterface
         return $this->formatKeyIndicators($productKeyIndicators, $productModelKeyIndicators);
     }
 
+    #[\Override]
     public function byFamily(ChannelCode $channelCode, LocaleCode $localeCode, FamilyCode $family): array
     {
         $productKeyIndicators = $this->getProductKeyIndicatorsQuery->byFamily($channelCode, $localeCode, $family, ...$this->keyIndicatorCodes);
@@ -44,6 +46,7 @@ final class GetKeyIndicators implements GetKeyIndicatorsInterface
         return $this->formatKeyIndicators($productKeyIndicators, $productModelKeyIndicators);
     }
 
+    #[\Override]
     public function byCategory(ChannelCode $channelCode, LocaleCode $localeCode, CategoryCode $category): array
     {
         $productKeyIndicators = $this->getProductKeyIndicatorsQuery->byCategory($channelCode, $localeCode, $category, ...$this->keyIndicatorCodes);

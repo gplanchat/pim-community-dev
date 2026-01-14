@@ -25,6 +25,7 @@ final class GetProductKeyIndicatorsQueryIntegration extends DataQualityInsightsT
 {
     private Client $esClient;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

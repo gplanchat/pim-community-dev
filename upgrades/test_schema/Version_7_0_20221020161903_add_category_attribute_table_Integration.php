@@ -11,11 +11,12 @@ final class Version_7_0_20221020161903_add_category_attribute_table_Integration 
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20221020161903_add_category_attribute_table';
-    private const TABLE_NAME = 'pim_catalog_category_attribute';
+    private const string MIGRATION_LABEL = '_7_0_20221020161903_add_category_attribute_table';
+    private const string TABLE_NAME = 'pim_catalog_category_attribute';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -40,6 +41,7 @@ final class Version_7_0_20221020161903_add_category_attribute_table_Integration 
         Assert::assertTrue($this->tableExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

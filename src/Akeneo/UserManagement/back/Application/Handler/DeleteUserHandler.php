@@ -24,6 +24,7 @@ final class DeleteUserHandler implements DeleteUserHandlerInterface
     ) {
     }
 
+    #[\Override]
     public function handle(DeleteUserCommand $deleteUserCommand): void
     {
         /** @var UserInterface|null $user */

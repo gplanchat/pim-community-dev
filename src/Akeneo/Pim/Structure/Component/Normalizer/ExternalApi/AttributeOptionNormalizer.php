@@ -27,6 +27,7 @@ class AttributeOptionNormalizer implements NormalizerInterface, CacheableSupport
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($option, $format = null, array $context = [])
     {
         $normalizedOption = $this->stdNormalizer->normalize($option, 'standard', $context);
@@ -41,11 +42,13 @@ class AttributeOptionNormalizer implements NormalizerInterface, CacheableSupport
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof AttributeOptionInterface && 'external_api' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

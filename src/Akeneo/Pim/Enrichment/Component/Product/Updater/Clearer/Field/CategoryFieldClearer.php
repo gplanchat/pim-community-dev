@@ -15,11 +15,12 @@ use Webmozart\Assert\Assert;
  */
 final class CategoryFieldClearer implements ClearerInterface
 {
-    private const SUPPORTED_FIELD = 'categories';
+    private const string SUPPORTED_FIELD = 'categories';
 
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function supportsProperty(string $property): bool
     {
         return static::SUPPORTED_FIELD === $property;
@@ -28,6 +29,7 @@ final class CategoryFieldClearer implements ClearerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function clear($entity, string $property, array $options = []): void
     {
         Assert::true(

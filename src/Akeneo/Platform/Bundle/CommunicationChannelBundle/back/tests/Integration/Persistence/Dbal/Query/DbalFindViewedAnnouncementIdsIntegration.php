@@ -26,6 +26,7 @@ class DbalFindViewedAnnouncementIdsIntegration extends TestCase
     /** @var array */
     private $userFromDb;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -47,6 +48,7 @@ class DbalFindViewedAnnouncementIdsIntegration extends TestCase
         Assert::assertEquals(['announcement_id_1', 'announcement_id_2'], $viewedAnnouncementIds);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

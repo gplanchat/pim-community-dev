@@ -16,6 +16,7 @@ abstract class AbstractValueDataNormalizer implements NormalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         return [

@@ -19,11 +19,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230110131126_update_target_column_for_identifier_generators extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Updates the target column in identifier generator table';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         if (!$this->columnExists('pim_catalog_identifier_generator', 'target')) {
@@ -44,6 +46,7 @@ SQL;
         $this->addSql($sql);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

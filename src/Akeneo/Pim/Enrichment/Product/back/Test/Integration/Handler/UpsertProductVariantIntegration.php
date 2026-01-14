@@ -20,6 +20,7 @@ final class UpsertProductVariantIntegration extends EnrichmentProductTestCase
 {
     private ProductRepositoryInterface $productRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

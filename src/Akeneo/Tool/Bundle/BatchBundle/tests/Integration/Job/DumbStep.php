@@ -16,6 +16,7 @@ class DumbStep implements StepInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function getName()
     {
         return 'dumb_step';
@@ -24,6 +25,7 @@ class DumbStep implements StepInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute(StepExecution $stepExecution)
     {
     }

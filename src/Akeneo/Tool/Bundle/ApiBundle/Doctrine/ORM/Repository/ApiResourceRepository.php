@@ -38,6 +38,7 @@ class ApiResourceRepository extends EntityRepository implements ApiResourceRepos
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->identifiableRepository->findOneByIdentifier($identifier);
@@ -46,6 +47,7 @@ class ApiResourceRepository extends EntityRepository implements ApiResourceRepos
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function searchAfterOffset(array $criteria, array $orders, $limit, $offset)
     {
         $qb = $this->createQueryBuilder('r');
@@ -70,6 +72,7 @@ class ApiResourceRepository extends EntityRepository implements ApiResourceRepos
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(array $criteria = [])
     {
         try {
@@ -91,6 +94,7 @@ class ApiResourceRepository extends EntityRepository implements ApiResourceRepos
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return $this->identifiableRepository->getIdentifierProperties();

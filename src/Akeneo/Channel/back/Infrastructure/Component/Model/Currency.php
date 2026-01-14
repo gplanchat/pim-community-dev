@@ -39,6 +39,7 @@ class Currency implements CurrencyInterface
      *
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return $this->code;
@@ -47,6 +48,7 @@ class Currency implements CurrencyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -69,6 +71,7 @@ class Currency implements CurrencyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -77,6 +80,7 @@ class Currency implements CurrencyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -87,6 +91,7 @@ class Currency implements CurrencyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isActivated()
     {
         return $this->activated;
@@ -95,6 +100,7 @@ class Currency implements CurrencyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function toggleActivation()
     {
         $this->activated = !$this->activated;
@@ -105,6 +111,7 @@ class Currency implements CurrencyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setActivated($activated)
     {
         $this->activated = $activated;
@@ -115,6 +122,7 @@ class Currency implements CurrencyInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;

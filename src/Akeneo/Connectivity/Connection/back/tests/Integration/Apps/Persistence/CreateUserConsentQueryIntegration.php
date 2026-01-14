@@ -220,11 +220,13 @@ class CreateUserConsentQueryIntegration extends WebTestCase
         $this->assertTrue(Uuid::isValid($result['uuid']));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

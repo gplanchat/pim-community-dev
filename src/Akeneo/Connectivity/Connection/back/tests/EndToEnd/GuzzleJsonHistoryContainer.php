@@ -28,6 +28,7 @@ class GuzzleJsonHistoryContainer implements \ArrayAccess, \Countable
         }
     }
 
+    #[\Override]
     public function offsetExists(mixed $offset): bool
     {
         $history = $this->readFile();
@@ -35,6 +36,7 @@ class GuzzleJsonHistoryContainer implements \ArrayAccess, \Countable
         return isset($history[$offset]);
     }
 
+    #[\Override]
     public function offsetGet(mixed $offset): mixed
     {
         $history = $this->readFile();
@@ -43,6 +45,7 @@ class GuzzleJsonHistoryContainer implements \ArrayAccess, \Countable
         return $history[$offset];
     }
 
+    #[\Override]
     public function offsetSet(mixed $offset, mixed $value): void
     {
         $history = $this->readFile();
@@ -53,6 +56,7 @@ class GuzzleJsonHistoryContainer implements \ArrayAccess, \Countable
         $this->writeFile($history);
     }
 
+    #[\Override]
     public function offsetUnset(mixed $offset): void
     {
         $history = $this->readFile();
@@ -60,6 +64,7 @@ class GuzzleJsonHistoryContainer implements \ArrayAccess, \Countable
         $this->writeFile($history);
     }
 
+    #[\Override]
     public function count(): int
     {
         $history = $this->readFile();

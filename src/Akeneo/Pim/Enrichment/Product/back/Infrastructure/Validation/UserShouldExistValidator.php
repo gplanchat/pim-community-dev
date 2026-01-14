@@ -20,6 +20,7 @@ final class UserShouldExistValidator extends ConstraintValidator
     {
     }
 
+    #[\Override]
     public function validate($userId, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, UserShouldExist::class);

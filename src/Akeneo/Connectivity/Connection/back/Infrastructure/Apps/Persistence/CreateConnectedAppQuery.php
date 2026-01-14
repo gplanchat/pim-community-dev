@@ -19,6 +19,7 @@ final class CreateConnectedAppQuery implements CreateConnectedAppQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(ConnectedApp $app): void
     {
         $insertQuery = <<<SQL

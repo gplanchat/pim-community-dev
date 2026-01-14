@@ -20,7 +20,7 @@ use Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
  */
 final class GpsReceiver implements ReceiverInterface
 {
-    private const ACKNOWLEDGE_DEADLINE_IN_SECONDS = 600;
+    private const int ACKNOWLEDGE_DEADLINE_IN_SECONDS = 600;
 
     private SerializerInterface $serializer;
     private Subscription $subscription;
@@ -31,6 +31,7 @@ final class GpsReceiver implements ReceiverInterface
         $this->serializer = $serializer;
     }
 
+    #[\Override]
     public function get(): iterable
     {
         try {
@@ -59,6 +60,7 @@ final class GpsReceiver implements ReceiverInterface
         ];
     }
 
+    #[\Override]
     public function ack(Envelope $envelope): void
     {
         try {
@@ -80,6 +82,7 @@ final class GpsReceiver implements ReceiverInterface
         }
     }
 
+    #[\Override]
     public function reject(Envelope $envelope): void
     {
         try {

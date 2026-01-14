@@ -28,26 +28,31 @@ abstract class AbstractValue implements Value
     ) {
     }
 
+    #[\Override]
     public function getUuid(): AttributeUuid
     {
         return $this->uuid;
     }
 
+    #[\Override]
     public function getCode(): AttributeCode
     {
         return $this->code;
     }
 
+    #[\Override]
     public function getLocale(): ?LocaleValue
     {
         return $this->locale;
     }
 
+    #[\Override]
     public function getChannel(): ?ChannelValue
     {
         return $this->channel;
     }
 
+    #[\Override]
     public function getKey(): string
     {
         return sprintf(
@@ -57,6 +62,7 @@ abstract class AbstractValue implements Value
         );
     }
 
+    #[\Override]
     public function getKeyWithChannelAndLocale(): string
     {
         return sprintf(
@@ -70,6 +76,7 @@ abstract class AbstractValue implements Value
     /**
      * @phpstan-ignore-next-line
      */
+    #[\Override]
     public function normalize(): array
     {
         return [

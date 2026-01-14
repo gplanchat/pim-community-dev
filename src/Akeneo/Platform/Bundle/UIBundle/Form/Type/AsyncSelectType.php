@@ -45,6 +45,7 @@ class AsyncSelectType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_async_select';
@@ -53,6 +54,7 @@ class AsyncSelectType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return HiddenType::class;
@@ -61,6 +63,7 @@ class AsyncSelectType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver
@@ -84,6 +87,7 @@ class AsyncSelectType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $repository = $options['repository'];
@@ -104,6 +108,7 @@ class AsyncSelectType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['attr']['data-url'] = $this->getUrl($options);

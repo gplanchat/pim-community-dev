@@ -21,6 +21,7 @@ final class ChangeParentApplier implements UserIntentApplier
     ) {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, ChangeParent::class);
@@ -32,6 +33,7 @@ final class ChangeParentApplier implements UserIntentApplier
         $this->productUpdater->update($product, ['parent' => $userIntent->parentCode()]);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [ChangeParent::class];

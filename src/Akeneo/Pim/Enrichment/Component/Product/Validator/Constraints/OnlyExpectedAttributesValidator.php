@@ -29,6 +29,7 @@ class OnlyExpectedAttributesValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($entity, Constraint $constraint): void
     {
         if (!$entity instanceof EntityWithFamilyVariantInterface) {

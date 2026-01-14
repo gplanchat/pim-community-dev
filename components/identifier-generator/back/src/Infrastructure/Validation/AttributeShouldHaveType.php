@@ -19,16 +19,19 @@ final class AttributeShouldHaveType extends Constraint
     /**
      * @inerhitDoc
      */
+    #[\Override]
     public function getTargets(): string
     {
         return self::PROPERTY_CONSTRAINT;
     }
 
+    #[\Override]
     public function getDefaultOption(): string
     {
         return 'type';
     }
 
+    #[\Override]
     public function getRequiredOptions(): array
     {
         return ['type'];

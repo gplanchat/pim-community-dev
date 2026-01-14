@@ -43,6 +43,7 @@ final class DispatchAttributesWereCreatedOrUpdatedSubscriber implements EventSub
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

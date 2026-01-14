@@ -24,13 +24,13 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
  */
 class ProductPropertiesNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
 {
-    private const FIELD_COMPLETENESS = 'completeness';
-    private const FIELD_FAMILY_VARIANT = 'family_variant';
-    private const FIELD_IN_GROUP = 'in_group';
-    private const FIELD_ID = 'id';
-    private const FIELD_PARENT = 'parent';
-    private const FIELD_ANCESTORS = 'ancestors';
-    private const FIELD_CATEGORIES_OF_ANCESTORS = 'categories_of_ancestors';
+    private const string FIELD_COMPLETENESS = 'completeness';
+    private const string FIELD_FAMILY_VARIANT = 'family_variant';
+    private const string FIELD_IN_GROUP = 'in_group';
+    private const string FIELD_ID = 'id';
+    private const string FIELD_PARENT = 'parent';
+    private const string FIELD_ANCESTORS = 'ancestors';
+    private const string FIELD_CATEGORIES_OF_ANCESTORS = 'categories_of_ancestors';
 
     /** @var ChannelRepositoryInterface */
     private $channelRepository;
@@ -68,6 +68,7 @@ class ProductPropertiesNormalizer implements NormalizerInterface, CacheableSuppo
      *
      * @param ProductInterface $product
      */
+    #[\Override]
     public function normalize($product, $format = null, array $context = [])
     {
         if (!$this->normalizer instanceof NormalizerInterface) {
@@ -172,12 +173,14 @@ class ProductPropertiesNormalizer implements NormalizerInterface, CacheableSuppo
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ProductInterface
             && ValueCollectionNormalizer::INDEXING_FORMAT_PRODUCT_AND_MODEL_INDEX === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

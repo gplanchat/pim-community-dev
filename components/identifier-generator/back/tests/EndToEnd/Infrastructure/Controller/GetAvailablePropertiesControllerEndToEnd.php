@@ -336,6 +336,7 @@ final class GetAvailablePropertiesControllerEndToEnd extends ControllerEndToEndT
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

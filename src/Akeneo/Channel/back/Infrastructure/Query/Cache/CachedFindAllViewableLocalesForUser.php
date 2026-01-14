@@ -20,6 +20,7 @@ final class CachedFindAllViewableLocalesForUser implements FindAllViewableLocale
     ) {
     }
 
+    #[\Override]
     public function findAll(int $userId): array
     {
         if (empty($this->cache[$userId])) {
@@ -29,6 +30,7 @@ final class CachedFindAllViewableLocalesForUser implements FindAllViewableLocale
         return $this->cache[$userId];
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->cache = [];

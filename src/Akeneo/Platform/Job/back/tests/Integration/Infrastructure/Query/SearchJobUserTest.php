@@ -12,6 +12,7 @@ class SearchJobUserTest extends IntegrationTestCase
 {
     private SearchJobUserInterface $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

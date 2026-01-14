@@ -46,6 +46,7 @@ class RootBasedAclProvider implements AclProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findChildren(ObjectIdentityInterface $parentOid, $directChildrenOnly = false)
     {
         return $this->baseAclProvider->findChildren($parentOid, $directChildrenOnly);
@@ -54,6 +55,7 @@ class RootBasedAclProvider implements AclProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAcl(ObjectIdentityInterface $oid, array $sids = [])
     {
         $rootOid = $this->objectIdentityFactory->root($oid);
@@ -86,6 +88,7 @@ class RootBasedAclProvider implements AclProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAcls(array $oids, array $sids = [])
     {
         return $this->baseAclProvider->findAcls($oids, $sids);

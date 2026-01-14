@@ -10,9 +10,9 @@ namespace Akeneo\Pim\Automation\DataQualityInsights\Domain\ValueObject;
  */
 final class DashboardProjectionType
 {
-    const CATALOG = 'catalog';
-    const CATEGORY = 'category';
-    const FAMILY = 'family';
+    const string CATALOG = 'catalog';
+    const string CATEGORY = 'category';
+    const string FAMILY = 'family';
 
     /** @var string */
     private $type;
@@ -22,6 +22,7 @@ final class DashboardProjectionType
         $this->type = $type;
     }
 
+    #[\Override]
     public function __toString()
     {
         return $this->type;

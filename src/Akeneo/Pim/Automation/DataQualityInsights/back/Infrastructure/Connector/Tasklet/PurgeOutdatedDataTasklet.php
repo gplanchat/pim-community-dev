@@ -34,6 +34,7 @@ final class PurgeOutdatedDataTasklet implements TaskletInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -42,6 +43,7 @@ final class PurgeOutdatedDataTasklet implements TaskletInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function execute()
     {
         try {

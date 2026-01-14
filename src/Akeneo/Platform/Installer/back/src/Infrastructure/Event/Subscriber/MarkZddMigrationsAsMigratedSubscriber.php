@@ -32,6 +32,7 @@ class MarkZddMigrationsAsMigratedSubscriber implements EventSubscriberInterface
         $this->zddMigrations = $zddMigrations;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

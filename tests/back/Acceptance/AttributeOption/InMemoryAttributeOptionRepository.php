@@ -34,6 +34,7 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties(): array
     {
         return ['attribute', 'code'];
@@ -42,6 +43,7 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier): ?AttributeOptionInterface
     {
         [$attributeCode, $attributeOptionCode] = \explode('.', $identifier);
@@ -59,6 +61,7 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($attributeOption, array $options = []): void
     {
         if (false === $attributeOption instanceof AttributeOptionInterface) {
@@ -80,7 +83,8 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null): array
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null): array
     {
         if ($orderBy !== null || $limit !== null || $offset !== null) {
             throw new \InvalidArgumentException(
@@ -113,6 +117,7 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -121,6 +126,7 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findCodesByIdentifiers($attributeCode, array $attributeOptionCodes): array
     {
         $result = [];
@@ -138,6 +144,7 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return $this->attributeOptions;
@@ -146,6 +153,7 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
@@ -154,6 +162,7 @@ class InMemoryAttributeOptionRepository implements AttributeOptionRepositoryInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);

@@ -21,6 +21,7 @@ class GetEventSubscriptionFormDataEndToEnd extends WebTestCase
     private ConnectionLoader $connectionLoader;
     private WebhookLoader $webhookLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -69,6 +70,7 @@ class GetEventSubscriptionFormDataEndToEnd extends WebTestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

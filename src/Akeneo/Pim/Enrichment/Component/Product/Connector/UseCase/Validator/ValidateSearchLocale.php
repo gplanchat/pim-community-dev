@@ -16,7 +16,7 @@ use Akeneo\Tool\Component\StorageUtils\Repository\IdentifiableObjectRepositoryIn
  */
 final class ValidateSearchLocale
 {
-    private const COMPLETENESS_PROPERTY = 'completeness';
+    private const string COMPLETENESS_PROPERTY = 'completeness';
 
     /** @var IdentifiableObjectRepositoryInterface */
     private $localeRepository;

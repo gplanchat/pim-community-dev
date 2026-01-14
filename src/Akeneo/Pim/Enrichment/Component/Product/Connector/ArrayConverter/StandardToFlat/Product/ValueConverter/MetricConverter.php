@@ -35,6 +35,7 @@ class MetricConverter extends AbstractValueConverter implements ValueConverterIn
      *     'weight-de_DE-print-unit' => 'MEGAHERTZ',
      * ]
      */
+    #[\Override]
     public function convert($attributeCode, $data)
     {
         $convertedItem = [];

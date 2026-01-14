@@ -10,8 +10,9 @@ final class Version_6_0_20210527144217_dqi_init_recompute_products_scores_Integr
 {
     use ExecuteMigrationTrait;
 
-    const MIGRATION_LABEL = '_6_0_20210527144217_dqi_init_recompute_products_scores';
+    const string MIGRATION_LABEL = '_6_0_20210527144217_dqi_init_recompute_products_scores';
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

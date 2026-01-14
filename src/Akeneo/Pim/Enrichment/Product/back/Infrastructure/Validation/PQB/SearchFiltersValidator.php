@@ -32,6 +32,7 @@ final class SearchFiltersValidator extends ConstraintValidator
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function validate($searchFilters, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, SearchFilters::class);

@@ -27,6 +27,7 @@ final class GetCatalogProductScoreEvolutionQuery implements GetCatalogProductSco
         $this->clock = $clock;
     }
 
+    #[\Override]
     public function byCatalog(ChannelCode $channel, LocaleCode $locale): array
     {
         $sql = <<<'SQL'
@@ -40,6 +41,7 @@ SQL;
         return $this->buildResult($stmt, (string) $channel, (string) $locale);
     }
 
+    #[\Override]
     public function byCategory(ChannelCode $channel, LocaleCode $locale, CategoryCode $category): array
     {
         $sql = <<<'SQL'
@@ -57,6 +59,7 @@ SQL;
         return $this->buildResult($stmt, (string) $channel, (string) $locale);
     }
 
+    #[\Override]
     public function byFamily(ChannelCode $channel, LocaleCode $locale, FamilyCode $family): array
     {
         $sql = <<<'SQL'

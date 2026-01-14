@@ -23,6 +23,7 @@ class ReferenceDataConfiguration implements ReferenceDataConfigurationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return $this->name;
@@ -31,6 +32,7 @@ class ReferenceDataConfiguration implements ReferenceDataConfigurationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setName($name)
     {
         $this->name = $name;
@@ -39,6 +41,7 @@ class ReferenceDataConfiguration implements ReferenceDataConfigurationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClass()
     {
         return $this->class;
@@ -47,6 +50,7 @@ class ReferenceDataConfiguration implements ReferenceDataConfigurationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setClass($class)
     {
         $this->class = $class;
@@ -55,6 +59,7 @@ class ReferenceDataConfiguration implements ReferenceDataConfigurationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getType()
     {
         return $this->type;
@@ -63,6 +68,7 @@ class ReferenceDataConfiguration implements ReferenceDataConfigurationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setType($type)
     {
         $this->type = $type;

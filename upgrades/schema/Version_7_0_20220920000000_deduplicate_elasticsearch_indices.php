@@ -15,6 +15,7 @@ final class Version_7_0_20220920000000_deduplicate_elasticsearch_indices extends
     private ?ContainerInterface $container;
     private ?Client $client;
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $aliases = [
@@ -27,6 +28,7 @@ final class Version_7_0_20220920000000_deduplicate_elasticsearch_indices extends
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
@@ -49,7 +51,8 @@ final class Version_7_0_20220920000000_deduplicate_elasticsearch_indices extends
         }
     }
 
-    public function setContainer(ContainerInterface $container = null): void
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }

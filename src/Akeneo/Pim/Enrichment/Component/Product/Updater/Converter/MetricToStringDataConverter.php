@@ -19,6 +19,7 @@ final class MetricToStringDataConverter implements ValueDataConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttributes(AttributeInterface $sourceAttribute, AttributeInterface $targetAttribute): bool
     {
         return AttributeTypes::METRIC === $sourceAttribute->getType() &&
@@ -28,6 +29,7 @@ final class MetricToStringDataConverter implements ValueDataConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(ValueInterface $sourceValue, AttributeInterface $targetAttribute)
     {
         $metric = $sourceValue->getData();

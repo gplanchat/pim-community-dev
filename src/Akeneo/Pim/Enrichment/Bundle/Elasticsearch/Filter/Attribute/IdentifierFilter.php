@@ -38,6 +38,7 @@ class IdentifierFilter extends AbstractAttributeFilter implements AttributeFilte
      *
      * @throws InvalidPropertyTypeException
      */
+    #[\Override]
     public function addAttributeFilter(
         AttributeInterface $attribute,
         $operator,
@@ -79,6 +80,7 @@ class IdentifierFilter extends AbstractAttributeFilter implements AttributeFilte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         return in_array($attribute->getType(), $this->supportedAttributeTypes);
@@ -87,6 +89,7 @@ class IdentifierFilter extends AbstractAttributeFilter implements AttributeFilte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeTypes()
     {
         return $this->supportedAttributeTypes;

@@ -20,6 +20,7 @@ class SqlIsCategoryTreeLinkedToUser implements IsCategoryTreeLinkedToUser
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byCategoryTreeId(int $categoryTreeId): bool
     {
         $sql = <<<SQL

@@ -10,7 +10,7 @@ use PhpSpec\ObjectBehavior;
 
 class UnitCodeSpec extends ObjectBehavior
 {
-    private const UNIT_CODE = 'meter';
+    private const string UNIT_CODE = 'meter';
 
     function let()
     {

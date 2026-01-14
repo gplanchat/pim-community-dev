@@ -13,6 +13,7 @@ use Akeneo\Platform\Job\Infrastructure\Clock\ClockInterface;
  */
 class SystemClock implements ClockInterface
 {
+    #[\Override]
     public function now(): \DateTimeImmutable
     {
         return new \DateTimeImmutable('2020-01-02 01:00:00', new \DateTimeZone('Europe/Paris'));

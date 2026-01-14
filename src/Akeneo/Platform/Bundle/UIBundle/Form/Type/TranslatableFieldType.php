@@ -43,6 +43,7 @@ class TranslatableFieldType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         // TODO : use resolver to do that, see http://symfony.com/doc/current/components/options_resolver.html
@@ -74,6 +75,7 @@ class TranslatableFieldType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         parent::configureOptions($resolver);
@@ -94,6 +96,7 @@ class TranslatableFieldType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_translatable_field';

@@ -17,11 +17,13 @@ class CategoryTranslator implements FlatPropertyValueTranslatorInterface
         $this->getCategoryTranslations = $getCategoryTranslations;
     }
 
+    #[\Override]
     public function supports(string $columnName): bool
     {
         return 'categories' === $columnName;
     }
 
+    #[\Override]
     public function translate(array $values, string $locale, string $scope): array
     {
         $result = [];

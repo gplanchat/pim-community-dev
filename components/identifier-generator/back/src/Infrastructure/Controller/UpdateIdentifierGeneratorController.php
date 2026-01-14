@@ -21,12 +21,12 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
  * @copyright 2022 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class UpdateIdentifierGeneratorController
+final readonly class UpdateIdentifierGeneratorController
 {
     public function __construct(
-        private readonly UpdateGeneratorHandler $updateGeneratorHandler,
-        private readonly GetGeneratorHandler $getGeneratorHandler,
-        private readonly SecurityFacadeInterface $security,
+        private UpdateGeneratorHandler $updateGeneratorHandler,
+        private GetGeneratorHandler $getGeneratorHandler,
+        private SecurityFacadeInterface $security,
     ) {
     }
 

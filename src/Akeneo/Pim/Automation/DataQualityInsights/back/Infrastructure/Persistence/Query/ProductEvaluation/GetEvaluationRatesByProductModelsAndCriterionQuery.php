@@ -23,6 +23,7 @@ final class GetEvaluationRatesByProductModelsAndCriterionQuery implements GetEva
     ) {
     }
 
+    #[\Override]
     public function execute(ProductEntityIdCollection $productIdCollection, CriterionCode $criterionCode): array
     {
         $ratesPath = sprintf('$."%s"', TransformCriterionEvaluationResultCodes::PROPERTIES_ID['rates']);

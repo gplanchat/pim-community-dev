@@ -20,6 +20,7 @@ class CleanCategoryTemplateAndEnrichedValuesOnTemplateDeactivatedSubscriber impl
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

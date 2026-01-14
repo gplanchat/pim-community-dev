@@ -26,6 +26,7 @@ class GetCategoryTreeByCategoryTemplateSql implements GetCategoryTreeByCategoryT
      * @throws \Doctrine\DBAL\Driver\Exception
      * @throws \Doctrine\DBAL\Exception
      */
+    #[\Override]
     public function __invoke(TemplateUuid $templateUuid): ?CategoryTree
     {
         $query = <<< SQL

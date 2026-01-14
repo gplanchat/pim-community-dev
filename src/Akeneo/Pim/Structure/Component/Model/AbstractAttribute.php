@@ -185,6 +185,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -193,6 +194,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setId($id)
     {
         $this->id = $id;
@@ -203,6 +205,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -213,6 +216,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -221,6 +225,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setEntityType($entityType)
     {
         $this->entityType = $entityType;
@@ -231,6 +236,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getEntityType()
     {
         return $this->entityType;
@@ -239,6 +245,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCreated()
     {
         return $this->created;
@@ -247,6 +254,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCreated($created)
     {
         $this->created = $created;
@@ -257,6 +265,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUpdated()
     {
         return $this->updated;
@@ -265,6 +274,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUpdated($updated)
     {
         $this->updated = $updated;
@@ -275,6 +285,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setBackendType($type)
     {
         $this->backendType = $type;
@@ -285,6 +296,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBackendType()
     {
         return $this->backendType;
@@ -293,6 +305,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeType()
     {
         return $this->getType();
@@ -301,6 +314,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getType()
     {
         return $this->type;
@@ -309,6 +323,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRequired($required)
     {
         $this->required = $required;
@@ -319,6 +334,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isRequired()
     {
         return $this->required;
@@ -327,6 +343,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUnique($unique)
     {
         $this->unique = $unique;
@@ -337,6 +354,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isUnique()
     {
         return $this->unique;
@@ -345,6 +363,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocalizable($localizable)
     {
         $this->localizable = $localizable;
@@ -355,6 +374,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isLocalizable()
     {
         return $this->localizable;
@@ -363,6 +383,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setScopable($scopable)
     {
         $this->scopable = $scopable;
@@ -373,6 +394,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isScopable()
     {
         return $this->scopable;
@@ -381,6 +403,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addOption(AttributeOptionInterface $option)
     {
         $this->options[] = $option;
@@ -392,6 +415,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeOption(AttributeOptionInterface $option)
     {
         $this->options->removeElement($option);
@@ -402,6 +426,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOptions()
     {
         return $this->options;
@@ -410,6 +435,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProperties()
     {
         return $this->properties;
@@ -418,6 +444,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setProperties(array $properties)
     {
         $this->properties = $properties;
@@ -428,6 +455,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProperty($property)
     {
         return isset($this->properties[$property]) ? $this->properties[$property] : null;
@@ -436,6 +464,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setProperty($property, $value)
     {
         $this->properties[$property] = $value;
@@ -446,6 +475,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroupSequence()
     {
         $groups = ['Attribute', $this->getType()];
@@ -471,6 +501,7 @@ abstract class AbstractAttribute implements AttributeInterface
      *
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return $this->getLabel();
@@ -479,6 +510,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroup()
     {
         return $this->group;
@@ -487,7 +519,8 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
-    public function setGroup(AttributeGroupInterface $group = null)
+    #[\Override]
+    public function setGroup(?AttributeGroupInterface $group = null)
     {
         $this->group = $group;
 
@@ -497,6 +530,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isUseableAsGridFilter()
     {
         return $this->useableAsGridFilter;
@@ -505,6 +539,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUseableAsGridFilter($useableAsGridFilter)
     {
         $this->useableAsGridFilter = $useableAsGridFilter;
@@ -515,6 +550,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAvailableLocale(LocaleInterface $availableLocale)
     {
         $this->availableLocales[] = $availableLocale;
@@ -525,6 +561,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeAvailableLocale(LocaleInterface $availableLocale)
     {
         $this->availableLocales->removeElement($availableLocale);
@@ -535,6 +572,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAvailableLocales()
     {
         return $this->availableLocales;
@@ -543,6 +581,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAvailableLocaleCodes(): array
     {
         $codes = [];
@@ -556,6 +595,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasLocaleSpecific(LocaleInterface $locale)
     {
         return in_array($locale->getCode(), $this->getAvailableLocaleCodes());
@@ -564,6 +604,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFamily(FamilyInterface $family)
     {
         $this->families[] = $family;
@@ -574,6 +615,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeFamily(FamilyInterface $family)
     {
         $this->families->removeElement($family);
@@ -584,6 +626,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamilies()
     {
         return $this->families->isEmpty() ? null : $this->families;
@@ -592,6 +635,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setFamilies(ArrayCollection $families)
     {
         $this->families = $families;
@@ -602,6 +646,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaxCharacters()
     {
         return $this->maxCharacters;
@@ -610,6 +655,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMaxCharacters($maxCharacters)
     {
         $this->maxCharacters = $maxCharacters;
@@ -620,6 +666,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValidationRule()
     {
         return $this->validationRule;
@@ -628,6 +675,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setValidationRule($validationRule)
     {
         $this->validationRule = $validationRule;
@@ -638,6 +686,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getValidationRegexp()
     {
         return $this->validationRegexp;
@@ -646,6 +695,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setValidationRegexp($validationRegexp)
     {
         $this->validationRegexp = $validationRegexp;
@@ -656,6 +706,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isWysiwygEnabled()
     {
         return $this->wysiwygEnabled;
@@ -664,6 +715,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setWysiwygEnabled($wysiwygEnabled)
     {
         $this->wysiwygEnabled = $wysiwygEnabled;
@@ -674,6 +726,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNumberMin()
     {
         return $this->numberMin;
@@ -682,6 +735,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setNumberMin($numberMin)
     {
         $this->numberMin = $numberMin;
@@ -692,6 +746,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNumberMax()
     {
         return $this->numberMax;
@@ -700,6 +755,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setNumberMax($numberMax)
     {
         $this->numberMax = $numberMax;
@@ -710,6 +766,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isDecimalsAllowed()
     {
         return $this->decimalsAllowed;
@@ -718,6 +775,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setDecimalsAllowed($decimalsAllowed)
     {
         $this->decimalsAllowed = $decimalsAllowed;
@@ -728,6 +786,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isNegativeAllowed()
     {
         return $this->negativeAllowed;
@@ -736,6 +795,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setNegativeAllowed($negativeAllowed)
     {
         $this->negativeAllowed = $negativeAllowed;
@@ -746,6 +806,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDateMin()
     {
         return $this->dateMin;
@@ -754,6 +815,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setDateMin($dateMin)
     {
         $this->dateMin = $dateMin;
@@ -764,6 +826,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDateMax()
     {
         return $this->dateMax;
@@ -772,6 +835,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setDateMax($dateMax)
     {
         $this->dateMax = $dateMax;
@@ -782,6 +846,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMetricFamily()
     {
         return $this->metricFamily;
@@ -790,6 +855,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMetricFamily($metricFamily)
     {
         $this->metricFamily = $metricFamily;
@@ -800,6 +866,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultMetricUnit()
     {
         return $this->defaultMetricUnit;
@@ -808,6 +875,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setDefaultMetricUnit($defaultMetricUnit)
     {
         $this->defaultMetricUnit = $defaultMetricUnit;
@@ -818,6 +886,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaxFileSize()
     {
         return $this->maxFileSize;
@@ -826,6 +895,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMaxFileSize($maxFileSize)
     {
         $this->maxFileSize = $maxFileSize;
@@ -836,6 +906,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllowedExtensions()
     {
         return $this->allowedExtensions ? array_map('trim', explode(',', $this->allowedExtensions)) : [];
@@ -844,6 +915,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAllowedExtensions($allowedExtensions)
     {
         $allowedExtensions = explode(',', strtolower($allowedExtensions));
@@ -856,6 +928,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMinimumInputLength()
     {
         return $this->minimumInputLength;
@@ -864,6 +937,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMinimumInputLength($minimumInputLength)
     {
         $this->minimumInputLength = $minimumInputLength;
@@ -874,6 +948,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSortOrder()
     {
         return $this->sortOrder;
@@ -882,6 +957,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setSortOrder($sortOrder)
     {
         $this->sortOrder = $sortOrder;
@@ -892,6 +968,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setParameters($parameters)
     {
         foreach ($parameters as $code => $value) {
@@ -908,6 +985,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -918,6 +996,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslation(?string $locale = null): ?AttributeTranslationInterface
     {
         $locale = $locale ?: $this->locale;
@@ -942,6 +1021,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslations()
     {
         return $this->translations;
@@ -950,6 +1030,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->translations->contains($translation)) {
@@ -962,6 +1043,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeTranslation(TranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
@@ -972,6 +1054,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslationFQCN()
     {
         return AttributeTranslation::class;
@@ -980,6 +1063,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         $translated = ($this->getTranslation()) ? $this->getTranslation()->getLabel() : null;
@@ -990,6 +1074,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->getTranslation()->setLabel($label);
@@ -1000,6 +1085,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;
@@ -1008,6 +1094,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAttributeType($type)
     {
         return $this->setType($type);
@@ -1016,6 +1103,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setType($type)
     {
         $this->type = $type;
@@ -1029,6 +1117,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isLocaleSpecific()
     {
         if ($this->availableLocales->isEmpty()) {
@@ -1041,6 +1130,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReferenceDataName()
     {
         if (!$this->isBackendTypeReferenceData()) {
@@ -1053,6 +1143,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setReferenceDataName($name)
     {
         $this->setProperty('reference_data_name', $name);
@@ -1063,6 +1154,7 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isBackendTypeReferenceData()
     {
         return in_array($this->getBackendType(), [
@@ -1074,17 +1166,20 @@ abstract class AbstractAttribute implements AttributeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGuidelines(): array
     {
         return $this->guidelines;
     }
 
+    #[\Override]
     public function addGuidelines(string $locale, string $localeGuidelines): void
     {
         $this->guidelines[$locale] = $localeGuidelines;
     }
 
 
+    #[\Override]
     public function removeGuidelines(string $locale): void
     {
         unset($this->guidelines[$locale]);
@@ -1095,16 +1190,19 @@ abstract class AbstractAttribute implements AttributeInterface
         return array_keys($this->guidelines);
     }
 
+    #[\Override]
     public function getRawTableConfiguration(): ?array
     {
         return $this->rawTableConfiguration;
     }
 
+    #[\Override]
     public function setRawTableConfiguration(?array $rawTableConfiguration): void
     {
         $this->rawTableConfiguration = $rawTableConfiguration;
     }
 
+    #[\Override]
     public function isMainIdentifier(): bool
     {
         return $this->mainIdentifier;

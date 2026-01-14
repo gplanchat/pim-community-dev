@@ -73,6 +73,7 @@ class LocaleExtensionSpec extends ObjectBehavior
         $this->currencyLabel('XSU', 'fr_FR')->shouldReturn(null);
     }
 
+    #[\Override]
     function getMatchers(): array
     {
         $filterArgs = new Node();

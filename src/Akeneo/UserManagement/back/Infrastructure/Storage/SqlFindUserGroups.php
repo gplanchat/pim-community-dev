@@ -20,6 +20,7 @@ class SqlFindUserGroups implements FindUserGroups
      * @throws Exception
      * @throws \Doctrine\DBAL\Driver\Exception
      */
+    #[\Override]
     public function __invoke(
         ?string $search = null,
         ?int $searchAfterId = null,

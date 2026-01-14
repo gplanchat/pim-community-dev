@@ -9,7 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220404075823_add_uuid_columns extends AbstractMigration
 {
-    private const TABLES = [
+    private const array TABLES = [
         'pim_catalog_product' => 'uuid',
         'pim_catalog_association' => 'owner_uuid',
         'pim_catalog_association_product' => 'product_uuid',
@@ -27,7 +27,7 @@ final class Version_7_0_20220404075823_add_uuid_columns extends AbstractMigratio
         'pim_versioning_version' => 'resource_uuid',
     ];
 
-    private const TABLE_WITHOUT_UUID_COMMENT = [
+    private const array TABLE_WITHOUT_UUID_COMMENT = [
         'pim_catalog_completeness',
         'pim_data_quality_insights_product_criteria_evaluation',
         'pim_data_quality_insights_product_score',
@@ -37,11 +37,13 @@ final class Version_7_0_20220404075823_add_uuid_columns extends AbstractMigratio
         'pimee_workflow_published_product'
     ];
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Add uuid columns for product table and every foreign table';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         foreach (self::TABLES as $tableName => $columnName) {
@@ -54,6 +56,7 @@ final class Version_7_0_20220404075823_add_uuid_columns extends AbstractMigratio
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

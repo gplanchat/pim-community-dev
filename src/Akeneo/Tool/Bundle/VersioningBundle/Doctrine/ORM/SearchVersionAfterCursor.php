@@ -54,6 +54,7 @@ class SearchVersionAfterCursor implements CursorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function current(): VersionInterface
     {
         return $this->iterator->current();
@@ -62,6 +63,7 @@ class SearchVersionAfterCursor implements CursorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function next(): void
     {
         $this->iterator->next();
@@ -70,6 +72,7 @@ class SearchVersionAfterCursor implements CursorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function key(): string|int|bool|null|float
     {
         return $this->iterator->key();
@@ -78,6 +81,7 @@ class SearchVersionAfterCursor implements CursorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function valid(): bool
     {
         return $this->iterator->valid();
@@ -86,6 +90,7 @@ class SearchVersionAfterCursor implements CursorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function rewind(): void
     {
         $this->iterator = $this->iterator();
@@ -95,6 +100,7 @@ class SearchVersionAfterCursor implements CursorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function count(): int
     {
         return $this->countQueryResults($this->queryBuilder);

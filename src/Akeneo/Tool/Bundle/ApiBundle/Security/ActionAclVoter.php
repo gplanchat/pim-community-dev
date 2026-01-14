@@ -53,6 +53,7 @@ class ActionAclVoter extends Voter implements VoterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($attribute, $subject)
     {
         return $this->oidType === $attribute;
@@ -61,6 +62,7 @@ class ActionAclVoter extends Voter implements VoterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function vote(TokenInterface $token, $object, array $attributes): int
     {
         foreach ($attributes as $attribute) {
@@ -77,6 +79,7 @@ class ActionAclVoter extends Voter implements VoterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         $oid = new ObjectIdentity(static::OID_IDENTIFIER, $attribute);

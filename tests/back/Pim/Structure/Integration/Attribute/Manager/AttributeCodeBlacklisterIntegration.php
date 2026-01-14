@@ -95,6 +95,7 @@ final class AttributeCodeBlacklisterIntegration extends TestCase
         return $this->get('akeneo_batch.job.job_instance_repository');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

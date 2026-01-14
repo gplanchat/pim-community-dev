@@ -17,6 +17,7 @@ class EditFormVisibilityChecker extends NonEmptyPropertyVisibilityChecker
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isVisible(array $config = [], array $context = [])
     {
         $config['property'] = isset($config['path']) ? $config['path'] : static::PATH;

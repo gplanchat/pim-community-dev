@@ -20,6 +20,7 @@ class SaveReadProductEventCountEndToEnd extends ApiTestCase
 {
     private Connection $dbalConnection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -84,6 +85,7 @@ class SaveReadProductEventCountEndToEnd extends ApiTestCase
         Assert::assertEquals(0, (int) $this->getEventCount('magento'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

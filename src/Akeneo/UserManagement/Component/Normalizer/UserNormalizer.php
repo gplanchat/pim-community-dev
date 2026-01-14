@@ -55,6 +55,7 @@ class UserNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
      *
      * @var UserInterface $user
      */
+    #[\Override]
     public function normalize($user, $format = null, array $context = [])
     {
         $result = [
@@ -123,11 +124,13 @@ class UserNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof UserInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

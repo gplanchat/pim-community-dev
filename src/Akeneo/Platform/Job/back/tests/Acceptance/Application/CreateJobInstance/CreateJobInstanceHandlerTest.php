@@ -19,6 +19,7 @@ class CreateJobInstanceHandlerTest extends AcceptanceTestCase
     private InMemoryJobInstanceSaver $saver;
     private InMemorySecurityFacade $securityFacade;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

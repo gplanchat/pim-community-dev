@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class IsConnectionsNumberLimitReachedActionEndToEnd extends WebTestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

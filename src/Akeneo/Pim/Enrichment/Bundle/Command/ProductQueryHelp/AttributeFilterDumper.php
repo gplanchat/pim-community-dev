@@ -37,6 +37,7 @@ class AttributeFilterDumper implements DumperInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function dump(OutputInterface $output)
     {
         $output->writeln("<info>Useable attributes filters...</info>");

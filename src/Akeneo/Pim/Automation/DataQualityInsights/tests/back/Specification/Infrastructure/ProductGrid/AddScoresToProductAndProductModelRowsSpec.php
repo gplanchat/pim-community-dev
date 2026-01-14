@@ -151,6 +151,7 @@ class AddScoresToProductAndProductModelRowsSpec extends ObjectBehavior
         );
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

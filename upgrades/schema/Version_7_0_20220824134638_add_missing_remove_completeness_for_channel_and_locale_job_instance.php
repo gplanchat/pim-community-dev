@@ -12,11 +12,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_7_0_20220824134638_add_missing_remove_completeness_for_channel_and_locale_job_instance extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Adds the potentially missing remove_completeness_for_channel_and_locale job instance';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(
@@ -37,6 +39,7 @@ final class Version_7_0_20220824134638_add_missing_remove_completeness_for_chann
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

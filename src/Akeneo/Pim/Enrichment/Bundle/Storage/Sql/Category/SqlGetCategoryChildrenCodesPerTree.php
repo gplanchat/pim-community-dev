@@ -25,6 +25,7 @@ class SqlGetCategoryChildrenCodesPerTree implements GetCategoryChildrenCodesPerT
         $this->categoryCodeFilter = $categoryCodeFilter;
     }
 
+    #[\Override]
     public function executeWithChildren(array $categoryCodes): array
     {
         Assert::allStringNotEmpty($categoryCodes);
@@ -62,6 +63,7 @@ SQL;
         return $results;
     }
 
+    #[\Override]
     public function executeWithoutChildren(array $categoryCodes): array
     {
         Assert::allStringNotEmpty($categoryCodes);

@@ -32,6 +32,7 @@ class FamilyVariantNormalizer implements NormalizerInterface, CacheableSupportsM
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($familyVariant, $format = null, array $context = array()): array
     {
         $labels = $this->translationNormalizer->normalize($familyVariant, 'standard', $context);
@@ -62,11 +63,13 @@ class FamilyVariantNormalizer implements NormalizerInterface, CacheableSupportsM
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof FamilyVariantInterface && 'datagrid' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

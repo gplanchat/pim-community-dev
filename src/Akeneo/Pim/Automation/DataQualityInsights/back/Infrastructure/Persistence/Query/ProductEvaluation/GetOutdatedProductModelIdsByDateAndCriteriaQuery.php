@@ -25,6 +25,7 @@ final class GetOutdatedProductModelIdsByDateAndCriteriaQuery implements GetOutda
      * Retrieves the product-models that have at least one criterion from a given list that has not been evaluated since a given date
      * If the given criteria list is empty, it will check the date of all criteria
      */
+    #[\Override]
     public function __invoke(ProductModelIdCollection $productModelIds, \DateTimeImmutable $evaluationDate, array $criteria): ProductModelIdCollection
     {
         if ($productModelIds->isEmpty()) {

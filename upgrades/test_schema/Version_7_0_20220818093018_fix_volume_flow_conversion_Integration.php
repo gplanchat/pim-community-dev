@@ -7,17 +7,19 @@ use Doctrine\DBAL\Connection;
 
 class Version_7_0_20220818093018_fix_volume_flow_conversion_Integration extends TestCase
 {
-    private const MIGRATION_LABEL = '_7_0_20220818093018_fix_volume_flow_conversion';
+    private const string MIGRATION_LABEL = '_7_0_20220818093018_fix_volume_flow_conversion';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

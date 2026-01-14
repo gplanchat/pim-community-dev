@@ -23,6 +23,7 @@ class ValidDateRangeValidator extends ConstraintValidator
      *
      * @throws \Exception
      */
+    #[\Override]
     public function validate($entity, Constraint $constraint)
     {
         if (!$constraint instanceof ValidDateRange) {

@@ -186,6 +186,7 @@ class JobIntegration extends TestCase
         };
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

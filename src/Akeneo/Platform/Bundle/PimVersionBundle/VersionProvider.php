@@ -25,11 +25,13 @@ class VersionProvider implements VersionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getEdition(): string
     {
         return $this->getPimVersion()->editionName();
     }
 
+    #[\Override]
     public function getVersion(): string
     {
         $filepath = $this->projectDir . '/version.txt';
@@ -40,6 +42,7 @@ class VersionProvider implements VersionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPatch(): string
     {
         if (!$this->isSaaSVersion()) {
@@ -56,6 +59,7 @@ class VersionProvider implements VersionProviderInterface
         return $this->getVersion();
     }
 
+    #[\Override]
     public function getMinorVersion(): string
     {
         if (!$this->isSaaSVersion()) {
@@ -75,6 +79,7 @@ class VersionProvider implements VersionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFullVersion(): string
     {
         return sprintf(
@@ -88,6 +93,7 @@ class VersionProvider implements VersionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isSaaSVersion(): bool
     {
         return $this->getPimVersion()->isSaas();

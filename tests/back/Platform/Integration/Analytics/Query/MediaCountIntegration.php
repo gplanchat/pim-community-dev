@@ -13,6 +13,7 @@ class MediaCountIntegration extends TestCase
 {
     private MediaCountQuery $mediaCount;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -98,6 +99,7 @@ class MediaCountIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

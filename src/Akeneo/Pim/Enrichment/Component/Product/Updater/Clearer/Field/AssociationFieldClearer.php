@@ -19,7 +19,7 @@ use Webmozart\Assert\Assert;
  */
 final class AssociationFieldClearer implements ClearerInterface
 {
-    private const SUPPORTED_FIELD = 'associations';
+    private const string SUPPORTED_FIELD = 'associations';
 
     private TwoWayAssociationUpdaterInterface $twoWayAssociationUpdater;
 
@@ -31,6 +31,7 @@ final class AssociationFieldClearer implements ClearerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function supportsProperty(string $property): bool
     {
         return static::SUPPORTED_FIELD === $property;
@@ -39,6 +40,7 @@ final class AssociationFieldClearer implements ClearerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function clear($entity, string $property, array $options = []): void
     {
         Assert::true(

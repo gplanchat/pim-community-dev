@@ -16,6 +16,7 @@ class CurrencyNormalizer implements NormalizerInterface, CacheableSupportsMethod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($currency, $format = null, array $context = [])
     {
         return [
@@ -27,11 +28,13 @@ class CurrencyNormalizer implements NormalizerInterface, CacheableSupportsMethod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof CurrencyInterface && 'standard' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

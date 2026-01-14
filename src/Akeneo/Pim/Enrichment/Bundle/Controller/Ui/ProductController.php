@@ -81,6 +81,7 @@ class ProductController extends AbstractListCategoryController
      *
      * @throws NotFoundHttpException
      */
+    #[\Override]
     protected function findEntityWithCategoriesOr404(string $uuid): ProductInterface
     {
         $product = $this->productRepository->find($uuid);

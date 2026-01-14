@@ -10,11 +10,13 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220425160000_ensure_locale_codes_for_labels_in_families_have_correct_case extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Enforces all locale codes in the pim_catalog_family_translation to be correclty spelled regarding case (meaning same case as locale codes in table pim_catalog_locale)';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         // PIM-10416
@@ -33,6 +35,7 @@ SQL
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

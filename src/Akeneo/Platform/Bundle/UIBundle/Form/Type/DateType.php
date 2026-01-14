@@ -40,6 +40,7 @@ class DateType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $placeholderDefault = function (Options $options) {
@@ -80,6 +81,7 @@ class DateType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function finishView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['placeholder'] = $options['placeholder'];
@@ -88,6 +90,7 @@ class DateType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return BaseDateType::class;
@@ -96,6 +99,7 @@ class DateType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_date';

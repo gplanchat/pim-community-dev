@@ -9,7 +9,7 @@ use PhpSpec\ObjectBehavior;
 
 class MeasurementFamilyCodeSpec extends ObjectBehavior
 {
-    private const MEASUREMENT_FAMILY_CODE = 'area';
+    private const string MEASUREMENT_FAMILY_CODE = 'area';
 
     function let()
     {

@@ -26,6 +26,7 @@ class StructureVersion implements StructureVersionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getStructureVersion()
     {
         $sql = <<<'SQL'

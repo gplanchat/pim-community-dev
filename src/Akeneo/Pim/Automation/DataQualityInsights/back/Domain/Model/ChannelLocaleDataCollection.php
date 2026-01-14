@@ -36,6 +36,7 @@ final class ChannelLocaleDataCollection implements \IteratorAggregate
         return $channelLocaleDataCollection;
     }
 
+    #[\Override]
     public function getIterator(): \Iterator
     {
         return new \ArrayIterator($this->channelLocaleData);

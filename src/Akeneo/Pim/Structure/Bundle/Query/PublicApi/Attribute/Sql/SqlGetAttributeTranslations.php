@@ -14,6 +14,7 @@ class SqlGetAttributeTranslations implements GetAttributeTranslations
     /**
      * @inerhitDoc
      */
+    #[\Override]
     public function byAttributeCodesAndLocale(array $attributeCodes, string $locale): array
     {
         if (empty($attributeCodes)) {
@@ -50,6 +51,7 @@ SQL;
     /**
      * @inerhitDoc
      */
+    #[\Override]
     public function byAttributeCodes(array $attributeCodes): array
     {
         if (empty($attributeCodes)) {

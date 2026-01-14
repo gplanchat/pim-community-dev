@@ -38,6 +38,7 @@ class GetAssociatedProductUuidsByProductIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

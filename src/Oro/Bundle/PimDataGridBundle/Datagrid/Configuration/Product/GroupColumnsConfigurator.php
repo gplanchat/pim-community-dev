@@ -48,6 +48,7 @@ class GroupColumnsConfigurator extends ColumnsConfigurator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configure(DatagridConfiguration $configuration)
     {
         $this->configuration = $configuration;
@@ -83,6 +84,7 @@ class GroupColumnsConfigurator extends ColumnsConfigurator
     /**
      * Sort the columns
      */
+    #[\Override]
     protected function sortColumns()
     {
         $inGroupColumn = [];

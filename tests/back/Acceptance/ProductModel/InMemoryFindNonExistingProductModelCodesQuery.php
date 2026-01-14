@@ -16,6 +16,7 @@ class InMemoryFindNonExistingProductModelCodesQuery implements FindNonExistingPr
         $this->productModelRepository = $productModelRepository;
     }
 
+    #[\Override]
     public function execute(array $productModelCodes): array
     {
         $existingCodes = $this->getAllProductModelCodes();

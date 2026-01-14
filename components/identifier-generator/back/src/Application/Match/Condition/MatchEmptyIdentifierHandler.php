@@ -15,11 +15,13 @@ use Webmozart\Assert\Assert;
  */
 final class MatchEmptyIdentifierHandler implements MatchConditionHandler
 {
+    #[\Override]
     public function getConditionClass(): string
     {
         return EmptyIdentifier::class;
     }
 
+    #[\Override]
     public function __invoke(ConditionInterface $condition, ProductProjection $productProjection): bool
     {
         Assert::isInstanceOf($condition, EmptyIdentifier::class);

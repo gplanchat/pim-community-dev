@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230417092236_fix_completeness_table_auto_increment extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Sets the `id` column of the `pim_catalog_completeness` table to be auto_increment';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         if (!$this->tableExists('pim_catalog_completeness')) {
@@ -38,6 +40,7 @@ ALTER TABLE pim_catalog_completeness MODIFY COLUMN id bigint NOT NULL AUTO_INCRE
 SQL);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

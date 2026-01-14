@@ -19,6 +19,7 @@ final class SqlFindLocales implements FindLocales
     ) {
     }
 
+    #[\Override]
     public function find(string $localeCode): ?Locale
     {
         $sql = <<<SQL
@@ -44,6 +45,7 @@ final class SqlFindLocales implements FindLocales
     /**
      * @return Locale[]
      */
+    #[\Override]
     public function findAllActivated(): array
     {
         $sql = <<<SQL

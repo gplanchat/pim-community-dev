@@ -39,6 +39,7 @@ CSV;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createAttribute([

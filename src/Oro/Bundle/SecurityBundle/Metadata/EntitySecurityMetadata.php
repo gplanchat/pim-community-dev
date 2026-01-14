@@ -64,6 +64,7 @@ class EntitySecurityMetadata implements AclClassInfo, \Serializable
      *
      * @return string
      */
+    #[\Override]
     public function getClassName()
     {
         return $this->className;
@@ -74,6 +75,7 @@ class EntitySecurityMetadata implements AclClassInfo, \Serializable
      *
      * @return string
      */
+    #[\Override]
     public function getGroup()
     {
         return $this->group;
@@ -84,11 +86,13 @@ class EntitySecurityMetadata implements AclClassInfo, \Serializable
      *
      * @return string
      */
+    #[\Override]
     public function getLabel()
     {
         return $this->label;
     }
 
+    #[\Override]
     public function isEnabledAtCreation(): bool
     {
         return true;
@@ -107,6 +111,7 @@ class EntitySecurityMetadata implements AclClassInfo, \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function serialize()
     {
         return serialize(
@@ -123,6 +128,7 @@ class EntitySecurityMetadata implements AclClassInfo, \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function unserialize($serialized)
     {
         [
@@ -134,6 +140,7 @@ class EntitySecurityMetadata implements AclClassInfo, \Serializable
         ] = unserialize($serialized);
     }
 
+    #[\Override]
     public function getOrder(): int
     {
         return 0;

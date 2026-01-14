@@ -73,6 +73,7 @@ final class SqlGetConnectorProductModels implements Query\GetConnectorProductMod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromProductQueryBuilder(
         ProductQueryBuilderInterface $productQueryBuilder,
         int $userId,
@@ -103,6 +104,7 @@ final class SqlGetConnectorProductModels implements Query\GetConnectorProductMod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromProductModelCode(string $productModelCode, int $userId): ConnectorProductModel
     {
         $connectorProductModels = $this->fromProductModelCodes([$productModelCode], $userId, null, null, null);
@@ -114,6 +116,7 @@ final class SqlGetConnectorProductModels implements Query\GetConnectorProductMod
         return $connectorProductModels->connectorProductModels()[0];
     }
 
+    #[\Override]
     public function fromProductModelCodes(
         array $productModelCodes,
         int $userId,

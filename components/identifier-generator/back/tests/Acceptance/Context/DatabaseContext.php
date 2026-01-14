@@ -24,10 +24,10 @@ use Webmozart\Assert\Assert;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class DatabaseContext implements Context
+final readonly class DatabaseContext implements Context
 {
     public function __construct(
-        private readonly IdentifierGeneratorRepository $generatorRepository,
+        private IdentifierGeneratorRepository $generatorRepository,
     ) {
     }
 

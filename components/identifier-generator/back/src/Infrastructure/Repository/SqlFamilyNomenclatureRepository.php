@@ -21,6 +21,7 @@ class SqlFamilyNomenclatureRepository implements FamilyNomenclatureRepository
     ) {
     }
 
+    #[\Override]
     public function get(): ?NomenclatureDefinition
     {
         $nomenclatureDefinition = $this->getNomenclatureDefinition();
@@ -32,6 +33,7 @@ class SqlFamilyNomenclatureRepository implements FamilyNomenclatureRepository
         return $nomenclatureDefinition;
     }
 
+    #[\Override]
     public function update(NomenclatureDefinition $nomenclatureDefinition): void
     {
         $this->connection->beginTransaction();

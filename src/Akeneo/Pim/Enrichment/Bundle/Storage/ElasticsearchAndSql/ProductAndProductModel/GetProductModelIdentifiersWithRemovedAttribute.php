@@ -17,6 +17,7 @@ final class GetProductModelIdentifiersWithRemovedAttribute implements GetProduct
         $this->searchQueryBuilder = new SearchQueryBuilder();
     }
 
+    #[\Override]
     public function nextBatch(array $attributesCodes, int $batchSize): iterable
     {
         $this->searchQueryBuilder->addFilter([
@@ -48,6 +49,7 @@ final class GetProductModelIdentifiersWithRemovedAttribute implements GetProduct
         }
     }
 
+    #[\Override]
     public function getQueryBuilder(): SearchQueryBuilder
     {
         return $this->searchQueryBuilder;

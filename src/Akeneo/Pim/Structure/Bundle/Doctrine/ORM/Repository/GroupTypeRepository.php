@@ -17,6 +17,7 @@ class GroupTypeRepository extends EntityRepository implements GroupTypeRepositor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['code' => $code]);
@@ -25,6 +26,7 @@ class GroupTypeRepository extends EntityRepository implements GroupTypeRepositor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -33,6 +35,7 @@ class GroupTypeRepository extends EntityRepository implements GroupTypeRepositor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findTypeIds()
     {
         $query = $this->_em->createQueryBuilder()

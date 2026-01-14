@@ -677,6 +677,7 @@ class SqlGetConnectorProductModelsIntegration extends TestCase
         $this->getQuery()->fromProductModelCode('unknown_product_model', $this->getUserId('admin'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -776,6 +777,7 @@ class SqlGetConnectorProductModelsIntegration extends TestCase
         $this->get('akeneo_elasticsearch.client.product_and_product_model')->refreshIndex();
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

@@ -14,6 +14,7 @@ use PHPUnit\Framework\Assert;
  */
 class GetFamilyIdsNotUsedByProductsQueryIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

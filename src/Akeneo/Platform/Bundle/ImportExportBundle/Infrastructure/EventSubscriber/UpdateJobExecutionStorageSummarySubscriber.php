@@ -18,6 +18,7 @@ class UpdateJobExecutionStorageSummarySubscriber implements EventSubscriberInter
     /**
      * @return array<string, string>
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -11,6 +11,7 @@ final class SqlFindLocalesIntegration extends TestCase
 {
     private FindLocales $sqlFindLocales;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -50,6 +51,7 @@ final class SqlFindLocalesIntegration extends TestCase
         $this->assertEquals(true, $enUSLocale->isActivated());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

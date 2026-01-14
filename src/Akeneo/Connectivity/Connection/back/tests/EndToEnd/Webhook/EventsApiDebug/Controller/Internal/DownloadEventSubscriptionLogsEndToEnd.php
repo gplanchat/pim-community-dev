@@ -78,6 +78,7 @@ EOF;
         Assert::assertEquals($expectedContent, $content);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -100,6 +101,7 @@ EOF;
         $this->elasticsearchClient->refreshIndex();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

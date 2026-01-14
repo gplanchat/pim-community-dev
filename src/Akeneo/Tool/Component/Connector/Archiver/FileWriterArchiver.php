@@ -39,6 +39,7 @@ class FileWriterArchiver extends AbstractFilesystemArchiver
      *
      * @param StepExecution $stepExecution
      */
+    #[\Override]
     public function archive(StepExecution $stepExecution): void
     {
         $step = $this->getStep($stepExecution);
@@ -57,6 +58,7 @@ class FileWriterArchiver extends AbstractFilesystemArchiver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName(): string
     {
         return 'output';
@@ -65,6 +67,7 @@ class FileWriterArchiver extends AbstractFilesystemArchiver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(StepExecution $stepExecution): bool
     {
         try {

@@ -50,6 +50,7 @@ class ActionExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $actions = $config->offsetGetOr(static::ACTION_KEY, []);
@@ -60,6 +61,7 @@ class ActionExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function processConfigs(DatagridConfiguration $config)
     {
         $actionConfiguration = $config->offsetGetOr(static::ACTION_CONFIGURATION_KEY);
@@ -86,6 +88,7 @@ class ActionExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getPriority()
     {
         // should  be applied before formatter extension
@@ -96,6 +99,7 @@ class ActionExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         $actionsMetadata = [];

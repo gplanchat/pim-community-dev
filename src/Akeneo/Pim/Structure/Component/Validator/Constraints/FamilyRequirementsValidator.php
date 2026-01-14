@@ -29,6 +29,7 @@ class FamilyRequirementsValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($family, Constraint $constraint)
     {
         if (!$constraint instanceof FamilyRequirements) {

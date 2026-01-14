@@ -26,6 +26,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAllInDefaultGroup()
     {
         $qb = $this->createQueryBuilder('a');
@@ -68,6 +69,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findUniqueAttributeCodes()
     {
         $codes = $this
@@ -89,6 +91,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findMediaAttributeCodes()
     {
         $codes = $this
@@ -115,6 +118,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAllAxesQB()
     {
         $qb = $this->createQueryBuilder('a');
@@ -134,6 +138,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAvailableAxes($locale)
     {
         return $this->getAxesQuery($locale)->getArrayResult();
@@ -158,6 +163,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['code' => $code]);
@@ -166,6 +172,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -174,6 +181,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributesAsArray($withLabel = false, $locale = null, array $ids = [])
     {
         $qb = $this->_em->createQueryBuilder()
@@ -214,6 +222,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeIdsUseableInGrid($codes = null, $groupIds = null)
     {
         $qb = $this->_em->createQueryBuilder()
@@ -245,6 +254,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getIdentifier(): AttributeInterface
     {
         return $this->getMainIdentifier();
@@ -253,6 +263,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMainIdentifier(): AttributeInterface
     {
         return $this->findOneBy(['type' => AttributeTypes::IDENTIFIER, 'mainIdentifier' => true]) ??
@@ -262,6 +273,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierCode(): string
     {
         return $this->getMainIdentifierCode();
@@ -270,6 +282,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMainIdentifierCode(): string
     {
         if (null === $this->identifierCode) {
@@ -282,6 +295,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeTypeByCodes(array $codes)
     {
         $results = $this->createQueryBuilder('a')
@@ -304,6 +318,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeCodesByType($type)
     {
         $qb = $this->createQueryBuilder('a');
@@ -324,6 +339,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeCodesByGroup(AttributeGroupInterface $group)
     {
         $qb = $this->createQueryBuilder('a');
@@ -341,6 +357,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
         return array_map('current', $qb->getQuery()->getScalarResult());
     }
 
+    #[\Override]
     public function getAttributesByGroups(array $groupCodes, int $limit, ?string $searchAfter): array
     {
         $qb = $this->createQueryBuilder('a');
@@ -363,6 +380,7 @@ class AttributeRepository extends EntityRepository implements IdentifiableObject
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAttributesByFamily(FamilyInterface $family)
     {
         $qb = $this->createQueryBuilder('a');

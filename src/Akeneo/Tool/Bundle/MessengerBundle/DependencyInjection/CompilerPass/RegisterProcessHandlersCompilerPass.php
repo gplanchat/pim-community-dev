@@ -16,6 +16,7 @@ use Symfony\Component\DependencyInjection\Reference;
  */
 final class RegisterProcessHandlersCompilerPass implements CompilerPassInterface
 {
+    #[\Override]
     public function process(ContainerBuilder $container): void
     {
         $registryDefinition = $container->getDefinition(ProcessMessageHandlerRegistry::class);

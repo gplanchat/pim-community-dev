@@ -10,9 +10,10 @@ namespace Akeneo\Pim\Automation\DataQualityInsights\Application\ProductEvaluatio
  */
 class AsynchronousCriterionEvaluationsFilterIterator extends \FilterIterator
 {
-    private const ASYNCHRONOUS_CRITERION_CODES = [
+    private const array ASYNCHRONOUS_CRITERION_CODES = [
     ];
 
+    #[\Override]
     public function accept(): bool
     {
         $criterionEvaluation = $this->getInnerIterator()->current();

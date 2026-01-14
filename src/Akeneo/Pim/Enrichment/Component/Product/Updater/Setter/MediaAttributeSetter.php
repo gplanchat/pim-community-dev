@@ -45,6 +45,7 @@ class MediaAttributeSetter extends AbstractAttributeSetter
      *
      * Expected data input format :  "/absolute/file/path/filename.extension"
      */
+    #[\Override]
     public function setAttributeData(
         EntityWithValuesInterface $entityWithValues,
         AttributeInterface $attribute,

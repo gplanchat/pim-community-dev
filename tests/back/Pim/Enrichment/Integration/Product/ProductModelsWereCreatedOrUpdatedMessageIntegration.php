@@ -16,6 +16,7 @@ use Akeneo\Pim\Enrichment\Component\Product\Event\ProductModelWasUpdated;
  */
 class ProductModelsWereCreatedOrUpdatedMessageIntegration extends EnrichmentProductModelTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -35,6 +36,7 @@ class ProductModelsWereCreatedOrUpdatedMessageIntegration extends EnrichmentProd
         ]);
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         parent::tearDown();

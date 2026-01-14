@@ -50,6 +50,7 @@ class FamilyVariantRemover implements RemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function remove($familyVariant, array $options = []): RemoverInterface
     {
         if (!$familyVariant instanceof FamilyVariantInterface) {

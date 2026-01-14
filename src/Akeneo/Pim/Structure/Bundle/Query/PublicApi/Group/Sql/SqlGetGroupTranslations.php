@@ -17,6 +17,7 @@ class SqlGetGroupTranslations implements GetGroupTranslations
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byGroupCodesAndLocale(array $groupCodes, string $locale): array
     {
         if (empty($groupCodes)) {

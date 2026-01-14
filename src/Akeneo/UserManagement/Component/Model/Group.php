@@ -38,6 +38,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +47,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName(): ?string
     {
         return $this->name;
@@ -54,6 +56,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setName($name): void
     {
         $this->name = $name;
@@ -62,6 +65,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRoleLabelsAsString(): string
     {
         $labels = [];
@@ -76,6 +80,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRoles(): Collection
     {
         return $this->roles;
@@ -84,6 +89,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRole($roleName): ?RoleInterface
     {
         /** @var $role Role */
@@ -99,6 +105,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasRole($role): bool
     {
         if ($role instanceof Role) {
@@ -117,6 +124,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addRole(RoleInterface $role): void
     {
         if (!$this->hasRole($role)) {
@@ -127,6 +135,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeRole($role): void
     {
         if ($role instanceof Role) {
@@ -146,6 +155,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRoles($roles): void
     {
         if ($roles instanceof Collection) {
@@ -166,6 +176,7 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultPermissions(): ?array
     {
         return $this->defaultPermissions;
@@ -174,11 +185,13 @@ class Group implements GroupInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setDefaultPermissions(array $defaultPermissions): void
     {
         $this->defaultPermissions = $defaultPermissions;
     }
 
+    #[\Override]
     public function setDefaultPermission(string $permission, bool $granted): void
     {
         if (null === $this->defaultPermissions) {
@@ -193,16 +206,19 @@ class Group implements GroupInterface
      *
      * @return string
      */
+    #[\Override]
     public function __toString(): string
     {
         return (string) $this->name;
     }
 
+    #[\Override]
     public function getType(): string
     {
         return $this->type;
     }
 
+    #[\Override]
     public function setType(string $type): void
     {
         $this->type = $type;

@@ -20,6 +20,7 @@ final class GetProductModelIdsImpactedByAttributeGroupActivationQueryIntegration
     /** @var \DateTimeImmutable */
     private $updatedSince;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -41,6 +41,7 @@ class OrmFilterDatasourceAdapter implements FilterDatasourceAdapterInterface
      *                            Can be FilterUtility::CONDITION_OR or FilterUtility::CONDITION_AND.
      * @param bool   $isComputed  Specifies whether the restriction should be added to the HAVING part of a query.
      */
+    #[\Override]
     public function addRestriction($restriction, $condition, $isComputed = false)
     {
         if ($this->fixComparison($restriction, $condition)) {
@@ -65,6 +66,7 @@ class OrmFilterDatasourceAdapter implements FilterDatasourceAdapterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function groupBy($_)
     {
         return call_user_func_array([$this->qb, 'groupBy'], func_get_args());
@@ -73,6 +75,7 @@ class OrmFilterDatasourceAdapter implements FilterDatasourceAdapterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addGroupBy($_)
     {
         return call_user_func_array([$this->qb, 'addGroupBy'], func_get_args());
@@ -81,6 +84,7 @@ class OrmFilterDatasourceAdapter implements FilterDatasourceAdapterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function expr()
     {
         if ($this->expressionBuilder === null) {
@@ -93,6 +97,7 @@ class OrmFilterDatasourceAdapter implements FilterDatasourceAdapterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setParameter($key, $value, $type = null)
     {
         $this->qb->setParameter($key, $value, $type);
@@ -101,6 +106,7 @@ class OrmFilterDatasourceAdapter implements FilterDatasourceAdapterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function generateParameterName($filterName)
     {
         return preg_replace('#[^a-z0-9]#i', '', $filterName) . mt_rand();

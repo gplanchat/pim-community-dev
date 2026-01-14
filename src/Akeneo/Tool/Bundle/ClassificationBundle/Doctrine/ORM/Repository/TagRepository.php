@@ -17,6 +17,7 @@ class TagRepository extends SearchableRepository implements TagRepositoryInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -25,6 +26,7 @@ class TagRepository extends SearchableRepository implements TagRepositoryInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->findOneBy(['code' => $identifier]);

@@ -19,6 +19,7 @@ class DbalSelectEventsApiRequestCountWithinLastHourQuery implements SelectEvents
     {
     }
 
+    #[\Override]
     public function execute(\DateTimeImmutable $eventDateTime): array
     {
         $oneHourAgoEventDateTime = $eventDateTime->modify('-1 hour');

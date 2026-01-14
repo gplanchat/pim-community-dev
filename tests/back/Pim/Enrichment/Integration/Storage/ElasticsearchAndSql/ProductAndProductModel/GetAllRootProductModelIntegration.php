@@ -13,6 +13,7 @@ use Akeneo\Test\Integration\TestCase;
  */
 final class GetAllRootProductModelIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ final class GetAllRootProductModelIntegration extends TestCase
         return $this->get(GetAllRootProductModelCodes::class);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

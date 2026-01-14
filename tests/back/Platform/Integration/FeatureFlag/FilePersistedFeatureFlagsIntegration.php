@@ -48,6 +48,7 @@ class FilePersistedFeatureFlagsIntegration extends KernelTestCase
 
 class Enabled implements FeatureFlag
 {
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return true;
@@ -56,6 +57,7 @@ class Enabled implements FeatureFlag
 
 class Disabled implements FeatureFlag
 {
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return false;

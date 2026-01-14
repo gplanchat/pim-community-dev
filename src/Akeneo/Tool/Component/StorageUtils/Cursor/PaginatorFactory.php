@@ -30,6 +30,7 @@ class PaginatorFactory implements PaginatorFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createPaginator(CursorInterface $cursor, $pageSize = null)
     {
         if (null === $pageSize) {

@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GetMediaFileEndToEnd extends AbstractMediaFileTestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

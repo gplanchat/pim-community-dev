@@ -43,6 +43,7 @@ final class SqlGetUnitIntegration extends TestCase
         $this->getQuery()->byMeasurementFamilyCodeAndUnitCode('Foo', 'BAR');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -22,6 +22,7 @@ final class ClearPriceValueApplier implements UserIntentApplier
     ) {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, ClearPriceValue::class);
@@ -55,6 +56,7 @@ final class ClearPriceValueApplier implements UserIntentApplier
         ]);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [ClearPriceValue::class];

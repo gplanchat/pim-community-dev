@@ -21,6 +21,7 @@ class GetProductIdentifierFromProductUuidQueryIntegration extends TestCase
     /** @var GetProductIdentifierFromProductUuidQueryInterface */
     private $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -48,6 +49,7 @@ class GetProductIdentifierFromProductUuidQueryIntegration extends TestCase
         $this->query->execute(ProductUuid::fromString(('df470d52-7723-4890-85a0-e79be625e2ed')));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

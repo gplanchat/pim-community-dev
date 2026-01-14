@@ -17,6 +17,7 @@ use Webmozart\Assert\Assert;
  */
 final class ScheduledJobMessageNormalizer implements NormalizerInterface, DenormalizerInterface
 {
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ScheduledJobMessage;
@@ -25,6 +26,7 @@ final class ScheduledJobMessageNormalizer implements NormalizerInterface, Denorm
     /**
      * @param ScheduledJobMessageInterface $scheduledJobMessage
      */
+    #[\Override]
     public function normalize($scheduledJobMessage, $format = null, array $context = []): array
     {
         Assert::implementsInterface($scheduledJobMessage, ScheduledJobMessageInterface::class);
@@ -35,6 +37,7 @@ final class ScheduledJobMessageNormalizer implements NormalizerInterface, Denorm
         ];
     }
 
+    #[\Override]
     public function supportsDenormalization($data, $type, $format = null): bool
     {
         return is_subclass_of($type, ScheduledJobMessageInterface::class);
@@ -43,6 +46,7 @@ final class ScheduledJobMessageNormalizer implements NormalizerInterface, Denorm
     /**
      * @param array $data The normalized ScheduledJobMessage
      */
+    #[\Override]
     public function denormalize(
         $data,
         string $jobMessageClass,

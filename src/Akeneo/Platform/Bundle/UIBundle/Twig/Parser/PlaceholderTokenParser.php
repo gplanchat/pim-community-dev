@@ -27,6 +27,7 @@ class PlaceholderTokenParser extends AbstractTokenParser
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function parse(Token $token)
     {
         $parser = $this->parser;
@@ -56,6 +57,7 @@ class PlaceholderTokenParser extends AbstractTokenParser
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getTag()
     {
         return 'placeholder';

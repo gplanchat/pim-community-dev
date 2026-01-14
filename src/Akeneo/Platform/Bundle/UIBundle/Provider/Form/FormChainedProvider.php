@@ -17,6 +17,7 @@ class FormChainedProvider implements FormProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getForm($element): string
     {
         foreach ($this->providers as $provider) {
@@ -31,6 +32,7 @@ class FormChainedProvider implements FormProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element): bool
     {
         foreach ($this->providers as $provider) {

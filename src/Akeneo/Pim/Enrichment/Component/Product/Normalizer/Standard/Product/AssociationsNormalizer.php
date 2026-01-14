@@ -32,6 +32,7 @@ class AssociationsNormalizer implements NormalizerInterface, CacheableSupportsMe
      *
      * @param EntityWithAssociationsInterface $associationAwareEntity
      */
+    #[\Override]
     public function normalize($associationAwareEntity, $format = null, array $context = [])
     {
         $ancestorProducts = $this->getAncestorProducts($associationAwareEntity);
@@ -44,12 +45,14 @@ class AssociationsNormalizer implements NormalizerInterface, CacheableSupportsMe
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof EntityWithAssociationsInterface && 'standard' === $format
             && get_class($data) !== 'Akeneo\Pim\WorkOrganization\Workflow\Component\Model\PublishedProduct';
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

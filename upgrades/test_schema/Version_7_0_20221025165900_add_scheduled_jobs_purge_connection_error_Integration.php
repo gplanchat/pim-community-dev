@@ -12,6 +12,7 @@ final class Version_7_0_20221025165900_add_scheduled_jobs_purge_connection_error
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ final class Version_7_0_20221025165900_add_scheduled_jobs_purge_connection_error
         $this->assertEquals($jobInstanceId, $this->jobInstanceId('purge_connection_error'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

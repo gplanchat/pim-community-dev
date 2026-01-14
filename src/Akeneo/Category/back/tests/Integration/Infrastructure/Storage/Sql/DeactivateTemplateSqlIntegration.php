@@ -21,6 +21,7 @@ class DeactivateTemplateSqlIntegration extends CategoryTestCase
     private CreateTemplateCommandHandler $createTemplateCommandHandler;
     private GetCategoryTemplateByCategoryTree $getTemplate;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -18,7 +18,7 @@ use Symfony\Component\Lock\LockInterface;
 
 class CategorySaver implements SaverInterface, BulkSaverInterface
 {
-    private const LOCK_TTL_IN_SECONDS = 10;
+    private const int LOCK_TTL_IN_SECONDS = 10;
 
     private ObjectManager $objectManager;
     private EventDispatcherInterface $eventDispatcher;
@@ -37,6 +37,7 @@ class CategorySaver implements SaverInterface, BulkSaverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($object, array $options = [])
     {
         $this->validateObject($object);
@@ -62,6 +63,7 @@ class CategorySaver implements SaverInterface, BulkSaverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function saveAll(array $objects, array $options = [])
     {
         if (empty($objects)) {

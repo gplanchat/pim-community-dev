@@ -43,6 +43,7 @@ class GroupNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
      *
      * @return array
      */
+    #[\Override]
     public function normalize($group, $format = null, array $context = [])
     {
         $standardGroup = $this->standardNormalizer->normalize($group, 'standard', $context);
@@ -57,11 +58,13 @@ class GroupNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof GroupInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

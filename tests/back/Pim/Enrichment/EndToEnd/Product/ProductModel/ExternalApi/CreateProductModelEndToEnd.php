@@ -979,6 +979,7 @@ JSON;
      * @param array  $expectedProductModel normalized data of the product model that should be created
      * @param string $identifier           identifier of the product that should be created
      */
+    #[\Override]
     protected function assertSameProductModels(array $expectedProductModel, $identifier)
     {
         $productModel = $this->get('pim_catalog.repository.product_model')->findOneByIdentifier($identifier);
@@ -993,6 +994,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

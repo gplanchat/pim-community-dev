@@ -25,6 +25,7 @@ class CreateCustomAppQueryIntegration extends TestCase
     private ?CreateCustomAppQuery $createCustomAppQuery;
     private ?RandomCodeGeneratorInterface $randomCodeGenerator;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ class CreateCustomAppQueryIntegration extends TestCase
         $this->createCustomAppQuery = $this->get(CreateCustomAppQuery::class);
         $this->randomCodeGenerator = $this->get(RandomCodeGenerator::class);
     }
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -20,6 +20,7 @@ class IsCustomAppsNumberLimitReachedQuery implements IsCustomAppsNumberLimitReac
     ) {
     }
 
+    #[\Override]
     public function execute(): bool
     {
         $sql = <<<SQL

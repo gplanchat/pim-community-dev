@@ -32,6 +32,7 @@ final class FetchProductAndProductModelRows implements Query\FetchProductAndProd
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __invoke(Query\FetchProductAndProductModelRowsParameters $queryParameters): Rows
     {
         $productAndProductModelIdentifiersCursor = $queryParameters->productQueryBuilder()->execute();

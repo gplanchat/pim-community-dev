@@ -18,6 +18,7 @@ class MeasurementFamilyRepositoryIntegration extends SqlIntegrationTestCase
 {
     private ?MeasurementFamilyRepositoryInterface $repository = null;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

@@ -10,6 +10,7 @@ use PHPUnit\Framework\Assert;
 
 class SqlGetChannelLabelsIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

@@ -21,6 +21,7 @@ final class GetAppConfirmationQuery implements GetAppConfirmationQueryInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function execute(string $marketplaceAppId): ?AppConfirmation
     {
         $query = <<<SQL

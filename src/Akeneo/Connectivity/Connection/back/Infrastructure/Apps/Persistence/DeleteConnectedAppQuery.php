@@ -17,6 +17,7 @@ final class DeleteConnectedAppQuery implements DeleteConnectedAppQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $appId): void
     {
         $query = <<<SQL

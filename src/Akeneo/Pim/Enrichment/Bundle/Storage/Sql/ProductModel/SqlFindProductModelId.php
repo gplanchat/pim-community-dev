@@ -17,6 +17,7 @@ final class SqlFindProductModelId implements FindId
     {
     }
 
+    #[\Override]
     public function fromIdentifier(string $identifier): null|string
     {
         $id = $this->connection->executeQuery(

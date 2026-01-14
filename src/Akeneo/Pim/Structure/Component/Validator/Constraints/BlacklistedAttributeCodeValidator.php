@@ -14,7 +14,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class BlacklistedAttributeCodeValidator extends ConstraintValidator
 {
-    private const JOB_TRACKER_ROUTE = 'akeneo_job_process_tracker_details';
+    private const string JOB_TRACKER_ROUTE = 'akeneo_job_process_tracker_details';
 
     protected IsAttributeCodeBlacklistedInterface $isAttributeCodeBlacklisted;
     private GetBlacklistedAttributeJobExecutionIdInterface $getBlacklistedAttributeJobExecutionId;
@@ -39,6 +39,7 @@ class BlacklistedAttributeCodeValidator extends ConstraintValidator
      * @param string $attributeCode
      * @throws \Exception
      */
+    #[\Override]
     public function validate($attributeCode, Constraint $constraint): void
     {
         if (!$constraint instanceof BlacklistedAttributeCode) {

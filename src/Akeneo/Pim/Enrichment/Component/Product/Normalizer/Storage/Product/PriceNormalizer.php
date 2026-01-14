@@ -29,6 +29,7 @@ class PriceNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($price, $format = null, array $context = [])
     {
         return $this->stdNormalizer->normalize($price, $format, $context);
@@ -37,11 +38,13 @@ class PriceNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ProductPriceInterface && 'storage' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

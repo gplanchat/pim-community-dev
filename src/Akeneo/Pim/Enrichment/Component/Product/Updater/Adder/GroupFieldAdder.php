@@ -37,6 +37,7 @@ class GroupFieldAdder extends AbstractFieldAdder
      *
      * Expected data input format : ["group_code"]
      */
+    #[\Override]
     public function addFieldData($product, $field, $data, array $options = [])
     {
         if (!$product instanceof ProductInterface) {

@@ -16,6 +16,7 @@ class TextAreaType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return AttributeTypes::TEXTAREA;

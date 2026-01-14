@@ -19,6 +19,7 @@ class InfiniteLoopStep implements StepInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function getName()
     {
         return 'infinite_loop_step';
@@ -27,6 +28,7 @@ class InfiniteLoopStep implements StepInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute(StepExecution $stepExecution)
     {
         while (true) {

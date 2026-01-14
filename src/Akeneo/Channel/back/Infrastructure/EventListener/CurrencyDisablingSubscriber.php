@@ -32,6 +32,7 @@ class CurrencyDisablingSubscriber implements EventSubscriberInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [StorageEvents::PRE_SAVE => 'checkChannelLink'];

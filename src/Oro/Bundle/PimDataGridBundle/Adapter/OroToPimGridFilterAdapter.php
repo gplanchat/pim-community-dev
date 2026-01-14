@@ -26,6 +26,7 @@ class OroToPimGridFilterAdapter implements GridFilterAdapterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function adapt(array $parameters)
     {
         return match ($parameters['gridName']) {

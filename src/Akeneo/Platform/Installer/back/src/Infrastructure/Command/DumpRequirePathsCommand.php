@@ -38,6 +38,7 @@ class DumpRequirePathsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this->setDescription('Dump the paths for all the requirejs.yml files for each bundle');
@@ -46,6 +47,7 @@ class DumpRequirePathsCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('Generating require.js main config');

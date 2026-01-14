@@ -40,6 +40,7 @@ abstract class AbstractPager implements PagerInterface
      *
      * @return int
      */
+    #[\Override]
     public function getNbResults()
     {
         return (int) $this->nbResults;
@@ -74,6 +75,7 @@ abstract class AbstractPager implements PagerInterface
      *
      * @return int
      */
+    #[\Override]
     public function getPage()
     {
         return $this->page;
@@ -84,6 +86,7 @@ abstract class AbstractPager implements PagerInterface
      *
      * @param int $page
      */
+    #[\Override]
     public function setPage($page)
     {
         $this->page = intval($page);
@@ -98,6 +101,7 @@ abstract class AbstractPager implements PagerInterface
      *
      * @return int
      */
+    #[\Override]
     public function getMaxPerPage()
     {
         return $this->maxPerPage;
@@ -108,6 +112,7 @@ abstract class AbstractPager implements PagerInterface
      *
      * @param int $max
      */
+    #[\Override]
     public function setMaxPerPage($max)
     {
         if ($max > 0) {

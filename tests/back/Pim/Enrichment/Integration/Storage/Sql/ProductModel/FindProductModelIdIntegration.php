@@ -28,6 +28,7 @@ class FindProductModelIdIntegration extends TestCase
         Assert::assertNull($this->getProductModelId->fromIdentifier('non_existing_product'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -41,6 +42,7 @@ class FindProductModelIdIntegration extends TestCase
         $this->fooId = (string) $productModelFoo->getId();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

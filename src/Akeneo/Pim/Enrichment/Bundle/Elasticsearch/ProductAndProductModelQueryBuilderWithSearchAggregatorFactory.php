@@ -36,6 +36,7 @@ class ProductAndProductModelQueryBuilderWithSearchAggregatorFactory implements P
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create(array $options = []): ProductQueryBuilderInterface
     {
         $basePqb = $this->factory->create($options);

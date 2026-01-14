@@ -34,6 +34,7 @@ class SetterRegistry implements SetterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(SetterInterface $setter)
     {
         if ($setter instanceof FieldSetterInterface) {
@@ -49,6 +50,7 @@ class SetterRegistry implements SetterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSetter($property)
     {
         $attribute = $this->getAttribute($property);
@@ -64,6 +66,7 @@ class SetterRegistry implements SetterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFieldSetter($field)
     {
         foreach ($this->fieldSetters as $setter) {
@@ -78,6 +81,7 @@ class SetterRegistry implements SetterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeSetter(AttributeInterface $attribute)
     {
         foreach ($this->attributeSetters as $setter) {

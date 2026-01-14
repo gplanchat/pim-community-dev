@@ -10,6 +10,7 @@ use Liip\ImagineBundle\Imagine\Filter\Loader\LoaderInterface;
 
 final class FlattenLayersFilter implements LoaderInterface
 {
+    #[\Override]
     public function load(ImageInterface $image, array $options = []): ImageInterface
     {
         if ($image instanceof Image) {

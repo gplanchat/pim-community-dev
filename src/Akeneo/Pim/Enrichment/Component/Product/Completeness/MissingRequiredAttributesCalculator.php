@@ -35,6 +35,7 @@ class MissingRequiredAttributesCalculator implements MissingRequiredAttributesCa
      * Calculates the completeness of an entity with family. It is only useful to calculate missing required attributes
      * for the PEF, and should not be used for any other purpose.
      */
+    #[\Override]
     public function fromEntityWithFamily(
         EntityWithFamilyInterface $entityWithFamily
     ): ProductCompletenessWithMissingAttributeCodesCollection {

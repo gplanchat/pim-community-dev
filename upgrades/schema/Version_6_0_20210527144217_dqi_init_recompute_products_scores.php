@@ -7,6 +7,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20210527144217_dqi_init_recompute_products_scores extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->truncateProductsScoresTable();
@@ -40,6 +41,7 @@ SQL;
         $this->addSql($sql);
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

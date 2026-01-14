@@ -24,6 +24,7 @@ final class DashboardScoresProjectionRepositoryIntegration extends TestCase
 
     private DashboardScoresProjectionRepositoryInterface $repository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -150,6 +151,7 @@ final class DashboardScoresProjectionRepositoryIntegration extends TestCase
         ]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

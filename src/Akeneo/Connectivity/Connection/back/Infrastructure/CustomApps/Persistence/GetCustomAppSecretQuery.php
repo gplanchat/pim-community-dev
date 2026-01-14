@@ -12,12 +12,13 @@ use Doctrine\DBAL\Connection;
  * @copyright 2022 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class GetCustomAppSecretQuery implements GetCustomAppSecretQueryInterface
+final readonly class GetCustomAppSecretQuery implements GetCustomAppSecretQueryInterface
 {
-    public function __construct(private readonly Connection $connection)
+    public function __construct(private Connection $connection)
     {
     }
 
+    #[\Override]
     public function execute(string $clientId): ?string
     {
         $sql = <<<SQL

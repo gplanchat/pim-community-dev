@@ -12,6 +12,7 @@ class AkeneoJobBundle extends Bundle
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function build(ContainerBuilder $container)
     {
     }

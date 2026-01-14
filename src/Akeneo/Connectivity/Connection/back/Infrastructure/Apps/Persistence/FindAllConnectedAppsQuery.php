@@ -20,6 +20,7 @@ final class FindAllConnectedAppsQuery implements FindAllConnectedAppsQueryInterf
     {
     }
 
+    #[\Override]
     public function execute(): array
     {
         $selectSQL = <<<SQL

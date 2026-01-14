@@ -41,12 +41,13 @@ final class PimFormatterFactory implements FormatterFactory
     /*
      * Available services
      */
-    const ROOT_LISTENER_ID = 'pim.output.node.listener.junit';
-    const RESULT_TO_STRING_CONVERTER_ID = 'pim.output.node.printer.result_to_string';
+    const string ROOT_LISTENER_ID = 'pim.output.node.listener.junit';
+    const string RESULT_TO_STRING_CONVERTER_ID = 'pim.output.node.printer.result_to_string';
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildFormatter(ContainerBuilder $container)
     {
         $this->loadRootNodeListener($container);
@@ -58,6 +59,7 @@ final class PimFormatterFactory implements FormatterFactory
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function processFormatter(ContainerBuilder $container)
     {
     }

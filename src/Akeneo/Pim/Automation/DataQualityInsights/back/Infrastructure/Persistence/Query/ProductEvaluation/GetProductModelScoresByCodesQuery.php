@@ -20,6 +20,7 @@ final class GetProductModelScoresByCodesQuery implements GetProductModelScoresBy
     ) {
     }
 
+    #[\Override]
     public function byProductModelCode(string $productModelCode): Read\Scores
     {
         $productModelScores = $this->byProductModelCodes([$productModelCode]);
@@ -33,6 +34,7 @@ final class GetProductModelScoresByCodesQuery implements GetProductModelScoresBy
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function byProductModelCodes(array $productModelCodes): array
     {
         if (empty($productModelCodes)) {

@@ -59,6 +59,7 @@ class AssociationFieldSetter extends AbstractFieldSetter
      *     },
      * }
      */
+    #[\Override]
     public function setFieldData($entity, $field, $data, array $options = []): void
     {
         if (!$entity instanceof EntityWithAssociationsInterface) {

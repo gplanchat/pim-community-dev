@@ -18,8 +18,8 @@ use WebDriver\Exception\UnexpectedAlertOpen;
  */
 class HookContext extends PimContext
 {
-    private const MESSENGER_JOB_COMMAND = 'messenger:consume';
-    private const MESSENGER_JOB_RECEIVERS = ['ui_job', 'import_export_job', 'data_maintenance_job'];
+    private const string MESSENGER_JOB_COMMAND = 'messenger:consume';
+    private const array MESSENGER_JOB_RECEIVERS = ['ui_job', 'import_export_job', 'data_maintenance_job'];
 
     protected static array $errorMessages = [];
     protected ?Process $jobConsumerProcess;
@@ -162,6 +162,7 @@ class HookContext extends PimContext
     /**
      * @BeforeScenario
      */
+    #[\Override]
     public static function resetPlaceholderValues(): void
     {
         parent::resetPlaceholderValues();

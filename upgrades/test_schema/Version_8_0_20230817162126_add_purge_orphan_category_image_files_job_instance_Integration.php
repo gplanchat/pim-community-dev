@@ -15,12 +15,13 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_8_0_20230817162126_add_purge_orphan_category_image_files_job_instance_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230817162126_add_purge_orphan_category_image_files_job_instance';
+    private const string MIGRATION_NAME = '_8_0_20230817162126_add_purge_orphan_category_image_files_job_instance';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,6 +47,7 @@ final class Version_8_0_20230817162126_add_purge_orphan_category_image_files_job
         Assert::assertTrue($this->jobInstanceExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

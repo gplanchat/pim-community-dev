@@ -9,8 +9,8 @@ use PhpSpec\ObjectBehavior;
 
 class OperationSpec extends ObjectBehavior
 {
-    private const VALUE = '150';
-    private const OPERATOR = 'mul';
+    private const string VALUE = '150';
+    private const string OPERATOR = 'mul';
 
     function let()
     {

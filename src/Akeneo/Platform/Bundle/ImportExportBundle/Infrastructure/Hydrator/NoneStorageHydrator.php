@@ -15,11 +15,13 @@ use Akeneo\Platform\Bundle\ImportExportBundle\Domain\StorageHydratorInterface;
 
 final class NoneStorageHydrator implements StorageHydratorInterface
 {
+    #[\Override]
     public function hydrate(array $normalizedStorage): StorageInterface|NoneStorage
     {
         return new NoneStorage();
     }
 
+    #[\Override]
     public function supports(array $normalizedStorage): bool
     {
         return array_key_exists('type', $normalizedStorage) && NoneStorage::TYPE === $normalizedStorage['type'];

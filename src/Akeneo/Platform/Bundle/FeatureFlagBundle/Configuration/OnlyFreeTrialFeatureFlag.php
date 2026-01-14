@@ -10,6 +10,7 @@ class OnlyFreeTrialFeatureFlag implements FeatureFlag
     {
     }
 
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return $this->edition === 'pim_trial_instance';

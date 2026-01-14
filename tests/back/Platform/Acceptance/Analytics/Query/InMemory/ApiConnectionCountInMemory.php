@@ -8,6 +8,7 @@ use Akeneo\Tool\Component\Analytics\ApiConnectionCountQuery;
 
 class ApiConnectionCountInMemory implements ApiConnectionCountQuery
 {
+    #[\Override]
     public function fetch(): array
     {
         return [

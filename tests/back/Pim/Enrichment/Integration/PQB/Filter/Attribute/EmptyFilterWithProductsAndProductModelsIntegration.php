@@ -124,6 +124,7 @@ class EmptyFilterWithProductsAndProductModelsIntegration extends TestCase
         $this->assert('a_text');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

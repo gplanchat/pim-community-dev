@@ -28,6 +28,7 @@ abstract class AbstractProductValueNormalizer implements NormalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($productValue, $format = null, array $context = [])
     {
         $locale = (null === $productValue->getLocaleCode()) ? '<all_locales>' : $productValue->getLocaleCode();

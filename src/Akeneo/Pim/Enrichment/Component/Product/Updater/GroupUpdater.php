@@ -52,6 +52,7 @@ class GroupUpdater implements ObjectUpdaterInterface
      *     'axis'   => ['size', 'color']
      * ]
      */
+    #[\Override]
     public function update($group, array $data, array $options = [])
     {
         if (!$group instanceof GroupInterface) {

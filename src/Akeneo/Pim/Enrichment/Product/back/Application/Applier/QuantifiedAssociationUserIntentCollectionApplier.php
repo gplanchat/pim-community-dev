@@ -30,8 +30,8 @@ use Webmozart\Assert\Assert;
  */
 final class QuantifiedAssociationUserIntentCollectionApplier implements UserIntentApplier
 {
-    private const PRODUCTS = 'products';
-    private const PRODUCT_MODELS = 'product_models';
+    private const string PRODUCTS = 'products';
+    private const string PRODUCT_MODELS = 'product_models';
 
     public function __construct(
         private ObjectUpdaterInterface $productUpdater,
@@ -43,6 +43,7 @@ final class QuantifiedAssociationUserIntentCollectionApplier implements UserInte
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [QuantifiedAssociationUserIntentCollection::class];
@@ -51,6 +52,7 @@ final class QuantifiedAssociationUserIntentCollectionApplier implements UserInte
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, QuantifiedAssociationUserIntentCollection::class);

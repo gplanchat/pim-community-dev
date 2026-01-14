@@ -15,15 +15,16 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  * @copyright 2019 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class MetricValueFactory implements ValueFactory
+final readonly class MetricValueFactory implements ValueFactory
 {
-    private const AMOUNT_DECIMAL_FORMAT_REGEX = '#^-?\d+(\.\d+)?$#';
+    private const string AMOUNT_DECIMAL_FORMAT_REGEX = '#^-?\d+(\.\d+)?$#';
 
     public function __construct(
-        private readonly MetricFactory $metricFactory,
+        private MetricFactory $metricFactory,
     ) {
     }
 
+    #[\Override]
     public function createWithoutCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         $data = $this->metricFactory->createMetric($attribute->metricFamily(), $data['unit'], $data['amount']);
@@ -44,6 +45,7 @@ final class MetricValueFactory implements ValueFactory
         return MetricValue::value($attributeCode, $data);
     }
 
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_array($data)) {
@@ -92,6 +94,7 @@ final class MetricValueFactory implements ValueFactory
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::METRIC;

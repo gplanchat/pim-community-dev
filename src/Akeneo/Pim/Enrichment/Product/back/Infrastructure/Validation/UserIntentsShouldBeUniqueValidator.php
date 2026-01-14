@@ -17,6 +17,7 @@ use Webmozart\Assert\Assert;
  */
 final class UserIntentsShouldBeUniqueValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($valueUserIntents, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, UserIntentsShouldBeUnique::class);

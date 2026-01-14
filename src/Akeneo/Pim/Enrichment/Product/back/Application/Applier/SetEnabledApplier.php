@@ -14,16 +14,17 @@ use Webmozart\Assert\Assert;
  * @copyright 2022 Akeneo SAS (https://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class SetEnabledApplier implements UserIntentApplier
+final readonly class SetEnabledApplier implements UserIntentApplier
 {
     public function __construct(
-        private readonly ObjectUpdaterInterface $productUpdater,
+        private ObjectUpdaterInterface $productUpdater,
     ) {
     }
 
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, SetEnabled::class);
@@ -36,6 +37,7 @@ final class SetEnabledApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetEnabled::class];

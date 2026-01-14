@@ -17,6 +17,7 @@ class FamilyVariantTranslation extends AbstractTranslation implements FamilyVari
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel(): string
     {
         return $this->label;
@@ -25,6 +26,7 @@ class FamilyVariantTranslation extends AbstractTranslation implements FamilyVari
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel(string $label)
     {
         $this->label = $label;

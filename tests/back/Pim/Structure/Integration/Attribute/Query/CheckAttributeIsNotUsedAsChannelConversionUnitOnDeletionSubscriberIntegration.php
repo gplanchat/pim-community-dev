@@ -61,6 +61,7 @@ class CheckAttributeIsNotUsedAsChannelConversionUnitOnDeletionSubscriberIntegrat
         $this->get('pim_catalog.saver.channel')->save($channel);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

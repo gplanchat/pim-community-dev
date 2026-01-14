@@ -34,6 +34,7 @@ class CreateJobInstanceCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -49,6 +50,7 @@ class CreateJobInstanceCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $connector = $input->getArgument('connector');

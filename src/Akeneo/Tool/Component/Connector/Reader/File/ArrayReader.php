@@ -53,6 +53,7 @@ class ArrayReader implements FileReaderInterface, InitializableInterface, Statef
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read()
     {
         if (count($this->remainingItems) > 0) {
@@ -74,6 +75,7 @@ class ArrayReader implements FileReaderInterface, InitializableInterface, Statef
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->reader->setStepExecution($stepExecution);
@@ -82,21 +84,25 @@ class ArrayReader implements FileReaderInterface, InitializableInterface, Statef
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function flush()
     {
         $this->reader->flush();
     }
 
+    #[\Override]
     public function initialize(): void
     {
         $this->reader->initialize();
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->reader->setState($state);
     }
 
+    #[\Override]
     public function getState(): array
     {
         return $this->reader->getState();

@@ -31,6 +31,7 @@ class FiltersConfigurator implements ConfiguratorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configure(DatagridConfiguration $configuration)
     {
         $attributes = $configuration->offsetGet(self::SOURCE_KEY)[self::USEABLE_ATTRIBUTES_KEY];

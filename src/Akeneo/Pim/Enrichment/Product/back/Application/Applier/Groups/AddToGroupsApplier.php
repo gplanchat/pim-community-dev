@@ -25,6 +25,7 @@ class AddToGroupsApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $groupUserIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($groupUserIntent, AddToGroups::class);
@@ -41,6 +42,7 @@ class AddToGroupsApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [AddToGroups::class];

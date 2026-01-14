@@ -21,21 +21,25 @@ final class MigrateToUuidAddTriggers implements MigrateToUuidStep
     {
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'add_triggers';
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Add triggers on foreign uuid column.';
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         return 0 < $this->getMissingCount();
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         $count = 0;
@@ -52,6 +56,7 @@ final class MigrateToUuidAddTriggers implements MigrateToUuidStep
         return $count;
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $logContext = $context->logContext;

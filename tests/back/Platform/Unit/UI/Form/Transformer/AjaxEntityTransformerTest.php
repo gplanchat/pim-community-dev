@@ -20,6 +20,7 @@ class AjaxEntityTransformerTest extends TestCase
     /**
      * @{@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->repository = $this->createMock(

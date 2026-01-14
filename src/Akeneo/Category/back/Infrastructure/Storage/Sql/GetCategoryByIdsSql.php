@@ -18,6 +18,7 @@ class GetCategoryByIdsSql implements GetCategoryByIds
     {
     }
 
+    #[\Override]
     public function __invoke(array $categoryIds): array
     {
         $sqlQuery = <<<SQL

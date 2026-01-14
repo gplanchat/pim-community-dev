@@ -6,7 +6,7 @@ use Akeneo\Platform\Bundle\FeatureFlagBundle\FeatureFlag;
 
 class OnlyGrowthAndSerenityFeatureFlag implements FeatureFlag
 {
-    private const EDITIONS = [
+    private const array EDITIONS = [
         'serenity_instance',
         'growth_edition_instance',
     ];
@@ -15,6 +15,7 @@ class OnlyGrowthAndSerenityFeatureFlag implements FeatureFlag
     {
     }
 
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return \in_array($this->edition, self::EDITIONS);

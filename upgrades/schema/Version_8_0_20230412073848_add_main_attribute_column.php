@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230412073848_add_main_attribute_column extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Adds the is_main_identifier column';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $table = $schema->getTable('pim_catalog_attribute');
@@ -28,6 +30,7 @@ final class Version_8_0_20230412073848_add_main_attribute_column extends Abstrac
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

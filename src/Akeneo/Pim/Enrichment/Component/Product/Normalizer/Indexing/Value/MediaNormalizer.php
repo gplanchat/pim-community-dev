@@ -19,6 +19,7 @@ class MediaNormalizer extends AbstractProductValueNormalizer implements Normaliz
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof MediaValueInterface && (
@@ -26,6 +27,7 @@ class MediaNormalizer extends AbstractProductValueNormalizer implements Normaliz
         );
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -34,6 +36,7 @@ class MediaNormalizer extends AbstractProductValueNormalizer implements Normaliz
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         $data = $value->getData();

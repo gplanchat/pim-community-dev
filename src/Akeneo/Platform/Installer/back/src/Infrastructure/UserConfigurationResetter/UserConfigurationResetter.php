@@ -26,6 +26,7 @@ class UserConfigurationResetter implements UserConfigurationResetterInterface
         Assert::allIsInstanceOf($this->userConfigurationResetters, UserConfigurationResetterInterface::class);
     }
 
+    #[\Override]
     public function execute(): void
     {
         foreach ($this->userConfigurationResetters as $userConfigurationResetter) {

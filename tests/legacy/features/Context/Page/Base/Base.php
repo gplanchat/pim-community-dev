@@ -49,6 +49,7 @@ class Base extends Page
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getElement($name)
     {
         $element = $this->createElement($name);
@@ -80,6 +81,7 @@ class Base extends Page
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findField($locator)
     {
         return $this->spin(function () use ($locator) {
@@ -90,6 +92,7 @@ class Base extends Page
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fillField($locator, $value)
     {
         $field = $this->findField($locator);
@@ -195,6 +198,7 @@ class Base extends Page
      *
      * @return string
      */
+    #[\Override]
     public function getUrl(array $options = [])
     {
         $url = $this->getPath();
@@ -236,6 +240,7 @@ class Base extends Page
      *
      * @throws ElementNotFoundException
      */
+    #[\Override]
     public function pressButton($locator, $forceVisible = false)
     {
         $this->spin(function () use ($locator, $forceVisible) {

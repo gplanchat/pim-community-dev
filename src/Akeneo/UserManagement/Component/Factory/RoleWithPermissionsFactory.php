@@ -20,6 +20,7 @@ final class RoleWithPermissionsFactory implements SimpleFactoryInterface
         $this->roleFactory = $roleFactory;
     }
 
+    #[\Override]
     public function create(): RoleWithPermissions
     {
         return RoleWithPermissions::createFromRoleAndPermissions(

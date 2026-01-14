@@ -35,6 +35,7 @@ class UniqueVariantAxisValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($entity, Constraint $constraint)
     {
         if (!$entity instanceof EntityWithFamilyVariantInterface) {

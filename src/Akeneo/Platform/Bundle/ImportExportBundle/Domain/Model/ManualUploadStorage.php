@@ -11,12 +11,13 @@ namespace Akeneo\Platform\Bundle\ImportExportBundle\Domain\Model;
 
 final class ManualUploadStorage implements StorageInterface
 {
-    public const TYPE = 'manual_upload';
+    public const string TYPE = 'manual_upload';
 
     public function __construct(private string $filePath)
     {
     }
 
+    #[\Override]
     public function getFilePath(): string
     {
         return $this->filePath;

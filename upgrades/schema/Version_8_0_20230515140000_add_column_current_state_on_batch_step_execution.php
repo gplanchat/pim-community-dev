@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230515140000_add_column_current_state_on_batch_step_execution extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         if ($this->migrationWasAlreadyApplied($schema)) {
@@ -24,6 +25,7 @@ final class Version_8_0_20230515140000_add_column_current_state_on_batch_step_ex
         $this->addSql('ALTER TABLE akeneo_batch_step_execution ADD COLUMN current_state JSON NULL;');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

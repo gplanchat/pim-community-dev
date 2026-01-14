@@ -24,6 +24,7 @@ final class GetCategoryChildrenCodesQuery implements GetCategoryChildrenCodesQue
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(CategoryCode $categoryCode): array
     {
         $query = <<<SQL

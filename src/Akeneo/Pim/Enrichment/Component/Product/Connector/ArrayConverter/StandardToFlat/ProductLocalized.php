@@ -35,6 +35,7 @@ class ProductLocalized implements ArrayConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(array $productStandard, array $options = [])
     {
         if (isset($productStandard['values'])) {

@@ -17,6 +17,7 @@ use Webmozart\Assert\Assert;
  */
 final class SqlGetExistingAttributeOptionsWithValuesIntegration extends TestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -112,6 +113,7 @@ final class SqlGetExistingAttributeOptionsWithValuesIntegration extends TestCase
         $this->get('pim_catalog.saver.attribute_option')->save($attributeOption);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

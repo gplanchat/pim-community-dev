@@ -16,7 +16,7 @@ final class Version_8_0_20230509160000_new_table_completeness_Integration extend
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230509160000_new_table_completeness';
+    private const string MIGRATION_LABEL = '_8_0_20230509160000_new_table_completeness';
 
     private Connection $connection;
 
@@ -30,12 +30,14 @@ final class Version_8_0_20230509160000_new_table_completeness_Integration extend
         Assert::assertTrue($this->tableExists('pim_catalog_product_completeness'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

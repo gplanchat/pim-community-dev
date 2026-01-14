@@ -37,6 +37,7 @@ class ProductAttributeFilter implements AttributeFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filter(array $standardProduct): array
     {
         if (array_key_exists('values', $standardProduct) && is_array($standardProduct['values'])) {

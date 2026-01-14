@@ -31,6 +31,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -39,6 +40,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->currencies->get($code);
@@ -47,6 +49,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($currency, array $options = [])
     {
         $this->currencies->set($currency->getCode(), $currency);
@@ -55,7 +58,8 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $currencies = [];
         foreach ($this->currencies as $currency) {
@@ -78,6 +82,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -86,6 +91,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return array_values($this->currencies->toArray());
@@ -94,6 +100,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
@@ -102,6 +109,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);
@@ -110,6 +118,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getActivatedCurrencies()
     {
         return array_filter($this->currencies->toArray(), function (CurrencyInterface $currency): bool {
@@ -120,6 +129,7 @@ final class InMemoryCurrencyRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getActivatedCurrencyCodes()
     {
         $activatedCurrencyCodes = [];

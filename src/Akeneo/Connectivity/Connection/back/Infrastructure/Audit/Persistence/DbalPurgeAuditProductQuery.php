@@ -18,6 +18,7 @@ class DbalPurgeAuditProductQuery implements PurgeAuditProductQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(\DateTimeImmutable $before): int
     {
         $deleteQuery = <<<SQL

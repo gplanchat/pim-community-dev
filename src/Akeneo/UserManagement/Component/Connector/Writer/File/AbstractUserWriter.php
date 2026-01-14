@@ -60,6 +60,7 @@ abstract class AbstractUserWriter extends AbstractFileWriter implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     final public function initialize(): void
     {
         $bufferFilePath = $this->state['buffer_file_path'] ?? null;
@@ -77,6 +78,7 @@ abstract class AbstractUserWriter extends AbstractFileWriter implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     final public function write(array $items): void
     {
         $exportDirectory = dirname($this->getPath());
@@ -97,6 +99,7 @@ abstract class AbstractUserWriter extends AbstractFileWriter implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     final public function flush(): void
     {
         $this->flusher->setStepExecution($this->stepExecution);
@@ -158,6 +161,7 @@ abstract class AbstractUserWriter extends AbstractFileWriter implements
 
     abstract protected function getWriterConfiguration(): array;
 
+    #[\Override]
     public function getState(): array
     {
         if (null === $this->flatRowBuffer) {
@@ -173,6 +177,7 @@ abstract class AbstractUserWriter extends AbstractFileWriter implements
         ];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

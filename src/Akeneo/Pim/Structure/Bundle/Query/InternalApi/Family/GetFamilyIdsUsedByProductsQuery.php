@@ -16,6 +16,7 @@ final class GetFamilyIdsUsedByProductsQuery implements GetFamilyIdsUsedByProduct
     {
     }
 
+    #[\Override]
     public function execute(): array
     {
         $query = <<<SQL

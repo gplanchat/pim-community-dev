@@ -16,6 +16,7 @@ final class UploadedFileValidator extends ConstraintValidator
      * @param File\UploadedFile $uploadedFile
      * @param UploadedFile $constraint
      */
+    #[\Override]
     public function validate($uploadedFile, Constraint $constraint): void
     {
         if (!$constraint instanceof UploadedFile) {

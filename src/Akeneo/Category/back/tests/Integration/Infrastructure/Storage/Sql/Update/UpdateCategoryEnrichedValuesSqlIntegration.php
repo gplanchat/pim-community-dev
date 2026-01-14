@@ -11,6 +11,7 @@ use Akeneo\Category\Domain\ValueObject\ValueCollection;
 
 class UpdateCategoryEnrichedValuesSqlIntegration extends CategoryTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

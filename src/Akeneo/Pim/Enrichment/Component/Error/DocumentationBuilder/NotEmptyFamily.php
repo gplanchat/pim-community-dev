@@ -16,6 +16,7 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
  */
 class NotEmptyFamily implements DocumentationBuilderInterface
 {
+    #[\Override]
     public function support($object): bool
     {
         if (
@@ -27,6 +28,7 @@ class NotEmptyFamily implements DocumentationBuilderInterface
         return false;
     }
 
+    #[\Override]
     public function buildDocumentation($object): DocumentationCollection
     {
         if (false === $this->support($object)) {

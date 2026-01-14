@@ -27,6 +27,7 @@ class FamilyVariantsByAttributeAxes implements FamilyVariantsByAttributeAxesInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findIdentifiers(array $attributeAxesCodes): array
     {
         $queryBuilder = $this->entityManager->createQueryBuilder();

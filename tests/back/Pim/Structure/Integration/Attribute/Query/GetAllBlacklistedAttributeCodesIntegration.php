@@ -14,6 +14,7 @@ final class GetAllBlacklistedAttributeCodesIntegration extends TestCase
 {
     private Connection $sqlConnection;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -50,6 +51,7 @@ final class GetAllBlacklistedAttributeCodesIntegration extends TestCase
         return $this->get('pim_catalog.manager.attribute_code_blacklister');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

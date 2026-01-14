@@ -19,6 +19,7 @@ class UpdateMaintenanceMode implements UpdateMaintenanceModeInterface
     {
     }
 
+    #[\Override]
     public function execute(bool $enabled): void
     {
         $query = <<<SQL

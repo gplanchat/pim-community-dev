@@ -34,6 +34,7 @@ class PriceCollectionValue extends AbstractValue implements PriceCollectionValue
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData(): ?PriceCollectionInterface
     {
         return $this->data;
@@ -42,6 +43,7 @@ class PriceCollectionValue extends AbstractValue implements PriceCollectionValue
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPrice(string $currency): ?ProductPriceInterface
     {
         foreach ($this->data as $price) {
@@ -56,6 +58,7 @@ class PriceCollectionValue extends AbstractValue implements PriceCollectionValue
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasData(): bool
     {
         foreach ($this->data as $price) {
@@ -70,6 +73,7 @@ class PriceCollectionValue extends AbstractValue implements PriceCollectionValue
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         $priceStrings = [];
@@ -85,6 +89,7 @@ class PriceCollectionValue extends AbstractValue implements PriceCollectionValue
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof PriceCollectionValueInterface ||

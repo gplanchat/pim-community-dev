@@ -10,10 +10,11 @@ final class Version_7_0_20221025104400_add_scheduled_jobs_connectivity_audit_pur
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL =  '_7_0_20221025104400_add_scheduled_jobs_connectivity_audit_purge_error';
+    private const string MIGRATION_LABEL =  '_7_0_20221025104400_add_scheduled_jobs_connectivity_audit_purge_error';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ final class Version_7_0_20221025104400_add_scheduled_jobs_connectivity_audit_pur
         $this->assertEquals($jobInstanceId, $this->jobInstanceId('connectivity_audit_purge_error'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

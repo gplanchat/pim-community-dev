@@ -25,6 +25,7 @@ class Product extends AbstractSimpleArrayConverter implements ArrayConverterInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function convertProperty($property, $data, array $convertedItem, array $options): array
     {
         switch ($property) {

@@ -35,6 +35,7 @@ class ProductModelCsvImport implements ConstraintCollectionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         $baseConstraint = $this->simpleProvider->getConstraintCollection();
@@ -54,6 +55,7 @@ class ProductModelCsvImport implements ConstraintCollectionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return in_array($job->getName(), $this->supportedJobNames);

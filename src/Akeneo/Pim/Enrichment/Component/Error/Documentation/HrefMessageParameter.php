@@ -35,6 +35,7 @@ class HrefMessageParameter implements MessageParameterInterface
     /**
      * @return array{type: MessageParameterTypes::HREF, href: string, title: string}
      */
+    #[\Override]
     public function normalize(): array
     {
         return [

@@ -113,6 +113,7 @@ class CompletenessForScopableAndLocalisableAttributeIntegration extends Abstract
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -128,6 +129,7 @@ class CompletenessForScopableAndLocalisableAttributeIntegration extends Abstract
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useFunctionalCatalog('footwear');

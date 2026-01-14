@@ -24,6 +24,7 @@ final class SqlUpdateIdentifierValuesQuery implements UpdateIdentifierValuesQuer
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function forProducts(array $products): void
     {
         if (!$this->tableExists('pim_catalog_product_identifiers')) {

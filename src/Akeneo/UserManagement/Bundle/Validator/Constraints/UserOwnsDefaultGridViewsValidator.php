@@ -15,6 +15,7 @@ use Webmozart\Assert\Assert;
  */
 final class UserOwnsDefaultGridViewsValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($user, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, UserOwnsDefaultGridViews::class);

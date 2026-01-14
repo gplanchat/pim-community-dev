@@ -17,6 +17,7 @@ class DbalSaveWebhookSecretQuery implements SaveWebhookSecretQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $code, string $secret): bool
     {
         $query = <<<SQL

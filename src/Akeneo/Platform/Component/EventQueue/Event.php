@@ -20,8 +20,8 @@ abstract class Event implements EventInterface
     public function __construct(
         Author $author,
         array $data,
-        int $timestamp = null,
-        string $uuid = null
+        ?int $timestamp = null,
+        ?string $uuid = null
     ) {
         $this->author = $author;
         $this->data = $data;
@@ -29,23 +29,28 @@ abstract class Event implements EventInterface
         $this->uuid = $uuid ?? Uuid::uuid4()->toString();
     }
 
+    #[\Override]
     abstract public function getName(): string;
 
+    #[\Override]
     public function getAuthor(): Author
     {
         return $this->author;
     }
 
+    #[\Override]
     public function getData(): array
     {
         return $this->data;
     }
 
+    #[\Override]
     public function getTimestamp(): int
     {
         return $this->timestamp;
     }
 
+    #[\Override]
     public function getUuid(): string
     {
         return $this->uuid;

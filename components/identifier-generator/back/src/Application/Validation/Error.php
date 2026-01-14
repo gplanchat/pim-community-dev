@@ -8,7 +8,7 @@ namespace Akeneo\Pim\Automation\IdentifierGenerator\Application\Validation;
  * @copyright 2022 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class Error
+final readonly class Error
 {
     /**
      * @param string $message
@@ -16,9 +16,9 @@ final class Error
      * @param string|null $path
      */
     public function __construct(
-        private readonly string $message,
-        private readonly array $parameters = [],
-        private readonly ?string $path = null
+        private string $message,
+        private array $parameters = [],
+        private ?string $path = null
     ) {
     }
 
@@ -51,6 +51,7 @@ final class Error
         ];
     }
 
+    #[\Override]
     public function __toString(): string
     {
         if (null !== $this->path && '' !== $this->path) {

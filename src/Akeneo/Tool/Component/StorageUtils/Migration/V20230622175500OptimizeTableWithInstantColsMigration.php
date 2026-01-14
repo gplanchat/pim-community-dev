@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  */
 class V20230622175500OptimizeTableWithInstantColsMigration implements ZddMigration
 {
-    private const TABLES_THAT_HAVE_INSTANT_COLS = [
+    private const array TABLES_THAT_HAVE_INSTANT_COLS = [
         'akeneo_asset_manager_asset_family',
         'akeneo_asset_manager_attribute',
         'akeneo_batch_job_execution',
@@ -34,11 +34,13 @@ class V20230622175500OptimizeTableWithInstantColsMigration implements ZddMigrati
     {
     }
 
+    #[\Override]
     public function migrate(): void
     {
         $this->optimizeTables(self::TABLES_THAT_HAVE_INSTANT_COLS);
     }
 
+    #[\Override]
     public function migrateNotZdd(): void
     {
         $this->optimizeTables(array_merge(self::TABLES_THAT_HAVE_INSTANT_COLS, [
@@ -48,6 +50,7 @@ class V20230622175500OptimizeTableWithInstantColsMigration implements ZddMigrati
         ]));
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'OptimizeTableWithInstantCols';

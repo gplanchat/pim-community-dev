@@ -25,7 +25,7 @@ use Symfony\Component\Process\Process;
  */
 final class EventQueuesAndConsumersIntegration extends TestCase
 {
-    private const MESSENGER_COMMAND_NAME = 'messenger:consume';
+    private const string MESSENGER_COMMAND_NAME = 'messenger:consume';
 
     private MessageBusInterface $bus;
     private string $projectDir;
@@ -33,6 +33,7 @@ final class EventQueuesAndConsumersIntegration extends TestCase
     /** @var array<PubSubQueueStatus> */
     private array $pubSubQueueStatuses = [];
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -55,6 +56,7 @@ final class EventQueuesAndConsumersIntegration extends TestCase
         $this->handlerObserver->reset();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -185,6 +187,7 @@ final class EventQueuesAndConsumersIntegration extends TestCase
         }
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

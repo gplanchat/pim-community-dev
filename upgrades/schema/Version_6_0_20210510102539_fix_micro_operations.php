@@ -12,16 +12,17 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210510102539_fix_micro_operations extends AbstractMigration
 {
-    private const WRONG_VALUES = [
+    private const array WRONG_VALUES = [
         'MICROGRAM' => '0.000001',
         'MICROLITER' => '0.000001',
     ];
 
-    private const CORRECT_VALUES = [
+    private const array CORRECT_VALUES = [
         'MICROGRAM' => '0.000000001',
         'MICROLITER' => '0.000000001',
     ];
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $weightFixed = $this->fixMeasurementFamilyUnits('Weight');
@@ -85,6 +86,7 @@ SQL;
         $this->addSql('SELECT 1');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

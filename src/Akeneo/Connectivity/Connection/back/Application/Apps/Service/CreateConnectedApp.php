@@ -19,6 +19,7 @@ final class CreateConnectedApp implements CreateConnectedAppInterface
     ) {
     }
 
+    #[\Override]
     public function execute(
         MarketplaceApp $marketplaceApp,
         array $scopes,

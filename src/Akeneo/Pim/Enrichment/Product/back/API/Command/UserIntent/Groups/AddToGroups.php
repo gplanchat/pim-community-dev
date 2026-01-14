@@ -21,6 +21,7 @@ final class AddToGroups implements GroupUserIntent
         Assert::allStringNotEmpty($this->groupCodes);
     }
 
+    #[\Override]
     public function groupCodes(): array
     {
         return $this->groupCodes;

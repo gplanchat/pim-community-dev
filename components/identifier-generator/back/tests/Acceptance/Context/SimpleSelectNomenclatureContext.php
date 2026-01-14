@@ -19,9 +19,9 @@ use Webmozart\Assert\Assert;
 final class SimpleSelectNomenclatureContext implements Context
 {
     private ?ViolationsException $violations = null;
-    private const DEFAULT_OPERATOR = '<=';
-    private const DEFAULT_VALUE = 3;
-    private const DEFAULT_GENERATE_IF_EMPTY = false;
+    private const string DEFAULT_OPERATOR = '<=';
+    private const int DEFAULT_VALUE = 3;
+    private const bool DEFAULT_GENERATE_IF_EMPTY = false;
 
     public function __construct(
         private readonly SimpleSelectNomenclatureRepository $nomenclatureRepository,

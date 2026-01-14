@@ -22,6 +22,7 @@ class SqlFindFamiliesWithLabels implements FindFamiliesWithLabels
     ) {
     }
 
+    #[\Override]
     public function fromQuery(FamilyQuery $query): array
     {
         $familyCodes = $this->findFamilyCodes->fromQuery($query);

@@ -30,6 +30,7 @@ final class SchedulePeriodicTasksCommand extends Command
         $this->featureFlag = $featureFlag;
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (! $this->featureFlag->isEnabled()) {

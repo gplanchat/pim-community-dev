@@ -38,6 +38,7 @@ class RegisterJobParametersPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $registryId = sprintf(self::REGISTRY_ID, $this->type);

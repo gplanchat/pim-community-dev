@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class CreateIdentifierGeneratorControllerEndToEnd extends ControllerEndToEndTestCase
 {
-    private const VALID_IDENTIFIER = [
+    private const array VALID_IDENTIFIER = [
         'code' => 'my_new_generator',
         'labels' => [
             'en_US' => 'My new generator',

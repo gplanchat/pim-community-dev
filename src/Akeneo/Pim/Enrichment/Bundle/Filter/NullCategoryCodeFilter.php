@@ -11,6 +11,7 @@ namespace Akeneo\Pim\Enrichment\Bundle\Filter;
 
 class NullCategoryCodeFilter implements CategoryCodeFilterInterface
 {
+    #[\Override]
     public function filter(array $codes): array
     {
         return $codes;

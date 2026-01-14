@@ -43,6 +43,7 @@ final class GetAncestorProductModelCodesIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -94,6 +95,7 @@ final class GetAncestorProductModelCodesIntegration extends TestCase
         $this->createProduct('another_product', [new SetFamily('familyA2')]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

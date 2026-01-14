@@ -93,6 +93,7 @@ final class ChannelSaverIntegration extends TestCase
         Assert::assertTrue($isUpdated, 'The job instance  has not been updated');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

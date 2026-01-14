@@ -34,11 +34,13 @@ final class CleanCompletenessEvaluationResultsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->addOption('bulk-size', 's', InputOption::VALUE_REQUIRED, sprintf('Bulk size (%d by default)', $this->bulkSize));
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (null !== $input->getOption('bulk-size')) {

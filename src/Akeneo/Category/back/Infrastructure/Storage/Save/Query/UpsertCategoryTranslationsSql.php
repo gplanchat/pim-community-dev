@@ -24,6 +24,7 @@ class UpsertCategoryTranslationsSql implements UpsertCategoryTranslations
     ) {
     }
 
+    #[\Override]
     public function execute(Category $categoryModel): void
     {
         $categoryId = $categoryModel->getId()?->getValue();

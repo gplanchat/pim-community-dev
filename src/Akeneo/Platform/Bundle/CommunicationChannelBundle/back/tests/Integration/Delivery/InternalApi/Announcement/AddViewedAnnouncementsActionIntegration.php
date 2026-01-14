@@ -14,6 +14,7 @@ class AddViewedAnnouncementsActionIntegration extends WebTestCase
     /** @var UserInterface */
     private $user;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setup();
@@ -48,6 +49,7 @@ class AddViewedAnnouncementsActionIntegration extends WebTestCase
         Assert::assertSame(Response::HTTP_UNPROCESSABLE_ENTITY, $this->client->getResponse()->getStatusCode());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

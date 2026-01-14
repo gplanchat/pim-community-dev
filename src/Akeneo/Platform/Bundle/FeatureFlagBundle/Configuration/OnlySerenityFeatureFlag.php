@@ -10,6 +10,7 @@ class OnlySerenityFeatureFlag implements FeatureFlag
     {
     }
 
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return $this->edition === 'serenity_instance';

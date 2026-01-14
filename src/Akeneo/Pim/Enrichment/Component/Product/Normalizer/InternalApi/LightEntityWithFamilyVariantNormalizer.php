@@ -71,6 +71,7 @@ final class LightEntityWithFamilyVariantNormalizer implements NormalizerInterfac
         $this->axisLabelsNormalizers = $axisLabelsNormalizers;
     }
 
+    #[\Override]
     public function normalize($entity, $format = null, array $context = []): array
     {
         $channelCode = $context['channel'] ?? null;
@@ -105,6 +106,7 @@ final class LightEntityWithFamilyVariantNormalizer implements NormalizerInterfac
         ]);
     }
 
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return 'internal_api' === $format && $data instanceof EntityWithFamilyVariantInterface;

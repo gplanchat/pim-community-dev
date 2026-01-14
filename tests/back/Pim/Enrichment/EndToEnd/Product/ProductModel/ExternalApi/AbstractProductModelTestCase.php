@@ -15,6 +15,7 @@ class AbstractProductModelTestCase extends AbstractProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -147,6 +148,7 @@ JSON;
     /**
      * @return Configuration
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

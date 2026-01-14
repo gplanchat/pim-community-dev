@@ -17,15 +17,15 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
  */
 class ProductModelNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
 {
-    private const FIELD_CODE = 'code';
-    private const FIELD_FAMILY_VARIANT = 'family_variant';
-    private const FIELD_CATEGORIES = 'categories';
-    private const FIELD_VALUES = 'values';
-    private const FIELD_CREATED = 'created';
-    private const FIELD_UPDATED = 'updated';
-    private const FIELD_PARENT = 'parent';
-    private const FIELD_ASSOCIATIONS = 'associations';
-    private const FIELD_QUANTIFIED_ASSOCIATIONS = 'quantified_associations';
+    private const string FIELD_CODE = 'code';
+    private const string FIELD_FAMILY_VARIANT = 'family_variant';
+    private const string FIELD_CATEGORIES = 'categories';
+    private const string FIELD_VALUES = 'values';
+    private const string FIELD_CREATED = 'created';
+    private const string FIELD_UPDATED = 'updated';
+    private const string FIELD_PARENT = 'parent';
+    private const string FIELD_ASSOCIATIONS = 'associations';
+    private const string FIELD_QUANTIFIED_ASSOCIATIONS = 'quantified_associations';
 
     /** @var NormalizerInterface */
     private $associationsNormalizer;
@@ -62,6 +62,7 @@ class ProductModelNormalizer implements NormalizerInterface, CacheableSupportsMe
      *
      * @param ProductModelInterface $productModel
      */
+    #[\Override]
     public function normalize($productModel, $format = null, array $context = array()): array
     {
         $context = array_merge(['filter_types' => ['pim.transform.product_value.structured']], $context);
@@ -82,11 +83,13 @@ class ProductModelNormalizer implements NormalizerInterface, CacheableSupportsMe
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ProductModelInterface && 'standard' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

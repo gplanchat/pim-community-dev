@@ -20,7 +20,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class ConfigureCategoryTreeForExportJobsAfterChangingTheChannelCategoryTreeSpec extends ObjectBehavior
 {
-    private const supportedJobNames = [
+    private const array supportedJobNames = [
         'csv_product_export',
         'xlsx_product_export',
     ];

@@ -17,8 +17,8 @@ use Oro\Bundle\SecurityBundle\Acl\Persistence\AclPrivilegeRepository;
  */
 class RoleWithPermissionsRepository implements IdentifiableObjectRepositoryInterface
 {
-    private const ACL_EXTENSION_KEY = 'action';
-    private const ACL_PERMISSION = 'EXECUTE';
+    private const string ACL_EXTENSION_KEY = 'action';
+    private const string ACL_PERMISSION = 'EXECUTE';
 
     private IdentifiableObjectRepositoryInterface $roleRepository;
     private AclManager $aclManager;
@@ -32,6 +32,7 @@ class RoleWithPermissionsRepository implements IdentifiableObjectRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier): ?RoleWithPermissions
     {
         $role = $this->roleRepository->findOneByIdentifier($identifier);
@@ -48,6 +49,7 @@ class RoleWithPermissionsRepository implements IdentifiableObjectRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties(): array
     {
         return $this->roleRepository->getIdentifierProperties();

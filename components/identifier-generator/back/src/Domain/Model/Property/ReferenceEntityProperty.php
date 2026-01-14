@@ -22,19 +22,20 @@ use Webmozart\Assert\Assert;
  *  locale?: string|null
  * }
  */
-final class ReferenceEntityProperty implements PropertyInterface
+final readonly class ReferenceEntityProperty implements PropertyInterface
 {
-    private const TYPE = 'reference_entity';
+    private const string TYPE = 'reference_entity';
 
     private function __construct(
-        private readonly string $attributeCode,
-        private readonly Process $process,
-        private readonly ?string $scope = null,
-        private readonly ?string $locale = null
+        private string $attributeCode,
+        private Process $process,
+        private ?string $scope = null,
+        private ?string $locale = null
     ) {
         Assert::stringNotEmpty($this->attributeCode);
     }
 
+    #[\Override]
     public static function type(): string
     {
         return self::TYPE;
@@ -48,6 +49,7 @@ final class ReferenceEntityProperty implements PropertyInterface
     /**
      * @return ReferenceEntityPropertyNormalized
      */
+    #[\Override]
     public function normalize(): array
     {
         $referenceEntityProperty = [
@@ -66,6 +68,7 @@ final class ReferenceEntityProperty implements PropertyInterface
         return $referenceEntityProperty;
     }
 
+    #[\Override]
     public function getImplicitCondition(): ?ConditionInterface
     {
         return ReferenceEntity::fromNormalized([
@@ -85,6 +88,7 @@ final class ReferenceEntityProperty implements PropertyInterface
     /**
      * @param array<string, mixed> $normalizedProperty
      */
+    #[\Override]
     public static function fromNormalized(array $normalizedProperty): PropertyInterface
     {
         Assert::keyExists($normalizedProperty, 'type');

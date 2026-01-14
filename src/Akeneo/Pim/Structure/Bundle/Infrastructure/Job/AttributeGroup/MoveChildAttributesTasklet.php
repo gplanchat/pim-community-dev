@@ -36,11 +36,13 @@ final class MoveChildAttributesTasklet implements TaskletInterface, TrackableTas
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function execute()
     {
         if (null === $this->stepExecution) {
@@ -102,6 +104,7 @@ final class MoveChildAttributesTasklet implements TaskletInterface, TrackableTas
         $this->saver->saveAll($attributes);
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;

@@ -18,6 +18,7 @@ class RegisterUpdateGuessersPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition('pim_versioning.update_guesser.chained')) {

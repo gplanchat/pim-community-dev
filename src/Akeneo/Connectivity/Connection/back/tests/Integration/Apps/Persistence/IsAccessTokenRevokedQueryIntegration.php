@@ -18,6 +18,7 @@ class IsAccessTokenRevokedQueryIntegration extends TestCase
     private Connection $connection;
     private IsAccessTokenRevokedQuery $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -25,6 +26,7 @@ class IsAccessTokenRevokedQueryIntegration extends TestCase
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

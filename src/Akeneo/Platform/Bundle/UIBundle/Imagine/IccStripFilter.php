@@ -22,6 +22,7 @@ use Liip\ImagineBundle\Imagine\Filter\Loader\LoaderInterface;
  */
 final class IccStripFilter implements LoaderInterface
 {
+    #[\Override]
     public function load(ImageInterface $image, array $options = []): ImageInterface
     {
         if ($image instanceof Image) {

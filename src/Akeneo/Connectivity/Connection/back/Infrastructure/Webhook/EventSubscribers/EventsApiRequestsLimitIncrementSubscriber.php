@@ -22,6 +22,7 @@ final class EventsApiRequestsLimitIncrementSubscriber implements EventSubscriber
     {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

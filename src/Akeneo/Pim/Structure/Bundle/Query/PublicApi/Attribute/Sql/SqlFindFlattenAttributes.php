@@ -17,12 +17,13 @@ final class SqlFindFlattenAttributes implements FindFlattenAttributesInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(
         string $localeCode,
         int $limit,
-        array $attributeTypes = null,
+        ?array $attributeTypes = null,
         int $offset = 0,
-        string $search = null
+        ?string $search = null
     ): array {
         if (0 === $limit || (is_array($attributeTypes) && 0 === count($attributeTypes))) {
             return [];

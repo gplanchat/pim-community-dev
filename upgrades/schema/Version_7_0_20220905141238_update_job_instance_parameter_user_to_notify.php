@@ -14,11 +14,13 @@ final class Version_7_0_20220905141238_update_job_instance_parameter_user_to_not
 {
     private ?ContainerInterface $container;
 
-    public function setContainer(ContainerInterface $container = null): void
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $jobInstancesToMigrate = $this->getJobInstancesToMigrate();
@@ -33,6 +35,7 @@ final class Version_7_0_20220905141238_update_job_instance_parameter_user_to_not
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

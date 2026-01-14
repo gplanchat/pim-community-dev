@@ -15,6 +15,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 class EnabledWebhookRequiresAnUrlValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($webhook, Constraint $constraint): void
     {
         if (!$constraint instanceof EnabledWebhookRequiresAnUrl) {

@@ -10,6 +10,7 @@ use PHPUnit\Framework\Assert;
 
 class SqlGetAttributeLabelsIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

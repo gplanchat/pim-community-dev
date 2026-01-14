@@ -24,6 +24,7 @@ class AddSortersPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $extension = $container->getDefinition(self::SORTER_EXTENSION_ID);

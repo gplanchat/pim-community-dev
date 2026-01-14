@@ -33,6 +33,7 @@ final class GetUserGroupIntegration extends ControllerIntegrationTestCase
         Assert::assertContains('All', $groupNames);
     }
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -46,6 +47,7 @@ final class GetUserGroupIntegration extends ControllerIntegrationTestCase
         $this->get('pim_connector.doctrine.cache_clearer')->clear();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

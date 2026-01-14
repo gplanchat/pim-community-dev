@@ -13,8 +13,9 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class ConfigureAxisValueLabelsNormalizerPass implements CompilerPassInterface
 {
-    private const SERVICE_TAG = 'pim_axis_value_label_normalizer';
+    private const string SERVICE_TAG = 'pim_axis_value_label_normalizer';
 
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $normalizer = $container->getDefinition('pim_enrich.normalizer.entity_with_family_variant');

@@ -21,16 +21,17 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class PauseJobOnSigtermSubscriberIntegration extends TestCase
 {
-    private const PAUSED_JOB_EXECUTION_ID = 1;
-    private const STARTED_JOB_EXECUTION_ID = 2;
-    private const STARTED_UNPAUSABLE_JOB_EXECUTION_ID = 3;
-    private const STARTED_NOT_ALLOWED_TO_PAUSE_JOB_EXECUTION_ID = 4;
+    private const int PAUSED_JOB_EXECUTION_ID = 1;
+    private const int STARTED_JOB_EXECUTION_ID = 2;
+    private const int STARTED_UNPAUSABLE_JOB_EXECUTION_ID = 3;
+    private const int STARTED_NOT_ALLOWED_TO_PAUSE_JOB_EXECUTION_ID = 4;
 
     private FeatureFlags $featureFlags;
     private Connection $connection;
     private EventDispatcherInterface $eventDispatcher;
     private EntityManagerInterface $entityManager;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -168,6 +169,7 @@ SQL;
         ]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -20,6 +20,7 @@ final class ExternalJavascriptDependenciesExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFunctions()
     {
         return [

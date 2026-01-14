@@ -48,6 +48,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(DatagridInterface $grid, array $config)
     {
         $this->qb = $this->repository->createDatagridQueryBuilder();
@@ -57,6 +58,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParameters()
     {
         return $this->parameters;
@@ -65,6 +67,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setParameters($parameters)
     {
         $this->parameters += $parameters;
@@ -79,6 +82,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResults()
     {
         return $this->hydrator->hydrate($this->qb);
@@ -87,6 +91,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getQueryBuilder()
     {
         return $this->qb;
@@ -95,6 +100,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRepository()
     {
         throw new \LogicException("No need to implement this method, design flaw in interface!");
@@ -103,6 +109,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMassActionRepository()
     {
         return $this->massRepository;
@@ -111,6 +118,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMassActionRepository(MassActionRepositoryInterface $massActionRepository)
     {
         throw new \LogicException("No need to implement this method, design flaw in interface!");
@@ -119,6 +127,7 @@ class FamilyDatasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setHydrator(HydratorInterface $hydrator)
     {
         $this->hydrator = $hydrator;

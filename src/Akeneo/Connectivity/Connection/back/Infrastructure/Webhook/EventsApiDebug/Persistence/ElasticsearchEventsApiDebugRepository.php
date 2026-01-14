@@ -28,6 +28,7 @@ final class ElasticsearchEventsApiDebugRepository implements EventsApiDebugRepos
     {
     }
 
+    #[\Override]
     public function persist(array $log): void
     {
         $flattenedContext = '';
@@ -41,6 +42,7 @@ final class ElasticsearchEventsApiDebugRepository implements EventsApiDebugRepos
         $this->buffer[] = $log;
     }
 
+    #[\Override]
     public function flush(): void
     {
         if (0 === \count($this->buffer)) {

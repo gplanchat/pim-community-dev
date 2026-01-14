@@ -19,6 +19,7 @@ class NumberFilterTypeTest extends AbstractTypeTestCase
      */
     protected $defaultLocale = 'en';
 
+    #[\Override]
     protected function setUp(): void
     {
         $translator = $this->createMockTranslator();
@@ -31,6 +32,7 @@ class NumberFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function getTestFormType()
     {
         return $this->type;
@@ -44,6 +46,7 @@ class NumberFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptionsDataProvider()
     {
         return [
@@ -67,6 +70,7 @@ class NumberFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function bindDataProvider()
     {
         return [

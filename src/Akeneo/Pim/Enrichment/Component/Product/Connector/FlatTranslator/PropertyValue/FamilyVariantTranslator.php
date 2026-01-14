@@ -17,11 +17,13 @@ class FamilyVariantTranslator implements FlatPropertyValueTranslatorInterface
         $this->getFamilyVariantTranslations = $getFamilyVariantTranslations;
     }
 
+    #[\Override]
     public function supports(string $columnName): bool
     {
         return 'family_variant' === $columnName;
     }
 
+    #[\Override]
     public function translate(array $values, string $locale, string $scope): array
     {
         $familyVariantTranslations = $this->getFamilyVariantTranslations->byFamilyVariantCodesAndLocale($values, $locale);

@@ -18,7 +18,7 @@ class Version_6_0_20211115143942_add_user_group_type_column_Integration extends 
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211115143942_add_user_group_type_column';
+    private const string MIGRATION_LABEL = '_6_0_20211115143942_add_user_group_type_column';
 
     private Connection $connection;
 
@@ -48,11 +48,13 @@ class Version_6_0_20211115143942_add_user_group_type_column_Integration extends 
         Assert::assertEquals(false, $this->typeColumnExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

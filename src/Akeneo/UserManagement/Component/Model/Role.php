@@ -24,6 +24,7 @@ class Role implements RoleInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId(): ?int
     {
         return $this->id;
@@ -32,6 +33,7 @@ class Role implements RoleInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRole(): ?string
     {
         return $this->role;
@@ -40,6 +42,7 @@ class Role implements RoleInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel(): ?string
     {
         return $this->label;
@@ -48,6 +51,7 @@ class Role implements RoleInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRole(?string $role): void
     {
         $this->role = $role;
@@ -56,16 +60,19 @@ class Role implements RoleInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel(?string $label): void
     {
         $this->label = $label;
     }
 
+    #[\Override]
     public function getType(): string
     {
         return $this->type;
     }
 
+    #[\Override]
     public function setType(string $type): void
     {
         $this->type = $type;
@@ -74,6 +81,7 @@ class Role implements RoleInterface
     /**
      * Return the role name field
      */
+    #[\Override]
     public function __toString(): string
     {
         return (string) $this->role;

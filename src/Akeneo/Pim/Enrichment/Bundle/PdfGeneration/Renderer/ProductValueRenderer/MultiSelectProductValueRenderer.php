@@ -18,6 +18,7 @@ class MultiSelectProductValueRenderer implements ProductValueRenderer
         $this->attributeOptionRepository = $attributeOptionRepository;
     }
 
+    #[\Override]
     public function render(Environment $environment, AttributeInterface $attribute, ?ValueInterface $value, string $localeCode): ?string
     {
         if (!$value instanceof OptionsValue) {
@@ -29,6 +30,7 @@ class MultiSelectProductValueRenderer implements ProductValueRenderer
         return join(', ', array_map(fn ($optionCode): string => $this->getOptionLabel($attribute, $optionCode, $localeCode), $optionCodes));
     }
 
+    #[\Override]
     public function supportsAttributeType(string $attributeType): bool
     {
         return $attributeType === AttributeTypes::OPTION_MULTI_SELECT;

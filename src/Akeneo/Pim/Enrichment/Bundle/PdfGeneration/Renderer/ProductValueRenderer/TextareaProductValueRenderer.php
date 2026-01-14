@@ -9,6 +9,7 @@ use Twig\Environment;
 
 class TextareaProductValueRenderer implements ProductValueRenderer
 {
+    #[\Override]
     public function render(Environment $environment, AttributeInterface $attribute, ?ValueInterface $value, string $localeCode): ?string
     {
         if (null === $value) {
@@ -23,6 +24,7 @@ class TextareaProductValueRenderer implements ProductValueRenderer
         return \twig_escape_filter($environment, $value);
     }
 
+    #[\Override]
     public function supportsAttributeType(string $attributeType): bool
     {
         return $attributeType === AttributeTypes::TEXTAREA;

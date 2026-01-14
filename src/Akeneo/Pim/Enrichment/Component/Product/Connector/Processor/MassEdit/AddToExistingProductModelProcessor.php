@@ -36,6 +36,7 @@ class AddToExistingProductModelProcessor extends AbstractProcessor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($product)
     {
         $actions = $this->getConfiguredActions();

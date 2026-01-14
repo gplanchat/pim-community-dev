@@ -18,12 +18,13 @@ use Doctrine\DBAL\Connection;
 
 class UserDefaultCategoryTreeResetter implements UserConfigurationResetterInterface
 {
-    private const DEFAULT_CATEGORY_CODE = 'master';
+    private const string DEFAULT_CATEGORY_CODE = 'master';
 
     public function __construct(private readonly Connection $connection)
     {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $this->connection->executeStatement(<<<SQL

@@ -13,6 +13,7 @@ final class SqlGetAttributeOptionsIntegration extends TestCase
 {
     private SqlGetAttributeOptions $sqlGetAttributeOptions;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -70,6 +71,7 @@ final class SqlGetAttributeOptionsIntegration extends TestCase
         self::assertSame([], $attributeOptions);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

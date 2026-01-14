@@ -29,6 +29,7 @@ abstract class EnrichmentProductTestCase extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ abstract class EnrichmentProductTestCase extends TestCase
         $this->queryMessageBus = $this->get('pim_enrich.product.query_message_bus');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

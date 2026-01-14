@@ -17,6 +17,7 @@ class ScopeListComparator implements ScopeListComparatorInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function diff(array $source, array $filter): array
     {
         $exhaustiveSourceScopeList = $this->scopeMapperRegistry->getExhaustiveScopes($source);

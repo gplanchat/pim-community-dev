@@ -10,6 +10,7 @@ class InMemorySecurityFacade implements SecurityFacadeInterface
 {
     private array $permissions = [];
 
+    #[\Override]
     public function isGranted($acl, $object = null): bool
     {
         return $this->permissions[$acl];

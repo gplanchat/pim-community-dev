@@ -19,6 +19,7 @@ class AttributeRequirementRepository extends EntityRepository implements Attribu
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findRequiredAttributesCodesByFamily(FamilyInterface $family)
     {
         $qb = $this->createQueryBuilder('ar');

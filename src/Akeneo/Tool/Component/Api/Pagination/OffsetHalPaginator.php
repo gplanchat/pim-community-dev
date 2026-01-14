@@ -54,6 +54,7 @@ class OffsetHalPaginator implements PaginatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function paginate(array $items, array $parameters, $count)
     {
         try {

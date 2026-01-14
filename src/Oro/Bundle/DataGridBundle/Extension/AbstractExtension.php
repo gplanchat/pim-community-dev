@@ -15,7 +15,7 @@ abstract class AbstractExtension implements ExtensionVisitorInterface
     /** @var RequestParameters */
     protected $requestParams;
 
-    public function __construct(RequestParameters $requestParams = null)
+    public function __construct(?RequestParameters $requestParams = null)
     {
         $this->requestParams = $requestParams;
     }
@@ -23,6 +23,7 @@ abstract class AbstractExtension implements ExtensionVisitorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function processConfigs(DatagridConfiguration $config)
     {
     }
@@ -30,6 +31,7 @@ abstract class AbstractExtension implements ExtensionVisitorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitDatasource(DatagridConfiguration $config, DatasourceInterface $datasource)
     {
     }
@@ -37,6 +39,7 @@ abstract class AbstractExtension implements ExtensionVisitorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
     }
@@ -44,6 +47,7 @@ abstract class AbstractExtension implements ExtensionVisitorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitResult(DatagridConfiguration $config, ResultsIterableObject $result)
     {
     }
@@ -51,6 +55,7 @@ abstract class AbstractExtension implements ExtensionVisitorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getPriority()
     {
         // default priority if not overridden by child

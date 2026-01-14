@@ -51,6 +51,7 @@ All migration documentation is located in `./.llm/upgrade-2026-01/`:
 18. **rector-example.php** - Rector configuration example
 19. **DOCKERFILE-MIGRATION.md** - Dockerfile migration strategy (CRITICAL - read before updating Dockerfile)
 20. **PHASE2-NEXT-STEPS.md** - Phase 2 migration steps guide
+21. **GITHUB-PR-MANAGEMENT.md** - GitHub Pull Request management guide (CRITICAL - read before creating PRs)
 
 ## Critical Prerequisites and Version Dependencies
 
@@ -285,7 +286,8 @@ When resuming this migration session:
 2. **Read `00-version-dependencies.md`** to understand version requirements
 3. **Read `00-git-flow-strategy.md`** to understand Git Flow branch strategy
 4. **Read `00-commit-strategy.md`** to understand atomic commit strategy with Conventional Commits
-5. **Read all tracking files** (04-09) to understand current progress
+5. **Read `GITHUB-PR-MANAGEMENT.md`** to understand how to create and update PRs on GitHub fork repository
+6. **Read all tracking files** (04-09) to understand current progress
 4. **Check dates** in tracking files to understand timeline and identify recent activity
 5. **Identify current phase and branch**:
    - Check PHP version in `composer.json`
@@ -356,9 +358,12 @@ When resuming this migration session:
 15. **Have you read `00-version-dependencies.md`?** (Critical for understanding version requirements)
 16. **Have you read `00-git-flow-strategy.md`?** (Critical for understanding branch strategy)
 17. **Have you read `00-commit-strategy.md`?** (Critical for understanding atomic commit strategy)
-18. **Has the previous phase branch been merged to develop?** (Required before starting next phase)
-19. **What is the current Git branch?** (Should match current phase branch name)
-20. **Are you committing atomically?** (One change per commit, all validations passing)
+18. **Have you read `GITHUB-PR-MANAGEMENT.md`?** (Critical for understanding PR creation and updates)
+19. **Has the previous phase branch been merged to master?** (Required before starting next phase)
+20. **What is the current Git branch?** (Should match current phase branch name)
+21. **Are you committing atomically?** (One change per commit, all validations passing)
+22. **Have you created/updated the GitHub PR?** (PR must be on https://github.com/gplanchat/pim-community-dev/, not original repository)
+23. **Is the PR base branch correct?** (Should be `master`, not `develop`)
 
 ---
 

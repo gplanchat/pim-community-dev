@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class AverageMaxLocalizableAndScopableAttributesPerFamily implements AverageMaxQuery
 {
-    private const VOLUME_NAME = 'average_max_localizable_and_scopable_attributes_per_family';
+    private const string VOLUME_NAME = 'average_max_localizable_and_scopable_attributes_per_family';
 
     /** @var Connection */
     private $connection;
@@ -31,6 +31,7 @@ class AverageMaxLocalizableAndScopableAttributesPerFamily implements AverageMaxQ
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): AverageMaxVolumes
     {
         $sql = <<<SQL

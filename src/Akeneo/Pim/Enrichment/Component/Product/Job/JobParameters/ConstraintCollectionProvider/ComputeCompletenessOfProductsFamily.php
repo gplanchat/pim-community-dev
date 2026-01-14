@@ -19,6 +19,7 @@ class ComputeCompletenessOfProductsFamily implements ConstraintCollectionProvide
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection(['fields' => ['family_code' => new NotBlank()]]);
@@ -27,6 +28,7 @@ class ComputeCompletenessOfProductsFamily implements ConstraintCollectionProvide
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return 'compute_completeness_of_products_family' === $job->getName();

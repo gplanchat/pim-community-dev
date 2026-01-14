@@ -15,6 +15,7 @@ final class SqlFindGrantedCategoryTreesIntegration extends TestCase
 {
     public SqlFindGrantedCategoryTrees $findGrantedCategoryTrees;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -68,6 +69,7 @@ final class SqlFindGrantedCategoryTreesIntegration extends TestCase
     }
 
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
@@ -85,11 +87,13 @@ final class SqlFindGrantedCategoryTreesIntegration extends TestCase
 
 class AllowAll implements CollectionFilterInterface
 {
+    #[\Override]
     public function filterCollection($collection, $type, array $options = [])
     {
         return $collection;
     }
 
+    #[\Override]
     public function supportsCollection($collection, $type, array $options = [])
     {
         return true;
@@ -98,11 +102,13 @@ class AllowAll implements CollectionFilterInterface
 
 class DenyAll implements CollectionFilterInterface
 {
+    #[\Override]
     public function filterCollection($collection, $type, array $options = [])
     {
         return [];
     }
 
+    #[\Override]
     public function supportsCollection($collection, $type, array $options = [])
     {
         return true;
@@ -111,11 +117,13 @@ class DenyAll implements CollectionFilterInterface
 
 class DenySalesCategory implements CollectionFilterInterface
 {
+    #[\Override]
     public function filterCollection($collection, $type, array $options = [])
     {
         return array_filter($collection, fn (Category $category) => $category->getCode() != 'sales');
     }
 
+    #[\Override]
     public function supportsCollection($collection, $type, array $options = [])
     {
         return true;

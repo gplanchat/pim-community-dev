@@ -25,6 +25,7 @@ class DbalPurgeAuditProductQueryIntegration extends TestCase
     /** @var Connection */
     private $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -64,6 +65,7 @@ SQL;
         Assert::assertEquals('now', $connectionCode);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

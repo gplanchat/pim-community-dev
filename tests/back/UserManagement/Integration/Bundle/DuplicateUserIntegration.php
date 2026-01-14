@@ -19,6 +19,7 @@ final class DuplicateUserIntegration extends ControllerIntegrationTestCase
     private LocaleRepositoryInterface $localeRepository;
     private RoleRepositoryInterface $roleRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -144,6 +145,7 @@ final class DuplicateUserIntegration extends ControllerIntegrationTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

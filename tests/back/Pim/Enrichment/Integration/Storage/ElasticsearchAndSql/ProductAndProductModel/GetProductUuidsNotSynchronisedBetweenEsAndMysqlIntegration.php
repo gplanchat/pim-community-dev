@@ -63,6 +63,7 @@ final class GetProductUuidsNotSynchronisedBetweenEsAndMysqlIntegration extends T
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -71,6 +72,7 @@ final class GetProductUuidsNotSynchronisedBetweenEsAndMysqlIntegration extends T
         $this->getESClient()->refreshIndex();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

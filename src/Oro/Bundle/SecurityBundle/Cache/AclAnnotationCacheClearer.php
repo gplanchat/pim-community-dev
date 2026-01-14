@@ -25,6 +25,7 @@ class AclAnnotationCacheClearer implements CacheClearerInterface
     /**
      * {inheritdoc}
      */
+    #[\Override]
     public function clear($cacheDir)
     {
         $this->provider->clearCache();

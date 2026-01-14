@@ -22,11 +22,13 @@ final class InMemoryAttributes implements AttributesInterface
         $this->attributesCodesByIds = array_flip($attributesIdsByCodes);
     }
 
+    #[\Override]
     public function getCodesByIds(array $attributesIds): array
     {
         return array_flip(array_intersect($this->attributesIdsByCodes, $attributesIds));
     }
 
+    #[\Override]
     public function getIdsByCodes(array $attributesCodes): array
     {
         return array_flip(array_intersect($this->attributesCodesByIds, $attributesCodes));

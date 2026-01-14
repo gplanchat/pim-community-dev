@@ -23,6 +23,7 @@ final class GetProductIdentifierFromProductUuidQuery implements GetProductIdenti
         $this->db = $db;
     }
 
+    #[\Override]
     public function execute(ProductUuid $productUuid): ProductIdentifier
     {
         $sql = <<<SQL

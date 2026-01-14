@@ -27,6 +27,7 @@ class CleanCategoryTemplateAttributeAndEnrichedValuesCommandHandlerIntegration e
     private GetCategoryInterface $getCategory;
     private GetAttribute $getAttribute;
     private Connection $connection;
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

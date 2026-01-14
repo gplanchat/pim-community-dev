@@ -43,6 +43,7 @@ class ProductAndProductModelQuickExport implements ConstraintCollectionProviderI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConstraintCollection()
     {
         $baseConstraint = $this->simpleConstraint->getConstraintCollection();
@@ -93,6 +94,7 @@ class ProductAndProductModelQuickExport implements ConstraintCollectionProviderI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(JobInterface $job)
     {
         return in_array($job->getName(), $this->supportedJobNames);

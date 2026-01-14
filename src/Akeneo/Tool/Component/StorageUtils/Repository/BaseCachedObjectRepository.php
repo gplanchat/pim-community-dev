@@ -29,6 +29,7 @@ class BaseCachedObjectRepository implements CachedObjectRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         if (!array_key_exists($identifier, $this->objectsCache)) {
@@ -41,6 +42,7 @@ class BaseCachedObjectRepository implements CachedObjectRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return $this->repository->getIdentifierProperties();
@@ -49,6 +51,7 @@ class BaseCachedObjectRepository implements CachedObjectRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function clear(): void
     {
         $this->objectsCache = [];

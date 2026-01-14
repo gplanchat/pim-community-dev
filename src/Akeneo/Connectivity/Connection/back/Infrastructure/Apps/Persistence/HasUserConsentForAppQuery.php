@@ -17,6 +17,7 @@ final class HasUserConsentForAppQuery implements HasUserConsentForAppQueryInterf
     {
     }
 
+    #[\Override]
     public function execute(int $userId, string $appId): bool
     {
         $query = <<<SQL

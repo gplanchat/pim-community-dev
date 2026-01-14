@@ -11,6 +11,7 @@ class LengthValidator extends BaseLengthValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof Length) {

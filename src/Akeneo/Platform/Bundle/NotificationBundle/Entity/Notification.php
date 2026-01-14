@@ -46,6 +46,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -54,6 +55,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMessage($message)
     {
         $this->message = $message;
@@ -64,6 +66,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMessage()
     {
         return $this->message;
@@ -72,6 +75,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setComment($comment)
     {
         $this->comment = $comment;
@@ -82,6 +86,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getComment()
     {
         return $this->comment;
@@ -90,6 +95,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setType($type)
     {
         $this->type = $type;
@@ -100,6 +106,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getType()
     {
         return $this->type;
@@ -108,6 +115,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRoute($route)
     {
         $this->route = $route;
@@ -118,6 +126,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRoute()
     {
         return $this->route;
@@ -126,6 +135,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRouteParams(array $routeParams)
     {
         $this->routeParams = $routeParams;
@@ -136,6 +146,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRouteParams()
     {
         return $this->routeParams;
@@ -144,6 +155,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMessageParams(array $messageParams)
     {
         $this->messageParams = $messageParams;
@@ -154,6 +166,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMessageParams()
     {
         return $this->messageParams;
@@ -162,6 +175,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCreated()
     {
         return $this->created;
@@ -170,6 +184,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setContext(array $context)
     {
         $this->context = $context;
@@ -180,6 +195,7 @@ class Notification implements NotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getContext()
     {
         return $this->context;

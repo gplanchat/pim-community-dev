@@ -17,6 +17,7 @@ final class ErrorList implements \Countable
     {
     }
 
+    #[\Override]
     public function count(): int
     {
         return \count($this->errors);
@@ -30,6 +31,7 @@ final class ErrorList implements \Countable
         return \array_map(fn (Error $error): array => $error->normalize(), $this->errors);
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return \implode("\n", \array_map(fn (Error $error): string => $error->__toString(), $this->errors));

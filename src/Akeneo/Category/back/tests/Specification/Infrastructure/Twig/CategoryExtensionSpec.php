@@ -338,6 +338,7 @@ class CategoryExtensionSpec extends ObjectBehavior
         $this->getProductsLimitForRemoval()->shouldReturn(10);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

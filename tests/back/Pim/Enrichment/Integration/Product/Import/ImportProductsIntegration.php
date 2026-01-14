@@ -160,6 +160,7 @@ CSV;
         $this->assertEquals(1, $this->getProductRepository()->countAll());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

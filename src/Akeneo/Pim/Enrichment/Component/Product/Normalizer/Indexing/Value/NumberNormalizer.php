@@ -20,6 +20,7 @@ class NumberNormalizer extends AbstractProductValueNormalizer implements Normali
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         if (! $data instanceof ValueInterface) {
@@ -36,6 +37,7 @@ class NumberNormalizer extends AbstractProductValueNormalizer implements Normali
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         $number = $value->getData();

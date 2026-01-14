@@ -28,6 +28,7 @@ final class GenerateHeadersFromAttributeCodes implements GenerateFlatHeadersFrom
      *
      * @return FlatFileHeader[]
      */
+    #[\Override]
     public function __invoke(
         array $attributeCodes,
         string $channelCode,

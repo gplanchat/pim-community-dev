@@ -27,6 +27,7 @@ class SqlFindCategoryTrees implements FindCategoryTrees
     /**
      * @return CategoryTree[]
      */
+    #[\Override]
     public function execute(): array
     {
         $categories = $this->categoryRepository->findBy(['parent' => null]);

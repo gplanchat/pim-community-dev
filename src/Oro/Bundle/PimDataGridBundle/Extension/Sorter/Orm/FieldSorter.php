@@ -17,6 +17,7 @@ class FieldSorter implements SorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(DatasourceInterface $datasource, $field, $direction)
     {
         $datasource->getQueryBuilder()->addOrderBy($field, $direction);

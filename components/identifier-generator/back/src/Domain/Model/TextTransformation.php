@@ -12,17 +12,17 @@ use Webmozart\Assert\Assert;
  *
  * @phpstan-type TextTransformationNormalized 'no'|'uppercase'|'lowercase'
  */
-final class TextTransformation
+final readonly class TextTransformation
 {
-    public const NO = 'no';
-    public const UPPERCASE = 'uppercase';
-    public const LOWERCASE = 'lowercase';
+    public const string NO = 'no';
+    public const string UPPERCASE = 'uppercase';
+    public const string LOWERCASE = 'lowercase';
 
     /**
      * @param TextTransformationNormalized $value
      */
     private function __construct(
-        private readonly string $value
+        private string $value
     ) {
     }
 

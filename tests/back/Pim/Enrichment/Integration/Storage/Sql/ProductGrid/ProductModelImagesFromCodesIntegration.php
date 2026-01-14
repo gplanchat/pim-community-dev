@@ -78,6 +78,7 @@ class ProductModelImagesFromCodesIntegration extends TestCase
         Assert::assertInstanceOf(MediaValueInterface::class, $images['parent']['image']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
@@ -149,6 +150,7 @@ class ProductModelImagesFromCodesIntegration extends TestCase
         $this->get('pim_enrich.product.message_bus')->dispatch($command);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

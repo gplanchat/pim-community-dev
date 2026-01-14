@@ -20,6 +20,7 @@ class DbalSelectEventsApiRequestCountWithinLastHourQueryIntegration extends Test
     private EventsApiRequestCountLoader $eventsApiRequestCountLoader;
     private SelectEventsApiRequestCountWithinLastHourQueryInterface $eventsApiRequestCountWithinLastHour;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -66,6 +67,7 @@ class DbalSelectEventsApiRequestCountWithinLastHourQueryIntegration extends Test
         Assert::assertEquals(['event_count' => 10, 'updated' => '2021-01-02 11:40:10'], $eventsApiRequestCountWithinLastHour[1]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

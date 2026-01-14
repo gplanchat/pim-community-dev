@@ -15,6 +15,7 @@ class InMemoryFindJobType implements FindJobTypeInterface
         $this->jobTypes = $jobTypes;
     }
 
+    #[\Override]
     public function visible(): array
     {
         return $this->jobTypes;

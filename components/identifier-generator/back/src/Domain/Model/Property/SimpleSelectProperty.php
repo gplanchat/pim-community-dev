@@ -22,18 +22,19 @@ use Webmozart\Assert\Assert;
  *  locale?: string|null
  * }
  */
-final class SimpleSelectProperty implements PropertyInterface
+final readonly class SimpleSelectProperty implements PropertyInterface
 {
-    private const TYPE = 'simple_select';
+    private const string TYPE = 'simple_select';
 
     private function __construct(
-        private readonly string $attributeCode,
-        private readonly Process $process,
-        private readonly ?string $scope = null,
-        private readonly ?string $locale = null
+        private string $attributeCode,
+        private Process $process,
+        private ?string $scope = null,
+        private ?string $locale = null
     ) {
     }
 
+    #[\Override]
     public static function type(): string
     {
         return self::TYPE;
@@ -47,6 +48,7 @@ final class SimpleSelectProperty implements PropertyInterface
     /**
      * @return SimpleSelectPropertyNormalized
      */
+    #[\Override]
     public function normalize(): array
     {
         $simpleSelectProperty = [
@@ -68,6 +70,7 @@ final class SimpleSelectProperty implements PropertyInterface
     /**
      * @param array<string, mixed> $normalizedProperty
      */
+    #[\Override]
     public static function fromNormalized(array $normalizedProperty): PropertyInterface
     {
         Assert::keyExists($normalizedProperty, 'type');
@@ -90,6 +93,7 @@ final class SimpleSelectProperty implements PropertyInterface
         );
     }
 
+    #[\Override]
     public function getImplicitCondition(): ?ConditionInterface
     {
         return SimpleSelect::fromNormalized([

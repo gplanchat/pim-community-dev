@@ -20,6 +20,7 @@ class BusinessEventHandler implements MessageSubscriberInterface
     ) {
     }
 
+    #[\Override]
     public static function getHandledMessages(): \Iterator
     {
         yield BulkEventInterface::class => [

@@ -18,6 +18,7 @@ class FindQuantifiedAssociationTypeCodes implements FindQuantifiedAssociationTyp
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(): array
     {
         if (null === $this->cachedResult) {
@@ -27,6 +28,7 @@ class FindQuantifiedAssociationTypeCodes implements FindQuantifiedAssociationTyp
         return $this->cachedResult;
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->cachedResult = null;

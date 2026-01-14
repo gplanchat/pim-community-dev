@@ -22,11 +22,13 @@ final class ClientMigration implements ClientMigrationInterface
         $this->client = $clientBuilder->setHosts($hosts)->build();
     }
 
+    #[\Override]
     public function aliasExist(string $indexAlias): bool
     {
         return $this->client->indices()->existsAlias(['name' => $indexAlias]);
     }
 
+    #[\Override]
     public function getIndexNameFromAlias(string $indexAlias): array
     {
         $aliases = $this->client->indices()->getAlias(['name' => $indexAlias]);
@@ -34,6 +36,7 @@ final class ClientMigration implements ClientMigrationInterface
         return \array_keys($aliases);
     }
 
+    #[\Override]
     public function reindex(string $sourceIndexAlias, string $targetIndexAlias, array $query)
     {
         $reindexResponse = $this->client->reindex([
@@ -52,11 +55,13 @@ final class ClientMigration implements ClientMigrationInterface
         return $reindexResponse["total"];
     }
 
+    #[\Override]
     public function removeIndex(string $indexName): void
     {
         $this->assertResponseIsAcknowledged($this->client->indices()->delete(['index' => $indexName]));
     }
 
+    #[\Override]
     public function getIndexSettings(string $index): array
     {
         $indicesClient = $this->client->indices();
@@ -65,6 +70,7 @@ final class ClientMigration implements ClientMigrationInterface
         return $settingsResponse[$index]['settings']['index'];
     }
 
+    #[\Override]
     public function putIndexSetting(string $indexName, array $indexSettings)
     {
         $indicesClient = $this->client->indices();
@@ -77,6 +83,7 @@ final class ClientMigration implements ClientMigrationInterface
         ]));
     }
 
+    #[\Override]
     public function switchIndexAlias(string $oldIndexAlias, string $oldIndexName, string $newIndexAlias, string $newIndexName): void
     {
         $this->assertResponseIsAcknowledged(
@@ -113,6 +120,7 @@ final class ClientMigration implements ClientMigrationInterface
         );
     }
 
+    #[\Override]
     public function createAlias(string $indexAlias, string $indexName): void
     {
         $this->assertResponseIsAcknowledged(
@@ -131,6 +139,7 @@ final class ClientMigration implements ClientMigrationInterface
         );
     }
 
+    #[\Override]
     public function renameAlias(string $oldIndexAlias, string $newIndexAlias, string $indexName): void
     {
         $this->assertResponseIsAcknowledged(
@@ -155,6 +164,7 @@ final class ClientMigration implements ClientMigrationInterface
         );
     }
 
+    #[\Override]
     public function createIndex(string $indexName, array $body): void
     {
         $indicesClient = $this->client->indices();
@@ -167,6 +177,7 @@ final class ClientMigration implements ClientMigrationInterface
         );
     }
 
+    #[\Override]
     public function refreshIndex(string $indexName): void
     {
         $indicesClient = $this->client->indices();

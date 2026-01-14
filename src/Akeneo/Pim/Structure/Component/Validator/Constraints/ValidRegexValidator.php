@@ -23,6 +23,7 @@ class ValidRegexValidator extends ConstraintValidator
      *
      * @throws \Exception
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof ValidRegex) {

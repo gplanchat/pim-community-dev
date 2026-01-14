@@ -115,6 +115,7 @@ class GetCategoryTemplateAttributeSqlIntegration extends CategoryTestCase
         $this->assertNotNull($attributeCollection->getAttributeByCode('image_alt_text_1'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

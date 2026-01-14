@@ -17,6 +17,7 @@ abstract class AbstractSimpleArrayConverter implements ArrayConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(array $item, array $options = [])
     {
         $convertedItem = [];

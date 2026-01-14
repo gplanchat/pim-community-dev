@@ -27,6 +27,7 @@ class LocaleRepository extends EntityRepository implements DatagridRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $qb = $this->createQueryBuilder('l');

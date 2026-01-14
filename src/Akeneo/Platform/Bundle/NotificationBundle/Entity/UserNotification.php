@@ -28,6 +28,7 @@ class UserNotification implements UserNotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -36,6 +37,7 @@ class UserNotification implements UserNotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setNotification(NotificationInterface $notification)
     {
         $this->notification = $notification;
@@ -46,6 +48,7 @@ class UserNotification implements UserNotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNotification()
     {
         return $this->notification;
@@ -54,6 +57,7 @@ class UserNotification implements UserNotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUser(UserInterface $user)
     {
         $this->user = $user;
@@ -64,6 +68,7 @@ class UserNotification implements UserNotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUser()
     {
         return $this->user;
@@ -72,6 +77,7 @@ class UserNotification implements UserNotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setViewed($viewed)
     {
         $this->viewed = $viewed;
@@ -82,6 +88,7 @@ class UserNotification implements UserNotificationInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isViewed()
     {
         return $this->viewed;

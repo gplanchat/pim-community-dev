@@ -18,6 +18,7 @@ final class UpdateConnectedAppScopesQuery implements UpdateConnectedAppScopesQue
     {
     }
 
+    #[\Override]
     public function execute(array $scopes, string $appId): void
     {
         $updateQuery = <<<SQL

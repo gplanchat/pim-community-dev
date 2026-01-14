@@ -16,6 +16,7 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  */
 final class NumberValueFactory extends ScalarValueFactory implements ValueFactory
 {
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_int($data) && !\is_float($data) && (!\is_string($data) || '' === \trim($data))) {
@@ -29,6 +30,7 @@ final class NumberValueFactory extends ScalarValueFactory implements ValueFactor
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function createWithoutCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         $attributeCode = $attribute->code();
@@ -52,6 +54,7 @@ final class NumberValueFactory extends ScalarValueFactory implements ValueFactor
         return NumberValue::value($attributeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::NUMBER;

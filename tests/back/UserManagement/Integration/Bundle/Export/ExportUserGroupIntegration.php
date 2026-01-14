@@ -9,14 +9,15 @@ use Akeneo\Tool\Bundle\BatchBundle\Persistence\Sql\SqlCreateJobInstance;
 
 final class ExportUserGroupIntegration extends TestCase
 {
-    private const CSV_EXPORT_JOB_CODE = 'csv_user_group_export';
-    private const XLSX_EXPORT_JOB_CODE = 'xlsx_user_group_export';
+    private const string CSV_EXPORT_JOB_CODE = 'csv_user_group_export';
+    private const string XLSX_EXPORT_JOB_CODE = 'xlsx_user_group_export';
 
     protected JobLauncher $jobLauncher;
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -66,6 +67,7 @@ CSV;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

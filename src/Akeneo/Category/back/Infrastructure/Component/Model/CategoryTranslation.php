@@ -19,6 +19,7 @@ class CategoryTranslation extends AbstractTranslation implements CategoryTransla
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->label = $label;
@@ -29,6 +30,7 @@ class CategoryTranslation extends AbstractTranslation implements CategoryTransla
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         return $this->label;
@@ -37,6 +39,7 @@ class CategoryTranslation extends AbstractTranslation implements CategoryTransla
     /**
      * @param CategoryInterface $foreignKey
      */
+    #[\Override]
     public function setForeignKey($foreignKey): self
     {
         $this->foreignKey = $foreignKey;
@@ -44,6 +47,7 @@ class CategoryTranslation extends AbstractTranslation implements CategoryTransla
         return $this;
     }
 
+    #[\Override]
     public function getForeignKey(): CategoryInterface
     {
         return $this->foreignKey;

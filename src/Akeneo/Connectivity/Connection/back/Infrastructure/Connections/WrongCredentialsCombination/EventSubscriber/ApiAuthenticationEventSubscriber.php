@@ -26,6 +26,7 @@ class ApiAuthenticationEventSubscriber implements EventSubscriberInterface
     /**
      * @return array<class-string<ApiAuthenticationEvent>, string>
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [ApiAuthenticationEvent::class => 'checkCredentialsCombination'];

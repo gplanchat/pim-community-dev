@@ -23,6 +23,7 @@ class UcsMiddleware implements MiddlewareInterface
     ) {
     }
 
+    #[\Override]
     public function handle(Envelope $envelope, StackInterface $stack): Envelope
     {
         // We always try to use the tenantid from the stamp, if there is any, in case of long-running process.

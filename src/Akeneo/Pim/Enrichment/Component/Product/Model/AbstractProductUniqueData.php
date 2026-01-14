@@ -33,6 +33,7 @@ abstract class AbstractProductUniqueData implements ProductUniqueDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId(): int
     {
         return $this->id;
@@ -41,6 +42,7 @@ abstract class AbstractProductUniqueData implements ProductUniqueDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProduct(): ProductInterface
     {
         return $this->product;
@@ -49,6 +51,7 @@ abstract class AbstractProductUniqueData implements ProductUniqueDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttribute(): AttributeInterface
     {
         return $this->attribute;
@@ -57,6 +60,7 @@ abstract class AbstractProductUniqueData implements ProductUniqueDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRawData(): string
     {
         return $this->rawData;
@@ -65,6 +69,7 @@ abstract class AbstractProductUniqueData implements ProductUniqueDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAttribute(AttributeInterface $attribute): void
     {
         $this->attribute = $attribute;
@@ -73,6 +78,7 @@ abstract class AbstractProductUniqueData implements ProductUniqueDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRawData(string $rawData): void
     {
         $this->rawData = $rawData;
@@ -81,6 +87,7 @@ abstract class AbstractProductUniqueData implements ProductUniqueDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ProductUniqueDataInterface $uniqueValue): bool
     {
         return $this->getAttribute() === $uniqueValue->getAttribute() &&

@@ -15,11 +15,13 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class GetWebMarketplaceUrlEndToEnd extends WebTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

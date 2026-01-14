@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 final class DummyAutomationValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof Automation) {

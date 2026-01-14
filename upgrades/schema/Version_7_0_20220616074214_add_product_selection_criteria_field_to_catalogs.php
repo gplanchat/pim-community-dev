@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_7_0_20220616074214_add_product_selection_criteria_field_to_catalogs extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         if ($schema->getTable('akeneo_catalog')->hasColumn('product_selection_criteria')) {
@@ -26,6 +27,7 @@ final class Version_7_0_20220616074214_add_product_selection_criteria_field_to_c
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

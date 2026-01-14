@@ -28,6 +28,7 @@ class AddLocaleListener implements EventSubscriber
      *
      * @return array
      */
+    #[\Override]
     public function getSubscribedEvents()
     {
         return [

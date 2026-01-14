@@ -41,6 +41,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setFamily(FamilyInterface $family)
     {
         $this->family = $family;
@@ -51,6 +52,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamily()
     {
         return $this->family;
@@ -59,6 +61,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAttribute(AttributeInterface $attribute)
     {
         $this->attribute = $attribute;
@@ -69,6 +72,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttribute()
     {
         return $this->attribute;
@@ -77,6 +81,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeCode()
     {
         return $this->attribute->getCode();
@@ -85,6 +90,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setChannel(ChannelInterface $channel)
     {
         $this->channel = $channel;
@@ -95,6 +101,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChannel()
     {
         return $this->channel;
@@ -103,6 +110,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChannelCode()
     {
         return $this->channel->getCode();
@@ -111,6 +119,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRequired($required)
     {
         $this->required = (bool) $required;
@@ -121,6 +130,7 @@ class AttributeRequirement implements AttributeRequirementInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isRequired()
     {
         return $this->required;

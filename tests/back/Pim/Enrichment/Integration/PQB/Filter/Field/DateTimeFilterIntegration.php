@@ -25,6 +25,7 @@ class DateTimeFilterIntegration extends AbstractProductQueryBuilderTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -134,11 +134,13 @@ final class ValueCollection implements \IteratorAggregate, \Countable
     /**
      * @phpstan-ignore-next-line
      */
+    #[\Override]
     public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->values);
     }
 
+    #[\Override]
     public function count(): int
     {
         return count($this->values);

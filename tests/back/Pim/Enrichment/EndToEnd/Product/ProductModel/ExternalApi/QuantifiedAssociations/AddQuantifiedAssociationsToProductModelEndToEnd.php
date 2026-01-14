@@ -14,6 +14,7 @@ class AddQuantifiedAssociationsToProductModelEndToEnd extends AbstractProductMod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -22,6 +23,7 @@ class AddQuantifiedAssociationsToProductModelEndToEnd extends AbstractProductMod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

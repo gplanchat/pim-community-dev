@@ -28,6 +28,7 @@ class RegenerateConnectionSecretEndToEnd extends WebTestCase
         Assert::assertEquals('', $response->getContent());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

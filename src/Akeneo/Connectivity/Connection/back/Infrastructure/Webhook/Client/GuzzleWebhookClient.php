@@ -46,6 +46,7 @@ class GuzzleWebhookClient implements WebhookClientInterface
     ) {
     }
 
+    #[\Override]
     public function bulkSend(iterable $webhookRequests): void
     {
         $logs = [];

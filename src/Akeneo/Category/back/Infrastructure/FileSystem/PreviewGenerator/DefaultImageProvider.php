@@ -34,6 +34,7 @@ class DefaultImageProvider implements DefaultImageProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getImageUrl(string $fileKey, string $filter): string
     {
         $filter = self::SUPPORTED_TYPES[$filter] ?? $filter;
@@ -53,6 +54,7 @@ class DefaultImageProvider implements DefaultImageProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getImageBinary(string $fileType): Binary
     {
         if (isset($this->defaultImages[$fileType])) {

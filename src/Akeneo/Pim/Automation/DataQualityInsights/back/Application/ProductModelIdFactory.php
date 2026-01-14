@@ -7,11 +7,13 @@ use Akeneo\Pim\Automation\DataQualityInsights\Domain\ValueObject\ProductModelIdC
 
 class ProductModelIdFactory implements ProductEntityIdFactoryInterface
 {
+    #[\Override]
     public function create(string $id): ProductModelId
     {
         return ProductModelId::fromString($id);
     }
 
+    #[\Override]
     public function createCollection(array $ids): ProductModelIdCollection
     {
         return ProductModelIdCollection::fromStrings($ids);

@@ -119,6 +119,7 @@ class Index extends Grid
         return $this->currentStep;
     }
 
+    #[\Override]
     public function clickCreationLink()
     {
         $this->find('css', sprintf('button:contains("%s")', 'Create family'))->click();

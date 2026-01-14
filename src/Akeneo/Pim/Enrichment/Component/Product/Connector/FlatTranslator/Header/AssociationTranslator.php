@@ -18,6 +18,7 @@ class AssociationTranslator implements FlatHeaderTranslatorInterface
     ) {
     }
 
+    #[\Override]
     public function supports(string $columnName): bool
     {
         $associationsColumns = $this->associationColumnsResolver->resolveAssociationColumns();
@@ -29,6 +30,7 @@ class AssociationTranslator implements FlatHeaderTranslatorInterface
         ));
     }
 
+    #[\Override]
     public function warmup(array $columnNames, string $locale): void
     {
         $associationTypes = $this->extractAssociationTypeCodes($columnNames);
@@ -39,6 +41,7 @@ class AssociationTranslator implements FlatHeaderTranslatorInterface
         );
     }
 
+    #[\Override]
     public function translate(string $columnName, string $locale): string
     {
         list($associationType, $entityType) = explode('-', $columnName);

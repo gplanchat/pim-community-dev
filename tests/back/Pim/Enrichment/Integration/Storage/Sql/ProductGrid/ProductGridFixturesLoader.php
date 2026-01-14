@@ -14,25 +14,25 @@ use Akeneo\Tool\Component\StorageUtils\Updater\ObjectUpdaterInterface;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-final class ProductGridFixturesLoader
+final readonly class ProductGridFixturesLoader
 {
     public function __construct(
-        private readonly SimpleFactoryInterface $productModelFactory,
-        private readonly ObjectUpdaterInterface $productModelUpdater,
-        private readonly ValidatorInterface $productValidator,
-        private readonly SaverInterface $productModelSaver,
-        private readonly ProductBuilderInterface $productBuilder,
-        private readonly ObjectUpdaterInterface $productUpdater,
-        private readonly SaverInterface $productSaver,
-        private readonly BulkSaverInterface $productsSaver,
-        private readonly SimpleFactoryInterface $familyFactory,
-        private readonly ObjectUpdaterInterface $familyUpdater,
-        private readonly SaverInterface $familySaver,
-        private readonly ValidatorInterface $validator,
-        private readonly SimpleFactoryInterface $familyVariantFactory,
-        private readonly ObjectUpdaterInterface $familyVariantUpdater,
-        private readonly SaverInterface $familyVariantSaver,
-        private readonly Client $esClient
+        private SimpleFactoryInterface $productModelFactory,
+        private ObjectUpdaterInterface $productModelUpdater,
+        private ValidatorInterface $productValidator,
+        private SaverInterface $productModelSaver,
+        private ProductBuilderInterface $productBuilder,
+        private ObjectUpdaterInterface $productUpdater,
+        private SaverInterface $productSaver,
+        private BulkSaverInterface $productsSaver,
+        private SimpleFactoryInterface $familyFactory,
+        private ObjectUpdaterInterface $familyUpdater,
+        private SaverInterface $familySaver,
+        private ValidatorInterface $validator,
+        private SimpleFactoryInterface $familyVariantFactory,
+        private ObjectUpdaterInterface $familyVariantUpdater,
+        private SaverInterface $familyVariantSaver,
+        private Client $esClient
     ) {
     }
 

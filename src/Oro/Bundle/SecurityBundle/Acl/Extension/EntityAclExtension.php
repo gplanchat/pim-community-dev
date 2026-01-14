@@ -117,6 +117,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($type, $id)
     {
         if ($type === ObjectIdentityFactory::ROOT_IDENTITY_TYPE && $id === $this->getExtensionKey()) {
@@ -135,6 +136,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getExtensionKey()
     {
         return 'entity';
@@ -143,6 +145,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validateMask($mask, $object, $permission = null)
     {
         if (0 === $this->removeServiceBits($mask)) {
@@ -174,6 +177,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getObjectIdentity($val)
     {
         if (is_string($val)) {
@@ -191,6 +195,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaskBuilder($permission)
     {
         if (empty($permission)) {
@@ -206,6 +211,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllMaskBuilders()
     {
         $result = [];
@@ -219,6 +225,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaskPattern($mask)
     {
         $maskBuilderClassName = $this->maskBuilderClassNames[$this->getServiceBits($mask)];
@@ -229,6 +236,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function adaptRootMask($rootMask, $object)
     {
         $permissions = $this->getPermissions($rootMask, true);
@@ -256,6 +264,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getServiceBits($mask)
     {
         return $mask & BaseEntityMaskBuilder::SERVICE_BITS;
@@ -264,6 +273,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeServiceBits($mask)
     {
         return $mask & BaseEntityMaskBuilder::REMOVE_SERVICE_BITS;
@@ -272,6 +282,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAccessLevel($mask, $permission = null)
     {
         if (0 === $this->removeServiceBits($mask)) {
@@ -297,6 +308,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPermissions($mask = null, $setOnly = false)
     {
         if ($mask === null) {
@@ -328,6 +340,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllowedPermissions(ObjectIdentity $oid)
     {
         if ($oid->getType() === ObjectIdentityFactory::ROOT_IDENTITY_TYPE) {
@@ -346,6 +359,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClasses()
     {
         return [];
@@ -354,6 +368,7 @@ class EntityAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function decideIsGranting($triggeredMask, $object, TokenInterface $securityToken)
     {
         $accessLevel = $this->getAccessLevel($triggeredMask);

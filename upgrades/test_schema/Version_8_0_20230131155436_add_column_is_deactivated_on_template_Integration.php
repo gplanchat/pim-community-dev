@@ -15,12 +15,13 @@ use Pim\Upgrade\Schema\Tests\ExecuteMigrationTrait;
  */
 final class Version_8_0_20230131155436_add_column_is_deactivated_on_template_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230131155436_add_column_is_deactivated_on_template';
+    private const string MIGRATION_NAME = '_8_0_20230131155436_add_column_is_deactivated_on_template';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -39,6 +40,7 @@ final class Version_8_0_20230131155436_add_column_is_deactivated_on_template_Int
     }
 
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

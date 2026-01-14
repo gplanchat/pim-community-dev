@@ -22,6 +22,7 @@ class ReferenceDataFieldProvider implements FieldProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getField($attribute)
     {
         return $this->fields[$attribute->getType()];
@@ -30,6 +31,7 @@ class ReferenceDataFieldProvider implements FieldProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element)
     {
         return $element instanceof AttributeInterface &&

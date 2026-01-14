@@ -16,6 +16,7 @@ class NoopProcessor implements ItemProcessorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item)
     {
         return $item;

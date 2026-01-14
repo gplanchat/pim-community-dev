@@ -40,6 +40,7 @@ class Edit extends ProductEditForm
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getHistoryRows()
     {
         return $this->findAll('css', '.entity-version');

@@ -29,6 +29,7 @@ class ActivatedLocaleValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($locale, Constraint $constraint)
     {
         if ($locale instanceof LocaleInterface || (is_string($locale) && '' !== $locale)) {

@@ -22,6 +22,7 @@ class ChainConfigurationProvider implements ConfigurationProviderInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isApplicable($gridName)
     {
         return true;
@@ -30,6 +31,7 @@ class ChainConfigurationProvider implements ConfigurationProviderInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getConfiguration($gridName)
     {
         $foundProvider = null;

@@ -14,6 +14,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_8_0_20230223170000_add_mass_delete_attribute_groups_job_instance extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $sql = <<<SQL
@@ -46,6 +47,7 @@ final class Version_8_0_20230223170000_add_mass_delete_attribute_groups_job_inst
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

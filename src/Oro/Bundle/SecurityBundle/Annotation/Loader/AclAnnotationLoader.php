@@ -43,6 +43,7 @@ class AclAnnotationLoader extends AbstractLoader implements AclAnnotationLoaderI
      *
      * @param AclAnnotationStorage $storage
      */
+    #[\Override]
     public function load(AclAnnotationStorage $storage)
     {
         if (!empty($this->subDirs)) {

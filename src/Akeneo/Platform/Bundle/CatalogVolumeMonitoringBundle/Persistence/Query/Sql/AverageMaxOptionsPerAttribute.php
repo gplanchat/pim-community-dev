@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  */
 class AverageMaxOptionsPerAttribute implements AverageMaxQuery
 {
-    private const VOLUME_NAME = 'average_max_options_per_attribute';
+    private const string VOLUME_NAME = 'average_max_options_per_attribute';
 
     /** @var Connection */
     private $connection;
@@ -32,6 +32,7 @@ class AverageMaxOptionsPerAttribute implements AverageMaxQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): AverageMaxVolumes
     {
         $simpleSelect   = AttributeTypes::OPTION_SIMPLE_SELECT;

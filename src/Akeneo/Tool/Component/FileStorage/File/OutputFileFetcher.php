@@ -22,6 +22,7 @@ class OutputFileFetcher implements FileFetcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(FilesystemReader $filesystem, $fileKey, array $options = [])
     {
         if (!isset($options['filePath']) || '' === $options['filePath']) {

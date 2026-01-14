@@ -24,6 +24,7 @@ class SqlSearchAttributeOptions implements SearchAttributeOptionsInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function search(
         string $attributeCode,
         SearchAttributeOptionsParameters $searchParameters

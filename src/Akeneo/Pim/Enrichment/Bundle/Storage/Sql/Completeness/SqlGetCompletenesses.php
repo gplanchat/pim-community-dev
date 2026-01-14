@@ -16,19 +16,21 @@ use Ramsey\Uuid\UuidInterface;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class SqlGetCompletenesses implements GetProductCompletenesses
+final readonly class SqlGetCompletenesses implements GetProductCompletenesses
 {
     public function __construct(
-        private readonly Connection $connection,
-        private readonly ChannelExistsWithLocaleInterface $channelExistsWithLocale,
+        private Connection $connection,
+        private ChannelExistsWithLocaleInterface $channelExistsWithLocale,
     ) {
     }
 
+    #[\Override]
     public function fromProductUuid(UuidInterface $productUuid): ProductCompletenessCollection
     {
         return $this->fromProductUuids([$productUuid])[$productUuid->toString()];
     }
 
+    #[\Override]
     public function fromProductUuids(array $productUuids, ?string $channel = null, array $locales = []): array
     {
         $uuidsAsBytes = \array_map(fn ($productUuid) => $productUuid->getBytes(), \array_values($productUuids));

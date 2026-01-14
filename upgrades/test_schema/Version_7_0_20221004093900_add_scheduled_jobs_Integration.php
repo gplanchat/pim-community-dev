@@ -10,10 +10,11 @@ final class Version_7_0_20221004093900_add_scheduled_jobs_Integration extends Te
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20221004093900_add_scheduled_jobs';
+    private const string MIGRATION_LABEL = '_7_0_20221004093900_add_scheduled_jobs';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ final class Version_7_0_20221004093900_add_scheduled_jobs_Integration extends Te
         $this->assertEquals($jobInstanceId, $this->jobInstanceId('aggregate_volume_queries'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

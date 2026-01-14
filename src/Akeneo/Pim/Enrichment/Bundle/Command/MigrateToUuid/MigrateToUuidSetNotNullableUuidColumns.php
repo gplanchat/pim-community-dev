@@ -19,7 +19,7 @@ class MigrateToUuidSetNotNullableUuidColumns implements MigrateToUuidStep
         'pim_comment_comment',
     ];
 
-    private const TABLE_WITHOUT_UUID_COMMENT = [
+    private const array TABLE_WITHOUT_UUID_COMMENT = [
         'pim_catalog_completeness',
         'pim_data_quality_insights_product_criteria_evaluation',
         'pim_data_quality_insights_product_score',
@@ -38,21 +38,25 @@ class MigrateToUuidSetNotNullableUuidColumns implements MigrateToUuidStep
     ) {
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Set not nullable every uuid columns (product_uuid like)';
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'set_not_nullable_uuid_columns';
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         return 0 < $this->getMissingCount();
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         $count = 0;
@@ -91,6 +95,7 @@ class MigrateToUuidSetNotNullableUuidColumns implements MigrateToUuidStep
         return $result !== 'NO';
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $logContext = $context->logContext;

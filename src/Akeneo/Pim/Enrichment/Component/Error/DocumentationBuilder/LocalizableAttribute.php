@@ -23,6 +23,7 @@ class LocalizableAttribute implements DocumentationBuilderInterface
         LocalizableValues::INVALID_LOCALE_FOR_CHANNEL
     ];
 
+    #[\Override]
     public function support($object): bool
     {
         if (
@@ -38,6 +39,7 @@ class LocalizableAttribute implements DocumentationBuilderInterface
     /**
      * @param ConstraintViolationInterface $object
      */
+    #[\Override]
     public function buildDocumentation($object): DocumentationCollection
     {
         if (false === $this->support($object)) {

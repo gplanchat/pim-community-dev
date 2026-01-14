@@ -13,7 +13,7 @@ use Akeneo\Platform\CommunicationChannel\Domain\Announcement\Query\FindNewAnnoun
  */
 final class LocalFilestorageFindNewAnnouncementIds implements FindNewAnnouncementIdsInterface
 {
-    private const FILENAME = 'serenity-updates.json';
+    private const string FILENAME = 'serenity-updates.json';
 
     /** @var string */
     private $externalJson;
@@ -23,6 +23,7 @@ final class LocalFilestorageFindNewAnnouncementIds implements FindNewAnnouncemen
         $this->externalJson = file_get_contents(dirname(__FILE__) . DIRECTORY_SEPARATOR . self::FILENAME);
     }
 
+    #[\Override]
     public function find(string $pimEdition, string $pimVersion, string $locale): array
     {
         $content = json_decode($this->externalJson, true);

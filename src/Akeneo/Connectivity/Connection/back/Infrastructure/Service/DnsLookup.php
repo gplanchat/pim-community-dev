@@ -16,6 +16,7 @@ class DnsLookup implements DnsLookupInterface
      * The ip returned by gethostbyname must be validated because when an error occurs in this function,
      * the host is returned.
      */
+    #[\Override]
     public function ip(string $host): ?string
     {
         $ip = \gethostbyname($host);

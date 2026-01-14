@@ -19,6 +19,7 @@ class NotEmptyVariantAxes extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validatedBy(): string
     {
         return 'pim_not_empty_axes_validator';
@@ -27,6 +28,7 @@ class NotEmptyVariantAxes extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTargets(): string|array
     {
         return Constraint::CLASS_CONSTRAINT;

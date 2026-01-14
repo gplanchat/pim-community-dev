@@ -12,6 +12,7 @@ use Akeneo\Test\Integration\TestCase;
 
 class AttributeGroupActivationRepositoryIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -33,6 +33,7 @@ class RevokeClientCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -48,6 +49,7 @@ class RevokeClientCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $client = $this->clientManager->findClientByPublicId($input->getArgument('client_id'));

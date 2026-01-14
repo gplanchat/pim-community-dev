@@ -39,6 +39,7 @@ class AddProductModelScorePropertySpec extends ObjectBehavior
         $this->add($queryParameters, $rows)->shouldHaveScoreProperties();
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

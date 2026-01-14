@@ -12,6 +12,7 @@ use Webmozart\Assert\Assert;
 
 final class SqlGetCategoryChildrenCodesPerTreeIntegration extends TestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -196,6 +197,7 @@ final class SqlGetCategoryChildrenCodesPerTreeIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
@@ -204,6 +206,7 @@ final class SqlGetCategoryChildrenCodesPerTreeIntegration extends TestCase
 
 class AllowAllCategoryCode implements CategoryCodeFilterInterface
 {
+    #[\Override]
     public function filter(array $codes): array
     {
         return $codes;
@@ -212,6 +215,7 @@ class AllowAllCategoryCode implements CategoryCodeFilterInterface
 
 class DenyAllCategoryCode implements CategoryCodeFilterInterface
 {
+    #[\Override]
     public function filter(array $codes): array
     {
         return [];

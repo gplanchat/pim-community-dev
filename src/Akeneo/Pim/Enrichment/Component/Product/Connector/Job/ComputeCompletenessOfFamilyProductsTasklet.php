@@ -32,7 +32,7 @@ use Webmozart\Assert\Assert;
  */
 class ComputeCompletenessOfFamilyProductsTasklet implements TaskletInterface, TrackableTaskletInterface
 {
-    private const BATCH_SIZE = 100;
+    private const int BATCH_SIZE = 100;
 
     private StepExecution $stepExecution;
 
@@ -49,11 +49,13 @@ class ComputeCompletenessOfFamilyProductsTasklet implements TaskletInterface, Tr
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;
@@ -62,6 +64,7 @@ class ComputeCompletenessOfFamilyProductsTasklet implements TaskletInterface, Tr
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute()
     {
         if ($this->familyReader instanceof InitializableInterface) {

@@ -31,7 +31,7 @@ use Ramsey\Uuid\UuidInterface;
  */
 class ComputeCompletenessOfProductsFamilyTasklet implements TaskletInterface
 {
-    private const BATCH_SIZE = 100;
+    private const int BATCH_SIZE = 100;
 
     private StepExecution $stepExecution;
 
@@ -46,6 +46,7 @@ class ComputeCompletenessOfProductsFamilyTasklet implements TaskletInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
@@ -56,6 +57,7 @@ class ComputeCompletenessOfProductsFamilyTasklet implements TaskletInterface
      *
      * @throws UndefinedJobParameterException
      */
+    #[\Override]
     public function execute(): void
     {
         $family = $this->getFamilyFromJobParameters();

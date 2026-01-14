@@ -25,6 +25,7 @@ class UpdateMaintenanceModeTest extends TestCase
         $this->assertMaintenanceModeIsEnabled();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

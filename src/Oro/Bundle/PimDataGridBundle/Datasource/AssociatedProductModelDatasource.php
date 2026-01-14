@@ -70,6 +70,7 @@ class AssociatedProductModelDatasource extends ProductDatasource
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResults()
     {
         $sourceProduct = $this->getConfiguration('current_product', false);

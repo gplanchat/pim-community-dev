@@ -26,6 +26,7 @@ class CollectionNormalizer implements NormalizerInterface, SerializerAwareInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($elements, $format = null, array $context = [])
     {
         $normalizedElements = [];
@@ -40,11 +41,13 @@ class CollectionNormalizer implements NormalizerInterface, SerializerAwareInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return ($data instanceof \Traversable || is_array($data)) && in_array($format, $this->supportedFormat);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -53,6 +56,7 @@ class CollectionNormalizer implements NormalizerInterface, SerializerAwareInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setSerializer(SerializerInterface $serializer)
     {
         $this->serializer = $serializer;

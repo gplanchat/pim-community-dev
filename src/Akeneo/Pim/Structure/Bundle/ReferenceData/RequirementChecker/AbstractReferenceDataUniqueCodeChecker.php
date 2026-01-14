@@ -31,6 +31,7 @@ abstract class AbstractReferenceDataUniqueCodeChecker implements CheckerInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function check(ReferenceDataConfigurationInterface $configuration)
     {
         try {
@@ -54,6 +55,7 @@ abstract class AbstractReferenceDataUniqueCodeChecker implements CheckerInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDescription()
     {
         return 'Reference Data mapping must have a unique "code" field.';
@@ -62,6 +64,7 @@ abstract class AbstractReferenceDataUniqueCodeChecker implements CheckerInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFailure()
     {
         return $this->failure;
@@ -70,6 +73,7 @@ abstract class AbstractReferenceDataUniqueCodeChecker implements CheckerInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isBlockingOnFailure()
     {
         return false;

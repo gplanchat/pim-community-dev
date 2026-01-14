@@ -54,6 +54,7 @@ class SecurityFacade implements SecurityFacadeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isGranted($attributes, $object = null): bool
     {
         if (

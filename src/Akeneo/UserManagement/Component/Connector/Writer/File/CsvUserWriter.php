@@ -10,6 +10,7 @@ namespace Akeneo\UserManagement\Component\Connector\Writer\File;
  */
 final class CsvUserWriter extends AbstractUserWriter
 {
+    #[\Override]
     protected function getWriterConfiguration(): array
     {
         $parameters = $this->stepExecution->getJobParameters();

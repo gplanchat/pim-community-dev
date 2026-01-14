@@ -25,6 +25,7 @@ class ProduceEventOnBulkProductModelDeletionIntegration extends TestCase
     private ObjectUpdaterInterface $productModelUpdater;
     private BulkRemoverInterface $productModelRemover;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -53,6 +54,7 @@ class ProduceEventOnBulkProductModelDeletionIntegration extends TestCase
         $this->assertEventCount($count, ProductModelRemoved::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

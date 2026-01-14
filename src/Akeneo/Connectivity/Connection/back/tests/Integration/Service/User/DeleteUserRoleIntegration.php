@@ -20,11 +20,13 @@ class DeleteUserRoleIntegration extends TestCase
     private Connection $connection;
     private UserRoleLoader $userRoleLoader;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

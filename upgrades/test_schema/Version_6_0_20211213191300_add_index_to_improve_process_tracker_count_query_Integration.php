@@ -17,15 +17,17 @@ class Version_6_0_20211213191300_add_index_to_improve_process_tracker_count_quer
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211213191300_add_index_to_improve_process_tracker_count_query';
+    private const string MIGRATION_LABEL = '_6_0_20211213191300_add_index_to_improve_process_tracker_count_query';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

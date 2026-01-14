@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  */
 class SqlAttributes implements AttributesInterface
 {
-    private const LRU_CACHE_SIZE = 1000;
+    private const int LRU_CACHE_SIZE = 1000;
 
     private Connection $dbConnection;
 
@@ -28,6 +28,7 @@ class SqlAttributes implements AttributesInterface
         $this->attributeCodesByIds = new LRUCache(self::LRU_CACHE_SIZE);
     }
 
+    #[\Override]
     public function getCodesByIds(array $attributesIds): array
     {
         // Because LRUCache can only be used with string keys
@@ -56,6 +57,7 @@ class SqlAttributes implements AttributesInterface
         return $attributesCodes;
     }
 
+    #[\Override]
     public function getIdsByCodes(array $attributesCodes): array
     {
         $attributesCodes = array_map(fn ($attributeCode) => strval($attributeCode), $attributesCodes);

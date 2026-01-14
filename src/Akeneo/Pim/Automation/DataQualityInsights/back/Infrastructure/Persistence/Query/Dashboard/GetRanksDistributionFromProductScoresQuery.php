@@ -25,6 +25,7 @@ final class GetRanksDistributionFromProductScoresQuery implements GetRanksDistri
     ) {
     }
 
+    #[\Override]
     public function forWholeCatalog(\DateTimeImmutable $date): RanksDistributionCollection
     {
         $query = $this->buildRankDistributionQuery();
@@ -38,6 +39,7 @@ final class GetRanksDistributionFromProductScoresQuery implements GetRanksDistri
         return $this->hydrateToRankDistributionCollection($elasticsearchResult);
     }
 
+    #[\Override]
     public function byCategory(CategoryCode $categoryCode, \DateTimeImmutable $date): RanksDistributionCollection
     {
         $categoryCodes = $this->getCategoryChildrenIdsQuery->execute($categoryCode);
@@ -81,6 +83,7 @@ final class GetRanksDistributionFromProductScoresQuery implements GetRanksDistri
      * - it probably reduces the pressure over ES
      *
      */
+    #[\Override]
     public function byFamily(FamilyCode $familyCode, \DateTimeImmutable $date): RanksDistributionCollection
     {
         $query = $this->buildRankDistributionQuery();

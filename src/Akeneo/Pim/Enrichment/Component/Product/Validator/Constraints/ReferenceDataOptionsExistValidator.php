@@ -34,6 +34,7 @@ class ReferenceDataOptionsExistValidator extends ConstraintValidator
         $this->attributeRepository = $attributeRepository;
     }
 
+    #[\Override]
     public function validate($values, Constraint $constraint)
     {
         if (!$constraint instanceof ReferenceDataOptionsExist) {

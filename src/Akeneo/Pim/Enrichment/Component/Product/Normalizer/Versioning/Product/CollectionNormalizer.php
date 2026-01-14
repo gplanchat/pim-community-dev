@@ -28,11 +28,13 @@ class CollectionNormalizer implements NormalizerInterface, NormalizerAwareInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof Collection && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -41,6 +43,7 @@ class CollectionNormalizer implements NormalizerInterface, NormalizerAwareInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         $result = [];

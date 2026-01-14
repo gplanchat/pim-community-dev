@@ -17,6 +17,7 @@ class EchoWriter implements ItemWriterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items)
     {
         foreach ($items as $item) {

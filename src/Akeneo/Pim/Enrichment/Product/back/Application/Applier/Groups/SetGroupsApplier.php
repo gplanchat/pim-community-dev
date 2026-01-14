@@ -25,6 +25,7 @@ class SetGroupsApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $groupUserIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($groupUserIntent, SetGroups::class);
@@ -47,6 +48,7 @@ class SetGroupsApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetGroups::class];

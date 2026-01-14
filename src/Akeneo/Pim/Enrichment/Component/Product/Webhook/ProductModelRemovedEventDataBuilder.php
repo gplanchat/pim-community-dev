@@ -16,6 +16,7 @@ use Akeneo\Platform\Component\Webhook\EventDataCollection;
  */
 class ProductModelRemovedEventDataBuilder implements EventDataBuilderInterface
 {
+    #[\Override]
     public function supports(BulkEventInterface $event): bool
     {
         if (false === $event instanceof BulkEventInterface) {
@@ -31,6 +32,7 @@ class ProductModelRemovedEventDataBuilder implements EventDataBuilderInterface
         return true;
     }
 
+    #[\Override]
     public function build(BulkEventInterface $bulkEvent, Context $context): EventDataCollection
     {
         $collection = new EventDataCollection();

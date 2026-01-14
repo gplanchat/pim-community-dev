@@ -24,6 +24,7 @@ final class GpsTransportFactory implements TransportFactoryInterface
         $this->orderingKeySolver = $orderingKeySolver;
     }
 
+    #[\Override]
     public function createTransport(string $dsn, array $options, SerializerInterface $serializer): TransportInterface
     {
         $client = Client::fromDsn($this->pubSubClientFactory, $dsn, $options);
@@ -38,6 +39,7 @@ final class GpsTransportFactory implements TransportFactoryInterface
         return new GpsTransport($client, $sender, $receiver);
     }
 
+    #[\Override]
     public function supports(string $dsn, array $options): bool
     {
         return str_starts_with($dsn, 'gps:');

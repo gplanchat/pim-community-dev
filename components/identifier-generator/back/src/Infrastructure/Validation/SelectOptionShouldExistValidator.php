@@ -20,6 +20,7 @@ final class SelectOptionShouldExistValidator extends ConstraintValidator
     ) {
     }
 
+    #[\Override]
     public function validate($selectCondition, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, SelectOptionShouldExist::class);

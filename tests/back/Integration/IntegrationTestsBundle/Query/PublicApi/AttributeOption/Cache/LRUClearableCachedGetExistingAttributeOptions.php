@@ -27,6 +27,7 @@ class LRUClearableCachedGetExistingAttributeOptions implements GetExistingAttrib
         $this->originalLRUCache = new LRUCachedGetExistingAttributeOptions($getExistingOptionCodes);
     }
 
+    #[\Override]
     public function fromOptionCodesByAttributeCode(array $optionCodesIndexedByAttributeCodes): array
     {
         return $this->originalLRUCache->fromOptionCodesByAttributeCode($optionCodesIndexedByAttributeCodes);

@@ -37,6 +37,7 @@ class ObjectDetacher implements ObjectDetacherInterface, BulkObjectDetacherInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function detach($object)
     {
         $visited = [];
@@ -47,6 +48,7 @@ class ObjectDetacher implements ObjectDetacherInterface, BulkObjectDetacherInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function detachAll(array $objects)
     {
         foreach ($objects as $object) {

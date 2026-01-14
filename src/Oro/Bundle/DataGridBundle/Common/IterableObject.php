@@ -94,6 +94,7 @@ class IterableObject implements \ArrayAccess, \IteratorAggregate
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->params);
@@ -102,6 +103,7 @@ class IterableObject implements \ArrayAccess, \IteratorAggregate
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function offsetExists($offset): bool
     {
         return isset($this->params[$offset]);
@@ -110,6 +112,7 @@ class IterableObject implements \ArrayAccess, \IteratorAggregate
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function offsetGet($offset): mixed
     {
         return $this->params[$offset];
@@ -144,6 +147,7 @@ class IterableObject implements \ArrayAccess, \IteratorAggregate
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function offsetSet($offset, $value): void
     {
         $this->params[$offset] = $value;
@@ -167,6 +171,7 @@ class IterableObject implements \ArrayAccess, \IteratorAggregate
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function offsetUnset($offset): void
     {
         unset($this->params[$offset]);

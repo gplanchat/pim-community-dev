@@ -161,7 +161,7 @@ JSON;
 <<<JSON
     {
         "code": 413,
-        "message": "Too many resources to process, ${maxNumberResources} is the maximum allowed."
+        "message": "Too many resources to process, {$maxNumberResources} is the maximum allowed."
     }
 JSON;
 
@@ -338,6 +338,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

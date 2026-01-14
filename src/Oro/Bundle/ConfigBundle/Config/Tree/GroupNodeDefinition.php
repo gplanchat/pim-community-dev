@@ -43,6 +43,7 @@ class GroupNodeDefinition extends AbstractNodeDefinition implements \Countable, 
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function count(): int
     {
         return count($this->children);
@@ -51,6 +52,7 @@ class GroupNodeDefinition extends AbstractNodeDefinition implements \Countable, 
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getIterator(): \Traversable
     {
         $this->resort();

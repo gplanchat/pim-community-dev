@@ -18,6 +18,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getItemsFromIdentifiers(array $identifiers): array
     {
         if ([] === $identifiers) {
@@ -35,6 +36,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties(): array
     {
         return ['code'];
@@ -43,6 +45,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier): ?ProductModelInterface
     {
         return $this->findOneBy(['code' => $identifier]);
@@ -51,6 +54,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findSiblingsProductModels(ProductModelInterface $productModel): array
     {
         $qb = $this
@@ -69,6 +73,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countRootProductModels(): int
     {
         $count = $this->createQueryBuilder('pm')
@@ -83,6 +88,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findChildrenProductModels(ProductModelInterface $productModel): array
     {
         $qb = $this
@@ -96,6 +102,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findFirstCreatedVariantProductModel(ProductModelInterface $productModel): ?ProductModelInterface
     {
         $qb = $this->createQueryBuilder('pm')
@@ -118,6 +125,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findDescendantProductIdentifiers(ProductModelInterface $productModel): array
     {
         $qb = $this
@@ -136,6 +144,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findByIdentifiers(array $codes): array
     {
         return $this->findBy(['code' => $codes]);
@@ -144,6 +153,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findChildrenProducts(ProductModelInterface $productModel): array
     {
         $qb = $this
@@ -160,6 +170,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function searchRootProductModelsAfter(?ProductModelInterface $productModel, int $limit): array
     {
         $qb = $this->createQueryBuilder('pm')
@@ -179,6 +190,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findSubProductModels(FamilyVariantInterface $familyVariant): array
     {
         $qb = $this
@@ -194,6 +206,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findRootProductModels(FamilyVariantInterface $familyVariant): array
     {
         $qb = $this
@@ -206,6 +219,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
         return $qb->getQuery()->execute();
     }
 
+    #[\Override]
     public function findProductModelsForFamilyVariant(
         FamilyVariantInterface $familyVariant,
         ?string $search = null,
@@ -232,6 +246,7 @@ class ProductModelRepository extends EntityRepository implements ProductModelRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function searchLastLevelByCode(
         FamilyVariantInterface $familyVariant,
         string $search,

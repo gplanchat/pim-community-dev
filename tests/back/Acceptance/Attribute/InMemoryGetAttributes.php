@@ -22,6 +22,7 @@ class InMemoryGetAttributes implements GetAttributes
         $this->attributeRepository = $attributeRepository;
     }
 
+    #[\Override]
     public function forCodes(array $attributeCodes): array
     {
         $attributesIndexedByCode = [];
@@ -55,11 +56,13 @@ class InMemoryGetAttributes implements GetAttributes
         return $attributes;
     }
 
+    #[\Override]
     public function forCode(string $attributeCode): ?Attribute
     {
         return $this->forCodes([$attributeCode])[$attributeCode] ?? null;
     }
 
+    #[\Override]
     public function forType(string $attributeType): array
     {
         $rawAttributes = $this->attributeRepository->findBy(['type' => $attributeType]);

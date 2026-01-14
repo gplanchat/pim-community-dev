@@ -26,7 +26,7 @@ class InvalidAttributeValueTypeException extends InvalidPropertyTypeException im
         string $className,
         TemplatedErrorMessage $templatedErrorMessage,
         int $code = 0,
-        \Exception $previous = null
+        ?\Exception $previous = null
     ) {
         $this->templatedErrorMessage = $templatedErrorMessage;
 
@@ -43,6 +43,7 @@ class InvalidAttributeValueTypeException extends InvalidPropertyTypeException im
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function stringExpected($attributeCode, $className, $attributeValue)
     {
         $message = 'The {attribute} attribute requires a string, a {invalid} was detected.';
@@ -63,6 +64,7 @@ class InvalidAttributeValueTypeException extends InvalidPropertyTypeException im
         );
     }
 
+    #[\Override]
     public function getTemplatedErrorMessage(): TemplatedErrorMessage
     {
         return $this->templatedErrorMessage;

@@ -17,6 +17,7 @@ class InMemoryFindProductModelId implements FindId
     {
     }
 
+    #[\Override]
     public function fromIdentifier(string $identifier): null|string
     {
         $productModel = $this->productModelRepository->findOneByIdentifier($identifier);

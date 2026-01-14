@@ -105,6 +105,7 @@ class AttributeCollection implements \Countable
         );
     }
 
+    #[\Override]
     public function count(): int
     {
         return count($this->attributes);

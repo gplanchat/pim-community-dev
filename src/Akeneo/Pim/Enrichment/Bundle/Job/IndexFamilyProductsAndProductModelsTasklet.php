@@ -31,7 +31,7 @@ use Webmozart\Assert\Assert;
  */
 final class IndexFamilyProductsAndProductModelsTasklet implements TaskletInterface, TrackableTaskletInterface
 {
-    private const DEFAULT_BATCH_SIZE = 100;
+    private const int DEFAULT_BATCH_SIZE = 100;
 
     private StepExecution $stepExecution;
 
@@ -50,11 +50,13 @@ final class IndexFamilyProductsAndProductModelsTasklet implements TaskletInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;
@@ -63,6 +65,7 @@ final class IndexFamilyProductsAndProductModelsTasklet implements TaskletInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute()
     {
         if ($this->familyReader instanceof InitializableInterface) {

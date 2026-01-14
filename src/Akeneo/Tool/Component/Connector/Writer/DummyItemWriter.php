@@ -16,6 +16,7 @@ class DummyItemWriter implements ItemWriterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items)
     {
         return null;

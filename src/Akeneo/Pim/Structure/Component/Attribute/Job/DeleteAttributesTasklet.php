@@ -29,11 +29,13 @@ class DeleteAttributesTasklet implements TaskletInterface, TrackableTaskletInter
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function execute(): void
     {
         if (null === $this->stepExecution) {
@@ -84,6 +86,7 @@ class DeleteAttributesTasklet implements TaskletInterface, TrackableTaskletInter
         $this->stepExecution->addWarning($reason, [], new DataInvalidItem(['code' => $attributeCode]));
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;

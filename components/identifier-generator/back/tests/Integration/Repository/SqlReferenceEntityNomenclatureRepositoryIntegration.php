@@ -18,6 +18,7 @@ final class SqlReferenceEntityNomenclatureRepositoryIntegration extends Controll
 {
     private ReferenceEntityNomenclatureRepository $referenceEntityNomenclatureRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

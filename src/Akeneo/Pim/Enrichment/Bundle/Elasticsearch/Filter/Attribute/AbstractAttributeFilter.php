@@ -37,6 +37,7 @@ abstract class AbstractAttributeFilter implements AttributeFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeTypes()
     {
         return $this->supportedAttributeTypes;
@@ -45,6 +46,7 @@ abstract class AbstractAttributeFilter implements AttributeFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         return in_array($attribute->getType(), $this->supportedAttributeTypes);
@@ -53,6 +55,7 @@ abstract class AbstractAttributeFilter implements AttributeFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsOperator($operator)
     {
         return in_array($operator, $this->supportedOperators);
@@ -61,6 +64,7 @@ abstract class AbstractAttributeFilter implements AttributeFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOperators()
     {
         return $this->supportedOperators;
@@ -69,6 +73,7 @@ abstract class AbstractAttributeFilter implements AttributeFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setQueryBuilder($searchQueryBuilder)
     {
         if (!$searchQueryBuilder instanceof SearchQueryBuilder) {

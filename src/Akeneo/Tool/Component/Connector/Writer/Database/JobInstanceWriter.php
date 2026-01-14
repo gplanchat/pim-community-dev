@@ -46,6 +46,7 @@ class JobInstanceWriter implements ItemWriterInterface, StepExecutionAwareInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $objects): void
     {
         $this->incrementCount($objects);
@@ -56,6 +57,7 @@ class JobInstanceWriter implements ItemWriterInterface, StepExecutionAwareInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;

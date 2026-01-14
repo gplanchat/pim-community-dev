@@ -44,6 +44,7 @@ class CategoryUpdater implements ObjectUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function update($category, array $data, array $options = [])
     {
         if (!$category instanceof CategoryInterface) {

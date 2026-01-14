@@ -141,6 +141,7 @@ class AttributeGroupUpdaterIntegration extends TestCase
         return $this->get('pim_catalog.updater.attribute_group');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

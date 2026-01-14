@@ -20,6 +20,7 @@ class ProductUniqueDataRepository extends EntityRepository implements ProductUni
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function uniqueDataExistsInAnotherProduct(ValueInterface $value, ProductInterface $product): bool
     {
         $sql = <<<SQL

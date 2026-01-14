@@ -22,6 +22,7 @@ class RoleRepository extends EntityRepository implements RoleRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['role'];
@@ -30,6 +31,7 @@ class RoleRepository extends EntityRepository implements RoleRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['role' => $code]);

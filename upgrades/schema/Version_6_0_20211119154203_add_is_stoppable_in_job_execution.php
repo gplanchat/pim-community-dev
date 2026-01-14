@@ -9,7 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20211119154203_add_is_stoppable_in_job_execution extends AbstractMigration
 {
-    private const STOPPABLE_JOB = [
+    private const array STOPPABLE_JOB = [
         "csv_user_group_export",
         "xlsx_user_group_export",
         "csv_user_role_export",
@@ -135,6 +135,7 @@ final class Version_6_0_20211119154203_add_is_stoppable_in_job_execution extends
         "reference_entity_mass_delete_records",
     ];
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -147,6 +148,7 @@ final class Version_6_0_20211119154203_add_is_stoppable_in_job_execution extends
             . implode("', '", self::STOPPABLE_JOB) . "'))");
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

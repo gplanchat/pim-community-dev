@@ -16,6 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class MakeServicesPublicForTestEnv implements CompilerPassInterface
 {
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         foreach ($container->getDefinitions() as $id => $definition) {

@@ -46,6 +46,7 @@ class ChannelUpdater implements ObjectUpdaterInterface
      *     'category_tree' => 'master'
      * ]
      */
+    #[\Override]
     public function update($channel, array $data, array $options = []): self
     {
         if (!$channel instanceof ChannelInterface) {

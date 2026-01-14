@@ -46,6 +46,7 @@ class ReferenceDataFilter extends AbstractAttributeFilter implements AttributeFi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeFilter(
         AttributeInterface $attribute,
         $operator,
@@ -142,6 +143,7 @@ class ReferenceDataFilter extends AbstractAttributeFilter implements AttributeFi
      *
      * @return bool
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         $referenceDataName = $attribute->getReferenceDataName();

@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220818093018_fix_volume_flow_conversion extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $query = "SELECT standard_unit, units FROM akeneo_measurement WHERE code = 'VolumeFlow';";
@@ -45,6 +46,7 @@ final class Version_7_0_20220818093018_fix_volume_flow_conversion extends Abstra
         $this->addSql($updateQuery, ['units' => \json_encode($fixedUnits)]);
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

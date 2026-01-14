@@ -17,7 +17,7 @@ use Webmozart\Assert\Assert;
  */
 final class RoleNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
 {
-    private const ACL_EXTENSION_KEY = 'action';
+    private const string ACL_EXTENSION_KEY = 'action';
 
     private array $supportedFormats = ['array', 'standard'];
 
@@ -34,6 +34,7 @@ final class RoleNormalizer implements NormalizerInterface, CacheableSupportsMeth
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($role, $format = null, array $context = [])
     {
         Assert::isInstanceOf($role, RoleInterface::class);
@@ -70,6 +71,7 @@ final class RoleNormalizer implements NormalizerInterface, CacheableSupportsMeth
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof RoleInterface && in_array($format, $this->supportedFormats);
@@ -78,6 +80,7 @@ final class RoleNormalizer implements NormalizerInterface, CacheableSupportsMeth
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

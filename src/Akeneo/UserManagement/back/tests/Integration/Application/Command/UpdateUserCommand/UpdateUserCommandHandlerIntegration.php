@@ -28,6 +28,7 @@ final class UpdateUserCommandHandlerIntegration extends TestCase
     private UserPasswordHasherInterface $userPasswordHasher;
     private UpdateUserCommandHandler $updateUserCommandHandler;
     private UserLoader $userLoader;
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -101,6 +102,7 @@ final class UpdateUserCommandHandlerIntegration extends TestCase
         ];
         $this->updateUserCommandHandler->handle(new UpdateUserCommand($user->getId(), $data));
     }
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

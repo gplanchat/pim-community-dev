@@ -29,6 +29,7 @@ class JobExecutionRepository extends EntityRepository implements DatagridReposit
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder(): QueryBuilder
     {
         $qb = $this->createQueryBuilder('e');

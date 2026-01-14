@@ -17,6 +17,7 @@ class ProductFilterUtility extends BaseFilterUtility
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function applyFilter(FilterDatasourceAdapterInterface $ds, string $field, string $operator, $value)
     {
         $ds->getProductQueryBuilder()->addFilter($field, $operator, $value);

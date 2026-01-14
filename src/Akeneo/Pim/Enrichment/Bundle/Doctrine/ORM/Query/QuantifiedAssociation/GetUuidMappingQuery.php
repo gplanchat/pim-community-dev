@@ -19,6 +19,7 @@ class GetUuidMappingQuery implements GetUuidMappingQueryInterface
     {
     }
 
+    #[\Override]
     public function fromProductIdentifiers(array $productIdentifiers, array $productUuids): UuidMapping
     {
         if (empty($productIdentifiers) && empty($productUuids)) {
@@ -51,6 +52,7 @@ SQL;
         return UuidMapping::createFromMapping($mapping);
     }
 
+    #[\Override]
     public function fromProductIds(array $productIds, array $productUuids): UuidMapping
     {
         if (empty($productIds) && empty($productUuids)) {

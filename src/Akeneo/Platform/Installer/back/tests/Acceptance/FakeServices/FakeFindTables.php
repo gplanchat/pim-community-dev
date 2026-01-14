@@ -17,6 +17,7 @@ use Akeneo\Platform\Installer\Domain\Query\FindTablesInterface;
 
 class FakeFindTables implements FindTablesInterface
 {
+    #[\Override]
     public function all(): array
     {
         return [

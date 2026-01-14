@@ -12,7 +12,7 @@ use Doctrine\DBAL\Schema\AbstractAsset;
  */
 class PimSchemaAssetFilter
 {
-    private const BLACKLIST = [
+    private const array BLACKLIST = [
         'pim_configuration',
     ];
 

@@ -35,6 +35,7 @@ class GroupTypeRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findTranslatedLabels(array $options = [])
     {
         $queryBuilder = $this->createQueryBuilder('g')
@@ -62,6 +63,7 @@ class GroupTypeRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $rootAlias = 'g';

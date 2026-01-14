@@ -28,6 +28,7 @@ final class TransferFilesToStorage implements TransferFilesToStorageInterface
     /**
      * @param FileToTransfer[] $filesToTransfer
      */
+    #[\Override]
     public function transfer(array $filesToTransfer, StorageInterface $storage): void
     {
         $destinationStorage = $this->storageClientProvider->getFromStorage($storage);

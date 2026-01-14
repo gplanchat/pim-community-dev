@@ -16,6 +16,7 @@ final class GetAssociatedProductUuidsByProductFromDB implements GetAssociatedPro
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifiers(UuidInterface $productUuid, AssociationInterface $association): array
     {
         $sql = <<<SQL
@@ -49,6 +50,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUuids(UuidInterface $productUuid, AssociationInterface $association): array
     {
         $sql = <<<SQL

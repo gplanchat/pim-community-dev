@@ -17,6 +17,7 @@ final class SqlIsCategoryTreeLinkedToChannelIntegration extends TestCase
 {
     private SqlIsCategoryTreeLinkedToChannel $isCategoryTreeLinkedToChannel;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -48,6 +49,7 @@ final class SqlIsCategoryTreeLinkedToChannelIntegration extends TestCase
         $this->assertFalse($isLinked);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

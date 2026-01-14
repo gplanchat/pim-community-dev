@@ -38,6 +38,7 @@ abstract class AbstractAttributeSetter implements AttributeSetterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttribute(AttributeInterface $attribute)
     {
         return in_array($attribute->getType(), $this->supportedTypes);

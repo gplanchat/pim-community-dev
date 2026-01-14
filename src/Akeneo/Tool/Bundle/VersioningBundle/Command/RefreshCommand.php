@@ -24,7 +24,7 @@ class RefreshCommand extends Command
     protected static $defaultName = 'pim:versioning:refresh';
     protected static $defaultDescription = 'Version any updated entities';
 
-    private const JOB_CODE = 'versioning_refresh';
+    private const string JOB_CODE = 'versioning_refresh';
 
     public function __construct(
         private ExecuteJobExecutionHandlerInterface $jobExecutionRunner,
@@ -36,6 +36,7 @@ class RefreshCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -51,6 +52,7 @@ class RefreshCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $config = [

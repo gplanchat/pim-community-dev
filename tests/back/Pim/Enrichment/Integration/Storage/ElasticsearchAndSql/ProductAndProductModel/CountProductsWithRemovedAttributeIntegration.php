@@ -8,6 +8,7 @@ use Akeneo\Test\Integration\TestCase;
 
 class CountProductsWithRemovedAttributeIntegration extends TestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -29,6 +30,7 @@ class CountProductsWithRemovedAttributeIntegration extends TestCase
         self::assertEquals(4, $count);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

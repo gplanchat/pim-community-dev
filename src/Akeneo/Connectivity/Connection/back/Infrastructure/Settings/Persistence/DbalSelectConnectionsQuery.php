@@ -23,6 +23,7 @@ class DbalSelectConnectionsQuery implements SelectConnectionsQueryInterface
      * @param string[] $types
      * @return Connection[]
      */
+    #[\Override]
     public function execute(array $types = []): array
     {
         $parameters = [];

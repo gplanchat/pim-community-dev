@@ -19,6 +19,7 @@ class MinimalFixtureInstaller implements FixtureInstallerInterface
     {
     }
 
+    #[\Override]
     public function installWithoutUsersUserGroupsAndUserRoles(): void
     {
         $pathFinder = new PhpExecutableFinder();

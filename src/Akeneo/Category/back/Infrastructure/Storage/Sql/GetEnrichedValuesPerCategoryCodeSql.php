@@ -7,9 +7,9 @@ use Akeneo\Category\Domain\ValueObject\ValueCollection;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 
-final class GetEnrichedValuesPerCategoryCodeSql implements GetEnrichedValuesPerCategoryCode
+final readonly class GetEnrichedValuesPerCategoryCodeSql implements GetEnrichedValuesPerCategoryCode
 {
-    public function __construct(private readonly Connection $dbalConnection)
+    public function __construct(private Connection $dbalConnection)
     {
     }
 
@@ -17,6 +17,7 @@ final class GetEnrichedValuesPerCategoryCodeSql implements GetEnrichedValuesPerC
      * @throws Exception
      * @throws \JsonException
      */
+    #[\Override]
     public function byBatchesOf(int $batchSize): \Generator
     {
         $offset = 0;

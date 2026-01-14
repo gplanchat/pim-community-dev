@@ -15,6 +15,7 @@ final class GetViewableProducts implements GetViewableProductsInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function fromProductIdentifiers(array $productIdentifiers, int $userId): array
     {
         return $productIdentifiers;
@@ -23,6 +24,7 @@ final class GetViewableProducts implements GetViewableProductsInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function fromProductUuids(array $productUuids, int $userId): array
     {
         return $productUuids;

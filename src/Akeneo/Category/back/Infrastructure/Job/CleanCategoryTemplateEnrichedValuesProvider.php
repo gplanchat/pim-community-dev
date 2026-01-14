@@ -21,11 +21,13 @@ class CleanCategoryTemplateEnrichedValuesProvider implements ConstraintCollectio
     ) {
     }
 
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return $this->jobName === $job->getName();
     }
 
+    #[\Override]
     public function getDefaultValues(): array
     {
         return [
@@ -36,6 +38,7 @@ class CleanCategoryTemplateEnrichedValuesProvider implements ConstraintCollectio
     /**
      * template_uuid: deleted template's uuid to be cleaned from category enriched values.
      */
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection(

@@ -13,6 +13,7 @@ use Akeneo\Test\Integration\TestCase;
  */
 class FindAttributeCodeAsLabelForFamilyIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

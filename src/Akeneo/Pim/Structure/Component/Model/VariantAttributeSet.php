@@ -33,6 +33,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId(): int
     {
         return $this->id;
@@ -41,6 +42,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributes(): Collection
     {
         return $this->attributes;
@@ -49,6 +51,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasAttribute(AttributeInterface $attribute): bool
     {
         return $this->containsAttribute($this->attributes, $attribute);
@@ -57,6 +60,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttribute(AttributeInterface $attribute): void
     {
         if (!$this->hasAttribute($attribute)) {
@@ -67,6 +71,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAttributes(array $attributes): void
     {
         $this->attributes = new ArrayCollection($attributes);
@@ -79,6 +84,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAxes(): Collection
     {
         return $this->axes;
@@ -87,6 +93,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAxes(array $axes): void
     {
         foreach ($this->axes as $axis) {
@@ -105,6 +112,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLevel(): int
     {
         return $this->level;
@@ -113,6 +121,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLevel(int $level): void
     {
         $this->level = $level;
@@ -121,6 +130,7 @@ class VariantAttributeSet implements VariantAttributeSetInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAxesLabels(string $localeCode): array
     {
         $labels = [];

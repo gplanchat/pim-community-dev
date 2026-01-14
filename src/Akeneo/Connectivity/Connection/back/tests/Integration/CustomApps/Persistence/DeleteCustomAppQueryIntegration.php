@@ -22,6 +22,7 @@ class DeleteCustomAppQueryIntegration extends TestCase
     private ?DeleteCustomAppQuery $deleteCustomAppQuery;
     private ?Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -31,6 +32,7 @@ class DeleteCustomAppQueryIntegration extends TestCase
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

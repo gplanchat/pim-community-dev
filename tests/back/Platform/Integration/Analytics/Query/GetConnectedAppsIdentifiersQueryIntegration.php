@@ -19,6 +19,7 @@ class GetConnectedAppsIdentifiersQueryIntegration extends TestCase
     private ConnectedAppLoader $connectedAppLoader;
     private GetConnectedAppsIdentifiersQuery $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -30,6 +31,7 @@ class GetConnectedAppsIdentifiersQueryIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): ?Configuration
     {
         return $this->catalog->useMinimalCatalog();

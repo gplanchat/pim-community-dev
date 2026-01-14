@@ -33,6 +33,7 @@ class NumberFilter extends AbstractAttributeFilter implements AttributeFilterInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeFilter(
         AttributeInterface $attribute,
         $operator,

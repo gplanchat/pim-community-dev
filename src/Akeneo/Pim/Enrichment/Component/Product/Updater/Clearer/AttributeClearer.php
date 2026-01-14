@@ -28,6 +28,7 @@ final class AttributeClearer implements ClearerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function supportsProperty(string $property): bool
     {
         return null !== $this->getAttributes->forCode($property);
@@ -36,6 +37,7 @@ final class AttributeClearer implements ClearerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function clear($entity, string $attributeCode, array $options = []): void
     {
         Assert::isInstanceOf($entity, EntityWithValuesInterface::class);

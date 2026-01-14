@@ -26,6 +26,7 @@ class WebMarketplaceApi implements WebMarketplaceApiInterface
     ) {
     }
 
+    #[\Override]
     public function getExtensions(int $offset = 0, int $limit = 10): array
     {
         $edition = $this->webMarketplaceAliases->getEdition();
@@ -44,6 +45,7 @@ class WebMarketplaceApi implements WebMarketplaceApiInterface
         return \json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
     }
 
+    #[\Override]
     public function getApps(int $offset = 0, int $limit = 10): array
     {
         if ($this->fakeAppsFeatureFlag->isEnabled()) {
@@ -66,6 +68,7 @@ class WebMarketplaceApi implements WebMarketplaceApiInterface
         return \json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
     }
 
+    #[\Override]
     public function getApp(string $id): ?array
     {
         $offset = 0;
@@ -84,6 +87,7 @@ class WebMarketplaceApi implements WebMarketplaceApiInterface
         return null;
     }
 
+    #[\Override]
     public function validateCodeChallenge(string $appId, string $codeIdentifier, string $codeChallenge): bool
     {
         try {

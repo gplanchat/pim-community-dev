@@ -16,6 +16,7 @@ class GetMeasurementFamiliesActionEndToEnd extends ApiTestCase
 {
     private ?MeasurementFamilyRepositoryInterface $measurementFamilyRepository = null;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -43,6 +44,7 @@ class GetMeasurementFamiliesActionEndToEnd extends ApiTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

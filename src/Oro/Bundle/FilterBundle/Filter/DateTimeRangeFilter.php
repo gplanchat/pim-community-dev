@@ -14,6 +14,7 @@ class DateTimeRangeFilter extends AbstractDateFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getFormType()
     {
         return DateTimeRangeFilterType::class;

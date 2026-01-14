@@ -9,11 +9,11 @@ use Akeneo\Test\Common\EntityBuilder;
 use Behat\Behat\Context\Context;
 use PHPUnit\Framework\Assert;
 
-final class LocaleContext implements Context
+final readonly class LocaleContext implements Context
 {
     public function __construct(
-        private readonly InMemoryLocaleRepository $localeRepository,
-        private readonly EntityBuilder $localeBuilder
+        private InMemoryLocaleRepository $localeRepository,
+        private EntityBuilder $localeBuilder
     ) {
     }
 

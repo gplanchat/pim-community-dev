@@ -12,6 +12,7 @@ use PHPStan\Rules\Rule;
 
 class MigrationCoveredByIntegrationTestRule implements Rule
 {
+    #[\Override]
     public function getNodeType(): string
     {
         return InClassNode::class;
@@ -20,6 +21,7 @@ class MigrationCoveredByIntegrationTestRule implements Rule
     /**
      * @param InClassNode $node
      */
+    #[\Override]
     public function processNode(Node $node, Scope $scope): array
     {
         if ($scope->getClassReflection()->getParentClass()?->getName() !== AbstractMigration::class) {

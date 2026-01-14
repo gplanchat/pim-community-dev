@@ -20,6 +20,7 @@ final class CachedGetMainIdentifierAttributeCode implements GetMainIdentifierAtt
     ) {
     }
 
+    #[\Override]
     public function __invoke(): string
     {
         if (null === $this->cachedMainIdentifierAttributeCode) {
@@ -29,6 +30,7 @@ final class CachedGetMainIdentifierAttributeCode implements GetMainIdentifierAtt
         return $this->cachedMainIdentifierAttributeCode;
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->cachedMainIdentifierAttributeCode = null;

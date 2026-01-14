@@ -25,6 +25,7 @@ class FormatterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $columns = $config->offsetGetOr(Configuration::COLUMNS_KEY, []);
@@ -40,6 +41,7 @@ class FormatterExtension extends AbstractExtension
      *
      * @param DatagridConfiguration $config
      */
+    #[\Override]
     public function processConfigs(DatagridConfiguration $config)
     {
         $columns = $config->offsetGetOr(Configuration::COLUMNS_KEY, []);
@@ -57,6 +59,7 @@ class FormatterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitResult(DatagridConfiguration $config, ResultsIterableObject $result)
     {
         $rows = (array)$result->offsetGetOr('data', []);
@@ -96,6 +99,7 @@ class FormatterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         // get only columns here because columns will be represented on frontend

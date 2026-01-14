@@ -14,11 +14,12 @@ final class Version_7_0_20220927080024_add_identifier_generator_table_Integratio
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220927080024_add_identifier_generator_table';
-    private const TABLE_NAME = 'pim_catalog_identifier_generator';
+    private const string MIGRATION_LABEL = '_7_0_20220927080024_add_identifier_generator_table';
+    private const string TABLE_NAME = 'pim_catalog_identifier_generator';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -44,11 +45,13 @@ final class Version_7_0_20220927080024_add_identifier_generator_table_Integratio
         Assert::assertTrue($this->tableExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         // We need to set back the schema for next tests

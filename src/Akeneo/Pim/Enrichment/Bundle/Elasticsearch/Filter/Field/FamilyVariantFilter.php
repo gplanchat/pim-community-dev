@@ -40,6 +40,7 @@ class FamilyVariantFilter extends AbstractFieldFilter implements FieldFilterInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter($field, $operator, $value, $locale = null, $channel = null, $options = [])
     {
         if (null === $this->searchQueryBuilder) {

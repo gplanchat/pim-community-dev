@@ -26,6 +26,7 @@ class MetadataIterableObject extends IterableObject
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public static function createNamed($name, array $params)
     {
         $params = self::getDefaultMetadata();
@@ -37,6 +38,7 @@ class MetadataIterableObject extends IterableObject
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getName()
     {
         if (!isset($this[self::OPTIONS_KEY][self::GRID_NAME_KEY])) {

@@ -22,11 +22,13 @@ final class InMemoryChannels implements ChannelsInterface
         $this->channelsCodesByIds = array_flip($channelsIdsByCodes);
     }
 
+    #[\Override]
     public function getIdByCode(string $code): ?int
     {
         return $this->channelsIdsByCodes[$code] ?? null;
     }
 
+    #[\Override]
     public function getCodeById(int $id): ?string
     {
         return $this->channelsCodesByIds[$id] ?? null;

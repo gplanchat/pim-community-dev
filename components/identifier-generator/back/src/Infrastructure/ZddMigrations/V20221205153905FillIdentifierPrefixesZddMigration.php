@@ -33,6 +33,7 @@ class V20221205153905FillIdentifierPrefixesZddMigration implements ZddMigration
     ) {
     }
 
+    #[\Override]
     public function migrate(): void
     {
         foreach ($this->getProductsByBatch() as $products) {
@@ -44,11 +45,13 @@ class V20221205153905FillIdentifierPrefixesZddMigration implements ZddMigration
         }
     }
 
+    #[\Override]
     public function migrateNotZdd(): void
     {
         $this->migrate();
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'FillIdentifierPrefixes';

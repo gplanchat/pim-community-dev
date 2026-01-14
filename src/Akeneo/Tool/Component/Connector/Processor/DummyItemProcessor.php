@@ -16,6 +16,7 @@ class DummyItemProcessor implements ItemProcessorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item)
     {
         return null;

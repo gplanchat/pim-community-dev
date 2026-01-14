@@ -60,6 +60,7 @@ final class CriterionRateCollection implements \IteratorAggregate
         return $rates;
     }
 
+    #[\Override]
     public function getIterator(): \Iterator
     {
         return new \ArrayIterator($this->rates);

@@ -24,6 +24,7 @@ abstract class AbstractPimCatalogTestCase extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
@@ -32,6 +33,7 @@ abstract class AbstractPimCatalogTestCase extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

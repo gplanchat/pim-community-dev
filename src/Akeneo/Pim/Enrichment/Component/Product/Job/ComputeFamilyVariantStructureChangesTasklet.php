@@ -46,6 +46,7 @@ class ComputeFamilyVariantStructureChangesTasklet implements TaskletInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
@@ -54,6 +55,7 @@ class ComputeFamilyVariantStructureChangesTasklet implements TaskletInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute(): void
     {
         $jobParameters = $this->stepExecution->getJobParameters();

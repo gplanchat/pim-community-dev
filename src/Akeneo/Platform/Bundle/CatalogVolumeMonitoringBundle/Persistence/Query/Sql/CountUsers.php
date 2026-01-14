@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  */
 class CountUsers implements CountQuery
 {
-    private const VOLUME_NAME = 'count_users';
+    private const string VOLUME_NAME = 'count_users';
 
     /** @var Connection */
     private $connection;
@@ -32,6 +32,7 @@ class CountUsers implements CountQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): CountVolume
     {
         $sql = <<<SQL

@@ -237,11 +237,13 @@ class CreateTwoWayAssociationIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

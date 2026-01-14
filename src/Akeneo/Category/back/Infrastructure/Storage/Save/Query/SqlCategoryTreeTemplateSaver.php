@@ -25,6 +25,7 @@ class SqlCategoryTreeTemplateSaver implements CategoryTreeTemplateSaver
     /**
      * @throws Exception
      */
+    #[\Override]
     public function insert(Template $templateModel): void
     {
         if (($this->isTemplateDeactivated)($templateModel->getUuid())) {
@@ -51,6 +52,7 @@ class SqlCategoryTreeTemplateSaver implements CategoryTreeTemplateSaver
         );
     }
 
+    #[\Override]
     public function update(Template $templateModel): void
     {
         // TODO: Implement update() method.

@@ -14,6 +14,7 @@ class EnabledWebhookRequiresAnUrl extends Constraint
 {
     public string $message = 'akeneo_connectivity.connection.webhook.error.required';
 
+    #[\Override]
     public function getTargets(): string
     {
         return self::CLASS_CONSTRAINT;

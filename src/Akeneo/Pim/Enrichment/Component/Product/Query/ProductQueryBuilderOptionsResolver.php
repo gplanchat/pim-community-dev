@@ -16,6 +16,7 @@ class ProductQueryBuilderOptionsResolver implements ProductQueryBuilderOptionsRe
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function resolve(array $options)
     {
         $resolver = $this->createOptionsResolver();

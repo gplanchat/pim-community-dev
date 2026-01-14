@@ -18,6 +18,7 @@ final class InMemoryGetAttributeTypes implements GetAttributeTypes
      */
     private array $attributeTypesByCode = [];
 
+    #[\Override]
     public function fromAttributeCodes(array $attributeCodes): array
     {
         Assert::allString($attributeCodes);

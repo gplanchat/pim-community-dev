@@ -49,6 +49,7 @@ class ReorderTemplateAttributesControllerEndToEnd extends ControllerIntegrationT
         '47c8dfb1-bf7b-4397-914e-65208dd51051',
     ];
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -235,6 +236,7 @@ class ReorderTemplateAttributesControllerEndToEnd extends ControllerIntegrationT
         ]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

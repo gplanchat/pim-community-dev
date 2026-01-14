@@ -14,6 +14,7 @@ class SqlGetFamilies implements GetFamilies
     {
     }
 
+    #[\Override]
     public function byCodes(array $familyCodes): array
     {
         if (empty($familyCodes)) {
@@ -67,6 +68,7 @@ SQL;
         return $families;
     }
 
+    #[\Override]
     public function byCode(string $familyCode): ?Family
     {
         $byCodes = $this->byCodes([$familyCode]);

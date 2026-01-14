@@ -42,6 +42,7 @@ class InMemoryFeatureFlags implements FeatureFlags
         $this->flags[$feature] = false;
     }
 
+    #[\Override]
     public function isEnabled($feature): bool
     {
         $this->throwExceptionIfFlagDoesNotExist($feature);
@@ -49,6 +50,7 @@ class InMemoryFeatureFlags implements FeatureFlags
         return $this->flags[$feature] ?? false;
     }
 
+    #[\Override]
     public function all(): array
     {
         return $this->flags;

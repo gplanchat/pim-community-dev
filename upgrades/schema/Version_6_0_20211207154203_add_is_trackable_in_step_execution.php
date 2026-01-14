@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20211207154203_add_is_trackable_in_step_execution extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -19,6 +20,7 @@ final class Version_6_0_20211207154203_add_is_trackable_in_step_execution extend
         $this->addSql('ALTER TABLE akeneo_batch_step_execution ADD is_trackable TINYINT(1) DEFAULT 0');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

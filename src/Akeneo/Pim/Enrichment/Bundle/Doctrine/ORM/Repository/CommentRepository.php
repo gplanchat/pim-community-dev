@@ -21,6 +21,7 @@ class CommentRepository extends EntityRepository implements CommentRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getComments($resourceName, $resourceId)
     {
         Assert::notNull($resourceId);
@@ -34,6 +35,7 @@ class CommentRepository extends EntityRepository implements CommentRepositoryInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCommentsByUuid(string $resourceName, UuidInterface $resourceUuid): array
     {
         return $this->findBy(

@@ -33,6 +33,7 @@ class AssociationTypeUpdater implements ObjectUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function update($associationType, array $data, array $options = [])
     {
         if (!$associationType instanceof AssociationTypeInterface) {

@@ -15,12 +15,13 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_8_0_20230412073848_add_main_attribute_column_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230412073848_add_main_attribute_column';
+    private const string MIGRATION_NAME = '_8_0_20230412073848_add_main_attribute_column';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -49,6 +50,7 @@ final class Version_8_0_20230412073848_add_main_attribute_column_Integration ext
         Assert::assertTrue($this->mainIdentifierColumnExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

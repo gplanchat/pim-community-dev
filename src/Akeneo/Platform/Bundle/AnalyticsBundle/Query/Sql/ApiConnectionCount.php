@@ -24,6 +24,7 @@ class ApiConnectionCount implements ApiConnectionCountQuery
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function fetch(): array
     {
         $query = <<<SQL

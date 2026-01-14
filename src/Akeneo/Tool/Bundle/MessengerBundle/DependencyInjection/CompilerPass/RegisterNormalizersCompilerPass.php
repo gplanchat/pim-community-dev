@@ -16,8 +16,9 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
  */
 final class RegisterNormalizersCompilerPass implements CompilerPassInterface
 {
-    private const DEFAULT_PRIORITY = 0;
+    private const int DEFAULT_PRIORITY = 0;
 
+    #[\Override]
     public function process(ContainerBuilder $container): void
     {
         $serializerDefinition = $container->getDefinition('akeneo_messenger.message.serializer');

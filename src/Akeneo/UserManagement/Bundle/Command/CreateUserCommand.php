@@ -104,6 +104,7 @@ class CreateUserCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure(): void
     {
         $this
@@ -130,6 +131,7 @@ DESC
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$input->isInteractive()) {
@@ -177,6 +179,7 @@ DESC
         return Command::SUCCESS;
     }
 
+    #[\Override]
     protected function interact(InputInterface $input, OutputInterface $output)
     {
         $output->writeln("Please enter the user's information below.");

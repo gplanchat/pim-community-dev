@@ -19,11 +19,13 @@ class InMemoryFamilyNomenclatureRepository implements FamilyNomenclatureReposito
      */
     private array $values = [];
 
+    #[\Override]
     public function get(): ?NomenclatureDefinition
     {
         return $this->nomenclatureDefinition;
     }
 
+    #[\Override]
     public function update(NomenclatureDefinition $nomenclatureDefinition): void
     {
         foreach ($nomenclatureDefinition->values() as $familyCode => $value) {

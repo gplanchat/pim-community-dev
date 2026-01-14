@@ -8,6 +8,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 final class LocaleCodeValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         // PIM-10212 For newly created locales, we do a proper check, for existing ones, we keep the old check to avoid BC breaks

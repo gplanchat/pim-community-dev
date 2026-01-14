@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class CreateUserGroup implements CreateUserGroupInterface
 {
-    private const APP_USER_GROUP_TYPE = 'app';
+    private const string APP_USER_GROUP_TYPE = 'app';
 
     public function __construct(
         private SimpleFactoryInterface $userGroupFactory,
@@ -27,6 +27,7 @@ class CreateUserGroup implements CreateUserGroupInterface
     ) {
     }
 
+    #[\Override]
     public function execute(string $groupName): GroupInterface
     {
         /** @var GroupInterface $group */

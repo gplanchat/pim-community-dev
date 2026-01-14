@@ -13,6 +13,7 @@ class IsThereAtLeastOneAttributeConfiguredWithMeasurementFamilyIntegration exten
     /** @var IsThereAtLeastOneAttributeConfiguredWithMeasurementFamily */
     private $isThereAnAttributeConfiguredWithMeasurementFamily;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -39,6 +40,7 @@ class IsThereAtLeastOneAttributeConfiguredWithMeasurementFamilyIntegration exten
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

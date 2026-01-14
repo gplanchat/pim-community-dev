@@ -18,6 +18,7 @@ class PimNotificationBundle extends Bundle
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(new RegisterNotificationFactoryPass());

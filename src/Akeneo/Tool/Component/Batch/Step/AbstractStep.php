@@ -44,6 +44,7 @@ abstract class AbstractStep implements StepInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return $this->name;
@@ -64,6 +65,7 @@ abstract class AbstractStep implements StepInterface
      *
      * @throws JobInterruptedException
      */
+    #[\Override]
     final public function execute(StepExecution $stepExecution)
     {
         $this->dispatchStepExecutionEvent(EventInterface::BEFORE_STEP_EXECUTION, $stepExecution);
@@ -152,7 +154,7 @@ abstract class AbstractStep implements StepInterface
      * @param string        $eventName     Name of the event
      * @param StepExecution $stepExecution Step object
      */
-    protected function dispatchStepExecutionEvent($eventName, StepExecution $stepExecution, \Exception $exception = null)
+    protected function dispatchStepExecutionEvent($eventName, StepExecution $stepExecution, ?\Exception $exception = null)
     {
         $event = new StepExecutionEvent($stepExecution, $exception);
         $this->dispatch($event, $eventName);

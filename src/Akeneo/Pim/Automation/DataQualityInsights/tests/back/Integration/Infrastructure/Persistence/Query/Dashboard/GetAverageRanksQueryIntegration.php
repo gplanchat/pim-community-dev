@@ -28,6 +28,7 @@ final class GetAverageRanksQueryIntegration extends TestCase
 
     private DashboardScoresProjectionRepository $repository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ final class GetAverageRanksQueryIntegration extends TestCase
         $this->repository = $this->get(DashboardScoresProjectionRepository::class);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

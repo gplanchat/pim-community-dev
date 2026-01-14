@@ -56,6 +56,7 @@ class CountProductModelsAndChildrenProductModelsIntegration extends TestCase
         self::assertEquals(3, $result);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -117,6 +118,7 @@ class CountProductModelsAndChildrenProductModelsIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

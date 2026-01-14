@@ -8,7 +8,7 @@ use PhpSpec\ObjectBehavior;
 
 class CredentialsEncrypterRegistrySpec extends ObjectBehavior
 {
-    private const PREVIOUS_DATA = [
+    private const array PREVIOUS_DATA = [
         'configuration' => [
             'storage' => [
                 'type' => 'sftp',
@@ -20,7 +20,7 @@ class CredentialsEncrypterRegistrySpec extends ObjectBehavior
         ],
     ];
 
-    private const CLEAR_DATA = [
+    private const array CLEAR_DATA = [
         'configuration' => [
             'storage' => [
                 'type' => 'sftp',
@@ -32,7 +32,7 @@ class CredentialsEncrypterRegistrySpec extends ObjectBehavior
         ],
     ];
 
-    private const ENCRYPTED_DATA = [
+    private const array ENCRYPTED_DATA = [
         'configuration' => [
             'storage' => [
                 'type' => 'sftp',
@@ -44,7 +44,7 @@ class CredentialsEncrypterRegistrySpec extends ObjectBehavior
         ],
     ];
 
-    private const OBFUSCATED_DATA = [
+    private const array OBFUSCATED_DATA = [
         'configuration' => [
             'storage' => [
                 'type' => 'sftp',

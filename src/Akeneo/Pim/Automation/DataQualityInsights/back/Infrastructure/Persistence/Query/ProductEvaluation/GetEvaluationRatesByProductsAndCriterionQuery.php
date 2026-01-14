@@ -26,6 +26,7 @@ final class GetEvaluationRatesByProductsAndCriterionQuery implements GetEvaluati
     ) {
     }
 
+    #[\Override]
     public function execute(ProductEntityIdCollection $productUuidCollection, CriterionCode $criterionCode): array
     {
         Assert::isInstanceOf($productUuidCollection, ProductUuidCollection::class);

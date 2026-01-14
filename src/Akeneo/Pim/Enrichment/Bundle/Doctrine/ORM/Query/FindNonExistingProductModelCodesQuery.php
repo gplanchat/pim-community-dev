@@ -17,6 +17,7 @@ class FindNonExistingProductModelCodesQuery implements FindNonExistingProductMod
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(array $productModelCodes): array
     {
         if (empty($productModelCodes)) {

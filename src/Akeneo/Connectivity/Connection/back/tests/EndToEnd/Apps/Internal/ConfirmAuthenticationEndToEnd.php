@@ -45,6 +45,7 @@ class ConfirmAuthenticationEndToEnd extends WebTestCase
     private CreateUser $createUser;
     private string $clientId = 'a_client_id';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -63,6 +64,7 @@ class ConfirmAuthenticationEndToEnd extends WebTestCase
         $this->loadAppsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -26,6 +26,7 @@ class DateFormatValidator extends ConstraintValidator
      * {@inheritdoc}
      * @param DateFormat $constraint
      */
+    #[\Override]
     public function validate($date, Constraint $constraint)
     {
         if (null === $date) {

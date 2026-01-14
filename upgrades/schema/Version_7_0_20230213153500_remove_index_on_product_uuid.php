@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20230213153500_remove_index_on_product_uuid extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->disableMigrationWarning();
@@ -17,6 +18,7 @@ final class Version_7_0_20230213153500_remove_index_on_product_uuid extends Abst
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

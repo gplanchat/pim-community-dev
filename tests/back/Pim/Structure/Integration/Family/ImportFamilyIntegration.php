@@ -24,8 +24,8 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 final class ImportFamilyIntegration extends TestCase
 {
-    private const CSV_IMPORT_JOB_CODE = 'csv_footwear_family_import';
-    private const XLSX_IMPORT_JOB_CODE = 'xlsx_footwear_family_import';
+    private const string CSV_IMPORT_JOB_CODE = 'csv_footwear_family_import';
+    private const string XLSX_IMPORT_JOB_CODE = 'xlsx_footwear_family_import';
 
     private JobLauncher $jobLauncher;
     private FamilyRepositoryInterface $familyRepository;
@@ -39,6 +39,7 @@ final class ImportFamilyIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -220,6 +221,7 @@ final class ImportFamilyIntegration extends TestCase
         return implode(',', $attributeCodes);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('footwear');

@@ -17,6 +17,7 @@ class PositionResolver implements PositionResolverInterface
     {
     }
 
+    #[\Override]
     public function getPosition(CategoryInterface $category): int
     {
         if ($category->isRoot()) {

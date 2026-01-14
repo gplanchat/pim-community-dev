@@ -28,6 +28,7 @@ class ReferenceDataValue extends AbstractValue implements ReferenceDataValueInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData()
     {
         return $this->data;
@@ -36,6 +37,7 @@ class ReferenceDataValue extends AbstractValue implements ReferenceDataValueInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         return null !== $this->data ? '['.$this->data.']' : '';
@@ -44,6 +46,7 @@ class ReferenceDataValue extends AbstractValue implements ReferenceDataValueInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof ReferenceDataValueInterface ||

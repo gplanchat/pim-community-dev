@@ -19,6 +19,7 @@ class DbalBulkInsertEventCountsQuery implements BulkInsertEventCountsQueryInterf
     {
     }
 
+    #[\Override]
     public function execute(array $hourlyEventCounts): void
     {
         foreach ($hourlyEventCounts as $hourlyEventCount) {

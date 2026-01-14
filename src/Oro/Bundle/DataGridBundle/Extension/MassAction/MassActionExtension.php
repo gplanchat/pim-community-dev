@@ -21,6 +21,7 @@ class MassActionExtension extends ActionExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $massActions = $config->offsetGetOr(static::ACTION_KEY, []);
@@ -48,6 +49,7 @@ class MassActionExtension extends ActionExtension
         return $action;
     }
 
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         parent::visitMetadata($config, $data);

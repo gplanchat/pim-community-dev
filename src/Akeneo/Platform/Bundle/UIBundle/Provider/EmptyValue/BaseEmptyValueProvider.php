@@ -17,6 +17,7 @@ class BaseEmptyValueProvider implements EmptyValueProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getEmptyValue($attribute)
     {
         switch ($attribute->getType()) {
@@ -47,6 +48,7 @@ class BaseEmptyValueProvider implements EmptyValueProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element)
     {
         return $element instanceof AttributeInterface;

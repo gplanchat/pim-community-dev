@@ -19,6 +19,7 @@ class RegisterReferenceDataConfigurationsPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $registry = $container->getDefinition(self::REFERENCE_DATA_REGISTRY);

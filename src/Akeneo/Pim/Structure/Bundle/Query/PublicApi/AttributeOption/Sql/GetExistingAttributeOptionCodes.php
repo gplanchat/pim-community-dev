@@ -22,6 +22,7 @@ final class GetExistingAttributeOptionCodes implements GetExistingAttributeOptio
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function fromOptionCodesByAttributeCode(array $optionCodesIndexedByAttributeCodes): array
     {
         if (empty($optionCodesIndexedByAttributeCodes)) {

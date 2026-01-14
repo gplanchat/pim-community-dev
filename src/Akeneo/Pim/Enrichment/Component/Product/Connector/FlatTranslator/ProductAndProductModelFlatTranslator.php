@@ -31,6 +31,7 @@ class ProductAndProductModelFlatTranslator implements FlatTranslatorInterface
         $this->associationTranslator = $associationTranslator;
     }
 
+    #[\Override]
     public function translate(array $flatItems, string $locale, string $scope, bool $translateHeaders): array
     {
         $flatItemsByColumnName = $this->groupFlatItemsByColumnName($flatItems);
@@ -45,6 +46,7 @@ class ProductAndProductModelFlatTranslator implements FlatTranslatorInterface
         return $flatItems;
     }
 
+    #[\Override]
     public function translateHeaders(array $columnCodes, string $locale): array
     {
         $this->headerRegistry->warmup($columnCodes, $locale);

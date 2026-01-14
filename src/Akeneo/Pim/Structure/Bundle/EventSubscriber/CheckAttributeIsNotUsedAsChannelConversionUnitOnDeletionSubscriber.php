@@ -23,6 +23,7 @@ class CheckAttributeIsNotUsedAsChannelConversionUnitOnDeletionSubscriber impleme
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

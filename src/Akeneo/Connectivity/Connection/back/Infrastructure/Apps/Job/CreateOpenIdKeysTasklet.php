@@ -23,10 +23,12 @@ class CreateOpenIdKeysTasklet implements TaskletInterface
     {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $this->generateAsymmetricKeysHandler->handle(new GenerateAsymmetricKeysCommand());

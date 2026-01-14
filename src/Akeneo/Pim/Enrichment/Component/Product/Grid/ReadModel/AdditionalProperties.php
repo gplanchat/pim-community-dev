@@ -36,6 +36,7 @@ class AdditionalProperties implements \IteratorAggregate
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->properties);

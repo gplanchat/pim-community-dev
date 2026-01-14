@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 final class UpdateIdentifierGeneratorControllerEndToEnd extends ControllerEndToEndTestCase
 {
-    private const VALID_IDENTIFIER = [
+    private const array VALID_IDENTIFIER = [
         'labels' => [
             'en_US' => 'My new generator',
             'fr_FR' => 'Mon nouveau générateur',

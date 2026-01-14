@@ -22,6 +22,7 @@ class PriceFilterIntegration extends AbstractProductQueryBuilderTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

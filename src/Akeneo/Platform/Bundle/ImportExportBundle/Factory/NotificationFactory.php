@@ -34,6 +34,7 @@ class NotificationFactory extends AbstractNotificationFactory implements Notific
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create($jobExecution)
     {
         if (!$jobExecution instanceof JobExecution) {
@@ -58,6 +59,7 @@ class NotificationFactory extends AbstractNotificationFactory implements Notific
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($type)
     {
         return in_array($type, $this->notificationTypes);

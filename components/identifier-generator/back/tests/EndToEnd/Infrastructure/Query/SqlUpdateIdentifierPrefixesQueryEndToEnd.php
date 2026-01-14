@@ -14,6 +14,7 @@ use Ramsey\Uuid\UuidInterface;
 
 class SqlUpdateIdentifierPrefixesQueryEndToEnd extends EndToEndTestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

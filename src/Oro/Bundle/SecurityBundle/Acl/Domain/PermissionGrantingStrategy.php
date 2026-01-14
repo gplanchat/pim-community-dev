@@ -68,6 +68,7 @@ class PermissionGrantingStrategy implements PermissionGrantingStrategyInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isGranted(AclInterface $acl, array $masks, array $sids, $administrativeMode = false)
     {
         $result = null;
@@ -102,6 +103,7 @@ class PermissionGrantingStrategy implements PermissionGrantingStrategyInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isFieldGranted(AclInterface $acl, $field, array $masks, array $sids, $administrativeMode = false)
     {
         $result = null;

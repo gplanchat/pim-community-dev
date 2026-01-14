@@ -88,6 +88,7 @@ class GetAttributeGroupsIntegration extends TestCase
         ], $this->getQuery()->all());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

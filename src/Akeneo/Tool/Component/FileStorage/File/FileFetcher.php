@@ -20,6 +20,7 @@ class FileFetcher implements FileFetcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(FilesystemReader $filesystem, $fileKey, array $options = [])
     {
         if (!$filesystem->fileExists($fileKey)) {

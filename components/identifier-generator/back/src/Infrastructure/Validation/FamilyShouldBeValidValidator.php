@@ -28,6 +28,7 @@ final class FamilyShouldBeValidValidator extends ConstraintValidator
     ) {
     }
 
+    #[\Override]
     public function validate($condition, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, FamilyShouldBeValid::class);

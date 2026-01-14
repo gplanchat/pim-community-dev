@@ -17,6 +17,7 @@ class SqlAssignAllUsersToOneCategoryIntegration extends TestCase
 {
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -48,6 +49,7 @@ class SqlAssignAllUsersToOneCategoryIntegration extends TestCase
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

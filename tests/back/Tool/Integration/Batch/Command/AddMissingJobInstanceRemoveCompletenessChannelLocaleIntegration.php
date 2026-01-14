@@ -24,6 +24,7 @@ class AddMissingJobInstanceRemoveCompletenessChannelLocaleIntegration extends Te
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ class AddMissingJobInstanceRemoveCompletenessChannelLocaleIntegration extends Te
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

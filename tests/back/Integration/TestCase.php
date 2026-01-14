@@ -38,6 +38,7 @@ abstract class TestCase extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->testKernel = static::bootKernel(['debug' => (bool)($_SERVER['APP_DEBUG'] ?? false)]);
@@ -101,6 +102,7 @@ abstract class TestCase extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         self::getContainer()->get(ExperimentalTransactionHelper::class)->closeTransactions();

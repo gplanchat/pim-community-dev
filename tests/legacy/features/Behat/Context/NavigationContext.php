@@ -91,6 +91,7 @@ class NavigationContext extends PimContext implements PageObjectAware
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setPageObjectFactory(PageObjectFactory $pageFactory)
     {
         $this->pageFactory = $pageFactory;
@@ -441,6 +442,7 @@ class NavigationContext extends PimContext implements PageObjectAware
      *
      * @return Page
      */
+    #[\Override]
     public function getPage(string $page): Page
     {
         if (null === $this->pageFactory) {
@@ -554,6 +556,7 @@ class NavigationContext extends PimContext implements PageObjectAware
     /**
      * @return Page
      */
+    #[\Override]
     public function getCurrentPage(): PageObject
     {
         $page = $this->getPage($this->currentPage);
@@ -625,7 +628,8 @@ class NavigationContext extends PimContext implements PageObjectAware
      *
      * @deprecated This method is deprecated and should be removed avoid its use
      */
-    protected function wait(string $condition = null)
+    #[\Override]
+    protected function wait(?string $condition = null)
     {
         $this->getMainContext()->wait($condition);
     }

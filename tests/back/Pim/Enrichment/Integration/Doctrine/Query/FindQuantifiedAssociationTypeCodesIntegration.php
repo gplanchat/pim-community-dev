@@ -13,6 +13,7 @@ class FindQuantifiedAssociationTypeCodesIntegration extends TestCase
     /** @var FindQuantifiedAssociationTypeCodes */
     private $findQuantifiedAssociationCodes;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -21,6 +22,7 @@ class FindQuantifiedAssociationTypeCodesIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

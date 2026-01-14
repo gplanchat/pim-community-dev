@@ -22,6 +22,7 @@ class SqlReferenceEntityNomenclatureRepository implements ReferenceEntityNomencl
     ) {
     }
 
+    #[\Override]
     public function get(string $attributeCode): ?NomenclatureDefinition
     {
         $nomenclatureDefinition = $this->getNomenclatureDefinition($attributeCode);
@@ -33,6 +34,7 @@ class SqlReferenceEntityNomenclatureRepository implements ReferenceEntityNomencl
         return $nomenclatureDefinition;
     }
 
+    #[\Override]
     public function update(string $attributeCode, NomenclatureDefinition $nomenclatureDefinition): void
     {
         $this->connection->beginTransaction();

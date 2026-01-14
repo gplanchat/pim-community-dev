@@ -13,6 +13,7 @@ class EntityFilterType extends AbstractChoiceType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return self::NAME;
@@ -21,6 +22,7 @@ class EntityFilterType extends AbstractChoiceType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return ChoiceFilterType::class;
@@ -29,6 +31,7 @@ class EntityFilterType extends AbstractChoiceType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(

@@ -16,6 +16,7 @@ class FakeDatabasePurger implements DatabasePurgerInterface
 {
     private array $tablesPurged = [];
 
+    #[\Override]
     public function purge(array $tablesToReset): void
     {
         $this->tablesPurged = $tablesToReset;

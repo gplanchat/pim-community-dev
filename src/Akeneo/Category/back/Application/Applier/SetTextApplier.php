@@ -16,6 +16,7 @@ use Akeneo\Category\Domain\ValueObject\ValueCollection;
  */
 class SetTextApplier implements UserIntentApplier
 {
+    #[\Override]
     public function apply(UserIntent $userIntent, Category $category): void
     {
         if (!$userIntent instanceof SetText) {
@@ -37,6 +38,7 @@ class SetTextApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetText::class];

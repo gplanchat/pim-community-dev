@@ -18,6 +18,7 @@ class RegisterArchiversPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition('pim_connector.event_listener.archivist')) {

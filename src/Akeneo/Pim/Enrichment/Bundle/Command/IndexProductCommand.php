@@ -25,9 +25,9 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class IndexProductCommand extends Command
 {
-    private const DEFAULT_BATCH_SIZE = 1000;
+    private const int DEFAULT_BATCH_SIZE = 1000;
 
-    private const ERROR_CODE_USAGE = 1;
+    private const int ERROR_CODE_USAGE = 1;
 
     protected static $defaultName = 'pim:product:index';
 
@@ -44,6 +44,7 @@ class IndexProductCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -78,6 +79,7 @@ class IndexProductCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->checkIndexExists();

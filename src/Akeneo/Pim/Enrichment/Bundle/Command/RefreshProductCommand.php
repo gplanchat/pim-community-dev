@@ -50,6 +50,7 @@ class RefreshProductCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -65,6 +66,7 @@ class RefreshProductCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $identifiers = $input->getArgument('identifiers');

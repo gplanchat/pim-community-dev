@@ -21,6 +21,7 @@ class DbalPurger implements DatabasePurgerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function purge(array $tablesToReset): void
     {
         $sql = 'SET FOREIGN_KEY_CHECKS = 0;';

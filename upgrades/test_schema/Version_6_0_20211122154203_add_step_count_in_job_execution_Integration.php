@@ -18,15 +18,17 @@ class Version_6_0_20211122154203_add_step_count_in_job_execution_Integration ext
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211122154203_add_step_count_in_job_execution';
+    private const string MIGRATION_LABEL = '_6_0_20211122154203_add_step_count_in_job_execution';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

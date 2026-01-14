@@ -12,6 +12,7 @@ class ExportProductsByLocalesIntegration extends AbstractExportTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createAttribute([

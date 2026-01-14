@@ -26,6 +26,7 @@ final class GetProductScoresQuery implements GetProductScoresQueryInterface
     ) {
     }
 
+    #[\Override]
     public function byProductUuid(ProductEntityIdInterface $productUuid): Read\Scores
     {
         $productIdCollection = $this->idFactory->createCollection([(string)$productUuid]);
@@ -37,6 +38,7 @@ final class GetProductScoresQuery implements GetProductScoresQueryInterface
         );
     }
 
+    #[\Override]
     public function byProductUuidCollection(ProductEntityIdCollection $productUuidCollection): array
     {
         if ($productUuidCollection->isEmpty()) {

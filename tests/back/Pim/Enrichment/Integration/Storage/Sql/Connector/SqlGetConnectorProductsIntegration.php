@@ -45,6 +45,7 @@ class SqlGetConnectorProductsIntegration extends TestCase
     private int $adminUserId;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -590,6 +591,7 @@ class SqlGetConnectorProductsIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -17,7 +17,7 @@ class ProductModelRemoved extends Event
     /**
      * @param array{code: string, category_codes: array<string> } $data
      */
-    public function __construct(Author $author, array $data, int $timestamp = null, string $uuid = null)
+    public function __construct(Author $author, array $data, ?int $timestamp = null, ?string $uuid = null)
     {
         Assert::keyExists($data, 'code');
         Assert::stringNotEmpty($data['code']);
@@ -28,6 +28,7 @@ class ProductModelRemoved extends Event
         parent::__construct($author, $data, $timestamp, $uuid);
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'product_model.removed';

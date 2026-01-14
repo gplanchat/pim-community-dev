@@ -162,6 +162,7 @@ class PurgeVersioningCommandIntegration extends TestCase
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
@@ -172,6 +173,7 @@ class PurgeVersioningCommandIntegration extends TestCase
         return $this->get('database_connection');
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

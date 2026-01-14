@@ -22,6 +22,7 @@ class AttributeApiRequirementChecker implements RequirementChecker
      *
      * @throws ArrayConversionException
      */
+    #[\Override]
     public function check(array $data): void
     {
         if (empty($data)) {

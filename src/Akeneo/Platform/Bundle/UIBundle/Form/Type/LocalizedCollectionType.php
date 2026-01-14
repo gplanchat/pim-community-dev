@@ -21,6 +21,7 @@ class LocalizedCollectionType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->addEventSubscriber(
@@ -39,6 +40,7 @@ class LocalizedCollectionType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
@@ -52,6 +54,7 @@ class LocalizedCollectionType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return CollectionType::class;
@@ -60,6 +63,7 @@ class LocalizedCollectionType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_enrich_localized_collection';

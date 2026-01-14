@@ -17,11 +17,13 @@ class JobStopper implements JobStopperInterface
     ) {
     }
 
+    #[\Override]
     public function isStopping(StepExecution $stepExecution): bool
     {
         return $this->getJobExecutionStatus->getByJobExecutionId($stepExecution->getJobExecution()->getId())->isStopping();
     }
 
+    #[\Override]
     public function stop(StepExecution $stepExecution): void
     {
         $stepExecution->setExitStatus(new ExitStatus(ExitStatus::STOPPED));
@@ -29,11 +31,13 @@ class JobStopper implements JobStopperInterface
         $this->jobRepository->updateStepExecution($stepExecution);
     }
 
+    #[\Override]
     public function isPausing(StepExecution $stepExecution): bool
     {
         return $this->getJobExecutionStatus->getByJobExecutionId($stepExecution->getJobExecution()->getId())->isPausing();
     }
 
+    #[\Override]
     public function pause(StepExecution $stepExecution, array $currentState): void
     {
         $stepExecution->setCurrentState([...$stepExecution->getCurrentState(), ...$currentState]);

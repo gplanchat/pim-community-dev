@@ -44,6 +44,7 @@ class CreateAccessToken implements CreateAccessTokenInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create(string $appId, string $code): array
     {
         $client = $this->clientProvider->findClientByAppId($appId);

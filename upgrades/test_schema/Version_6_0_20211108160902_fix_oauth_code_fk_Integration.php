@@ -20,11 +20,13 @@ class Version_6_0_20211108160902_fix_oauth_code_fk_Integration extends TestCase
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

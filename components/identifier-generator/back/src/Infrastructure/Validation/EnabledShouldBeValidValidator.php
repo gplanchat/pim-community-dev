@@ -15,6 +15,7 @@ use Webmozart\Assert\Assert;
  */
 final class EnabledShouldBeValidValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($condition, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, EnabledShouldBeValid::class);

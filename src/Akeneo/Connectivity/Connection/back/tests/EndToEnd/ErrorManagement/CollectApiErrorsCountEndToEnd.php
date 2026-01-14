@@ -26,6 +26,7 @@ class CollectApiErrorsCountEndToEnd extends ApiTestCase
     private ProductLoader $productLoader;
     private Connection $dbalConnection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ class CollectApiErrorsCountEndToEnd extends ApiTestCase
         $this->dbalConnection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

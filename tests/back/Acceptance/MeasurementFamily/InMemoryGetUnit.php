@@ -15,6 +15,7 @@ final class InMemoryGetUnit implements GetUnit
     {
     }
 
+    #[\Override]
     public function byMeasurementFamilyCodeAndUnitCode(string $measurementFamilyCode, string $unitCode): Unit
     {
         try {

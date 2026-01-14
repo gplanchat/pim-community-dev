@@ -18,11 +18,13 @@ class BooleanTranslator implements FlatAttributeValueTranslatorInterface
         $this->labelTranslator = $labelTranslator;
     }
 
+    #[\Override]
     public function supports(string $attributeType, string $columnName): bool
     {
         return $attributeType === AttributeTypes::BOOLEAN;
     }
 
+    #[\Override]
     public function translate(string $attributeCode, array $properties, array $values, string $locale): array
     {
         $trueLocalized = $this->labelTranslator->translate(

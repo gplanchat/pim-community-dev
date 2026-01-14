@@ -49,6 +49,7 @@ class ProductModelCsvExportSpec extends ObjectBehavior
         $this->supports($job)->shouldReturn(true);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

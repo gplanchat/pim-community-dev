@@ -32,6 +32,7 @@ final class CategoriesHaveAtLeastOneChildIntegration extends TestCase
      * | ├─ root2-B            |  100 |   4 |   5 |
      * +-----------------------+------+-----+-----+
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -88,6 +89,7 @@ final class CategoriesHaveAtLeastOneChildIntegration extends TestCase
         $this->assertFalse($categoryHierarchy->among(['root1-A', 'root2'], ['root1-B-a']));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

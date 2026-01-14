@@ -35,6 +35,7 @@ class CategoryFieldAdder extends AbstractFieldAdder
      *
      * Expected data input format : ["category_code"]
      */
+    #[\Override]
     public function addFieldData($product, $field, $data, array $options = [])
     {
         $this->checkData($field, $data);

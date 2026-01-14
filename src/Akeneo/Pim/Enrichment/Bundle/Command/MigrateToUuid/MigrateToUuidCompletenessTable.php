@@ -21,23 +21,26 @@ final class MigrateToUuidCompletenessTable implements MigrateToUuidStep
     use MigrateToUuidTrait;
     use StatusAwareTrait;
 
-    const TABLE_NAME = 'pim_catalog_completeness';
-    const INSERT_BATCH_SIZE = 100000;
+    const string TABLE_NAME = 'pim_catalog_completeness';
+    const int INSERT_BATCH_SIZE = 100000;
 
     public function __construct(private Connection $connection, private LoggerInterface $logger)
     {
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Migrates the completeness table';
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'migrate_completeness_table';
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         return (bool) $this->connection->executeQuery(
@@ -47,6 +50,7 @@ SQL
         )->fetchOne();
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         return $this->getMissingForeignUuidCount(
@@ -65,6 +69,7 @@ SQL
         return $this->getNullForeignUuidCellsCount($tableName, $uuidColumnName);
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $logContext = $context->logContext;

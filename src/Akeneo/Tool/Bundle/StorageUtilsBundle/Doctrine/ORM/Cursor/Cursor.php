@@ -66,6 +66,7 @@ class Cursor extends AbstractCursor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function next(): void
     {
         parent::next();
@@ -75,6 +76,7 @@ class Cursor extends AbstractCursor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function current(): mixed
     {
         return $this->entity;
@@ -83,6 +85,7 @@ class Cursor extends AbstractCursor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(): int
     {
         if (null === $this->count) {
@@ -95,6 +98,7 @@ class Cursor extends AbstractCursor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function rewind(): void
     {
         $this->position = 0;

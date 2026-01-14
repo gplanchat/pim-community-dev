@@ -19,15 +19,18 @@ class PropertyTranslator implements FlatHeaderTranslatorInterface
         $this->supportedFields = $supportedFields;
     }
 
+    #[\Override]
     public function supports(string $columnName): bool
     {
         return in_array($columnName, $this->supportedFields);
     }
 
+    #[\Override]
     public function warmup(array $columnNames, string $locale): void
     {
     }
 
+    #[\Override]
     public function translate(string $columnName, string $locale): string
     {
         return $this->labelTranslator->translate(

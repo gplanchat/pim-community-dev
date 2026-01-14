@@ -38,6 +38,7 @@ class Creation extends Form
      *
      * @return null|Element
      */
+    #[\Override]
     public function findValidationTooltip(string $text)
     {
         return $this->spin(function () use ($text) {

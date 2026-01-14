@@ -15,6 +15,7 @@ abstract class AbstractDateFilter extends AbstractFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data)
     {
         $data = $this->parseData($data);
@@ -298,6 +299,7 @@ abstract class AbstractDateFilter extends AbstractFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMetadata()
     {
         $formView = $this->getForm()->createView();

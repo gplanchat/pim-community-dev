@@ -11,6 +11,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210727080505_add_client_id_and_user_id extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->addSql('ALTER TABLE pim_api_auth_code ADD client_id INT DEFAULT NULL, ADD user_id INT DEFAULT NULL');
@@ -20,6 +21,7 @@ final class Version_6_0_20210727080505_add_client_id_and_user_id extends Abstrac
         $this->addSql('CREATE INDEX IDX_USER_ID ON pim_api_auth_code (user_id)');
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

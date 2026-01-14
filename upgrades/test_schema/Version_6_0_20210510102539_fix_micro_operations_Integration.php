@@ -13,15 +13,17 @@ final class Version_6_0_20210510102539_fix_micro_operations_Integration extends 
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20210510102539_fix_micro_operations';
+    private const string MIGRATION_LABEL = '_6_0_20210510102539_fix_micro_operations';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

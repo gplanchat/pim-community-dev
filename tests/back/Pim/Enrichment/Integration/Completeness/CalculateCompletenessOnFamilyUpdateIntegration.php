@@ -62,6 +62,7 @@ class CalculateCompletenessOnFamilyUpdateIntegration extends AbstractCompletenes
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');
@@ -70,6 +71,7 @@ class CalculateCompletenessOnFamilyUpdateIntegration extends AbstractCompletenes
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

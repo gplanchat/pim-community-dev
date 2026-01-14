@@ -46,6 +46,7 @@ class FamilyVariantNormalizerSpec extends ObjectBehavior
         $normalizedFamily->shouldReturnApiFormat($normalizedFamily);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

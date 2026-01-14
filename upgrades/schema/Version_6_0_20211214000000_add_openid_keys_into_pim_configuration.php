@@ -22,11 +22,13 @@ class Version_6_0_20211214000000_add_openid_keys_into_pim_configuration extends 
 {
     private ContainerInterface $container;
 
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $query = <<<SQL
@@ -51,6 +53,7 @@ class Version_6_0_20211214000000_add_openid_keys_into_pim_configuration extends 
         ]);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

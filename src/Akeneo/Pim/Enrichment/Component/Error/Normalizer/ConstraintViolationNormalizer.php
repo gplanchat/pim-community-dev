@@ -36,6 +36,7 @@ class ConstraintViolationNormalizer extends ViolationNormalizer
      * @param string $format
      * @param array $context
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = []): array
     {
         $data = parent::normalizeViolation($object);
@@ -67,6 +68,7 @@ class ConstraintViolationNormalizer extends ViolationNormalizer
         return $data;
     }
 
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ConstraintViolationInterface;

@@ -19,6 +19,7 @@ class FamilyFilterIntegration extends AbstractProductQueryBuilderTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

@@ -26,6 +26,7 @@ final class ApiErrorEventSubscriber implements EventSubscriberInterface
     /**
      * @return string[]
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -20,6 +20,7 @@ final class SqlGetNextIdentifierQuery implements GetNextIdentifierQuery
     ) {
     }
 
+    #[\Override]
     public function fromPrefix(
         IdentifierGenerator $identifierGenerator,
         string $prefix,

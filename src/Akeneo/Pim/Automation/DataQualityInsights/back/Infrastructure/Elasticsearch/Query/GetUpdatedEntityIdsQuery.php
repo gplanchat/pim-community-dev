@@ -17,8 +17,8 @@ use Akeneo\Tool\Bundle\ElasticsearchBundle\Client;
  */
 class GetUpdatedEntityIdsQuery implements GetUpdatedEntityIdsQueryInterface
 {
-    private const PRODUCT_IDENTIFIER_PREFIX = 'product_';
-    private const PRODUCT_MODEL_IDENTIFIER_PREFIX = 'product_model_';
+    private const string PRODUCT_IDENTIFIER_PREFIX = 'product_';
+    private const string PRODUCT_MODEL_IDENTIFIER_PREFIX = 'product_model_';
 
     public function __construct(
         private Client                          $esClient,
@@ -30,6 +30,7 @@ class GetUpdatedEntityIdsQuery implements GetUpdatedEntityIdsQueryInterface
     /**
      * @return \Generator<int, ProductEntityIdCollection>
      */
+    #[\Override]
     public function since(\DateTimeImmutable $updatedSince, int $bulkSize): \Generator
     {
         if ($this->documentType !== ProductModelInterface::class && $this->documentType !== ProductInterface::class) {

@@ -12,29 +12,33 @@ namespace Akeneo\Platform\Bundle\PimVersionBundle\Version;
 final class CommunityVersion implements PimVersion
 {
     /** @staticvar string */
-    private const VERSION_CODENAME = 'Community master';
+    private const string VERSION_CODENAME = 'Community master';
 
     /** @staticvar string */
-    private const EDITION_NAME = 'CE';
+    private const string EDITION_NAME = 'CE';
 
     /** @staticvar string **/
-    private const EDITION_CODE = 'community_edition_instance';
+    private const string EDITION_CODE = 'community_edition_instance';
 
+    #[\Override]
     public function versionCodename(): string
     {
         return self::VERSION_CODENAME;
     }
 
+    #[\Override]
     public function editionName(): string
     {
         return self::EDITION_NAME;
     }
 
+    #[\Override]
     public function isSaas(): bool
     {
         return false;
     }
 
+    #[\Override]
     public function isEditionCode(string $editionCode): bool
     {
         return $editionCode === self::EDITION_CODE;

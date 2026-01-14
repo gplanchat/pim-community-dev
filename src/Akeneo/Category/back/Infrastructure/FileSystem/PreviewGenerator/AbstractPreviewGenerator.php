@@ -33,8 +33,10 @@ abstract class AbstractPreviewGenerator implements PreviewGeneratorInterface
     ) {
     }
 
+    #[\Override]
     abstract public function supports(string $data, Attribute $attribute, string $type): bool;
 
+    #[\Override]
     public function supportsMimeType(string $mimeType): bool
     {
         return \in_array(\strtolower($mimeType), $this->supportedMimeTypes);
@@ -43,6 +45,7 @@ abstract class AbstractPreviewGenerator implements PreviewGeneratorInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function generate(string $data, Attribute $attribute, string $type): string
     {
         if (empty($data)) {
@@ -126,6 +129,7 @@ abstract class AbstractPreviewGenerator implements PreviewGeneratorInterface
         return $this->cacheManager->resolve($filename, $previewType);
     }
 
+    #[\Override]
     public function remove(string $data, string $type): void
     {
         if (empty($data)) {

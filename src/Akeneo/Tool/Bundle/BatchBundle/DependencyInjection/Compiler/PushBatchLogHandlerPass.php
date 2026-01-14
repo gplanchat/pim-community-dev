@@ -18,6 +18,7 @@ class PushBatchLogHandlerPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->has('monolog.logger.batch')) {

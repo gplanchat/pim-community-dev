@@ -28,6 +28,7 @@ class DbalSelectPeriodErrorCountPerConnectionQuery implements SelectPeriodErrorC
     /**
      * @return PeriodEventCount[]
      */
+    #[\Override]
     public function execute(DateTimePeriod $period): array
     {
         $connectionCodes = $this->getConnectionCodes();

@@ -22,14 +22,15 @@ use Symfony\Component\Messenger\Transport\Receiver\ReceiverInterface;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class HandleProcessMessageMiddleware implements MiddlewareInterface
+final readonly class HandleProcessMessageMiddleware implements MiddlewareInterface
 {
     public function __construct(
-        private readonly RunMessageProcess $runMessageProcess,
-        private readonly LoggerInterface $logger
+        private RunMessageProcess $runMessageProcess,
+        private LoggerInterface $logger
     ) {
     }
 
+    #[\Override]
     public function handle(Envelope $envelope, StackInterface $stack): Envelope
     {
         /** @var ReceivedStamp|null $receivedStamp */

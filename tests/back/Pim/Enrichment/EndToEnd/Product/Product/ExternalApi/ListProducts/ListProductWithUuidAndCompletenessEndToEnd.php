@@ -26,6 +26,7 @@ class ListProductWithUuidAndCompletenessEndToEnd extends AbstractProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -82,9 +83,9 @@ class ListProductWithUuidAndCompletenessEndToEnd extends AbstractProductTestCase
         $expected = <<<JSON
 {
     "_links": {
-        "self": {"href": "http://localhost/api/rest/v1/products-uuid?page=1&with_count=false&pagination_type=page&limit=2&search=${searchEncoded}&scope=ecommerce&locales=en_US"},
-        "first": {"href": "http://localhost/api/rest/v1/products-uuid?page=1&with_count=false&pagination_type=page&limit=2&search=${searchEncoded}&scope=ecommerce&locales=en_US"},
-        "next": {"href": "http://localhost/api/rest/v1/products-uuid?page=2&with_count=false&pagination_type=page&limit=2&search=${searchEncoded}&scope=ecommerce&locales=en_US"}
+        "self": {"href": "http://localhost/api/rest/v1/products-uuid?page=1&with_count=false&pagination_type=page&limit=2&search={$searchEncoded}&scope=ecommerce&locales=en_US"},
+        "first": {"href": "http://localhost/api/rest/v1/products-uuid?page=1&with_count=false&pagination_type=page&limit=2&search={$searchEncoded}&scope=ecommerce&locales=en_US"},
+        "next": {"href": "http://localhost/api/rest/v1/products-uuid?page=2&with_count=false&pagination_type=page&limit=2&search={$searchEncoded}&scope=ecommerce&locales=en_US"}
     },
     "current_page" : 1,
     "_embedded"    : {
@@ -222,6 +223,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

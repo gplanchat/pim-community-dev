@@ -20,6 +20,7 @@ class InMemoryFamilyVariantsByAttributeAxes implements FamilyVariantsByAttribute
         $this->familyVariantRepository = $familyVariantRepository;
     }
 
+    #[\Override]
     public function findIdentifiers(array $attributeAxesCodes): array
     {
         $codes = [];

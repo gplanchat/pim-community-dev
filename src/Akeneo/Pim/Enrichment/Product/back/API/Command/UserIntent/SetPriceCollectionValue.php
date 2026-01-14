@@ -24,6 +24,7 @@ final class SetPriceCollectionValue implements ValueUserIntent
         Assert::allIsInstanceOf($this->priceValues, PriceValue::class);
     }
 
+    #[\Override]
     public function attributeCode(): string
     {
         return $this->attributeCode;
@@ -37,11 +38,13 @@ final class SetPriceCollectionValue implements ValueUserIntent
         return $this->priceValues;
     }
 
+    #[\Override]
     public function channelCode(): ?string
     {
         return $this->channelCode;
     }
 
+    #[\Override]
     public function localeCode(): ?string
     {
         return $this->localeCode;

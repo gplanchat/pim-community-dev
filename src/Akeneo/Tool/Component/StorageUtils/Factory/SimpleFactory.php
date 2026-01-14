@@ -25,6 +25,7 @@ class SimpleFactory implements SimpleFactoryInterface
     /**
      * @return mixed
      */
+    #[\Override]
     public function create()
     {
         return new $this->class();

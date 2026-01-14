@@ -29,11 +29,13 @@ class QuantifiedAssociationsFieldSetter extends AbstractFieldSetter
      *
      * @param EntityWithQuantifiedAssociationsInterface $entity
      */
+    #[\Override]
     public function setFieldData($entity, $field, $data, array $options = [])
     {
         $entity->patchQuantifiedAssociations($data);
     }
 
+    #[\Override]
     public function supportsField($field)
     {
         return 'quantified_associations' === $field;

@@ -14,11 +14,13 @@ final class Version_6_0_20220518134914_set_not_null_fields_for_job_and_step_exec
 {
     private ?ContainerInterface $container;
 
-    public function setContainer(ContainerInterface $container = null): void
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf($this->isSassVersion(), 'This migration is only for non Sass version');
@@ -35,6 +37,7 @@ final class Version_6_0_20220518134914_set_not_null_fields_for_job_and_step_exec
         $this->addSql("ALTER TABLE akeneo_batch_step_execution MODIFY COLUMN is_trackable TINYINT(1) DEFAULT 0 NOT NULL, ALGORITHM=INPLACE, LOCK=NONE");
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

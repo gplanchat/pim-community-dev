@@ -17,6 +17,7 @@ class ProductAnalyzer implements AnalyzerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function analyze(ItemReaderInterface $reader)
     {
         $stats = [

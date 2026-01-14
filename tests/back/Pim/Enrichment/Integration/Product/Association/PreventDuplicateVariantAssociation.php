@@ -129,6 +129,7 @@ class PreventDuplicateVariantAssociation extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -145,6 +146,7 @@ class PreventDuplicateVariantAssociation extends TestCase
         $this->get('pim_catalog.saver.group')->save($group);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -26,6 +26,7 @@ class GetConnectedAppMonitoringSettingsActionEndToEnd extends WebTestCase
     private UserGroupLoader $userGroupLoader;
     private ConnectedAppLoader $connectedAppLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ class GetConnectedAppMonitoringSettingsActionEndToEnd extends WebTestCase
         $this->connectedAppLoader = $this->get('akeneo_connectivity.connection.fixtures.connected_app_loader');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

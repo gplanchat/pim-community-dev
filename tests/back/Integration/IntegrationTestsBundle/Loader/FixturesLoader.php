@@ -132,6 +132,7 @@ class FixturesLoader implements FixturesLoaderInterface
         $this->doctrineJobRepository->getJobManager()->getConnection()->close();
     }
 
+    #[\Override]
     public function load(Configuration $configuration, ?string $directory = 'src/Akeneo/Platform/Installer/back/src/Infrastructure/Symfony/Resources/fixtures/minimal'): void
     {
         $this->deleteAllDocumentsInElasticsearch();
@@ -163,6 +164,7 @@ class FixturesLoader implements FixturesLoaderInterface
         $this->systemUserAuthenticator->createSystemUser();
     }
 
+    #[\Override]
     public function purge(): void
     {
         $this->deleteAllDocumentsInElasticsearch();

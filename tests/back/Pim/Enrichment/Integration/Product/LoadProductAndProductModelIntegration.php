@@ -98,6 +98,7 @@ class LoadProductAndProductModelIntegration extends TestCase
         Assert::assertFalse($baz->isDirty(), 'The product model should not be dirty after loading it from the database');
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -136,6 +137,7 @@ class LoadProductAndProductModelIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

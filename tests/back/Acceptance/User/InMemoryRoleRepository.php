@@ -25,6 +25,7 @@ class InMemoryRoleRepository implements RoleRepositoryInterface, SaverInterface,
         $this->roles = new ArrayCollection();
     }
 
+    #[\Override]
     public function save($role, array $options = [])
     {
         if (!$role instanceof RoleInterface) {
@@ -37,6 +38,7 @@ class InMemoryRoleRepository implements RoleRepositoryInterface, SaverInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['role'];
@@ -45,6 +47,7 @@ class InMemoryRoleRepository implements RoleRepositoryInterface, SaverInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->roles->get($identifier);
@@ -53,6 +56,7 @@ class InMemoryRoleRepository implements RoleRepositoryInterface, SaverInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException();
@@ -61,6 +65,7 @@ class InMemoryRoleRepository implements RoleRepositoryInterface, SaverInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return $this->roles->toArray();
@@ -69,7 +74,8 @@ class InMemoryRoleRepository implements RoleRepositoryInterface, SaverInterface,
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         throw new NotImplementedException();
     }
@@ -77,6 +83,7 @@ class InMemoryRoleRepository implements RoleRepositoryInterface, SaverInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException();
@@ -85,6 +92,7 @@ class InMemoryRoleRepository implements RoleRepositoryInterface, SaverInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException();

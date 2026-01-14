@@ -24,6 +24,7 @@ use Ramsey\Uuid\UuidInterface;
  */
 class GetDescendantVariantProductUuidsIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalSqlCatalog();
@@ -277,6 +278,7 @@ class GetDescendantVariantProductUuidsIntegration extends TestCase
         return $this->get('pim_catalog.repository.product')->findOneByIdentifier($identifier);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

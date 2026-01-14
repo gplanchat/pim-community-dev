@@ -27,6 +27,7 @@ class FamilyRepositoryIntegration extends TestCase
     private SaverInterface $attributeSaver;
     private FamilyRepository $familyRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -217,6 +218,7 @@ class FamilyRepositoryIntegration extends TestCase
         return $familyVariant;
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

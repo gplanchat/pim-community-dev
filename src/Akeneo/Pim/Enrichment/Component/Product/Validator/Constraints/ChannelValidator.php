@@ -31,6 +31,7 @@ class ChannelValidator extends ChoiceValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof Channel) {

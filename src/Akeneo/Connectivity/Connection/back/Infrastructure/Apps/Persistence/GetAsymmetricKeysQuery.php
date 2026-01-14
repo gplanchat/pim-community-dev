@@ -19,6 +19,7 @@ final class GetAsymmetricKeysQuery implements GetAsymmetricKeysQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(): AsymmetricKeys
     {
         $query = <<<SQL

@@ -12,14 +12,14 @@ namespace Akeneo\Pim\Enrichment\Bundle\File;
 final class FileTypes
 {
     /** @staticvar string */
-    const DOCUMENT = 'pim_enrich_file_document';
+    const string DOCUMENT = 'pim_enrich_file_document';
 
     /** @staticvar string */
-    const IMAGE = 'pim_enrich_file_image';
+    const string IMAGE = 'pim_enrich_file_image';
 
     /** @staticvar string */
-    const VIDEO = 'pim_enrich_file_video';
+    const string VIDEO = 'pim_enrich_file_video';
 
     /** @staticvar string */
-    const MISC = 'pim_enrich_file_misc';
+    const string MISC = 'pim_enrich_file_misc';
 }

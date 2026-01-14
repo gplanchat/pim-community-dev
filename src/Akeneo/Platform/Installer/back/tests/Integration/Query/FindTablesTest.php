@@ -24,6 +24,7 @@ class FindTablesTest extends TestCase
         $this->assertContainsAtLeast(['oro_user', 'pim_catalog_product', 'pim_catalog_attribute'], $tables);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

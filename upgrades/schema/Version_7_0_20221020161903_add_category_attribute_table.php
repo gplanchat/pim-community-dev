@@ -7,6 +7,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20221020161903_add_category_attribute_table extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->addSql(<<<SQL
@@ -27,6 +28,7 @@ final class Version_7_0_20221020161903_add_category_attribute_table extends Abst
         );
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

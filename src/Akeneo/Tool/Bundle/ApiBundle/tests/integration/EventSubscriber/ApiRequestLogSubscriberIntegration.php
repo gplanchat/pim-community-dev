@@ -10,6 +10,7 @@ use Psr\Log\Test\TestLogger;
 
 class ApiRequestLogSubscriberIntegration extends ApiTestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

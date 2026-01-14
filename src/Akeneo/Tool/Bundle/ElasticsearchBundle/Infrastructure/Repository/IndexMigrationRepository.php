@@ -18,6 +18,7 @@ class IndexMigrationRepository implements IndexMigrationRepositoryInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function save(IndexMigration $indexMigration): void
     {
         $sql = <<<SQL

@@ -17,6 +17,7 @@ final class GetUserConsentedAuthenticationScopesQuery implements GetUserConsente
     {
     }
 
+    #[\Override]
     public function execute(int $userId, string $appId): array
     {
         $query = <<<SQL

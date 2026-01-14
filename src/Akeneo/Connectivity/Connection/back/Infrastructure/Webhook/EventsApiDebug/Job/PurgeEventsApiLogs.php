@@ -26,11 +26,13 @@ class PurgeEventsApiLogs implements TaskletInterface
     ) {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function execute(): void
     {
         $this->logger->info('Start purge of events API logs');

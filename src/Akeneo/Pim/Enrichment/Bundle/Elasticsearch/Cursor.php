@@ -43,6 +43,7 @@ class Cursor extends AbstractCursor implements CursorInterface, ResultAwareInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function next(): void
     {
         if (false === next($this->items)) {
@@ -55,6 +56,7 @@ class Cursor extends AbstractCursor implements CursorInterface, ResultAwareInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function rewind(): void
     {
         $this->searchAfter = [];
@@ -67,7 +69,8 @@ class Cursor extends AbstractCursor implements CursorInterface, ResultAwareInter
      *
      * @see https://www.elastic.co/guide/en/elasticsearch/reference/5.x/search-request-search-after.html
      */
-    protected function getNextIdentifiers(array $esQuery, int $size = null): IdentifierResults
+    #[\Override]
+    protected function getNextIdentifiers(array $esQuery, ?int $size = null): IdentifierResults
     {
         $esQuery['size'] = $size ?? $this->pageSize;
         $identifiers = new IdentifierResults();
@@ -107,6 +110,7 @@ class Cursor extends AbstractCursor implements CursorInterface, ResultAwareInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResult(): ResultInterface
     {
         if (null === $this->result) {
@@ -124,6 +128,7 @@ class Cursor extends AbstractCursor implements CursorInterface, ResultAwareInter
      * is more result in ES than in MySQL).
      * Returning fewer results can cause some UoW issues (c.f. ticket)
      */
+    #[\Override]
     protected function getNextItems(array $esQuery): array
     {
         $pageSize = $this->pageSize;

@@ -39,6 +39,7 @@ class MassEditStep extends AbstractStep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function doExecute(StepExecution $stepExecution)
     {
         $this->cleaner->setStepExecution($stepExecution);

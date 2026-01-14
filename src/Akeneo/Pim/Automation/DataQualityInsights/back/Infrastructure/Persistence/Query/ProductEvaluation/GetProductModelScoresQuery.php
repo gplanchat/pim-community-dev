@@ -25,6 +25,7 @@ final class GetProductModelScoresQuery implements GetProductModelScoresQueryInte
     ) {
     }
 
+    #[\Override]
     public function byProductModelId(ProductModelId $productModelId): Read\Scores
     {
         $productModelIdCollection = $this->idFactory->createCollection([(string) $productModelId]);
@@ -36,6 +37,7 @@ final class GetProductModelScoresQuery implements GetProductModelScoresQueryInte
         );
     }
 
+    #[\Override]
     public function byProductModelIdCollection(ProductEntityIdCollection $productModelIds): array
     {
         if ($productModelIds->isEmpty()) {

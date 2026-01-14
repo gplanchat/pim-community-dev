@@ -18,6 +18,7 @@ class ProductValueRendererExtension extends AbstractExtension
         $this->productValueRendererRegistry = $productValueRendererRegistry;
     }
 
+    #[\Override]
     public function getFunctions(): array
     {
         return [

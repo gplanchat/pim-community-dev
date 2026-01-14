@@ -42,6 +42,7 @@ final class RemoveNonExistingProductValuesTasklet implements TaskletInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
@@ -52,6 +53,7 @@ final class RemoveNonExistingProductValuesTasklet implements TaskletInterface
      *
      * Loading the product filters the non existing values. We just need to save it again.
      */
+    #[\Override]
     public function execute(): void
     {
         $attributeCode = $this->stepExecution->getJobParameters()->get('attribute_code');

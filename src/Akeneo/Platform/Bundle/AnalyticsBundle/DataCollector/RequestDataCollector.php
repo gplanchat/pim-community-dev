@@ -28,6 +28,7 @@ class RequestDataCollector implements DataCollectorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function collect()
     {
         $currentRequest = $this->requestStack->getCurrentRequest();

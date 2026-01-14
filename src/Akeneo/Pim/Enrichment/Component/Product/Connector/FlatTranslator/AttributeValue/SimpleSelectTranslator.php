@@ -22,11 +22,13 @@ class SimpleSelectTranslator implements FlatAttributeValueTranslatorInterface
         $this->getExistingAttributeOptionsWithValues = $getExistingAttributeOptionsWithValues;
     }
 
+    #[\Override]
     public function supports(string $attributeType, string $columnName): bool
     {
         return $attributeType === AttributeTypes::OPTION_SIMPLE_SELECT;
     }
 
+    #[\Override]
     public function translate(string $attributeCode, array $properties, array $values, string $locale): array
     {
         $optionKeys = $this->generateOptionKeys($attributeCode, $values);

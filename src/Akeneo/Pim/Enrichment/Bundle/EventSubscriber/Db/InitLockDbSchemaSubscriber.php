@@ -23,6 +23,7 @@ class InitLockDbSchemaSubscriber implements EventSubscriberInterface
         $this->connection = $dbalConnection;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

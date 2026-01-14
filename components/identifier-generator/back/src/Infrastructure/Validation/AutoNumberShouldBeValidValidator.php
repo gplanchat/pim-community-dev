@@ -15,6 +15,7 @@ use Webmozart\Assert\Assert;
  */
 final class AutoNumberShouldBeValidValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($property, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, AutoNumberShouldBeValid::class);

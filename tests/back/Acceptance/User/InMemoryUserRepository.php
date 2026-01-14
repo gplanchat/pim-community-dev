@@ -27,6 +27,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
         $this->users = new ArrayCollection();
     }
 
+    #[\Override]
     public function save($user, array $options = [])
     {
         if (!$user instanceof UserInterface) {
@@ -42,6 +43,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['username'];
@@ -50,6 +52,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->users->get($identifier);
@@ -58,6 +61,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countAll(): int
     {
         throw new NotImplementedException(__METHOD__);
@@ -66,6 +70,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         foreach ($this->users as $user) {
@@ -78,6 +83,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return $this->users->toArray();
@@ -86,7 +92,8 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $users = [];
         foreach ($this->users as $user) {
@@ -109,6 +116,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         if (\count($criteria) > 1) {
@@ -133,6 +141,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);
@@ -141,6 +150,7 @@ class InMemoryUserRepository implements IdentifiableObjectRepositoryInterface, S
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findByGroupIds(array $groupIds)
     {
         throw new NotImplementedException(__METHOD__);

@@ -20,6 +20,7 @@ class LaunchJobInstanceHandler implements LaunchJobInstanceHandlerInterface
     ) {
     }
 
+    #[\Override]
     public function handle(LaunchJobInstanceCommand $launchJobInstanceCommand): LaunchJobInstanceResult
     {
         $code = $launchJobInstanceCommand->code;

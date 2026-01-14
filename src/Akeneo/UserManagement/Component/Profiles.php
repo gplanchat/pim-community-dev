@@ -7,23 +7,23 @@ namespace Akeneo\UserManagement\Component;
 final class Profiles
 {
     /** I manage product catalogs. */
-    const PRODUCT_MANAGER = 'product_manager';
+    const string PRODUCT_MANAGER = 'product_manager';
 
     /** I enrich product data. */
-    const REDACTOR = 'redactor';
+    const string REDACTOR = 'redactor';
 
     /** I integrate Akeneo PIM into our IT ecosystem.  */
-    const PIM_INTEGRATOR = 'pim_integrator';
+    const string PIM_INTEGRATOR = 'pim_integrator';
 
     /** I administrate Akeneo PIM. */
-    const PIM_ADMINISTRATOR = 'pim_administrator';
+    const string PIM_ADMINISTRATOR = 'pim_administrator';
 
     /** I manage assets in the PIM. */
-    const ASSET_MANAGER = 'asset_manager';
+    const string ASSET_MANAGER = 'asset_manager';
 
     /** I translate product, asset, and/or reference entity data. */
-    const TRANSLATOR = 'translator';
+    const string TRANSLATOR = 'translator';
 
     /** I develop solutions connected with Akeneo PIM. */
-    const THIRD_PARTY_DEVELOPER = 'third_party_developer';
+    const string THIRD_PARTY_DEVELOPER = 'third_party_developer';
 }

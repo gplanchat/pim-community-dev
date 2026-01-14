@@ -32,6 +32,7 @@ class SimpleDefaultProperty implements DefaultProperty
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function mutate(UserInterface $user): UserInterface
     {
         $user->addProperty($this->propertyName, $this->defaultPropertyValue);

@@ -14,6 +14,7 @@ class SelectRowFilterType extends AbstractChoiceType
     const NOT_SELECTED_VALUE = 0;
     const SELECTED_VALUE = 1;
 
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $emptyData = function ($form, $submittedData) {
@@ -33,6 +34,7 @@ class SelectRowFilterType extends AbstractChoiceType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return self::NAME;
@@ -41,6 +43,7 @@ class SelectRowFilterType extends AbstractChoiceType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return ChoiceFilterType::class;
@@ -49,6 +52,7 @@ class SelectRowFilterType extends AbstractChoiceType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(

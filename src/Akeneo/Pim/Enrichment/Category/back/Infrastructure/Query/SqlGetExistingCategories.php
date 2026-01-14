@@ -23,6 +23,7 @@ final class SqlGetExistingCategories implements GetViewableCategories
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function forUserId(array $categoryCodes, int $userId): array
     {
         if ([] === $categoryCodes) {

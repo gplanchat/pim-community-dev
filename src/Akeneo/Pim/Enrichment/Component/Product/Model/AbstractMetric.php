@@ -47,6 +47,7 @@ abstract class AbstractMetric implements MetricInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData()
     {
         return $this->data;
@@ -55,6 +56,7 @@ abstract class AbstractMetric implements MetricInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUnit()
     {
         return $this->unit;
@@ -63,6 +65,7 @@ abstract class AbstractMetric implements MetricInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBaseData()
     {
         return $this->baseData;
@@ -71,6 +74,7 @@ abstract class AbstractMetric implements MetricInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBaseUnit()
     {
         return $this->baseUnit;
@@ -79,6 +83,7 @@ abstract class AbstractMetric implements MetricInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamily()
     {
         return $this->family;
@@ -87,6 +92,7 @@ abstract class AbstractMetric implements MetricInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(MetricInterface $metric)
     {
         if ($metric->getUnit() !== $this->unit) {
@@ -107,6 +113,7 @@ abstract class AbstractMetric implements MetricInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString()
     {
         return join(' ', array_filter([

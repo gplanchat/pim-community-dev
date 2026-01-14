@@ -15,6 +15,7 @@ class SqlGetUnitTranslations implements GetUnitTranslations
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byMeasurementFamilyCodeAndLocale(string $measurementFamilyCode, string $localeCode): array
     {
         $sql = <<<SQL

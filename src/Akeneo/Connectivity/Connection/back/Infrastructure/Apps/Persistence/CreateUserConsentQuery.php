@@ -19,6 +19,7 @@ final class CreateUserConsentQuery implements CreateUserConsentQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(int $userId, string $appId, array $authenticationScopes, \DateTimeImmutable $consentDate): void
     {
         $query = <<<SQL

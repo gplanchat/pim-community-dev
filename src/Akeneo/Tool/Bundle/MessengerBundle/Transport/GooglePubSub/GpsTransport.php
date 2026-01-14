@@ -25,16 +25,19 @@ final class GpsTransport implements TransportInterface, SetupableTransportInterf
     ) {
     }
 
+    #[\Override]
     public function setup(): void
     {
         $this->client->setup();
     }
 
+    #[\Override]
     public function send(Envelope $envelope): Envelope
     {
         return $this->sender->send($envelope);
     }
 
+    #[\Override]
     public function get(): iterable
     {
         if (null === $this->receiver) {
@@ -44,6 +47,7 @@ final class GpsTransport implements TransportInterface, SetupableTransportInterf
         return $this->receiver->get();
     }
 
+    #[\Override]
     public function ack(Envelope $envelope): void
     {
         if (null === $this->receiver) {
@@ -66,6 +70,7 @@ final class GpsTransport implements TransportInterface, SetupableTransportInterf
         $this->receiver->modifyAckDeadline($envelope);
     }
 
+    #[\Override]
     public function reject(Envelope $envelope): void
     {
         if (null === $this->receiver) {

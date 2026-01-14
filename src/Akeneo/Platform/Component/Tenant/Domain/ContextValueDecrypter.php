@@ -19,11 +19,11 @@ use Webmozart\Assert\Assert;
 /**
  * @author  JM Leroux <jmleroux.pro@gmail.com>
  */
-final class ContextValueDecrypter implements ContextValueDecrypterInterface
+final readonly class ContextValueDecrypter implements ContextValueDecrypterInterface
 {
-    private const OPEN_SSL_CIPHER_METHOD = 'aes-256-cbc';
+    private const string OPEN_SSL_CIPHER_METHOD = 'aes-256-cbc';
 
-    public function __construct(private readonly string $encodedEncryptionKey)
+    public function __construct(private string $encodedEncryptionKey)
     {
     }
 
@@ -31,6 +31,7 @@ final class ContextValueDecrypter implements ContextValueDecrypterInterface
      * A lots of try/catch blocks to not propagate exceptions with potential security leaks in the messages.
      * We catch them to replace by a more generic message
      */
+    #[\Override]
     public function decode(string $encodedData, string $encodedIv): array
     {
         try {

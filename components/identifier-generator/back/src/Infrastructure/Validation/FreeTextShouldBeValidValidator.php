@@ -15,6 +15,7 @@ use Webmozart\Assert\Assert;
  */
 final class FreeTextShouldBeValidValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($property, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, FreeTextShouldBeValid::class);

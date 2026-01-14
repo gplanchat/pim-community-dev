@@ -15,6 +15,7 @@ class JobExecutionRepositoryIntegration extends TestCase
     private Connection $sqlConnection;
     private JobExecutionRepository $jobExecutionRepository;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -83,6 +84,7 @@ class JobExecutionRepositoryIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

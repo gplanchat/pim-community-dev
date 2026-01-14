@@ -86,6 +86,7 @@ abstract class AbstractItemMediaWriter implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize(): void
     {
         $bufferFilePath = $this->state['buffer_file_path'] ?? null;
@@ -109,6 +110,7 @@ abstract class AbstractItemMediaWriter implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items): void
     {
         $parameters = $this->stepExecution->getJobParameters();
@@ -142,6 +144,7 @@ abstract class AbstractItemMediaWriter implements
     /**
      * Flush items into a file
      */
+    #[\Override]
     public function flush(): void
     {
         $this->flusher->setStepExecution($this->stepExecution);
@@ -177,6 +180,7 @@ abstract class AbstractItemMediaWriter implements
      *
      * @return string
      */
+    #[\Override]
     public function getPath(array $placeholders = []): string
     {
         $parameters = $this->stepExecution->getJobParameters();
@@ -205,6 +209,7 @@ abstract class AbstractItemMediaWriter implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getWrittenFiles(): array
     {
         return $this->writtenFiles;
@@ -213,6 +218,7 @@ abstract class AbstractItemMediaWriter implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
@@ -393,6 +399,7 @@ abstract class AbstractItemMediaWriter implements
         );
     }
 
+    #[\Override]
     public function getState(): array
     {
         if (null === $this->flatRowBuffer) {
@@ -408,6 +415,7 @@ abstract class AbstractItemMediaWriter implements
         ];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

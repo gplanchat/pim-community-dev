@@ -19,6 +19,7 @@ abstract class CommandTestCase extends TestCase
 {
     protected $application;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -23,6 +23,7 @@ class GetAllEventSubscriptionDebugLogsQuery implements GetAllEventSubscriptionDe
     {
     }
 
+    #[\Override]
     public function execute(string $connectionCode): \Generator
     {
         $nowTimestamp = $this->clock->now()->getTimestamp();

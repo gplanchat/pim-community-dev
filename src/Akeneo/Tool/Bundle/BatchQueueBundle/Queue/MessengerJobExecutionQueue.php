@@ -22,6 +22,7 @@ final class MessengerJobExecutionQueue implements JobExecutionQueueInterface
         $this->bus = $bus;
     }
 
+    #[\Override]
     public function publish(JobExecutionMessageInterface $jobExecutionMessage): void
     {
         $this->bus->dispatch($jobExecutionMessage);

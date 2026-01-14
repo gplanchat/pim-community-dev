@@ -22,6 +22,7 @@ class ConstraintViolationNormalizer implements NormalizerInterface, CacheableSup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($violation, $format = null, array $context = [])
     {
         Assert::isInstanceOf($violation, ConstraintViolation::class);
@@ -58,11 +59,13 @@ class ConstraintViolationNormalizer implements NormalizerInterface, CacheableSup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ConstraintViolation && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

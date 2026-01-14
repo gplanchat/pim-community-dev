@@ -25,6 +25,7 @@ final class CriterionEvaluationId
         $this->uuid = $uuid;
     }
 
+    #[\Override]
     public function __toString()
     {
         return strval($this->uuid);

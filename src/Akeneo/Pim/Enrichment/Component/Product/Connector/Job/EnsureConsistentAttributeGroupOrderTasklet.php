@@ -69,6 +69,7 @@ class EnsureConsistentAttributeGroupOrderTasklet implements TaskletInterface, Tr
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -77,6 +78,7 @@ class EnsureConsistentAttributeGroupOrderTasklet implements TaskletInterface, Tr
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute()
     {
         if ($this->attributeGroupReader instanceof InitializableInterface) {
@@ -151,6 +153,7 @@ class EnsureConsistentAttributeGroupOrderTasklet implements TaskletInterface, Tr
         $this->jobRepository->updateStepExecution($this->stepExecution);
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return $this->attributeGroupReader instanceof TrackableItemReaderInterface;

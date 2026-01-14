@@ -72,11 +72,13 @@ class AppAuthorizationSessionIntegration extends TestCase
         Assert::assertNull($authorizationInSession);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

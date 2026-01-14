@@ -12,6 +12,7 @@ class ExportProductsByMultiSelectIntegration extends AbstractExportTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createFamily([

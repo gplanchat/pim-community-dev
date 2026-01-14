@@ -13,12 +13,13 @@ final class Version_7_0_20220722090828_remove_old_file_path_on_product_and_produ
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220722090828_remove_old_file_path_on_product_and_product_model_quick_export_job';
+    private const string MIGRATION_LABEL = '_7_0_20220722090828_remove_old_file_path_on_product_and_product_model_quick_export_job';
 
     private Connection $connection;
     private JobInstanceRepository $jobInstanceRepository;
     private VersionProviderInterface $versionProvider;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,6 +47,7 @@ final class Version_7_0_20220722090828_remove_old_file_path_on_product_and_produ
         $this->assertFalse($this->jobContainsOldFilepath('xlsx_product_quick_export'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

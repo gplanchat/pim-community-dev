@@ -60,6 +60,7 @@ SQL;
         return $jobExecutionId;
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -72,6 +73,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -52,6 +52,7 @@ class RouteMessageParameter implements MessageParameterInterface
      *  title: string
      * }
      */
+    #[\Override]
     public function normalize(): array
     {
         return [

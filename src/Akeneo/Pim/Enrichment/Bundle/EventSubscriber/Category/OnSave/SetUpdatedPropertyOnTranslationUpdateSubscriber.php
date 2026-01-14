@@ -15,6 +15,7 @@ use Doctrine\Persistence\Event\LifecycleEventArgs;
  */
 class SetUpdatedPropertyOnTranslationUpdateSubscriber implements EventSubscriber
 {
+    #[\Override]
     public function getSubscribedEvents(): array
     {
         return [

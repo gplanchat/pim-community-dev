@@ -19,6 +19,7 @@ class DbalGetAConnectionWebhookQuery implements GetAConnectionWebhookQueryInterf
     {
     }
 
+    #[\Override]
     public function execute(string $code): ?ConnectionWebhook
     {
         $query = <<<SQL

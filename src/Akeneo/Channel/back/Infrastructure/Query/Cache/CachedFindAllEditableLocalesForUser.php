@@ -20,6 +20,7 @@ final class CachedFindAllEditableLocalesForUser implements FindAllEditableLocale
     ) {
     }
 
+    #[\Override]
     public function findAll(int $userId): array
     {
         if (!array_key_exists($userId, $this->cache)) {
@@ -29,6 +30,7 @@ final class CachedFindAllEditableLocalesForUser implements FindAllEditableLocale
         return $this->cache[$userId];
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->cache = [];

@@ -34,6 +34,7 @@ class RemoveFamilyFromJobInstanceFiltersOnFamilyDeletionSubscriber implements Ev
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

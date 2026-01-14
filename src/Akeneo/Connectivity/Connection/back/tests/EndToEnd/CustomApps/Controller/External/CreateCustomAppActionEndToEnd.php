@@ -21,11 +21,13 @@ class CreateCustomAppActionEndToEnd extends ApiTestCase
     private Connection $connection;
     private AclLoader $aclLoader;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

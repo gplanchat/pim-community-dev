@@ -15,6 +15,7 @@ class InMemoryFindNonExistingProductsQuery implements FindNonExistingProductsQue
         $this->productRepository = $productRepository;
     }
 
+    #[\Override]
     public function byProductIdentifiers(array $productIdentifiers): array
     {
         $existingIdentifiers = $this->getAllProductIdentifiers();
@@ -24,6 +25,7 @@ class InMemoryFindNonExistingProductsQuery implements FindNonExistingProductsQue
         return $nonExistingProductIdentifiers;
     }
 
+    #[\Override]
     public function byProductUuids(array $productUuids): array
     {
         $existingUuids = $this->getAllProductUuids();

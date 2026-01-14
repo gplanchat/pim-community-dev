@@ -35,6 +35,7 @@ class TemporaryFileCleaner implements StepExecutionAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;

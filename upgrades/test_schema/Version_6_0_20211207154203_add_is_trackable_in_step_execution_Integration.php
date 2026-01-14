@@ -18,15 +18,17 @@ class Version_6_0_20211207154203_add_is_trackable_in_step_execution_Integration 
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20211207154203_add_is_trackable_in_step_execution';
+    private const string MIGRATION_LABEL = '_6_0_20211207154203_add_is_trackable_in_step_execution';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

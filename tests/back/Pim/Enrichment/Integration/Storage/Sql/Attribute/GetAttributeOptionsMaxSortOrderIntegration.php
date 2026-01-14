@@ -59,6 +59,7 @@ class GetAttributeOptionsMaxSortOrderIntegration extends TestCase
                                     ->forAttributeCodes(['select_without_options']));
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

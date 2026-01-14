@@ -15,11 +15,12 @@ final class Version_7_0_20220921104755_update_job_instance_parameter_user_to_not
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220921104755_update_job_instance_parameter_user_to_notify_for_jobs';
+    private const string MIGRATION_LABEL = '_7_0_20220921104755_update_job_instance_parameter_user_to_notify_for_jobs';
 
     private Connection $connection;
     private JobInstanceRepository $jobInstanceRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -62,6 +63,7 @@ final class Version_7_0_20220921104755_update_job_instance_parameter_user_to_not
         $this->assertTrue($this->jobIsMigrated('a_mass_upload', []));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

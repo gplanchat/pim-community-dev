@@ -34,6 +34,7 @@ class QuantifiedAssociationsValidator extends ConstraintValidator
     ) {
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$value instanceof QuantifiedAssociationCollection) {

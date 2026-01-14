@@ -7,6 +7,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20210819080024_add_warning_count_in_step_execution extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->addSql(<<<SQL
@@ -27,6 +28,7 @@ SQL
         );
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

@@ -26,6 +26,7 @@ class LocalizableValues extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validatedBy(): string
     {
         return 'pim_localizable_values_validator';

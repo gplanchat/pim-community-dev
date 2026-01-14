@@ -14,6 +14,7 @@ class FindJobTypeHandlerTest extends AcceptanceTestCase
     private InMemoryFindJobType $findJobType;
     private FindJobTypeHandler $handler;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->findJobType = $this->get(FindJobTypeInterface::class);

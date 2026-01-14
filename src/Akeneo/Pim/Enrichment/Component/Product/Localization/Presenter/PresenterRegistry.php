@@ -38,6 +38,7 @@ class PresenterRegistry implements PresenterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(PresenterInterface $presenter, $type)
     {
         $this->presenters[$type][] = $presenter;
@@ -48,6 +49,7 @@ class PresenterRegistry implements PresenterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPresenterByAttributeCode($code)
     {
         $attribute = $this->attributeRepository->findOneByIdentifier($code);
@@ -66,6 +68,7 @@ class PresenterRegistry implements PresenterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPresenterByAttributeType($attributeType)
     {
         return $this->getPresenter($attributeType, self::TYPE_PRODUCT_VALUE);
@@ -74,6 +77,7 @@ class PresenterRegistry implements PresenterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeOptionPresenter($optionName)
     {
         return $this->getPresenter($optionName, self::TYPE_ATTRIBUTE_OPTION);
@@ -82,6 +86,7 @@ class PresenterRegistry implements PresenterRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPresenterByFieldCode($code)
     {
         return $this->getPresenter($code, self::TYPE_PRODUCT_FIELD);

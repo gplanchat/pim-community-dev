@@ -31,6 +31,7 @@ final class ProductUuidCursor implements ProductUuidCursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function current(): mixed
     {
         if (null === $this->uuids) {
@@ -43,6 +44,7 @@ final class ProductUuidCursor implements ProductUuidCursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function key(): mixed
     {
         if (null === $this->uuids) {
@@ -55,6 +57,7 @@ final class ProductUuidCursor implements ProductUuidCursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function valid(): bool
     {
         if (null === $this->uuids) {
@@ -67,6 +70,7 @@ final class ProductUuidCursor implements ProductUuidCursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(): int
     {
         if (null === $this->uuids) {
@@ -79,6 +83,7 @@ final class ProductUuidCursor implements ProductUuidCursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function next(): void
     {
         if (null === $this->uuids || false === next($this->uuids)) {
@@ -92,6 +97,7 @@ final class ProductUuidCursor implements ProductUuidCursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function rewind(): void
     {
         $this->fetcher->reset();

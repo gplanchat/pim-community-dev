@@ -23,6 +23,7 @@ class BooleanFilterTypeTest extends AbstractTypeTestCase
         'oro.filter.form.label_type_no' => BooleanFilterType::TYPE_NO,
     ];
 
+    #[\Override]
     protected function setUp(): void
     {
         $translator = $this->createMockTranslator();
@@ -41,6 +42,7 @@ class BooleanFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function getTestFormType()
     {
         return $this->type;
@@ -54,6 +56,7 @@ class BooleanFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptionsDataProvider()
     {
         return [
@@ -68,6 +71,7 @@ class BooleanFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function bindDataProvider()
     {
         return [

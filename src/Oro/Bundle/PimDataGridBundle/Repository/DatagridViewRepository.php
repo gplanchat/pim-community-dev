@@ -20,6 +20,7 @@ class DatagridViewRepository extends EntityRepository implements DatagridViewRep
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDatagridViewAliasesByUser(UserInterface $user): array
     {
         $sql = <<<SQL
@@ -43,6 +44,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findDatagridViewBySearch(
         UserInterface $user,
         string        $alias,
@@ -70,6 +72,7 @@ SQL;
         return $qb->getQuery()->execute();
     }
 
+    #[\Override]
     public function findAllDatagridViewsBySearch(
         UserInterface $user,
         string        $alias,
@@ -92,6 +95,7 @@ SQL;
             ->setParameter('term', sprintf('%%%s%%', $term));
     }
 
+    #[\Override]
     public function findPublicDatagridViewByLabel(string $label): ?DatagridView
     {
         $qb = $this->createQueryBuilder('v')
@@ -103,6 +107,7 @@ SQL;
         return $qb->getQuery()->getOneOrNullResult();
     }
 
+    #[\Override]
     public function findPrivateDatagridViewByLabel(string $label, UserInterface $user): ?DatagridView
     {
         if (null === $user->getId()) {

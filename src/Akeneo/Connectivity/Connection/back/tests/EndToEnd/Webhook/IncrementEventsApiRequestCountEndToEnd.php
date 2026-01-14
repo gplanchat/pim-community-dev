@@ -40,6 +40,7 @@ class IncrementEventsApiRequestCountEndToEnd extends ApiTestCase
     private DbalConnection $dbalConnection;
     private GuzzleJsonHistoryContainer $historyContainer;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -118,6 +119,7 @@ class IncrementEventsApiRequestCountEndToEnd extends ApiTestCase
         return $this->dbalConnection->executeQuery($sql)->fetchAllAssociative();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

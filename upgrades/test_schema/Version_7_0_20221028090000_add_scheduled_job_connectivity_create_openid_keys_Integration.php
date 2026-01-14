@@ -12,6 +12,7 @@ final class Version_7_0_20221028090000_add_scheduled_job_connectivity_create_ope
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ final class Version_7_0_20221028090000_add_scheduled_job_connectivity_create_ope
         $this->assertEquals($jobInstanceId, $this->jobInstanceId('connectivity_create_openid_keys'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

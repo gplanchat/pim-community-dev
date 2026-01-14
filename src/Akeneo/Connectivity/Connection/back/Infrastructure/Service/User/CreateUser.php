@@ -29,6 +29,7 @@ class CreateUser implements CreateUserInterface
     /**
      * @inheritdoc
      */
+    #[\Override]
     public function execute(string $username, string $firstname, string $lastname, ?array $groups = null, ?array $roles = null): User
     {
         $password = $this->generatePassword();

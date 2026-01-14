@@ -71,11 +71,13 @@ class SqlGetPurgeableVersionListQueryIntegration extends TestCase
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

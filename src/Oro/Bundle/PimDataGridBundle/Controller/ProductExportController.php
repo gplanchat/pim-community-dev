@@ -28,7 +28,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class ProductExportController
 {
     const DATETIME_FORMAT = 'Y-m-d_H:i:s';
-    private const FILE_PATH_KEYS = ['filePathProduct', 'filePathProductModel'];
+    private const array FILE_PATH_KEYS = ['filePathProduct', 'filePathProductModel'];
 
     public function __construct(
         private RequestStack $requestStack,

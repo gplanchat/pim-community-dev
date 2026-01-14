@@ -17,6 +17,7 @@ class ProductValueLocaleFilter implements CollectionFilterInterface, ObjectFilte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filterObject($value, $type, array $options = [])
     {
         if (!$value instanceof ValueInterface) {
@@ -33,6 +34,7 @@ class ProductValueLocaleFilter implements CollectionFilterInterface, ObjectFilte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filterCollection($objects, $type, array $options = [])
     {
         foreach ($objects as $key => $object) {
@@ -47,6 +49,7 @@ class ProductValueLocaleFilter implements CollectionFilterInterface, ObjectFilte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsObject($object, $type, array $options = [])
     {
         return $object instanceof ValueInterface;
@@ -55,6 +58,7 @@ class ProductValueLocaleFilter implements CollectionFilterInterface, ObjectFilte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsCollection($collection, $type, array $options = [])
     {
         return $collection instanceof WriteValueCollection;

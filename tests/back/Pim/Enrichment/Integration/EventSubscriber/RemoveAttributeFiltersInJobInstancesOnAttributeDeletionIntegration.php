@@ -61,6 +61,7 @@ SQL;
         return $rawParameters;
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

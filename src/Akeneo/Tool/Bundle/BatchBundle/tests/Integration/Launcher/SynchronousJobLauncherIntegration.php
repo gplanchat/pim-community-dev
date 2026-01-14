@@ -22,6 +22,7 @@ class SynchronousJobLauncherIntegration extends TestCase
     private SynchronousJobLauncher $jobLauncher;
     private JobInstanceRepository $jobInstanceRepository;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -42,6 +43,7 @@ class SynchronousJobLauncherIntegration extends TestCase
         $this->assertNotNull($jobExecution->getHealthCheckTime());
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

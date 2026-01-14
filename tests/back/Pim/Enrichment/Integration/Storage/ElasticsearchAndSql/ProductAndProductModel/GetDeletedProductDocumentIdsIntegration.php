@@ -38,6 +38,7 @@ final class GetDeletedProductDocumentIdsIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -53,6 +54,7 @@ final class GetDeletedProductDocumentIdsIntegration extends TestCase
         $this->get('akeneo_elasticsearch.client.product_and_product_model')->refreshIndex();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

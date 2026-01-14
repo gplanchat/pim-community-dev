@@ -59,6 +59,7 @@ SQL;
         Assert::assertEquals(true, $results[0]['enabled']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -17,6 +17,7 @@ class DbalCountActiveEventSubscriptionsQuery implements CountActiveEventSubscrip
     {
     }
 
+    #[\Override]
     public function execute(): int
     {
         $query = <<<SQL

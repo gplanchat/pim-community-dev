@@ -15,7 +15,7 @@ final class IdentifierGeneratorCreationLimit extends Constraint
     public string $message = 'validation.create.identifier_limit_reached';
     public int $limit = 1;
 
-    public function __construct($options = null, array $groups = null, $payload = null)
+    public function __construct($options = null, ?array $groups = null, $payload = null)
     {
         if (null === $options || (\is_array($options) && !isset($options['limit']))) {
             $options['limit'] = $this->limit;
@@ -23,6 +23,7 @@ final class IdentifierGeneratorCreationLimit extends Constraint
         parent::__construct($options, $groups, $payload);
     }
 
+    #[\Override]
     public function getDefaultOption()
     {
         return 'limit';
@@ -31,6 +32,7 @@ final class IdentifierGeneratorCreationLimit extends Constraint
     /**
      * @inerhitDoc
      */
+    #[\Override]
     public function getTargets(): string
     {
         return self::CLASS_CONSTRAINT;

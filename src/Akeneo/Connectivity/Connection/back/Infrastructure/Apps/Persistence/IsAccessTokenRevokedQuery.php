@@ -18,6 +18,7 @@ final class IsAccessTokenRevokedQuery implements IsAccessTokenRevokedQueryInterf
     ) {
     }
 
+    #[\Override]
     public function execute(string $token): bool
     {
         $query = <<<SQL

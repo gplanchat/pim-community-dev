@@ -14,11 +14,13 @@ final class Version_7_0_20220726143600_add_scheduled_jobs extends AbstractMigrat
 {
     private ContainerInterface $container;
 
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addScheduledJob('versioning_refresh', 'Refresh versioning for any updated entities', []);
@@ -49,6 +51,7 @@ final class Version_7_0_20220726143600_add_scheduled_jobs extends AbstractMigrat
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

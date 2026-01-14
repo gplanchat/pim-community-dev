@@ -13,6 +13,7 @@ class GetProductQuantifiedAssociationsByProductModelCodesIntegration extends Abs
 {
     use QuantifiedAssociationsTestCaseTrait;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -321,6 +322,7 @@ SQL;
         $this->assertSame([], $actual);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

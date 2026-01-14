@@ -26,6 +26,7 @@ final class ProcessMessageCommandIntegration extends TestCase
     private HandlerObserver $handlerObserver;
     private SerializerInterface $serializer;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -63,6 +64,7 @@ final class ProcessMessageCommandIntegration extends TestCase
         Assert::assertTrue($this->handlerObserver->messageIsHandledByHandler($message, Handler1ForMessage1::class));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

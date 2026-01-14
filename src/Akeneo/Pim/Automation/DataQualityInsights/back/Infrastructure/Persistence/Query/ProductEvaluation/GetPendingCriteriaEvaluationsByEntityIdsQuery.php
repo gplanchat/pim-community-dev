@@ -33,6 +33,7 @@ final class GetPendingCriteriaEvaluationsByEntityIdsQuery implements GetPendingC
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function execute(ProductEntityIdCollection $entityIds): array
     {
         if ($entityIds->isEmpty()) {

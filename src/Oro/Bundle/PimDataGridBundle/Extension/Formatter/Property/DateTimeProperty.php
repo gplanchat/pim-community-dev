@@ -28,6 +28,7 @@ class DateTimeProperty extends FieldProperty
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function convertValue($value)
     {
         $result = !$value instanceof \DateTime ? $this->getBackendData($value) : $value;
@@ -38,6 +39,7 @@ class DateTimeProperty extends FieldProperty
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getRawValue(ResultRecordInterface $record)
     {
         try {

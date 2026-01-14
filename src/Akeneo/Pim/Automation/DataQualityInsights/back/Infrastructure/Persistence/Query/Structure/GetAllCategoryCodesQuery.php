@@ -22,6 +22,7 @@ final class GetAllCategoryCodesQuery implements GetAllCategoryCodesQueryInterfac
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(): array
     {
         $query = <<<SQL

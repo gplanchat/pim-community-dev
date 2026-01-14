@@ -109,11 +109,13 @@ class JobQueueConsumerConfiguration implements \ArrayAccess
         return $this;
     }
 
+    #[\Override]
     public function offsetExists($offset): bool
     {
         return true === array_key_exists($offset, array_flip($this->listSupportedSettings));
     }
 
+    #[\Override]
     public function offsetGet($offset): array|int
     {
         switch ($offset) {
@@ -136,11 +138,13 @@ class JobQueueConsumerConfiguration implements \ArrayAccess
         }
     }
 
+    #[\Override]
     public function offsetSet($offset, $value): void
     {
         throw new \RuntimeException("Please do use setters to set properties.");
     }
 
+    #[\Override]
     public function offsetUnset($offset): void
     {
         throw new \RuntimeException('Cannot unset configutation properties.');

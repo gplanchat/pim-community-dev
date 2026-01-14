@@ -9,6 +9,7 @@ final class InMemoryIsAttributeCodeBlacklisted implements IsAttributeCodeBlackli
 {
     private array $resultPerAttributeCode = [];
 
+    #[\Override]
     public function execute(string $attributeCode): bool
     {
         return $this->resultPerAttributeCode[$attributeCode] ?? false;

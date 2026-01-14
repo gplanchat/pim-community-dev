@@ -13,16 +13,17 @@ use Akeneo\Platform\Job\Application\DeleteJobInstance\DeleteJobInstanceInterface
 use Akeneo\Platform\Job\ServiceApi\JobInstance\DeleteJobInstance\CannotDeleteJobInstanceException;
 use Doctrine\DBAL\Connection;
 
-final class DeleteJobInstance implements DeleteJobInstanceInterface
+final readonly class DeleteJobInstance implements DeleteJobInstanceInterface
 {
     public function __construct(
-        private readonly Connection $connection
+        private Connection $connection
     ) {
     }
 
     /**
      * @param string[] $codes
      */
+    #[\Override]
     public function byCodes(array $codes): void
     {
         $this->checkJobsExist($codes);

@@ -8,6 +8,7 @@ use Akeneo\Test\Integration\TestCase;
 
 class GetProductModelIdentifiersWithRemovedAttributeIntegration extends TestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -27,6 +28,7 @@ class GetProductModelIdentifiersWithRemovedAttributeIntegration extends TestCase
         self::assertEquals(1, $batchCount);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -28,6 +28,7 @@ class CachedGetLocalesByChannelQuery implements GetLocalesByChannelQueryInterfac
         $this->db = $db;
     }
 
+    #[\Override]
     public function getArray(): array
     {
         if (null !== $this->cachedChannelLocaleArray) {
@@ -54,6 +55,7 @@ SQL;
         return $channelsLocales;
     }
 
+    #[\Override]
     public function getChannelLocaleCollection(): ChannelLocaleCollection
     {
         if (null === $this->cachedChannelLocaleCollection) {

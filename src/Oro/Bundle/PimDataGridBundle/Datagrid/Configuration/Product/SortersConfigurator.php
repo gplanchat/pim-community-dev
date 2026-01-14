@@ -35,6 +35,7 @@ class SortersConfigurator implements ConfiguratorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configure(DatagridConfiguration $configuration)
     {
         $this->configuration = $configuration;

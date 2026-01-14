@@ -12,6 +12,7 @@ class YamlConverter implements QueryConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function parse($value, QueryBuilder $qb)
     {
         if (!is_array($value)) {
@@ -58,6 +59,7 @@ class YamlConverter implements QueryConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function dump(QueryBuilder $input)
     {
         return '';

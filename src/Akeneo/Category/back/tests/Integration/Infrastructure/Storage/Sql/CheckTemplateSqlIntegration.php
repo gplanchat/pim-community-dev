@@ -48,6 +48,7 @@ class CheckTemplateSqlIntegration extends CategoryTestCase
         $this->assertFalse($retrievedTemplate);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

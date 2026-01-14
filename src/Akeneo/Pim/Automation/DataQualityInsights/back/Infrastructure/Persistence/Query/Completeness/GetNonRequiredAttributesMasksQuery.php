@@ -25,6 +25,7 @@ final class GetNonRequiredAttributesMasksQuery implements GetRequiredAttributesM
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromFamilyCodes(array $familyCodes): array
     {
         $sql = "

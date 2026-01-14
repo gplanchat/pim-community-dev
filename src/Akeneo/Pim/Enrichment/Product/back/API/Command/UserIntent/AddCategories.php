@@ -20,6 +20,7 @@ final class AddCategories implements CategoryUserIntent
     }
 
     /** @return array<string> */
+    #[\Override]
     public function categoryCodes(): array
     {
         return $this->categoryCodes;

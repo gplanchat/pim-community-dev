@@ -32,6 +32,7 @@ class VersionPurger implements VersionPurgerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function purge(array $options)
     {
         $optionResolver = new OptionsResolver();
@@ -65,6 +66,7 @@ class VersionPurger implements VersionPurgerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addVersionPurgerAdvisor(VersionPurgerAdvisorInterface $versionPurgerAdvisor)
     {
         $this->versionPurgerAdvisors[] = $versionPurgerAdvisor;

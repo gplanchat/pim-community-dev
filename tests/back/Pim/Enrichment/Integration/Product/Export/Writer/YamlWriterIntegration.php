@@ -22,6 +22,7 @@ class YamlWriterIntegration extends KernelTestCase
     protected ?string $filePath;
     protected ?string $header;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -44,6 +45,7 @@ class YamlWriterIntegration extends KernelTestCase
         $this->writer->setStepExecution($stepExecution);
     }
 
+    #[\Override]
     public function tearDown(): void
     {
         parent::tearDown();

@@ -22,10 +22,12 @@ class PurgeAuditErrorTasklet implements TaskletInterface
     {
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $before = new \DateTimeImmutable('now - 10 days', new \DateTimeZone('UTC'));

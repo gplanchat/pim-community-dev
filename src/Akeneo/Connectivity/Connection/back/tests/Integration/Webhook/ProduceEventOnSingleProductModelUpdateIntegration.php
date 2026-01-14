@@ -23,6 +23,7 @@ class ProduceEventOnSingleProductModelUpdateIntegration extends TestCase
     private SaverInterface $productModelSaver;
     private ObjectUpdaterInterface $productModelUpdater;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -56,6 +57,7 @@ class ProduceEventOnSingleProductModelUpdateIntegration extends TestCase
         $this->assertEventCount(1, ProductModelUpdated::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

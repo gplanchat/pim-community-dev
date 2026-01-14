@@ -15,6 +15,7 @@ final class CountSystemEntitiesQueryIntegration extends TestCase
 {
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -22,6 +23,7 @@ final class CountSystemEntitiesQueryIntegration extends TestCase
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

@@ -17,6 +17,7 @@ class DbalUpsertEventCountQueryIntegration extends TestCase
     private DbalUpsertEventCountQuery $query;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -25,6 +26,7 @@ class DbalUpsertEventCountQueryIntegration extends TestCase
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

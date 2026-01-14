@@ -33,6 +33,7 @@ final class GetExistingReferenceDataCodes implements GetExistingReferenceDataCod
         $this->repositoryResolver = $repositoryResolver;
     }
 
+    #[\Override]
     public function fromReferenceDataNameAndCodes(string $referenceDataName, array $codes): array
     {
         if (empty($codes)) {

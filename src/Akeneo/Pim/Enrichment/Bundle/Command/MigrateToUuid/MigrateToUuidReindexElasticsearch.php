@@ -23,7 +23,7 @@ final class MigrateToUuidReindexElasticsearch implements MigrateToUuidStep
     use MigrateToUuidTrait;
     use StatusAwareTrait;
 
-    private const BATCH_SIZE = 500;
+    private const int BATCH_SIZE = 500;
 
     public function __construct(
         private Connection $connection,
@@ -37,6 +37,7 @@ final class MigrateToUuidReindexElasticsearch implements MigrateToUuidStep
     /**
      * {@inerhitdoc}
      */
+    #[\Override]
     public function getMissingCount(): int
     {
         return $this->getEsResult()['hits']['total']['value'];
@@ -45,6 +46,7 @@ final class MigrateToUuidReindexElasticsearch implements MigrateToUuidStep
     /**
      * {@inerhitdoc}
      */
+    #[\Override]
     public function getName(): string
     {
         return 'reindex_elasticsearch';
@@ -53,6 +55,7 @@ final class MigrateToUuidReindexElasticsearch implements MigrateToUuidStep
     /**
      * {@inerhitdoc}
      */
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $logContext = $context->logContext;
@@ -91,6 +94,7 @@ final class MigrateToUuidReindexElasticsearch implements MigrateToUuidStep
     /**
      * {@inerhitdoc}
      */
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         return $this->getMissingCount() > 0;
@@ -99,6 +103,7 @@ final class MigrateToUuidReindexElasticsearch implements MigrateToUuidStep
     /**
      * {@inerhitdoc}
      */
+    #[\Override]
     public function getDescription(): string
     {
         return 'Reindex products in Elasticsearch using uuid';

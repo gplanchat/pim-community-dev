@@ -15,11 +15,13 @@ class GetAccessTokenQueryIntegration extends TestCase
     private ConnectedAppLoader $connectedAppLoader;
     private GetAccessTokenQuery $query;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

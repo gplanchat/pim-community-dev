@@ -90,6 +90,7 @@ class UpsertUserHandlerIntegration  extends TestCase
         return $this->get(UpsertUserHandlerInterface::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

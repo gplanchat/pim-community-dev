@@ -17,11 +17,13 @@ class GroupTranslator implements FlatPropertyValueTranslatorInterface
         $this->getGroupTranslations = $getGroupTranslations;
     }
 
+    #[\Override]
     public function supports(string $columnName): bool
     {
         return 'groups' === $columnName;
     }
 
+    #[\Override]
     public function translate(array $values, string $locale, string $scope): array
     {
         $extractedGroupCodes = $this->extractGroupCodes($values);

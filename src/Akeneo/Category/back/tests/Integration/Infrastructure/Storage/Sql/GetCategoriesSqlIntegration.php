@@ -23,6 +23,7 @@ class GetCategoriesSqlIntegration extends CategoryTestCase
 {
     private CategoryDoctrine|Category $categoryShoes;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -560,6 +561,7 @@ class GetCategoriesSqlIntegration extends CategoryTestCase
         $this->assertSame(2, $numberOfCategories);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

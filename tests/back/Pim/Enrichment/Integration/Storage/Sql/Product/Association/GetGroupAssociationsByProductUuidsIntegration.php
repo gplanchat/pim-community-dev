@@ -18,6 +18,7 @@ use Webmozart\Assert\Assert;
  */
 class GetGroupAssociationsByProductUuidsIntegration extends TestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -212,6 +213,7 @@ class GetGroupAssociationsByProductUuidsIntegration extends TestCase
         $this->get('pim_catalog.saver.family')->saveAll($families);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

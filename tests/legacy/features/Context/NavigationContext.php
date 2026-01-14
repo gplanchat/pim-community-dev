@@ -368,6 +368,7 @@ class NavigationContext extends BaseNavigationContext
         $this->currentPage = 'ProductModel edit';
     }
 
+    #[\Override]
     protected function getFixturesContext(): FixturesContext
     {
         return $this->getMainContext()->getSubcontext('fixtures');

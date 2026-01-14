@@ -18,6 +18,7 @@ class AddDefaultPermissionsToLocaleIntegration extends TestCase
     private Connection $connection;
     private GroupRepository $groupRepository;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -168,6 +169,7 @@ SQL;
         $this->get('pim_catalog.saver.channel')->save($channel);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog(featureFlags: ['permission']);

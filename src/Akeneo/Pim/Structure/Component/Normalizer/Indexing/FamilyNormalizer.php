@@ -41,6 +41,7 @@ class FamilyNormalizer implements NormalizerInterface, CacheableSupportsMethodIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         if (null === $this->activatedLocaleCodes) {
@@ -60,6 +61,7 @@ class FamilyNormalizer implements NormalizerInterface, CacheableSupportsMethodIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return (
@@ -67,6 +69,7 @@ class FamilyNormalizer implements NormalizerInterface, CacheableSupportsMethodIn
         ) && $data instanceof FamilyInterface;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

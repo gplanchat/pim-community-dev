@@ -7,6 +7,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220927080024_add_identifier_generator_table extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->addSql(<<<SQL
@@ -24,6 +25,7 @@ final class Version_7_0_20220927080024_add_identifier_generator_table extends Ab
         );
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

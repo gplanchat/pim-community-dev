@@ -14,6 +14,7 @@ use Ramsey\Uuid\UuidInterface;
  */
 final class GetAllProductIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ final class GetAllProductIntegration extends TestCase
         return $this->get(GetAllProductUuids::class);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

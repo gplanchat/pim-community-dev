@@ -38,6 +38,7 @@ class AttributeOptionNormalizerSpec extends ObjectBehavior
         $normalizedOption->shouldHaveLabels($data);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

@@ -19,6 +19,7 @@ class GetCategoryTreeTemplatesSql implements GetCategoryTreeTemplates
     {
     }
 
+    #[\Override]
     public function __invoke(CategoryId $categoryTreeId): array
     {
         $result = $this->connection->executeQuery(

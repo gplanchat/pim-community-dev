@@ -16,6 +16,7 @@ class WysiwygFieldProvider implements FieldProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getField($attribute)
     {
         return 'akeneo-wysiwyg-field';
@@ -24,6 +25,7 @@ class WysiwygFieldProvider implements FieldProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element)
     {
         return $element instanceof AttributeInterface &&

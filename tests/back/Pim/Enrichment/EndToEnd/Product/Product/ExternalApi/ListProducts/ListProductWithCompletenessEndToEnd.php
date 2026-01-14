@@ -23,7 +23,7 @@ class ListProductWithCompletenessEndToEnd extends AbstractProductTestCase
     /**
      * product uuids used in these tests
      */
-    private const PRODUCT_UUIDS = [
+    private const array PRODUCT_UUIDS = [
         'product_complete' => 'aaf518b2-f91e-40f1-a53a-78ce5e81a6f9',
         'product_complete_en_locale' => 'aec6780b-c813-4bd7-8e24-1a8574471576',
         'product_incomplete' => '93f14b03-5ed3-4f23-87c6-ae3806041b6a',
@@ -32,6 +32,7 @@ class ListProductWithCompletenessEndToEnd extends AbstractProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -94,9 +95,9 @@ class ListProductWithCompletenessEndToEnd extends AbstractProductTestCase
         $expected = <<<JSON
 {
     "_links": {
-        "self": {"href": "http://localhost/api/rest/v1/products?page=1&with_count=false&pagination_type=page&limit=2&search=${searchEncoded}&scope=ecommerce&locales=en_US"},
-        "first": {"href": "http://localhost/api/rest/v1/products?page=1&with_count=false&pagination_type=page&limit=2&search=${searchEncoded}&scope=ecommerce&locales=en_US"},
-        "next": {"href": "http://localhost/api/rest/v1/products?page=2&with_count=false&pagination_type=page&limit=2&search=${searchEncoded}&scope=ecommerce&locales=en_US"}
+        "self": {"href": "http://localhost/api/rest/v1/products?page=1&with_count=false&pagination_type=page&limit=2&search={$searchEncoded}&scope=ecommerce&locales=en_US"},
+        "first": {"href": "http://localhost/api/rest/v1/products?page=1&with_count=false&pagination_type=page&limit=2&search={$searchEncoded}&scope=ecommerce&locales=en_US"},
+        "next": {"href": "http://localhost/api/rest/v1/products?page=2&with_count=false&pagination_type=page&limit=2&search={$searchEncoded}&scope=ecommerce&locales=en_US"}
     },
     "current_page" : 1,
     "_embedded"    : {
@@ -231,6 +232,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -35,6 +35,7 @@ class EntityWithValuesUpdater implements ObjectUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function update($entityWithValues, array $values, array $options = [])
     {
         if (!$entityWithValues instanceof EntityWithValuesInterface) {

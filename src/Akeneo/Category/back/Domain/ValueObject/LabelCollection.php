@@ -74,6 +74,7 @@ final class LabelCollection implements \IteratorAggregate
     /**
      * @return \ArrayIterator<string, string>
      */
+    #[\Override]
     public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->labels);

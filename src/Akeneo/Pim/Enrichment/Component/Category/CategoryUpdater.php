@@ -34,6 +34,7 @@ class CategoryUpdater implements ObjectUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function update($category, array $data, array $options = [])
     {
         $this->categoryUpdater->update($category, $data, $options);

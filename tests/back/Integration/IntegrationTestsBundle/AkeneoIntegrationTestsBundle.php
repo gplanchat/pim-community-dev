@@ -16,6 +16,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class AkeneoIntegrationTestsBundle extends Bundle
 {
+    #[\Override]
     public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new MakeServicesPublicForTestEnv(), PassConfig::TYPE_BEFORE_OPTIMIZATION);

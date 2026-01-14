@@ -18,6 +18,7 @@ class CheckTemplateSql implements CheckTemplate
     {
     }
 
+    #[\Override]
     public function codeExists(TemplateCode $templateCode): bool
     {
         $query = <<<SQL

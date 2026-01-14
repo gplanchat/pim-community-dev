@@ -33,6 +33,7 @@ class FamilyRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findTranslatedLabels(array $options = [])
     {
         $query = $this->createQueryBuilder('f')
@@ -54,6 +55,7 @@ class FamilyRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $qb = $this->createQueryBuilder('f');
@@ -81,6 +83,7 @@ class FamilyRepository extends EntityRepository implements
      *
      * @param QueryBuilder|ProductQueryBuilderInterface $qb
      */
+    #[\Override]
     public function applyMassActionParameters($qb, $inset, array $values)
     {
         if ($values) {

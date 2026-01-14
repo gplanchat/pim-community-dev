@@ -23,15 +23,16 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  *
  * @phpstan-import-type AttributeValueApi from InternalApiToStd
  */
-final class ValueUserIntentFactory implements UserIntentFactory
+final readonly class ValueUserIntentFactory implements UserIntentFactory
 {
-    public function __construct(private readonly GetAttribute $getAttribute)
+    public function __construct(private GetAttribute $getAttribute)
     {
     }
 
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['values'];
@@ -42,6 +43,7 @@ final class ValueUserIntentFactory implements UserIntentFactory
      *
      * @return array|UserIntent[]
      */
+    #[\Override]
     public function create(string $fieldName, int $categoryId, mixed $data): array
     {
         if (!\is_array($data)) {

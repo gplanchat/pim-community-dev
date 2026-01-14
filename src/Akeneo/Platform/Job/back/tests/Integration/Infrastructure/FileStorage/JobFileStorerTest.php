@@ -10,6 +10,7 @@ class JobFileStorerTest extends IntegrationTestCase
 {
     private JobFileStorer $jobFileStorer;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

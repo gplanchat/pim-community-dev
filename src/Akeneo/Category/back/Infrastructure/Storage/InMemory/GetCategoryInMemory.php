@@ -15,23 +15,26 @@ use Akeneo\Category\Infrastructure\Component\Classification\Repository\CategoryR
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class GetCategoryInMemory implements GetCategoryInterface
+final readonly class GetCategoryInMemory implements GetCategoryInterface
 {
     public function __construct(
-        private readonly CategoryRepositoryInterface $categoryRepository,
+        private CategoryRepositoryInterface $categoryRepository,
     ) {
     }
 
+    #[\Override]
     public function byId(int $categoryId): ?Category
     {
         throw new \Exception(sprintf('The method %s is not implemented yet', __METHOD__));
     }
 
+    #[\Override]
     public function byCode(string $categoryCode): ?Category
     {
         throw new \Exception(sprintf('The method %s is not implemented yet', __METHOD__));
     }
 
+    #[\Override]
     public function byCodes(array $categoryCodes): \Generator
     {
         $categories = $this->categoryRepository->getCategoriesByCodes($categoryCodes);
@@ -45,6 +48,7 @@ final class GetCategoryInMemory implements GetCategoryInterface
         }
     }
 
+    #[\Override]
     public function byIds(array $categoryIds): \Generator
     {
         throw new \Exception(sprintf('The method %s is not implemented yet', __METHOD__));

@@ -41,6 +41,7 @@ class FileTypeGuesser implements FileTypeGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guess($mimeType)
     {
         foreach ($this->typesMapping as $fileType => $mappedTypes) {

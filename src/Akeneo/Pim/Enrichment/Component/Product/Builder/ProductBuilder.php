@@ -43,6 +43,7 @@ class ProductBuilder implements ProductBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createProduct(?string $identifier = null, ?string $familyCode = null, ?string $uuid = null): ProductInterface
     {
         $product = new $this->productClass($uuid);
@@ -66,6 +67,7 @@ class ProductBuilder implements ProductBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addOrReplaceValue(
         EntityWithValuesInterface $entityWithValues,
         AttributeInterface $attribute,

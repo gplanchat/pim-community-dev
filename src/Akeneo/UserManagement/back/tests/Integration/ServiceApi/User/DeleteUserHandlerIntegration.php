@@ -74,6 +74,7 @@ class DeleteUserHandlerIntegration extends TestCase
         return $this->get(DeleteUserHandlerInterface::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

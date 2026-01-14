@@ -13,6 +13,7 @@ use ArPHP\I18N\Arabic;
  */
 class ArabicHtmlFormatter implements HtmlFormatter
 {
+    #[\Override]
     public function formatHtml(string $html): string
     {
         $arabic = new Arabic();

@@ -18,11 +18,13 @@ use AkeneoTest\UserManagement\Integration\Fixtures\FeatureFlagOnAclGroupsTestBun
  */
 class ApplyFeatureFlagOnAclGroupsIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
     }
 
+    #[\Override]
     protected function getConfiguration(): ?Configuration
     {
         return null;

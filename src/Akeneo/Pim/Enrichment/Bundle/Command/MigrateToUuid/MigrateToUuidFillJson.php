@@ -24,8 +24,8 @@ class MigrateToUuidFillJson implements MigrateToUuidStep
     use MigrateToUuidTrait;
     use StatusAwareTrait;
 
-    private const BATCH_SIZE = 1000;
-    private const TABLE_NAMES = [
+    private const int BATCH_SIZE = 1000;
+    private const array TABLE_NAMES = [
         'pim_catalog_product',
         'pim_catalog_product_model'
     ];
@@ -38,16 +38,19 @@ class MigrateToUuidFillJson implements MigrateToUuidStep
     ) {
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Adds product_uuid field in JSON objects';
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'fill_json';
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         $sqlQuantified = <<<SQL
@@ -82,6 +85,7 @@ class MigrateToUuidFillJson implements MigrateToUuidStep
         return false;
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         $sql = <<<SQL
@@ -100,6 +104,7 @@ class MigrateToUuidFillJson implements MigrateToUuidStep
         return $count;
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $this->logContext = $context->logContext;

@@ -34,6 +34,7 @@ class RegisterSerializerPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition($this->serializerServiceId)) {

@@ -47,6 +47,7 @@ abstract class AbstractInvalidItemWriter extends AbstractFilesystemArchiver
      *
      * Re-parse the imported file and write into a new one the invalid lines.
      */
+    #[\Override]
     public function archive(StepExecution $stepExecution): void
     {
         if (empty($this->collector->getInvalidItems())) {
@@ -116,6 +117,7 @@ abstract class AbstractInvalidItemWriter extends AbstractFilesystemArchiver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(StepExecution $stepExecution): bool
     {
         $jobExecution = $stepExecution->getJobExecution();

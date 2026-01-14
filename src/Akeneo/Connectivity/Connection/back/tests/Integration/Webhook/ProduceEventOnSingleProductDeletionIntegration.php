@@ -21,6 +21,7 @@ class ProduceEventOnSingleProductDeletionIntegration extends TestCase
     private RemoverInterface $productRemover;
     private ProductLoader $productLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ class ProduceEventOnSingleProductDeletionIntegration extends TestCase
         $this->assertEventCount(1, ProductRemoved::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

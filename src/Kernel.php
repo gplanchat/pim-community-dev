@@ -20,6 +20,7 @@ class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
+    #[\Override]
     public function registerBundles(): iterable
     {
         $bundles = require $this->getProjectDir() . '/config/bundles.php';
@@ -32,6 +33,7 @@ class Kernel extends BaseKernel
         }
     }
 
+    #[\Override]
     public function getProjectDir(): string
     {
         return \dirname(__DIR__);
@@ -63,6 +65,7 @@ class Kernel extends BaseKernel
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCacheDir(): string
     {
         return $this->getProjectDir().'/var/cache/'.$this->environment;
@@ -71,6 +74,7 @@ class Kernel extends BaseKernel
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLogDir(): string
     {
         return $this->getProjectDir().'/var/logs';

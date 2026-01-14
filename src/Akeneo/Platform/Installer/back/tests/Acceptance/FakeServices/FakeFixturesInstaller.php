@@ -14,6 +14,7 @@ class FakeFixturesInstaller implements FixtureInstallerInterface
 {
     private bool $installedWithoutUsersUserGroupsAndUserRoles = false;
 
+    #[\Override]
     public function installWithoutUsersUserGroupsAndUserRoles(): void
     {
         $this->installedWithoutUsersUserGroupsAndUserRoles = true;

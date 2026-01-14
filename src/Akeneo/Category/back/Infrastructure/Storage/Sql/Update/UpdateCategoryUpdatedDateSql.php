@@ -17,6 +17,7 @@ class UpdateCategoryUpdatedDateSql implements UpdateCategoryUpdatedDate
     {
     }
 
+    #[\Override]
     public function execute(string $categoryCode): void
     {
         $sql = <<<SQL

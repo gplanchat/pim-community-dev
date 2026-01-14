@@ -68,6 +68,7 @@ class EditAttributesProcessor extends AbstractProcessor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($entity)
     {
         $actions = $this->getConfiguredActions();

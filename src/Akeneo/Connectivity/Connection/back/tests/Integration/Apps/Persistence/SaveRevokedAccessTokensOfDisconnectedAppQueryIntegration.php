@@ -20,6 +20,7 @@ class SaveRevokedAccessTokensOfDisconnectedAppQueryIntegration extends TestCase
     private ConnectedAppLoader $connectedAppLoader;
     private SaveRevokedAccessTokensOfDisconnectedAppQuery $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -28,6 +29,7 @@ class SaveRevokedAccessTokensOfDisconnectedAppQueryIntegration extends TestCase
         $this->connectedAppLoader = $this->get('akeneo_connectivity.connection.fixtures.connected_app_loader');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

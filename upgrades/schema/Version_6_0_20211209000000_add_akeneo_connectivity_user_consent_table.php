@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20211209000000_add_akeneo_connectivity_user_consent_table extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $sql = <<<'SQL'
@@ -30,6 +31,7 @@ final class Version_6_0_20211209000000_add_akeneo_connectivity_user_consent_tabl
         $this->addSql($sql);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

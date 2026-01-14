@@ -16,6 +16,7 @@ final class DummyWarmupQueryCache implements WarmupQueryCache
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromRequest(Request $request): void
     {
     }

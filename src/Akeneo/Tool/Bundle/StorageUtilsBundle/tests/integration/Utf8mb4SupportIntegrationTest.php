@@ -22,6 +22,7 @@ class Utf8mb4SupportIntegrationTest extends TestCase
     /** @var Connection */
     protected $connection;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setup();
@@ -70,6 +71,7 @@ class Utf8mb4SupportIntegrationTest extends TestCase
         $this->assertEquals("𝌆", $resultFromDb);
     }
 
+    #[\Override]
     public function tearDown() : void
     {
         if ($this->schemaManager->tablesExist([self::TEST_TABLE_NAME])) {
@@ -80,6 +82,7 @@ class Utf8mb4SupportIntegrationTest extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return null;

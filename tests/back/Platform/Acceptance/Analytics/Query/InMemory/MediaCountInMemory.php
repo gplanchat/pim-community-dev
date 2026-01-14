@@ -8,11 +8,13 @@ use Akeneo\Tool\Component\Analytics\MediaCountQuery;
 
 class MediaCountInMemory implements MediaCountQuery
 {
+    #[\Override]
     public function countFiles(): int
     {
         return 0;
     }
 
+    #[\Override]
     public function countImages(): int
     {
         return 1;

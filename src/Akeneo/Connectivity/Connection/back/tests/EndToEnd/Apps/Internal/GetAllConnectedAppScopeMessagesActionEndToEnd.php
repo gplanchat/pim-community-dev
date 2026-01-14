@@ -24,6 +24,7 @@ class GetAllConnectedAppScopeMessagesActionEndToEnd extends WebTestCase
 {
     private FilePersistedFeatureFlags $featureFlags;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -31,6 +32,7 @@ class GetAllConnectedAppScopeMessagesActionEndToEnd extends WebTestCase
         $this->featureFlags = $this->get('feature_flags');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

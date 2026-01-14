@@ -32,6 +32,7 @@ abstract class AbstractItemCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findCategoriesItem($item): array
     {
         $config = $this->getMappingConfig($item);
@@ -60,6 +61,7 @@ abstract class AbstractItemCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getItemCountByTree($item): array
     {
         $config = $this->getMappingConfig($item);
@@ -93,6 +95,7 @@ abstract class AbstractItemCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getItemsCountInCategory(array $categoryIds = [])
     {
         if (empty($categoryIds)) {
@@ -114,6 +117,7 @@ abstract class AbstractItemCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function applyFilterByUnclassified($qb)
     {
         $this->joinQueryBuilderOnCategories($qb);
@@ -124,6 +128,7 @@ abstract class AbstractItemCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function applyFilterByCategoryIds($qb, array $categoryIds, $include = true)
     {
         $rootAlias = $qb->getRootAliases()[0];
@@ -154,6 +159,7 @@ abstract class AbstractItemCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function applyFilterByCategoryIdsOrUnclassified($qb, array $categoryIds)
     {
         $filterCatIds = uniqid('filterCatIdsOrUnclassified');

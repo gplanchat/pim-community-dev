@@ -35,6 +35,7 @@ class AttributeGroupSearchableRepository implements SearchableRepositoryInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findBySearch($search = null, array $options = [])
     {
         $qb = $this->findBySearchQb($search, $options);

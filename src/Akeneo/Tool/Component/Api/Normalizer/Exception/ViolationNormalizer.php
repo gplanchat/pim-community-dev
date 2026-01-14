@@ -36,6 +36,7 @@ class ViolationNormalizer implements NormalizerInterface, CacheableSupportsMetho
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($exception, $format = null, array $context = []): array
     {
         $errors = $this->normalizeViolations($exception->getViolations());
@@ -52,11 +53,13 @@ class ViolationNormalizer implements NormalizerInterface, CacheableSupportsMetho
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($exception, $format = null): bool
     {
         return $exception instanceof ViolationHttpException;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

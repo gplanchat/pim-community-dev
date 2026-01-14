@@ -18,6 +18,7 @@ final class IsDemoCatalogIntegration extends TestCase
     private FixtureJobLoader $fixtureJobLoader;
     private FeatureFlags $featureFlags;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -56,6 +57,7 @@ final class IsDemoCatalogIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

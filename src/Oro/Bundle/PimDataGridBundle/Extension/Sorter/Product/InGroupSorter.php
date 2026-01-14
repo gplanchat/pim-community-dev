@@ -31,6 +31,7 @@ class InGroupSorter implements SorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(DatasourceInterface $datasource, $field, $direction)
     {
         $groupId = $this->requestParams->get('currentGroup', null);

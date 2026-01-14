@@ -31,6 +31,7 @@ final class SqlFindUsersIntegration extends TestCase
     private int $userTest1Id;
     private int $userTest3Id;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -127,6 +128,7 @@ final class SqlFindUsersIntegration extends TestCase
         Assert::assertEquals($expectedUsernames, $actualUserNames);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

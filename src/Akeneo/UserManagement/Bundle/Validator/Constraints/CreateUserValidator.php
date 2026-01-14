@@ -15,12 +15,13 @@ use Symfony\Component\Validator\ConstraintValidator;
  */
 class CreateUserValidator extends ConstraintValidator
 {
-    private const JOB_USERNAME_PREFIX = 'job_automated_';
+    private const string JOB_USERNAME_PREFIX = 'job_automated_';
 
     /**
      * @param UserInterface         $user
      * @param Constraint|CreateUser $constraint
      */
+    #[\Override]
     public function validate($user, Constraint $constraint)
     {
         if ($this->isUserCreated($user)) {

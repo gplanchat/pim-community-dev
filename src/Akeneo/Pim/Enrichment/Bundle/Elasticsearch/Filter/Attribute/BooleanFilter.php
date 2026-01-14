@@ -31,6 +31,7 @@ class BooleanFilter extends AbstractAttributeFilter implements AttributeFilterIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addAttributeFilter(
         AttributeInterface $attribute,
         $operator,

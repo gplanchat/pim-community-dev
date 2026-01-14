@@ -18,6 +18,7 @@ class GetCategoryCodesByProductModelCodesIntegration extends TestCase
     /** @var CategoryTreeFixturesLoader */
     private $fixturesLoader;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -216,6 +217,7 @@ class GetCategoryCodesByProductModelCodesIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

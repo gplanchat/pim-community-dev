@@ -12,6 +12,7 @@ use Akeneo\Connectivity\Connection\Application\Webhook\Service\GenerateSecretInt
  */
 class GenerateSecret implements GenerateSecretInterface
 {
+    #[\Override]
     public function generate(): string
     {
         $bytes = \random_bytes(32);

@@ -27,11 +27,13 @@ final class BenchmarkDumbCommand extends Command
 {
     protected static $defaultName = 'akeneo:messenger:benchmark-dumb';
 
+    #[\Override]
     protected function configure(): void
     {
         $this->setHidden(true);
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         return Command::SUCCESS;

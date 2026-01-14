@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class CountLocalizableAndScopableAttributes implements CountQuery
 {
-    private const VOLUME_NAME = 'count_localizable_and_scopable_attributes';
+    private const string VOLUME_NAME = 'count_localizable_and_scopable_attributes';
 
     /** @var Connection */
     private $connection;
@@ -31,6 +31,7 @@ class CountLocalizableAndScopableAttributes implements CountQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): CountVolume
     {
         $sql = <<<SQL

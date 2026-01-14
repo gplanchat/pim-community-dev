@@ -33,11 +33,13 @@ class RequestAppAuthenticationHandlerIntegration extends TestCase
     private UserConsentLoader $userConsentLoader;
     private FakeClock $clock;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -18,6 +18,7 @@ final class CountProductsAndProductModelsWithInheritedRemovedAttribute implement
         $this->elasticsearchClient = $elasticsearchClient;
     }
 
+    #[\Override]
     public function count(array $attributesCodes): int
     {
         $body = [

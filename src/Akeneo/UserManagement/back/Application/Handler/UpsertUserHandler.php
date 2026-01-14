@@ -34,6 +34,7 @@ final class UpsertUserHandler implements UpsertUserHandlerInterface
     ) {
     }
 
+    #[\Override]
     public function handle(UpsertUserCommand $upsertUserCommand): void
     {
         /** @var UserInterface|null $user */

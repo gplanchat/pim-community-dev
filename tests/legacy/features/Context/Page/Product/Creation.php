@@ -24,7 +24,8 @@ class Creation extends Form
      *
      * @throws TimeoutException
      */
-    public function fillField($locator, $value, Element $modal = null)
+    #[\Override]
+    public function fillField($locator, $value, ?Element $modal = null)
     {
         $selectContainers = $this->spin(function () use ($modal) {
             if (null === $modal) {
@@ -56,6 +57,7 @@ class Creation extends Form
      *
      * @return null|Element
      */
+    #[\Override]
     public function findValidationTooltip(string $text)
     {
         return $this->spin(function () use ($text) {

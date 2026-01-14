@@ -20,6 +20,7 @@ class ReferenceDataMultiSelectFilterIntegration extends AbstractProductQueryBuil
     /**
      * @{@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -122,6 +123,7 @@ class ReferenceDataMultiSelectFilterIntegration extends AbstractProductQueryBuil
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

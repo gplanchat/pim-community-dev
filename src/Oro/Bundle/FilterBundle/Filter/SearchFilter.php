@@ -11,6 +11,7 @@ class SearchFilter extends AbstractFilter
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data)
     {
         $data = $this->parseData($data);
@@ -38,6 +39,7 @@ class SearchFilter extends AbstractFilter
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function getFormType()
     {
         return TextFilterType::class;

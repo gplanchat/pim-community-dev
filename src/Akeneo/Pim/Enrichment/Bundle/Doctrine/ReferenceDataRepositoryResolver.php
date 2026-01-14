@@ -30,6 +30,7 @@ class ReferenceDataRepositoryResolver implements ReferenceDataRepositoryResolver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function resolve(string $referenceDataType): ObjectRepository
     {
         $referenceDataConf = $this->configurationRegistry->get($referenceDataType);

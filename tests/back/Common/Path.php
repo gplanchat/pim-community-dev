@@ -74,6 +74,7 @@ final class Path
      *
      * @throws \Exception
      */
+    #[\Override]
     public function __toString(): string
     {
         $path = $this->absolutePath();

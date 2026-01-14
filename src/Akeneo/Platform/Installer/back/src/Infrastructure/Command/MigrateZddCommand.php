@@ -39,11 +39,13 @@ final class MigrateZddCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->setDescription('Execute ZDD Migrations');
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$this->tableExists('pim_one_time_task')) {

@@ -11,6 +11,7 @@ class NumberFilter extends AbstractFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getFormType()
     {
         return NumberFilterType::class;
@@ -19,6 +20,7 @@ class NumberFilter extends AbstractFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data)
     {
         $data = $this->parseData($data);
@@ -78,6 +80,7 @@ class NumberFilter extends AbstractFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMetadata()
     {
         $metadata = parent::getMetadata();

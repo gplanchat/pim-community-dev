@@ -14,7 +14,7 @@ class Version_7_0_20230201143500_set_product_identifier_nullable_Integration ext
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20230201143500_set_product_identifier_nullable';
+    private const string MIGRATION_LABEL = '_7_0_20230201143500_set_product_identifier_nullable';
 
     public function test_it_set_the_identifier_column_nullable()
     {
@@ -24,6 +24,7 @@ class Version_7_0_20230201143500_set_product_identifier_nullable_Integration ext
         Assert::assertTrue($this->isColumnNullable('pim_catalog_product', 'identifier'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -25,6 +25,7 @@ abstract class EnrichmentProductModelTestCase extends TestCase
 {
     protected PubSubQueueStatus $pubSubQueueStatus;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ abstract class EnrichmentProductModelTestCase extends TestCase
         $this->pubSubQueueStatus->flushJobQueue();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

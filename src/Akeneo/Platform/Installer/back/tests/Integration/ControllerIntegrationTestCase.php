@@ -18,6 +18,7 @@ abstract class ControllerIntegrationTestCase extends WebTestCase
     protected WebClientHelper $webClientHelper;
     protected FilePersistedFeatureFlags $featureFlags;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -42,6 +43,7 @@ abstract class ControllerIntegrationTestCase extends WebTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         $this->ensureKernelShutdown();

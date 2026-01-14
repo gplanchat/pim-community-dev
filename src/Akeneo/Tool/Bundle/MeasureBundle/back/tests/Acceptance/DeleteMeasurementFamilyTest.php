@@ -28,6 +28,7 @@ class DeleteMeasurementFamilyTest extends AcceptanceTestCase
     private DeleteMeasurementFamilyHandler $deleteMeasurementFamilyHandler;
     private InMemoryIsThereAtLeastOneAttributeConfiguredWithMeasurementFamilyStub $isThereAtLeastOneAttributeConfiguredWithMeasurementFamily;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

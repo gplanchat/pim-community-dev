@@ -12,6 +12,7 @@ use Akeneo\Pim\Enrichment\Category\API\Query\GetOwnedCategories;
  */
 final class DummyGetOwnedCategories implements GetOwnedCategories
 {
+    #[\Override]
     public function forUserId(array $categoryCodes, int $userId): array
     {
         return $categoryCodes;

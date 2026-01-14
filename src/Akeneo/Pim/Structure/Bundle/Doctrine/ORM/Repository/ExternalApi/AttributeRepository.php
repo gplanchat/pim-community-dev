@@ -33,6 +33,7 @@ class AttributeRepository extends EntityRepository implements AttributeRepositor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->attributeRepository->findOneByIdentifier($identifier);
@@ -48,6 +49,7 @@ class AttributeRepository extends EntityRepository implements AttributeRepositor
      *
      * @return array
      */
+    #[\Override]
     public function searchAfterOffset(array $searchFilters, array $orders, $limit, $offset)
     {
         $qb = $this->createQueryBuilder('r');
@@ -69,6 +71,7 @@ class AttributeRepository extends EntityRepository implements AttributeRepositor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(array $searchFilters = [])
     {
         try {
@@ -87,6 +90,7 @@ class AttributeRepository extends EntityRepository implements AttributeRepositor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return $this->attributeRepository->getIdentifierProperties();
@@ -95,6 +99,7 @@ class AttributeRepository extends EntityRepository implements AttributeRepositor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierCode()
     {
         return $this->attributeRepository->getIdentifierCode();
@@ -103,6 +108,7 @@ class AttributeRepository extends EntityRepository implements AttributeRepositor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMediaAttributeCodes()
     {
         return $this->attributeRepository->findMediaAttributeCodes();

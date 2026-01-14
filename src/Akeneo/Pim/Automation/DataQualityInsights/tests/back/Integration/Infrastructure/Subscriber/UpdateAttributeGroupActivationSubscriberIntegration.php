@@ -11,6 +11,7 @@ use Akeneo\Test\Integration\TestCase;
 
 final class UpdateAttributeGroupActivationSubscriberIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

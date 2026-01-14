@@ -21,7 +21,7 @@ use Akeneo\Pim\Automation\DataQualityInsights\Domain\ValueObject\ProductEntityId
  */
 final class ComputeProductsEnrichmentStatusQuery implements ComputeProductsKeyIndicator
 {
-    private const GOOD_ENRICHMENT_RATIO = 80;
+    private const int GOOD_ENRICHMENT_RATIO = 80;
 
     public function __construct(
         private GetLocalesByChannelQueryInterface                        $getLocalesByChannelQuery,
@@ -29,6 +29,7 @@ final class ComputeProductsEnrichmentStatusQuery implements ComputeProductsKeyIn
     ) {
     }
 
+    #[\Override]
     public function getCode(): KeyIndicatorCode
     {
         return new KeyIndicatorCode(ProductsWithGoodEnrichment::CODE);
@@ -37,6 +38,7 @@ final class ComputeProductsEnrichmentStatusQuery implements ComputeProductsKeyIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function compute(ProductEntityIdCollection $entityIdCollection): array
     {
         $channelsLocales = $this->getLocalesByChannelQuery->getArray();

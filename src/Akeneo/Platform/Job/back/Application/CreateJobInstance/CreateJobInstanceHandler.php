@@ -23,24 +23,25 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  * @copyright 2022 Akeneo SAS (https://www.akeneo.com)
  * @license https://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
-final class CreateJobInstanceHandler implements CreateJobInstanceHandlerInterface
+final readonly class CreateJobInstanceHandler implements CreateJobInstanceHandlerInterface
 {
-    private const IMPORT_TYPE = 'import';
-    private const EXPORT_TYPE = 'export';
-    private const CREATE_EXPORT_JOB_ACL = 'pim_importexport_export_profile_create';
-    private const CREATE_IMPORT_JOB_ACL = 'pim_importexport_import_profile_create';
+    private const string IMPORT_TYPE = 'import';
+    private const string EXPORT_TYPE = 'export';
+    private const string CREATE_EXPORT_JOB_ACL = 'pim_importexport_export_profile_create';
+    private const string CREATE_IMPORT_JOB_ACL = 'pim_importexport_import_profile_create';
 
     public function __construct(
-        private readonly JobInstanceFactory $jobInstanceFactory,
-        private readonly JobRegistry $jobRegistry,
-        private readonly JobParametersFactory $jobParametersFactory,
-        private readonly JobParametersValidator $jobParametersValidator,
-        private readonly ValidatorInterface $validator,
-        private readonly SaverInterface $jobInstanceSaver,
-        private readonly SecurityFacadeInterface $securityFacade,
+        private JobInstanceFactory $jobInstanceFactory,
+        private JobRegistry $jobRegistry,
+        private JobParametersFactory $jobParametersFactory,
+        private JobParametersValidator $jobParametersValidator,
+        private ValidatorInterface $validator,
+        private SaverInterface $jobInstanceSaver,
+        private SecurityFacadeInterface $securityFacade,
     ) {
     }
 
+    #[\Override]
     public function handle(CreateJobInstanceCommand $command): void
     {
         $this->checkUserHasPrivilege($command->type);

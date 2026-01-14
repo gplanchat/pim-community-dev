@@ -23,6 +23,7 @@ class UpdateCustomAppSecretQueryIntegration extends TestCase
     private ?UpdateCustomAppSecretQuery $updateCustomAppSecretQuery;
     private ?Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -32,6 +33,7 @@ class UpdateCustomAppSecretQueryIntegration extends TestCase
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

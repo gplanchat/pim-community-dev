@@ -114,6 +114,7 @@ class SqlGetValuesOfSiblingsIntegration extends TestCase
     //         - apollon_optiona_true
     //         - apollon_optiona_false
     //     - sub_sweat_option_b
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -197,6 +198,7 @@ class SqlGetValuesOfSiblingsIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

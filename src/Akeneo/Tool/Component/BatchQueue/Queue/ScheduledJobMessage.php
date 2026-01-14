@@ -19,6 +19,7 @@ class ScheduledJobMessage implements ScheduledJobMessageInterface
     ) {
     }
 
+    #[\Override]
     public static function createScheduledJobMessage(
         string $jobCode,
         array $options
@@ -26,6 +27,7 @@ class ScheduledJobMessage implements ScheduledJobMessageInterface
         return new static($jobCode, $options);
     }
 
+    #[\Override]
     public static function createFromNormalized(array $normalized): ScheduledJobMessageInterface
     {
         return new static(
@@ -34,21 +36,25 @@ class ScheduledJobMessage implements ScheduledJobMessageInterface
         );
     }
 
+    #[\Override]
     public function getJobCode(): string
     {
         return $this->jobCode;
     }
 
+    #[\Override]
     public function getOptions(): array
     {
         return $this->options;
     }
 
+    #[\Override]
     public function getTenantId(): ?string
     {
         return $this->tenantId;
     }
 
+    #[\Override]
     public function setTenantId(string $tenantId): void
     {
         $this->tenantId = $tenantId;

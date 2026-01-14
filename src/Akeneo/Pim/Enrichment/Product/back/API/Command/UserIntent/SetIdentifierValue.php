@@ -16,16 +16,19 @@ class SetIdentifierValue implements ValueUserIntent
     ) {
     }
 
+    #[\Override]
     public function attributeCode(): string
     {
         return $this->attributeCode;
     }
 
+    #[\Override]
     public function localeCode(): ?string
     {
         return null;
     }
 
+    #[\Override]
     public function channelCode(): ?string
     {
         return null;

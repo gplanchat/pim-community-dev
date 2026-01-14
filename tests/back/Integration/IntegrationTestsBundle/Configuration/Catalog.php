@@ -17,6 +17,7 @@ class Catalog implements CatalogInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function useTechnicalSqlCatalog(): Configuration
     {
         $catalogDirectories = [
@@ -34,6 +35,7 @@ class Catalog implements CatalogInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function useTechnicalCatalog(array $featureFlags = []): Configuration
     {
         $catalogDirectories = [
@@ -51,6 +53,7 @@ class Catalog implements CatalogInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function useMinimalCatalog(array $featureFlags = []): Configuration
     {
         $catalogDirectories = [
@@ -68,6 +71,7 @@ class Catalog implements CatalogInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function useFunctionalCatalog(string $catalog, array $featureFlags = []): Configuration
     {
         $catalogDirectories = [

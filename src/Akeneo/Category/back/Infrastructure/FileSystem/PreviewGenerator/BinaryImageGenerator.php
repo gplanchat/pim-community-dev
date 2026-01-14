@@ -14,13 +14,14 @@ use Akeneo\Category\Domain\ValueObject\Attribute\AttributeType;
  */
 class BinaryImageGenerator extends AbstractPreviewGenerator
 {
-    private const DEFAULT_IMAGE = 'pim_category.default_image.image';
+    private const string DEFAULT_IMAGE = 'pim_category.default_image.image';
     public const SUPPORTED_TYPES = [
         PreviewGeneratorRegistry::THUMBNAIL_TYPE => 'am_binary_image_thumbnail_category',
         PreviewGeneratorRegistry::THUMBNAIL_SMALL_TYPE => 'am_binary_image_thumbnail_small_category',
         PreviewGeneratorRegistry::PREVIEW_TYPE => 'am_binary_image_preview_category',
     ];
 
+    #[\Override]
     public function supports(string $data, Attribute $attribute, string $type): bool
     {
         return $attribute instanceof AttributeImage
@@ -28,11 +29,13 @@ class BinaryImageGenerator extends AbstractPreviewGenerator
             && array_key_exists($type, self::SUPPORTED_TYPES);
     }
 
+    #[\Override]
     protected function getPreviewType(string $type): string
     {
         return self::SUPPORTED_TYPES[$type];
     }
 
+    #[\Override]
     protected function defaultImage(): string
     {
         return self::DEFAULT_IMAGE;

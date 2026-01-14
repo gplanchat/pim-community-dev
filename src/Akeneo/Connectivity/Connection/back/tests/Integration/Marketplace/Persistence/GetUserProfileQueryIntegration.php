@@ -30,6 +30,7 @@ class GetUserProfileQueryIntegration extends TestCase
         Assert::assertNull($profile);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -38,6 +39,7 @@ class GetUserProfileQueryIntegration extends TestCase
         $this->dbalConnection = self::getContainer()->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

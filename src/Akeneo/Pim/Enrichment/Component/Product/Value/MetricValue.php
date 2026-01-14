@@ -28,11 +28,13 @@ class MetricValue extends AbstractValue implements MetricValueInterface
 
     /**
      */
+    #[\Override]
     public function getData(): ?MetricInterface
     {
         return $this->data;
     }
 
+    #[\Override]
     public function getAmount(): ?string
     {
         return $this->data->getData();
@@ -41,6 +43,7 @@ class MetricValue extends AbstractValue implements MetricValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUnit(): ?string
     {
         return $this->data->getUnit();
@@ -49,6 +52,7 @@ class MetricValue extends AbstractValue implements MetricValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         if (null !== $this->data && (null !== $data = $this->data->getData())) {
@@ -61,6 +65,7 @@ class MetricValue extends AbstractValue implements MetricValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof MetricValueInterface ||

@@ -34,6 +34,7 @@ class FakeWebMarketplaceApi implements WebMarketplaceApiInterface
         $this->extensions = $extensions;
     }
 
+    #[\Override]
     public function getExtensions(int $offset = 0, int $limit = 10): array
     {
         return [
@@ -64,6 +65,7 @@ class FakeWebMarketplaceApi implements WebMarketplaceApiInterface
         $this->apps = $apps;
     }
 
+    #[\Override]
     public function getApps(int $offset = 0, int $limit = 10): array
     {
         return [
@@ -74,11 +76,13 @@ class FakeWebMarketplaceApi implements WebMarketplaceApiInterface
         ];
     }
 
+    #[\Override]
     public function getApp(string $id): ?array
     {
         return \array_filter($this->apps, fn (array $app): bool => $app['id'] === $id)[0] ?? null;
     }
 
+    #[\Override]
     public function validateCodeChallenge(string $appId, string $codeIdentifier, string $codeChallenge): bool
     {
         return $this->codeChallengeResult;

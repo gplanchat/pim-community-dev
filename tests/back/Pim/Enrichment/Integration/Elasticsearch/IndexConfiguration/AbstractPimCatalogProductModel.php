@@ -101,6 +101,7 @@ abstract class AbstractPimCatalogProductModel extends AbstractPimCatalogTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function addDocuments()
     {
         $rootProductModels = [

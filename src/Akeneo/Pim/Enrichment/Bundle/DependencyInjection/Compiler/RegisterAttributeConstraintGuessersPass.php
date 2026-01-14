@@ -24,6 +24,7 @@ class RegisterAttributeConstraintGuessersPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition(self::SERVICE_CHAINED)) {

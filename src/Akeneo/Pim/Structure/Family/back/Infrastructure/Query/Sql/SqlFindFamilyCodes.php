@@ -20,6 +20,7 @@ class SqlFindFamilyCodes implements FindFamilyCodes
     ) {
     }
 
+    #[\Override]
     public function fromQuery(FamilyQuery $query): array
     {
         $searchLocaleCondition = null !== $query->search?->labelLocale ? 'AND translation.locale = :locale_code' : '';

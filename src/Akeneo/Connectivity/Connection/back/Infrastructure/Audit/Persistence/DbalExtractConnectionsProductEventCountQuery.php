@@ -27,6 +27,7 @@ class DbalExtractConnectionsProductEventCountQuery implements ExtractConnections
     /**
      * @return HourlyEventCount[]
      */
+    #[\Override]
     public function extractCreatedProductsByConnection(HourlyInterval $hourlyInterval): array
     {
         $sqlQuery = <<<SQL
@@ -75,6 +76,7 @@ SQL;
     /**
      * @return HourlyEventCount[]
      */
+    #[\Override]
     public function extractUpdatedProductsByConnection(HourlyInterval $hourlyInterval): array
     {
         $sqlQuery = <<<SQL

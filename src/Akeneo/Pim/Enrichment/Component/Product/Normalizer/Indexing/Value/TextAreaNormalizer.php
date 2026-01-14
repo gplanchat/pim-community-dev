@@ -18,6 +18,7 @@ class TextAreaNormalizer extends AbstractProductValueNormalizer implements Norma
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         if (! $data instanceof ValueInterface) {
@@ -34,6 +35,7 @@ class TextAreaNormalizer extends AbstractProductValueNormalizer implements Norma
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         $textAreaValue = $value->getData();

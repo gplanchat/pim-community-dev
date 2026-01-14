@@ -26,6 +26,7 @@ final class UpdateConnectedAppRoleWithScopes implements UpdateConnectedAppRoleWi
     ) {
     }
 
+    #[\Override]
     public function execute(string $appId, array $scopes): void
     {
         $appRole = $this->getAppRole($appId);

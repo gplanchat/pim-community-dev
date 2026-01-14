@@ -19,6 +19,7 @@ class SqlGetProductUuids implements GetProductUuids
     {
     }
 
+    #[\Override]
     public function fromIdentifier(string $identifier): ?UuidInterface
     {
         $uuids = $this->fromIdentifiers([$identifier]);
@@ -26,6 +27,7 @@ class SqlGetProductUuids implements GetProductUuids
         return $uuids[$identifier] ?? null;
     }
 
+    #[\Override]
     public function fromIdentifiers(array $identifiers): array
     {
         if (empty($identifiers)) {
@@ -59,11 +61,13 @@ SQL,
         return $indexedUuidsByIdentifier;
     }
 
+    #[\Override]
     public function fromUuid(UuidInterface $uuid): ?UuidInterface
     {
         return $this->fromUuids([$uuid])[$uuid->toString()] ?? null;
     }
 
+    #[\Override]
     public function fromUuids(array $uuids): array
     {
         if ([] === $uuids) {

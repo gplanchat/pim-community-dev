@@ -20,6 +20,7 @@ class ElasticsearchBusinessErrorRepository implements BusinessErrorRepositoryInt
     {
     }
 
+    #[\Override]
     public function bulkInsert(ConnectionCode $connectionCode, array $businessErrors): void
     {
         if (0 === \count($businessErrors)) {

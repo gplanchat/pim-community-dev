@@ -25,6 +25,7 @@ class SearchEventSubscriptionLogsEndToEnd extends WebTestCase
     private FakeClock $clock;
     private EventSubscriptionLogLoader $eventSubscriptionLogLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -141,6 +142,7 @@ class SearchEventSubscriptionLogsEndToEnd extends WebTestCase
         $this->eventSubscriptionLogLoader->bulkInsert($logs);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

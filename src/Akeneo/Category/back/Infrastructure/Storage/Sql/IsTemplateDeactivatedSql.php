@@ -18,6 +18,7 @@ class IsTemplateDeactivatedSql implements IsTemplateDeactivated
     {
     }
 
+    #[\Override]
     public function __invoke(TemplateUuid $templateUuid): bool
     {
         $query = <<<SQL

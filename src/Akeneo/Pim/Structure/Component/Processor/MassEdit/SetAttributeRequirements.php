@@ -58,6 +58,7 @@ class SetAttributeRequirements extends AbstractProcessor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($family)
     {
         $actions = $this->getConfiguredActions();

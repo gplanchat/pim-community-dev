@@ -13,6 +13,7 @@ class GetProductQuantifiedAssociationsByProductUuidsIntegration extends Abstract
 {
     use QuantifiedAssociationsTestCaseTrait;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -389,6 +390,7 @@ SQL;
         return $this->get('Akeneo\Pim\Enrichment\Bundle\Storage\Sql\Product\QuantifiedAssociation\GetProductQuantifiedAssociationsByProductUuids');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

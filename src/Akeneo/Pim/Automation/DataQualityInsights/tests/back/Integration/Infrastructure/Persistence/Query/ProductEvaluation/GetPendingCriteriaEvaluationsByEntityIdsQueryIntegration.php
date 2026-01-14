@@ -22,6 +22,7 @@ final class GetPendingCriteriaEvaluationsByEntityIdsQueryIntegration extends Dat
 
     private CriterionEvaluationRepositoryInterface $productModelCriterionEvaluationRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

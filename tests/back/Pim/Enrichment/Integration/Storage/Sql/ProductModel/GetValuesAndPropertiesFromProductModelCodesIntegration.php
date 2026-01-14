@@ -20,12 +20,13 @@ use Webmozart\Assert\Assert;
  */
 class GetValuesAndPropertiesFromProductModelCodesIntegration extends TestCase
 {
-    private const CREATED = '2012-10-05 22:49:48';
-    private const UPDATED = '2012-10-28 23:50:49';
+    private const string CREATED = '2012-10-05 22:49:48';
+    private const string UPDATED = '2012-10-28 23:50:49';
 
     /** @var EntityBuilder */
     private $entityBuilder;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -146,6 +147,7 @@ class GetValuesAndPropertiesFromProductModelCodesIntegration extends TestCase
         return $this->get('akeneo.pim.enrichment.product_model.query.get_values_and_properties_from_product_model_codes');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

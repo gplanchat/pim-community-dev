@@ -31,6 +31,7 @@ class SqlGetProductCompletenessRatioIntegration extends TestCase
     /** @var GetProductCompletenessRatio */
     private $getProductCompletenessRatio;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -82,6 +83,7 @@ class SqlGetProductCompletenessRatioIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

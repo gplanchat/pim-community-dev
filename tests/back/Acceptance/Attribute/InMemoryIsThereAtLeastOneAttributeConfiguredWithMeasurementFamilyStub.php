@@ -16,10 +16,11 @@ class InMemoryIsThereAtLeastOneAttributeConfiguredWithMeasurementFamilyStub exte
 {
     private $result = false;
 
-    public function __construct(Connection $connection = null)
+    public function __construct(?Connection $connection = null)
     {
     }
 
+    #[\Override]
     public function execute(string $metricFamilyCode): bool
     {
         return $this->result;

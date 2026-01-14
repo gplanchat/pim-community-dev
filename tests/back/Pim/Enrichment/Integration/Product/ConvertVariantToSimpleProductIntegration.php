@@ -104,12 +104,14 @@ class ConvertVariantToSimpleProductIntegration extends TestCase
         $this->assertQuantifiedAssociations($productFromDb, $expectedQuantifiedAssociations);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->loadFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -12,11 +12,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230120154546_add_identifier_generator_sequence_table extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'This migration adds the "pim_catalog_identifier_generator_sequence" table';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(<<<SQL
@@ -34,6 +36,7 @@ SQL
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

@@ -17,6 +17,7 @@ use Webmozart\Assert\Assert;
  */
 final class GetExistingAttributeOptionCodesFromOptionCodesSqlIntegration extends TestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -104,6 +105,7 @@ final class GetExistingAttributeOptionCodesFromOptionCodesSqlIntegration extends
     /**
      * @return Configuration
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

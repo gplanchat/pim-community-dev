@@ -24,6 +24,7 @@ final class CleanRemovedAttribute implements ConstraintCollectionProviderInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection([
@@ -40,6 +41,7 @@ final class CleanRemovedAttribute implements ConstraintCollectionProviderInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return in_array($job->getName(), $this->supportedJobNames);

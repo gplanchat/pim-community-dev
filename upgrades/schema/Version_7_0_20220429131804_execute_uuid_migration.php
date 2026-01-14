@@ -13,11 +13,13 @@ use Symfony\Component\Console\Output\BufferedOutput;
 
 final class Version_7_0_20220429131804_execute_uuid_migration extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Execute command to migrate from id to uuid';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql('SELECT "disable migration warning"');
@@ -39,6 +41,7 @@ final class Version_7_0_20220429131804_execute_uuid_migration extends AbstractMi
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

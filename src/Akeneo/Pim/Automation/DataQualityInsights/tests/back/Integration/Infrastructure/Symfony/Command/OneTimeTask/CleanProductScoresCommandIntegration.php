@@ -24,8 +24,9 @@ final class CleanProductScoresCommandIntegration extends DataQualityInsightsTest
 {
     use OneTimeTaskCommandTrait;
 
-    private const COMMAND_NAME = 'pim:data-quality-insights:clean-product-scores';
+    private const string COMMAND_NAME = 'pim:data-quality-insights:clean-product-scores';
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

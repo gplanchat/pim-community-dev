@@ -19,6 +19,7 @@ final class StorageHydrator implements StorageHydratorInterface
     {
     }
 
+    #[\Override]
     public function hydrate(array $normalizedStorage): StorageInterface|NoneStorage
     {
         foreach ($this->storageHydrators as $storageHydrator) {
@@ -30,6 +31,7 @@ final class StorageHydrator implements StorageHydratorInterface
         throw new \LogicException(sprintf('No storage hydrator found for the given storage: %s', json_encode($normalizedStorage)));
     }
 
+    #[\Override]
     public function supports(array $normalizedStorage): bool
     {
         foreach ($this->storageHydrators as $storageHydrator) {

@@ -145,6 +145,7 @@ class RemoveAttributeOptionIntegration extends TestCase
     /**
      * @return Configuration
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

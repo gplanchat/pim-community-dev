@@ -17,6 +17,7 @@ final class SqlIsCategoryTreeLinkedToUserIntegration extends TestCase
 {
     private SqlIsCategoryTreeLinkedToUser $isCategoryTreeLinkedToUser;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -50,6 +51,7 @@ final class SqlIsCategoryTreeLinkedToUserIntegration extends TestCase
         $this->assertFalse($isLinked);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

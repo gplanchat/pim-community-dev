@@ -21,6 +21,7 @@ class ConfigurationRegistry implements ConfigurationRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(ReferenceDataConfigurationInterface $configuration, $name)
     {
         $configuration->setName($name);
@@ -32,6 +33,7 @@ class ConfigurationRegistry implements ConfigurationRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function registerRaw(array $rawConfiguration, $name)
     {
         $this->checkRawConfiguration($rawConfiguration);
@@ -46,6 +48,7 @@ class ConfigurationRegistry implements ConfigurationRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function get($name)
     {
         return self::$configurations[$name];
@@ -54,6 +57,7 @@ class ConfigurationRegistry implements ConfigurationRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function has($name)
     {
         return isset(self::$configurations[$name]);
@@ -62,6 +66,7 @@ class ConfigurationRegistry implements ConfigurationRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function all()
     {
         return self::$configurations;
@@ -70,6 +75,7 @@ class ConfigurationRegistry implements ConfigurationRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function unregister($name)
     {
         unset(self::$configurations[$name]);

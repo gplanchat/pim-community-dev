@@ -10,11 +10,12 @@ use PHPStan\Analyser\Scope;
 
 final class FinalControllerRule extends AbstractControllerRule
 {
-    private const ERROR_MESSAGE = 'Controller must be final';
+    private const string ERROR_MESSAGE = 'Controller must be final';
 
     /**
      * @param Class_ $node
      */
+    #[\Override]
     public function processNode(Node $node, Scope $scope): array
     {
         if (!$this->isInControllerNamespace($scope)) {

@@ -20,6 +20,7 @@ class ChainedFilter implements CollectionFilterInterface, ObjectFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filterCollection($collection, $type, array $options = [])
     {
         if (isset($this->collectionFilters[$type])) {
@@ -40,6 +41,7 @@ class ChainedFilter implements CollectionFilterInterface, ObjectFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsCollection($collection, $type, array $options = [])
     {
         return false;
@@ -48,6 +50,7 @@ class ChainedFilter implements CollectionFilterInterface, ObjectFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filterObject($view, $type, array $options = [])
     {
         if (isset($this->objectFilters[$type])) {
@@ -66,6 +69,7 @@ class ChainedFilter implements CollectionFilterInterface, ObjectFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsObject($collection, $type, array $options = [])
     {
         return false;

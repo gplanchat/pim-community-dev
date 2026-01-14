@@ -13,6 +13,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class AkeneoMessengerBundle extends Bundle
 {
+    #[\Override]
     public function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(new RegisterProcessHandlersCompilerPass());

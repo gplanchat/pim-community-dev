@@ -17,6 +17,7 @@ class SqlGetFamilyTranslations implements GetFamilyTranslations
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byFamilyCodesAndLocale(array $familyCodes, string $locale): array
     {
         if (empty($familyCodes)) {

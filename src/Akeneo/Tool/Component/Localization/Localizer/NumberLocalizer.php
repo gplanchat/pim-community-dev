@@ -43,6 +43,7 @@ class NumberLocalizer implements LocalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function localize($number, array $options = [])
     {
         if (!is_numeric($number)) {
@@ -76,6 +77,7 @@ class NumberLocalizer implements LocalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function delocalize($number, array $options = [])
     {
         if (null === $number || '' === $number) {
@@ -97,6 +99,7 @@ class NumberLocalizer implements LocalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($number, $attributeCode, array $options = [])
     {
         if (null === $number || ''  === $number || is_int($number) || is_float($number)) {
@@ -120,6 +123,7 @@ class NumberLocalizer implements LocalizerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($attributeType)
     {
         return in_array($attributeType, $this->attributeTypes);

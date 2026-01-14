@@ -20,6 +20,7 @@ class PimFormatterExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
     }
@@ -27,6 +28,7 @@ class PimFormatterExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConfigKey()
     {
         return "pim_formatter";
@@ -35,6 +37,7 @@ class PimFormatterExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize(ExtensionManager $extensionManager)
     {
         $outputExtension = $extensionManager->getExtension('formatters');
@@ -44,6 +47,7 @@ class PimFormatterExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configure(ArrayNodeDefinition $builder)
     {
     }
@@ -51,6 +55,7 @@ class PimFormatterExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function load(ContainerBuilder $container, array $config)
     {
     }

@@ -22,6 +22,7 @@ class CreateUserIntegration extends TestCase
     private ?CreateUserGroup $createUserGroup;
     private ?UserRepositoryInterface $userRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -31,6 +32,7 @@ class CreateUserIntegration extends TestCase
         $this->userRepository = $this->get('pim_user.repository.user');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

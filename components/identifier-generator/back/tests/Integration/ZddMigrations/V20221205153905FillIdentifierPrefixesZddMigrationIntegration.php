@@ -84,6 +84,7 @@ class V20221205153905FillIdentifierPrefixesZddMigrationIntegration extends TestC
         ], $prefixesAfterMigration);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

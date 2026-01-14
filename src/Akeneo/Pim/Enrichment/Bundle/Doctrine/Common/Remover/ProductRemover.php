@@ -30,6 +30,7 @@ final class ProductRemover implements RemoverInterface, BulkRemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function remove($product, array $options = [])
     {
         Assert::implementsInterface($product, ProductInterface::class);
@@ -49,6 +50,7 @@ final class ProductRemover implements RemoverInterface, BulkRemoverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeAll(array $products, array $options = [])
     {
         if (empty($products)) {

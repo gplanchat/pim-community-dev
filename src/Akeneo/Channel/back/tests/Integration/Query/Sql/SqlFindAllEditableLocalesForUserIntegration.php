@@ -11,6 +11,7 @@ final class SqlFindAllEditableLocalesForUserIntegration extends TestCase
 {
     private FindAllEditableLocalesForUser $sqlFindAllEditableLocalesForUser;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -32,6 +33,7 @@ final class SqlFindAllEditableLocalesForUserIntegration extends TestCase
         $this->assertContainsOnlyInstancesOf(Locale::class, $results);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

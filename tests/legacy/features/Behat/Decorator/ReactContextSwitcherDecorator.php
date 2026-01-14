@@ -25,6 +25,7 @@ class ReactContextSwitcherDecorator extends ContextSwitcherDecorator
         'fr_FR' => 'français (France)',
     ];
 
+    #[\Override]
     public function switchLocale(string $localeCode): void
     {
         $localeButton = $this->getLocaleButton();
@@ -69,6 +70,7 @@ class ReactContextSwitcherDecorator extends ContextSwitcherDecorator
     /**
      * @return string
      */
+    #[\Override]
     public function getSelectedLocale()
     {
         $localeButton = $this->getLocaleButton();

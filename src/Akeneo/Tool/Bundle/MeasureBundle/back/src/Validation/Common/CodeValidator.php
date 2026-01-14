@@ -15,8 +15,9 @@ use Symfony\Component\Validator\Validation;
 
 class CodeValidator extends ConstraintValidator
 {
-    private const MAX_CODE_LENGTH = 100;
+    private const int MAX_CODE_LENGTH = 100;
 
+    #[\Override]
     public function validate($code, Constraint $constraint)
     {
         $validator = Validation::createValidator();

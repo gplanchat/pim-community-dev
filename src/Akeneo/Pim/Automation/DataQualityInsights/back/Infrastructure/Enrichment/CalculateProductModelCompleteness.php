@@ -40,6 +40,7 @@ class CalculateProductModelCompleteness implements CalculateProductCompletenessI
         $this->productModelRepository = $productModelRepository;
     }
 
+    #[\Override]
     public function calculate(ProductEntityIdInterface $productModelId): CompletenessCalculationResult
     {
         if (!$productModelId instanceof ProductModelId) {

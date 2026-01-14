@@ -19,6 +19,7 @@ class GetChannelActiveLocaleCodesIntegration extends TestCase
         $this->assertSame(['en_US', 'zh_CN'], $localeCodes);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

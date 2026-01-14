@@ -27,11 +27,13 @@ final class CriterionEvaluationCollection implements \IteratorAggregate, \Counta
         return $this;
     }
 
+    #[\Override]
     public function getIterator(): \Iterator
     {
         return new \ArrayIterator($this->criteriaEvaluations);
     }
 
+    #[\Override]
     public function count(): int
     {
         return count($this->criteriaEvaluations);

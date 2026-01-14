@@ -21,16 +21,19 @@ final class SetImageValue implements ValueUserIntent
         Assert::stringNotEmpty($this->imagePath);
     }
 
+    #[\Override]
     public function attributeCode(): string
     {
         return $this->attributeCode;
     }
 
+    #[\Override]
     public function channelCode(): ?string
     {
         return $this->channelCode;
     }
 
+    #[\Override]
     public function localeCode(): ?string
     {
         return $this->localeCode;

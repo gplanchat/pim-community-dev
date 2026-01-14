@@ -24,6 +24,7 @@ final class AuthenticateCommandAsAdminUserListenerIntegration extends TestCase
 {
     private TokenStorageInterface $tokenStorage;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -59,6 +60,7 @@ final class AuthenticateCommandAsAdminUserListenerIntegration extends TestCase
         $this->assertAuthenticatedUserNameEquals('not_system_user');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

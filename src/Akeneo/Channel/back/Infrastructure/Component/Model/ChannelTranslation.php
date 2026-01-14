@@ -22,6 +22,7 @@ class ChannelTranslation extends AbstractTranslation implements ChannelTranslati
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->label = $label;
@@ -32,6 +33,7 @@ class ChannelTranslation extends AbstractTranslation implements ChannelTranslati
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         return $this->label;

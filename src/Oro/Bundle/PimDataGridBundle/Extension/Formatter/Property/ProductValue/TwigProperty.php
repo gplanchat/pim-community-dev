@@ -26,6 +26,7 @@ class TwigProperty extends FieldProperty
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function convertValue($value)
     {
         if ($value) {

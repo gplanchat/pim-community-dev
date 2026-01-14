@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\Reference;
 class RegisterProductQueryFilterPass implements CompilerPassInterface
 {
     /** @staticvar integer */
-    private const DEFAULT_PRIORITY = 25;
+    private const int DEFAULT_PRIORITY = 25;
 
     /** @var string */
     private $type;
@@ -32,6 +32,7 @@ class RegisterProductQueryFilterPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $registryTag = sprintf('pim_catalog.query.filter.%s_registry', $this->type);

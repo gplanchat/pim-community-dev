@@ -17,6 +17,7 @@ final class SaveRevokedAccessTokensOfDisconnectedAppQuery implements SaveRevoked
     ) {
     }
 
+    #[\Override]
     public function execute(string $appId): void
     {
         $query = <<<SQL

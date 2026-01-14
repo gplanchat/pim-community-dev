@@ -27,6 +27,7 @@ class CollectDomainErrorFromProductEndpointEndToEnd extends ApiTestCase
     private ?ProductLoader $productLoader;
     private ?Client $elasticsearch;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ class CollectDomainErrorFromProductEndpointEndToEnd extends ApiTestCase
         $this->elasticsearch = $this->get('akeneo_connectivity.client.connection_error');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

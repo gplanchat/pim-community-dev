@@ -27,6 +27,7 @@ class CurrencyRepository extends EntityRepository implements DatagridRepositoryI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $qb = $this->createQueryBuilder('c');

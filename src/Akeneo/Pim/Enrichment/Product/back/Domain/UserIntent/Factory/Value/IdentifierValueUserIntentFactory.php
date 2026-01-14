@@ -16,11 +16,13 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  */
 class IdentifierValueUserIntentFactory implements ValueUserIntentFactory
 {
+    #[\Override]
     public function getSupportedAttributeTypes(): array
     {
         return [AttributeTypes::IDENTIFIER];
     }
 
+    #[\Override]
     public function create(string $attributeType, string $attributeCode, mixed $data): ValueUserIntent
     {
         if (!\is_array($data)) {

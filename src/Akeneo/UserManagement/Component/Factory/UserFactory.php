@@ -74,6 +74,7 @@ class UserFactory implements SimpleFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create()
     {
         $user = new $this->userClass();

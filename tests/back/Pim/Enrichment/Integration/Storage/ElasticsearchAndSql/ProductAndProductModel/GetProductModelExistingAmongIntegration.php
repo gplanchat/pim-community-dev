@@ -13,6 +13,7 @@ use Akeneo\Test\Integration\TestCase;
  */
 final class GetProductModelExistingAmongIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ final class GetProductModelExistingAmongIntegration extends TestCase
         return $this->get(GetExistingProductModelCodes::class);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

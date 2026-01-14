@@ -15,6 +15,7 @@ use Ramsey\Uuid\UuidInterface;
  */
 final class GetProductNotSynchronisedBetweenEsAndMysqlIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -57,6 +58,7 @@ SQL;
         return $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

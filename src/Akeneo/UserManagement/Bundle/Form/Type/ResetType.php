@@ -11,8 +11,8 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class ResetType extends AbstractType
 {
-    private const PASSWORD_MINIMUM_LENGTH = 8;
-    private const PASSWORD_MAXIMUM_LENGTH = 4096;
+    private const int PASSWORD_MINIMUM_LENGTH = 8;
+    private const int PASSWORD_MAXIMUM_LENGTH = 4096;
 
     /**
      * @var string
@@ -30,6 +30,7 @@ class ResetType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add(
@@ -53,6 +54,7 @@ class ResetType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
@@ -66,6 +68,7 @@ class ResetType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_user_reset';

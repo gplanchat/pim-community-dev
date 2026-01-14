@@ -28,6 +28,7 @@ class DefaultViewDataTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function transform($value)
     {
         if (null === $value) {
@@ -46,6 +47,7 @@ class DefaultViewDataTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function reverseTransform($value)
     {
         if (null === $value) {

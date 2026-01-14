@@ -17,7 +17,7 @@ class Version_6_0_20210816123500_add_index_migration_table_Integration extends T
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20210816123500_add_index_migration_table';
+    private const string MIGRATION_LABEL = '_6_0_20210816123500_add_index_migration_table';
 
     public function test_it_creates_the_index_migration_table(): void
     {
@@ -45,6 +45,7 @@ class Version_6_0_20210816123500_add_index_migration_table_Integration extends T
         Assert::assertEquals($expectedColumnsAndTypes, $actualColumnsAndTypes);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

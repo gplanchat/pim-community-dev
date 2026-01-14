@@ -22,6 +22,7 @@ class ProduceProductEventEndToEnd extends ApiTestCase
 
     private ProductLoader $productLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -94,6 +95,7 @@ JSON;
         $this->assertEventCount(1, ProductRemoved::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

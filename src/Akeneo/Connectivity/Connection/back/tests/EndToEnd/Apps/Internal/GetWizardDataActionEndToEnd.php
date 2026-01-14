@@ -396,6 +396,7 @@ class GetWizardDataActionEndToEnd extends WebTestCase
         ], \json_decode($response->getContent(), true, 512, JSON_THROW_ON_ERROR));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -412,6 +413,7 @@ class GetWizardDataActionEndToEnd extends WebTestCase
         $this->loadAppsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -9,6 +9,7 @@ class InMemoryPublishJobToQueue implements PublishJobToQueueInterface
 {
     private int $lastId = 0;
 
+    #[\Override]
     public function publish(string $jobInstanceCode, array $config, bool $noLog = false, ?string $username = null, ?array $emails = []): JobExecution
     {
         return new FakeJobExecution(++$this->lastId);

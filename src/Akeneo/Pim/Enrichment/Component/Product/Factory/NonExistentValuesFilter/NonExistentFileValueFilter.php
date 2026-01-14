@@ -32,6 +32,7 @@ final class NonExistentFileValueFilter implements NonExistentValuesFilter
      *
      * @return OnGoingFilteredRawValues
      */
+    #[\Override]
     public function filter(OnGoingFilteredRawValues $onGoingFilteredRawValues): OnGoingFilteredRawValues
     {
         $filteredFiles = $this->filterByType($onGoingFilteredRawValues, AttributeTypes::FILE);

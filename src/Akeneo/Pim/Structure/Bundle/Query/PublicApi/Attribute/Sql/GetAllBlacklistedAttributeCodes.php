@@ -16,6 +16,7 @@ final class GetAllBlacklistedAttributeCodes implements GetAllBlacklistedAttribut
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(): array
     {
         $sql = <<<SQL

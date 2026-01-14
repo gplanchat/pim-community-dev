@@ -36,6 +36,7 @@ class OrmFilterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isApplicable(DatagridConfiguration $config)
     {
         $filters = $config->offsetGetByPath(Configuration::COLUMNS_PATH, []);
@@ -50,6 +51,7 @@ class OrmFilterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function processConfigs(DatagridConfiguration $config)
     {
         // validate extension configuration
@@ -62,6 +64,7 @@ class OrmFilterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitDatasource(DatagridConfiguration $config, DatasourceInterface $datasource)
     {
         $filters = $this->getFiltersToApply($config);
@@ -87,6 +90,7 @@ class OrmFilterExtension extends AbstractExtension
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function visitMetadata(DatagridConfiguration $config, MetadataIterableObject $data)
     {
         $filtersState = $data->offsetGetByPath('[state][filters]', []);

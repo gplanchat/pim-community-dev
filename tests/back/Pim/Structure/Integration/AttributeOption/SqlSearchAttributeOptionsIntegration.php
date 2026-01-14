@@ -15,6 +15,7 @@ final class SqlSearchAttributeOptionsIntegration extends TestCase
 {
     private SqlSearchAttributeOptions $sqlSearchAttributeOptions;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -256,6 +257,7 @@ final class SqlSearchAttributeOptionsIntegration extends TestCase
         ], $searchResult->normalize());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

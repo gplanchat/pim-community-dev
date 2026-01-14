@@ -17,6 +17,7 @@ class SqlGetAssociationTypeTranslations implements GetAssociationTypeTranslation
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byAssociationTypeCodeAndLocale(array $associationTypeCodes, string $locale): array
     {
         if (empty($associationTypeCodes)) {

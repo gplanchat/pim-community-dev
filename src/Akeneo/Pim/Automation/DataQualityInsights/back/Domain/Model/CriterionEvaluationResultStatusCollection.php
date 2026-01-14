@@ -41,6 +41,7 @@ final class CriterionEvaluationResultStatusCollection implements \IteratorAggreg
         });
     }
 
+    #[\Override]
     public function getIterator(): \Iterator
     {
         return $this->resultsStatus->getIterator();

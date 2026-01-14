@@ -26,6 +26,7 @@ class GetEvaluableAttributesByProductModelQuery implements GetEvaluableAttribute
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function execute(ProductEntityIdInterface $productModelId): array
     {
         $query = <<<SQL

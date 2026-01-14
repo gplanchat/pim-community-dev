@@ -12,7 +12,7 @@ use Akeneo\Pim\Structure\Component\AttributeTypes;
  */
 final class AttributeType
 {
-    public const EVALUABLE_ATTRIBUTE_TYPES = [
+    public const array EVALUABLE_ATTRIBUTE_TYPES = [
         AttributeTypes::TEXT,
         AttributeTypes::TEXTAREA,
         AttributeTypes::OPTION_SIMPLE_SELECT,
@@ -27,6 +27,7 @@ final class AttributeType
         $this->type = $code;
     }
 
+    #[\Override]
     public function __toString()
     {
         return $this->type;

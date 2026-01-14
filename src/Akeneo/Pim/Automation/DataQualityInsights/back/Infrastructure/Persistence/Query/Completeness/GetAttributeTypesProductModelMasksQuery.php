@@ -23,6 +23,7 @@ class GetAttributeTypesProductModelMasksQuery implements GetProductModelAttribut
         $this->attributeTypes = array_map(fn ($code) => (string)$code, $attributeTypes);
     }
 
+    #[\Override]
     public function execute(ProductModelId $productModelId): ?RequiredAttributesMask
     {
         $sql = <<<SQL

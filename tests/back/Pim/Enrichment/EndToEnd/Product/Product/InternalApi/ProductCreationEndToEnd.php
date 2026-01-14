@@ -18,6 +18,7 @@ class ProductCreationEndToEnd extends InternalApiTestCase
 {
     private GetConnectorProducts $getConnectorProductsQuery;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -66,6 +67,7 @@ class ProductCreationEndToEnd extends InternalApiTestCase
         $this->assertSame(Response::HTTP_OK, $response->getStatusCode());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

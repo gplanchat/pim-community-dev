@@ -18,6 +18,7 @@ final class SqlCreateJobInstance implements CreateJobInstanceInterface
     {
     }
 
+    #[\Override]
     public function createJobInstance(array $params): int
     {
         $sql = 'INSERT IGNORE INTO akeneo_batch_job_instance 

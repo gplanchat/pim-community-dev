@@ -380,6 +380,7 @@ class ChangeVariantFamilyStructureIntegration extends TestCase
         $this->assertNull($product->getValuesForVariation()->getByCodes('weight'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -396,6 +397,7 @@ class ChangeVariantFamilyStructureIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

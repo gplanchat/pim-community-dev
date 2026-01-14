@@ -27,6 +27,7 @@ class DateRangeFilterType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return self::NAME;
@@ -35,6 +36,7 @@ class DateRangeFilterType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return FilterType::class;
@@ -43,6 +45,7 @@ class DateRangeFilterType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $operatorChoices = [
@@ -74,6 +77,7 @@ class DateRangeFilterType extends AbstractType
      * @param FormInterface $form
      * @param array         $options
      */
+    #[\Override]
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['type_values'] = $options['type_values'];

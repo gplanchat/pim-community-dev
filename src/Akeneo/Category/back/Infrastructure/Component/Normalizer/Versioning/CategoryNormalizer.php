@@ -39,6 +39,7 @@ class CategoryNormalizer implements NormalizerInterface, CacheableSupportsMethod
      *
      * @return array
      */
+    #[\Override]
     public function normalize($category, $format = null, array $context = [])
     {
         $standardCategory = $this->standardNormalizer->normalize($category, 'standard', $context);
@@ -53,11 +54,13 @@ class CategoryNormalizer implements NormalizerInterface, CacheableSupportsMethod
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof CategoryInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

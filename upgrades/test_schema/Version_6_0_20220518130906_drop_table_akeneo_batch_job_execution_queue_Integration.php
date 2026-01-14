@@ -19,15 +19,17 @@ class Version_6_0_20220518130906_drop_table_akeneo_batch_job_execution_queue_Int
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20220518130906_drop_table_akeneo_batch_job_execution_queue';
+    private const string MIGRATION_LABEL = '_6_0_20220518130906_drop_table_akeneo_batch_job_execution_queue';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

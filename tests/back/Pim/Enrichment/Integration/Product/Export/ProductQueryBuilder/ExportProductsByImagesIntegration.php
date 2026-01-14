@@ -11,6 +11,7 @@ class ExportProductsByImagesIntegration extends AbstractExportTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createProductWithUuid('0bca8f20-be4c-4b9e-ba12-877cc29f6072', [

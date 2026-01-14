@@ -44,6 +44,7 @@ class MetricAttributeCopier extends AbstractAttributeCopier
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function copyAttributeData(
         EntityWithValuesInterface $fromEntityWithValues,
         EntityWithValuesInterface $toEntityWithValues,

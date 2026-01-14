@@ -22,11 +22,13 @@ class IsConnectionsNumberLimitReachedQueryIntegration extends TestCase
     private IsConnectionsNumberLimitReachedQuery $connectionsNumberLimitReachedQuery;
     private GetConnectionsNumberLimit $getConnectionsNumberLimit;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

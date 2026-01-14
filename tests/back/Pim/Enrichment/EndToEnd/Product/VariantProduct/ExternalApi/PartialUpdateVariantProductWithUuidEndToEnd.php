@@ -32,6 +32,7 @@ class PartialUpdateVariantProductWithUuidEndToEnd extends AbstractProductTestCas
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -1216,7 +1217,7 @@ JSON;
           "a_localizable_image": [{
               "locale": "zh_CN",
               "scope": null,
-              "data": "${akeneoJpgPath}"
+              "data": "{$akeneoJpgPath}"
           }],
           "a_yes_no": [
             {
@@ -1927,6 +1928,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

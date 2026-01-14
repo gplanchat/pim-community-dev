@@ -16,6 +16,7 @@ class PartialUpdateListProductModelEndToEnd extends AbstractProductModelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -343,6 +344,7 @@ JSON;
      * @param array  $expectedProductModel normalized data of the product model that should be created
      * @param string $code                 code of the product model that should be created
      */
+    #[\Override]
     protected function assertSameProductModels(array $expectedProductModel, $code)
     {
         $productModel = $this->get('pim_catalog.repository.product_model')->findOneByIdentifier($code);
@@ -390,6 +392,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

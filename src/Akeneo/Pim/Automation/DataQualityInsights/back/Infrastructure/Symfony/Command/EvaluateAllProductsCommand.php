@@ -23,8 +23,8 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  */
 final class EvaluateAllProductsCommand extends Command
 {
-    private const LIMIT_PER_LOOP = 1000;
-    private const DEFAULT_BULK_SIZE = 100;
+    private const int LIMIT_PER_LOOP = 1000;
+    private const int DEFAULT_BULK_SIZE = 100;
 
     protected static $defaultName = 'pim:data-quality-insights:evaluate-all-products';
     protected static $defaultDescription = 'Evaluate all products and product models having pending criteria.';
@@ -39,12 +39,14 @@ final class EvaluateAllProductsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->setHidden(true);
         $this->addOption('bulk-size', null, InputOption::VALUE_REQUIRED, sprintf('Bulk size (%d by default)', self::DEFAULT_BULK_SIZE));
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);

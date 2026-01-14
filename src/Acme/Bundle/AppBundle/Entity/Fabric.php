@@ -59,6 +59,7 @@ class Fabric extends AbstractReferenceData implements ReferenceDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getLabelProperty()
     {
         return 'name';

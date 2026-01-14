@@ -139,6 +139,7 @@ class GetSystemInformationEndToEnd extends ApiTestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

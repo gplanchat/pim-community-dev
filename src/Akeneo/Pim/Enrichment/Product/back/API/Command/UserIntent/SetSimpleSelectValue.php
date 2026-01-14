@@ -21,16 +21,19 @@ class SetSimpleSelectValue implements ValueUserIntent
         Assert::stringNotEmpty($value);
     }
 
+    #[\Override]
     public function attributeCode(): string
     {
         return $this->attributeCode;
     }
 
+    #[\Override]
     public function localeCode(): ?string
     {
         return $this->localeCode;
     }
 
+    #[\Override]
     public function channelCode(): ?string
     {
         return $this->channelCode;

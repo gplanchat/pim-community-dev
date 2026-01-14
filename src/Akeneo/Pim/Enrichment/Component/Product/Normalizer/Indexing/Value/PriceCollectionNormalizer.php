@@ -19,6 +19,7 @@ class PriceCollectionNormalizer extends AbstractProductValueNormalizer implement
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof PriceCollectionValue && (
@@ -26,6 +27,7 @@ class PriceCollectionNormalizer extends AbstractProductValueNormalizer implement
         );
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -34,6 +36,7 @@ class PriceCollectionNormalizer extends AbstractProductValueNormalizer implement
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         $currencyIndexedPrices = [];

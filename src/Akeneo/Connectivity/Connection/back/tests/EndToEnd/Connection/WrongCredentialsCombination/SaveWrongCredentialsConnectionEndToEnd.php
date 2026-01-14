@@ -86,6 +86,7 @@ class SaveWrongCredentialsConnectionEndToEnd extends ApiTestCase
         return $repository->findAll(new \DateTimeImmutable('now - 1 day', new \DateTimeZone('UTC')));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

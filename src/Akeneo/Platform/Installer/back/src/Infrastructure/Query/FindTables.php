@@ -21,6 +21,7 @@ class FindTables implements FindTablesInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function all(): array
     {
         return $this->connection->executeQuery(

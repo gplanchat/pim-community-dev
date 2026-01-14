@@ -19,6 +19,7 @@ final class AckMessageEventListenerTest extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         static::bootKernel(['debug' => false, 'environment' => 'test_fake']);
@@ -32,6 +33,7 @@ final class AckMessageEventListenerTest extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         $this->ensureKernelShutdown();

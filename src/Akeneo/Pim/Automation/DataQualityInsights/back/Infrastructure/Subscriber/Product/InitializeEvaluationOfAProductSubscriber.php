@@ -28,6 +28,7 @@ final class InitializeEvaluationOfAProductSubscriber implements EventSubscriberI
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

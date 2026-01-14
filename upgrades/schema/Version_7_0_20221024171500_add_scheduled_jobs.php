@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20221024171500_add_scheduled_jobs extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addScheduledJob(
@@ -43,6 +44,7 @@ final class Version_7_0_20221024171500_add_scheduled_jobs extends AbstractMigrat
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

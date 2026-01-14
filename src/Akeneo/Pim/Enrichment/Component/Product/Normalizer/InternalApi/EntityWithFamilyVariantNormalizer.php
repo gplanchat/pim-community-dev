@@ -96,6 +96,7 @@ class EntityWithFamilyVariantNormalizer implements NormalizerInterface, Cacheabl
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($entity, $format = null, array $context = []): array
     {
         if (!$entity instanceof ProductModelInterface && !$entity instanceof ProductInterface) {
@@ -137,11 +138,13 @@ class EntityWithFamilyVariantNormalizer implements NormalizerInterface, Cacheabl
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof EntityWithFamilyVariantInterface && in_array($format, $this->supportedFormat);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

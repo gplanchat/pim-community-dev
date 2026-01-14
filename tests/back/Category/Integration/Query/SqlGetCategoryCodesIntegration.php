@@ -17,6 +17,7 @@ final class SqlGetCategoryCodesIntegration extends EnrichmentProductTestCase
 {
     private SqlGetCategoryCodes $sqlGetCategoryCodes;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

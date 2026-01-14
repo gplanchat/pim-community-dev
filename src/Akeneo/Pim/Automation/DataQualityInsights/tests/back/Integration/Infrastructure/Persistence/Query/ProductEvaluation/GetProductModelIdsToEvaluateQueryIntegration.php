@@ -22,6 +22,7 @@ class GetProductModelIdsToEvaluateQueryIntegration extends DataQualityInsightsTe
 
     private CriterionEvaluationRepositoryInterface $productModelCriterionEvaluationRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

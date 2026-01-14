@@ -15,11 +15,13 @@ class CategoriesUserIntentFactory implements UserIntentFactory
 {
     use ValidateDataTrait;
 
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['categories'];
     }
 
+    #[\Override]
     public function create(string $fieldName, mixed $data): array
     {
         if (null === $data) {

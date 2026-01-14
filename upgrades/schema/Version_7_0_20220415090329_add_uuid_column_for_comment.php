@@ -9,14 +9,16 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220415090329_add_uuid_column_for_comment extends AbstractMigration
 {
-    private const TABLE_NAME = 'pim_comment_comment';
-    private const COLUMN_NAME = 'resource_uuid';
+    private const string TABLE_NAME = 'pim_comment_comment';
+    private const string COLUMN_NAME = 'resource_uuid';
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Add uuid column for pim_comment_comment table';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         if ($this->columnExists(self::TABLE_NAME, self::COLUMN_NAME)) {
@@ -34,6 +36,7 @@ final class Version_7_0_20220415090329_add_uuid_column_for_comment extends Abstr
         $this->addSql($addUuidColumnQuery);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

@@ -90,6 +90,7 @@ final class GetProductUuidsIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -105,6 +106,7 @@ final class GetProductUuidsIntegration extends TestCase
         $this->createProduct($this->uuidBar, 'bar');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

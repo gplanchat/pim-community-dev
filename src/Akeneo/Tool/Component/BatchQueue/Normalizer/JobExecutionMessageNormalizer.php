@@ -21,6 +21,7 @@ final class JobExecutionMessageNormalizer implements NormalizerInterface, Denorm
     {
     }
 
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof JobExecutionMessageInterface;
@@ -29,6 +30,7 @@ final class JobExecutionMessageNormalizer implements NormalizerInterface, Denorm
     /**
      * @param JobExecutionMessageInterface $jobExecutionMessage
      */
+    #[\Override]
     public function normalize($jobExecutionMessage, $format = null, array $context = []): array
     {
         Assert::implementsInterface($jobExecutionMessage, JobExecutionMessageInterface::class);
@@ -44,6 +46,7 @@ final class JobExecutionMessageNormalizer implements NormalizerInterface, Denorm
         ];
     }
 
+    #[\Override]
     public function supportsDenormalization($data, $type, $format = null): bool
     {
         return is_subclass_of($type, JobExecutionMessageInterface::class);
@@ -52,6 +55,7 @@ final class JobExecutionMessageNormalizer implements NormalizerInterface, Denorm
     /**
      * @param array $data The normalized JobExecution message
      */
+    #[\Override]
     public function denormalize(
         $data,
         string $jobMessageClass,

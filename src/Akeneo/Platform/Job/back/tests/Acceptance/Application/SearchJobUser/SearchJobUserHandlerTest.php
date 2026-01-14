@@ -15,6 +15,7 @@ class SearchJobUserHandlerTest extends AcceptanceTestCase
     private InMemorySearchJobUser $searchJobUser;
     private SearchJobUserHandler $handler;
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->searchJobUser = $this->get(SearchJobUserInterface::class);

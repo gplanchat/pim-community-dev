@@ -23,16 +23,19 @@ class InMemoryFamilyRepository implements IdentifiableObjectRepositoryInterface,
         $this->families = new ArrayCollection($families);
     }
 
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
     }
 
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->families->get($identifier);
     }
 
+    #[\Override]
     public function save($object, array $options = [])
     {
         if (!$object instanceof FamilyInterface) {
@@ -42,52 +45,62 @@ class InMemoryFamilyRepository implements IdentifiableObjectRepositoryInterface,
         $this->families->set($object->getCode(), $object);
     }
 
+    #[\Override]
     public function getFullRequirementsQB(FamilyInterface $family, $localeCode)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
-    public function getFullFamilies(FamilyInterface $family = null, ChannelInterface $channel = null)
+    #[\Override]
+    public function getFullFamilies(?FamilyInterface $family = null, ?ChannelInterface $channel = null)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findByIds(array $familyIds)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function hasAttribute($id, $attributeCode)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findAll()
     {
         return $this->families->toArray();
     }
 
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);
     }
 
-    public function getWithVariants(string $search = null, array $options = [], int $limit = null): array
+    #[\Override]
+    public function getWithVariants(?string $search = null, array $options = [], ?int $limit = null): array
     {
         throw new NotImplementedException(__METHOD__);
     }

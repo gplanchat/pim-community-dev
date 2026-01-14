@@ -24,6 +24,7 @@ class LocaleUpdater implements ObjectUpdaterInterface
      *     'code' => 'en_US'
      * ]
      */
+    #[\Override]
     public function update($locale, array $data, array $options = [])
     {
         if (!$locale instanceof LocaleInterface) {

@@ -36,6 +36,7 @@ class UserControllerEndToEnd extends ControllerEndToEndTestCase
     private readonly UpdateUserCommandHandler $updateUserCommandHandler;
     private readonly UserProvider $userProvider;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -430,6 +431,7 @@ class UserControllerEndToEnd extends ControllerEndToEndTestCase
         $this->cacheClearer->clear();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

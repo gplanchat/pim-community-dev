@@ -29,6 +29,7 @@ final class ApiAggregatorForAttributePostSaveEventSubscriber implements EventSub
         $this->eventsAttributes = [];
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -41,6 +41,7 @@ class PriceCollectionMaskItemGenerator implements MaskItemGeneratorForAttributeT
      * this mask generator "guesses" the required family mask by fetching the activated currencies per channel
      * and build the mask accordingly
      */
+    #[\Override]
     public function forRawValue(string $attributeCode, string $channelCode, string $localeCode, $value): array
     {
         $filledCurrencies = [];
@@ -78,6 +79,7 @@ class PriceCollectionMaskItemGenerator implements MaskItemGeneratorForAttributeT
         return $masks;
     }
 
+    #[\Override]
     public function supportedAttributeTypes(): array
     {
         return [AttributeTypes::PRICE_COLLECTION];

@@ -24,6 +24,7 @@ class RegenerateCustomAppSecretEndToEnd extends WebTestCase
     private ?Connection $connection;
     private ?CustomAppLoader $customAppLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -32,6 +33,7 @@ class RegenerateCustomAppSecretEndToEnd extends WebTestCase
         $this->customAppLoader = $this->get(CustomAppLoader::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

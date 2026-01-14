@@ -12,6 +12,7 @@ class BooleanFilter extends ChoiceFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getFormType()
     {
         return BooleanFilterType::class;
@@ -20,6 +21,7 @@ class BooleanFilter extends ChoiceFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data)
     {
         $data = $this->parseData($data);
@@ -59,6 +61,7 @@ class BooleanFilter extends ChoiceFilter
      *
      * @return array|bool
      */
+    #[\Override]
     public function parseData($data)
     {
         $allowedValues = [BooleanFilterType::TYPE_YES, BooleanFilterType::TYPE_NO];

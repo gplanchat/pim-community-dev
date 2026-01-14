@@ -32,6 +32,7 @@ class CheckJobUniqueStep extends AbstractStep
         parent::__construct($name, $eventDispatcher, $jobRepository);
     }
 
+    #[\Override]
     protected function doExecute(StepExecution $stepExecution): void
     {
         $jobCode = $stepExecution->getJobExecution()->getJobInstance()->getCode();

@@ -113,6 +113,7 @@ class VersioningControllerIntegration extends WebTestCase
         return \intval($id);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient(['environment' => 'test', 'debug' => false]);
@@ -141,7 +142,7 @@ class VersioningControllerIntegration extends WebTestCase
         array $routeArguments = [],
         string $method = 'GET',
         array $parameters = [],
-        string $content = null,
+        ?string $content = null,
     ): void {
         $headers = [
             'HTTP_X-Requested-With' => 'XMLHttpRequest',

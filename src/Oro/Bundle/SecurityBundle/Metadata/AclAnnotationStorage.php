@@ -230,6 +230,7 @@ class AclAnnotationStorage implements \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function serialize()
     {
         $data = [];
@@ -248,6 +249,7 @@ class AclAnnotationStorage implements \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function unserialize($serialized)
     {
         list(

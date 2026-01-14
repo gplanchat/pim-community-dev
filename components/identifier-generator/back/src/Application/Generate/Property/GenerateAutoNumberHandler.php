@@ -22,6 +22,7 @@ final class GenerateAutoNumberHandler implements GeneratePropertyHandlerInterfac
     ) {
     }
 
+    #[\Override]
     public function __invoke(
         PropertyInterface $autoNumber,
         IdentifierGenerator $identifierGenerator,
@@ -34,6 +35,7 @@ final class GenerateAutoNumberHandler implements GeneratePropertyHandlerInterfac
         return \str_pad('' . $nextIdentifier, $autoNumber->digitsMin(), '0', STR_PAD_LEFT);
     }
 
+    #[\Override]
     public function getPropertyClass(): string
     {
         return AutoNumber::class;

@@ -33,6 +33,7 @@ class DbalSelectErrorCountPerConnectionQueryIntegration extends TestCase
     /** @var SelectErrorCountPerConnectionQueryInterface */
     private $selectErrorCountPerConnectionQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -76,6 +77,7 @@ class DbalSelectErrorCountPerConnectionQueryIntegration extends TestCase
         Assert::assertEqualsCanonicalizing($expectedResult, $result);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

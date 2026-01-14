@@ -25,6 +25,7 @@ class ConsumeProductModelEventEndToEnd extends ApiTestCase
     private Author $referenceAuthor;
     private GuzzleJsonHistoryContainer $historyContainer;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -117,6 +118,7 @@ class ConsumeProductModelEventEndToEnd extends ApiTestCase
         $this->assertEquals($this->expectedProductModelRemovedPayload(), $requestContent);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

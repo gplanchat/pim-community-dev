@@ -32,6 +32,7 @@ class DatePresenter implements PresenterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function present($value, array $options = [])
     {
         if (null === $value || '' === $value) {
@@ -58,6 +59,7 @@ class DatePresenter implements PresenterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($attributeType)
     {
         return in_array($attributeType, $this->attributeTypes);

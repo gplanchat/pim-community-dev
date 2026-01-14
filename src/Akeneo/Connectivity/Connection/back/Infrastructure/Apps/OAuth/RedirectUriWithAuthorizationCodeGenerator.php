@@ -17,6 +17,7 @@ class RedirectUriWithAuthorizationCodeGenerator implements RedirectUriWithAuthor
     {
     }
 
+    #[\Override]
     public function generate(
         AppAuthorization $appAuthorization,
         AppConfirmation $appConfirmation,

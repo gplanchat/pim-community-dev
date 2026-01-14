@@ -18,6 +18,7 @@ class StandardUnitCodeOperationShouldBeMultiplyByOneValidator extends Constraint
     /**
      * @param CreateMeasurementFamilyCommand $saveMeasurementFamily
      */
+    #[\Override]
     public function validate($saveMeasurementFamily, Constraint $constraint)
     {
         $standardUnit = $this->standardUnit($saveMeasurementFamily);

@@ -85,6 +85,7 @@ class DocumentTypeIntegration extends AbstractPimCatalogTestCase
     /**
      * This method indexes dummy products in elastic search.
      */
+    #[\Override]
     protected function addDocuments()
     {
         $products = [

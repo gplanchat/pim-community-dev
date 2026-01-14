@@ -156,6 +156,7 @@ class GetWeeklyAuditActionEndToEnd extends WebTestCase
         Assert::assertEquals($expectedResult, $result);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

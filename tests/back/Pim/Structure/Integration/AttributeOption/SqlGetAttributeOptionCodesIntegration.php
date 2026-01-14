@@ -13,6 +13,7 @@ final class SqlGetAttributeOptionCodesIntegration extends TestCase
 {
     private SqlGetAttributeOptionCodes $sqlGetAttributeOptionCodes;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -40,6 +41,7 @@ final class SqlGetAttributeOptionCodesIntegration extends TestCase
         self::assertSame([], $attributeOptionCodes);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -10,6 +10,7 @@ class ExportProductsByCategoriesIntegration extends AbstractExportTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createProduct('product_with_categories', [

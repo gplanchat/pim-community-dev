@@ -16,14 +16,16 @@ class Version_7_0_20220907143028_add_connection_webhook_is_using_uuid_flag_Integ
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220907143028_add_connection_webhook_is_using_uuid_flag';
+    private const string MIGRATION_LABEL = '_7_0_20220907143028_add_connection_webhook_is_using_uuid_flag';
     private ?Connection $connection = null;
 
+    #[\Override]
     protected function getConfiguration(): ?Configuration
     {
         return null;
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

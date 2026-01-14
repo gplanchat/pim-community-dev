@@ -52,6 +52,7 @@ class RestoreAdminRolePermissionsIntegration extends TestCase
         ($this->get(RestoreAdminRolePermissions::class))(false);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

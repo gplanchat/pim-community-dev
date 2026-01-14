@@ -32,6 +32,7 @@ abstract class AbstractAttributeType implements AttributeTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBackendType()
     {
         return $this->backendType;
@@ -40,6 +41,7 @@ abstract class AbstractAttributeType implements AttributeTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isUnique()
     {
         return false;

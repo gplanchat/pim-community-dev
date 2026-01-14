@@ -44,6 +44,7 @@ final class FillMissingProductValues implements FillMissingValuesInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromStandardFormat(array $productStandardFormat): array
     {
         $familyCode = $productStandardFormat['family'];

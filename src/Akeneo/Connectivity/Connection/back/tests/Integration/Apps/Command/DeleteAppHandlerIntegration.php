@@ -18,6 +18,7 @@ class DeleteAppHandlerIntegration extends TestCase
     private ConnectedAppLoader $connectedAppLoader;
     private DeleteAppHandler $deleteAppHandler;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -27,6 +28,7 @@ class DeleteAppHandlerIntegration extends TestCase
         $this->deleteAppHandler = $this->get(DeleteAppHandler::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

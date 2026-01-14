@@ -24,6 +24,7 @@ final class RemoveMultiReferenceEntityValueApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, RemoveMultiReferenceEntityValue::class);
@@ -66,6 +67,7 @@ final class RemoveMultiReferenceEntityValueApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [RemoveMultiReferenceEntityValue::class];

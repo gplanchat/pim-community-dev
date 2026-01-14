@@ -14,6 +14,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class DownloadProductPdfEndToEnd extends InternalApiTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -91,6 +92,7 @@ class DownloadProductPdfEndToEnd extends InternalApiTestCase
         Assert::assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -29,6 +29,7 @@ final class AscendantCategories implements AscendantCategoriesInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoryIds(EntityWithFamilyVariantInterface $entity): array
     {
         $result = [];

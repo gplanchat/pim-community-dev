@@ -37,6 +37,7 @@ class GetCompletenessPerChannelAndLocale implements GetCompletenessPerChannelAnd
     /**
      * @inheritdoc
      */
+    #[\Override]
     public function fetch(string $translationLocaleCode): CompletenessWidget
     {
         $categoriesCodeAndLocalesByChannel = $this->getCategoriesCodesAndLocalesByChannel();

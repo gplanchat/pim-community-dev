@@ -17,6 +17,7 @@ class DeleteAccessTokensQuery implements DeleteAccessTokensQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $appId): int
     {
         $query = <<<SQL

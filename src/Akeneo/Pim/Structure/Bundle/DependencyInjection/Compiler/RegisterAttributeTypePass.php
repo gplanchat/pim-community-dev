@@ -24,6 +24,7 @@ class RegisterAttributeTypePass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition(self::ATTRIBUTE_TYPE_REGISTRY)) {

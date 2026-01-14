@@ -25,6 +25,7 @@ class GetAttributeTypesMasksQuery implements GetRequiredAttributesMasks
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function fromFamilyCodes(array $familyCodes): array
     {
         $sql = <<<SQL

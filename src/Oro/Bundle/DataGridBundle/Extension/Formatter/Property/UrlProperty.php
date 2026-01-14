@@ -25,6 +25,7 @@ class UrlProperty extends AbstractProperty
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRawValue(ResultRecordInterface $record)
     {
         $route = $this->router->generate(

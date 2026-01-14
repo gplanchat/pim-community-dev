@@ -17,7 +17,7 @@ use Pim\Behat\Context\PimContext;
  */
 class UserContext extends PimContext
 {
-    private const LABEL_ACL_MAPPING = [
+    private const array LABEL_ACL_MAPPING = [
         'Manage Apps' => 'akeneo_connectivity_connection_manage_apps',
     ];
 

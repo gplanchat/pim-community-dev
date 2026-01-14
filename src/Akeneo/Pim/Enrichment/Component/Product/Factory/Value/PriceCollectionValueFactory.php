@@ -18,6 +18,7 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  */
 final class PriceCollectionValueFactory implements ValueFactory
 {
+    #[\Override]
     public function createWithoutCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         $sortedData = $this->sortByCurrency($data);
@@ -44,6 +45,7 @@ final class PriceCollectionValueFactory implements ValueFactory
         return PriceCollectionValue::value($attributeCode, $prices);
     }
 
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_array($data)) {
@@ -85,6 +87,7 @@ final class PriceCollectionValueFactory implements ValueFactory
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::PRICE_COLLECTION;

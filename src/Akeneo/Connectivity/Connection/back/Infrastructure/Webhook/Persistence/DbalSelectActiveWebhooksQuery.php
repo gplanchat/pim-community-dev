@@ -22,6 +22,7 @@ class DbalSelectActiveWebhooksQuery implements SelectActiveWebhooksQueryInterfac
     /**
      * @return ActiveWebhook[]
      */
+    #[\Override]
     public function execute(): array
     {
         $sql = <<<SQL

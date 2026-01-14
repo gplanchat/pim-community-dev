@@ -77,11 +77,13 @@ class ComputeDataRelatedToFamilyProductsTasklet implements TaskletInterface, Ini
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;
@@ -90,6 +92,7 @@ class ComputeDataRelatedToFamilyProductsTasklet implements TaskletInterface, Ini
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute()
     {
         $this->initialize();
@@ -145,6 +148,7 @@ class ComputeDataRelatedToFamilyProductsTasklet implements TaskletInterface, Ini
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize()
     {
         $this->cacheClearer->clear();

@@ -29,6 +29,7 @@ class PurgeMessengerCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -51,6 +52,7 @@ class PurgeMessengerCommand extends Command
             );
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $retentionTime = $input->getOption('retention-time');

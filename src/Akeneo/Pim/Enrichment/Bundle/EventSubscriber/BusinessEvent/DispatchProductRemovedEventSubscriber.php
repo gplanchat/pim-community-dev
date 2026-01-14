@@ -44,6 +44,7 @@ final class DispatchProductRemovedEventSubscriber implements DispatchBufferedPim
         $this->loggerBusinessEvent = $loggerBusinessEvent;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [
@@ -52,6 +53,7 @@ final class DispatchProductRemovedEventSubscriber implements DispatchBufferedPim
         ];
     }
 
+    #[\Override]
     public function createAndDispatchPimEvents(GenericEvent $postSaveEvent): void
     {
         /** @var ProductInterface */
@@ -80,6 +82,7 @@ final class DispatchProductRemovedEventSubscriber implements DispatchBufferedPim
         }
     }
 
+    #[\Override]
     public function dispatchBufferedPimEvents(): void
     {
         if (count($this->events) === 0) {

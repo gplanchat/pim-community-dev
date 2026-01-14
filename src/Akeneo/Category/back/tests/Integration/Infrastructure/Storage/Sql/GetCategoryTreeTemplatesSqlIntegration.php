@@ -20,6 +20,7 @@ class GetCategoryTreeTemplatesSqlIntegration extends CategoryTestCase
 {
     private GetCategoryTreeTemplates $getCategoryTreeTemplates;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

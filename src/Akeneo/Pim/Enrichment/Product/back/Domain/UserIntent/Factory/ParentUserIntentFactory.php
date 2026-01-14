@@ -14,6 +14,7 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  */
 class ParentUserIntentFactory implements UserIntentFactory
 {
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['parent'];
@@ -22,6 +23,7 @@ class ParentUserIntentFactory implements UserIntentFactory
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function create(string $fieldName, mixed $data): array
     {
         if (null === $data || '' === $data) {

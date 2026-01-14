@@ -17,6 +17,7 @@ class DeleteProductWithUuidEndToEnd extends AbstractProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalSqlCatalog();

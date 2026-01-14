@@ -48,6 +48,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -56,6 +57,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setResourceId($resourceId)
     {
         $this->resourceId = $resourceId;
@@ -66,6 +68,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResourceId()
     {
         return $this->resourceId;
@@ -74,6 +77,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setResourceName($resourceName)
     {
         $this->resourceName = $resourceName;
@@ -84,6 +88,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResourceName()
     {
         return $this->resourceName;
@@ -92,6 +97,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAuthor(UserInterface $author)
     {
         $this->author = $author;
@@ -102,6 +108,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAuthor()
     {
         return $this->author;
@@ -110,6 +117,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setBody($body)
     {
         $this->body = $body;
@@ -120,6 +128,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBody()
     {
         return $this->body;
@@ -128,6 +137,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
@@ -138,6 +148,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCreatedAt()
     {
         return $this->createdAt;
@@ -146,6 +157,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setParent(CommentInterface $parent)
     {
         $this->parent = $parent;
@@ -156,6 +168,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent()
     {
         return $this->parent;
@@ -164,6 +177,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRepliedAt(\DateTime $repliedAt)
     {
         $this->repliedAt = $repliedAt;
@@ -174,6 +188,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRepliedAt()
     {
         return $this->repliedAt;
@@ -182,6 +197,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildren()
     {
         return $this->children;
@@ -190,6 +206,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setChildren(ArrayCollection $children)
     {
         $this->children = $children;
@@ -200,6 +217,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setResourceUuid(UuidInterface $resourceUuid): void
     {
         $this->resourceUuid = $resourceUuid;
@@ -208,6 +226,7 @@ class Comment implements CommentInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResourceUuid(): ?UuidInterface
     {
         return $this->resourceUuid;

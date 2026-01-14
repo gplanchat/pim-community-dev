@@ -32,6 +32,7 @@ class SimpleCsvImport implements ConstraintCollectionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection(
@@ -80,6 +81,7 @@ class SimpleCsvImport implements ConstraintCollectionProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return in_array($job->getName(), $this->supportedJobNames);

@@ -18,6 +18,7 @@ class IsCustomAppsNumberLimitReachedActionEndToEnd extends WebTestCase
 {
     private ?CustomAppLoader $customAppLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -25,6 +26,7 @@ class IsCustomAppsNumberLimitReachedActionEndToEnd extends WebTestCase
         $this->customAppLoader = $this->get(CustomAppLoader::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

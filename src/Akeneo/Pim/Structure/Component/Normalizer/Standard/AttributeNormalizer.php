@@ -28,6 +28,7 @@ class AttributeNormalizer implements NormalizerInterface, CacheableSupportsMetho
      *
      * @param AttributeInterface $attribute
      */
+    #[\Override]
     public function normalize($attribute, $format = null, array $context = [])
     {
         $normalizedAttribute = [
@@ -79,11 +80,13 @@ class AttributeNormalizer implements NormalizerInterface, CacheableSupportsMetho
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof AttributeInterface && 'standard' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

@@ -22,6 +22,7 @@ class NotEmptyFamilyValidator extends ConstraintValidator
      *
      * @param ProductInterface $product
      */
+    #[\Override]
     public function validate($product, Constraint $constraint)
     {
         if (!$product instanceof ProductInterface) {

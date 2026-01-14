@@ -75,6 +75,7 @@ final class UploadImageIntegration extends TestCase
         return __DIR__.'/fixtures/'.$fileName;
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

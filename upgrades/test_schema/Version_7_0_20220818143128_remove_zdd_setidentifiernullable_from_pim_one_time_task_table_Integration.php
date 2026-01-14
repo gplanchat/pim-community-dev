@@ -20,6 +20,7 @@ final class Version_7_0_20220818143128_remove_zdd_setidentifiernullable_from_pim
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ final class Version_7_0_20220818143128_remove_zdd_setidentifiernullable_from_pim
     }
 
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

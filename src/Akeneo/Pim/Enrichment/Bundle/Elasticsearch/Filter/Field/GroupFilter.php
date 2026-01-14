@@ -39,6 +39,7 @@ class GroupFilter extends AbstractFieldFilter implements FieldFilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter(
         $field,
         $operator,

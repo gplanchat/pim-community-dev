@@ -45,6 +45,7 @@ final class DispatchProductModelCreatedAndUpdatedEventSubscriber implements Disp
         $this->loggerBusinessEvent = $loggerBusinessEvent;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [
@@ -53,6 +54,7 @@ final class DispatchProductModelCreatedAndUpdatedEventSubscriber implements Disp
         ];
     }
 
+    #[\Override]
     public function createAndDispatchPimEvents(GenericEvent $postSaveEvent): void
     {
         if ($postSaveEvent->hasArgument('force_save') && true === $postSaveEvent->getArgument('force_save')) {
@@ -87,6 +89,7 @@ final class DispatchProductModelCreatedAndUpdatedEventSubscriber implements Disp
         }
     }
 
+    #[\Override]
     public function dispatchBufferedPimEvents(): void
     {
         if (count($this->events) === 0) {

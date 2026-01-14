@@ -10,8 +10,9 @@ class Version_7_0_20220330095652_ensure_locale_codes_for_labels_in_channels_have
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220330095652_ensure_locale_codes_for_labels_in_channels_have_correct_case';
+    private const string MIGRATION_LABEL = '_7_0_20220330095652_ensure_locale_codes_for_labels_in_channels_have_correct_case';
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

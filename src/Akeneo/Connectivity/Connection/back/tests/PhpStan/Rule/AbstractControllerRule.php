@@ -11,11 +11,13 @@ use PHPStan\Rules\Rule;
 
 abstract class AbstractControllerRule implements Rule
 {
+    #[\Override]
     public function getNodeType(): string
     {
         return Class_::class;
     }
 
+    #[\Override]
     abstract public function processNode(Node $node, Scope $scope): array;
 
     protected function isInControllerNamespace(Scope $scope): bool

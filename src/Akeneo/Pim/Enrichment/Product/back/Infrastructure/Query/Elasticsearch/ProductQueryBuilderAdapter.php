@@ -64,6 +64,7 @@ final class ProductQueryBuilderAdapter extends AbstractEntityWithValuesQueryBuil
         $this->setQueryBuilder(new SearchQueryBuilder());
     }
 
+    #[\Override]
     public function buildQuery(?int $userId, ?UuidInterface $searchAfterUuid = null): array
     {
         if (null !== $userId) {

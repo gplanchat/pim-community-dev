@@ -11,8 +11,9 @@ use PHPStan\Rules\Rule;
 
 final class CoverQueryByIntegrationTestRule implements Rule
 {
-    private const ERROR_MESSAGE = 'Query class must be covered by Integration test';
+    private const string ERROR_MESSAGE = 'Query class must be covered by Integration test';
 
+    #[\Override]
     public function getNodeType(): string
     {
         return InClassNode::class;
@@ -21,6 +22,7 @@ final class CoverQueryByIntegrationTestRule implements Rule
     /**
      * @param InClassNode $node
      */
+    #[\Override]
     public function processNode(Node $node, Scope $scope): array
     {
         if (

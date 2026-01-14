@@ -28,6 +28,7 @@ class FileGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAttribute(AttributeInterface $attribute): bool
     {
         return in_array(
@@ -42,6 +43,7 @@ class FileGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessConstraints(AttributeInterface $attribute): array
     {
         $constraints = [];

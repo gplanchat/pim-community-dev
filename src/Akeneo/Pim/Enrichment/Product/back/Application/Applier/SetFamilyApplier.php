@@ -21,12 +21,14 @@ final class SetFamilyApplier implements UserIntentApplier
     ) {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, SetFamily::class);
         $this->productUpdater->update($product, ['family' => $userIntent->familyCode()]);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetFamily::class];

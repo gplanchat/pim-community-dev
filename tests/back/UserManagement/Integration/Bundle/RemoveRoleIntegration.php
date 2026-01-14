@@ -7,6 +7,7 @@ use Akeneo\UserManagement\Component\Exception\ForbiddenToRemoveRoleException;
 
 class RemoveRoleIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -32,6 +33,7 @@ class RemoveRoleIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

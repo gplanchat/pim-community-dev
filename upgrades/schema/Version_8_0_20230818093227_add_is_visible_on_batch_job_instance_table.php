@@ -12,9 +12,10 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230818093227_add_is_visible_on_batch_job_instance_table extends AbstractMigration
 {
-    private const TABLE_NAME = 'akeneo_batch_job_instance';
-    private const IS_VISIBLE_COLUMN = 'is_visible';
+    private const string TABLE_NAME = 'akeneo_batch_job_instance';
+    private const string IS_VISIBLE_COLUMN = 'is_visible';
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         if ($schema->getTable(self::TABLE_NAME)->hasColumn(self::IS_VISIBLE_COLUMN)) {
@@ -28,6 +29,7 @@ final class Version_8_0_20230818093227_add_is_visible_on_batch_job_instance_tabl
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

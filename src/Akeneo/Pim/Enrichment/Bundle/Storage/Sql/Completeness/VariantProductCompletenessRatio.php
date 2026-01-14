@@ -13,13 +13,14 @@ use Doctrine\DBAL\Connection;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class VariantProductCompletenessRatio implements VariantProductRatioInterface
+final readonly class VariantProductCompletenessRatio implements VariantProductRatioInterface
 {
     public function __construct(
-        private readonly Connection $connection,
+        private Connection $connection,
     ) {
     }
 
+    #[\Override]
     public function findComplete(ProductModelInterface $productModel): CompleteVariantProducts
     {
         $completenesses = $this->getCompletenessesFor($productModel);

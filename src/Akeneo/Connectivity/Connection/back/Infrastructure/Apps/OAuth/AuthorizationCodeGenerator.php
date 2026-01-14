@@ -19,7 +19,7 @@ use OAuth2\Model\IOAuth2Client;
  */
 class AuthorizationCodeGenerator implements AuthorizationCodeGeneratorInterface
 {
-    private const AUTH_CODE_LIFETIME = 30;
+    private const int AUTH_CODE_LIFETIME = 30;
 
     public function __construct(
         private ClientManagerInterface $clientManager,
@@ -30,6 +30,7 @@ class AuthorizationCodeGenerator implements AuthorizationCodeGeneratorInterface
     ) {
     }
 
+    #[\Override]
     public function generate(
         AppConfirmation $appConfirmation,
         int $pimUserId,

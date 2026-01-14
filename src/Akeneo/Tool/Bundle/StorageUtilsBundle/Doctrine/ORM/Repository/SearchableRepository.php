@@ -17,6 +17,7 @@ class SearchableRepository extends EntityRepository implements SearchableReposit
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findBySearch($search = null, array $options = [])
     {
         if (method_exists($this, 'getAlias')) {

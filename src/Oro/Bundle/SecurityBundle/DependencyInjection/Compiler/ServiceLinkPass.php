@@ -15,6 +15,7 @@ class ServiceLinkPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $tags = $container->findTaggedServiceIds(self::TAG_NAME);

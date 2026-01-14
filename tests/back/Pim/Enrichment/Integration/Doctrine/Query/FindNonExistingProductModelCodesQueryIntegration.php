@@ -11,6 +11,7 @@ class FindNonExistingProductModelCodesQueryIntegration extends TestCase
     /** @var FindNonExistingProductModelCodesQueryInterface */
     private $findNonExistingProductModelCodesQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -19,6 +20,7 @@ class FindNonExistingProductModelCodesQueryIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

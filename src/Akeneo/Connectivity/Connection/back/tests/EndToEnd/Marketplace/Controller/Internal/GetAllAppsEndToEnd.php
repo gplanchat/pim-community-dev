@@ -20,6 +20,7 @@ class GetAllAppsEndToEnd extends WebTestCase
 {
     private FakeFeatureFlag $marketplaceActivateFeatureFlag;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -28,6 +29,7 @@ class GetAllAppsEndToEnd extends WebTestCase
         $this->loadAppsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

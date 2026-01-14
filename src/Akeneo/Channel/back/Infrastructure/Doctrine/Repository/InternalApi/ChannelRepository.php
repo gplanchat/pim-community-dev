@@ -23,6 +23,7 @@ class ChannelRepository extends EntityRepository implements DatagridRepositoryIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $qb = $this->createQueryBuilder('c');

@@ -16,8 +16,8 @@ use Ramsey\Uuid\UuidInterface;
  */
 final class V20230512143522FillNewCompletenessTableZddMigration implements ZddMigration
 {
-    private const NEW_TABLE = 'pim_catalog_product_completeness';
-    private const LEGACY_TABLE = 'pim_catalog_completeness';
+    private const string NEW_TABLE = 'pim_catalog_product_completeness';
+    private const string LEGACY_TABLE = 'pim_catalog_completeness';
     private bool $shouldLog = true;
 
     public function __construct(
@@ -26,6 +26,7 @@ final class V20230512143522FillNewCompletenessTableZddMigration implements ZddMi
     ) {
     }
 
+    #[\Override]
     public function migrate(): void
     {
         if (!$this->tableExists(self::NEW_TABLE)) {
@@ -56,12 +57,14 @@ final class V20230512143522FillNewCompletenessTableZddMigration implements ZddMi
         $this->log(\sprintf('Migration successful, %d completeness row handled', $migratedRows));
     }
 
+    #[\Override]
     public function migrateNotZdd(): void
     {
         $this->shouldLog = false;
         $this->migrate();
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'FillNewCompletenessTable';

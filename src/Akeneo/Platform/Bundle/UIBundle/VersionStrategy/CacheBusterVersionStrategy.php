@@ -21,6 +21,7 @@ class CacheBusterVersionStrategy implements VersionStrategyInterface
     /**
      * @param string $path
      */
+    #[\Override]
     public function getVersion($path)
     {
         return $this->versionProvider->getPatch();
@@ -29,6 +30,7 @@ class CacheBusterVersionStrategy implements VersionStrategyInterface
     /**
      * @param string $path
      */
+    #[\Override]
     public function applyVersion($path)
     {
         $versioned = sprintf('%s?%s', ltrim($path, DIRECTORY_SEPARATOR), md5($this->getVersion($path)));

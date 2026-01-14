@@ -27,6 +27,7 @@ class FileNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($file, $format = null, array $context = [])
     {
         return $this->stdNormalizer->normalize($file, $format, $context);
@@ -35,11 +36,13 @@ class FileNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof FileInfoInterface && 'storage' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

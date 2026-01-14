@@ -34,6 +34,7 @@ class GetElasticsearchProductModelProjection implements GetElasticsearchProductM
     ) {
     }
 
+    #[\Override]
     public function fromProductModelCodes(array $productModelCodes): iterable
     {
         $valuesAndProperties = $this->getValuesAndPropertiesFromProductModelCodes($productModelCodes);

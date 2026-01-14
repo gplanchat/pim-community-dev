@@ -37,6 +37,7 @@ class EntityWithFamilyVariantRepository implements EntityWithFamilyVariantReposi
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findSiblings(EntityWithFamilyVariantInterface $entity): array
     {
         $familyVariant = $entity->getFamilyVariant();

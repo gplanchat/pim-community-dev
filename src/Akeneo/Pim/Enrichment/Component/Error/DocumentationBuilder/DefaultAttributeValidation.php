@@ -31,7 +31,7 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
  */
 final class DefaultAttributeValidation implements DocumentationBuilderInterface
 {
-    const SUPPORTED_CONSTRAINTS_CODES = [
+    const array SUPPORTED_CONSTRAINTS_CODES = [
         Boolean::NOT_BOOLEAN_ERROR,
         File::EXTENSION_NOT_ALLOWED_ERROR,
         Date::INVALID_FORMAT_ERROR,
@@ -53,6 +53,7 @@ final class DefaultAttributeValidation implements DocumentationBuilderInterface
         Email::INVALID_FORMAT_ERROR
     ];
 
+    #[\Override]
     public function support($object): bool
     {
         if (
@@ -68,6 +69,7 @@ final class DefaultAttributeValidation implements DocumentationBuilderInterface
     /**
      * @param ConstraintViolationInterface $constraintViolation
      */
+    #[\Override]
     public function buildDocumentation($constraintViolation): DocumentationCollection
     {
         if (false === $this->support($constraintViolation)) {

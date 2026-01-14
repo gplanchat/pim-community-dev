@@ -20,6 +20,7 @@ class SameFamilyThanParent extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validatedBy(): string
     {
         return 'pim_family_same_family_than_parent';
@@ -28,6 +29,7 @@ class SameFamilyThanParent extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTargets(): string|array
     {
         return self::CLASS_CONSTRAINT;

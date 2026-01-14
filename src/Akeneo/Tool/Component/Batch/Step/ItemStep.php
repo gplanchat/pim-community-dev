@@ -33,9 +33,9 @@ class ItemStep extends AbstractStep implements TrackableStepInterface, LoggerAwa
 {
     use LoggerAwareTrait;
 
-    private const READER_KEY = 'reader';
-    private const WRITER_KEY = 'writer';
-    private const PROCESSOR_KEY = 'processor';
+    private const string READER_KEY = 'reader';
+    private const string WRITER_KEY = 'writer';
+    private const string PROCESSOR_KEY = 'processor';
 
     protected ?StepExecution $stepExecution = null;
     private bool $stoppable = false;
@@ -68,11 +68,13 @@ class ItemStep extends AbstractStep implements TrackableStepInterface, LoggerAwa
         return $this->writer;
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return $this->reader instanceof TrackableItemReaderInterface;
     }
 
+    #[\Override]
     public function setStoppable(bool $stoppable): void
     {
         $this->stoppable = $stoppable;
@@ -81,6 +83,7 @@ class ItemStep extends AbstractStep implements TrackableStepInterface, LoggerAwa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function doExecute(StepExecution $stepExecution)
     {
         $itemsToWrite = [];

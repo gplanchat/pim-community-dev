@@ -17,6 +17,7 @@ class Group extends AbstractSimpleArrayConverter implements ArrayConverterInterf
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function convertProperty($property, $data, array $convertedItem, array $options)
     {
         switch ($property) {

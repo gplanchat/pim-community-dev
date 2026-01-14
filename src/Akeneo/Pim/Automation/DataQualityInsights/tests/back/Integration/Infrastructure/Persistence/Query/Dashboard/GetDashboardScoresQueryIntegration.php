@@ -26,6 +26,7 @@ final class GetDashboardScoresQueryIntegration extends TestCase
 
     private GetDashboardScoresQuery $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ final class GetDashboardScoresQueryIntegration extends TestCase
         $this->query = $this->get(GetDashboardScoresQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

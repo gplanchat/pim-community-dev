@@ -40,6 +40,7 @@ class ProductValuesNormalizer implements NormalizerInterface, SerializerAwareInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($data, $format = null, array $context = [])
     {
         $result = [];
@@ -64,11 +65,13 @@ class ProductValuesNormalizer implements NormalizerInterface, SerializerAwareInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return 'datagrid' === $format && $data instanceof WriteValueCollection;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

@@ -14,6 +14,7 @@ use Ramsey\Uuid\UuidInterface;
  */
 final class GetProductExistingAmongIntegration extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ final class GetProductExistingAmongIntegration extends TestCase
         return $this->get(GetExistingProductUuids::class);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

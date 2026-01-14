@@ -36,6 +36,7 @@ final class RoleWithPermissionsSaver implements BulkSaverInterface
         $this->aclManager = $aclManager;
     }
 
+    #[\Override]
     public function saveAll(array $rolesWithPermissions, array $options = []): void
     {
         if (empty($rolesWithPermissions)) {

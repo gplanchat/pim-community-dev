@@ -37,6 +37,7 @@ class FileStorer implements FileStorerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function store(\SplFileInfo $localFile, string $destFsAlias, bool $deleteRawFile = false): FileInfoInterface
     {
         if (!is_file($localFile->getPathname())) {

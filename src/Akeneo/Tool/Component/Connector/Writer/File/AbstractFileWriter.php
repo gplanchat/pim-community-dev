@@ -42,6 +42,7 @@ abstract class AbstractFileWriter implements ItemWriterInterface, StepExecutionA
      *
      * @return string
      */
+    #[\Override]
     public function getPath(array $placeholders = []): string
     {
         $parameters = $this->stepExecution->getJobParameters();
@@ -70,6 +71,7 @@ abstract class AbstractFileWriter implements ItemWriterInterface, StepExecutionA
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -78,6 +80,7 @@ abstract class AbstractFileWriter implements ItemWriterInterface, StepExecutionA
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getWrittenFiles(): array
     {
         return $this->writtenFiles;

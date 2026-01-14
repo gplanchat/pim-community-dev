@@ -14,6 +14,7 @@ use Webmozart\Assert\Assert;
  */
 final class ConditionsShouldNotContainMultipleConditionValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($conditions, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, ConditionsShouldNotContainMultipleCondition::class);

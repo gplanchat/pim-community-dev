@@ -27,6 +27,7 @@ class MultiSelectConverter extends AbstractValueConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(array $attributeFieldInfo, $value)
     {
         if ('' !== $value) {

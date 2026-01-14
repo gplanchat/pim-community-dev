@@ -38,6 +38,7 @@ class PropertyClearerIntegration extends TestCase
     /** @var EntityManagerClearerInterface */
     private $cacheClearer;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -147,6 +148,7 @@ class PropertyClearerIntegration extends TestCase
         $this->assertCount(0, $product->getGroups());
     }
 
+    #[\Override]
     public function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

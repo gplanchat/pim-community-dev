@@ -17,6 +17,7 @@ class InMemoryFileStorer implements FileStorerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function store(\SplFileInfo $rawFile, string $destFsAlias, bool $deleteRawFile = false): FileInfoInterface
     {
         $file = new FileInfo();

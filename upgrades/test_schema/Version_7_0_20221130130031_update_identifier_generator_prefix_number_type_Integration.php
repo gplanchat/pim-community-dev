@@ -12,8 +12,9 @@ final class Version_7_0_20221130130031_update_identifier_generator_prefix_number
     use ExecuteMigrationTrait;
 
     private Connection $connection;
-    private const MIGRATION_LABEL = '_7_0_20221130130031_update_identifier_generator_prefix_number_type';
+    private const string MIGRATION_LABEL = '_7_0_20221130130031_update_identifier_generator_prefix_number_type';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -28,6 +29,7 @@ final class Version_7_0_20221130130031_update_identifier_generator_prefix_number
         Assert::assertEquals($this->getColumnType(), 'bigint unsigned');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

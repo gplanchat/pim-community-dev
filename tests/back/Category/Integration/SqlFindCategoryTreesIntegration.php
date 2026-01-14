@@ -13,6 +13,7 @@ final class SqlFindCategoryTreesIntegration extends TestCase
 {
     public SqlFindCategoryTrees $sqlFindCategoryTrees;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ final class SqlFindCategoryTreesIntegration extends TestCase
         self::assertEquals($expected, $actual);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

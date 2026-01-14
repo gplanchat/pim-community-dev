@@ -19,6 +19,7 @@ class AkeneoStorageUtilsExtension extends Extension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function load(array $configs, ContainerBuilder $container)
     {
         $config = $this->processConfiguration(new Configuration(), $configs);

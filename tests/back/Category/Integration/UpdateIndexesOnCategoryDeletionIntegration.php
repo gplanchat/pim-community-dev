@@ -61,6 +61,7 @@ class UpdateIndexesOnCategoryDeletionIntegration extends AbstractPimCatalogTestC
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function addDocuments()
     {
         $this->indexDocuments([
@@ -86,6 +87,7 @@ class UpdateIndexesOnCategoryDeletionIntegration extends AbstractPimCatalogTestC
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

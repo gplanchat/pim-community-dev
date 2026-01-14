@@ -17,6 +17,7 @@ class UuidFilterIntegration extends AbstractProductQueryBuilderTestCase
 {
     private array $uuids = [];
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

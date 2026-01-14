@@ -29,6 +29,7 @@ final class ProductCompletenessWithMissingAttributeCodesCollection implements \I
         return $this->productId;
     }
 
+    #[\Override]
     public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->completenesses);
@@ -46,6 +47,7 @@ final class ProductCompletenessWithMissingAttributeCodesCollection implements \I
         return $this->completenesses[$key] ?? null;
     }
 
+    #[\Override]
     public function count(): int
     {
         return count($this->completenesses);

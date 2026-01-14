@@ -40,6 +40,7 @@ class WebUser extends PimContext
      *
      * @return Page
      */
+    #[\Override]
     public function getPage(string $page): Page
     {
         return $this->getNavigationContext()->getPage($page);
@@ -2722,6 +2723,7 @@ class WebUser extends PimContext
         return $page;
     }
 
+    #[\Override]
     protected function getCurrentPage(): PageObject
     {
         return $this->getNavigationContext()->getCurrentPage();
@@ -2777,16 +2779,19 @@ class WebUser extends PimContext
     /**
      * @param string|null $condition
      */
-    protected function wait(string $condition = null)
+    #[\Override]
+    protected function wait(?string $condition = null)
     {
         $this->getMainContext()->wait($condition);
     }
 
+    #[\Override]
     protected function getFixturesContext(): FixturesContext
     {
         return $this->getMainContext()->getSubcontext('fixtures');
     }
 
+    #[\Override]
     protected function getNavigationContext(): NavigationContext
     {
         return $this->getMainContext()->getSubcontext('navigation');
@@ -2797,6 +2802,7 @@ class WebUser extends PimContext
      *
      * @return array
      */
+    #[\Override]
     protected function listToArray($list)
     {
         return $this->getMainContext()->listToArray($list);
@@ -2827,6 +2833,7 @@ class WebUser extends PimContext
      *
      * @return string
      */
+    #[\Override]
     public function replacePlaceholders($value)
     {
         return $this->getMainContext()->getSubcontext('fixtures')->replacePlaceholders($value);

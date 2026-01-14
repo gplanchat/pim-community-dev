@@ -17,6 +17,7 @@ use Webmozart\Assert\Assert;
  */
 final class ReferenceDataCollectionValueFactory implements ValueFactory
 {
+    #[\Override]
     public function createWithoutCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         $data = \array_unique($data);
@@ -37,6 +38,7 @@ final class ReferenceDataCollectionValueFactory implements ValueFactory
         return ReferenceDataCollectionValue::value($attributeCode, $data);
     }
 
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_array($data)) {
@@ -64,6 +66,7 @@ final class ReferenceDataCollectionValueFactory implements ValueFactory
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::REFERENCE_DATA_MULTI_SELECT;

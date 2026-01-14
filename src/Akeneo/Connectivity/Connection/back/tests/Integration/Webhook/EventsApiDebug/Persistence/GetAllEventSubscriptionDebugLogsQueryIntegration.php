@@ -24,6 +24,7 @@ class GetAllEventSubscriptionDebugLogsQueryIntegration extends TestCase
     private GetAllEventSubscriptionDebugLogsQuery $getEventSubscriptionLogsQuery;
     private FakeClock $clock;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -249,6 +250,7 @@ class GetAllEventSubscriptionDebugLogsQueryIntegration extends TestCase
         $this->elasticsearchClient->refreshIndex();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

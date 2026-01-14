@@ -17,6 +17,7 @@ class DeleteMeasurementFamilyEndToEnd extends WebTestCase
 {
     private ?MeasurementFamilyRepositoryInterface $measurementFamilyRepository = null;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -27,6 +28,7 @@ class DeleteMeasurementFamilyEndToEnd extends WebTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

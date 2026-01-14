@@ -20,6 +20,7 @@ class GetNonViewableCategoryCodes implements GetNonViewableCategoryCodesInterfac
     ) {
     }
 
+    #[\Override]
     public function fromProductUuids(array $productUuids, int $userId): array
     {
         $categoryCodesPerProductUuids = $this->getCategoryCodes->fromProductUuids($productUuids);

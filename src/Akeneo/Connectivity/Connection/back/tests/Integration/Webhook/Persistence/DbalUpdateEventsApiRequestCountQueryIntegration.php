@@ -72,6 +72,7 @@ SQL;
         Assert::assertEquals($expected['updated'], $actual['updated']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

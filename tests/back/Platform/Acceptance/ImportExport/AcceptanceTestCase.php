@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 abstract class AcceptanceTestCase extends KernelTestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         static::bootKernel(['debug' => false]);

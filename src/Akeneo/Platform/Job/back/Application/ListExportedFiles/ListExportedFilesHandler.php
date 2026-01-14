@@ -19,6 +19,7 @@ class ListExportedFilesHandler implements ListExportedFilesHandlerInterface
     ) {
     }
 
+    #[\Override]
     public function handle(ListExportedFilesQuery $query): array
     {
         $jobExecutionId = $query->jobExecutionId;

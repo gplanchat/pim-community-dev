@@ -30,6 +30,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -38,6 +39,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->categories->get($code);
@@ -46,6 +48,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($category, array $options = [])
     {
         $this->categories->set($category->getCode(), $category);
@@ -54,7 +57,8 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $categories = [];
         foreach ($this->categories as $category) {
@@ -77,6 +81,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -85,6 +90,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return $this->categories->toArray();
@@ -93,6 +99,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
@@ -101,6 +108,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);
@@ -109,6 +117,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoriesByIds(array $categoryIds = [])
     {
         throw new NotImplementedException(__METHOD__);
@@ -117,6 +126,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoriesByCodes(array $categoryCodes = [])
     {
         $categories = [];
@@ -132,6 +142,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTreeFromParents(array $parentsIds)
     {
         throw new NotImplementedException(__METHOD__);
@@ -140,6 +151,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllChildrenIds(CategoryInterface $parent, $includeNode = false)
     {
         throw new NotImplementedException(__METHOD__);
@@ -148,6 +160,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllChildrenCodes(CategoryInterface $parent, $includeNode = false)
     {
         $categoryCodes = $includeNode ? [$parent->getCode()] : [];
@@ -170,6 +183,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCategoryIdsByCodes(array $codes)
     {
         throw new NotImplementedException(__METHOD__);
@@ -178,6 +192,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildrenByParentId($parentId)
     {
         throw new NotImplementedException(__METHOD__);
@@ -186,6 +201,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildrenGrantedByParentId(CategoryInterface $parent, array $grantedCategoryIds = [])
     {
         throw new NotImplementedException(__METHOD__);
@@ -194,6 +210,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildrenTreeByParentId($parentId, $selectNodeId = false, array $grantedCategoryIds = [])
     {
         throw new NotImplementedException(__METHOD__);
@@ -202,6 +219,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildTreeNode(array $nodes)
     {
         throw new NotImplementedException(__METHOD__);
@@ -210,6 +228,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPath($node)
     {
         throw new NotImplementedException(__METHOD__);
@@ -218,6 +237,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTrees()
     {
         $trees = [];
@@ -233,6 +253,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGrantedTrees(array $grantedCategoryIds = [])
     {
         throw new NotImplementedException(__METHOD__);
@@ -241,6 +262,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isAncestor(CategoryInterface $parentNode, CategoryInterface $childNode)
     {
         throw new NotImplementedException(__METHOD__);
@@ -249,6 +271,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOrderedAndSortedByTreeCategories()
     {
         throw new NotImplementedException(__METHOD__);
@@ -257,6 +280,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFilledTree(CategoryInterface $root, Collection $categories)
     {
         throw new NotImplementedException(__METHOD__);
@@ -265,6 +289,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRootNodes($sortByField = null, $direction = 'asc')
     {
         throw new NotImplementedException(__METHOD__);
@@ -273,6 +298,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNodesHierarchy($node = null, $direct = false, array $options = [], $includeNode = false)
     {
         throw new NotImplementedException(__METHOD__);
@@ -281,6 +307,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildren($node = null, $direct = false, $sortByField = null, $direction = 'ASC', $includeNode = false)
     {
         throw new NotImplementedException(__METHOD__);
@@ -289,6 +316,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function childCount($node = null, $direct = false)
     {
         throw new NotImplementedException(__METHOD__);
@@ -297,6 +325,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function childrenHierarchy($node = null, $direct = false, array $options = [], $includeNode = false)
     {
         throw new NotImplementedException(__METHOD__);
@@ -305,6 +334,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildTree(array $nodes, array $options = [])
     {
         throw new NotImplementedException(__METHOD__);
@@ -313,6 +343,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildTreeArray(array $nodes)
     {
         throw new NotImplementedException(__METHOD__);
@@ -321,6 +352,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setChildrenIndex($childrenIndex)
     {
         throw new NotImplementedException(__METHOD__);
@@ -329,6 +361,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChildrenIndex()
     {
         throw new NotImplementedException(__METHOD__);
@@ -337,6 +370,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function persistAsNextSiblingOf(CategoryInterface $node, CategoryInterface $sibling)
     {
         throw new NotImplementedException(__METHOD__);
@@ -345,6 +379,7 @@ final class InMemoryCategoryRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function persistAsFirstChildOf(CategoryInterface $node, CategoryInterface $parent)
     {
         throw new NotImplementedException(__METHOD__);

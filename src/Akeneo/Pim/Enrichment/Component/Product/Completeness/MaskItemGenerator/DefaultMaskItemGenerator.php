@@ -13,6 +13,7 @@ use Akeneo\Pim\Structure\Component\AttributeTypes;
  */
 class DefaultMaskItemGenerator implements MaskItemGeneratorForAttributeType
 {
+    #[\Override]
     public function forRawValue(string $attributeCode, string $channelCode, string $localeCode, $value): array
     {
         return [
@@ -25,6 +26,7 @@ class DefaultMaskItemGenerator implements MaskItemGeneratorForAttributeType
         ];
     }
 
+    #[\Override]
     public function supportedAttributeTypes(): array
     {
         return [

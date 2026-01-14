@@ -12,6 +12,7 @@ class AggregatedAverageMaxOptionsPerAttributeIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

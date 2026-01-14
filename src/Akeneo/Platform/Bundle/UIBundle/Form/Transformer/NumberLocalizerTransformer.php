@@ -38,6 +38,7 @@ class NumberLocalizerTransformer implements DataTransformerInterface
      *
      * @return string
      */
+    #[\Override]
     public function transform($number)
     {
         return $this->localizer->localize($number, $this->options);
@@ -54,6 +55,7 @@ class NumberLocalizerTransformer implements DataTransformerInterface
      *
      * @return string
      */
+    #[\Override]
     public function reverseTransform($number)
     {
         $violations = $this->localizer->validate($number, 'code', $this->options);

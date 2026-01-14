@@ -23,6 +23,7 @@ use PHPUnit\Framework\Assert;
 
 class ImportProductsIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

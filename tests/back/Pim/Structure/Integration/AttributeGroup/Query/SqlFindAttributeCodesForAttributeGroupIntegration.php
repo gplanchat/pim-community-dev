@@ -16,6 +16,7 @@ class SqlFindAttributeCodesForAttributeGroupIntegration extends TestCase
     /** @var FindAttributeCodesForAttributeGroup */
     private $findAttributeCodesForAttributeGroup;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ class SqlFindAttributeCodesForAttributeGroupIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

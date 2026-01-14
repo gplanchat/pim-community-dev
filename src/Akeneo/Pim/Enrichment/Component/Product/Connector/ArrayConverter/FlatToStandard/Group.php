@@ -58,6 +58,7 @@ class Group implements ArrayConverterInterface
      *     ],
      * ]
      */
+    #[\Override]
     public function convert(array $item, array $options = [])
     {
         $this->validate($item);

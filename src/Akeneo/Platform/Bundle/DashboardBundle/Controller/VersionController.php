@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class VersionController
 {
-    private const GENERAL_AVAILABILITY_TAG_PATTERN = '~^\d\.\d\.\d~';
+    private const string GENERAL_AVAILABILITY_TAG_PATTERN = '~^\d\.\d\.\d~';
 
     private VersionProviderInterface $versionProvider;
 

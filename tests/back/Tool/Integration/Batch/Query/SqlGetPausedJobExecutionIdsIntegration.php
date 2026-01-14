@@ -58,6 +58,7 @@ SQL;
         return $this->get('akeneo_batch.query.get_paused_job_execution_ids');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

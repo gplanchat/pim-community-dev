@@ -30,6 +30,7 @@ class ValueCollectionNormalizer implements NormalizerInterface, CacheableSupport
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($values, $format = null, array $context = [])
     {
         $normalizedValues = [];
@@ -45,6 +46,7 @@ class ValueCollectionNormalizer implements NormalizerInterface, CacheableSupport
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof WriteValueCollection && (
@@ -52,6 +54,7 @@ class ValueCollectionNormalizer implements NormalizerInterface, CacheableSupport
         );
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

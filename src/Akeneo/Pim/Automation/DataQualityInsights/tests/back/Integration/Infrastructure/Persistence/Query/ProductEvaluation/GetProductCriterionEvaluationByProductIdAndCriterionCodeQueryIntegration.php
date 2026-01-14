@@ -20,6 +20,7 @@ use Akeneo\Test\Pim\Automation\DataQualityInsights\Integration\DataQualityInsigh
 
 final class GetProductCriterionEvaluationByProductIdAndCriterionCodeQueryIntegration extends DataQualityInsightsTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

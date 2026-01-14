@@ -13,15 +13,17 @@ final class Version_6_0_20210427163307_add_user_account_locking_after_too_many_a
 {
     use ExecuteMigrationTrait;
 
-    const MIGRATION_LABEL = '_6_0_20210427163307_add_user_account_locking_after_too_many_attempts';
+    const string MIGRATION_LABEL = '_6_0_20210427163307_add_user_account_locking_after_too_many_attempts';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -17,11 +17,13 @@ class ParentTranslator implements FlatPropertyValueTranslatorInterface
         $this->getProductModelLabels = $getProductModelLabels;
     }
 
+    #[\Override]
     public function supports(string $columnName): bool
     {
         return 'parent' === $columnName;
     }
 
+    #[\Override]
     public function translate(array $parentCodes, string $locale, string $scope): array
     {
         $productModelLabels = $this->getProductModelLabels->byCodesAndLocaleAndScope($parentCodes, $locale, $scope);

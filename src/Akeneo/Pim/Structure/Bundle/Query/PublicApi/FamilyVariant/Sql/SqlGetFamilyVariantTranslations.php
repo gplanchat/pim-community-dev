@@ -17,6 +17,7 @@ class SqlGetFamilyVariantTranslations implements GetFamilyVariantTranslations
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byFamilyVariantCodesAndLocale(array $familyVariantCodes, string $locale): array
     {
         if (empty($familyVariantCodes)) {

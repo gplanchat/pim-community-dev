@@ -27,6 +27,7 @@ class FromSizeIdentifierResultCursorFactory implements CursorFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createCursor($esQuery, array $options = []): CursorInterface
     {
         $options = $this->resolveOptions($options);

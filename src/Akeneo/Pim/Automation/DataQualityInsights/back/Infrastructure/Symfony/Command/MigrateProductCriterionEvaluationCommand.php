@@ -27,11 +27,13 @@ final class MigrateProductCriterionEvaluationCommand extends Command
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->setHidden(true);
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if ($this->isMigrationDone()) {

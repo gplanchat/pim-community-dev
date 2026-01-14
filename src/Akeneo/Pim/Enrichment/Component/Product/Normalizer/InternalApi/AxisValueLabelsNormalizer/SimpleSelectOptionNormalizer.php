@@ -27,6 +27,7 @@ class SimpleSelectOptionNormalizer implements AxisValueLabelsNormalizer
      *
      * @return string
      */
+    #[\Override]
     public function normalize(ValueInterface $value, string $locale): string
     {
         $optionCode = $value->getData();
@@ -37,6 +38,7 @@ class SimpleSelectOptionNormalizer implements AxisValueLabelsNormalizer
         return (null === $label || '' === $label) ? '[' . $option->getCode() . ']' : $label;
     }
 
+    #[\Override]
     public function supports(string $attributeType): bool
     {
         return AttributeTypes::OPTION_SIMPLE_SELECT === $attributeType;

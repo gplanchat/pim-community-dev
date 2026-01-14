@@ -13,6 +13,7 @@ abstract class AbstractAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMasks($permission)
     {
         return isset($this->map[$permission])
@@ -23,6 +24,7 @@ abstract class AbstractAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasMasks($permission)
     {
         return isset($this->map[$permission]);
@@ -31,6 +33,7 @@ abstract class AbstractAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function adaptRootMask($rootMask, $object)
     {
         return $rootMask;
@@ -39,6 +42,7 @@ abstract class AbstractAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getServiceBits($mask)
     {
         return 0;
@@ -47,6 +51,7 @@ abstract class AbstractAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeServiceBits($mask)
     {
         return $mask;
@@ -55,6 +60,7 @@ abstract class AbstractAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultPermission()
     {
         return '';
@@ -63,6 +69,7 @@ abstract class AbstractAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function decideIsGranting($triggeredMask, $object, TokenInterface $securityToken)
     {
         return true;

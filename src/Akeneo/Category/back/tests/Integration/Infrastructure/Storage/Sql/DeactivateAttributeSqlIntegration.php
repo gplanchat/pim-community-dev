@@ -35,6 +35,7 @@ class DeactivateAttributeSqlIntegration extends CategoryTestCase
     private CategoryTemplateAttributeSaver $categoryTemplateAttributeSaver;
     private DeactivateAttribute $deactivateAttribute;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

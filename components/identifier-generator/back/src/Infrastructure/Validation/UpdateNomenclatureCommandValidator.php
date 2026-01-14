@@ -21,6 +21,7 @@ final class UpdateNomenclatureCommandValidator implements CommandValidatorInterf
     {
     }
 
+    #[\Override]
     public function validate(CommandInterface $command): void
     {
         $violations = $this->validator->validate($command);

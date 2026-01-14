@@ -16,6 +16,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($type, $id)
     {
         throw new \LogicException('Not supported by NullAclExtension.');
@@ -24,6 +25,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getExtensionKey()
     {
         throw new \LogicException('Not supported by NullAclExtension.');
@@ -32,6 +34,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validateMask($mask, $object, $permission = null)
     {
         throw new InvalidAclMaskException('Not supported by NullAclExtension.');
@@ -40,6 +43,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getObjectIdentity($val)
     {
         throw new InvalidDomainObjectException('Not supported by NullAclExtension.');
@@ -48,6 +52,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaskBuilder($permission)
     {
         throw new \LogicException('Not supported by NullAclExtension.');
@@ -56,6 +61,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllMaskBuilders()
     {
         throw new \LogicException('Not supported by NullAclExtension.');
@@ -64,6 +70,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaskPattern($mask)
     {
         return 'NullAclExtension: ' . $mask;
@@ -72,6 +79,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMasks($permission)
     {
         return null;
@@ -80,6 +88,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasMasks($permission)
     {
         return false;
@@ -88,6 +97,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function adaptRootMask($rootMask, $object)
     {
         return $rootMask;
@@ -96,6 +106,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getServiceBits($mask)
     {
         return 0;
@@ -104,6 +115,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeServiceBits($mask)
     {
         return $mask;
@@ -112,6 +124,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAccessLevel($mask, $permission = null)
     {
         return AccessLevel::UNKNOWN;
@@ -120,6 +133,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPermissions($mask = null, $setOnly = false)
     {
         return [];
@@ -128,6 +142,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllowedPermissions(ObjectIdentity $oid)
     {
         return [];
@@ -136,6 +151,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultPermission()
     {
         return '';
@@ -144,6 +160,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClasses()
     {
         return [];
@@ -152,6 +169,7 @@ final class NullAclExtension implements AclExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function decideIsGranting($triggeredMask, $object, TokenInterface $securityToken)
     {
         return true;

@@ -28,6 +28,7 @@ class OptionsComparator implements ComparatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($type)
     {
         return \in_array($type, $this->types);
@@ -36,6 +37,7 @@ class OptionsComparator implements ComparatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function compare($data, $originals)
     {
         try {

@@ -23,6 +23,7 @@ final class IdentifierAttributeCreationLimitValidator extends ConstraintValidato
     ) {
     }
 
+    #[\Override]
     public function validate($attribute, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, IdentifierAttributeCreationLimit::class);

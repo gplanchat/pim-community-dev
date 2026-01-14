@@ -17,6 +17,7 @@ class AssociationUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAction($action)
     {
         return in_array(
@@ -28,6 +29,7 @@ class AssociationUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessUpdates(EntityManager $em, $entity, $action)
     {
         $pendings = [];

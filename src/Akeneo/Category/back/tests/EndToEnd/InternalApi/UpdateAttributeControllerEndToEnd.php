@@ -45,6 +45,7 @@ class UpdateAttributeControllerEndToEnd extends ControllerIntegrationTestCase
     private AttributeRichText $attributeRichText;
     private AttributeText $attributeText;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -332,6 +333,7 @@ class UpdateAttributeControllerEndToEnd extends ControllerIntegrationTestCase
         ]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -55,6 +55,7 @@ class NumberType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->addModelTransformer(new NumberLocalizerTransformer($this->localizer, $options['locale_options']));
@@ -63,6 +64,7 @@ class NumberType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $options = ['locale' => $this->localeResolver->getCurrentLocale()];
@@ -86,6 +88,7 @@ class NumberType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_number';
@@ -94,6 +97,7 @@ class NumberType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return TextType::class;

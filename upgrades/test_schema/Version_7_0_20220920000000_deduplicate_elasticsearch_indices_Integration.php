@@ -15,15 +15,17 @@ final class Version_7_0_20220920000000_deduplicate_elasticsearch_indices_Integra
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_NAME = '_7_0_20220920000000_deduplicate_elasticsearch_indices';
+    private const string MIGRATION_NAME = '_7_0_20220920000000_deduplicate_elasticsearch_indices';
 
     private ?Client $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

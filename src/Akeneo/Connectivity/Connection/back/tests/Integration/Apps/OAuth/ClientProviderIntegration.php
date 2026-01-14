@@ -24,11 +24,13 @@ class ClientProviderIntegration extends TestCase
     private ClientProvider $clientProvider;
     private ClientManagerInterface $clientManager;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

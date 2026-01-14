@@ -18,6 +18,7 @@ class FileNormalizer extends AbstractValueDataNormalizer implements CacheableSup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($file, $format = null, array $context = [])
     {
         return $this->doNormalize($file, $format, $context);
@@ -26,6 +27,7 @@ class FileNormalizer extends AbstractValueDataNormalizer implements CacheableSup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function doNormalize($file, $format = null, array $context = [])
     {
         return [
@@ -36,11 +38,13 @@ class FileNormalizer extends AbstractValueDataNormalizer implements CacheableSup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof FileInfoInterface && in_array($format, $this->supportedFormats);
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

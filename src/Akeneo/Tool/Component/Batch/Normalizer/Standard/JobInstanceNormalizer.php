@@ -20,6 +20,7 @@ class JobInstanceNormalizer implements NormalizerInterface, CacheableSupportsMet
      *
      * @param JobInstance $object
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         $results = [
@@ -39,11 +40,13 @@ class JobInstanceNormalizer implements NormalizerInterface, CacheableSupportsMet
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof JobInstance && 'standard' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

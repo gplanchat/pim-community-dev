@@ -22,6 +22,7 @@ final class NonExistentPriceCollectionValueFilter implements NonExistentValuesFi
         $this->findActivatedCurrencies = $findActivatedCurrencies;
     }
 
+    #[\Override]
     public function filter(OnGoingFilteredRawValues $onGoingFilteredRawValues): OnGoingFilteredRawValues
     {
         $priceCollectionValues = $onGoingFilteredRawValues->notFilteredValuesOfTypes(AttributeTypes::PRICE_COLLECTION);

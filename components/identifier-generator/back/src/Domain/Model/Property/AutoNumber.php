@@ -14,23 +14,24 @@ use Webmozart\Assert\Assert;
  *
  * @phpstan-type AutoNumberNormalized array{type: 'auto_number', numberMin: int, digitsMin: int}
  */
-final class AutoNumber implements PropertyInterface
+final readonly class AutoNumber implements PropertyInterface
 {
-    public const LIMIT_NUMBER_MIN = 0;
-    public const LIMIT_DIGITS_MIN = 1;
-    public const LIMIT_DIGITS_MAX = 15;
+    public const int LIMIT_NUMBER_MIN = 0;
+    public const int LIMIT_DIGITS_MIN = 1;
+    public const int LIMIT_DIGITS_MAX = 15;
 
-    private const TYPE = 'auto_number';
+    private const string TYPE = 'auto_number';
 
     public function __construct(
-        private readonly int $numberMin,
-        private readonly int $digitsMin,
+        private int $numberMin,
+        private int $digitsMin,
     ) {
         Assert::greaterThanEq($numberMin, self::LIMIT_NUMBER_MIN);
         Assert::greaterThanEq($digitsMin, self::LIMIT_DIGITS_MIN);
         Assert::lessThanEq($digitsMin, self::LIMIT_DIGITS_MAX);
     }
 
+    #[\Override]
     public static function type(): string
     {
         return self::TYPE;
@@ -39,6 +40,7 @@ final class AutoNumber implements PropertyInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public static function fromNormalized(array $normalizedProperty): PropertyInterface
     {
         Assert::keyExists($normalizedProperty, 'type');
@@ -57,6 +59,7 @@ final class AutoNumber implements PropertyInterface
     /**
      * @return AutoNumberNormalized
      */
+    #[\Override]
     public function normalize(): array
     {
         return [
@@ -76,6 +79,7 @@ final class AutoNumber implements PropertyInterface
         return $this->digitsMin;
     }
 
+    #[\Override]
     public function getImplicitCondition(): ?ConditionInterface
     {
         return null;

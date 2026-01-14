@@ -17,7 +17,7 @@ use Ramsey\Uuid\UuidInterface;
  */
 class RemovingProductIntegration extends TestCase
 {
-    private const DOCUMENT_TYPE = 'pim_catalog_product';
+    private const string DOCUMENT_TYPE = 'pim_catalog_product';
 
     /** @var Client */
     private $esProductAndProductModelClient;
@@ -25,6 +25,7 @@ class RemovingProductIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -62,6 +63,7 @@ class RemovingProductIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

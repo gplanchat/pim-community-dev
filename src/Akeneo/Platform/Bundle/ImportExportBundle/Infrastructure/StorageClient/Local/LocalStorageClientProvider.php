@@ -19,6 +19,7 @@ use League\Flysystem\Local\LocalFilesystemAdapter;
 
 final class LocalStorageClientProvider implements StorageClientProviderInterface
 {
+    #[\Override]
     public function getFromStorage(StorageInterface $storage): StorageClientInterface
     {
         if (!$storage instanceof LocalStorage) {
@@ -28,6 +29,7 @@ final class LocalStorageClientProvider implements StorageClientProviderInterface
         return new FileSystemStorageClient(new Filesystem(new LocalFilesystemAdapter('/')));
     }
 
+    #[\Override]
     public function supports(StorageInterface $storage): bool
     {
         return $storage instanceof LocalStorage;

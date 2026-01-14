@@ -35,6 +35,7 @@ class AttributeType
         Assert::oneOf($this->attributeType, self::ATTRIBUTE_TYPES);
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->attributeType;

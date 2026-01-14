@@ -111,6 +111,7 @@ class RequestAccessTokenActionEndToEnd extends WebTestCase
         Assert::assertSame('invalid_request', $content['error']);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -124,6 +125,7 @@ class RequestAccessTokenActionEndToEnd extends WebTestCase
         $this->loadAppsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

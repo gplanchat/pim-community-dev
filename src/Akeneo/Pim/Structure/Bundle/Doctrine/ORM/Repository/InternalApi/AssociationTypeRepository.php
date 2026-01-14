@@ -27,6 +27,7 @@ class AssociationTypeRepository extends EntityRepository implements DatagridRepo
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $qb = $this->createQueryBuilder('a')

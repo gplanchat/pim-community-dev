@@ -24,6 +24,7 @@ class FamilyAttributeAsLabelChangedSubscriber implements EventSubscriberInterfac
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

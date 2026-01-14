@@ -21,6 +21,7 @@ class CheckAttributeIsNotUsedAsLabelOnDeletionSubscriber implements EventSubscri
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

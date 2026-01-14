@@ -31,11 +31,13 @@ final class LocaleCollection implements \IteratorAggregate, \Countable
         return isset($this->localeCodes[$localeCode->__toString()]);
     }
 
+    #[\Override]
     public function getIterator(): \Iterator
     {
         return new \ArrayIterator($this->localeCodes);
     }
 
+    #[\Override]
     public function count(): int
     {
         return count($this->localeCodes);

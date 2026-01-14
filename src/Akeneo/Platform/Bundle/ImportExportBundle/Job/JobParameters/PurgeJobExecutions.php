@@ -15,13 +15,15 @@ use Symfony\Component\Validator\Constraints\Type;
  */
 class PurgeJobExecutions implements ConstraintCollectionProviderInterface, DefaultValuesProviderInterface
 {
-    private const JOB_NAME = 'job_executions_purge';
+    private const string JOB_NAME = 'job_executions_purge';
 
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return self::JOB_NAME === $job->getName();
     }
 
+    #[\Override]
     public function getDefaultValues(): array
     {
         return [
@@ -33,6 +35,7 @@ class PurgeJobExecutions implements ConstraintCollectionProviderInterface, Defau
     /**
      * days: Purges the job executions that are older than the number of days.
      */
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection(

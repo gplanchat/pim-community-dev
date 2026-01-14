@@ -10,12 +10,12 @@ namespace Akeneo\Pim\Automation\DataQualityInsights\Domain\ValueObject;
  */
 final class TimePeriod
 {
-    const DAILY = 'daily';
-    const WEEKLY = 'weekly';
-    const MONTHLY = 'monthly';
-    const YEARLY = 'yearly';
+    const string DAILY = 'daily';
+    const string WEEKLY = 'weekly';
+    const string MONTHLY = 'monthly';
+    const string YEARLY = 'yearly';
 
-    private const ALLOWED_VALUES = [
+    private const array ALLOWED_VALUES = [
         self::DAILY,
         self::WEEKLY,
         self::MONTHLY,
@@ -34,6 +34,7 @@ final class TimePeriod
         $this->value = $value;
     }
 
+    #[\Override]
     public function __toString()
     {
         return $this->value;

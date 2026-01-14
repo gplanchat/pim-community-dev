@@ -17,6 +17,7 @@ class DbalSelectWebhookSecretQuery implements SelectWebhookSecretQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $code): ?string
     {
         $query = <<<SQL

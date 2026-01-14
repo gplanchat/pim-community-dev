@@ -20,6 +20,7 @@ class CacheClearer implements CacheClearerInterface
     ) {
     }
 
+    #[\Override]
     public function clear(): void
     {
         $this->unitOfWorkAndRepositoriesClearer->clear();

@@ -25,6 +25,7 @@ class DeleteCategoryCommandHandlerIntegration extends CategoryTestCase
 {
     private DeleteCategoryCommandHandler $deleteCategoryCommandHandler;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

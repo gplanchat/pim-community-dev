@@ -16,6 +16,7 @@ class EntityFilterTypeTest extends AbstractTypeTestCase
      */
     private $type;
 
+    #[\Override]
     protected function setUp(): void
     {
         $translator = $this->createMockTranslator();
@@ -38,6 +39,7 @@ class EntityFilterTypeTest extends AbstractTypeTestCase
     /**
      * @return EntityFilterType
      */
+    #[\Override]
     protected function getTestFormType()
     {
         return $this->type;
@@ -56,6 +58,7 @@ class EntityFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptionsDataProvider()
     {
         return [
@@ -76,6 +79,7 @@ class EntityFilterTypeTest extends AbstractTypeTestCase
      * @param array $viewData
      * @param array $customOptions
      */
+    #[\Override]
     public function testBindData(
         array $bindData,
         array $formData,
@@ -88,6 +92,7 @@ class EntityFilterTypeTest extends AbstractTypeTestCase
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function bindDataProvider()
     {
         return [

@@ -19,6 +19,7 @@ class ConnectionContextEventSubscriber implements EventSubscriberInterface
     {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [ApiAuthenticationEvent::class => ['initializeConnectionContext', 1000]];

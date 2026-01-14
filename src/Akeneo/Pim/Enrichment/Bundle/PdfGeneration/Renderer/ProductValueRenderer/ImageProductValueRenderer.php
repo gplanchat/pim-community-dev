@@ -9,6 +9,7 @@ use Twig\Environment;
 
 class ImageProductValueRenderer implements ProductValueRenderer
 {
+    #[\Override]
     public function render(Environment $environment, AttributeInterface $attribute, ?ValueInterface $value, string $localeCode): ?string
     {
         if (null !== $value && $value->getData() !== null) {
@@ -18,6 +19,7 @@ class ImageProductValueRenderer implements ProductValueRenderer
         return null;
     }
 
+    #[\Override]
     public function supportsAttributeType(string $attributeType): bool
     {
         return $attributeType === AttributeTypes::IMAGE;

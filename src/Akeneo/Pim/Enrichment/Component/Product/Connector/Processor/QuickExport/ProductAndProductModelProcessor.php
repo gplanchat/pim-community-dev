@@ -76,6 +76,7 @@ class ProductAndProductModelProcessor extends AbstractProcessor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($entityWithValues)
     {
         $this->initSecurityContext($this->stepExecution);

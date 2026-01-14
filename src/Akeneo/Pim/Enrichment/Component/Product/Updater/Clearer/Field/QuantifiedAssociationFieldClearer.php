@@ -15,11 +15,12 @@ use Webmozart\Assert\Assert;
  */
 final class QuantifiedAssociationFieldClearer implements ClearerInterface
 {
-    private const SUPPORTED_FIELD = 'quantified_associations';
+    private const string SUPPORTED_FIELD = 'quantified_associations';
 
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function supportsProperty(string $property): bool
     {
         return static::SUPPORTED_FIELD === $property;
@@ -28,6 +29,7 @@ final class QuantifiedAssociationFieldClearer implements ClearerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function clear($entity, string $property, array $options = []): void
     {
         Assert::true(

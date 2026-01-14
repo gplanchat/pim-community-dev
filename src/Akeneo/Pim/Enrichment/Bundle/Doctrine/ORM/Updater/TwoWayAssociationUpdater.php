@@ -33,6 +33,7 @@ class TwoWayAssociationUpdater implements TwoWayAssociationUpdaterInterface
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function createInversedAssociation(
         $owner,
         string $associationTypeCode,
@@ -84,6 +85,7 @@ class TwoWayAssociationUpdater implements TwoWayAssociationUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeInversedAssociation(
         $owner,
         string $associationTypeCode,

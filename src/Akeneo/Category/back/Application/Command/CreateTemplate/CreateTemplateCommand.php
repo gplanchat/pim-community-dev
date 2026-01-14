@@ -13,13 +13,13 @@ use Webmozart\Assert\Assert;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class CreateTemplateCommand
+final readonly class CreateTemplateCommand
 {
     #[Constraints\NotBlank]
     #[Constraints\Length(['max' => 100])]
     #[Constraints\Regex(pattern: '/^[a-zA-Z0-9_]+$/', message: 'akeneo.category.validation.template.code.wrong_format')]
     #[TemplateCodeShouldBeUnique]
-    public readonly string $templateCode;
+    public string $templateCode;
 
     /**
      * @var array<string,string|null>
@@ -27,13 +27,13 @@ final class CreateTemplateCommand
     #[Constraints\All([
         new Constraints\Length(['max' => 255]),
     ])]
-    public readonly array $labels;
+    public array $labels;
 
     /**
      * @param array{code:string,labels:array<string,string>} $data
      */
     public function __construct(
-        public readonly CategoryId $categoryTreeId,
+        public CategoryId $categoryTreeId,
         array $data,
     ) {
         Assert::string($data['code']);

@@ -27,6 +27,7 @@ class FromSizeCursorFactory implements CursorFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createCursor($queryBuilder, array $options = []): CursorInterface
     {
         $options = $this->resolveOptions($options);

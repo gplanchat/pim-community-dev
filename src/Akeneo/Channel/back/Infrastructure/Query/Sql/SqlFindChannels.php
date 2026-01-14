@@ -23,6 +23,7 @@ final class SqlFindChannels implements FindChannels
     /**
      * @return Channel[]
      */
+    #[\Override]
     public function findAll(): array
     {
         $sql = <<<SQL

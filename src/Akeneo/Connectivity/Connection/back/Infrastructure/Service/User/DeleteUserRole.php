@@ -18,6 +18,7 @@ class DeleteUserRole implements DeleteUserRoleInterface
     {
     }
 
+    #[\Override]
     public function execute(string $role): void
     {
         $userRole = $this->repository->findOneByIdentifier($role);

@@ -39,6 +39,7 @@ class DompdfBuilder implements PdfBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildPdfOutput($htmlInput)
     {
         $this->render($htmlInput);

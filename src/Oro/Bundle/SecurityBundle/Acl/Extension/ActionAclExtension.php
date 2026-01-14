@@ -32,6 +32,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($type, $id)
     {
         if ($type === ObjectIdentityFactory::ROOT_IDENTITY_TYPE && $id === $this->getExtensionKey()) {
@@ -45,6 +46,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getExtensionKey()
     {
         return 'action';
@@ -53,6 +55,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validateMask($mask, $object, $permission = null)
     {
         if ($mask === 0) {
@@ -68,6 +71,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getObjectIdentity($val)
     {
         $type = $id = null;
@@ -84,6 +88,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaskBuilder($permission)
     {
         return new ActionMaskBuilder();
@@ -92,6 +97,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllMaskBuilders()
     {
         return [new ActionMaskBuilder()];
@@ -100,6 +106,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMaskPattern($mask)
     {
         return ActionMaskBuilder::getPatternFor($mask);
@@ -108,6 +115,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAccessLevel($mask, $permission = null)
     {
         return $mask === 0
@@ -118,6 +126,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPermissions($mask = null, $setOnly = false)
     {
         $result = [];
@@ -131,6 +140,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAllowedPermissions(ObjectIdentity $oid)
     {
         return ['EXECUTE'];
@@ -139,6 +149,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultPermission()
     {
         return 'EXECUTE';
@@ -147,6 +158,7 @@ class ActionAclExtension extends AbstractAclExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClasses()
     {
         return $this->actionMetadataProvider->getActions();

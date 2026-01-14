@@ -26,6 +26,7 @@ abstract class AbstractMassEditEndToEnd extends InternalApiTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -193,6 +194,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

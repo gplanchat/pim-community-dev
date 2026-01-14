@@ -21,6 +21,7 @@ final class CategoryCodesShouldExistValidator extends ConstraintValidator
     ) {
     }
 
+    #[\Override]
     public function validate($categoryCodes, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, CategoryCodesShouldExist::class);

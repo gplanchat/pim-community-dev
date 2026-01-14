@@ -28,6 +28,7 @@ class GetEvaluableAttributesByProductQuery implements GetEvaluableAttributesByPr
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function execute(ProductEntityIdInterface $productUuid): array
     {
         Assert::isInstanceOf($productUuid, ProductUuid::class);

@@ -25,6 +25,7 @@ class AttributeOptionValueCollectionNormalizer implements NormalizerInterface, N
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($object, $format = null, array $context = [])
     {
         $normalizedItems = [];
@@ -39,6 +40,7 @@ class AttributeOptionValueCollectionNormalizer implements NormalizerInterface, N
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof Collection &&

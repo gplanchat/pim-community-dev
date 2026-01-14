@@ -14,6 +14,7 @@ class SystemConfigurationPass implements CompilerPassInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $config = [];

@@ -25,6 +25,7 @@ final class CalculateProductCompleteness implements CalculateProductCompleteness
     ) {
     }
 
+    #[\Override]
     public function calculate(ProductEntityIdInterface $productUuid): CompletenessCalculationResult
     {
         if (!$productUuid instanceof ProductUuid) {

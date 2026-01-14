@@ -19,11 +19,13 @@ class NumberValueUserIntentFactory implements ValueUserIntentFactory
 {
     use ValidateDataTrait;
 
+    #[\Override]
     public function getSupportedAttributeTypes(): array
     {
         return [AttributeTypes::NUMBER];
     }
 
+    #[\Override]
     public function create(string $attributeType, string $attributeCode, mixed $data): ValueUserIntent
     {
         $this->validateValueStructure($attributeCode, $data);

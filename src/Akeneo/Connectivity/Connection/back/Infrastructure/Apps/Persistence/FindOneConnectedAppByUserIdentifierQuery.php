@@ -20,6 +20,7 @@ final class FindOneConnectedAppByUserIdentifierQuery implements FindOneConnected
     {
     }
 
+    #[\Override]
     public function execute(string $userIdentifier): ?ConnectedApp
     {
         $selectQuery = <<<SQL

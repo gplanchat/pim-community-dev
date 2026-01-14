@@ -20,6 +20,7 @@ final class ValueUserIntentsShouldBeUniqueValidator extends ConstraintValidator
     /**
      * @param array<UserIntent> $value
      */
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, ValueUserIntentsShouldBeUnique::class);

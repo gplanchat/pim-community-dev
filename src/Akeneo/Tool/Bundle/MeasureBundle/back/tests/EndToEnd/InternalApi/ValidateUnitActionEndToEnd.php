@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ValidateUnitActionEndToEnd extends WebTestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -22,6 +23,7 @@ class ValidateUnitActionEndToEnd extends WebTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

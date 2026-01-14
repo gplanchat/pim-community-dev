@@ -21,6 +21,7 @@ final class UpdateGeneratorCommandValidator implements CommandValidatorInterface
     {
     }
 
+    #[\Override]
     public function validate(CommandInterface $command): void
     {
         $violations = $this->validator->validate($command);

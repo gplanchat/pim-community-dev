@@ -27,6 +27,7 @@ class SaveMeasurementFamilyTest extends AcceptanceTestCase
     private SaveMeasurementFamilyHandler $saveMeasurementFamilyHandler;
     private InMemoryIsThereAtLeastOneAttributeConfiguredWithMeasurementFamilyStub $isThereAtLeastOneAttributeConfiguredWithMeasurementFamily;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

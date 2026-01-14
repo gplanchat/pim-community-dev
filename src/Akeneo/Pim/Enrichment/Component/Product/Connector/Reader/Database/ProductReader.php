@@ -39,6 +39,7 @@ class ProductReader implements ItemReaderInterface, InitializableInterface, Step
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize(): void
     {
         $channel = $this->getConfiguredChannel();
@@ -60,6 +61,7 @@ class ProductReader implements ItemReaderInterface, InitializableInterface, Step
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read()
     {
         if (!$this->firstRead) {
@@ -84,6 +86,7 @@ class ProductReader implements ItemReaderInterface, InitializableInterface, Step
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
@@ -140,7 +143,7 @@ class ProductReader implements ItemReaderInterface, InitializableInterface, Step
         }))[0] ?? null;
     }
 
-    protected function getProductsCursor(array $filters, ChannelInterface $channel = null): CursorInterface
+    protected function getProductsCursor(array $filters, ?ChannelInterface $channel = null): CursorInterface
     {
         $options = null !== $channel ? ['default_scope' => $channel->getCode()] : [];
 
@@ -157,6 +160,7 @@ class ProductReader implements ItemReaderInterface, InitializableInterface, Step
         return $productQueryBuilder->execute();
     }
 
+    #[\Override]
     public function totalItems(): int
     {
         if (null === $this->products) {
@@ -166,11 +170,13 @@ class ProductReader implements ItemReaderInterface, InitializableInterface, Step
         return $this->products->count();
     }
 
+    #[\Override]
     public function getState(): array
     {
         return null !== $this->products ? ['position' =>  $this->products->key()]: [];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

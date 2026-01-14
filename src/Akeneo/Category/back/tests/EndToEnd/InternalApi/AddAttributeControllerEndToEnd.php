@@ -34,6 +34,7 @@ class AddAttributeControllerEndToEnd extends ControllerIntegrationTestCase
 {
     private TemplateUuid $templateUuid;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -284,6 +285,7 @@ class AddAttributeControllerEndToEnd extends ControllerIntegrationTestCase
         $this->get(CategoryTreeTemplateSaver::class)->insert($templateModel);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

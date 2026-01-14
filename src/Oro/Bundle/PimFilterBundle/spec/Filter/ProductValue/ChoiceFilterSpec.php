@@ -176,6 +176,7 @@ class CustomAttributeRepository extends AttributeRepository
 
 class CustomAttributeOptionRepository extends AttributeOptionRepository
 {
+    #[\Override]
     function findCodesByIdentifiers($code, array $optionCodes)
     {
         return null;

@@ -57,6 +57,7 @@ class AttributeTranslator implements FlatHeaderTranslatorInterface
         $this->getAttributeTranslations = $getAttributeTranslations;
     }
 
+    #[\Override]
     public function supports(string $columnName): bool
     {
         $attributeColumns = $this->attributeColumnsResolver->resolveAttributeColumns();
@@ -64,12 +65,14 @@ class AttributeTranslator implements FlatHeaderTranslatorInterface
         return in_array($columnName, $attributeColumns);
     }
 
+    #[\Override]
     public function warmup(array $columnNames, string $locale): void
     {
         $attributeCodes = $this->extractAttributeCodes($columnNames);
         $this->attributeTranslations = $this->getAttributeTranslations->byAttributeCodesAndLocale($attributeCodes, $locale);
     }
 
+    #[\Override]
     public function translate(string $columnName, string $locale): string
     {
         $columnInformations = $this->attributeColumnInfoExtractor->extractColumnInfo($columnName);

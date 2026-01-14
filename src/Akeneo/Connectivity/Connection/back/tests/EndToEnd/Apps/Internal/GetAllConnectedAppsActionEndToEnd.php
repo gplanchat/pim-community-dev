@@ -22,6 +22,7 @@ class GetAllConnectedAppsActionEndToEnd extends WebTestCase
 {
     private FakeFeatureFlag $featureFlagMarketplaceActivate;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -29,6 +30,7 @@ class GetAllConnectedAppsActionEndToEnd extends WebTestCase
         $this->featureFlagMarketplaceActivate = $this->get('akeneo_connectivity.connection.marketplace_activate.feature');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

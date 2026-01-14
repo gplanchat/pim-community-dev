@@ -20,6 +20,7 @@ class MarkProductModelsEvaluationImpactedByUpdatedAttributeGroupActivationTaskle
     ) {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $countMarkedProductModels = 0;

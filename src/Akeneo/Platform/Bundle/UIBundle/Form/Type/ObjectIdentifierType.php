@@ -22,6 +22,7 @@ class ObjectIdentifierType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return HiddenType::class;
@@ -30,6 +31,7 @@ class ObjectIdentifierType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_object_identifier';
@@ -38,6 +40,7 @@ class ObjectIdentifierType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->addViewTransformer(
@@ -55,6 +58,7 @@ class ObjectIdentifierType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver

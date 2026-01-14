@@ -15,10 +15,12 @@ use Webmozart\Assert\Assert;
  */
 final class MatchMultiSelectHandler implements MatchConditionHandler
 {
+    #[\Override]
     public function getConditionClass(): string
     {
         return MultiSelect::class;
     }
+    #[\Override]
     public function __invoke(ConditionInterface $condition, ProductProjection $productProjection): bool
     {
         Assert::isInstanceOf($condition, MultiSelect::class);

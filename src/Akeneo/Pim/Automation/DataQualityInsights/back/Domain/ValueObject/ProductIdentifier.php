@@ -22,6 +22,7 @@ final class ProductIdentifier
         $this->identifier = $identifier;
     }
 
+    #[\Override]
     public function __toString()
     {
         return $this->identifier;

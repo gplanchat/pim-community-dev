@@ -15,6 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class UserCatalogLocaleResetterTest extends TestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,6 +44,7 @@ class UserCatalogLocaleResetterTest extends TestCase
         $this->assertUserCatalogLocale('en_US');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

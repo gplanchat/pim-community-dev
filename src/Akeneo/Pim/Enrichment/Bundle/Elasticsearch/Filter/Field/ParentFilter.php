@@ -42,6 +42,7 @@ class ParentFilter extends AbstractFieldFilter implements FieldFilterInterface
      *
      * @throws ObjectNotFoundException
      */
+    #[\Override]
     public function addFieldFilter($field, $operator, $value, $locale = null, $channel = null, $options = [])
     {
         if (null === $this->searchQueryBuilder) {

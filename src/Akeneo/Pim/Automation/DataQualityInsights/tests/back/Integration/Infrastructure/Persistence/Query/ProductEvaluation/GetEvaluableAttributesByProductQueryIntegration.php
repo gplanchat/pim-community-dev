@@ -23,6 +23,7 @@ use Webmozart\Assert\Assert;
  */
 class GetEvaluableAttributesByProductQueryIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

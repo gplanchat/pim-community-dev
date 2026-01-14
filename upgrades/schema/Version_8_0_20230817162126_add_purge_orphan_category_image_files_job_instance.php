@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230817162126_add_purge_orphan_category_image_files_job_instance extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Adds the purge_orphan_category_image_files job instance';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         if (!$this->jobInstanceExists('purge_orphan_category_image_files')) {
@@ -40,6 +42,7 @@ final class Version_8_0_20230817162126_add_purge_orphan_category_image_files_job
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

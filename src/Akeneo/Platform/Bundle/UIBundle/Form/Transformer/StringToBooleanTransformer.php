@@ -20,6 +20,7 @@ class StringToBooleanTransformer implements DataTransformerInterface
      *
      * @return null|string
      */
+    #[\Override]
     public function transform($enabled)
     {
         if (null === $enabled) {
@@ -36,6 +37,7 @@ class StringToBooleanTransformer implements DataTransformerInterface
      *
      * @return bool|null
      */
+    #[\Override]
     public function reverseTransform($enabled)
     {
         if (null === $enabled) {

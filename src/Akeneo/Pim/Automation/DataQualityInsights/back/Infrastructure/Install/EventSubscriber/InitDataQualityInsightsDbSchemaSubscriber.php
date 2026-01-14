@@ -18,6 +18,7 @@ class InitDataQualityInsightsDbSchemaSubscriber implements EventSubscriberInterf
         $this->dbalConnection = $dbalConnection;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

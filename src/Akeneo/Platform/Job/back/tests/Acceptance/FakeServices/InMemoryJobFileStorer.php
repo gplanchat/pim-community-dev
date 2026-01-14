@@ -6,6 +6,7 @@ use Akeneo\Platform\Job\Application\LaunchJobInstance\JobFileStorerInterface;
 
 class InMemoryJobFileStorer implements JobFileStorerInterface
 {
+    #[\Override]
     public function store(string $jobCode, string $fileName, $fileStream): string
     {
         return sprintf('%s/%s', $jobCode, $fileName);

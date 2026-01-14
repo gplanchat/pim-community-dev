@@ -42,6 +42,7 @@ class OptionValueWithLinkedData extends AbstractValue implements OptionValueInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData(): ?string
     {
         return $this->data;
@@ -50,6 +51,7 @@ class OptionValueWithLinkedData extends AbstractValue implements OptionValueInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         return null !== $this->data ? '['.$this->data.']' : '';
@@ -58,6 +60,7 @@ class OptionValueWithLinkedData extends AbstractValue implements OptionValueInte
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof OptionValueInterface ||

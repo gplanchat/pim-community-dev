@@ -16,6 +16,7 @@ abstract class AbstractChoiceType extends AbstractType
         $this->translator = $translator;
     }
 
+    #[\Override]
     public function finishView(FormView $view, FormInterface $form, array $options)
     {
         if (!array_key_exists('strict', $options)) {

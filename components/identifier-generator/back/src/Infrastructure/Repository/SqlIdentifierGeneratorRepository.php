@@ -39,6 +39,7 @@ class SqlIdentifierGeneratorRepository implements IdentifierGeneratorRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save(IdentifierGenerator $identifierGenerator): void
     {
         $parameters = [
@@ -75,6 +76,7 @@ SQL;
         }
     }
 
+    #[\Override]
     public function update(IdentifierGenerator $identifierGenerator): void
     {
         $parameters = [
@@ -107,6 +109,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function get(string $identifierGeneratorCode): IdentifierGenerator
     {
         $sql = <<<SQL
@@ -141,6 +144,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAll(): array
     {
         $sql = <<<SQL
@@ -205,11 +209,13 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNextId(): IdentifierGeneratorId
     {
         return IdentifierGeneratorId::fromString(Uuid::uuid4()->toString());
     }
 
+    #[\Override]
     public function count(): int
     {
         return \intval($this->connection->fetchOne('SELECT COUNT(1) FROM pim_catalog_identifier_generator'));
@@ -218,6 +224,7 @@ SQL;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function delete(string $identifierGeneratorCode): void
     {
         $this->get($identifierGeneratorCode);

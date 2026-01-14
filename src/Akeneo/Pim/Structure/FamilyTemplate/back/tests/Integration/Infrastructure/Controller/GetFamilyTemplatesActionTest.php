@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class GetFamilyTemplatesActionTest extends ControllerIntegrationTestCase
 {
-    private const ROUTE = 'pim_family_templates_get_action';
+    private const string ROUTE = 'pim_family_templates_get_action';
 
     protected function setUp(): void
     {

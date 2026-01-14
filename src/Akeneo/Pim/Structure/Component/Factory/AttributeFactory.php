@@ -39,6 +39,7 @@ class AttributeFactory implements SimpleFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create()
     {
         $attribute = new $this->attributeClass();

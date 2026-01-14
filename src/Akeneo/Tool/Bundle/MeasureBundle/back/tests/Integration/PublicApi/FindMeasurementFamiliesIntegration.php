@@ -17,6 +17,7 @@ final class FindMeasurementFamiliesIntegration extends TestCase
 {
     private FindMeasurementFamilies $findMeasurementFamilies;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -56,6 +57,7 @@ final class FindMeasurementFamiliesIntegration extends TestCase
         self::assertNull($this->findMeasurementFamilies->byCode('ABC'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

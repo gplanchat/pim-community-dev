@@ -56,6 +56,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMassActionRepository(MassActionRepositoryInterface $massActionRepository)
     {
         $this->massActionRepository = $massActionRepository;
@@ -64,6 +65,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(DatagridInterface $grid, array $config)
     {
         $this->configuration = $config;
@@ -83,6 +85,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getResults()
     {
         return $this->hydrator->hydrate($this->qb);
@@ -91,6 +94,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getQueryBuilder()
     {
         return $this->qb;
@@ -99,6 +103,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRepository()
     {
         if (null === $this->repository) {
@@ -111,6 +116,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMassActionRepository()
     {
         if (null === $this->massActionRepository) {
@@ -123,6 +129,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setHydrator(HydratorInterface $hydrator)
     {
         $this->hydrator = $hydrator;
@@ -133,6 +140,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParameters()
     {
         return $this->parameters;
@@ -141,6 +149,7 @@ class Datasource implements DatasourceInterface, ParameterizableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setParameters($parameters)
     {
         $this->parameters += $parameters;

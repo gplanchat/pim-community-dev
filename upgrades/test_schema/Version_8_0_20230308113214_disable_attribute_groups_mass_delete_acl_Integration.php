@@ -20,14 +20,15 @@ final class Version_8_0_20230308113214_disable_attribute_groups_mass_delete_acl_
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230308113214_disable_attribute_groups_mass_delete_acl';
-    private const ACL = 'pim_enrich_attributegroup_mass_delete';
+    private const string MIGRATION_LABEL = '_8_0_20230308113214_disable_attribute_groups_mass_delete_acl';
+    private const string ACL = 'pim_enrich_attributegroup_mass_delete';
 
     private Connection $connection;
     private AclManager $aclManager;
     private EntityManagerClearerInterface $cacheClearer;
     private RoleWithPermissionsRepository $roleWithPermissionsRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,6 +47,7 @@ final class Version_8_0_20230308113214_disable_attribute_groups_mass_delete_acl_
         $this->assertAclIsDisabled();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

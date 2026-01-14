@@ -41,6 +41,7 @@ class DBALPurger implements PurgerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function purge()
     {
         $sql = 'SET FOREIGN_KEY_CHECKS = 0;';

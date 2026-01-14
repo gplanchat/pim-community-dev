@@ -20,6 +20,7 @@ class DbalWrongCredentialsCombinationRepository implements WrongCredentialsCombi
     {
     }
 
+    #[\Override]
     public function create(WrongCredentialsCombination $wrongCredentialsCombination): void
     {
         $insertSQL = <<<SQL
@@ -35,6 +36,7 @@ SQL;
         ]);
     }
 
+    #[\Override]
     public function findAll(\DateTimeImmutable $since): WrongCredentialsCombinations
     {
         $selectSql = <<<SQL

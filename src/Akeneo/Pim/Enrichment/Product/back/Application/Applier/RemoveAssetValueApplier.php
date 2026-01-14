@@ -24,6 +24,7 @@ final class RemoveAssetValueApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, RemoveAssetValue::class);
@@ -59,6 +60,7 @@ final class RemoveAssetValueApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [RemoveAssetValue::class];

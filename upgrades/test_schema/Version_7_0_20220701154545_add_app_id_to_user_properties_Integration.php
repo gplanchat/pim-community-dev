@@ -23,7 +23,7 @@ class Version_7_0_20220701154545_add_app_id_to_user_properties_Integration exten
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220701154545_add_app_id_to_user_properties';
+    private const string MIGRATION_LABEL = '_7_0_20220701154545_add_app_id_to_user_properties';
 
     private Connection $connection;
     private ValidatorInterface $validator;
@@ -31,11 +31,13 @@ class Version_7_0_20220701154545_add_app_id_to_user_properties_Integration exten
     private ObjectUpdaterInterface $userUpdater;
     private SaverInterface $userSaver;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

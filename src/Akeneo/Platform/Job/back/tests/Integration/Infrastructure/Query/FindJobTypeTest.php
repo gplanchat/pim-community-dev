@@ -11,6 +11,7 @@ class FindJobTypeTest extends IntegrationTestCase
 {
     private FindJobTypeInterface $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

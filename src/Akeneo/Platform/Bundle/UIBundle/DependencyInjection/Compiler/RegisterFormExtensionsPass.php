@@ -22,6 +22,7 @@ class RegisterFormExtensionsPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition(static::PROVIDER_ID)) {

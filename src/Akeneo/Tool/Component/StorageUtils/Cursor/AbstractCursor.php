@@ -17,16 +17,19 @@ abstract class AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     abstract public function count(): int;
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     abstract public function rewind(): void;
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function next(): void
     {
         $this->position++;
@@ -35,6 +38,7 @@ abstract class AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function key(): ?int
     {
         if ($this->valid()) {
@@ -47,6 +51,7 @@ abstract class AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function valid(): bool
     {
         return $this->position < $this->count();

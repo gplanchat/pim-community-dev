@@ -32,6 +32,7 @@ class ValueUserIntentFactoryRegistry implements UserIntentFactory
         }
     }
 
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['values'];
@@ -40,6 +41,7 @@ class ValueUserIntentFactoryRegistry implements UserIntentFactory
     /**
      * @inerhitDoc
      */
+    #[\Override]
     public function create(string $fieldName, mixed $data): array
     {
         Assert::isArray($data);

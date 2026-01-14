@@ -28,6 +28,7 @@ class LRUCachedGetExistingAttributeOptions implements GetExistingAttributeOption
         $this->cache = new LRUCache(10000);
     }
 
+    #[\Override]
     public function fromOptionCodesByAttributeCode(array $optionCodesIndexedByAttributeCodes): array
     {
         if (empty($optionCodesIndexedByAttributeCodes)) {

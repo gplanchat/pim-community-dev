@@ -25,7 +25,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SearchProductAndModelsControllerIntegration extends ControllerIntegrationTestCase
 {
-    private const ROUTE = 'pimee_enrich_rule_definition_search_products_and_product_models';
+    private const string ROUTE = 'pimee_enrich_rule_definition_search_products_and_product_models';
 
     /** @var WebClientHelper */
     private $webClientHelper;

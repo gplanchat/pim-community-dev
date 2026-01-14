@@ -21,6 +21,7 @@ class MeasurementInstallerIntegration extends SqlIntegrationTestCase
 {
     private ?MeasurementInstaller $measurementInstaller = null;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

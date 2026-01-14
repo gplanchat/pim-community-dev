@@ -22,6 +22,7 @@ class SaveAsymmetricKeysQueryIntegration extends TestCase
     private Connection $connection;
     private FakeClock $clock;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -98,6 +99,7 @@ class SaveAsymmetricKeysQueryIntegration extends TestCase
         ], \json_decode($result['values'], true, 512, JSON_THROW_ON_ERROR));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

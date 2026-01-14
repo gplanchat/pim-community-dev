@@ -18,6 +18,7 @@ class IsMaintenanceModeEnabled implements IsMaintenanceModeEnabledInterface
     {
     }
 
+    #[\Override]
     public function execute(): bool
     {
         $query = <<<SQL

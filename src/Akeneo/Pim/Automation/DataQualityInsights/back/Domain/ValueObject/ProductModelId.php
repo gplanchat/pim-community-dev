@@ -27,6 +27,7 @@ final class ProductModelId implements ProductEntityIdInterface
         return new self(intval($id));
     }
 
+    #[\Override]
     public function __toString()
     {
         return strval($this->id);

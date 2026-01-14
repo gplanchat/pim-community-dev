@@ -17,6 +17,7 @@ class FilterChainedProvider implements FilterProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFilters($element)
     {
         $filters = [];
@@ -31,6 +32,7 @@ class FilterChainedProvider implements FilterProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element)
     {
         foreach ($this->providers as $provider) {

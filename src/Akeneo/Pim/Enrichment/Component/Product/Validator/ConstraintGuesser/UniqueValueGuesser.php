@@ -19,6 +19,7 @@ class UniqueValueGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAttribute(AttributeInterface $attribute): bool
     {
         $availableTypes = [
@@ -34,6 +35,7 @@ class UniqueValueGuesser implements ConstraintGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessConstraints(AttributeInterface $attribute): array
     {
         // We don't apply the unique value constraint on the main identifier because it is done

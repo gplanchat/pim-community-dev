@@ -63,6 +63,7 @@ class MassOperationConverter implements ConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(array $operation)
     {
         if ($operation['jobInstanceCode'] === self::EDIT_COMMON_JOB_CODE) {

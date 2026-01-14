@@ -22,6 +22,7 @@ class ConnectionImage implements \Stringable
         $this->filePath = $filePath;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->filePath;

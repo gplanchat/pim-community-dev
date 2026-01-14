@@ -29,6 +29,7 @@ class BundlesDataCollector implements DataCollectorInterface
      *
      * Collect the list of registered bundles
      */
+    #[\Override]
     public function collect()
     {
         $bundles = $this->bundles;

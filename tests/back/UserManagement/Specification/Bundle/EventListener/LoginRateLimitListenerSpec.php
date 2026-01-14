@@ -17,8 +17,8 @@ use Symfony\Component\Security\Http\Event\LoginSuccessEvent;
 
 class LoginRateLimitListenerSpec extends ObjectBehavior
 {
-    private const ACCOUNT_LOCK_DURATION = 2;
-    private const ALLOWED_FAILED_ATTEMPTS = 10;
+    private const int ACCOUNT_LOCK_DURATION = 2;
+    private const int ALLOWED_FAILED_ATTEMPTS = 10;
 
     public function let(UserManager $userManager)
     {

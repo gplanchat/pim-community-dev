@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class LoginRateLimitIntegration extends WebTestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();

@@ -10,6 +10,7 @@ class Configuration implements ConfigurationInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('oro_translation');

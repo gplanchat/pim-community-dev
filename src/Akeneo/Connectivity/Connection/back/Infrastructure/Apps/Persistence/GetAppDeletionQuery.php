@@ -18,6 +18,7 @@ final class GetAppDeletionQuery implements GetAppDeletionQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $appId): AppDeletion
     {
         $query = <<<SQL

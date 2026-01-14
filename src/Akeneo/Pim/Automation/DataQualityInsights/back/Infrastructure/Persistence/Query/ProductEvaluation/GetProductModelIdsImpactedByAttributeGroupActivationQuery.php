@@ -27,6 +27,7 @@ final class GetProductModelIdsImpactedByAttributeGroupActivationQuery implements
     /**
      * @return \Generator<int, ProductEntityIdCollection>
      */
+    #[\Override]
     public function updatedSince(\DateTimeImmutable $updatedSince, int $bulkSize): \Generator
     {
         $productModelIds = [];
@@ -147,6 +148,7 @@ SQL;
     /**
      * @return \Generator<int, ProductEntityIdCollection>
      */
+    #[\Override]
     public function forAttributeGroup(AttributeGroupCode $attributeGroupCode, int $bulkSize): \Generator
     {
         $productModelIds = [];

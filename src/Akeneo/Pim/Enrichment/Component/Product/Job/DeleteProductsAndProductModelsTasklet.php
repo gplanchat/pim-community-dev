@@ -58,6 +58,7 @@ class DeleteProductsAndProductModelsTasklet implements TaskletInterface, Trackab
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
@@ -66,6 +67,7 @@ class DeleteProductsAndProductModelsTasklet implements TaskletInterface, Trackab
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute(): void
     {
         if (null === $this->stepExecution) {
@@ -297,6 +299,7 @@ class DeleteProductsAndProductModelsTasklet implements TaskletInterface, Trackab
         return $items->count();
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return true;

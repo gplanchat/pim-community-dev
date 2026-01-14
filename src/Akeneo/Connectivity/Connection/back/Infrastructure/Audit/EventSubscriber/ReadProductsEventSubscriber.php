@@ -34,6 +34,7 @@ final class ReadProductsEventSubscriber implements EventSubscriberInterface
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [ReadProductsEvent::class => 'saveReadProducts'];

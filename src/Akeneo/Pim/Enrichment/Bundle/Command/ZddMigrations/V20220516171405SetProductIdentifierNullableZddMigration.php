@@ -17,6 +17,7 @@ class V20220516171405SetProductIdentifierNullableZddMigration implements ZddMigr
     {
     }
 
+    #[\Override]
     public function migrate(): void
     {
         if ($this->isColumnNullable('pim_catalog_product', 'identifier')) {
@@ -31,6 +32,7 @@ class V20220516171405SetProductIdentifierNullableZddMigration implements ZddMigr
         SQL);
     }
 
+    #[\Override]
     public function migrateNotZdd(): void
     {
         if ($this->isColumnNullable('pim_catalog_product', 'identifier')) {
@@ -43,6 +45,7 @@ class V20220516171405SetProductIdentifierNullableZddMigration implements ZddMigr
         SQL);
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'SetProductIdentifierNullable';

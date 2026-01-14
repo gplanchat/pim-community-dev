@@ -18,7 +18,7 @@ use PHPUnit\Framework\Assert;
  */
 final class ImportAttributesIntegration extends TestCase
 {
-    private const CSV_IMPORT_JOB_CODE = 'csv_attribute_import';
+    private const string CSV_IMPORT_JOB_CODE = 'csv_attribute_import';
 
     /** @test */
     public function test_it_imports_multiple_identifier_attributes(): void
@@ -84,6 +84,7 @@ CSV;
         Assert::assertEquals($warning, $warnings[0]['reason']);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -120,6 +121,7 @@ CSV;
         return $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

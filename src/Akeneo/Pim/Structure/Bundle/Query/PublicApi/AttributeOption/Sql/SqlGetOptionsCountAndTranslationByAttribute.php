@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 final class SqlGetOptionsCountAndTranslationByAttribute implements GetOptionsCountAndTranslationByAttribute
 {
-    private const MAX_PAGE_SIZE = 20;
+    private const int MAX_PAGE_SIZE = 20;
 
     public function __construct(private Connection $connection)
     {
@@ -31,6 +31,7 @@ final class SqlGetOptionsCountAndTranslationByAttribute implements GetOptionsCou
      * @throws \Doctrine\DBAL\Driver\Exception
      * @throws \Doctrine\DBAL\Exception
      */
+    #[\Override]
     public function search(string $localeCode, int $limit = self::MAX_PAGE_SIZE, int $offset = 0, ?string $search = null): array
     {
         $query = <<<SQL

@@ -24,6 +24,7 @@ final class SetMultiReferenceEntityValueApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, SetMultiReferenceEntityValue::class);
@@ -47,6 +48,7 @@ final class SetMultiReferenceEntityValueApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetMultiReferenceEntityValue::class];

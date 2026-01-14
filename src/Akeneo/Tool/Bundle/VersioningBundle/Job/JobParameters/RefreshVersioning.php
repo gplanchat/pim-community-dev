@@ -15,13 +15,15 @@ use Symfony\Component\Validator\Constraints\Type;
  */
 class RefreshVersioning implements ConstraintCollectionProviderInterface, DefaultValuesProviderInterface
 {
-    private const JOB_NAME = 'versioning_refresh';
+    private const string JOB_NAME = 'versioning_refresh';
 
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return self::JOB_NAME === $job->getName();
     }
 
+    #[\Override]
     public function getDefaultValues(): array
     {
         return [
@@ -29,6 +31,7 @@ class RefreshVersioning implements ConstraintCollectionProviderInterface, Defaul
         ];
     }
 
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection(

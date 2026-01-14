@@ -19,6 +19,7 @@ class AkeneoPimStructureExtension extends Extension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();

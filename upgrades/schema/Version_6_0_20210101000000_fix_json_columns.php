@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210101000000_fix_json_columns extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql('SELECT 1');
@@ -21,6 +22,7 @@ final class Version_6_0_20210101000000_fix_json_columns extends AbstractMigratio
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

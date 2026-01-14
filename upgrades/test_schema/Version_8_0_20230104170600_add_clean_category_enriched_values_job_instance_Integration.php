@@ -15,12 +15,13 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_8_0_20230104170600_add_clean_category_enriched_values_job_instance_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230104170600_add_clean_category_enriched_values_job_instance';
+    private const string MIGRATION_NAME = '_8_0_20230104170600_add_clean_category_enriched_values_job_instance';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,6 +47,7 @@ final class Version_8_0_20230104170600_add_clean_category_enriched_values_job_in
         Assert::assertTrue($this->jobInstanceExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

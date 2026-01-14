@@ -12,8 +12,9 @@ final class Version_7_0_20221129093347_add_cascade_on_prefixes_Integration exten
     use ExecuteMigrationTrait;
 
     private Connection $connection;
-    private const MIGRATION_LABEL = '_7_0_20221129093347_add_cascade_on_prefixes';
+    private const string MIGRATION_LABEL = '_7_0_20221129093347_add_cascade_on_prefixes';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -30,6 +31,7 @@ final class Version_7_0_20221129093347_add_cascade_on_prefixes_Integration exten
         Assert::assertTrue($this->hasCascadeDelete('FK_ATTRIBUTEID'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

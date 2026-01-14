@@ -9,7 +9,7 @@ final class Version_6_0_20210531152335_dqi_launch_recompute_products_scores_Inte
 {
     use ExecuteMigrationTrait;
 
-    const MIGRATION_LABEL = '_6_0_20210531152335_dqi_launch_recompute_products_scores';
+    const string MIGRATION_LABEL = '_6_0_20210531152335_dqi_launch_recompute_products_scores';
 
     public function testRecomputeScoresJobShouldBeInitialized(): void
     {
@@ -40,6 +40,7 @@ SQL);
         $this->assertNotNull($jobExecutionId,  'The `data_quality_insights_recompute_products_scores` job execution should be initialized');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

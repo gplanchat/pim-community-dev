@@ -21,6 +21,7 @@ class ChainedUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAction($action)
     {
         return true;
@@ -29,6 +30,7 @@ class ChainedUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessUpdates(EntityManager $em, $entity, $action)
     {
         $updates = [];

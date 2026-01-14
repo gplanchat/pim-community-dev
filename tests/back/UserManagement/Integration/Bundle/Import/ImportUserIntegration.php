@@ -23,8 +23,8 @@ use PHPUnit\Framework\Assert;
 
 final class ImportUserIntegration extends TestCase
 {
-    private const CSV_IMPORT_JOB_CODE = 'csv_user_import';
-    private const XLSX_IMPORT_JOB_CODE = 'xlsx_user_import';
+    private const string CSV_IMPORT_JOB_CODE = 'csv_user_import';
+    private const string XLSX_IMPORT_JOB_CODE = 'xlsx_user_import';
 
     private readonly JobLauncher $jobLauncher;
     private readonly UserRepositoryInterface $userRepository;
@@ -40,6 +40,7 @@ final class ImportUserIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -222,6 +223,7 @@ final class ImportUserIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

@@ -30,6 +30,7 @@ class VariantProductRepository implements VariantProductRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findSiblingsProducts(ProductInterface $product): array
     {
         $qb = $this->entityManager->createQueryBuilder();
@@ -50,6 +51,7 @@ class VariantProductRepository implements VariantProductRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findLastCreatedByParent(ProductModelInterface $parent): ?ProductInterface
     {
         $qb = $this->entityManager->createQueryBuilder();

@@ -18,6 +18,7 @@ class FileExtensionValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (is_string($value)) {

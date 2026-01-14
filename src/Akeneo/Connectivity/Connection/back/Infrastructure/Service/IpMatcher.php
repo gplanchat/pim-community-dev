@@ -16,6 +16,7 @@ class IpMatcher implements IpMatcherInterface
     /**
      * @param string[] $whitelist
      */
+    #[\Override]
     public function match(string $ip, array $whitelist): bool
     {
         return IpUtils::checkIp($ip, $whitelist);

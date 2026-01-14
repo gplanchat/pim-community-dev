@@ -14,6 +14,7 @@ use Webmozart\Assert\Assert;
  */
 class GetNonRequiredAttributesMasksQueryIntegration extends CompletenessTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

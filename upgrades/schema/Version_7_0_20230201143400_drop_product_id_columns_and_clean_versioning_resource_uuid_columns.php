@@ -14,17 +14,20 @@ final class Version_7_0_20230201143400_drop_product_id_columns_and_clean_version
 {
     private ?ContainerInterface $container = null;
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->getMigration()->migrateNotZdd();
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
     }
 
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }

@@ -19,6 +19,7 @@ class LabelOrIdentifierFilter extends OroStringFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data): bool
     {
         $data = $this->parseData($data);

@@ -15,6 +15,7 @@ class PartialUpdateListProductEndToEnd extends AbstractProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -160,7 +161,7 @@ JSON;
             <<<JSON
     {
         "code": 413,
-        "message": "Too many resources to process, ${maxNumberResources} is the maximum allowed."
+        "message": "Too many resources to process, {$maxNumberResources} is the maximum allowed."
     }
 JSON;
 
@@ -387,6 +388,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

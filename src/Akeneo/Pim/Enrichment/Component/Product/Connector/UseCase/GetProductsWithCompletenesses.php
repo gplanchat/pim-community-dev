@@ -23,11 +23,13 @@ class GetProductsWithCompletenesses implements GetProductsWithCompletenessesInte
         $this->getProductCompletenesses = $getProductCompletenesses;
     }
 
+    #[\Override]
     public function fromConnectorProduct(ConnectorProduct $product): ConnectorProduct
     {
         return $product->buildWithCompletenesses($this->getProductCompletenesses->fromProductUuid($product->uuid()));
     }
 
+    #[\Override]
     public function fromConnectorProductList(
         ConnectorProductList $connectorProductList,
         ?string $channel = null,

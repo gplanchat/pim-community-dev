@@ -22,6 +22,7 @@ final class LanguageCode
         $this->code = $code;
     }
 
+    #[\Override]
     public function __toString()
     {
         return $this->code;

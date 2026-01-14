@@ -28,6 +28,7 @@ final class SqlLocales implements LocalesInterface
         $this->localesLoaded = false;
     }
 
+    #[\Override]
     public function getIdByCode(string $code): ?int
     {
         if (false === $this->localesLoaded) {
@@ -37,6 +38,7 @@ final class SqlLocales implements LocalesInterface
         return $this->localeIdsByCodes[$code] ?? null;
     }
 
+    #[\Override]
     public function getCodeById(int $id): ?string
     {
         if (false === $this->localesLoaded) {

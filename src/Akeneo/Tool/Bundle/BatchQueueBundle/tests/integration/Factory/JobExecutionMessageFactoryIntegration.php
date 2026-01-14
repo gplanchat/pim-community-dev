@@ -17,6 +17,7 @@ final class JobExecutionMessageFactoryIntegration extends TestCase
 {
     private JobExecutionMessageFactory $jobExecutionMessageFactory;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -113,6 +114,7 @@ final class JobExecutionMessageFactoryIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

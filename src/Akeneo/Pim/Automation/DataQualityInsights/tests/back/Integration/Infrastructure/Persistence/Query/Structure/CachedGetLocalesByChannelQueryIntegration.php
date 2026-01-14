@@ -28,6 +28,7 @@ class CachedGetLocalesByChannelQueryIntegration extends TestCase
         $this->assertSame($expectedLocalesAndChanels, $result);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

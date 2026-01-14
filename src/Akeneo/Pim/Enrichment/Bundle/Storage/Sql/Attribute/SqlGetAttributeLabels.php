@@ -33,6 +33,7 @@ final class SqlGetAttributeLabels implements GetAttributeLabelsInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function forAttributeCodes(array $attributeCodes): array
     {
         $sql = <<<SQL

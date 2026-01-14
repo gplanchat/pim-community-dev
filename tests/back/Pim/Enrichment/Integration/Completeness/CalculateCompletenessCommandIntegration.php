@@ -40,6 +40,7 @@ class CalculateCompletenessCommandIntegration extends TestCase
         Assert::assertFalse($this->isProductModelIndexed($this->productModelIds['sub_pm_B']));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -92,6 +93,7 @@ class CalculateCompletenessCommandIntegration extends TestCase
         $this->purgeCompletenessAndResetIndex();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

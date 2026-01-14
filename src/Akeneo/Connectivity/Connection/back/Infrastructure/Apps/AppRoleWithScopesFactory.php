@@ -17,7 +17,7 @@ use Akeneo\UserManagement\Component\Storage\Saver\RoleWithPermissionsSaver;
  */
 final class AppRoleWithScopesFactory implements AppRoleWithScopesFactoryInterface
 {
-    private const APP_ROLE_TYPE = 'app';
+    private const string APP_ROLE_TYPE = 'app';
 
     public function __construct(
         private ScopeMapperRegistry $scopeMapperRegistry,
@@ -26,6 +26,7 @@ final class AppRoleWithScopesFactory implements AppRoleWithScopesFactoryInterfac
     ) {
     }
 
+    #[\Override]
     public function createRole(string $label, array $scopes): RoleInterface
     {
         /** @var RoleInterface $role */

@@ -27,6 +27,7 @@ final class FileValueFactory implements ValueFactory
         $this->fileInfoRepository = $fileInfoRepository;
     }
 
+    #[\Override]
     public function createWithoutCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         // the data can be FileInfo as it's already loaded in \Akeneo\Pim\Enrichment\Component\Product\Factory\NonExistentValuesFilter\NonExistentFileValueFilter
@@ -50,6 +51,7 @@ final class FileValueFactory implements ValueFactory
         return MediaValue::value($attributeCode, $file);
     }
 
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data) : ValueInterface
     {
         if (!\is_string($data) && !$data instanceof FileInfoInterface) {
@@ -75,6 +77,7 @@ final class FileValueFactory implements ValueFactory
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::FILE;

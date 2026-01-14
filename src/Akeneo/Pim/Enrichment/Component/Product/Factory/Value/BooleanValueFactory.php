@@ -16,6 +16,7 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
  */
 final class BooleanValueFactory extends ScalarValueFactory implements ValueFactory
 {
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_bool($data)) {
@@ -29,6 +30,7 @@ final class BooleanValueFactory extends ScalarValueFactory implements ValueFacto
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::BOOLEAN;

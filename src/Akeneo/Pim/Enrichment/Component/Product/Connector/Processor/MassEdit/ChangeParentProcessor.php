@@ -51,6 +51,7 @@ class ChangeParentProcessor extends AbstractProcessor
      *
      * @return null|EntityWithFamilyVariantInterface
      */
+    #[\Override]
     public function process($product): ?EntityWithFamilyVariantInterface
     {
         $this->validateIsProduct($product);

@@ -29,6 +29,7 @@ class SelectAllAuditableConnectionCodeQueryIntegration extends TestCase
         Assert::assertEquals('translation', $codes[1]);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ class SelectAllAuditableConnectionCodeQueryIntegration extends TestCase
         $this->selectAuditableConnectionsCodeQuery = $this->get(SelectAllAuditableConnectionCodeQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

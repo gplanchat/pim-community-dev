@@ -14,6 +14,7 @@ class MetricSorter extends AbstractAttributeSorter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getAttributePathSuffix()
     {
         return 'base_data';

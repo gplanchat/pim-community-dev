@@ -35,6 +35,7 @@ abstract class ControllerEndToEndTestCase extends WebTestCase
         return $this->catalog->useTechnicalCatalog(['identifier_generator']);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->client = static::createClient(['environment' => 'test', 'debug' => false]);
@@ -64,6 +65,7 @@ abstract class ControllerEndToEndTestCase extends WebTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         $connectionCloser = $this->get('akeneo_integration_tests.doctrine.connection.connection_closer');

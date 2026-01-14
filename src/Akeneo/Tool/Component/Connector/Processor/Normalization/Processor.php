@@ -34,6 +34,7 @@ class Processor implements ItemProcessorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item)
     {
         $normalizedItem = $this->normalizer->normalize($item);

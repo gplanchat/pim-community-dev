@@ -57,6 +57,7 @@ class ValueConverter implements ConverterInterface
      *     }
      * }
      */
+    #[\Override]
     public function convert(array $productValues)
     {
         $attributeTypes = $this->attributeRepository->getAttributeTypeByCodes(array_keys($productValues));

@@ -14,11 +14,13 @@ use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
 
 class LabelUserIntentFactory implements UserIntentFactory
 {
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['labels'];
     }
 
+    #[\Override]
     public function create(string $fieldName, int $categoryId, mixed $data): array
     {
         if (false === \is_array($data)) {

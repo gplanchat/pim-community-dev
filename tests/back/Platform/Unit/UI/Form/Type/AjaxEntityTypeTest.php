@@ -49,6 +49,7 @@ class AjaxEntityTypeTest extends TestCase
     /**
      * @{@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->router = $this->createMock(RouterInterface::class);

@@ -42,6 +42,7 @@ class PropertyCopier implements PropertyCopierInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function copyData(
         $fromEntityWithValues,
         $toEntityWithValues,

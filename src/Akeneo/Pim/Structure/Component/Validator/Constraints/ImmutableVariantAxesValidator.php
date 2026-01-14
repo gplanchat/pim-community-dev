@@ -34,6 +34,7 @@ class ImmutableVariantAxesValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($entity, Constraint $constraint): void
     {
         if (!$entity instanceof VariantAttributeSet) {

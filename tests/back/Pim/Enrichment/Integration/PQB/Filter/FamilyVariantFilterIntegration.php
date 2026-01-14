@@ -10,6 +10,7 @@ class FamilyVariantFilterIntegration extends AbstractProductAndProductModelQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

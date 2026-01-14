@@ -28,6 +28,7 @@ class DateValue extends AbstractValue implements DateValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData(): ?\DateTime
     {
         return $this->data;
@@ -36,6 +37,7 @@ class DateValue extends AbstractValue implements DateValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         return null !== $this->data ? $this->data->format('Y-m-d') : '';
@@ -44,6 +46,7 @@ class DateValue extends AbstractValue implements DateValueInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof DateValueInterface ||

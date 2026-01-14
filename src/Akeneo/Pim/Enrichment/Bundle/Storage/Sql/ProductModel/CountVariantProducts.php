@@ -21,6 +21,7 @@ final class CountVariantProducts implements CountVariantProductsInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function forProductModelCodes(array $productModelCodes): int
     {
         if (0 === count($productModelCodes)) {

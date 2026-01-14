@@ -18,6 +18,7 @@ class ProductModelWriter extends AbstractItemMediaWriter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getWriterConfiguration(): array
     {
         return ['type' => 'xlsx'];
@@ -26,6 +27,7 @@ class ProductModelWriter extends AbstractItemMediaWriter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getItemIdentifier(array $productModel): string
     {
         return $productModel['code'] ?? $productModel['identifier'];

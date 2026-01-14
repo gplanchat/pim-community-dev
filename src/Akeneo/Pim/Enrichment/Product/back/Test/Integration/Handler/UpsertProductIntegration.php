@@ -67,13 +67,15 @@ final class UpsertProductIntegration extends TestCase
     private MessageBusInterface $messageBus;
     private ProductRepositoryInterface $productRepository;
 
-    private const TEXT_AREA_VALUE = "<p><span style=\"font-weight: bold;\">title</span></p><p>text</p>";
+    private const string TEXT_AREA_VALUE = "<p><span style=\"font-weight: bold;\">title</span></p><p>text</p>";
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -1598,6 +1600,7 @@ final class UpsertProductIntegration extends TestCase
         $this->get('pim_enrich.product.message_bus')->dispatch($command);
     }
 
+    #[\Override]
     protected function getFileInfoKey(string $path): string
     {
         if (!is_file($path)) {
@@ -1620,6 +1623,7 @@ final class UpsertProductIntegration extends TestCase
      *
      * @return string
      */
+    #[\Override]
     protected function getFixturePath(string $name): string
     {
         $configuration = $this->getConfiguration();

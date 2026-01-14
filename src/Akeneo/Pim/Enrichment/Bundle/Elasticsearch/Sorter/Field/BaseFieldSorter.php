@@ -33,6 +33,7 @@ class BaseFieldSorter implements FieldSorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setQueryBuilder($searchQueryBuilder)
     {
         if (!$searchQueryBuilder instanceof SearchQueryBuilder) {
@@ -47,6 +48,7 @@ class BaseFieldSorter implements FieldSorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldSorter($field, $direction, $locale = null, $channel = null): FieldSorterInterface
     {
         if (null === $this->searchQueryBuilder) {
@@ -84,6 +86,7 @@ class BaseFieldSorter implements FieldSorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsField($field)
     {
         return in_array($field, $this->supportedFields);

@@ -32,6 +32,7 @@ class InMemoryCountQuery implements CountQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): CountVolume
     {
         return new CountVolume($this->volume, $this->volumeName);

@@ -12,6 +12,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20211108160902_fix_oauth_code_fk extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $table = $schema->getTable('pim_api_auth_code');
@@ -27,6 +28,7 @@ final class Version_6_0_20211108160902_fix_oauth_code_fk extends AbstractMigrati
         $this->addSql('ALTER TABLE pim_api_auth_code ADD CONSTRAINT FK_AD5DC7C6A76ED395 FOREIGN KEY (user_id) REFERENCES oro_user (id) ON DELETE CASCADE');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

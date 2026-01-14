@@ -14,6 +14,7 @@ final class SqlGetProductUuidsIntegration extends EnrichmentProductTestCase
     private $uuid2;
     private SqlGetProductUuids $sqlGetProductUuids;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

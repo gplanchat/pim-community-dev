@@ -35,6 +35,7 @@ class LabelOrIdentifierFilter extends AbstractFieldFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter(
         $attribute,
         $operator,

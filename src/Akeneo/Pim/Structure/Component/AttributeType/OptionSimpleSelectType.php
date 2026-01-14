@@ -16,6 +16,7 @@ class OptionSimpleSelectType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return AttributeTypes::OPTION_SIMPLE_SELECT;

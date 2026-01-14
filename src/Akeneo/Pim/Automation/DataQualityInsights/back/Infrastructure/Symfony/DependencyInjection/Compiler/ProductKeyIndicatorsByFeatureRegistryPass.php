@@ -15,6 +15,7 @@ use Symfony\Component\DependencyInjection\Reference;
  */
 final class ProductKeyIndicatorsByFeatureRegistryPass implements CompilerPassInterface
 {
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $registryDefinition = $container->findDefinition(ProductKeyIndicatorsByFeatureRegistry::class);

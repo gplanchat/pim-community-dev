@@ -22,6 +22,7 @@ class MailNotifier implements MailNotifierInterface
     /**
      * @param string[] $recipients
      */
+    #[\Override]
     public function notify(
         array $recipients,
         string $subject,

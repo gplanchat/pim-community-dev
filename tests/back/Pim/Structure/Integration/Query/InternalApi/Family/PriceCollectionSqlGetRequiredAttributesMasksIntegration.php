@@ -23,6 +23,7 @@ final class PriceCollectionSqlGetRequiredAttributesMasksIntegration extends Abst
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

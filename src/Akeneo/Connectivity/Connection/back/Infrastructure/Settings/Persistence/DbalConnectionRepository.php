@@ -20,6 +20,7 @@ class DbalConnectionRepository implements ConnectionRepositoryInterface
     {
     }
 
+    #[\Override]
     public function create(Connection $connection): void
     {
         $insertQuery = <<<SQL
@@ -44,6 +45,7 @@ SQL;
         );
     }
 
+    #[\Override]
     public function findOneByCode(string $code): ?Connection
     {
         $selectQuery = <<<SQL
@@ -67,6 +69,7 @@ SQL;
             ) : null;
     }
 
+    #[\Override]
     public function update(Connection $connection): void
     {
         $updateQuery = <<<SQL
@@ -90,6 +93,7 @@ SQL;
         );
     }
 
+    #[\Override]
     public function delete(Connection $connection): void
     {
         $deleteQuery = <<<SQL

@@ -17,6 +17,7 @@ class UserRepository extends EntityRepository implements UserRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['username'];
@@ -25,6 +26,7 @@ class UserRepository extends EntityRepository implements UserRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         $qb = $this->createQueryBuilder('u');
@@ -37,6 +39,7 @@ class UserRepository extends EntityRepository implements UserRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findByGroupIds(array $groupIds)
     {
         if (empty($groupIds)) {
@@ -53,6 +56,7 @@ class UserRepository extends EntityRepository implements UserRepositoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countAll(): int
     {
         $qb = $this->createQueryBuilder('u');

@@ -21,6 +21,7 @@ final class SetMeasurementValueApplier implements UserIntentApplier
     ) {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, SetMeasurementValue::class);
@@ -41,6 +42,7 @@ final class SetMeasurementValueApplier implements UserIntentApplier
         ]);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetMeasurementValue::class];

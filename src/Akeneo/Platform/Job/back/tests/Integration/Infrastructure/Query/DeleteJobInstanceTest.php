@@ -13,6 +13,7 @@ class DeleteJobInstanceTest extends IntegrationTestCase
     private Connection $connection;
     private DeleteJobInstanceInterface $deleteJobInstanceQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

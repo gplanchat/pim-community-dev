@@ -16,10 +16,11 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_7_0_20220912132436_update_namespace_in_resource_name_for_category_history_integration extends TestCase
 {
-    private const MIGRATION_NAME = '_7_0_20220912132436_update_namespace_in_resource_name_for_category_history';
+    private const string MIGRATION_NAME = '_7_0_20220912132436_update_namespace_in_resource_name_for_category_history';
     use ExecuteMigrationTrait;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ final class Version_7_0_20220912132436_update_namespace_in_resource_name_for_cat
         Assert::assertEquals(0, $this->wrongNamespaceCount());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

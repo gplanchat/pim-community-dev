@@ -18,6 +18,7 @@ class CreateConnectionCommandEndToEnd extends CommandTestCase
 {
     private Command $command;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -66,6 +67,7 @@ class CreateConnectionCommandEndToEnd extends CommandTestCase
         $this->assertStringContainsString('The user group was not found. Make sure the specified user group exists.', $output);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -20,11 +20,13 @@ class FindAllUsernamesWithAclQueryIntegration extends TestCase
     private UserLoader $userLoader;
     private AclLoader $aclLoader;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -25,11 +25,13 @@ class CategoryBaseSaver implements CategorySaver
     ) {
     }
 
+    #[\Override]
     public function save(Category $categoryModel): void
     {
         $this->upsertCategoryBase->execute($categoryModel);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return $this->supportedUserIntents;

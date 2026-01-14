@@ -17,6 +17,7 @@ class ReferenceDataNormalizer extends AbstractProductValueNormalizer implements 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ReferenceDataValue && (
@@ -24,6 +25,7 @@ class ReferenceDataNormalizer extends AbstractProductValueNormalizer implements 
         );
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -32,6 +34,7 @@ class ReferenceDataNormalizer extends AbstractProductValueNormalizer implements 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         return $value->getData();

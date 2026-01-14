@@ -11,6 +11,7 @@ class OroTranslationBundle extends Bundle
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function build(ContainerBuilder $container)
     {
         parent::build($container);

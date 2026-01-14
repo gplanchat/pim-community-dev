@@ -11,6 +11,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210427163307_add_user_account_locking_after_too_many_attempts extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
@@ -23,6 +24,7 @@ final class Version_6_0_20210427163307_add_user_account_locking_after_too_many_a
         $this->addSql('alter table oro_user add authentication_failure_reset_date datetime  default null ');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

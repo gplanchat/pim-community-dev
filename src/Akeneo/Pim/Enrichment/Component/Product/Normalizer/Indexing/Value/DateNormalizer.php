@@ -19,6 +19,7 @@ class DateNormalizer extends AbstractProductValueNormalizer implements Normalize
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof DateValueInterface && (
@@ -26,6 +27,7 @@ class DateNormalizer extends AbstractProductValueNormalizer implements Normalize
         );
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -34,6 +36,7 @@ class DateNormalizer extends AbstractProductValueNormalizer implements Normalize
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         $date = $value->getData();

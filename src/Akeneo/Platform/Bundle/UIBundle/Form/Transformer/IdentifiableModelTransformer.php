@@ -39,6 +39,7 @@ class IdentifiableModelTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function reverseTransform($identifier)
     {
         if (null === $identifier) {
@@ -63,6 +64,7 @@ class IdentifiableModelTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function transform($model)
     {
         if (null === $model) {

@@ -17,6 +17,7 @@ class ProductQueryBuilderFromSizeOptionsResolver implements ProductQueryBuilderO
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function resolve(array $options)
     {
         $resolver = $this->createOptionsResolver();

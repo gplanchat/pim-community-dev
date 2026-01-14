@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ValidateApiRequestQueryParametersSubscriberIntegration extends ApiTestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

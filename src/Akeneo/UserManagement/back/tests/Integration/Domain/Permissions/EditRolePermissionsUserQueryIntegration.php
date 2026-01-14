@@ -25,6 +25,7 @@ class EditRolePermissionsUserQueryIntegration extends TestCase
     private SimpleFactoryInterface $roleFactory;
     private SaverInterface $roleSaver;
     private RoleWithPermissionsSaver $roleWithPermissionsSaver;
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -108,6 +109,7 @@ class EditRolePermissionsUserQueryIntegration extends TestCase
         $this->aclManager->clearCache();
         $this->cacheClearer->clear();
     }
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

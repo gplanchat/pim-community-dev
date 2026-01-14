@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230323180900_add_column_is_deactivated_on_template_attribute extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -23,6 +24,7 @@ final class Version_8_0_20230323180900_add_column_is_deactivated_on_template_att
         $this->addSql('ALTER TABLE pim_catalog_category_attribute ADD COLUMN is_deactivated BOOLEAN NOT NULL DEFAULT 0;');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

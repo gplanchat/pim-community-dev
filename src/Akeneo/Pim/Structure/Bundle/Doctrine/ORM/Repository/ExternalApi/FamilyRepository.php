@@ -33,11 +33,13 @@ class FamilyRepository extends EntityRepository implements ApiResourceRepository
         parent::__construct($entityManager, $entityManager->getClassMetadata($className));
     }
 
+    #[\Override]
     public function getIdentifierProperties(): array
     {
         return $this->familyRepository->getIdentifierProperties();
     }
 
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->familyRepository->findOneByIdentifier($identifier);
@@ -50,6 +52,7 @@ class FamilyRepository extends EntityRepository implements ApiResourceRepository
      *
      * @return array
      */
+    #[\Override]
     public function searchAfterOffset(array $searchFilters, array $orders, $limit, $offset): array
     {
         $qb = $this->createQueryBuilder('r');
@@ -73,6 +76,7 @@ class FamilyRepository extends EntityRepository implements ApiResourceRepository
      *
      * @return int
      */
+    #[\Override]
     public function count(array $searchFilters = []): int
     {
         try {

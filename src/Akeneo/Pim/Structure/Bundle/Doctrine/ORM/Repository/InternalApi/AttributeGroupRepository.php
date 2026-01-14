@@ -27,6 +27,7 @@ class AttributeGroupRepository extends EntityRepository implements TranslatedLab
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findTranslatedLabels(array $options = [])
     {
         $queryBuilder = $this->createQueryBuilder('g')

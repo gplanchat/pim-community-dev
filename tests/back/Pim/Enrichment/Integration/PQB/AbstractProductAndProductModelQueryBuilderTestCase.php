@@ -26,6 +26,7 @@ abstract class AbstractProductAndProductModelQueryBuilderTestCase extends TestCa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -36,6 +37,7 @@ abstract class AbstractProductAndProductModelQueryBuilderTestCase extends TestCa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

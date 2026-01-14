@@ -21,16 +21,19 @@ class InMemoryFamilyVariantRepository implements SaverInterface, IdentifiableObj
         $this->familyVariants = new ArrayCollection($familyVariants);
     }
 
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
     }
 
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->familyVariants->get($identifier);
     }
 
+    #[\Override]
     public function save($object, array $options = [])
     {
         if (!$object instanceof FamilyVariant) {
@@ -40,26 +43,31 @@ class InMemoryFamilyVariantRepository implements SaverInterface, IdentifiableObj
         $this->familyVariants->set($object->getCode(), $object);
     }
 
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findAll()
     {
         return array_values($this->familyVariants->toArray());
     }
 
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
     }
 
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);

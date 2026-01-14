@@ -21,6 +21,7 @@ final class SqlGetGroupedAttributes implements GetGroupedAttributes
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function findAttributes(
         string $localeCode,
         int $limit,

@@ -10,7 +10,7 @@ class Version_6_0_20210330143635_sanitize_users_and_channels_having_link_to_subc
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20210330143635_sanitize_users_and_channels_having_link_to_subcategory';
+    private const string MIGRATION_LABEL = '_6_0_20210330143635_sanitize_users_and_channels_having_link_to_subcategory';
 
     public function test_it_sanitizes_users_having_link_to_subcategory()
     {
@@ -36,6 +36,7 @@ class Version_6_0_20210330143635_sanitize_users_and_channels_having_link_to_subc
         Assert::count($this->findChannelsHavingLinkToSubCategory(), 0);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

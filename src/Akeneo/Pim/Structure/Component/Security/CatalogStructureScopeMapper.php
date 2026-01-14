@@ -13,10 +13,10 @@ use Akeneo\Connectivity\Connection\Infrastructure\Apps\Security\ScopeMapperInter
  */
 class CatalogStructureScopeMapper implements ScopeMapperInterface
 {
-    private const SCOPE_READ_CATALOG_STRUCTURE = 'read_catalog_structure';
-    private const SCOPE_WRITE_CATALOG_STRUCTURE = 'write_catalog_structure';
+    private const string SCOPE_READ_CATALOG_STRUCTURE = 'read_catalog_structure';
+    private const string SCOPE_WRITE_CATALOG_STRUCTURE = 'write_catalog_structure';
 
-    private const SCOPE_ACL_MAP = [
+    private const array SCOPE_ACL_MAP = [
         self::SCOPE_READ_CATALOG_STRUCTURE => [
             'pim_api_attribute_list',
             'pim_api_attribute_group_list',
@@ -31,7 +31,7 @@ class CatalogStructureScopeMapper implements ScopeMapperInterface
         ],
     ];
 
-    private const SCOPE_MESSAGE_MAP = [
+    private const array SCOPE_MESSAGE_MAP = [
         self::SCOPE_READ_CATALOG_STRUCTURE => [
             'icon' => 'catalog_structure',
             'type' => 'view',
@@ -44,13 +44,14 @@ class CatalogStructureScopeMapper implements ScopeMapperInterface
         ],
     ];
 
-    private const SCOPE_HIERARCHY = [
+    private const array SCOPE_HIERARCHY = [
         self::SCOPE_READ_CATALOG_STRUCTURE => [],
         self::SCOPE_WRITE_CATALOG_STRUCTURE => [
             self::SCOPE_READ_CATALOG_STRUCTURE,
         ],
     ];
 
+    #[\Override]
     public function getScopes(): array
     {
         return [
@@ -59,6 +60,7 @@ class CatalogStructureScopeMapper implements ScopeMapperInterface
         ];
     }
 
+    #[\Override]
     public function getAcls(string $scopeName): array
     {
         if (!\array_key_exists($scopeName, self::SCOPE_ACL_MAP)) {
@@ -68,6 +70,7 @@ class CatalogStructureScopeMapper implements ScopeMapperInterface
         return self::SCOPE_ACL_MAP[$scopeName];
     }
 
+    #[\Override]
     public function getMessage(string $scopeName): array
     {
         if (!\array_key_exists($scopeName, self::SCOPE_MESSAGE_MAP)) {
@@ -77,6 +80,7 @@ class CatalogStructureScopeMapper implements ScopeMapperInterface
         return self::SCOPE_MESSAGE_MAP[$scopeName];
     }
 
+    #[\Override]
     public function getLowerHierarchyScopes(string $scopeName): array
     {
         if (!\array_key_exists($scopeName, self::SCOPE_HIERARCHY)) {

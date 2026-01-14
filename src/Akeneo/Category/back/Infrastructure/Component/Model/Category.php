@@ -58,6 +58,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasProducts()
     {
         return $this->products->count() !== 0;
@@ -66,6 +67,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProducts()
     {
         return $this->products;
@@ -84,6 +86,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasProductModels(): bool
     {
         return $this->productModels->count() !== 0;
@@ -92,6 +95,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProductModels(): Collection
     {
         return $this->productModels;
@@ -107,6 +111,7 @@ class Category extends BaseCategory implements CategoryInterface
         return $this->created;
     }
 
+    #[\Override]
     public function setUpdated(\DateTime $updated): self
     {
         $this->updated = $updated;
@@ -114,6 +119,7 @@ class Category extends BaseCategory implements CategoryInterface
         return $this;
     }
 
+    #[\Override]
     public function getUpdated(): \DateTime
     {
         return $this->updated;
@@ -122,6 +128,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale ? $this->reformatLocale($locale) : $locale;
@@ -132,6 +139,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslation(?string $locale = null): ?CategoryTranslationInterface
     {
         $locale = $locale ?: $this->locale;
@@ -156,6 +164,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslations()
     {
         return $this->translations;
@@ -164,6 +173,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->translations->contains($translation)) {
@@ -176,6 +186,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeTranslation(TranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
@@ -186,11 +197,13 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslationFQCN()
     {
         return CategoryTranslation::class;
     }
 
+    #[\Override]
     public function getLabel(): string
     {
         $translated = ($this->getTranslation()) ? $this->getTranslation()->getLabel() : null;
@@ -215,6 +228,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * Returns the channels linked to the category.
      */
+    #[\Override]
     public function getChannels(): Collection
     {
         return $this->channels;
@@ -223,6 +237,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return $this->getLabel();
@@ -231,6 +246,7 @@ class Category extends BaseCategory implements CategoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;

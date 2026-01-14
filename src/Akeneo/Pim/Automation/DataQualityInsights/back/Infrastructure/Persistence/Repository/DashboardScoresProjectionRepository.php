@@ -77,6 +77,7 @@ final class DashboardScoresProjectionRepository implements DashboardScoresProjec
         $this->db = $db;
     }
 
+    #[\Override]
     public function save(Write\DashboardRatesProjection $ratesProjection): void
     {
         $query = <<<SQL
@@ -94,6 +95,7 @@ SQL;
         $this->saveAverageRanks($ratesProjection);
     }
 
+    #[\Override]
     public function purgeRates(Write\DashboardPurgeDateCollection $purgeDates): void
     {
         $pathsToRemove = [];
@@ -141,6 +143,7 @@ SQL;
         ]);
     }
 
+    #[\Override]
     public function delete(string $type, string $code): void
     {
         $query = <<<SQL

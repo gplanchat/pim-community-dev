@@ -24,6 +24,7 @@ class ActiveEventSubscriptionCountIntegration extends TestCase
     /** @var DbalConnection */
     private $dbalConnection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -121,6 +122,7 @@ class ActiveEventSubscriptionCountIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

@@ -16,6 +16,7 @@ abstract class IntegrationTestCase extends WebTestCase
     protected FixturesUserHelper $fixturesUserHelper;
     protected FixturesLoader $fixturesLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ abstract class IntegrationTestCase extends WebTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         $connectionCloser = $this->get('akeneo_integration_tests.doctrine.connection.connection_closer');

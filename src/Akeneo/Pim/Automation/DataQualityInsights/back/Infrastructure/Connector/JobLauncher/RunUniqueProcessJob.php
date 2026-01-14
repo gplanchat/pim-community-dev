@@ -23,10 +23,10 @@ use Symfony\Component\Process\Process;
 final class RunUniqueProcessJob
 {
     /** Interval in seconds before checking if the process is still running. */
-    private const RUNNING_PROCESS_CHECK_INTERVAL = 5;
+    private const int RUNNING_PROCESS_CHECK_INTERVAL = 5;
 
     /** Time for which a job execution is considered as outdated. */
-    private const OUTDATED_JOB_EXECUTION_TIME = '-3 HOUR';
+    private const string OUTDATED_JOB_EXECUTION_TIME = '-3 HOUR';
 
     private EntityManager $entityManager;
     private JobExecutionManager $executionManager;

@@ -15,9 +15,9 @@ use Akeneo\Pim\Automation\DataQualityInsights\Domain\ValueObject\CriterionCode;
  */
 final class EvaluateCompletenessOfRequiredAttributes implements EvaluateCriterionInterface
 {
-    public const CRITERION_CODE = 'completeness_of_required_attributes';
+    public const string CRITERION_CODE = 'completeness_of_required_attributes';
 
-    public const CRITERION_COEFFICIENT = 2;
+    public const int CRITERION_COEFFICIENT = 2;
 
     private CriterionCode $code;
 
@@ -32,16 +32,19 @@ final class EvaluateCompletenessOfRequiredAttributes implements EvaluateCriterio
         $this->evaluateCompleteness = $evaluateCompleteness;
     }
 
+    #[\Override]
     public function evaluate(Write\CriterionEvaluation $criterionEvaluation, ProductValuesCollection $productValues): Write\CriterionEvaluationResult
     {
         return $this->evaluateCompleteness->evaluate($this->completenessCalculator, $criterionEvaluation);
     }
 
+    #[\Override]
     public function getCode(): CriterionCode
     {
         return $this->code;
     }
 
+    #[\Override]
     public function getCoefficient(): int
     {
         return self::CRITERION_COEFFICIENT;

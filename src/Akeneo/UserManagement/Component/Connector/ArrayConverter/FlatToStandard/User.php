@@ -64,6 +64,7 @@ class User implements ArrayConverterInterface
      *      'timezone'               => 'UTC',
      * ]
      */
+    #[\Override]
     public function convert(array $item, array $options = []): array
     {
         $this->fieldsChecker->checkFieldsPresence($item, ['username']);

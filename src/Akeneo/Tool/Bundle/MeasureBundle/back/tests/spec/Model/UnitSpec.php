@@ -13,11 +13,11 @@ use PhpSpec\ObjectBehavior;
 
 class UnitSpec extends ObjectBehavior
 {
-    private const UNIT_CODE = 'meter';
-    private const UNIT_LABELS = ['fr_FR' => 'metre', 'en_US' => 'meter'];
-    private const SYMBOL = 'm';
-    private const OPERATION_OPERATOR = 'mul';
-    private const OPERATION_VALUE = '150';
+    private const string UNIT_CODE = 'meter';
+    private const array UNIT_LABELS = ['fr_FR' => 'metre', 'en_US' => 'meter'];
+    private const string SYMBOL = 'm';
+    private const string OPERATION_OPERATOR = 'mul';
+    private const string OPERATION_VALUE = '150';
 
     public function let()
     {

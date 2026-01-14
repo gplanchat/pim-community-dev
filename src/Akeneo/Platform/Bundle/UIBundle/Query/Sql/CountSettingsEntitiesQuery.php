@@ -20,6 +20,7 @@ final class CountSettingsEntitiesQuery implements CountSettingsEntitiesQueryInte
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function execute(): array
     {
         $query = <<<SQL

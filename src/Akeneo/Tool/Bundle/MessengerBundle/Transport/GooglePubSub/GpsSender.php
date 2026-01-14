@@ -26,6 +26,7 @@ final class GpsSender implements SenderInterface
     ) {
     }
 
+    #[\Override]
     public function send(Envelope $envelope): Envelope
     {
         $encodedMessage = $this->serializer->encode($envelope);

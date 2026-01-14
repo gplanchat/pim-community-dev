@@ -23,6 +23,7 @@ class ProduceEventOnBulkProductUpdateIntegration extends TestCase
 
     private UniqueValuesSet $uniqueValuesSet;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -63,6 +64,7 @@ class ProduceEventOnBulkProductUpdateIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

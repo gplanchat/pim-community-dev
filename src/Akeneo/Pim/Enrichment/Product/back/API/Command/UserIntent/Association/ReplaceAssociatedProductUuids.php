@@ -26,6 +26,7 @@ final class ReplaceAssociatedProductUuids implements AssociationUserIntent
         Assert::stringNotEmpty($associationType);
     }
 
+    #[\Override]
     public function associationType(): string
     {
         return $this->associationType;

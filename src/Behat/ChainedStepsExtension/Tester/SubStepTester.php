@@ -31,6 +31,7 @@ class SubStepTester implements StepTester
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUp(Environment $env, FeatureNode $feature, StepNode $step, $skip)
     {
         return $this->baseTester->setUp($env, $feature, $step, $skip);
@@ -39,6 +40,7 @@ class SubStepTester implements StepTester
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function test(Environment $env, FeatureNode $feature, StepNode $step, $skip)
     {
         $result = $this->baseTester->test($env, $feature, $step, $skip);
@@ -59,6 +61,7 @@ class SubStepTester implements StepTester
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function tearDown(Environment $env, FeatureNode $feature, StepNode $step, $skip, StepResult $result)
     {
         return $this->baseTester->tearDown($env, $feature, $step, $skip, $result);

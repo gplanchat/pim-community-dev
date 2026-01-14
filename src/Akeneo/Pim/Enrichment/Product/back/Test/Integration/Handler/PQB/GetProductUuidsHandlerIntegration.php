@@ -29,11 +29,13 @@ final class GetProductUuidsHandlerIntegration extends EnrichmentProductTestCase
 {
     private ProductRepositoryInterface $productRepository;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

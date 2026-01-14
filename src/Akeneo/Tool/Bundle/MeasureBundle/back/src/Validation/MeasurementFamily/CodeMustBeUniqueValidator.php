@@ -22,6 +22,7 @@ class CodeMustBeUniqueValidator extends ConstraintValidator
         $this->measurementFamilyRepository = $measurementFamilyRepository;
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof CodeMustBeUnique) {

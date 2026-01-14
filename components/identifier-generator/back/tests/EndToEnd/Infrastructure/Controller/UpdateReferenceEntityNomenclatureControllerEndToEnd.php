@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class UpdateReferenceEntityNomenclatureControllerEndToEnd extends ControllerEndToEndTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

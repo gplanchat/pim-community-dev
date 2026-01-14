@@ -29,6 +29,7 @@ final class SetTableValue implements ValueUserIntent
         Assert::allIsArray($tableValue);
     }
 
+    #[\Override]
     public function attributeCode(): string
     {
         return $this->attributeCode;
@@ -46,11 +47,13 @@ final class SetTableValue implements ValueUserIntent
         return $this->tableValue;
     }
 
+    #[\Override]
     public function channelCode(): ?string
     {
         return $this->channelCode;
     }
 
+    #[\Override]
     public function localeCode(): ?string
     {
         return $this->localeCode;

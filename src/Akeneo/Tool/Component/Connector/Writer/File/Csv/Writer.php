@@ -55,6 +55,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Initiali
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize(): void
     {
         $bufferFilePath = $this->state['buffer_file_path'] ?? null;
@@ -73,6 +74,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Initiali
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items): void
     {
         $exportDirectory = dirname($this->getPath());
@@ -94,6 +96,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Initiali
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function flush(): void
     {
         $this->flusher->setStepExecution($this->stepExecution);
@@ -118,6 +121,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Initiali
         }
     }
 
+    #[\Override]
     public function getState(): array
     {
         if (null === $this->flatRowBuffer) {
@@ -133,6 +137,7 @@ class Writer extends AbstractFileWriter implements ItemWriterInterface, Initiali
         ];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

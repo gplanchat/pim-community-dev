@@ -208,6 +208,7 @@ class GetProductRawValuesQueryIntegration extends TestCase
 
 
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

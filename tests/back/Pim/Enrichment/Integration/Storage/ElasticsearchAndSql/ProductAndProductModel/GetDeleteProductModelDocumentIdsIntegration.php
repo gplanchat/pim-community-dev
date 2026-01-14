@@ -53,6 +53,7 @@ final class GetDeleteProductModelDocumentIdsIntegration extends TestCase
         return $randomId;
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -91,6 +92,7 @@ final class GetDeleteProductModelDocumentIdsIntegration extends TestCase
         return $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -45,6 +45,7 @@ class PropertySetter implements PropertySetterInterface
      *
      * @param ProductInterface|ProductModelInterface $entity
      */
+    #[\Override]
     public function setData($entity, $field, $data, array $options = [])
     {
         $setter = $this->setterRegistry->getSetter($field);

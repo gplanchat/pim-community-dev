@@ -29,6 +29,7 @@ class User extends AbstractReader implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getResults(): \ArrayIterator
     {
         return new \ArrayIterator(

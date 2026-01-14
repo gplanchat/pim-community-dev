@@ -19,11 +19,13 @@ class GetAppDeletionQueryIntegration extends TestCase
     private ConnectedAppLoader $connectedAppLoader;
     private GetAppDeletionQuery $query;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

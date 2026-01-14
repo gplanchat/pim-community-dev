@@ -10,8 +10,8 @@ namespace Akeneo\Connectivity\Connection\Domain\Settings\Model\ValueObject;
  */
 final class ConnectionType implements \Stringable
 {
-    public const DEFAULT_TYPE = 'default';
-    public const APP_TYPE = 'app';
+    public const string DEFAULT_TYPE = 'default';
+    public const string APP_TYPE = 'app';
 
     private string $type;
 
@@ -30,6 +30,7 @@ final class ConnectionType implements \Stringable
         $this->type = $type;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->type;

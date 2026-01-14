@@ -68,6 +68,7 @@ SQL;
         $this->__invoke()->shouldHaveSqlQueryEqualsTo($sql);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

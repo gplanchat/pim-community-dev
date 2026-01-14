@@ -11,8 +11,9 @@ final class Version_7_0_20220629142647_dqi_update_pk_on_product_score_Integratio
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220629142647_dqi_update_pk_on_product_score';
+    private const string MIGRATION_LABEL = '_7_0_20220629142647_dqi_update_pk_on_product_score';
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

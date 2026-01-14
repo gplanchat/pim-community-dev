@@ -15,12 +15,13 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_8_0_20230417092236_fix_completeness_table_auto_increment_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_8_0_20230417092236_fix_completeness_table_auto_increment';
+    private const string MIGRATION_NAME = '_8_0_20230417092236_fix_completeness_table_auto_increment';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -63,6 +64,7 @@ final class Version_8_0_20230417092236_fix_completeness_table_auto_increment_Int
         $this->reExecuteMigration(self::MIGRATION_NAME);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

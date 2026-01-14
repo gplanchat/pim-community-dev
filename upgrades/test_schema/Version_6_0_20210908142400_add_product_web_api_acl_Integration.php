@@ -29,12 +29,14 @@ class Version_6_0_20210908142400_add_product_web_api_acl_Integration extends Tes
 
     private AclManager $aclManager;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->aclManager = $this->get('oro_security.acl.manager');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

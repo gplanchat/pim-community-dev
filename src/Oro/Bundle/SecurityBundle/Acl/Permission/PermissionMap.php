@@ -29,6 +29,7 @@ class PermissionMap implements PermissionMapInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getMasks($permission, $object)
     {
         return $this->extensionSelector
@@ -39,6 +40,7 @@ class PermissionMap implements PermissionMapInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function contains($permission)
     {
         foreach ($this->extensionSelector->all() as $extension) {

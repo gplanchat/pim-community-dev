@@ -19,8 +19,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class UpdateAuditDataCommand extends Command
 {
-    private const MYSQL_IS_UNAVAILABLE_ERROR_CODE = 2002;
-    private const TABLE_NOT_FOUND_ERROR_CODE = '42S02';
+    private const int MYSQL_IS_UNAVAILABLE_ERROR_CODE = 2002;
+    private const string TABLE_NOT_FOUND_ERROR_CODE = '42S02';
 
     protected static $defaultName = 'akeneo:connectivity-audit:update-data';
 
@@ -31,6 +31,7 @@ class UpdateAuditDataCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // Errors are thrown when the database is off following a deployment

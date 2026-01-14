@@ -54,6 +54,7 @@ class ListUserGroupQueryIntegration extends TestCase
         Assert::assertGreaterThan(2, $userGroups[1]->getId());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

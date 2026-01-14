@@ -47,6 +47,7 @@ class Locale implements LocaleInterface, VersionableInterface
      *
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return $this->code;
@@ -55,6 +56,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -63,6 +65,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setId($id)
     {
         $this->id = $id;
@@ -73,6 +76,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -81,6 +85,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -91,6 +96,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLanguage()
     {
         return (null === $this->code) ? null : substr($this->code, 0, 2);
@@ -99,6 +105,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isActivated(): bool
     {
         return $this->activated;
@@ -107,6 +114,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChannels()
     {
         return $this->channels;
@@ -115,6 +123,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasChannel(ChannelInterface $channel)
     {
         return $this->channels->contains($channel);
@@ -123,6 +132,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addChannel(ChannelInterface $channel)
     {
         if (!$this->channels->contains($channel)) {
@@ -136,6 +146,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeChannel(ChannelInterface $channel)
     {
         $this->channels->removeElement($channel);
@@ -149,6 +160,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;
@@ -157,6 +169,7 @@ class Locale implements LocaleInterface, VersionableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return null !== $this->code ? \Locale::getDisplayName($this->code) : null;

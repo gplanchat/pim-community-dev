@@ -24,6 +24,7 @@ class CheckAttributeGroupWithAttributeCannotBeRemovedSubscriberIntegration exten
     private RemoverInterface $attributeGroupRemover;
     private ValidatorInterface $validator;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -77,6 +78,7 @@ class CheckAttributeGroupWithAttributeCannotBeRemovedSubscriberIntegration exten
         $this->attributeGroupRemover->remove($attributeGroup);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

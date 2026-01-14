@@ -222,6 +222,7 @@ class WriteValueCollection implements \Countable, \IteratorAggregate
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function count(): int
     {
         return count($this->values);
@@ -261,6 +262,7 @@ class WriteValueCollection implements \Countable, \IteratorAggregate
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->values);

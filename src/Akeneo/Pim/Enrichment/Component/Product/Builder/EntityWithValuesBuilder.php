@@ -44,6 +44,7 @@ class EntityWithValuesBuilder implements EntityWithValuesBuilderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addOrReplaceValue(
         EntityWithValuesInterface $entityWithValues,
         AttributeInterface $attribute,

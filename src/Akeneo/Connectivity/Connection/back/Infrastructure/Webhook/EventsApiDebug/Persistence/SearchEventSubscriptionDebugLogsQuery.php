@@ -52,6 +52,7 @@ class SearchEventSubscriptionDebugLogsQuery implements SearchEventSubscriptionDe
     {
     }
 
+    #[\Override]
     public function execute(string $connectionCode, ?string $encryptedSearchAfter = null, array $filters = []): array
     {
         $filters = $this->resolveFilters($filters);

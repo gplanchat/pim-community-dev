@@ -79,6 +79,7 @@ class JobInstanceProcessor extends AbstractProcessor implements ItemProcessorInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item)
     {
         $entity = $this->findOrCreateObject($item);

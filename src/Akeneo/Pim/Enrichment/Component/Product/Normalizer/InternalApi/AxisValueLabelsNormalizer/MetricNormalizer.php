@@ -37,6 +37,7 @@ class MetricNormalizer implements AxisValueLabelsNormalizer
      *
      * @return string
      */
+    #[\Override]
     public function normalize(ValueInterface $value, string $locale): string
     {
         Assert::implementsInterface($value, MetricValueInterface::class);
@@ -61,6 +62,7 @@ class MetricNormalizer implements AxisValueLabelsNormalizer
         );
     }
 
+    #[\Override]
     public function supports(string $attributeType): bool
     {
         return AttributeTypes::METRIC === $attributeType;

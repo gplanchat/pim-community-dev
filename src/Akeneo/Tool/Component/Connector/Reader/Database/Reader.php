@@ -33,6 +33,7 @@ class Reader extends AbstractReader implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getResults()
     {
         return new \ArrayIterator($this->repository->findAll());

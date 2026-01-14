@@ -31,6 +31,7 @@ class JobInstanceRepository extends EntityRepository implements DatagridReposito
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $jobName = array_map(

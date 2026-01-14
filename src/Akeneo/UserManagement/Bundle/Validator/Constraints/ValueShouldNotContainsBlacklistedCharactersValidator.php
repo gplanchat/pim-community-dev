@@ -12,8 +12,9 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 class ValueShouldNotContainsBlacklistedCharactersValidator extends ConstraintValidator
 {
-    private const BLACKLISTED_CHARACTERS = ['<', '>', '&', '"'];
+    private const array BLACKLISTED_CHARACTERS = ['<', '>', '&', '"'];
 
+    #[\Override]
     public function validate($value, Constraint $constraint)
     {
         if (null === $value || '' === $value) {

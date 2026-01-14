@@ -23,6 +23,7 @@ final class ProductModelIdCollection implements ProductEntityIdCollection
         $this->productModelIds = array_values(array_unique($productModelIds));
     }
 
+    #[\Override]
     public static function fromStrings(array $productEntityIds): self
     {
         return new self(array_map(fn ($productModelId) => ProductModelId::fromString((string) $productModelId), $productEntityIds));
@@ -41,26 +42,31 @@ final class ProductModelIdCollection implements ProductEntityIdCollection
     /**
      * @return array<ProductEntityIdInterface>
      */
+    #[\Override]
     public function toArray(): array
     {
         return $this->productModelIds;
     }
 
+    #[\Override]
     public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->productModelIds);
     }
 
+    #[\Override]
     public function count(): int
     {
         return count($this->productModelIds);
     }
 
+    #[\Override]
     public function isEmpty(): bool
     {
         return empty($this->productModelIds);
     }
 
+    #[\Override]
     public function toArrayString(): array
     {
         return array_map(fn (ProductModelId $productModelId) => (string)$productModelId, $this->productModelIds);

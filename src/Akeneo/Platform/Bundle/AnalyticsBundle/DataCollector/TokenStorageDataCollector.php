@@ -28,6 +28,7 @@ class TokenStorageDataCollector implements DataCollectorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function collect()
     {
         $userId = null;

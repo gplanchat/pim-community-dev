@@ -25,6 +25,7 @@ class GetEnrichedValuesByTemplateUuidSql implements GetEnrichedValuesByTemplateU
      * @throws \Doctrine\DBAL\Exception
      * @throws \JsonException
      */
+    #[\Override]
     public function byBatchesOf(TemplateUuid $templateUuid, int $batchSize): \Generator
     {
         $offset = 0;

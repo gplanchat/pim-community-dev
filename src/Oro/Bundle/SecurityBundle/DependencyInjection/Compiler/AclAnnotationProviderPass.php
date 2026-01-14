@@ -14,6 +14,7 @@ class AclAnnotationProviderPass implements CompilerPassInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition(self::PROVIDER_SERVICE_NAME)) {

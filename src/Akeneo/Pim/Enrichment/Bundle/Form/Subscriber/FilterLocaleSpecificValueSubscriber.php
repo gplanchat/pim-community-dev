@@ -26,6 +26,7 @@ class FilterLocaleSpecificValueSubscriber implements EventSubscriberInterface
         $this->attributeRepository = $attributeRepository;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormView;
 
 final class CategoryFormViewNormalizer implements CategoryFormViewNormalizerInterface
 {
+    #[\Override]
     public function normalizeFormView(FormView $formView): array
     {
         $formData = ['label' => [], 'errors' => []];

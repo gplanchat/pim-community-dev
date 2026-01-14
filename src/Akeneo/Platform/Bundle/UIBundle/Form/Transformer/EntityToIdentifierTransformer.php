@@ -48,7 +48,7 @@ class EntityToIdentifierTransformer implements DataTransformerInterface
     public function __construct(
         ObjectRepository $repository,
         $multiple,
-        PropertyAccessorInterface $propertyAccessor = null,
+        ?PropertyAccessorInterface $propertyAccessor = null,
         $delimiter = ',',
         $identifierProperty = 'id'
     ) {
@@ -62,6 +62,7 @@ class EntityToIdentifierTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function transform($value)
     {
         if (null === $value) {
@@ -94,6 +95,7 @@ class EntityToIdentifierTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function reverseTransform($value)
     {
         if (null === $value) {

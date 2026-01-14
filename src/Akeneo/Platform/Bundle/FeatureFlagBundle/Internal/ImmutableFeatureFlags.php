@@ -16,6 +16,7 @@ class ImmutableFeatureFlags implements FeatureFlags
     {
     }
 
+    #[\Override]
     public function isEnabled(string $feature): bool
     {
         $flag = $this->registry->get($feature);
@@ -23,6 +24,7 @@ class ImmutableFeatureFlags implements FeatureFlags
         return $flag->isEnabled($feature);
     }
 
+    #[\Override]
     public function all(): array
     {
         return $this->registry->all();

@@ -40,6 +40,7 @@ class DataQualityInsightsTestCase extends TestCase
     protected const MINIMAL_VARIANT_AXIS_CODE = 'color';
     protected const MINIMAL_VARIANT_OPTIONS = ['red', 'blue', 'yellow', 'black', 'white'];
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

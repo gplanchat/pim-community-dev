@@ -18,6 +18,7 @@ class CreateProductEndToEnd extends AbstractProductTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -909,10 +910,10 @@ JSON;
         $expected = <<<JSON
 {
     "code":422,
-    "message":"${message}",
+    "message":"{$message}",
     "_links":{
         "documentation":{
-            "href": "${link}"
+            "href": "{$link}"
         }
     }
 }
@@ -1015,6 +1016,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -24,6 +24,7 @@ final class OrderingKeySolverIntegration extends KernelTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         static::bootKernel(['debug' => false]);

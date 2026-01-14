@@ -38,6 +38,7 @@ class ProductMassActionRepository implements ProductMassActionRepositoryInterfac
      *
      * @param ProductQueryBuilder $queryBuilder
      */
+    #[\Override]
     public function applyMassActionParameters($queryBuilder, $inset, array $values)
     {
         if (!empty($values)) {
@@ -48,6 +49,7 @@ class ProductMassActionRepository implements ProductMassActionRepositoryInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function deleteFromIds(array $identifiers)
     {
         throw new \LogicException("Products should not be removed using this method");

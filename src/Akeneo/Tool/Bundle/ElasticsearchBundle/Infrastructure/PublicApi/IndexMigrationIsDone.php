@@ -22,6 +22,7 @@ class IndexMigrationIsDone implements IndexMigrationIsDoneInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byIndexAliasAndHash(string $indexAlias, string $hash): bool
     {
         $sql = <<<SQL

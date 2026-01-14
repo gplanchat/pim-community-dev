@@ -15,12 +15,13 @@ use Doctrine\DBAL\Connection;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class GetOrphanCategoryImageFilePathsSql implements GetOrphanCategoryImageFilePaths
+final readonly class GetOrphanCategoryImageFilePathsSql implements GetOrphanCategoryImageFilePaths
 {
-    public function __construct(private readonly Connection $connection)
+    public function __construct(private Connection $connection)
     {
     }
 
+    #[\Override]
     public function __invoke(): iterable
     {
         $this->connection->executeStatement(

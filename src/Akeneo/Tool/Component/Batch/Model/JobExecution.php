@@ -567,6 +567,7 @@ class JobExecution
      * To string
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         $startTime = self::formatDate($this->startTime);
@@ -596,7 +597,7 @@ class JobExecution
      *
      * @return string Date formatted
      */
-    public static function formatDate(\DateTime $date = null, $format = \DateTime::ATOM)
+    public static function formatDate(?\DateTime $date = null, $format = \DateTime::ATOM)
     {
         $formattedDate = '';
 

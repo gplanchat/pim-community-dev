@@ -20,7 +20,7 @@ use Webmozart\Assert\Assert;
  */
 final class ValueUserIntentsShouldHaveAnActivatedTemplateValidator extends ConstraintValidator
 {
-    private const ERROR_CODE = 'deactivated_template';
+    private const string ERROR_CODE = 'deactivated_template';
 
     public function __construct(
         private readonly GetAttribute $getAttribute,
@@ -31,6 +31,7 @@ final class ValueUserIntentsShouldHaveAnActivatedTemplateValidator extends Const
     /**
      * @param array<UserIntent> $value
      */
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, ValueUserIntentsShouldHaveAnActivatedTemplate::class);

@@ -22,6 +22,7 @@ final class AttributeCodeShouldBeUniqueInTheTemplateValidator extends Constraint
     ) {
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         if (empty($value)) {

@@ -14,10 +14,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 final class Version_8_0_20230308113214_disable_attribute_groups_mass_delete_acl extends AbstractMigration implements ContainerAwareInterface
 {
-    private const ACL = 'pim_enrich_attributegroup_mass_delete';
+    private const string ACL = 'pim_enrich_attributegroup_mass_delete';
 
     private ContainerInterface $container;
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $aclManager = $this->container->get('oro_security.acl.manager');
@@ -42,6 +43,7 @@ final class Version_8_0_20230308113214_disable_attribute_groups_mass_delete_acl 
         $aclManager->clearCache();
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
@@ -50,7 +52,8 @@ final class Version_8_0_20230308113214_disable_attribute_groups_mass_delete_acl 
     /**
      * {@inheritdoc}
      */
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
     }

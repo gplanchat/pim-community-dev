@@ -87,6 +87,7 @@ class DbalSelectHourlyIntervalsToRefreshQueryIntegration extends TestCase
         Assert::assertTrue($expectedResult[1]->equals($result[1]));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

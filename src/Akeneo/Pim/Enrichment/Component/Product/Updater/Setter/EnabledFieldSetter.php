@@ -28,6 +28,7 @@ class EnabledFieldSetter extends AbstractFieldSetter
      *
      * Expected data input format : true|false
      */
+    #[\Override]
     public function setFieldData($product, $field, $data, array $options = [])
     {
         if (!$product instanceof ProductInterface) {

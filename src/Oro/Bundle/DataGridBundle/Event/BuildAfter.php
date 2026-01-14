@@ -26,6 +26,7 @@ class BuildAfter extends Event implements GridEventInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getDatagrid()
     {
         return $this->datagrid;

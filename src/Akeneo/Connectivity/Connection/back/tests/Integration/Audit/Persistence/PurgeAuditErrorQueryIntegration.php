@@ -23,6 +23,7 @@ class PurgeAuditErrorQueryIntegration extends TestCase
     /** @var Connection */
     private $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -66,6 +67,7 @@ SQL;
         Assert::assertEquals('now', $errors[1]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

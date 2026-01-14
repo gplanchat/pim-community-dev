@@ -23,6 +23,7 @@ final class AttributeGroupActivationRepository implements AttributeGroupActivati
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function save(AttributeGroupActivation $attributeGroupActivation): void
     {
         $query = <<<SQL
@@ -44,6 +45,7 @@ SQL;
         );
     }
 
+    #[\Override]
     public function remove(AttributeGroupCode $attributeGroupCode): void
     {
         $query = <<<SQL
@@ -53,6 +55,7 @@ SQL;
         $this->dbConnection->executeQuery($query, ['attributeGroupCode' => $attributeGroupCode]);
     }
 
+    #[\Override]
     public function getForAttributeGroupCode(AttributeGroupCode $attributeGroupCode): ?AttributeGroupActivation
     {
         $query = <<<SQL

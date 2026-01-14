@@ -34,6 +34,7 @@ final class ChannelSaver implements ChannelSaverInterface
     /**
      * @param ChannelInterface $channel
      */
+    #[\Override]
     public function save($channel, array $options = [])
     {
         $options['unitary'] = true;
@@ -44,6 +45,7 @@ final class ChannelSaver implements ChannelSaverInterface
     /**
      * @param ChannelInterface[] $channels
      */
+    #[\Override]
     public function saveAll(array $channels, array $commonOptions = [])
     {
         $commonOptions['unitary'] = false;

@@ -39,6 +39,7 @@ class CreateClientIntegration extends TestCase
         Assert::assertEquals($createdClient['secret'], $client->secret());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

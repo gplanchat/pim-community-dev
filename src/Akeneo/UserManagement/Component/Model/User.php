@@ -175,6 +175,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function serialize()
     {
         return serialize(
@@ -192,6 +193,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function unserialize($serialized)
     {
         list(
@@ -207,6 +209,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function eraseCredentials()
     {
         $this->plainPassword = null;
@@ -215,6 +218,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClass()
     {
         return UserInterface::class;
@@ -223,6 +227,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -231,6 +236,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUsername()
     {
         return $this->getUserIdentifier();
@@ -247,6 +253,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getEmail()
     {
         return $this->email;
@@ -255,6 +262,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFirstName()
     {
         return $this->firstName;
@@ -263,6 +271,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLastName()
     {
         return $this->lastName;
@@ -271,6 +280,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMiddleName()
     {
         return $this->middleName;
@@ -279,6 +289,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNamePrefix()
     {
         return $this->namePrefix;
@@ -287,6 +298,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNameSuffix()
     {
         return $this->nameSuffix;
@@ -295,6 +307,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFullName()
     {
         return \trim(\implode(' ', array_filter([
@@ -309,6 +322,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getImage()
     {
         return $this->image;
@@ -317,6 +331,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getImageFile()
     {
         return $this->imageFile;
@@ -325,6 +340,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAvatar(): ?FileInfoInterface
     {
         return $this->avatar;
@@ -333,6 +349,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAvatar(?FileInfoInterface $avatar = null): void
     {
         $this->avatar = $avatar;
@@ -341,6 +358,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSalt(): ?string
     {
         return $this->salt;
@@ -349,6 +367,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPassword(): ?string
     {
         return $this->password;
@@ -357,6 +376,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPlainPassword()
     {
         return $this->plainPassword;
@@ -365,6 +385,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConfirmationToken()
     {
         return $this->confirmationToken;
@@ -373,6 +394,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPasswordRequestedAt()
     {
         return $this->passwordRequestedAt;
@@ -381,6 +403,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLastLogin()
     {
         return $this->lastLogin;
@@ -389,6 +412,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLoginCount()
     {
         return $this->loginCount;
@@ -397,6 +421,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCreatedAt()
     {
         return $this->createdAt;
@@ -405,6 +430,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUpdatedAt()
     {
         return $this->updatedAt;
@@ -413,6 +439,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEnabled(): bool
     {
         return $this->enabled;
@@ -421,6 +448,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isAccountNonExpired(): bool
     {
         return true;
@@ -429,6 +457,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isAccountNonLocked(): bool
     {
         return $this->isEnabled();
@@ -437,6 +466,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isPasswordRequestNonExpired($ttl)
     {
         return $this->getPasswordRequestedAt() instanceof \DateTime &&
@@ -446,6 +476,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setId($id)
     {
         $this->id = $id;
@@ -456,6 +487,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUsername($username)
     {
         $this->username = $username;
@@ -466,6 +498,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setEmail($email)
     {
         $this->email = $email;
@@ -476,6 +509,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setFirstName($firstName = null)
     {
         $this->firstName = $firstName;
@@ -486,6 +520,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLastName($lastName = null)
     {
         $this->lastName = $lastName;
@@ -496,6 +531,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setMiddleName($middleName)
     {
         $this->middleName = $middleName;
@@ -504,6 +540,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setNamePrefix($namePrefix)
     {
         $this->namePrefix = $namePrefix;
@@ -512,6 +549,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setNameSuffix($nameSuffix)
     {
         $this->nameSuffix = $nameSuffix;
@@ -520,6 +558,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setImage($image = null)
     {
         $this->image = $image;
@@ -530,6 +569,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setImageFile(UploadedFile $imageFile)
     {
         $this->imageFile = $imageFile;
@@ -542,6 +582,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function unsetImageFile()
     {
         $this->imageFile = null;
@@ -552,6 +593,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setEnabled($enabled)
     {
         $this->enabled = (bool) $enabled;
@@ -562,6 +604,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setSalt($salt)
     {
         $this->salt = $salt;
@@ -572,6 +615,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setPassword($password)
     {
         $this->password = $password;
@@ -582,6 +626,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setPlainPassword($password)
     {
         $this->plainPassword = $password;
@@ -592,6 +637,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setConfirmationToken($token)
     {
         $this->confirmationToken = $token;
@@ -602,7 +648,8 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
-    public function setPasswordRequestedAt(\DateTime $time = null)
+    #[\Override]
+    public function setPasswordRequestedAt(?\DateTime $time = null)
     {
         $this->passwordRequestedAt = $time;
 
@@ -612,6 +659,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLastLogin(\DateTime $time)
     {
         $this->lastLogin = $time;
@@ -622,6 +670,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLoginCount($count)
     {
         $this->loginCount = $count;
@@ -632,6 +681,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
@@ -642,6 +692,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
@@ -652,6 +703,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRoles(): array
     {
         return $this->roles->map(fn (RoleInterface $role): string => $role->getRole())->getValues();
@@ -660,6 +712,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRolesCollection()
     {
         return $this->roles;
@@ -668,6 +721,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRole($roleName)
     {
         /** @var Role $item */
@@ -683,6 +737,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasRole($role)
     {
         if ($role instanceof Role) {
@@ -701,6 +756,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addRole(Role $role)
     {
         if (!$this->hasRole($role)) {
@@ -713,6 +769,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeRole($role)
     {
         if ($role instanceof Role) {
@@ -732,6 +789,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRoles($roles)
     {
         if (!$roles instanceof Collection && !is_array($roles)) {
@@ -752,6 +810,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setRolesCollection(Collection $collection)
     {
         if (!$collection instanceof Collection) {
@@ -767,6 +826,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroups()
     {
         return $this->groups;
@@ -775,6 +835,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroupNames()
     {
         $names = [];
@@ -790,6 +851,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasGroup($name)
     {
         return in_array($name, $this->getGroupNames());
@@ -798,6 +860,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addGroup(GroupInterface $group)
     {
         if (!$this->getGroups()->contains($group)) {
@@ -810,6 +873,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeGroup(GroupInterface $group)
     {
         if ($this->getGroups()->contains($group)) {
@@ -822,6 +886,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setGroups(array $groups)
     {
         $this->groups->clear();
@@ -836,6 +901,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroupsIds()
     {
         $ids = [];
@@ -849,6 +915,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getImagePath()
     {
         if ($this->image) {
@@ -861,6 +928,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function generateToken()
     {
         return base_convert(bin2hex(hash('sha256', uniqid(mt_rand(), true), true)), 16, 36);
@@ -869,6 +937,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return (string) $this->getUserIdentifier();
@@ -877,6 +946,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function beforeSave()
     {
         $this->createdAt = new \DateTime('now', new \DateTimeZone('UTC'));
@@ -887,6 +957,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function preUpdate()
     {
         $this->updatedAt = new \DateTime('now', new \DateTimeZone('UTC'));
@@ -903,6 +974,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUploadDir($forWeb = false)
     {
         $ds = DIRECTORY_SEPARATOR;
@@ -919,6 +991,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCatalogLocale()
     {
         return $this->catalogLocale;
@@ -927,6 +1000,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCatalogLocale(LocaleInterface $catalogLocale)
     {
         $this->catalogLocale = $catalogLocale;
@@ -937,6 +1011,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getUiLocale()
     {
         return $this->uiLocale;
@@ -945,6 +1020,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setUiLocale(LocaleInterface $uiLocale)
     {
         $this->uiLocale = $uiLocale;
@@ -955,6 +1031,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCatalogScope()
     {
         return $this->catalogScope;
@@ -963,6 +1040,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCatalogScope(ChannelInterface $catalogScope)
     {
         $this->catalogScope = $catalogScope;
@@ -973,6 +1051,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultTree()
     {
         return $this->defaultTree;
@@ -981,6 +1060,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setDefaultTree(CategoryInterface $defaultTree)
     {
         $this->defaultTree = $defaultTree;
@@ -991,6 +1071,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEmailNotifications()
     {
         return $this->emailNotifications;
@@ -999,6 +1080,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setEmailNotifications($emailNotifications)
     {
         $this->emailNotifications = $emailNotifications;
@@ -1009,6 +1091,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProductGridFilters()
     {
         return $this->productGridFilters;
@@ -1017,6 +1100,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setProductGridFilters(array $productGridFilters = [])
     {
         $this->productGridFilters = $productGridFilters;
@@ -1027,6 +1111,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultGridView($alias)
     {
         foreach ($this->defaultGridViews as $datagridView) {
@@ -1041,6 +1126,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultGridViews()
     {
         $views = [];
@@ -1054,6 +1140,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setDefaultGridView($alias, $defaultGridView)
     {
         if (null !== $gridView = $this->getDefaultGridView($alias)) {
@@ -1070,6 +1157,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getPhone(): ?string
     {
         return $this->phone;
@@ -1078,6 +1166,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setPhone(?string $phone): UserInterface
     {
         $this->phone = $phone;
@@ -1088,6 +1177,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTimezone(): string
     {
         return $this->timezone;
@@ -1096,6 +1186,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setTimezone(string $timezone): UserInterface
     {
         $this->timezone = $timezone;
@@ -1103,36 +1194,43 @@ class User implements UserInterface, EquatableInterface
         return $this;
     }
 
+    #[\Override]
     public function isUiUser(): bool
     {
         return self::TYPE_USER === $this->type;
     }
 
+    #[\Override]
     public function defineAsUiUser(): void
     {
         $this->type = self::TYPE_USER;
     }
 
+    #[\Override]
     public function isApiUser(): bool
     {
         return self::TYPE_API === $this->type;
     }
 
+    #[\Override]
     public function defineAsApiUser(): void
     {
         $this->type = self::TYPE_API;
     }
 
+    #[\Override]
     public function isJobUser(): bool
     {
         return self::TYPE_JOB === $this->type;
     }
 
+    #[\Override]
     public function defineAsJobUser(): void
     {
         $this->type = self::TYPE_JOB;
     }
 
+    #[\Override]
     public function getType(): string
     {
         return $this->type;
@@ -1141,6 +1239,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addProperty(string $propertyName, $propertyValue): void
     {
         $propertyName = $this->getInflector()->tableize($propertyName);
@@ -1151,6 +1250,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getProperty(string $propertyName)
     {
         $propertyName = $this->getInflector()->tableize($propertyName);
@@ -1161,6 +1261,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConsecutiveAuthenticationFailureCounter(): int
     {
         return $this->consecutiveAuthenticationFailureCounter;
@@ -1169,6 +1270,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setConsecutiveAuthenticationFailureCounter(int $consecutiveAuthenticationFailureCounter): void
     {
         $this->consecutiveAuthenticationFailureCounter = $consecutiveAuthenticationFailureCounter;
@@ -1177,6 +1279,7 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAuthenticationFailureResetDate(): ?\DateTime
     {
         return $this->authenticationFailureResetDate;
@@ -1185,11 +1288,13 @@ class User implements UserInterface, EquatableInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setAuthenticationFailureResetDate(?\DateTime $authenticationFailureResetDate): void
     {
         $this->authenticationFailureResetDate = $authenticationFailureResetDate;
     }
 
+    #[\Override]
     public function duplicate(): UserInterface
     {
         $duplicated = new static();
@@ -1241,11 +1346,13 @@ class User implements UserInterface, EquatableInterface
         return new Inflector(new NoopWordInflector(), new NoopWordInflector());
     }
 
+    #[\Override]
     public function getProfile(): ?string
     {
         return $this->profile;
     }
 
+    #[\Override]
     public function setProfile(?string $profile): void
     {
         $this->profile = '' === $profile ? null : $profile;
@@ -1258,6 +1365,7 @@ class User implements UserInterface, EquatableInterface
      * @see \Symfony\Component\Security\Core\User\User::isEqualTo()
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqualTo(SymfonyUserInterface $user): bool
     {
         if (!$user instanceof self) {

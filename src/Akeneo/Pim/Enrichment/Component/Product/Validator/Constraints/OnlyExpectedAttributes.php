@@ -20,6 +20,7 @@ class OnlyExpectedAttributes extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validatedBy(): string
     {
         return 'pim_only_expected_attributes';
@@ -28,6 +29,7 @@ class OnlyExpectedAttributes extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTargets(): string|array
     {
         return Constraint::CLASS_CONSTRAINT;

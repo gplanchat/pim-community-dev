@@ -21,6 +21,7 @@ class UserPreferencesValidator extends ConstraintValidator
      * @param UserInterface $user
      * @param Constraint                              $constraint
      */
+    #[\Override]
     public function validate($user, Constraint $constraint)
     {
         $this->validateCatalogLocale($user, $constraint);

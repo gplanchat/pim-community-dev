@@ -22,6 +22,7 @@ class GetIdMappingFromProductModelCodesQuery implements GetIdMappingFromProductM
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(array $productModelCodes): IdMapping
     {
         if (empty($productModelCodes)) {

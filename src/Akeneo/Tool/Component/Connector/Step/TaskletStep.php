@@ -28,6 +28,7 @@ class TaskletStep extends AbstractStep implements TrackableStepInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function doExecute(StepExecution $stepExecution): void
     {
         $this->tasklet->setStepExecution($stepExecution);
@@ -44,6 +45,7 @@ class TaskletStep extends AbstractStep implements TrackableStepInterface
         $this->tasklet = $tasklet;
     }
 
+    #[\Override]
     public function isTrackable(): bool
     {
         return $this->tasklet instanceof TrackableTaskletInterface && $this->tasklet->isTrackable();

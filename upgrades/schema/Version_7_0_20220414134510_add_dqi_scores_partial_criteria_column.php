@@ -9,11 +9,13 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220414134510_add_dqi_scores_partial_criteria_column extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Add DQI scores with partial criteria columns';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         foreach (['pim_data_quality_insights_product_score', 'pim_data_quality_insights_product_model_score'] as $tableName) {
@@ -23,6 +25,7 @@ final class Version_7_0_20220414134510_add_dqi_scores_partial_criteria_column ex
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

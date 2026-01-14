@@ -18,6 +18,7 @@ class DeactivateTemplateSql implements DeactivateTemplate
     {
     }
 
+    #[\Override]
     public function execute(TemplateUuid $uuid): void
     {
         $query = <<< SQL

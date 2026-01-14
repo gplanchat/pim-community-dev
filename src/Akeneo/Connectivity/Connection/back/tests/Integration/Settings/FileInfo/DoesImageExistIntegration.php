@@ -22,11 +22,13 @@ class DoesImageExistIntegration extends TestCase
         Assert::assertTrue($exist);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

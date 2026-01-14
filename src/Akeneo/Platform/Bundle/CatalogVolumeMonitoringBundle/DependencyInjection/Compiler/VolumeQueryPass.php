@@ -27,6 +27,7 @@ class VolumeQueryPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $this->register($container, self::COUNT_QUERY_TAG, 'addCountVolumeQuery');

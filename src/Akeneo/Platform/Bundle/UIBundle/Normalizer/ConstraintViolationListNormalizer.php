@@ -21,6 +21,7 @@ class ConstraintViolationListNormalizer implements NormalizerInterface, Cacheabl
         $this->normalizer = $normalizer;
     }
 
+    #[\Override]
     public function normalize($constraintList, $format = null, array $context = [])
     {
         $result = [];
@@ -35,11 +36,13 @@ class ConstraintViolationListNormalizer implements NormalizerInterface, Cacheabl
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof ConstraintViolationListInterface;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

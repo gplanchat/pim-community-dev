@@ -21,21 +21,25 @@ final class MigrateToUuidAddConstraints implements MigrateToUuidStep
     {
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Add constraints on uuid foreign columns';
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'add_constraints_on_uuid_columns';
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         return 0 < $this->getMissingCount();
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         $count = 0;
@@ -63,6 +67,7 @@ final class MigrateToUuidAddConstraints implements MigrateToUuidStep
         return $count;
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         $logContext = $context->logContext;

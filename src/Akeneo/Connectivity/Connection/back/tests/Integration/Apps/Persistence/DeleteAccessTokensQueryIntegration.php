@@ -19,11 +19,13 @@ class DeleteAccessTokensQueryIntegration extends TestCase
     private ConnectedAppLoader $connectedAppLoader;
     private DeleteAccessTokensQuery $query;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

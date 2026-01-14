@@ -18,6 +18,7 @@ class FindNonExistingProductsQuery implements FindNonExistingProductsQueryInterf
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byProductIdentifiers(array $productIdentifiers): array
     {
         if (empty($productIdentifiers)) {
@@ -46,6 +47,7 @@ SQL;
         return array_values(array_diff($productIdentifiers, $results));
     }
 
+    #[\Override]
     public function byProductUuids(array $productUuids): array
     {
         if (empty($productUuids)) {

@@ -9,29 +9,33 @@ namespace Akeneo\Platform\Bundle\PimVersionBundle\Version;
 final class FreeTrialVersion implements PimVersion
 {
     /** @staticvar string */
-    const VERSION_CODENAME = 'Free Trial Edition';
+    const string VERSION_CODENAME = 'Free Trial Edition';
 
     /** @staticvar string */
-    const EDITION_NAME = 'Free Trial Edition';
+    const string EDITION_NAME = 'Free Trial Edition';
 
     /** @staticvar string **/
-    private const EDITION_CODE = 'pim_trial_instance';
+    private const string EDITION_CODE = 'pim_trial_instance';
 
+    #[\Override]
     public function versionCodename(): string
     {
         return self::VERSION_CODENAME;
     }
 
+    #[\Override]
     public function editionName(): string
     {
         return self::EDITION_NAME;
     }
 
+    #[\Override]
     public function isSaas(): bool
     {
         return false;
     }
 
+    #[\Override]
     public function isEditionCode(string $editionCode): bool
     {
         return $editionCode === self::EDITION_CODE;

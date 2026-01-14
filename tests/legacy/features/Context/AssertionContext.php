@@ -715,6 +715,7 @@ class AssertionContext extends PimContext
         }, 'Avatar image not found or not default one');
     }
 
+    #[\Override]
     protected function getCurrentPage(): PageObject
     {
         return $this->getMainContext()->getSubcontext('navigation')->getCurrentPage();
@@ -735,6 +736,7 @@ class AssertionContext extends PimContext
      *
      * @return string
      */
+    #[\Override]
     public function replacePlaceholders($value)
     {
         return $this->getMainContext()->getSubcontext('fixtures')->replacePlaceholders($value);

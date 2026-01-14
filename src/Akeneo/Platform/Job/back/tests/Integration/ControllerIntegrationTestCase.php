@@ -12,6 +12,7 @@ abstract class ControllerIntegrationTestCase extends IntegrationTestCase
     protected KernelBrowser $client;
     protected WebClientHelper $webClientHelper;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

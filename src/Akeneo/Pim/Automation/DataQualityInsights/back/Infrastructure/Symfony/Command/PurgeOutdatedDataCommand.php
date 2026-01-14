@@ -30,6 +30,7 @@ final class PurgeOutdatedDataCommand extends Command
         $this->purgeOutdatedData = $purgeOutdatedData;
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->addOption(
@@ -41,6 +42,7 @@ final class PurgeOutdatedDataCommand extends Command
         );
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $purgeDate = \DateTimeImmutable::createFromFormat('Y-m-d', $input->getOption('date'));

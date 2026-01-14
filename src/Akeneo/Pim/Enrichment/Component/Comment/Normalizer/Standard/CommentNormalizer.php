@@ -22,6 +22,7 @@ class CommentNormalizer implements NormalizerInterface, NormalizerAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($comment, $format = null, array $context = [])
     {
         $data = [
@@ -42,11 +43,13 @@ class CommentNormalizer implements NormalizerInterface, NormalizerAwareInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof CommentInterface && $format === 'standard';
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

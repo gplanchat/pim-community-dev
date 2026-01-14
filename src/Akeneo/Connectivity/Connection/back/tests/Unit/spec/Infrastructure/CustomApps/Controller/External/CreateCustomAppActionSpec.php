@@ -224,6 +224,7 @@ class CreateCustomAppActionSpec extends ObjectBehavior
     /**
      * @return array{beAValidCreateCustomAppResponse: Closure(mixed, mixed):true}
      */
+    #[\Override]
     public function getMatchers(): array
     {
         return [

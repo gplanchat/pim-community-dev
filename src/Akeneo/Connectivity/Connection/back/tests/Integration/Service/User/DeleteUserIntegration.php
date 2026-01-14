@@ -29,6 +29,7 @@ class DeleteUserIntegration extends TestCase
         Assert::assertCount(0, $results);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

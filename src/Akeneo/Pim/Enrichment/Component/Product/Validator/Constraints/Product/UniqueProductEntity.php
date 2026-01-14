@@ -22,6 +22,7 @@ class UniqueProductEntity extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validatedBy(): string
     {
         return 'pim_unique_product_validator_entity';
@@ -30,6 +31,7 @@ class UniqueProductEntity extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTargets(): string
     {
         return self::CLASS_CONSTRAINT;

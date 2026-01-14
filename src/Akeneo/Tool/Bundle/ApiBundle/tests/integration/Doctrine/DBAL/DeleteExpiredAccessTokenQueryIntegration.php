@@ -23,6 +23,7 @@ class DeleteExpiredAccessTokenQueryIntegration extends ApiTestCase
     private ?ClientManagerInterface $clientManager;
     private ?Connection $connection;
     private ?DeleteExpiredAccessTokenQuery $deleteExpiredAccessTokenQuery;
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ class DeleteExpiredAccessTokenQueryIntegration extends ApiTestCase
 
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

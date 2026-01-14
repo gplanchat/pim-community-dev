@@ -21,12 +21,14 @@ abstract class WebTestCase extends TestCase
     protected ?KernelBrowser $client = null;
     protected ?UserInterface $user = null;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->client = self::getContainer()->get('test.client');
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         parent::tearDown();

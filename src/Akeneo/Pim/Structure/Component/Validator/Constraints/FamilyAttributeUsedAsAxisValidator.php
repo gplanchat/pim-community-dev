@@ -25,6 +25,7 @@ class FamilyAttributeUsedAsAxisValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($family, Constraint $constraint): void
     {
         if (!$constraint instanceof FamilyAttributeUsedAsAxis) {

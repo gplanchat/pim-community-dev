@@ -10,8 +10,9 @@ final class Version_7_0_20220414134510_add_dqi_scores_partial_criteria_column_In
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220414134510_add_dqi_scores_partial_criteria_column';
+    private const string MIGRATION_LABEL = '_7_0_20220414134510_add_dqi_scores_partial_criteria_column';
 
+    #[\Override]
     protected function getConfiguration()
     {
         return null;

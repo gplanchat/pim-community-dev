@@ -37,6 +37,7 @@ class SystemInfoCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -46,6 +47,7 @@ class SystemInfoCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $systemInfoStyle = new SystemInfoStyle($input, $output);

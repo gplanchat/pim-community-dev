@@ -16,6 +16,7 @@ class UpdateIndexMappingWithoutDowntimeIntegration extends TestCase
 {
     private Client $client;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -121,6 +122,7 @@ class UpdateIndexMappingWithoutDowntimeIntegration extends TestCase
         $this->get('akeneo_elasticsearch.client.product_and_product_model')->refreshIndex();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -10,11 +10,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_6_0_20210211141311_add_attribute_guidelines extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->addSql('ALTER TABLE pim_catalog_attribute ADD guidelines JSON NOT NULL DEFAULT (JSON_OBJECT());');
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

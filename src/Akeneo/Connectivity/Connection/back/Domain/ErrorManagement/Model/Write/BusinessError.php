@@ -14,6 +14,7 @@ use Akeneo\Connectivity\Connection\Domain\ErrorManagement\Model\ValueObject\Erro
  */
 class BusinessError extends ApiError
 {
+    #[\Override]
     public function type(): ErrorType
     {
         return new ErrorType(ErrorTypes::BUSINESS);

@@ -14,6 +14,7 @@ class ReferenceDataMultiSelectType extends AbstractAttributeType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getName()
     {
         return 'pim_reference_data_multiselect';

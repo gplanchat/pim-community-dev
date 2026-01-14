@@ -25,6 +25,7 @@ final class ClassOrderingKeyResolver implements OrderingKeyResolverInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function supports(Envelope $envelope): bool
     {
         return $envelope->getMessage() instanceof $this->class;
@@ -33,6 +34,7 @@ final class ClassOrderingKeyResolver implements OrderingKeyResolverInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function resolve(Envelope $envelope): ?string
     {
         return $this->orderingKey;

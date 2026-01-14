@@ -82,6 +82,7 @@ class ProductModelUpdater implements ObjectUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function update($productModel, array $data, array $options = [])
     {
         if (!$productModel instanceof ProductModelInterface) {

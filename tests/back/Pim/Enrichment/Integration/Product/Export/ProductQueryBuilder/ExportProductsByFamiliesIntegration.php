@@ -10,6 +10,7 @@ class ExportProductsByFamiliesIntegration extends AbstractExportTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createProduct('product_1', [new SetFamily('familyA')]);

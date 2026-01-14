@@ -25,6 +25,7 @@ class RenderHeaderExtension extends AbstractExtension
     /**
      * @return array
      */
+    #[\Override]
     public function getFunctions()
     {
         return [

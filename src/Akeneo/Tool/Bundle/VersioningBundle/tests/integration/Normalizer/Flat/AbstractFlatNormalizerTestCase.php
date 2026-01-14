@@ -14,6 +14,7 @@ abstract class AbstractFlatNormalizerTestCase extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

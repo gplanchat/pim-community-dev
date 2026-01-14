@@ -57,7 +57,7 @@ class Acl implements \Serializable
      *
      * @SuppressWarnings(PHPMD.NPathComplexity)
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         if ($data === null) {
             return;
@@ -170,6 +170,7 @@ class Acl implements \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function serialize()
     {
         return serialize(
@@ -189,6 +190,7 @@ class Acl implements \Serializable
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function unserialize($serialized)
     {
         list(

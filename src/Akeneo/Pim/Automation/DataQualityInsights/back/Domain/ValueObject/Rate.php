@@ -35,6 +35,7 @@ final class Rate
     /**
      * @deprecated
      */
+    #[\Override]
     public function __toString()
     {
         return $this->toLetter();

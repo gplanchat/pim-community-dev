@@ -13,6 +13,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230612153700_attribute_main_identifier extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return <<<EOL
@@ -22,6 +23,7 @@ final class Version_8_0_20230612153700_attribute_main_identifier extends Abstrac
             EOL;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -47,6 +49,7 @@ final class Version_8_0_20230612153700_attribute_main_identifier extends Abstrac
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

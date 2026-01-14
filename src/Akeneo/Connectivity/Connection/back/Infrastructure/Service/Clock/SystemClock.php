@@ -12,6 +12,7 @@ use Akeneo\Connectivity\Connection\Domain\ClockInterface;
  */
 final class SystemClock implements ClockInterface
 {
+    #[\Override]
     public function now(): \DateTimeImmutable
     {
         return new \DateTimeImmutable('now', new \DateTimeZone('UTC'));

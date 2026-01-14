@@ -13,6 +13,7 @@ class AclYamlConfigLoader extends AbstractLoader implements AclAnnotationLoaderI
      *
      * @param AclAnnotationStorage $storage
      */
+    #[\Override]
     public function load(AclAnnotationStorage $storage)
     {
         foreach ($this->bundleDirectories as $bundleDir) {

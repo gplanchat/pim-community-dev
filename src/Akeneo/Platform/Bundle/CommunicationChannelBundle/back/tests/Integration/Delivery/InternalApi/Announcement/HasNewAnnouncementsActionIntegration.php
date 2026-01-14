@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HasNewAnnouncementsActionIntegration extends WebTestCase
 {
+    #[\Override]
     public function setUp(): void
     {
         parent::setup();
@@ -30,6 +31,7 @@ class HasNewAnnouncementsActionIntegration extends WebTestCase
         Assert::assertArrayHasKey('status', $content);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

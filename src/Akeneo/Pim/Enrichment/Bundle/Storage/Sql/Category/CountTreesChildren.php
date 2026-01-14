@@ -20,6 +20,7 @@ final class CountTreesChildren implements CountTreesChildrenInterface
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function execute(): array
     {
         $query = <<<SQL

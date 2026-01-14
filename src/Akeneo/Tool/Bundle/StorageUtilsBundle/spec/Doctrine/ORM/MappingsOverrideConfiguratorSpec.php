@@ -58,6 +58,7 @@ class MappingsOverrideConfiguratorSpec extends ObjectBehavior
         $this->configure($metadataInfo, $overrides, $configuration);
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

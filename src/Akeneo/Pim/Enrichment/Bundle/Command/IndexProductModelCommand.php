@@ -27,9 +27,9 @@ class IndexProductModelCommand extends Command
 {
     protected static $defaultName = 'pim:product-model:index';
 
-    private const DEFAULT_BATCH_SIZE = 1000;
+    private const int DEFAULT_BATCH_SIZE = 1000;
 
-    private const ERROR_CODE_USAGE = 1;
+    private const int ERROR_CODE_USAGE = 1;
 
     private BackoffElasticSearchStateHandler $batchEsStateHandler;
 
@@ -47,6 +47,7 @@ class IndexProductModelCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -81,6 +82,7 @@ class IndexProductModelCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->checkIndexExists();

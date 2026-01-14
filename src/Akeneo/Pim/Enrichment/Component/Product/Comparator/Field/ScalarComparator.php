@@ -27,6 +27,7 @@ class ScalarComparator implements ComparatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($column)
     {
         return in_array($column, $this->columns);
@@ -35,6 +36,7 @@ class ScalarComparator implements ComparatorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function compare($data, $originals)
     {
         if (is_array($data)) {

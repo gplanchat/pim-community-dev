@@ -19,6 +19,7 @@ use Symfony\Component\Console\Tester\CommandTester;
  */
 class SendBusinessEventToWebhooksEndToEnd extends CommandTestCase
 {
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

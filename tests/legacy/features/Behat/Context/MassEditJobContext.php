@@ -15,8 +15,8 @@ final class MassEditJobContext extends PimContext implements SnippetAcceptingCon
 {
     use SpinCapableTrait;
 
-    private const USERNAME_FOR_JOB_LAUNCH = 'admin';
-    private const MASS_CHANGE_PARENT_JOB_NAME = 'change_parent_product';
+    private const string USERNAME_FOR_JOB_LAUNCH = 'admin';
+    private const string MASS_CHANGE_PARENT_JOB_NAME = 'change_parent_product';
 
     private IdentifiableObjectRepositoryInterface $productRepository;
     private IdentifiableObjectRepositoryInterface $productModelRepository;

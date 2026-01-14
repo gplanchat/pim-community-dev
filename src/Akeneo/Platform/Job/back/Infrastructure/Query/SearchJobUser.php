@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class SearchJobUser implements SearchJobUserInterface
 {
-    private const USER_TYPE = 'user';
+    private const string USER_TYPE = 'user';
 
     public function __construct(
         private Connection $connection,
@@ -25,6 +25,7 @@ class SearchJobUser implements SearchJobUserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function search(SearchJobUserQuery $query): array
     {
         $sql = $this->createSqlQuery($query);

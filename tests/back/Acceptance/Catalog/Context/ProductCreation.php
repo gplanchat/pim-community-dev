@@ -24,7 +24,7 @@ use Behat\Gherkin\Node\TableNode;
  */
 final class ProductCreation implements Context
 {
-    private const IDENTIFIER_ATTRIBUTE = 'sku';
+    private const string IDENTIFIER_ATTRIBUTE = 'sku';
 
     public function __construct(
         private SaverInterface $attributeSaver,

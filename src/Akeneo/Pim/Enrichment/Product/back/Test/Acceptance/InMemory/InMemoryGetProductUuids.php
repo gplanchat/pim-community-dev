@@ -18,6 +18,7 @@ class InMemoryGetProductUuids implements GetProductUuids
     {
     }
 
+    #[\Override]
     public function fromIdentifier(string $identifier): ?UuidInterface
     {
         return $this->productRepository->findOneByIdentifier($identifier)?->getUuid();
@@ -26,6 +27,7 @@ class InMemoryGetProductUuids implements GetProductUuids
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromIdentifiers(array $identifiers): array
     {
         $result = [];
@@ -39,11 +41,13 @@ class InMemoryGetProductUuids implements GetProductUuids
         return $result;
     }
 
+    #[\Override]
     public function fromUuid(UuidInterface $uuid): ?UuidInterface
     {
         return null === $this->productRepository->find($uuid) ? null : $uuid;
     }
 
+    #[\Override]
     public function fromUuids(array $uuids): array
     {
         $existingUuids = [];

@@ -46,7 +46,8 @@ final class EventDispatcherMock implements Context, EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
-    public function dispatch(object $event, string $eventName = null): object
+    #[\Override]
+    public function dispatch(object $event, ?string $eventName = null): object
     {
         $this->eventDispatcher->dispatch($event, $eventName);
         $eventName = $eventName ?? \get_class($event);
@@ -58,6 +59,7 @@ final class EventDispatcherMock implements Context, EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addListener($eventName, $listener, $priority = 0)
     {
         $this->eventDispatcher->addListener($eventName, $listener, $priority);
@@ -66,6 +68,7 @@ final class EventDispatcherMock implements Context, EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addSubscriber(EventSubscriberInterface $subscriber)
     {
         $this->eventDispatcher->addSubscriber($subscriber);
@@ -74,6 +77,7 @@ final class EventDispatcherMock implements Context, EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeListener($eventName, $listener)
     {
         $this->eventDispatcher->removeListener($eventName, $listener);
@@ -82,6 +86,7 @@ final class EventDispatcherMock implements Context, EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeSubscriber(EventSubscriberInterface $subscriber)
     {
         $this->eventDispatcher->removeSubscriber($subscriber);
@@ -90,6 +95,7 @@ final class EventDispatcherMock implements Context, EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getListeners($eventName = null)
     {
         return $this->eventDispatcher->getListeners($eventName);
@@ -98,6 +104,7 @@ final class EventDispatcherMock implements Context, EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getListenerPriority($eventName, $listener)
     {
         return $this->eventDispatcher->getListenerPriority($eventName, $listener);
@@ -106,6 +113,7 @@ final class EventDispatcherMock implements Context, EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasListeners($eventName = null)
     {
         return $this->eventDispatcher->hasListeners($eventName);

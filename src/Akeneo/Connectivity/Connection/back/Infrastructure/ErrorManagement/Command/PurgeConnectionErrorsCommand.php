@@ -20,7 +20,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class PurgeConnectionErrorsCommand extends Command
 {
-    private const TABLE_NOT_FOUND_ERROR_CODE = '42S02';
+    private const string TABLE_NOT_FOUND_ERROR_CODE = '42S02';
 
     /**
      * @var string
@@ -36,6 +36,7 @@ class PurgeConnectionErrorsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // Errors are thrown when the database or ElasticSearch are off following a deployment

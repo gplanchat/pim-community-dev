@@ -21,6 +21,7 @@ class SqlGetProductModelLabelsIntegration extends TestCase
         Assert::assertEqualsCanonicalizing($expected, $result);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

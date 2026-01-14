@@ -15,14 +15,15 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_7_0_20230110161438_initialize_identifier_generator_acl_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_7_0_20230110161438_initialize_identifier_generator_acl';
-    private const PERMISSION_IDENTIFIER_GENERATOR_VIEW = 'action:pim_identifier_generator_view';
-    private const PERMISSION_IDENTIFIER_GENERATOR_MANAGE = 'action:pim_identifier_generator_manage';
+    private const string MIGRATION_NAME = '_7_0_20230110161438_initialize_identifier_generator_acl';
+    private const string PERMISSION_IDENTIFIER_GENERATOR_VIEW = 'action:pim_identifier_generator_view';
+    private const string PERMISSION_IDENTIFIER_GENERATOR_MANAGE = 'action:pim_identifier_generator_manage';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -71,6 +72,7 @@ final class Version_7_0_20230110161438_initialize_identifier_generator_acl_Integ
         Assert::assertFalse($permissions[self::PERMISSION_IDENTIFIER_GENERATOR_MANAGE]);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -26,6 +26,7 @@ class FileInfoFactory implements FileInfoFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createFromRawFile(\SplFileInfo $rawFile, $destFsAlias)
     {
         $pathInfo = $this->pathGenerator->generate($rawFile);

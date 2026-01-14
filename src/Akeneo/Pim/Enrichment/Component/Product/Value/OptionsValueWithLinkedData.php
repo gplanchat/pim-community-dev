@@ -34,6 +34,7 @@ class OptionsValueWithLinkedData extends AbstractValue implements OptionsValueIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData(): array
     {
         return $this->data;
@@ -50,6 +51,7 @@ class OptionsValueWithLinkedData extends AbstractValue implements OptionsValueIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         $optionStrings = [];
@@ -64,6 +66,7 @@ class OptionsValueWithLinkedData extends AbstractValue implements OptionsValueIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function hasCode(string $code): bool
     {
         return in_array($code, $this->data);
@@ -72,6 +75,7 @@ class OptionsValueWithLinkedData extends AbstractValue implements OptionsValueIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getOptionCodes(): array
     {
         return $this->data;
@@ -80,6 +84,7 @@ class OptionsValueWithLinkedData extends AbstractValue implements OptionsValueIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof OptionsValueInterface ||

@@ -36,6 +36,7 @@ class FlysystemLoader implements LoaderInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function find($path)
     {
         $content = $this->retrieveContentFileFromVfs($path);

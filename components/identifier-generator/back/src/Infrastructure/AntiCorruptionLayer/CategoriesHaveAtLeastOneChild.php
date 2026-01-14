@@ -14,6 +14,7 @@ class CategoriesHaveAtLeastOneChild implements BaseCategoriesHaveAtLeastOneChild
     ) {
     }
 
+    #[\Override]
     public function among(array $parentCategoryCodes, array $childrenCategoryCodes): bool
     {
         return $this->categoriesHaveAtLeastOneChild->among($parentCategoryCodes, $childrenCategoryCodes);

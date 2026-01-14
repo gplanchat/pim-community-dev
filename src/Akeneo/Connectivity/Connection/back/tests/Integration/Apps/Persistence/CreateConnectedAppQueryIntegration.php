@@ -25,11 +25,13 @@ class CreateConnectedAppQueryIntegration extends TestCase
     private UserGroupLoader $userGroupLoader;
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

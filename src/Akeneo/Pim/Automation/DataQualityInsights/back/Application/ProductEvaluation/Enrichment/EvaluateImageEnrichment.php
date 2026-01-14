@@ -38,6 +38,7 @@ class EvaluateImageEnrichment implements EvaluateCriterionInterface
         $this->localesByChannelQuery = $localesByChannelQuery;
     }
 
+    #[\Override]
     public function evaluate(Write\CriterionEvaluation $criterionEvaluation, ProductValuesCollection $productValues): Write\CriterionEvaluationResult
     {
         $localesByChannel = $this->localesByChannelQuery->getChannelLocaleCollection();
@@ -53,6 +54,7 @@ class EvaluateImageEnrichment implements EvaluateCriterionInterface
         return $evaluationResult;
     }
 
+    #[\Override]
     public function getCode(): CriterionCode
     {
         return $this->code;
@@ -93,6 +95,7 @@ class EvaluateImageEnrichment implements EvaluateCriterionInterface
         ;
     }
 
+    #[\Override]
     public function getCoefficient(): int
     {
         return self::CRITERION_COEFFICIENT;

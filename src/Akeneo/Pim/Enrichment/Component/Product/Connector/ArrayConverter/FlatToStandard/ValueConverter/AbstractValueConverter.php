@@ -30,6 +30,7 @@ abstract class AbstractValueConverter implements ValueConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsField($attributeType)
     {
         return in_array($attributeType, $this->supportedFieldType);

@@ -17,15 +17,16 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 class FamilyVariantValidator extends ConstraintValidator
 {
-    private const MAXIMUM_LEVEL_NUMBER = 2;
+    private const int MAXIMUM_LEVEL_NUMBER = 2;
 
-    private const MAXIMUM_AXES_NUMBER = 5;
+    private const int MAXIMUM_AXES_NUMBER = 5;
 
     /**
      * {@inheritdoc}
      *
      * @param FamilyVariantInterface $familyVariant
      */
+    #[\Override]
     public function validate($familyVariant, Constraint $constraint): void
     {
         if (!$familyVariant instanceof FamilyVariantInterface) {

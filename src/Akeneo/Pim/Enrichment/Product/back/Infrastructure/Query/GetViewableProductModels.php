@@ -15,6 +15,7 @@ final class GetViewableProductModels implements GetViewableProductModelsInterfac
     /**
      * @inerhitDoc
      */
+    #[\Override]
     public function fromProductModelCodes(array $productModelCodes, int $userId): array
     {
         return $productModelCodes;

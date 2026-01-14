@@ -12,6 +12,7 @@ use Akeneo\Channel\API\Query\IsLocaleEditable;
  */
 final class DummyIsLocaleEditable implements IsLocaleEditable
 {
+    #[\Override]
     public function forUserId(string $localeCode, int $userId): bool
     {
         return true;

@@ -46,6 +46,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -54,6 +55,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -62,6 +64,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -72,6 +75,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getGroups()
     {
         return $this->groups;
@@ -82,6 +86,7 @@ class GroupType implements GroupTypeInterface
      *
      * @return string
      */
+    #[\Override]
     public function __toString()
     {
         return $this->getLabel();
@@ -90,6 +95,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -100,6 +106,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslations()
     {
         return $this->translations;
@@ -108,6 +115,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslation(?string $locale = null): ?GroupTypeTranslationInterface
     {
         $locale = $locale ?: $this->locale;
@@ -132,6 +140,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->translations->contains($translation)) {
@@ -144,6 +153,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeTranslation(TranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
@@ -154,6 +164,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslationFQCN()
     {
         return GroupTypeTranslation::class;
@@ -162,6 +173,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabel()
     {
         $translated = $this->getTranslation() ? $this->getTranslation()->getLabel() : null;
@@ -172,6 +184,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLabel($label)
     {
         $this->getTranslation()->setLabel($label);
@@ -182,6 +195,7 @@ class GroupType implements GroupTypeInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReference()
     {
         return $this->code;

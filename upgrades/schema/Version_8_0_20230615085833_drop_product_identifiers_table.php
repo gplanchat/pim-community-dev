@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_8_0_20230615085833_drop_product_identifiers_table extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'Drops the product identifiers table';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->connection->executeStatement(<<<SQL
@@ -26,6 +28,7 @@ final class Version_8_0_20230615085833_drop_product_identifiers_table extends Ab
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

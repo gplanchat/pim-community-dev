@@ -37,6 +37,7 @@ class CategoryItemsCounter implements CategoryItemsCounterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getItemsCountInCategory(CategoryInterface $category, $inChildren = false, $inProvided = true)
     {
         $categoryIds = $inChildren

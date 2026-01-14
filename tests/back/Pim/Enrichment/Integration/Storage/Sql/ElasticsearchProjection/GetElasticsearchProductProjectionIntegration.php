@@ -500,6 +500,7 @@ class GetElasticsearchProductProjectionIntegration extends TestCase
         Assert::assertTrue(Uuid::isValid($matches['uuid']));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

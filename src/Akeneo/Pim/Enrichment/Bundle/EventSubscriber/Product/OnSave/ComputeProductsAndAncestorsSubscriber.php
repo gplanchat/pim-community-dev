@@ -29,6 +29,7 @@ final class ComputeProductsAndAncestorsSubscriber implements EventSubscriberInte
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

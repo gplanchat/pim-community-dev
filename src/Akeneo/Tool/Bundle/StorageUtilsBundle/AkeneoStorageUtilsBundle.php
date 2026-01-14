@@ -18,6 +18,7 @@ class AkeneoStorageUtilsBundle extends Bundle
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(new ResolveDoctrineTargetRepositoryPass('akeneo_repository'));

@@ -24,6 +24,7 @@ class AppRoleWithScopesFactoryIntegration extends TestCase
     private Connection $connection;
     private AccessDecisionManagerInterface $accessDecisionManager;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,6 +34,7 @@ class AppRoleWithScopesFactoryIntegration extends TestCase
         $this->accessDecisionManager = $this->get('security.access.decision_manager');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -17,6 +17,7 @@ class InstallSubscriber implements EventSubscriberInterface
         $this->dbalConnection = $dbalConnection;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

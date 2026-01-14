@@ -19,6 +19,7 @@ class DocumentedNormalizer implements NormalizerInterface, CacheableSupportsMeth
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($exception, $format = null, array $context = [])
     {
         $data = [
@@ -35,11 +36,13 @@ class DocumentedNormalizer implements NormalizerInterface, CacheableSupportsMeth
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($exception, $format = null): bool
     {
         return $exception instanceof DocumentedHttpException;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

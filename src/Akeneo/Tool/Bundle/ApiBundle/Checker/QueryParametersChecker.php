@@ -47,7 +47,8 @@ class QueryParametersChecker implements QueryParametersCheckerInterface
     /**
      * {@inheritdoc}
      */
-    public function checkLocalesParameters(array $localeCodes, ChannelInterface $channel = null)
+    #[\Override]
+    public function checkLocalesParameters(array $localeCodes, ?ChannelInterface $channel = null)
     {
         $localeCodes = array_map('trim', $localeCodes);
         $errors = [];
@@ -78,6 +79,7 @@ class QueryParametersChecker implements QueryParametersCheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function checkAttributesParameters(array $attributeCodes)
     {
         $errors = [];
@@ -97,6 +99,7 @@ class QueryParametersChecker implements QueryParametersCheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function checkPropertyParameters(string $property, string $operator)
     {
         if (!in_array($property, $this->productFields) && null === $this->attributeRepository->findOneByIdentifier($property)) {
@@ -113,6 +116,7 @@ class QueryParametersChecker implements QueryParametersCheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function checkCategoriesParameters(array $categories)
     {
         $errors = [];
@@ -134,6 +138,7 @@ class QueryParametersChecker implements QueryParametersCheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function checkCriterionParameters(string $searchString): array
     {
         $searchParameters = json_decode($searchString, true);

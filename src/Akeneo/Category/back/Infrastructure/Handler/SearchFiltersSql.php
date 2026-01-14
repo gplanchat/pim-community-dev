@@ -22,6 +22,7 @@ class SearchFiltersSql implements SearchFilters
     ) {
     }
 
+    #[\Override]
     public function build(array $searchFilters): ExternalApiSqlParameters
     {
         $sqlWhere = '';

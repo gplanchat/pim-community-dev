@@ -25,6 +25,7 @@ class SqlCategoryTemplateAttributeSaver implements CategoryTemplateAttributeSave
     ) {
     }
 
+    #[\Override]
     public function insert(TemplateUuid $templateUuid, AttributeCollection $attributeCollection): void
     {
         if (($this->isTemplateDeactivated)($templateUuid)) {
@@ -34,6 +35,7 @@ class SqlCategoryTemplateAttributeSaver implements CategoryTemplateAttributeSave
         $this->insertAttributes($attributeCollection->getAttributes());
     }
 
+    #[\Override]
     public function update(Attribute $attribute): void
     {
         if (($this->isTemplateDeactivated)($attribute->getTemplateUuid())) {

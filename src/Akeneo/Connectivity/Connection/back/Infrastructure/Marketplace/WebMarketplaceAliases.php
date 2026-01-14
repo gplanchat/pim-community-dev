@@ -21,6 +21,7 @@ class WebMarketplaceAliases implements WebMarketplaceAliasesInterface
     ) {
     }
 
+    #[\Override]
     public function getUtmCampaign(): ?string
     {
         return match ($this->versionProvider->getEdition()) {
@@ -29,6 +30,7 @@ class WebMarketplaceAliases implements WebMarketplaceAliasesInterface
         };
     }
 
+    #[\Override]
     public function getEdition(): string
     {
         return match ($this->versionProvider->getEdition()) {
@@ -38,6 +40,7 @@ class WebMarketplaceAliases implements WebMarketplaceAliasesInterface
         };
     }
 
+    #[\Override]
     public function getVersion(): ?string
     {
         $version = $this->versionProvider->getVersion();

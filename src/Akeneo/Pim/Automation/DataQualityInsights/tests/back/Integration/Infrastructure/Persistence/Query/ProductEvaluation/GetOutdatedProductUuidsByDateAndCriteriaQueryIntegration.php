@@ -26,6 +26,7 @@ final class GetOutdatedProductUuidsByDateAndCriteriaQueryIntegration extends Dat
     private Connection $dbConnection;
     private Clock $clock;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

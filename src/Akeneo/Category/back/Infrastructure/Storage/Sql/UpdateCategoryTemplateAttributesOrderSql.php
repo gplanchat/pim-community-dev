@@ -23,6 +23,7 @@ class UpdateCategoryTemplateAttributesOrderSql implements UpdateCategoryTemplate
      * @throws \Doctrine\DBAL\Driver\Exception
      * @throws \Doctrine\DBAL\Exception
      */
+    #[\Override]
     public function fromAttributeCollection(AttributeCollection $attributeList): void
     {
         if ($attributeList->count() === 0) {

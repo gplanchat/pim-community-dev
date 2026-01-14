@@ -33,6 +33,7 @@ final class CollectionToStringDataConverter implements ValueDataConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsAttributes(AttributeInterface $sourceAttribute, AttributeInterface $targetAttribute): bool
     {
         return isset($this->supportedAttributeTypes[$sourceAttribute->getType()][$targetAttribute->getType()]);
@@ -41,6 +42,7 @@ final class CollectionToStringDataConverter implements ValueDataConverter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(ValueInterface $sourceValue, AttributeInterface $targetAttribute)
     {
         Assert::isIterable($sourceValue->getData());

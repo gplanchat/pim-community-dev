@@ -31,6 +31,7 @@ class DatagridViewUpdater implements ObjectUpdaterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function update($datagridView, array $data, array $options = [])
     {
         if (!$datagridView instanceof DatagridView) {

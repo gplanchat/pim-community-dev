@@ -21,6 +21,7 @@ class ReorderTemplateAttributesOnAttributeDeactivatedSubscriber implements Event
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

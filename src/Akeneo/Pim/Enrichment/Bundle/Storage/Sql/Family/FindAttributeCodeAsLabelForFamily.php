@@ -20,6 +20,7 @@ class FindAttributeCodeAsLabelForFamily implements FindAttributeCodeAsLabelForFa
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(string $code): ?string
     {
         $sql = <<<SQL

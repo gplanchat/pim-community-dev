@@ -24,6 +24,7 @@ class ErrorType implements \Stringable
         $this->type = $type;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->type;

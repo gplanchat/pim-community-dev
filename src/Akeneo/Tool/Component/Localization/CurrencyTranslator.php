@@ -7,6 +7,7 @@ use Symfony\Component\Intl\Exception\MissingResourceException;
 
 class CurrencyTranslator implements CurrencyTranslatorInterface
 {
+    #[\Override]
     public function translate(string $currencyCode, string $locale, string $fallback): string
     {
         try {

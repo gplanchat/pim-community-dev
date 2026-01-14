@@ -39,6 +39,7 @@ class MultiSelectAttributeRemover extends AbstractAttributeRemover
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeAttributeData(
         EntityWithValuesInterface $entityWithValues,
         AttributeInterface $attribute,

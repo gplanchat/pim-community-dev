@@ -20,6 +20,7 @@ class IsConnectionsNumberLimitReachedQuery implements IsConnectionsNumberLimitRe
     ) {
     }
 
+    #[\Override]
     public function execute(): bool
     {
         $sql = <<<SQL

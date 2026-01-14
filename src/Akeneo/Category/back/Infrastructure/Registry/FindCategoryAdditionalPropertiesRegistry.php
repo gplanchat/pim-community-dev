@@ -16,6 +16,7 @@ class FindCategoryAdditionalPropertiesRegistry implements FindCategoryAdditional
     ) {
     }
 
+    #[\Override]
     public function forCategory(Category $category): Category
     {
         foreach ($this->additionalPropertiesFinder as $finder) {
@@ -32,6 +33,7 @@ class FindCategoryAdditionalPropertiesRegistry implements FindCategoryAdditional
      *
      * @return Category[]
      */
+    #[\Override]
     public function forCategories(array $categories): array
     {
         $categoriesWithAdditionalProperties = [];

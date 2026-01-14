@@ -38,6 +38,7 @@ final class DispatchFamilyWasCreatedOrUpdatedSubscriber implements EventSubscrib
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -41,6 +41,7 @@ class SelfAndAncestorFilterLabelOrIdentifier extends AbstractFieldFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter($field, $operator, $value, $locale = null, $channel = null, $options = []): void
     {
         if (null === $this->searchQueryBuilder) {

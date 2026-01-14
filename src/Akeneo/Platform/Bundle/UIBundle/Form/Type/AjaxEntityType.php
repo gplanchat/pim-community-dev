@@ -66,6 +66,7 @@ class AjaxEntityType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_ajax_entity';
@@ -74,6 +75,7 @@ class AjaxEntityType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return HiddenType::class;
@@ -82,6 +84,7 @@ class AjaxEntityType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->addViewTransformer($this->getTransformer($options));
@@ -90,6 +93,7 @@ class AjaxEntityType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired(['class']);
@@ -130,6 +134,7 @@ class AjaxEntityType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         if ($options['multiple']) {

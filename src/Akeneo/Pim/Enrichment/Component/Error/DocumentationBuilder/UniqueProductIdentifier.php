@@ -17,6 +17,7 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
  */
 final class UniqueProductIdentifier implements DocumentationBuilderInterface
 {
+    #[\Override]
     public function support($object): bool
     {
         if (
@@ -31,6 +32,7 @@ final class UniqueProductIdentifier implements DocumentationBuilderInterface
     /**
      * @param ConstraintViolationInterface $constraintViolation
      */
+    #[\Override]
     public function buildDocumentation($constraintViolation): DocumentationCollection
     {
         if (false === $this->support($constraintViolation)) {

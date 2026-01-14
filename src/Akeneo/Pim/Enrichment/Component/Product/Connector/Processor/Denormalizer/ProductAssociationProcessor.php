@@ -46,6 +46,7 @@ class ProductAssociationProcessor extends AbstractProcessor implements ItemProce
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item)
     {
         if (!$this->hasAssociationToImport($item)) {

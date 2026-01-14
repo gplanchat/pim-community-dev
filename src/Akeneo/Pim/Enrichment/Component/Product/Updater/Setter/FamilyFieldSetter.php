@@ -40,6 +40,7 @@ class FamilyFieldSetter extends AbstractFieldSetter
      *
      * Expected data input format : "family_code"
      */
+    #[\Override]
     public function setFieldData($product, $field, $data, array $options = [])
     {
         if (!$product instanceof ProductInterface) {

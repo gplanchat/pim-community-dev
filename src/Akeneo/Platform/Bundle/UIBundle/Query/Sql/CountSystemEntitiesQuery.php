@@ -21,6 +21,7 @@ final class CountSystemEntitiesQuery implements CountSystemEntitiesQueryInterfac
         $this->dbConnection = $dbConnection;
     }
 
+    #[\Override]
     public function execute(): array
     {
         $anonymousRole = User::ROLE_ANONYMOUS;

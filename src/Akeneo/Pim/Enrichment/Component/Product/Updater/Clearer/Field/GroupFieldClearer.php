@@ -17,11 +17,12 @@ use Webmozart\Assert\Assert;
  */
 final class GroupFieldClearer implements ClearerInterface
 {
-    private const SUPPORTED_FIELD = 'groups';
+    private const string SUPPORTED_FIELD = 'groups';
 
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function supportsProperty(string $property): bool
     {
         return static::SUPPORTED_FIELD === $property;
@@ -30,6 +31,7 @@ final class GroupFieldClearer implements ClearerInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function clear($entity, string $property, array $options = []): void
     {
         if (!$entity instanceof ProductInterface) {

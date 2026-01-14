@@ -63,6 +63,7 @@ class ProductProcessor extends AbstractProcessor implements ItemProcessorInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item)
     {
         $itemHasStatus = isset($item['enabled']);
@@ -283,7 +284,7 @@ class ProductProcessor extends AbstractProcessor implements ItemProcessorInterfa
         $this->detacher->detach($product);
     }
 
-    private function skipItemAndReturnException(array $item, $message, \Exception $previousException = null): InvalidItemException
+    private function skipItemAndReturnException(array $item, $message, ?\Exception $previousException = null): InvalidItemException
     {
         if ($this->stepExecution) {
             $this->stepExecution->incrementSummaryInfo('skip');
@@ -297,6 +298,7 @@ class ProductProcessor extends AbstractProcessor implements ItemProcessorInterfa
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function flushNonBlockingWarnings(): array
     {
         $nonBlockingWarnings = $this->nonBlockingWarnings;

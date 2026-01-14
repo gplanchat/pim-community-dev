@@ -136,6 +136,7 @@ class ComputeDescendantProductCompletenessesIntegration extends AbstractComplete
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

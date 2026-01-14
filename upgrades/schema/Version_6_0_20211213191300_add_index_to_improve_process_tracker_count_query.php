@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20211213191300_add_index_to_improve_process_tracker_count_query extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf($this->indexExists(), 'Index job_instance_id_user_status_is_visible_idx already exists in akeneo_batch_job_instance');
@@ -16,6 +17,7 @@ final class Version_6_0_20211213191300_add_index_to_improve_process_tracker_coun
         $this->addSql('CREATE INDEX job_instance_id_user_status_is_visible_idx ON akeneo_batch_job_execution (job_instance_id, user, status, is_visible)');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

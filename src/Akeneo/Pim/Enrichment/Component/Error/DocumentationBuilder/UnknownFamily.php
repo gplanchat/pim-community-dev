@@ -17,6 +17,7 @@ use Akeneo\Pim\Enrichment\Component\Product\Exception\UnknownFamilyException;
  */
 final class UnknownFamily implements DocumentationBuilderInterface
 {
+    #[\Override]
     public function support($object): bool
     {
         if ($object instanceof UnknownFamilyException) {
@@ -26,6 +27,7 @@ final class UnknownFamily implements DocumentationBuilderInterface
         return false;
     }
 
+    #[\Override]
     public function buildDocumentation($object): DocumentationCollection
     {
         if (false === $this->support($object)) {

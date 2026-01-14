@@ -24,6 +24,7 @@ class LockedAccountException extends AuthenticationException
 
         $this->serialized = null;
     }
+    #[\Override]
     public function getMessageKey(): string
     {
         return $this->getMessage();

@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20220518130906_drop_table_akeneo_batch_job_execution_queue extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf($this->tableDoesNotExist(), 'The table akeneo_batch_job_execution_queue does not exist');
@@ -19,6 +20,7 @@ final class Version_6_0_20220518130906_drop_table_akeneo_batch_job_execution_que
         $this->addSql('DROP TABLE IF EXISTS akeneo_batch_job_execution_queue');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

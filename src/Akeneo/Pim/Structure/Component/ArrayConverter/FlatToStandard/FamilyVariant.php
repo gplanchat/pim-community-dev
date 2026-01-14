@@ -62,6 +62,7 @@ class FamilyVariant implements ArrayConverterInterface
      *      'family' => 't-shirt',
      * ]
      */
+    #[\Override]
     public function convert(array $item, array $options = []): array
     {
         $this->fieldChecker->checkFieldsPresence($item, ['code']);

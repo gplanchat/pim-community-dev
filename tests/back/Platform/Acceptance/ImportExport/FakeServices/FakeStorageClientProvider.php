@@ -23,11 +23,13 @@ class FakeStorageClientProvider implements StorageClientProviderInterface
     ) {
     }
 
+    #[\Override]
     public function supports(StorageInterface $storage): bool
     {
         return $storage instanceof $this->storageClassName;
     }
 
+    #[\Override]
     public function getFromStorage(StorageInterface $storage): StorageClientInterface
     {
         return new FileSystemStorageClient($this->fileSystem);

@@ -36,6 +36,7 @@ class GroupFactory implements SimpleFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create()
     {
         return new $this->groupClass();

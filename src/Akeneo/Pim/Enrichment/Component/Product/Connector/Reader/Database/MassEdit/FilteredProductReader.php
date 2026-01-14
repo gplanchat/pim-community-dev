@@ -70,6 +70,7 @@ class FilteredProductReader implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize(): void
     {
         $this->firstRead = true;
@@ -93,6 +94,7 @@ class FilteredProductReader implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read(): ?ProductInterface
     {
         $product = null;
@@ -111,6 +113,7 @@ class FilteredProductReader implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
@@ -165,7 +168,7 @@ class FilteredProductReader implements
      *
      * @return CursorInterface
      */
-    private function getProductsCursor(array $filters, ChannelInterface $channel = null): CursorInterface
+    private function getProductsCursor(array $filters, ?ChannelInterface $channel = null): CursorInterface
     {
         $filters[] = [
             'field' => 'entity_type',
@@ -208,6 +211,7 @@ class FilteredProductReader implements
         return $entity;
     }
 
+    #[\Override]
     public function totalItems(): int
     {
         if (null === $this->products) {
@@ -217,11 +221,13 @@ class FilteredProductReader implements
         return $this->products->count();
     }
 
+    #[\Override]
     public function getState(): array
     {
         return null !== $this->products ? ['position' =>  $this->products->key()] : [];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

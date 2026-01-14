@@ -21,6 +21,7 @@ class TemplateCodeShouldBeUniqueValidator extends ConstraintValidator
     {
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         if (empty($value)) {

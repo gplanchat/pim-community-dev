@@ -16,19 +16,21 @@ use PHPUnit\Framework\Assert;
  */
 class Version_8_0_20230127150758_add_ondelete_cascade_on_category_template_attributes_Integration extends TestCase
 {
-    private const ATTRIBUTE_TABLE_NAME = 'pim_catalog_category_attribute';
-    private const FOREIGN_ATTRIBUTE_OLD_KEY_NAME = 'FK_ATTRIBUTE_template_uiid';
-    private const FOREIGN_ATTRIBUTE_NEW_KEY_NAME = 'FK_ATTRIBUTE_template_uuid';
+    private const string ATTRIBUTE_TABLE_NAME = 'pim_catalog_category_attribute';
+    private const string FOREIGN_ATTRIBUTE_OLD_KEY_NAME = 'FK_ATTRIBUTE_template_uiid';
+    private const string FOREIGN_ATTRIBUTE_NEW_KEY_NAME = 'FK_ATTRIBUTE_template_uuid';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

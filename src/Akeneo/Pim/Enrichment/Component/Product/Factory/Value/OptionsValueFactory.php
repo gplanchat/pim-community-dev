@@ -17,6 +17,7 @@ use Webmozart\Assert\Assert;
  */
 final class OptionsValueFactory implements ValueFactory
 {
+    #[\Override]
     public function createWithoutCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         \sort($data);
@@ -37,6 +38,7 @@ final class OptionsValueFactory implements ValueFactory
         return OptionsValue::value($attributeCode, $data);
     }
 
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_array($data)) {
@@ -73,6 +75,7 @@ final class OptionsValueFactory implements ValueFactory
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::OPTION_MULTI_SELECT;

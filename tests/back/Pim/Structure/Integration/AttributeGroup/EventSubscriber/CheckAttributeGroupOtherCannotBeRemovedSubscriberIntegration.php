@@ -20,6 +20,7 @@ class CheckAttributeGroupOtherCannotBeRemovedSubscriberIntegration extends TestC
     private AttributeGroupRepositoryInterface $attributeGroupRepository;
     private RemoverInterface $attributeGroupRemover;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -39,6 +40,7 @@ class CheckAttributeGroupOtherCannotBeRemovedSubscriberIntegration extends TestC
         $this->attributeGroupRemover->remove($attributeGroup);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

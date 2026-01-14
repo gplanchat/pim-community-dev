@@ -16,6 +16,7 @@ class BooleanNormalizer extends AbstractProductValueNormalizer implements Normal
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         if (! $data instanceof ValueInterface) {
@@ -32,6 +33,7 @@ class BooleanNormalizer extends AbstractProductValueNormalizer implements Normal
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         return $value->getData();

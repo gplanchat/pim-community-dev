@@ -65,6 +65,7 @@ class AddAttributeValueProcessor extends AbstractProcessor
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($entity)
     {
         $actions = $this->getConfiguredActions();

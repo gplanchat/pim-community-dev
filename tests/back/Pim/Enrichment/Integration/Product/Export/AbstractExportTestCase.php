@@ -25,6 +25,7 @@ abstract class AbstractExportTestCase extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,6 +44,7 @@ abstract class AbstractExportTestCase extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();
@@ -149,6 +151,7 @@ abstract class AbstractExportTestCase extends TestCase
      *
      * @return CategoryInterface
      */
+    #[\Override]
     protected function createCategory(array $data = []) : CategoryInterface
     {
         $category = $this->get('pim_catalog.factory.category')->create();

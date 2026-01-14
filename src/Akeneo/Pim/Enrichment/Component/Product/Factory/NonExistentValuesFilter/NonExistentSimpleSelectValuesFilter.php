@@ -22,6 +22,7 @@ class NonExistentSimpleSelectValuesFilter implements NonExistentValuesFilter
     {
     }
 
+    #[\Override]
     public function filter(OnGoingFilteredRawValues $onGoingFilteredRawValues): OnGoingFilteredRawValues
     {
         $selectValues = $onGoingFilteredRawValues->notFilteredValuesOfTypes(AttributeTypes::OPTION_SIMPLE_SELECT);

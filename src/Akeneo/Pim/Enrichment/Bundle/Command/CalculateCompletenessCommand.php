@@ -25,7 +25,7 @@ class CalculateCompletenessCommand extends Command
 {
     use LockableTrait;
 
-    private const DEFAULT_BATCH_SIZE = 1000;
+    private const int DEFAULT_BATCH_SIZE = 1000;
 
     protected static $defaultName = 'pim:completeness:calculate';
 
@@ -52,6 +52,7 @@ class CalculateCompletenessCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -69,6 +70,7 @@ class CalculateCompletenessCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$this->lock()) {

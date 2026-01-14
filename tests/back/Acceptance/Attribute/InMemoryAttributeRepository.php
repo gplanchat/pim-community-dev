@@ -39,6 +39,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -47,6 +48,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->attributes->get($identifier);
@@ -55,6 +57,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($attribute, array $options = [])
     {
         if (!$attribute instanceof AttributeInterface) {
@@ -79,7 +82,8 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $attributes = [];
         foreach ($this->attributes as $attribute) {
@@ -104,6 +108,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -112,6 +117,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return $this->attributes->toArray();
@@ -120,6 +126,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         return $this->findBy($criteria, null, 1)[0] ?? null;
@@ -128,6 +135,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);
@@ -136,6 +144,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAllInDefaultGroup()
     {
         throw new NotImplementedException(__METHOD__);
@@ -144,6 +153,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findUniqueAttributeCodes()
     {
         throw new NotImplementedException(__METHOD__);
@@ -152,6 +162,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findMediaAttributeCodes()
     {
         $attributeCodes = [];
@@ -168,6 +179,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAllAxesQB()
     {
         throw new NotImplementedException(__METHOD__);
@@ -176,6 +188,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributesAsArray($withLabel = false, $locale = null, array $ids = [])
     {
         throw new NotImplementedException(__METHOD__);
@@ -184,6 +197,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeIdsUseableInGrid($codes = null, $groupIds = null)
     {
         throw new NotImplementedException(__METHOD__);
@@ -192,6 +206,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifier(): AttributeInterface
     {
         return $this->getMainIdentifier();
@@ -200,6 +215,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMainIdentifier(): AttributeInterface
     {
         $attribute = $this->attributes->filter(function (AttributeInterface $attribute): bool {
@@ -225,6 +241,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierCode(): string
     {
         return $this->getMainIdentifierCode();
@@ -233,6 +250,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getMainIdentifierCode(): string
     {
         return $this->getMainIdentifier()->getCode();
@@ -241,6 +259,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeTypeByCodes(array $codes)
     {
         $types = [];
@@ -257,6 +276,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeCodesByType($type)
     {
         return \array_values(\array_map(
@@ -271,6 +291,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributeCodesByGroup(AttributeGroupInterface $group)
     {
         throw new NotImplementedException(__METHOD__);
@@ -279,6 +300,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributesByGroups(array $groupsCode, int $limit, ?string $searchAfter)
     {
         throw new NotImplementedException(__METHOD__);
@@ -287,6 +309,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAttributesByFamily(FamilyInterface $family)
     {
         throw new NotImplementedException(__METHOD__);
@@ -295,6 +318,7 @@ class InMemoryAttributeRepository implements AttributeRepositoryInterface, Saver
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAvailableAxes($locale)
     {
         throw new NotImplementedException(__METHOD__);

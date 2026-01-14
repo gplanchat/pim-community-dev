@@ -578,6 +578,7 @@ SQL;
         return (bool) $result;
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

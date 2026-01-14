@@ -18,6 +18,7 @@ final class SqlFindProduct implements FindProduct
     {
     }
 
+    #[\Override]
     public function withUuid(string $uuid): ?ProductInterface
     {
         return $this->productRepository->find($uuid);

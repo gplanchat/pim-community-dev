@@ -22,6 +22,7 @@ class DbalConnectionRepositoryIntegration extends TestCase
     private DbalConnectionRepository $repository;
     private ConnectionLoader $connectionLoader;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -101,6 +102,7 @@ class DbalConnectionRepositoryIntegration extends TestCase
         Assert::assertSame('connection_type', $result['type']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

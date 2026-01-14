@@ -23,7 +23,7 @@ use Webmozart\Assert\Assert;
  */
 final class GetElasticsearchProductProjection implements GetElasticsearchProductProjectionInterface
 {
-    private const INDEXING_FORMAT_PRODUCT_AND_MODEL_INDEX = 'indexing_product_and_product_model';
+    private const string INDEXING_FORMAT_PRODUCT_AND_MODEL_INDEX = 'indexing_product_and_product_model';
 
     /**
      * @param GetAdditionalPropertiesForProductProjectionInterface[] $additionalDataProviders
@@ -44,6 +44,7 @@ final class GetElasticsearchProductProjection implements GetElasticsearchProduct
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromProductUuids(array $productUuids): iterable
     {
         if (empty($productUuids)) {

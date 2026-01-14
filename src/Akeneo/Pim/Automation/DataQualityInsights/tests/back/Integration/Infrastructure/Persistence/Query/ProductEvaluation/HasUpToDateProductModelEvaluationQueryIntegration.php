@@ -24,6 +24,7 @@ final class HasUpToDateProductModelEvaluationQueryIntegration extends TestCase
     /** @var HasUpToDateProductModelEvaluationQuery */
     private $query;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -32,6 +33,7 @@ final class HasUpToDateProductModelEvaluationQueryIntegration extends TestCase
         $this->query = $this->get(HasUpToDateProductModelEvaluationQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

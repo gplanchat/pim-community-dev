@@ -18,6 +18,7 @@ final class SqlMarkJobExecutionAsFailedWhenInterrupted implements MarkJobExecuti
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(array $jobCodes): int
     {
         $sql = <<<SQL

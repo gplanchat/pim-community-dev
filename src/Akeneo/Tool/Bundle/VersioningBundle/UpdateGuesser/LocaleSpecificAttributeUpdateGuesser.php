@@ -19,6 +19,7 @@ class LocaleSpecificAttributeUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAction($action)
     {
         return $action === UpdateGuesserInterface::ACTION_UPDATE_COLLECTION;
@@ -27,6 +28,7 @@ class LocaleSpecificAttributeUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessUpdates(EntityManager $em, $entity, $action)
     {
         $pendings = [];

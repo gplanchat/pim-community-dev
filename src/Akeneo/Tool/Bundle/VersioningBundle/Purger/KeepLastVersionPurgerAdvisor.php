@@ -24,6 +24,7 @@ class KeepLastVersionPurgerAdvisor implements VersionPurgerAdvisorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports(PurgeableVersionList $versionList)
     {
         return true;
@@ -32,6 +33,7 @@ class KeepLastVersionPurgerAdvisor implements VersionPurgerAdvisorInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function isPurgeable(PurgeableVersionList $versionList): PurgeableVersionList
     {
         $allButLastVersionsIds = $this->sqlGetAllButLastVersionsByIdsQuery->execute($versionList->getVersionIds());

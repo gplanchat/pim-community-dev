@@ -25,6 +25,7 @@ final class UnableToSetIdentifiersSubscriber implements EventSubscriberInterface
     {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [
@@ -60,6 +61,7 @@ final class UnableToSetIdentifiersSubscriber implements EventSubscriberInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function getEvents(): array
     {
         $events = $this->events;

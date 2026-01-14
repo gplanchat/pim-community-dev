@@ -29,6 +29,7 @@ final class ApiAggregatorForAttributeOptionPostSaveEventSubscriber implements Ev
         $this->eventsAttributesOptions = [];
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

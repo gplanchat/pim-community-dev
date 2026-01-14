@@ -23,11 +23,13 @@ class GetConnectedAppScopesQueryIntegration extends TestCase
     private ConnectedAppLoader $connectedAppLoader;
     private GetConnectedAppScopesQuery $query;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

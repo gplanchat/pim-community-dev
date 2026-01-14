@@ -35,6 +35,7 @@ final class ESGetProductAndProductModelIdentifiersWithValuesIgnoringLocaleAndSco
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function forAttributeAndValues(string $attributeCode, string $backendType, array $values): iterable
     {
         $attributePath = sprintf('values.%s-%s.*', $attributeCode, $backendType);

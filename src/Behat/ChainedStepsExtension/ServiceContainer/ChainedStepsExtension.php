@@ -24,6 +24,7 @@ class ChainedStepsExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getConfigKey()
     {
         return 'chained_steps';
@@ -32,6 +33,7 @@ class ChainedStepsExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize(ExtensionManager $extensionManager)
     {
     }
@@ -39,6 +41,7 @@ class ChainedStepsExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configure(ArrayNodeDefinition $builder)
     {
     }
@@ -46,6 +49,7 @@ class ChainedStepsExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function load(ContainerBuilder $container, array $config)
     {
         $definition = new Definition(SubStepTester::class, array(
@@ -58,6 +62,7 @@ class ChainedStepsExtension implements ExtensionInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
     }

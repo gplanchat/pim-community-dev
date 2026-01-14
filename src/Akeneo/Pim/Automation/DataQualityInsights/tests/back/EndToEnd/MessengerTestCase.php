@@ -20,6 +20,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
     /** @var PubSubQueueStatus */
     protected array $pubSubQueueStatuses;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -29,6 +30,7 @@ abstract class MessengerTestCase extends DataQualityInsightsTestCase
         $this->get('akeneo_integration_tests.helper.authenticator')->logIn('admin');
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         parent::tearDown();

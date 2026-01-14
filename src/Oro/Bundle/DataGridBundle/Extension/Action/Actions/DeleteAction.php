@@ -14,6 +14,7 @@ class DeleteAction extends AbstractAction
     /**
      * @param ActionConfiguration $options
      */
+    #[\Override]
     public function setOptions(ActionConfiguration $options)
     {
         if (!isset($options['confirmation'])) {

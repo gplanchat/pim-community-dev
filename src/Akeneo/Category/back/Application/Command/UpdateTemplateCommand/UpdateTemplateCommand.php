@@ -11,7 +11,7 @@ use Webmozart\Assert\Assert;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class UpdateTemplateCommand
+final readonly class UpdateTemplateCommand
 {
     /**
      * @var array<string,string|null>
@@ -19,13 +19,13 @@ final class UpdateTemplateCommand
     #[Constraints\All([
         new Constraints\Length(['max' => 255]),
     ])]
-    public readonly array $labels;
+    public array $labels;
 
     /**
      * @param array{labels:array<string,string|null>} $data
      */
     public function __construct(
-        public readonly string $templateUuid,
+        public string $templateUuid,
         array $data,
     ) {
         Assert::keyExists($data, 'labels');

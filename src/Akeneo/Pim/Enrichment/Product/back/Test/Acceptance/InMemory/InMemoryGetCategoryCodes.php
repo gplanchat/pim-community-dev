@@ -23,6 +23,7 @@ final class InMemoryGetCategoryCodes implements GetCategoryCodes
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromProductUuids(array $productUuids): array
     {
         $results = [];

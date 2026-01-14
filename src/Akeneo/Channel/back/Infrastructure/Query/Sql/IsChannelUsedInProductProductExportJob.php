@@ -23,6 +23,7 @@ final class IsChannelUsedInProductProductExportJob implements IsChannelUsedInPro
         $this->productExportJobNames = $productExportJobNames;
     }
 
+    #[\Override]
     public function execute(string $channelCode): bool
     {
         $isChannelUsedRegex = sprintf('scope[{";:as0-9]+\\\b%s\\\b.+', $channelCode);

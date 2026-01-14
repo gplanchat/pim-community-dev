@@ -379,6 +379,7 @@ class SearchQueryBuilderSpec extends ObjectBehavior
         );
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

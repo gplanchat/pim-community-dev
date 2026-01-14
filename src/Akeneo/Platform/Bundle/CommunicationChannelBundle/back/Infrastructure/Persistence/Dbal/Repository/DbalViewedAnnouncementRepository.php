@@ -25,6 +25,7 @@ class DbalViewedAnnouncementRepository implements ViewedAnnouncementRepositoryIn
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create(array $viewedAnnouncements): void
     {
         $values = $parameters = [];

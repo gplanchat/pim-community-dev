@@ -16,6 +16,7 @@ class ScopeMapperRegistryIntegration extends TestCase
 {
     private ScopeMapperRegistry $scopeMapperRegistry;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -23,6 +24,7 @@ class ScopeMapperRegistryIntegration extends TestCase
         $this->scopeMapperRegistry = $this->get(ScopeMapperRegistry::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): ?Configuration
     {
         return null;

@@ -26,6 +26,7 @@ class DateConverter extends AbstractValueConverter implements ValueConverterInte
      *     'release_date' => '2005-08-15',
      * ]
      */
+    #[\Override]
     public function convert($attributeCode, $data)
     {
         $convertedItem = [];

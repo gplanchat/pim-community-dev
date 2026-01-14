@@ -22,6 +22,7 @@ final class DissociateQuantifiedProducts implements QuantifiedAssociationUserInt
         Assert::allStringNotEmpty($productIdentifiers);
     }
 
+    #[\Override]
     public function associationType(): string
     {
         return $this->associationType;

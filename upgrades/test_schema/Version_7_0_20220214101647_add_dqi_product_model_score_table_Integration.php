@@ -11,7 +11,7 @@ class Version_7_0_20220214101647_add_dqi_product_model_score_table_Integration e
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20220214101647_add_dqi_product_model_score_table';
+    private const string MIGRATION_LABEL = '_7_0_20220214101647_add_dqi_product_model_score_table';
 
     public function test_migrate_dqi_product_model_score_table(): void
     {
@@ -25,6 +25,7 @@ SQL);
         $this->assertTrue($schemaManager->tablesExist('pim_data_quality_insights_product_model_score'));
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

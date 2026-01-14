@@ -41,6 +41,7 @@ final class GetCriteriaEvaluationsByEntityIdQuery implements GetCriteriaEvaluati
         $this->tableName = $tableName;
     }
 
+    #[\Override]
     public function execute(ProductEntityIdInterface $entityId): Read\CriterionEvaluationCollection
     {
         $rows = [];

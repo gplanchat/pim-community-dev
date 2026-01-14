@@ -72,6 +72,7 @@ class RemoveCompletenessWhenDeletingProductIntegration extends AbstractCompleten
         }
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

@@ -26,6 +26,7 @@ class GetProductModelCriterionEvaluationByProductIdAndCriterionCodeQuery impleme
     ) {
     }
 
+    #[\Override]
     public function execute(ProductEntityIdInterface $productId, CriterionCode $criterionCode): ?Read\CriterionEvaluation
     {
         $query = <<<SQL

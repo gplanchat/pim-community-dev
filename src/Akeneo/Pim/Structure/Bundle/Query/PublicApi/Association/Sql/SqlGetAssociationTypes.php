@@ -21,6 +21,7 @@ final class SqlGetAssociationTypes implements GetAssociationTypesInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function forCodes(array $associationTypeCodes): array
     {
         $query = <<<SQL

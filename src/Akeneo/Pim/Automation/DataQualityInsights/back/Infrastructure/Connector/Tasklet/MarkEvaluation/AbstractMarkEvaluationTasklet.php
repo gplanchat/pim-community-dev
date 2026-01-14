@@ -14,11 +14,13 @@ abstract class AbstractMarkEvaluationTasklet implements TaskletInterface
 {
     protected StepExecution $stepExecution;
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution): void
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     abstract public function execute(): void;
 
     protected function updatedSince(): \DateTimeImmutable

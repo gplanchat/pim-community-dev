@@ -21,6 +21,7 @@ abstract class AbstractAction implements ActionInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getAclResource()
     {
         return $this->options->offsetGetOr(self::ACL_KEY);
@@ -29,6 +30,7 @@ abstract class AbstractAction implements ActionInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getName()
     {
         return $this->options->getName();
@@ -37,6 +39,7 @@ abstract class AbstractAction implements ActionInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getOptions()
     {
         return $this->options;
@@ -45,6 +48,7 @@ abstract class AbstractAction implements ActionInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function setOptions(ActionConfiguration $options)
     {
         $this->options = $options;

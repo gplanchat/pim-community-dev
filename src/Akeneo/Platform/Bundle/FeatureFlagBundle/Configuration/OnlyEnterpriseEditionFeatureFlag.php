@@ -13,7 +13,7 @@ use Akeneo\Platform\Bundle\FeatureFlagBundle\FeatureFlag;
 
 final class OnlyEnterpriseEditionFeatureFlag implements FeatureFlag
 {
-    private const EDITIONS = [
+    private const array EDITIONS = [
         'flexibility_instance',
         'serenity_instance',
     ];
@@ -23,6 +23,7 @@ final class OnlyEnterpriseEditionFeatureFlag implements FeatureFlag
     ) {
     }
 
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return in_array($this->edition, self::EDITIONS);

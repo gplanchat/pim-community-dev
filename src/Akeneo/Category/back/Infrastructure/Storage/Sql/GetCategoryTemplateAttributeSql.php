@@ -28,6 +28,7 @@ class GetCategoryTemplateAttributeSql implements GetAttribute
      * @throws \JsonException
      * @throws \Doctrine\DBAL\Exception
      */
+    #[\Override]
     public function byTemplateUuid(TemplateUuid $uuid): AttributeCollection
     {
         $query = <<< SQL
@@ -70,6 +71,7 @@ class GetCategoryTemplateAttributeSql implements GetAttribute
      * @throws Exception
      * @throws \JsonException
      */
+    #[\Override]
     public function byUuids(array $attributeUuids): AttributeCollection
     {
         $placeholders = \implode(
@@ -110,6 +112,7 @@ class GetCategoryTemplateAttributeSql implements GetAttribute
         return AttributeCollection::fromArray($attributes);
     }
 
+    #[\Override]
     public function byUuid(AttributeUuid $attributeUuid): ?Attribute
     {
         $attributes = $this->byUuids([$attributeUuid]);
@@ -125,6 +128,7 @@ class GetCategoryTemplateAttributeSql implements GetAttribute
      * @throws \JsonException
      * @throws Exception
      */
+    #[\Override]
     public function byCode(AttributeCode $attributeCode): Attribute
     {
         $query = <<< SQL

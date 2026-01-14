@@ -19,6 +19,7 @@ class MetricNormalizer extends AbstractProductValueNormalizer implements Normali
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof MetricValueInterface && (
@@ -26,6 +27,7 @@ class MetricNormalizer extends AbstractProductValueNormalizer implements Normali
         );
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -34,6 +36,7 @@ class MetricNormalizer extends AbstractProductValueNormalizer implements Normali
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         $productMetric = $value->getData();

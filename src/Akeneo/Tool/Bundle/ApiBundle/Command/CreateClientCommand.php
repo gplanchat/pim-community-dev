@@ -36,6 +36,7 @@ class CreateClientCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -64,6 +65,7 @@ class CreateClientCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $client = $this->clientManager->createClient();

@@ -9,14 +9,15 @@ use Akeneo\Tool\Bundle\BatchBundle\Persistence\Sql\SqlCreateJobInstance;
 
 final class ExportUserRoleIntegration extends TestCase
 {
-    private const CSV_EXPORT_JOB_CODE = 'csv_user_role_export';
-    private const XLSX_EXPORT_JOB_CODE = 'xlsx_user_role_export';
+    private const string CSV_EXPORT_JOB_CODE = 'csv_user_role_export';
+    private const string XLSX_EXPORT_JOB_CODE = 'xlsx_user_role_export';
 
     private JobLauncher $jobLauncher;
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -78,6 +79,7 @@ final class ExportUserRoleIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

@@ -23,7 +23,7 @@ final class InitializeProductsEvaluationsCommand extends Command
     protected static $defaultName = 'pim:data-quality-insights:initialize-products-evaluations';
     protected static $defaultDescription = 'Initialize the evaluations of all the products and product models.';
 
-    private const BATCH_SIZE = 100;
+    private const int BATCH_SIZE = 100;
 
     public function __construct(
         private Connection $dbConnection,
@@ -33,11 +33,13 @@ final class InitializeProductsEvaluationsCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->setHidden(true);
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);

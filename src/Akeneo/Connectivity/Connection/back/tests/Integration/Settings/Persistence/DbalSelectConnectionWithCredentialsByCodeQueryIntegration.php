@@ -23,6 +23,7 @@ class DbalSelectConnectionWithCredentialsByCodeQueryIntegration extends TestCase
     private ConnectionLoader $connectionLoader;
     private SelectConnectionWithCredentialsByCodeQueryInterface $selectConnectionWithCredentialsByCodeQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -55,6 +56,7 @@ class DbalSelectConnectionWithCredentialsByCodeQueryIntegration extends TestCase
         Assert::assertNull($connection);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

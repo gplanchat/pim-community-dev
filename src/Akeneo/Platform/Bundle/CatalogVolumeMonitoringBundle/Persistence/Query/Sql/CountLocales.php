@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class CountLocales implements CountQuery
 {
-    private const VOLUME_NAME = 'count_locales';
+    private const string VOLUME_NAME = 'count_locales';
 
     /** @var Connection */
     private $connection;
@@ -31,6 +31,7 @@ class CountLocales implements CountQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): CountVolume
     {
         $sql = <<<SQL

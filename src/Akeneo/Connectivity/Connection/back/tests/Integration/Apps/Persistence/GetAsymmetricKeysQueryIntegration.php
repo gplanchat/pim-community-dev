@@ -23,6 +23,7 @@ class GetAsymmetricKeysQueryIntegration extends TestCase
     private PimConfigurationLoader $pimConfigurationLoader;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -31,6 +32,7 @@ class GetAsymmetricKeysQueryIntegration extends TestCase
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

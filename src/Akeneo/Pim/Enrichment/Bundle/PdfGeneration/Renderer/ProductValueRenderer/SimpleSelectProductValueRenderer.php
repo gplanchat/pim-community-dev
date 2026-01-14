@@ -18,6 +18,7 @@ class SimpleSelectProductValueRenderer implements ProductValueRenderer
         $this->attributeOptionRepository = $attributeOptionRepository;
     }
 
+    #[\Override]
     public function render(Environment $environment, AttributeInterface $attribute, ?ValueInterface $value, string $localeCode): ?string
     {
         if (!$value instanceof OptionValue) {
@@ -29,6 +30,7 @@ class SimpleSelectProductValueRenderer implements ProductValueRenderer
         return $this->getOptionLabel($attribute, $optionCode, $localeCode);
     }
 
+    #[\Override]
     public function supportsAttributeType(string $attributeType): bool
     {
         return $attributeType === AttributeTypes::OPTION_SIMPLE_SELECT;

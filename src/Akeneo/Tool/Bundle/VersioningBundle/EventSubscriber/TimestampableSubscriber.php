@@ -34,6 +34,7 @@ class TimestampableSubscriber implements EventSubscriber
      *
      * @return string[]
      */
+    #[\Override]
     public function getSubscribedEvents()
     {
         return ['prePersist'];

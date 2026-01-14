@@ -13,6 +13,7 @@ final class SqlFindChannelsIntegration extends TestCase
     private Connection $connection;
     private FindChannels $sqlFindChannels;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -51,6 +52,7 @@ final class SqlFindChannelsIntegration extends TestCase
         $this->assertEquals('KILOGRAM', $printChannel->getConversionUnits()->getConversionUnit('a_measurement_attribute'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

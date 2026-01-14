@@ -13,6 +13,7 @@ use Akeneo\Pim\Enrichment\Component\Product\Completeness\Model\ProductCompletene
  */
 class MissingRequiredAttributesNormalizer implements MissingRequiredAttributesNormalizerInterface
 {
+    #[\Override]
     public function normalize(ProductCompletenessWithMissingAttributeCodesCollection $completenesses): array
     {
         $missingRequiredAttributes = [];

@@ -20,6 +20,7 @@ final class SqlFindProductUuidsInGroup implements FindProductUuidsInGroup
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function forGroupId(int $groupId): array
     {
         return $this->connection->fetchFirstColumn(

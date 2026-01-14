@@ -22,7 +22,7 @@ use Ramsey\Uuid\UuidInterface;
 
 final class GetRanksDistributionFromProductScoresQueryIntegration extends TestCase
 {
-    private const CONSOLIDATION_DATE = '2020-01-15';
+    private const string CONSOLIDATION_DATE = '2020-01-15';
 
     private int $lastInsertedProductIdentifier ;
 
@@ -30,6 +30,7 @@ final class GetRanksDistributionFromProductScoresQueryIntegration extends TestCa
 
     private ProductScoreRepositoryInterface $productScoreRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -39,6 +40,7 @@ final class GetRanksDistributionFromProductScoresQueryIntegration extends TestCa
         $this->lastInsertedProductIdentifier = 0;
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

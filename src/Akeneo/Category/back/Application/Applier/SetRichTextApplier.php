@@ -19,6 +19,7 @@ class SetRichTextApplier implements UserIntentApplier
     /**
      * @param SetRichText $userIntent
      */
+    #[\Override]
     public function apply(UserIntent $userIntent, Category $category): void
     {
         if (!$userIntent instanceof SetRichText) {
@@ -40,6 +41,7 @@ class SetRichTextApplier implements UserIntentApplier
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetRichText::class];

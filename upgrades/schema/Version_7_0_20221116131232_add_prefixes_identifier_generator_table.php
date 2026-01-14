@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20221116131232_add_prefixes_identifier_generator_table extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->addSql(<<<SQL
@@ -25,6 +26,7 @@ final class Version_7_0_20221116131232_add_prefixes_identifier_generator_table e
         );
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();

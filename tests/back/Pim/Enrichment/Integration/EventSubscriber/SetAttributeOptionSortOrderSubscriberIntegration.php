@@ -109,6 +109,7 @@ class SetAttributeOptionSortOrderSubscriberIntegration extends TestCase
         Assert::assertSame(1, $polyester->getSortOrder());
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

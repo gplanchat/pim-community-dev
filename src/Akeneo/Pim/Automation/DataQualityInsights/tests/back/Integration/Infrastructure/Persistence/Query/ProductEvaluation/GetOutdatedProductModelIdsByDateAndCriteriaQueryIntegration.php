@@ -25,6 +25,7 @@ final class GetOutdatedProductModelIdsByDateAndCriteriaQueryIntegration extends 
     private Connection $dbConnection;
     private Clock $clock;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

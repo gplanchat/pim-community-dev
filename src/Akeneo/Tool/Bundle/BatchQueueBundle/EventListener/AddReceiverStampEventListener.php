@@ -27,6 +27,7 @@ final class AddReceiverStampEventListener implements EventSubscriberInterface
         $this->receiverLocator = $receiverLocator;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

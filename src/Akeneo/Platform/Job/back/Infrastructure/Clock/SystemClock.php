@@ -10,6 +10,7 @@ namespace Akeneo\Platform\Job\Infrastructure\Clock;
  */
 class SystemClock implements ClockInterface
 {
+    #[\Override]
     public function now(): \DateTimeImmutable
     {
         return new \DateTimeImmutable('now', new \DateTimeZone('UTC'));

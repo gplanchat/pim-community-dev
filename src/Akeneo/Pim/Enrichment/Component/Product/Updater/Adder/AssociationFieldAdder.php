@@ -65,6 +65,7 @@ class AssociationFieldAdder extends AbstractFieldAdder
      *     },
      * }
      */
+    #[\Override]
     public function addFieldData($entity, $field, $data, array $options = []): void
     {
         if (!$entity instanceof EntityWithAssociationsInterface) {

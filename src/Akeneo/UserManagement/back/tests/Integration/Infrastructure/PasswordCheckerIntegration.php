@@ -23,6 +23,7 @@ final class PasswordCheckerIntegration extends TestCase
 {
     private PasswordCheckerInterface $passwordChecker;
     private UserLoader $userLoader;
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -105,6 +106,7 @@ final class PasswordCheckerIntegration extends TestCase
         Assert::assertEquals('Passwords do not match', $violation->getMessage());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

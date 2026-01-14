@@ -21,6 +21,7 @@ class GroupRepository extends EntityRepository implements GroupRepositoryInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['name'];
@@ -29,6 +30,7 @@ class GroupRepository extends EntityRepository implements GroupRepositoryInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['name' => $code]);
@@ -39,6 +41,7 @@ class GroupRepository extends EntityRepository implements GroupRepositoryInterfa
      *
      * @return null|object
      */
+    #[\Override]
     public function getDefaultUserGroup()
     {
         return $this->findOneByIdentifier(User::GROUP_DEFAULT);
@@ -83,6 +86,7 @@ class GroupRepository extends EntityRepository implements GroupRepositoryInterfa
             ->setParameter('group', $group);
     }
 
+    #[\Override]
     public function findOneById(int $id): ?GroupInterface
     {
         return $this->find($id);

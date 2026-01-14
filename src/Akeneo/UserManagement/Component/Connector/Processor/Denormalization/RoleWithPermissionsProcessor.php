@@ -43,6 +43,7 @@ final class RoleWithPermissionsProcessor extends AbstractProcessor implements It
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item): RoleWithPermissions
     {
         $itemIdentifier = $this->getItemIdentifier($this->repository, $item);

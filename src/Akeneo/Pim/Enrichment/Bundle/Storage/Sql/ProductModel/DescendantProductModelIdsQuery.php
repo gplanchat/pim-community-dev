@@ -21,6 +21,7 @@ final class DescendantProductModelIdsQuery implements DescendantProductModelIdsQ
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function fetchFromParentProductModelId(int $parentProductModelId): array
     {
         $sql = <<<SQL

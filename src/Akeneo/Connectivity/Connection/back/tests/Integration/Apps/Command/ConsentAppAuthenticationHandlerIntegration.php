@@ -45,11 +45,13 @@ class ConsentAppAuthenticationHandlerIntegration extends TestCase
     private CreateUser $createUser;
     private GetUserConsentedAuthenticationScopesQuery $getUserConsentedAuthenticationScopesQuery;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

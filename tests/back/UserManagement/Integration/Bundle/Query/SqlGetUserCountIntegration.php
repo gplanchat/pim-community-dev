@@ -18,6 +18,7 @@ final class SqlGetUserCountIntegration extends TestCase
 {
     private GetUserCountInterface $getUserCount;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -83,6 +84,7 @@ final class SqlGetUserCountIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

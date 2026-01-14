@@ -49,6 +49,7 @@ class FamilyFactory implements SimpleFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create()
     {
         /** @var FamilyInterface $family */

@@ -22,6 +22,7 @@ class GetAttributeGroups implements GetAttributeGroupsInterface
     ) {
     }
 
+    #[\Override]
     public function all(): iterable
     {
         $sql = <<<SQL

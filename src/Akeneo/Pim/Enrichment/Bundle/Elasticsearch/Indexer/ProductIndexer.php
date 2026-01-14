@@ -23,8 +23,8 @@ use Ramsey\Uuid\UuidInterface;
  */
 class ProductIndexer implements ProductIndexerInterface
 {
-    private const PRODUCT_IDENTIFIER_PREFIX = 'product_';
-    private const BATCH_SIZE = 500;
+    private const string PRODUCT_IDENTIFIER_PREFIX = 'product_';
+    private const int BATCH_SIZE = 500;
 
     public function __construct(
         private Client $productAndProductModelClient,
@@ -40,6 +40,7 @@ class ProductIndexer implements ProductIndexerInterface
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function indexFromProductUuids(array $productUuids, array $options = []): void
     {
         if (empty($productUuids)) {
@@ -61,6 +62,7 @@ class ProductIndexer implements ProductIndexerInterface
     /**
      * @param UuidInterface[] $productUuids
      */
+    #[\Override]
     public function removeFromProductUuids(array $productUuids): void
     {
         if ([] === $productUuids) {

@@ -19,6 +19,7 @@ final class SetLabel implements UserIntent, LocalizeUserIntent
         }
     }
 
+    #[\Override]
     public function localeCode(): string
     {
         return $this->localeCode;

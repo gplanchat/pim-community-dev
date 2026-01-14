@@ -34,6 +34,7 @@ final class UnknownCategoryException extends InvalidPropertyException implements
         );
     }
 
+    #[\Override]
     public function getTemplatedErrorMessage(): TemplatedErrorMessage
     {
         return $this->templatedErrorMessage;

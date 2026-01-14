@@ -35,6 +35,7 @@ final class InvalidAssociationProductIdentifierException extends InvalidProperty
         );
     }
 
+    #[\Override]
     public function getTemplatedErrorMessage(): TemplatedErrorMessage
     {
         return $this->templatedErrorMessage;

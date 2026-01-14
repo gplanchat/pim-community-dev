@@ -25,6 +25,7 @@ final class GetProductUuidsToEvaluateQuery implements GetEntityIdsToEvaluateQuer
     /**
      * @return \Generator<int, ProductUuidCollection>
      */
+    #[\Override]
     public function execute(?int $limit = null, int $bulkSize = GetEntityIdsToEvaluateQueryInterface::BULK_SIZE): \Generator
     {
         $limitSql = null === $limit ? '' : sprintf('LIMIT %d', $limit);

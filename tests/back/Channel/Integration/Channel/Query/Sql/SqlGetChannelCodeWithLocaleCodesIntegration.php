@@ -18,6 +18,7 @@ final class SqlGetChannelCodeWithLocaleCodesIntegration extends TestCase
     /** @var SqlGetChannelCodeWithLocaleCodes */
     private $sqlGetChannelCodeWithLocaleCodes;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -52,6 +53,7 @@ final class SqlGetChannelCodeWithLocaleCodesIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

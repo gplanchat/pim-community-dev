@@ -43,6 +43,7 @@ class ProductWriter implements ItemWriterInterface, StepExecutionAwareInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items)
     {
         foreach ($items as $item) {
@@ -55,6 +56,7 @@ class ProductWriter implements ItemWriterInterface, StepExecutionAwareInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -63,6 +65,7 @@ class ProductWriter implements ItemWriterInterface, StepExecutionAwareInterface,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize()
     {
         $jobParameters = $this->stepExecution->getJobParameters();

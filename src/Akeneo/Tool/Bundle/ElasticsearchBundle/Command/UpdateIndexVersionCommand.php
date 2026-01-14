@@ -34,6 +34,7 @@ class UpdateIndexVersionCommand extends Command
         parent::__construct();
     }
 
+    #[\Override]
     public function configure()
     {
         $this
@@ -44,6 +45,7 @@ class UpdateIndexVersionCommand extends Command
             );
     }
 
+    #[\Override]
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $sourceAliasNames = $input->getArgument('indices');

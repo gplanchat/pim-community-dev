@@ -19,6 +19,7 @@ final class IdentifierGeneratorCreationLimitValidator extends ConstraintValidato
     {
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, IdentifierGeneratorCreationLimit::class);

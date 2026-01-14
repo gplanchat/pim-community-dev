@@ -42,6 +42,7 @@ class FilterEntityWithValuesSubscriber implements EventSubscriber
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSubscribedEvents(): array
     {
         return [

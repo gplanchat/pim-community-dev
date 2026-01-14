@@ -20,6 +20,7 @@ class OptionsNormalizer extends AbstractProductValueNormalizer implements Normal
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof OptionsValueInterface && (
@@ -27,6 +28,7 @@ class OptionsNormalizer extends AbstractProductValueNormalizer implements Normal
         );
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;
@@ -35,6 +37,7 @@ class OptionsNormalizer extends AbstractProductValueNormalizer implements Normal
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getNormalizedData(ValueInterface $value)
     {
         Assert::implementsInterface($value, OptionsValueInterface::class);

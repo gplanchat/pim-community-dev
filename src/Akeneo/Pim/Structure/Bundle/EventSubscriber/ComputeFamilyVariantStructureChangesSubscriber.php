@@ -46,6 +46,7 @@ class ComputeFamilyVariantStructureChangesSubscriber implements EventSubscriberI
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

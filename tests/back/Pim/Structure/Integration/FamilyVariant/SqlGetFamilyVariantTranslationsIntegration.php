@@ -57,6 +57,7 @@ final class SqlGetFamilyVariantTranslationsIntegration extends TestCase
         $this->assertEqualsCanonicalizing($expected, $actual);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -23,6 +23,7 @@ class CreateOrUpdateDatagridViewIntegration extends ControllerIntegrationTestCas
     private User $otherUser;
     private array $fixtureViewIds = [];
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -265,6 +266,7 @@ class CreateOrUpdateDatagridViewIntegration extends ControllerIntegrationTestCas
         $this->fixtureViewIds['mary_private_view'] = $datagridView->getId();
     }
 
+    #[\Override]
     public function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -33,6 +33,7 @@ class ProductModelSaver implements SaverInterface, BulkSaverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($productModel, array $options = [])
     {
         $this->validateProductModel($productModel);
@@ -56,6 +57,7 @@ class ProductModelSaver implements SaverInterface, BulkSaverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function saveAll(array $productModels, array $options = [])
     {
         $productModels = array_unique($productModels, SORT_REGULAR);

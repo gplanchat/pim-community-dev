@@ -20,6 +20,7 @@ final class MarkProductModelsEvaluationImpactedByUpdatedProductModelsTasklet ext
     ) {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $countMarkedProductModels = 0;

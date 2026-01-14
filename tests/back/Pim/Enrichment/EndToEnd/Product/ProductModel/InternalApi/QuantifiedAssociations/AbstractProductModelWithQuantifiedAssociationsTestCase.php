@@ -43,6 +43,7 @@ abstract class AbstractProductModelWithQuantifiedAssociationsTestCase extends Ab
         return json_decode($this->client->getResponse()->getContent(), true);
     }
 
+    #[\Override]
     protected function createProductModel(array $fields = []): ProductModelInterface
     {
         $productModel = new ProductModel();

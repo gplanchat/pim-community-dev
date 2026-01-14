@@ -32,6 +32,7 @@ abstract class AbstractReader implements ItemReaderInterface, InitializableInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read()
     {
         if (null !== $result = $this->results->current()) {
@@ -45,6 +46,7 @@ abstract class AbstractReader implements ItemReaderInterface, InitializableInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -53,6 +55,7 @@ abstract class AbstractReader implements ItemReaderInterface, InitializableInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize()
     {
         $this->initializeReader();
@@ -66,6 +69,7 @@ abstract class AbstractReader implements ItemReaderInterface, InitializableInter
         }
     }
 
+    #[\Override]
     public function totalItems(): int
     {
         return $this->getResults()->count();
@@ -85,11 +89,13 @@ abstract class AbstractReader implements ItemReaderInterface, InitializableInter
         }
     }
 
+    #[\Override]
     public function getState(): array
     {
         return null !== $this->results ? ['position' =>  $this->results->key()] : [];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

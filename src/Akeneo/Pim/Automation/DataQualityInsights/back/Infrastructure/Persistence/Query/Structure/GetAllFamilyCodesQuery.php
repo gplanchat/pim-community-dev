@@ -22,6 +22,7 @@ final class GetAllFamilyCodesQuery implements GetAllFamilyCodesQueryInterface
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(): array
     {
         $query = <<<SQL

@@ -38,6 +38,7 @@ class CheckAttributeIsNotMainIdentifierOnDeletionSubscriberIntegration extends T
         $this->assertNull($attributeRemoved);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

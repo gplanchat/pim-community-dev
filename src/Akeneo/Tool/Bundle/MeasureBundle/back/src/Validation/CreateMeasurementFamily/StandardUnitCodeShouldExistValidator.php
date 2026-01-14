@@ -18,8 +18,9 @@ use Symfony\Component\Validator\Validation;
  */
 class StandardUnitCodeShouldExistValidator extends ConstraintValidator
 {
-    private const PROPERTY_PATH = 'standard_unit_code';
+    private const string PROPERTY_PATH = 'standard_unit_code';
 
+    #[\Override]
     public function validate($createMeasurementFamilyCommand, Constraint $constraint)
     {
         if (!$createMeasurementFamilyCommand instanceof CreateMeasurementFamilyCommand) {

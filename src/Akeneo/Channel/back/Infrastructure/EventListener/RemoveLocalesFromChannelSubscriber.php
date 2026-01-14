@@ -25,6 +25,7 @@ final class RemoveLocalesFromChannelSubscriber implements EventSubscriberInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

@@ -38,6 +38,7 @@ class AttributeSaver implements SaverInterface, BulkSaverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($attribute, array $options = [])
     {
         $this->validateAttribute($attribute);
@@ -67,6 +68,7 @@ class AttributeSaver implements SaverInterface, BulkSaverInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function saveAll(array $attributes, array $options = [])
     {
         if (empty($attributes)) {

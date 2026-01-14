@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20221028090000_add_scheduled_job_connectivity_create_openid_keys extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addScheduledJob(
@@ -43,6 +44,7 @@ final class Version_7_0_20221028090000_add_scheduled_job_connectivity_create_ope
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

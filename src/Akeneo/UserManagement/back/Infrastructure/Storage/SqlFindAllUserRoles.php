@@ -26,6 +26,7 @@ class SqlFindAllUserRoles implements FindAllUserRoles
      * @throws Exception
      * @throws \Doctrine\DBAL\Driver\Exception
      */
+    #[\Override]
     public function __invoke(): array
     {
         $query = <<<SQL

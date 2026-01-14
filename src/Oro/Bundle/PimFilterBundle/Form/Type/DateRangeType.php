@@ -17,6 +17,7 @@ class DateRangeType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return self::NAME;
@@ -25,6 +26,7 @@ class DateRangeType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add(
@@ -63,6 +65,7 @@ class DateRangeType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $children = $form->all();
@@ -73,6 +76,7 @@ class DateRangeType extends AbstractType
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(

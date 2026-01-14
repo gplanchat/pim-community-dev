@@ -25,6 +25,7 @@ final class PropertyProcessShouldBeValidValidator extends ConstraintValidator
     ) {
     }
 
+    #[\Override]
     public function validate($process, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, PropertyProcessShouldBeValid::class);

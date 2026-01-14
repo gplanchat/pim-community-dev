@@ -22,6 +22,7 @@ final class ConvertToSimpleProductApplier implements UserIntentApplier
     ) {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         Assert::isInstanceOf($userIntent, ConvertToSimpleProduct::class);
@@ -32,6 +33,7 @@ final class ConvertToSimpleProductApplier implements UserIntentApplier
         $this->removeParent->from($product);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [ConvertToSimpleProduct::class];

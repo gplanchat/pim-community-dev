@@ -64,6 +64,7 @@ class DbalGetAConnectionWebhookQueryIntegration extends TestCase
         Assert::assertNull($webhook);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -73,6 +74,7 @@ class DbalGetAConnectionWebhookQueryIntegration extends TestCase
         $this->webhookLoader = $this->get('akeneo_connectivity.connection.fixtures.webhook_loader');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

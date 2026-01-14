@@ -40,6 +40,7 @@ class CategoryFieldSetter extends AbstractFieldSetter
      *
      * Expected data input format : ["category_code"]
      */
+    #[\Override]
     public function setFieldData($entity, $field, $data, array $options = [])
     {
         if (!$entity instanceof CategoryAwareInterface) {

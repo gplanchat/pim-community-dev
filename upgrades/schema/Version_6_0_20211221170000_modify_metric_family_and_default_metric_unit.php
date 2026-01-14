@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20211221170000_modify_metric_family_and_default_metric_unit extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -19,6 +20,7 @@ final class Version_6_0_20211221170000_modify_metric_family_and_default_metric_u
         $this->addSql('ALTER TABLE pim_catalog_attribute MODIFY COLUMN metric_family VARCHAR(100), MODIFY COLUMN default_metric_unit VARCHAR(100)');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

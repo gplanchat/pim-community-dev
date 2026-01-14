@@ -10,7 +10,7 @@ namespace Akeneo\Pim\Automation\DataQualityInsights\Domain\ValueObject;
  */
 final class DashboardProjectionCode
 {
-    const CATALOG = 'catalog';
+    const string CATALOG = 'catalog';
 
     /** @var string */
     private $code;
@@ -20,6 +20,7 @@ final class DashboardProjectionCode
         $this->code = $code;
     }
 
+    #[\Override]
     public function __toString()
     {
         return $this->code;

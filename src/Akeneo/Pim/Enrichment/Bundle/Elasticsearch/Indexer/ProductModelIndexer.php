@@ -23,8 +23,8 @@ use Akeneo\Tool\Bundle\ElasticsearchBundle\Refresh;
  */
 class ProductModelIndexer implements ProductModelIndexerInterface
 {
-    private const PRODUCT_MODEL_IDENTIFIER_PREFIX = 'product_model_';
-    private const BATCH_SIZE = 500;
+    private const string PRODUCT_MODEL_IDENTIFIER_PREFIX = 'product_model_';
+    private const int BATCH_SIZE = 500;
 
     private Client $productAndProductModelClient;
     private GetElasticsearchProductModelProjectionInterface $getElasticsearchProductModelProjection;
@@ -42,6 +42,7 @@ class ProductModelIndexer implements ProductModelIndexerInterface
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function indexFromProductModelCode(string $productModelCode, array $options = []): void
     {
         $this->indexFromProductModelCodes([$productModelCode], $options);
@@ -52,6 +53,7 @@ class ProductModelIndexer implements ProductModelIndexerInterface
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function indexFromProductModelCodes(array $productModelCodes, array $options = []): void
     {
         if (empty($productModelCodes)) {
@@ -82,6 +84,7 @@ class ProductModelIndexer implements ProductModelIndexerInterface
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeFromProductModelId(int $productModelId, array $options = []): void
     {
         $this->removeFromProductModelIds([$productModelId], $options);
@@ -93,6 +96,7 @@ class ProductModelIndexer implements ProductModelIndexerInterface
      *
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeFromProductModelIds(array $productModelIds, array $options = []): void
     {
         if (empty($productModelIds)) {

@@ -18,6 +18,7 @@ class UploadType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'upload';
@@ -26,6 +27,7 @@ class UploadType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return FormType::class;
@@ -34,6 +36,7 @@ class UploadType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('file', 'pim_enrich_media');

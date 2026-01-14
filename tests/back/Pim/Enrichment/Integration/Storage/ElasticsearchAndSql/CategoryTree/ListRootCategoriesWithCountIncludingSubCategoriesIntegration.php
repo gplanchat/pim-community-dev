@@ -14,6 +14,7 @@ class ListRootCategoriesWithCountIncludingSubCategoriesIntegration extends TestC
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -91,6 +92,7 @@ class ListRootCategoriesWithCountIncludingSubCategoriesIntegration extends TestC
     /**
      * @inheritDoc
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

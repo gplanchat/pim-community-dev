@@ -10,8 +10,8 @@ use GuzzleHttp\Client;
 
 class FetchFamilyTemplates implements FetchFamilyTemplatesInterface
 {
-    private const MINIFIED_DIRECTORY = '/dist';
-    private const TEMPLATES_DIRECTORY = '/templates/families';
+    private const string MINIFIED_DIRECTORY = '/dist';
+    private const string TEMPLATES_DIRECTORY = '/templates/families';
 
     private Client $client;
 
@@ -30,6 +30,7 @@ class FetchFamilyTemplates implements FetchFamilyTemplatesInterface
         ]);
     }
 
+    #[\Override]
     public function all(): array
     {
         $response = $this->client->request('GET', '/repos/'.$this->githubOrgName.'/'.$this->githubRepoName.'/contents'.self::MINIFIED_DIRECTORY.'/minified.json');
@@ -42,6 +43,7 @@ class FetchFamilyTemplates implements FetchFamilyTemplatesInterface
         return json_decode(base64_decode($content['content']), true);
     }
 
+    #[\Override]
     public function byName(string $templateName): FamilyTemplate
     {
         $response = $this->client->request('GET', '/repos/'.$this->githubOrgName.'/'.$this->githubRepoName.'/contents'.self::TEMPLATES_DIRECTORY.'/'.$templateName.'.json');

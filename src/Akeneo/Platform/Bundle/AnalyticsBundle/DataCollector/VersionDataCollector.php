@@ -36,6 +36,7 @@ class VersionDataCollector implements DataCollectorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function collect()
     {
         $collectedData = [

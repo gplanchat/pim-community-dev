@@ -39,6 +39,7 @@ abstract class AbstractTypeTestCase extends FormIntegrationTestCase
      */
     protected $formExtensions = [];
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -52,6 +53,7 @@ abstract class AbstractTypeTestCase extends FormIntegrationTestCase
         }
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -155,6 +157,7 @@ abstract class AbstractTypeTestCase extends FormIntegrationTestCase
     /**
      * @return array|FormExtensionInterface[]
      */
+    #[\Override]
     protected function getExtensions()
     {
         return $this->formExtensions;

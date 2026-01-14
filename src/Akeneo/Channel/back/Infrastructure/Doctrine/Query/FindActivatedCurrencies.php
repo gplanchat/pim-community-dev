@@ -33,6 +33,7 @@ class FindActivatedCurrencies implements FindActivatedCurrenciesInterface, Cache
      *
      * @throws DBALException
      */
+    #[\Override]
     public function forChannel(string $channelCode): array
     {
         if (empty($this->activatedCurrenciesForChannels)) {
@@ -47,6 +48,7 @@ class FindActivatedCurrencies implements FindActivatedCurrenciesInterface, Cache
      *
      * @throws DBALException
      */
+    #[\Override]
     public function forAllChannels(): array
     {
         if (empty($this->activatedCurrenciesForChannels)) {
@@ -56,6 +58,7 @@ class FindActivatedCurrencies implements FindActivatedCurrenciesInterface, Cache
         return array_unique(array_merge(...array_values($this->activatedCurrenciesForChannels)));
     }
 
+    #[\Override]
     public function forAllChannelsIndexedByChannelCode(): array
     {
         if (empty($this->activatedCurrenciesForChannels)) {
@@ -65,6 +68,7 @@ class FindActivatedCurrencies implements FindActivatedCurrenciesInterface, Cache
         return $this->activatedCurrenciesForChannels;
     }
 
+    #[\Override]
     public function clearCache(): void
     {
         $this->activatedCurrenciesForChannels = [];

@@ -14,6 +14,7 @@ class LaunchJobInstanceHandlerTest extends AcceptanceTestCase
     public LaunchJobInstanceHandler $handler;
     private InMemoryPublishJobToQueue $publishJobToQueue;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

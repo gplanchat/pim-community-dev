@@ -104,6 +104,7 @@ class CompletenessForScopableAttributeIntegration extends AbstractCompletenessTe
         $this->assertEquals(0, $completeness->missingCount());
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

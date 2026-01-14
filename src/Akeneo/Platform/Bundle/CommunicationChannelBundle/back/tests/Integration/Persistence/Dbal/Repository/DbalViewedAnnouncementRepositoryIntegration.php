@@ -22,6 +22,7 @@ class DbalViewedAnnouncementRepositoryIntegration extends TestCase
     /** @var array */
     private $userFromDb;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -60,6 +61,7 @@ class DbalViewedAnnouncementRepositoryIntegration extends TestCase
         Assert::assertSame('announcement_id_1', $viewedAnnouncementFromDb[0]['announcement_id']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -45,6 +45,7 @@ final class ApiAggregatorForProductPostSaveEventSubscriber implements EventSubsc
         return $this->eventProducts;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

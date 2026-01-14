@@ -52,6 +52,7 @@ SQL;
         return (int) $this->connection->fetchOne($query);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -65,6 +66,7 @@ SQL;
         $this->addAclToRole('ROLE_ADMINISTRATOR', 'akeneo_connectivity_connection_manage_apps');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

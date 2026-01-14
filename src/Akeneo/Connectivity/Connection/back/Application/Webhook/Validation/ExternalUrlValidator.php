@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 class ExternalUrlValidator extends ConstraintValidator
 {
-    private const DOMAIN_BLACKLIST = [
+    private const array DOMAIN_BLACKLIST = [
         'localhost',
         'elasticsearch',
         'memcached',
@@ -37,6 +37,7 @@ class ExternalUrlValidator extends ConstraintValidator
         $this->networkWhitelist = empty($networkWhitelist) ? [] : \explode(',', $networkWhitelist);
     }
 
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof ExternalUrl) {

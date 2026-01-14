@@ -39,6 +39,7 @@ class AjaxEntityTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function reverseTransform($value)
     {
         if ($this->options['multiple']) {
@@ -60,6 +61,7 @@ class AjaxEntityTransformer implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function transform($value)
     {
         if ($this->options['multiple']) {

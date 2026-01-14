@@ -22,6 +22,7 @@ class ConfigurationPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $this->registerDatagridFiles($container);

@@ -20,6 +20,7 @@ final class GetUpToDateProductEvaluationQuery implements GetProductEvaluationQue
     ) {
     }
 
+    #[\Override]
     public function execute(ProductUuid $productUuid): ProductEvaluation
     {
         $productScores = ($this->getScoresByCriteria)($this->getProductScoresQuery->byProductUuid($productUuid));

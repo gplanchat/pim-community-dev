@@ -27,6 +27,7 @@ final class LocaleAndChannelShouldBeConsistentValidator extends ConstraintValida
     /**
      * @param ValueUserIntent[] $valueUserIntents
      */
+    #[\Override]
     public function validate($valueUserIntents, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, LocaleAndChannelShouldBeConsistent::class);

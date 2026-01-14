@@ -22,7 +22,7 @@ class FieldConverter implements FieldConverterInterface
     /** @var AssociationColumnsResolver */
     private $assocFieldResolver;
 
-    private const PRODUCT_MODEL_FIELDS = ['parent', 'code', 'family_variant', 'categories'];
+    private const array PRODUCT_MODEL_FIELDS = ['parent', 'code', 'family_variant', 'categories'];
 
     public function __construct(
         FieldSplitter $fieldSplitter,
@@ -35,6 +35,7 @@ class FieldConverter implements FieldConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(string $fieldName, $value): ConvertedField
     {
         $associationFields = $this->assocFieldResolver->resolveAssociationColumns();

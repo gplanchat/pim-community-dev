@@ -23,6 +23,7 @@ class FilesystemsPurger implements FilesystemsPurgerInterface
     ) {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $purgeFilesystemsJobInstance = $this->jobInstanceRepository->findOneByIdentifier('purge_filesystems');

@@ -23,6 +23,7 @@ class ProductModelScoreRepository implements ProductModelScoreRepositoryInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function saveAll(array $productsScores): void
     {
         if (empty($productsScores)) {

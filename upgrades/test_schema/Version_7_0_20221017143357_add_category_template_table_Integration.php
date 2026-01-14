@@ -11,16 +11,17 @@ final class Version_7_0_20221017143357_add_category_template_table_Integration e
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20221017143357_add_category_template_table';
-    private const TABLE_NAME = 'pim_catalog_category_template';
+    private const string MIGRATION_LABEL = '_7_0_20221017143357_add_category_template_table';
+    private const string TABLE_NAME = 'pim_catalog_category_template';
 
-    private const TREE_TEMPLATE_TABLE_NAME = 'pim_catalog_category_tree_template';
-    private const FOREIGN_TREE_TEMPLATE_KEY_NAME = 'FK_TREE_TEMPLATE_template_uuid';
-    private const ATTRIBUTE_TABLE_NAME = 'pim_catalog_category_attribute';
-    private const FOREIGN_ATTRIBUTE_KEY_NAME = 'FK_ATTRIBUTE_template_uuid';
+    private const string TREE_TEMPLATE_TABLE_NAME = 'pim_catalog_category_tree_template';
+    private const string FOREIGN_TREE_TEMPLATE_KEY_NAME = 'FK_TREE_TEMPLATE_template_uuid';
+    private const string ATTRIBUTE_TABLE_NAME = 'pim_catalog_category_attribute';
+    private const string FOREIGN_ATTRIBUTE_KEY_NAME = 'FK_ATTRIBUTE_template_uuid';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -49,6 +50,7 @@ final class Version_7_0_20221017143357_add_category_template_table_Integration e
         Assert::assertTrue($this->tableExists(self::TABLE_NAME));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

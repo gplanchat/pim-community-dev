@@ -51,6 +51,7 @@ class CategoryFilter extends NumberFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(FilterDatasourceAdapterInterface $ds, $data)
     {
         $data = $this->parseData($data);
@@ -74,6 +75,7 @@ class CategoryFilter extends NumberFilter
      *
      * @return array|bool
      */
+    #[\Override]
     public function parseData($data)
     {
         if (!is_array($data) || !array_key_exists('value', $data) || !is_array($data['value'])) {
@@ -152,6 +154,7 @@ class CategoryFilter extends NumberFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getFormType()
     {
         return CategoryFilterType::class;

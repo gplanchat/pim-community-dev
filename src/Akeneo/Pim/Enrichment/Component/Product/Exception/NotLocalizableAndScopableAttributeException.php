@@ -47,6 +47,7 @@ class NotLocalizableAndScopableAttributeException extends InvalidAttributeExcept
         );
     }
 
+    #[\Override]
     public function getTemplatedErrorMessage(): TemplatedErrorMessage
     {
         return $this->templatedMessage;

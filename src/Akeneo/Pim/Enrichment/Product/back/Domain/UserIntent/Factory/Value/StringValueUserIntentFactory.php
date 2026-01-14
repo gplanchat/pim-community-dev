@@ -26,6 +26,7 @@ class StringValueUserIntentFactory implements ValueUserIntentFactory
 {
     use ValidateDataTrait;
 
+    #[\Override]
     public function getSupportedAttributeTypes(): array
     {
         return [
@@ -39,6 +40,7 @@ class StringValueUserIntentFactory implements ValueUserIntentFactory
         ];
     }
 
+    #[\Override]
     public function create(string $attributeType, string $attributeCode, mixed $data): ValueUserIntent
     {
         $this->validateValueStructure($attributeCode, $data);

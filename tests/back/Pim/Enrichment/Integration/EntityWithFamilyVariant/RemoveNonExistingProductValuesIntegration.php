@@ -19,7 +19,7 @@ use Akeneo\Test\IntegrationTestsBundle\Launcher\JobLauncher;
  */
 final class RemoveNonExistingProductValuesIntegration extends TestCase
 {
-    private const JOB_NAME = 'remove_non_existing_product_values';
+    private const string JOB_NAME = 'remove_non_existing_product_values';
 
     /** @var JobExecutionObserver */
     private $jobExecutionObserver;
@@ -83,8 +83,8 @@ final class RemoveNonExistingProductValuesIntegration extends TestCase
     private function getDataValueForProduct(
         string $productIdentifier,
         string $attributeCode,
-        string $localeCode = null,
-        string $scopeCode = null
+        ?string $localeCode = null,
+        ?string $scopeCode = null
     ) {
         $product = $this->get('pim_catalog.repository.product')->findOneByIdentifier($productIdentifier);
         $value = $product->getValue($attributeCode, $localeCode, $scopeCode);
@@ -98,8 +98,8 @@ final class RemoveNonExistingProductValuesIntegration extends TestCase
     private function getDataValueForProductModel(
         string $productModelIdentifier,
         string $attributeCode,
-        string $localeCode = null,
-        string $scopeCode = null
+        ?string $localeCode = null,
+        ?string $scopeCode = null
     ) {
         $productModel = $this->get('pim_catalog.repository.product_model')->findOneByIdentifier(
             $productModelIdentifier
@@ -112,6 +112,7 @@ final class RemoveNonExistingProductValuesIntegration extends TestCase
         return $value->getData();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -128,6 +129,7 @@ final class RemoveNonExistingProductValuesIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

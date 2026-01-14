@@ -31,6 +31,7 @@ final class ProductCriterionEvaluationRepositoryIntegration extends DataQualityI
     /** @var CriterionEvaluationRepositoryInterface */
     private $productCriterionEvaluationRepository;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

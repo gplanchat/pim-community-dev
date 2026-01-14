@@ -19,6 +19,7 @@ class SearchJobExecutionTest extends IntegrationTestCase
     private array $stepExecutionIds;
     private array $cachedExpectedJobExecutionRows;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

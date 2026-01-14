@@ -19,6 +19,7 @@ final class LocalizeUserIntentsShouldBeUniqueValidator extends ConstraintValidat
     /**
      * @param array<UserIntent> $value
      */
+    #[\Override]
     public function validate($value, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, LocalizeUserIntentsShouldBeUnique::class);

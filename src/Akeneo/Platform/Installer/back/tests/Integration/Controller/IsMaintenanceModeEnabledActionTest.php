@@ -13,10 +13,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class IsMaintenanceModeEnabledActionTest extends ControllerIntegrationTestCase
 {
-    private const ROUTE = 'akeneo_installer_is_maintenance_mode_enabled';
+    private const string ROUTE = 'akeneo_installer_is_maintenance_mode_enabled';
 
     private Connection $connection;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -58,6 +59,7 @@ SQL;
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

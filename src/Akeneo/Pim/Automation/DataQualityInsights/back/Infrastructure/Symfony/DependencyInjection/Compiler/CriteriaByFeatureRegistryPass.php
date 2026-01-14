@@ -14,6 +14,7 @@ use Symfony\Component\DependencyInjection\Reference;
  */
 final class CriteriaByFeatureRegistryPass implements CompilerPassInterface
 {
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $this->processForProducts($container);

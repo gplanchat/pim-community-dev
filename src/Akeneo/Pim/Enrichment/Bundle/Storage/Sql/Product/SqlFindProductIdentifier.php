@@ -19,6 +19,7 @@ final class SqlFindProductIdentifier implements FindIdentifier
     {
     }
 
+    #[\Override]
     public function fromUuid(string $uuid): null|string
     {
         $identifier = $this->connection->executeQuery(
@@ -38,6 +39,7 @@ SQL,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromUuids(array $uuids): array
     {
         if ([] === $uuids) {

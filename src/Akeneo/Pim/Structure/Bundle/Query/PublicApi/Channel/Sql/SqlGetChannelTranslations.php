@@ -17,6 +17,7 @@ class SqlGetChannelTranslations implements GetChannelTranslations
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byLocale(string $locale): array
     {
         $sql = <<<SQL

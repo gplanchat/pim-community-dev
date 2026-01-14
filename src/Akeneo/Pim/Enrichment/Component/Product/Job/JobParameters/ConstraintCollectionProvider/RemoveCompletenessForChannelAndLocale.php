@@ -27,6 +27,7 @@ final class RemoveCompletenessForChannelAndLocale implements ConstraintCollectio
         $this->supportedJobNames = $supportedJobNames;
     }
 
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection(
@@ -46,6 +47,7 @@ final class RemoveCompletenessForChannelAndLocale implements ConstraintCollectio
         );
     }
 
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return in_array($job->getName(), $this->supportedJobNames);

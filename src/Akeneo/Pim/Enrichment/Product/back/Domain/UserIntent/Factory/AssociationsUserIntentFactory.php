@@ -18,6 +18,7 @@ class AssociationsUserIntentFactory implements UserIntentFactory
 {
     use ValidateDataTrait;
 
+    #[\Override]
     public function getSupportedFieldNames(): array
     {
         return ['associations'];
@@ -26,6 +27,7 @@ class AssociationsUserIntentFactory implements UserIntentFactory
     /**
      * @inerhitDoc
      */
+    #[\Override]
     public function create(string $fieldName, mixed $data): array
     {
         if (!\is_array($data)) {

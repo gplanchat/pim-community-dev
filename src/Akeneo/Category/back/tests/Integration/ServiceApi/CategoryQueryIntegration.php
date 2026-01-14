@@ -19,6 +19,7 @@ class CategoryQueryIntegration extends TestCase
     private CategoryDoctrine $category2;
     private CategoryDoctrine $category3;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -161,6 +162,7 @@ SQL;
         Assert::assertCount(0, iterator_to_array($categories, false));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

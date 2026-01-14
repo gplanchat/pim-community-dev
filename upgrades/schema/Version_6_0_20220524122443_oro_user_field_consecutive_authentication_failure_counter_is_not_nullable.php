@@ -9,11 +9,13 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_6_0_20220524122443_oro_user_field_consecutive_authentication_failure_counter_is_not_nullable extends AbstractMigration
 {
+    #[\Override]
     public function getDescription(): string
     {
         return 'To be consistent with code and schema description the column oro_user.consecutive_authentication_failure_counter must not accept NULL value';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->skipIf(
@@ -55,6 +57,7 @@ final class Version_6_0_20220524122443_oro_user_field_consecutive_authentication
     }
 
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

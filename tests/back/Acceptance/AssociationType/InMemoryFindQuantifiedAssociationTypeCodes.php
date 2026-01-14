@@ -15,6 +15,7 @@ class InMemoryFindQuantifiedAssociationTypeCodes implements FindQuantifiedAssoci
         $this->associationTypeRepository = $associationTypeRepository;
     }
 
+    #[\Override]
     public function execute(): array
     {
         $associationTypes = $this->associationTypeRepository->findAll();

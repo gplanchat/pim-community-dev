@@ -14,15 +14,16 @@ use Webmozart\Assert\Assert;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class InMemoryReorderIdentifierGenerators implements ReorderIdentifierGenerators
+final readonly class InMemoryReorderIdentifierGenerators implements ReorderIdentifierGenerators
 {
-    public function __construct(private readonly IdentifierGeneratorRepository $repository)
+    public function __construct(private IdentifierGeneratorRepository $repository)
     {
     }
 
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function byCodes(array $codes): void
     {
         Assert::isInstanceOf($this->repository, InMemoryIdentifierGeneratorRepository::class);

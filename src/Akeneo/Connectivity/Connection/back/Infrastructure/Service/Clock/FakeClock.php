@@ -14,11 +14,12 @@ final class FakeClock implements ClockInterface
 {
     private \DateTimeImmutable $now;
 
-    public function __construct(\DateTimeImmutable $now = null)
+    public function __construct(?\DateTimeImmutable $now = null)
     {
         $this->now = $now ?: new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
     }
 
+    #[\Override]
     public function now(): \DateTimeImmutable
     {
         return $this->now;

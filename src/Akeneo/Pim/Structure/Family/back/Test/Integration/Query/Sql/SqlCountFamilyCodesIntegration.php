@@ -14,6 +14,7 @@ class SqlCountFamilyCodesIntegration extends TestCase
 {
     private SqlCountFamilyCodes $sqlCountFamilyCodes;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -146,6 +147,7 @@ class SqlCountFamilyCodesIntegration extends TestCase
         self::assertEqualsCanonicalizing($expectedCount, $actualCount);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

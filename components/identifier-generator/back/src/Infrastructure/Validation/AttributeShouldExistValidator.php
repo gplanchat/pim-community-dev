@@ -19,6 +19,7 @@ final class AttributeShouldExistValidator extends ConstraintValidator
     {
     }
 
+    #[\Override]
     public function validate($target, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, AttributeShouldExist::class);

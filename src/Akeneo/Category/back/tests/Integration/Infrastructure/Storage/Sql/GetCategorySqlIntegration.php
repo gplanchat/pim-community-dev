@@ -28,6 +28,7 @@ class GetCategorySqlIntegration extends CategoryTestCase
      */
     private array $attributes;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -270,6 +271,7 @@ class GetCategorySqlIntegration extends CategoryTestCase
         return (int) $this->get('database_connection')->fetchOne('SELECT MAX(id) FROM pim_catalog_category');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

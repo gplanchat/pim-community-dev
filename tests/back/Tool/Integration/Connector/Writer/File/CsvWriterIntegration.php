@@ -13,8 +13,9 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class CsvWriterIntegration extends TestCase
 {
-    private const EXAMPLES_DIRECTORY = 'examples';
+    private const string EXAMPLES_DIRECTORY = 'examples';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -1056,6 +1057,7 @@ class CsvWriterIntegration extends TestCase
         }
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('footwear');

@@ -30,6 +30,7 @@ final class SqlGetValuesOfSiblings implements GetValuesOfSiblings
         $this->valueCollectionFactory = $valueCollectionFactory;
     }
 
+    #[\Override]
     public function for(EntityWithFamilyVariantInterface $entity, array $attributeCodesToFilter = []): array
     {
         if (null === $entity->getParent()) {

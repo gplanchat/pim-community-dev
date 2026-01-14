@@ -41,6 +41,7 @@ class FilteredFamilyReader implements ItemReaderInterface, StepExecutionAwareInt
         $this->familyRepository = $familyRepository;
     }
 
+    #[\Override]
     public function totalItems(): int
     {
         $filters = $this->getConfiguredFilters();
@@ -52,6 +53,7 @@ class FilteredFamilyReader implements ItemReaderInterface, StepExecutionAwareInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function read()
     {
         if (null === $this->families) {
@@ -76,11 +78,13 @@ class FilteredFamilyReader implements ItemReaderInterface, StepExecutionAwareInt
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
     }
 
+    #[\Override]
     public function initialize()
     {
         $filters = $this->getConfiguredFilters();
@@ -139,11 +143,13 @@ class FilteredFamilyReader implements ItemReaderInterface, StepExecutionAwareInt
         return $filter['value'];
     }
 
+    #[\Override]
     public function getState(): array
     {
         return null !== $this->families ? ['position' => $this->families->key()] : [];
     }
 
+    #[\Override]
     public function setState(array $state): void
     {
         $this->state = $state;

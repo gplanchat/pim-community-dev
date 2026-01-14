@@ -20,6 +20,7 @@ class FindAllUsernamesWithAclQuery implements FindAllUsernamesWithAclQueryInterf
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function execute(string $acl): array
     {
         $selectSQL = <<<SQL

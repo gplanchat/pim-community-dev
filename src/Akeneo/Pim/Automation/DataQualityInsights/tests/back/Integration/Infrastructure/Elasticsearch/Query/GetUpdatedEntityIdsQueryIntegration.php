@@ -29,6 +29,7 @@ final class GetUpdatedEntityIdsQueryIntegration extends TestCase
 {
     private Connection $db;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ final class GetUpdatedEntityIdsQueryIntegration extends TestCase
         $this->createAttributeOption('a_simple_select', 'optionC', ['en_US' => 'Option C']);
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();
@@ -112,7 +114,7 @@ final class GetUpdatedEntityIdsQueryIntegration extends TestCase
         $this->assertExpectedEntityId($expectedSubProductModel2, $productIds);
     }
 
-    private function createProduct(string $identifier = null, array $userIntents = []): ProductInterface
+    private function createProduct(?string $identifier = null, array $userIntents = []): ProductInterface
     {
         $this->getContainer()->get('pim_catalog.validator.unique_value_set')->reset(); // Needed to update the product afterwards
         $identifier = $identifier?: strval(Uuid::uuid4());

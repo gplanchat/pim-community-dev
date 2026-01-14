@@ -51,6 +51,7 @@ final class ReorderIdentifierGeneratorsIntegration extends TestCase
         $this->assertOrder(['ig_c', 'ig_a', 'ig_b']);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -62,12 +63,13 @@ final class ReorderIdentifierGeneratorsIntegration extends TestCase
         $this->assertOrder(['ig_a', 'ig_b', 'ig_c']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
-    private function createIdentifierGenerator(string $code = null): void
+    private function createIdentifierGenerator(?string $code = null): void
     {
         ($this->getCreateHandler())(new CreateGeneratorCommand(
             $code,

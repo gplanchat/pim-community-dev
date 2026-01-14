@@ -38,6 +38,7 @@ class ProductAndProductModelRowNormalizer implements NormalizerInterface, Normal
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function normalize($row, $format = null, array $context = [])
     {
         Assert::isInstanceOf($this->normalizer, NormalizerInterface::class);
@@ -72,11 +73,13 @@ class ProductAndProductModelRowNormalizer implements NormalizerInterface, Normal
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsNormalization($data, $format = null): bool
     {
         return $data instanceof Row && 'datagrid' === $format;
     }
 
+    #[\Override]
     public function hasCacheableSupportsMethod(): bool
     {
         return true;

@@ -94,6 +94,7 @@ class GetProductModelsAssociationsByProductModelCodesIntegration extends TestCas
         PHPUnitAssert::assertEqualsCanonicalizing($expected, $actual);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -260,6 +261,7 @@ class GetProductModelsAssociationsByProductModelCodesIntegration extends TestCas
         }
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

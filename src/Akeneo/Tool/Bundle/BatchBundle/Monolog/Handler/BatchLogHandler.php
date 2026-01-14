@@ -80,6 +80,7 @@ class BatchLogHandler extends StreamHandler
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $record): void
     {
         if (null === $this->url) {

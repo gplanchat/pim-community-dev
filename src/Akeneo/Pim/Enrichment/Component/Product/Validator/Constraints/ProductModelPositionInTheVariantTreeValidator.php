@@ -23,6 +23,7 @@ class ProductModelPositionInTheVariantTreeValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($productModel, Constraint $constraint): void
     {
         if (!$productModel instanceof ProductModelInterface) {

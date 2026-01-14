@@ -45,6 +45,7 @@ class CursorFactory implements CursorFactoryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createCursor($queryBuilder, array $options = []): CursorInterface
     {
         $pageSize = $options['page_size'] ?? $this->pageSize;

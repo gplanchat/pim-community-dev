@@ -21,6 +21,7 @@ class ProduceEventOnSingleProductCreationIntegration extends TestCase
     private ProductBuilderInterface $productBuilder;
     private SaverInterface $productSaver;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ class ProduceEventOnSingleProductCreationIntegration extends TestCase
         $this->assertEventCount(1, ProductCreated::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

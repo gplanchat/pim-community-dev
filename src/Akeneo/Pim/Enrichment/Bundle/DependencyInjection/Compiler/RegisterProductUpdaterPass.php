@@ -42,6 +42,7 @@ class RegisterProductUpdaterPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container)
     {
         $this->registerSetters($container);

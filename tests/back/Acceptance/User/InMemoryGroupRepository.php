@@ -26,6 +26,7 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
         $this->groups = new ArrayCollection();
     }
 
+    #[\Override]
     public function save($group, array $options = [])
     {
         if (!$group instanceof GroupInterface) {
@@ -37,6 +38,7 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['name'];
@@ -45,6 +47,7 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->groups->get($identifier);
@@ -53,6 +56,7 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException();
@@ -61,6 +65,7 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return $this->groups->toArray();
@@ -69,7 +74,8 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         throw new NotImplementedException();
     }
@@ -77,6 +83,7 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException();
@@ -85,6 +92,7 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException();
@@ -93,11 +101,13 @@ class InMemoryGroupRepository implements GroupRepositoryInterface, SaverInterfac
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDefaultUserGroup()
     {
         throw new NotImplementedException();
     }
 
+    #[\Override]
     public function findOneById(int $id): ?GroupInterface
     {
         throw new NotImplementedException();

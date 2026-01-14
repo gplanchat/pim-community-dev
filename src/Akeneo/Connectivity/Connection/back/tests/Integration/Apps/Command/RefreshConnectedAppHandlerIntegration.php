@@ -27,6 +27,7 @@ class RefreshConnectedAppHandlerIntegration extends TestCase
     private FindOneConnectedAppByIdQuery $findOneConnectedAppByIdQuery;
     private FakeWebMarketplaceApi $webMarketplaceApi;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -38,6 +39,7 @@ class RefreshConnectedAppHandlerIntegration extends TestCase
         $this->webMarketplaceApi = $this->get(WebMarketplaceApi::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

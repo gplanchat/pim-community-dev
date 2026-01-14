@@ -136,6 +136,7 @@ class GetProductModelEndToEnd extends ApiTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useFunctionalCatalog('catalog_modeling');

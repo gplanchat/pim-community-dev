@@ -54,6 +54,7 @@ class OroTranslationDumpCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this
@@ -75,6 +76,7 @@ class OroTranslationDumpCommand extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $locales = $input->getArgument('locale');

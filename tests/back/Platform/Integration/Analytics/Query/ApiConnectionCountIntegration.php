@@ -18,6 +18,7 @@ class ApiConnectionCountIntegration extends TestCase
     /** @var ApiConnectionCount */
     private $apiConnectionCountQuery;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -49,6 +50,7 @@ class ApiConnectionCountIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

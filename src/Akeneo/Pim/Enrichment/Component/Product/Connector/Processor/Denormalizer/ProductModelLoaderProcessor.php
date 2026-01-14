@@ -17,6 +17,7 @@ class ProductModelLoaderProcessor extends AbstractProcessor implements ItemProce
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process($item)
     {
         return $this->findObject($this->repository, $item);

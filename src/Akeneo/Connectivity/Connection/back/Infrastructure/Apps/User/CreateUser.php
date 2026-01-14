@@ -25,6 +25,7 @@ class CreateUser implements CreateUserInterface
     ) {
     }
 
+    #[\Override]
     public function execute(string $username, string $name, array $groups, array $roles, string $appId): int
     {
         $password = $this->generatePassword();

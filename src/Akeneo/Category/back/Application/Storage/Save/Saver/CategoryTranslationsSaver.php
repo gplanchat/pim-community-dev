@@ -27,12 +27,14 @@ class CategoryTranslationsSaver implements CategorySaver
     ) {
     }
 
+    #[\Override]
     public function save(Category $categoryModel): void
     {
         $this->upsertCategoryTranslations->execute($categoryModel);
         $this->updateCategoryUpdatedDate->execute((string) $categoryModel->getCode());
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return $this->supportedUserIntents;

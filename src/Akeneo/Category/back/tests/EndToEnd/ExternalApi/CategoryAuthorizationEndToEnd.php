@@ -23,6 +23,7 @@ class CategoryAuthorizationEndToEnd extends ApiTestCase
     private static string $PIM_API_CATEGORY_LIST_ROLE = 'pim_api_category_list';
     private static string $PIM_API_CATEGORY_EDIT_ROLE = 'pim_api_category_edit';
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -233,6 +234,7 @@ class CategoryAuthorizationEndToEnd extends ApiTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

@@ -21,6 +21,7 @@ final class CategoriesShouldBeViewableValidator extends ConstraintValidator
     {
     }
 
+    #[\Override]
     public function validate($categoryUserIntent, Constraint $constraint): void
     {
         if (null === $categoryUserIntent) {

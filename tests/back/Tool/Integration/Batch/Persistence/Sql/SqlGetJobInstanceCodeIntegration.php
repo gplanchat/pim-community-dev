@@ -17,11 +17,13 @@ final class SqlGetJobInstanceCodeIntegration extends TestCase
     private Connection $connection;
     private SqlGetJobInstanceCode $sqlGetJobInstanceCode;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

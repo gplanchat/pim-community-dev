@@ -78,6 +78,7 @@ final class LoadDatagridPimRoleGridIntegration extends ControllerIntegrationTest
         }
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

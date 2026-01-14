@@ -30,6 +30,7 @@ class ReferenceDataCollectionValue extends AbstractValue implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getData(): ?array
     {
         return $this->data;
@@ -38,6 +39,7 @@ class ReferenceDataCollectionValue extends AbstractValue implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getReferenceDataCodes() : array
     {
         return $this->data;
@@ -46,6 +48,7 @@ class ReferenceDataCollectionValue extends AbstractValue implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString(): string
     {
         $refCodeStrings = [];
@@ -59,6 +62,7 @@ class ReferenceDataCollectionValue extends AbstractValue implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isEqual(ValueInterface $value): bool
     {
         if (!$value instanceof ReferenceDataCollectionValueInterface ||

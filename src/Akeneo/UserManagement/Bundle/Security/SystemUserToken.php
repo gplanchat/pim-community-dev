@@ -31,6 +31,7 @@ final class SystemUserToken extends AbstractToken
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCredentials()
     {
         return null;

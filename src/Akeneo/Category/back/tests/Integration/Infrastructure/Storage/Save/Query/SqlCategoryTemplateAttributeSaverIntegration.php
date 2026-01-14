@@ -29,6 +29,7 @@ class SqlCategoryTemplateAttributeSaverIntegration extends CategoryTestCase
     private CategoryTemplateAttributeSaver $categoryTemplateAttributeSaver;
     private GetTemplate $getTemplate;
     private GetAttribute $getAttribute;
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

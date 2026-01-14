@@ -33,6 +33,7 @@ class AttributeOptionType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $this->addFieldId($builder);
@@ -78,7 +79,7 @@ class AttributeOptionType extends AbstractType
                 'allow_delete' => true,
                 'by_reference' => false,
                 'delete_empty' =>
-                    static fn (AttributeOptionValueInterface $optionValue = null) => null === $optionValue?->getValue()
+                    static fn (?AttributeOptionValueInterface $optionValue = null) => null === $optionValue?->getValue()
             ]
         );
     }
@@ -86,6 +87,7 @@ class AttributeOptionType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
@@ -99,6 +101,7 @@ class AttributeOptionType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_enrich_attribute_option';

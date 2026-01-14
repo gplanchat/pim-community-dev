@@ -114,6 +114,7 @@ final class ChannelLocaleRateCollection implements \IteratorAggregate
         return $this->rates->mapWith($callback);
     }
 
+    #[\Override]
     public function getIterator(): \Iterator
     {
         return $this->rates->getIterator();

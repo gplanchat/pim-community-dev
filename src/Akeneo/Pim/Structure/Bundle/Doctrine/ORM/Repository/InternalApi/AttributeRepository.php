@@ -29,6 +29,7 @@ class AttributeRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findTranslatedLabels(array $options = [])
     {
         $queryBuilder = $this->createQueryBuilder('a')
@@ -64,6 +65,7 @@ class AttributeRepository extends EntityRepository implements
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function createDatagridQueryBuilder()
     {
         $qb = $this->createQueryBuilder('a');

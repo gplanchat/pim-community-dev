@@ -19,6 +19,7 @@ final class Version_7_0_20221026154157_add_id_to_events_api_debug_index_mapping 
 {
     private ContainerInterface $container;
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->disableMigrationWarning();
@@ -122,12 +123,14 @@ final class Version_7_0_20221026154157_add_id_to_events_api_debug_index_mapping 
         return Yaml::parseFile($path);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();
     }
 
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         Assert::notNull($container);
         $this->container = $container;

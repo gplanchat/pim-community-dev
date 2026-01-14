@@ -25,6 +25,7 @@ final class AssociateQuantifiedProductModels implements QuantifiedAssociationUse
         Assert::allIsInstanceOf($quantifiedProductModels, QuantifiedEntity::class);
     }
 
+    #[\Override]
     public function associationType(): string
     {
         return $this->associationType;

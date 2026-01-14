@@ -16,11 +16,13 @@ class AddAclToRolesIntegration extends TestCase
     private AddAclToRoles $addAclToRoles;
     private AccessDecisionManagerInterface $accessDecisionManager;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

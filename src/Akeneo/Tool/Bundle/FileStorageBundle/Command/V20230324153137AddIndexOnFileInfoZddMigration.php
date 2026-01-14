@@ -12,6 +12,7 @@ class V20230324153137AddIndexOnFileInfoZddMigration implements ZddMigration
     ) {
     }
 
+    #[\Override]
     public function migrate(): void
     {
         if ($this->indexExists()) {
@@ -29,11 +30,13 @@ SQL;
      * TODO: Call this method in a classic doctrine migration for Saas.
      * It should be done when we're sure this migration has been executed in a Zdd way on production.
      */
+    #[\Override]
     public function migrateNotZdd(): void
     {
         $this->migrate();
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'V20230324153137AddIndexOnFileInfoZddMigration';

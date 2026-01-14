@@ -10,12 +10,14 @@ class V20230313SetEmptyCategoryLabelsToNullZddMigrationIntegration extends Categ
 {
     private V20230313SetEmptyCategoryLabelsToNullZddMigration $migration;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->migration = $this->get(V20230313SetEmptyCategoryLabelsToNullZddMigration::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

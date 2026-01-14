@@ -22,6 +22,7 @@ class VariantProductParentValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($variantProduct, Constraint $constraint): void
     {
         if (!$variantProduct instanceof ProductInterface) {

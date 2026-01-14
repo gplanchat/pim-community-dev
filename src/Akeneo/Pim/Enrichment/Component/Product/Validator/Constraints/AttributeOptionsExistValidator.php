@@ -27,6 +27,7 @@ class AttributeOptionsExistValidator extends ConstraintValidator
         $this->getExistingAttibuteOptionCodes = $getExistingAttibuteOptionCodes;
     }
 
+    #[\Override]
     public function validate($values, Constraint $constraint)
     {
         if (!$constraint instanceof AttributeOptionsExist) {

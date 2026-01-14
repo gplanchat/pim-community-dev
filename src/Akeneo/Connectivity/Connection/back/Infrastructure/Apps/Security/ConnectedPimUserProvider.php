@@ -18,6 +18,7 @@ class ConnectedPimUserProvider implements ConnectedPimUserProviderInterface
     {
     }
 
+    #[\Override]
     public function getCurrentUserId(): int
     {
         /** @var UserInterface|null */

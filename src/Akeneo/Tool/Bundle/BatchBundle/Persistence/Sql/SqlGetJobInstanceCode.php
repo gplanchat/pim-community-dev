@@ -20,6 +20,7 @@ final class SqlGetJobInstanceCode implements GetJobInstanceCode
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function fromJobExecutionId(int $jobExecutionId): ?string
     {
         $sql = <<<SQL

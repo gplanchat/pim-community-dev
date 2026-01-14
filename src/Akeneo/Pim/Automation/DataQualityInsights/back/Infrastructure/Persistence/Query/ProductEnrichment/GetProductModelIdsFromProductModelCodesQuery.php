@@ -23,6 +23,7 @@ final class GetProductModelIdsFromProductModelCodesQuery implements GetProductMo
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute(array $productModelCodes): array
     {
         $query = <<<SQL

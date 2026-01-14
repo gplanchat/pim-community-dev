@@ -13,6 +13,7 @@ use Akeneo\Test\Integration\TestCase;
  */
 final class CountTressChildrenIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

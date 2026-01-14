@@ -12,10 +12,11 @@ class Version_8_0_20230124095459_add_scheduled_job_delete_expired_tokens_Integra
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230124095459_add_scheduled_job_delete_expired_tokens';
+    private const string MIGRATION_LABEL = '_8_0_20230124095459_add_scheduled_job_delete_expired_tokens';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -37,6 +38,7 @@ class Version_8_0_20230124095459_add_scheduled_job_delete_expired_tokens_Integra
         $this->assertTrue($this->jobInstanceExists('delete_expired_tokens'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -94,25 +94,31 @@ class AjaxReferenceDataTransformerSpec extends ObjectBehavior
 
 class ReferenceDataColorWithLabel implements ReferenceDataInterface
 {
+    #[\Override]
     public function getId()
     {
     }
+    #[\Override]
     public function getCode()
     {
     }
+    #[\Override]
     public function setCode($code)
     {
     }
+    #[\Override]
     public function getSortOrder()
     {
     }
     public function getName()
     {
     }
+    #[\Override]
     public static function getLabelProperty()
     {
         return 'name';
     }
+    #[\Override]
     public function __toString()
     {
     }

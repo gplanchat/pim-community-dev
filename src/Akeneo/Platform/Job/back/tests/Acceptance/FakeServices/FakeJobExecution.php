@@ -12,6 +12,7 @@ class FakeJobExecution extends JobExecution
         parent::__construct();
     }
 
+    #[\Override]
     public function getId(): int
     {
         return $this->fakeId;

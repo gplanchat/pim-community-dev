@@ -18,7 +18,7 @@ use Akeneo\Tool\Component\StorageUtils\Cursor\CursorFactoryInterface;
 class AbstractEntityWithValuesQueryBuilder implements ProductQueryBuilderInterface
 {
     public const DOCUMENT_TYPE_FACET_NAME = 'document_type_facet';
-    private const DOCUMENT_TYPE_FIELD = 'document_type';
+    private const string DOCUMENT_TYPE_FIELD = 'document_type';
 
     /** @var mixed */
     protected $qb;
@@ -51,6 +51,7 @@ class AbstractEntityWithValuesQueryBuilder implements ProductQueryBuilderInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function execute()
     {
         if ($this->defaultContext['with_document_type_facet'] ?? false) {
@@ -77,6 +78,7 @@ class AbstractEntityWithValuesQueryBuilder implements ProductQueryBuilderInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setQueryBuilder($queryBuilder)
     {
         $this->qb = $queryBuilder;
@@ -87,6 +89,7 @@ class AbstractEntityWithValuesQueryBuilder implements ProductQueryBuilderInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getQueryBuilder()
     {
         if (null === $this->qb) {
@@ -99,6 +102,7 @@ class AbstractEntityWithValuesQueryBuilder implements ProductQueryBuilderInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFilter($field, $operator, $value, array $context = [])
     {
         $attribute = null;
@@ -142,6 +146,7 @@ class AbstractEntityWithValuesQueryBuilder implements ProductQueryBuilderInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addSorter($field, $direction, array $context = [])
     {
         $attribute = $this->attributeRepository->findOneBy(['code' => $field]);
@@ -171,6 +176,7 @@ class AbstractEntityWithValuesQueryBuilder implements ProductQueryBuilderInterfa
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getRawFilters()
     {
         return $this->rawFilters;

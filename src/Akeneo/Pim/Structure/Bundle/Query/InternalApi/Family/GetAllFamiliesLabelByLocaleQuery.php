@@ -20,6 +20,7 @@ final class GetAllFamiliesLabelByLocaleQuery implements GetAllFamiliesLabelByLoc
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function execute(string $localeCode): array
     {
         $query = <<<SQL

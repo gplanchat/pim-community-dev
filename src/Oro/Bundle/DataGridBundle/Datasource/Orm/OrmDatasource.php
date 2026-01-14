@@ -28,6 +28,7 @@ class OrmDatasource implements DatasourceInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function process(DatagridInterface $grid, array $config)
     {
         $queryConfig = array_intersect_key($config, array_flip(['query']));
@@ -41,6 +42,7 @@ class OrmDatasource implements DatasourceInterface
     /**
      * @return ResultRecordInterface[]
      */
+    #[\Override]
     public function getResults()
     {
         $results = $this->qb->getQuery()->execute();

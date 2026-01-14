@@ -25,13 +25,14 @@ final class Version_7_0_20220429131804_execute_uuid_migration_Integration extend
     use ExecuteMigrationTrait;
     use MigrateToUuidTrait;
 
-    private const MIGRATION_ADD_UUID_COLUMNS_LABEL = '_7_0_20220404075823_add_uuid_columns';
-    private const MIGRATION_ADD_COMMENT_UUID_COLUMN_LABEL = '_7_0_20220415090329_add_uuid_column_for_comment';
-    private const MIGRATION_UUID_LABEL = '_7_0_20220429131804_execute_uuid_migration';
+    private const string MIGRATION_ADD_UUID_COLUMNS_LABEL = '_7_0_20220404075823_add_uuid_columns';
+    private const string MIGRATION_ADD_COMMENT_UUID_COLUMN_LABEL = '_7_0_20220415090329_add_uuid_column_for_comment';
+    private const string MIGRATION_UUID_LABEL = '_7_0_20220429131804_execute_uuid_migration';
 
     private UserInterface $adminUser;
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
@@ -56,6 +57,7 @@ final class Version_7_0_20220429131804_execute_uuid_migration_Integration extend
         $this->assertCompletenessProductIdColumnNoLongerExists();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -65,6 +67,7 @@ final class Version_7_0_20220429131804_execute_uuid_migration_Integration extend
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     protected function tearDown(): void
     {
         // We need to set back the schema for next tests

@@ -57,6 +57,7 @@ class BaseFilterProvider implements FilterProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFilters($attribute)
     {
         return $this->filters[$attribute->getType()];
@@ -65,6 +66,7 @@ class BaseFilterProvider implements FilterProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($element)
     {
         return $element instanceof AttributeInterface &&

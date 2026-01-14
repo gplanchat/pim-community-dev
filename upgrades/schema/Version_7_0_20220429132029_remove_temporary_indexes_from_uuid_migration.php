@@ -10,13 +10,15 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220429132029_remove_temporary_indexes_from_uuid_migration extends AbstractMigration
 {
-    private const TEMPORARY_INDEX_NAME = 'migrate_to_uuid_temp_index_to_delete';
+    private const string TEMPORARY_INDEX_NAME = 'migrate_to_uuid_temp_index_to_delete';
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Remove temporary indexes and constraints created during the migration from id to uuid';
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->disableMigrationWarning();
@@ -67,6 +69,7 @@ final class Version_7_0_20220429132029_remove_temporary_indexes_from_uuid_migrat
         }
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

@@ -39,6 +39,7 @@ class EditMassActionHandler implements MassActionHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function handle(DatagridInterface $datagrid, MassActionInterface $massAction)
     {
         // dispatch pre handler event

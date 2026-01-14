@@ -34,6 +34,7 @@ class EntityWithValuesDelocalized implements ArrayConverterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function convert(array $item, array $options = [])
     {
         $standardizedItem = $this->converter->convert($item, $options);

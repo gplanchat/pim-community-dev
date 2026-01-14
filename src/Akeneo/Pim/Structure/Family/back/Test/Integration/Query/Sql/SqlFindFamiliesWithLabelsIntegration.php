@@ -16,6 +16,7 @@ class SqlFindFamiliesWithLabelsIntegration extends TestCase
 {
     private SqlFindFamiliesWithLabels $sqlFindFamiliesWithLabels;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -207,6 +208,7 @@ class SqlFindFamiliesWithLabelsIntegration extends TestCase
         self::assertEqualsCanonicalizing($expectedFamilies, $actualFamilies);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

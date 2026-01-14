@@ -29,11 +29,13 @@ final class ConsolidateDashboardRatesCommand extends Command
         $this->consolidateDashboardRates = $consolidateDashboardRates;
     }
 
+    #[\Override]
     protected function configure()
     {
         $this->addArgument('day', InputArgument::OPTIONAL, 'Day of the consolidation "Y-m-d".', date('Y-m-d'));
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $consolidationDate = \DateTimeImmutable::createFromFormat('Y-m-d', $input->getArgument('day'));

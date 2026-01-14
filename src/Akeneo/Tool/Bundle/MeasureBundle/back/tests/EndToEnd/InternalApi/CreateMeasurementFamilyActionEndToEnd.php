@@ -16,6 +16,7 @@ class CreateMeasurementFamilyActionEndToEnd extends WebTestCase
 {
     private ?MeasurementFamilyRepositoryInterface $measurementFamilyRepository = null;
 
+    #[\Override]
     public function setUp(): void
     {
         parent::setUp();
@@ -26,6 +27,7 @@ class CreateMeasurementFamilyActionEndToEnd extends WebTestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

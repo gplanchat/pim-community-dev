@@ -17,6 +17,7 @@ class UserNotificationRepository extends EntityRepository implements UserNotific
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countUnreadForUser(UserInterface $user)
     {
         $qb = $this->createQueryBuilder('n');
@@ -35,6 +36,7 @@ class UserNotificationRepository extends EntityRepository implements UserNotific
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function markAsViewed(UserInterface $user, $id)
     {
         $qb = $this->_em->createQueryBuilder()

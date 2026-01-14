@@ -79,6 +79,7 @@ class ElasticsearchSelectLastConnectionBusinessErrorsQueryIntegration extends Te
         Assert::assertEquals($expectedResult, $result);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -87,6 +88,7 @@ class ElasticsearchSelectLastConnectionBusinessErrorsQueryIntegration extends Te
         $this->selectLastConnectionBusinessErrorsQuery = $this->get(ElasticsearchSelectLastConnectionBusinessErrorsQuery::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

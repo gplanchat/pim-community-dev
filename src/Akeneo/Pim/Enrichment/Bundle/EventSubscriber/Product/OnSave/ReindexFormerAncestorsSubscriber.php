@@ -37,6 +37,7 @@ class ReindexFormerAncestorsSubscriber implements EventSubscriberInterface
         $this->productModelIndexer = $productModelIndexer;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

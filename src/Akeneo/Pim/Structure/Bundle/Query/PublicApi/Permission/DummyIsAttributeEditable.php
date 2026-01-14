@@ -12,6 +12,7 @@ use Akeneo\Pim\Structure\Component\Query\PublicApi\Permission\IsAttributeEditabl
  */
 final class DummyIsAttributeEditable implements IsAttributeEditable
 {
+    #[\Override]
     public function forCode(string $attributeCode, int $userId): bool
     {
         return true;

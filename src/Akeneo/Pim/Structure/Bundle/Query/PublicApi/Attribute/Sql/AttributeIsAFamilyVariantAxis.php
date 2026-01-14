@@ -25,6 +25,7 @@ class AttributeIsAFamilyVariantAxis implements AttributeIsAFamilyVariantAxisInte
         $this->entityManager = $entityManager;
     }
 
+    #[\Override]
     public function execute(string $attributeCode): bool
     {
         $query = $this->entityManager->createQueryBuilder()

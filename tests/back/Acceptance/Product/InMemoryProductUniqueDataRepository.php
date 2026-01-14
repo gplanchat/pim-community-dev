@@ -23,6 +23,7 @@ class InMemoryProductUniqueDataRepository implements ProductUniqueDataRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function uniqueDataExistsInAnotherProduct(ValueInterface $value, ProductInterface $product): bool
     {
         foreach ($this->productRepository->findAll() as $productInRepo) {

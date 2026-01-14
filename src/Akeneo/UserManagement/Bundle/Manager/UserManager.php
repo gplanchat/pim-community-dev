@@ -165,6 +165,7 @@ class UserManager implements UserProviderInterface
      * @throws UserNotFoundException if user could not be reloaded
      * @return SecurityUserInterface
      */
+    #[\Override]
     public function refreshUser(SecurityUserInterface $user): SecurityUserInterface
     {
         $class = $this->getClass();
@@ -191,6 +192,7 @@ class UserManager implements UserProviderInterface
     /**
      * @TODO: Remove this function when symfony will be in 6.0
      */
+    #[\Override]
     public function loadUserByUsername(string $username)
     {
         return $this->loadUserByIdentifier($username);
@@ -227,6 +229,7 @@ class UserManager implements UserProviderInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function supportsClass($class): bool
     {
         return $class === $this->getClass();

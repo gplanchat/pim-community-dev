@@ -34,6 +34,7 @@ class MultiSelectAttributeAdder extends AbstractAttributeAdder
      *
      * Expected data input format: ["option_code", "other_option_code"]
      */
+    #[\Override]
     public function addAttributeData(
         EntityWithValuesInterface $entityWithValues,
         AttributeInterface $attribute,

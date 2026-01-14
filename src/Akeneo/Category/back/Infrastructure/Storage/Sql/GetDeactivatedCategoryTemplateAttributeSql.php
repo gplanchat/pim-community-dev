@@ -28,6 +28,7 @@ class GetDeactivatedCategoryTemplateAttributeSql implements GetDeactivatedAttrib
      * @throws Exception
      * @throws \JsonException
      */
+    #[\Override]
     public function byUuids(array $attributeUuids): AttributeCollection
     {
         $placeholders = \implode(

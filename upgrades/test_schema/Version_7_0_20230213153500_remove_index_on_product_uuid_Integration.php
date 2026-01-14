@@ -17,15 +17,17 @@ class Version_7_0_20230213153500_remove_index_on_product_uuid_Integration extend
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_7_0_20230213153500_remove_index_on_product_uuid';
+    private const string MIGRATION_LABEL = '_7_0_20230213153500_remove_index_on_product_uuid';
 
     private Connection $connection;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

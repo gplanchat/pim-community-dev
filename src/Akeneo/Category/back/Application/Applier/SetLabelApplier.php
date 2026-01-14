@@ -14,6 +14,7 @@ use Akeneo\Category\Domain\Model\Enrichment\Category;
  */
 final class SetLabelApplier implements UserIntentApplier
 {
+    #[\Override]
     public function apply(UserIntent $userIntent, Category $category): void
     {
         if (!$userIntent instanceof SetLabel) {
@@ -23,6 +24,7 @@ final class SetLabelApplier implements UserIntentApplier
         $category->setLabel($userIntent->localeCode(), $userIntent->label());
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [SetLabel::class];

@@ -21,11 +21,13 @@ class CleanCategoryTemplateAttributeEnrichedValuesProvider implements Constraint
     ) {
     }
 
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return $this->jobName === $job->getName();
     }
 
+    #[\Override]
     public function getDefaultValues(): array
     {
         return [
@@ -38,6 +40,7 @@ class CleanCategoryTemplateAttributeEnrichedValuesProvider implements Constraint
      * template_uuid: deleted template's attribute uuid to be cleaned from category enriched values.
      * attribute_uuid: deleted attribute's uuid to be cleaned from category enriched values.
      */
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection(

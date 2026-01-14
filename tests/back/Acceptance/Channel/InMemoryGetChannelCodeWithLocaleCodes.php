@@ -22,6 +22,7 @@ final class InMemoryGetChannelCodeWithLocaleCodes implements GetChannelCodeWithL
         $this->channelRepository = $channelRepository;
     }
 
+    #[\Override]
     public function findAll(): array
     {
         return array_map(function (ChannelInterface $channel): array {

@@ -39,11 +39,13 @@ class LoadAttributeSetControllerEndToEnd extends ControllerIntegrationTestCase
     private GetAttribute $getAttribute;
     private AttributeSetFactory $attributeSetFactory;
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

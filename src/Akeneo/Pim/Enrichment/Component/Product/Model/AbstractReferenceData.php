@@ -23,6 +23,7 @@ abstract class AbstractReferenceData implements ReferenceDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId()
     {
         return $this->id;
@@ -31,6 +32,7 @@ abstract class AbstractReferenceData implements ReferenceDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode()
     {
         return $this->code;
@@ -39,6 +41,7 @@ abstract class AbstractReferenceData implements ReferenceDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode($code)
     {
         $this->code = $code;
@@ -49,6 +52,7 @@ abstract class AbstractReferenceData implements ReferenceDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getSortOrder()
     {
         return $this->sortOrder;
@@ -64,6 +68,7 @@ abstract class AbstractReferenceData implements ReferenceDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getLabelProperty()
     {
         return null;
@@ -72,6 +77,7 @@ abstract class AbstractReferenceData implements ReferenceDataInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function __toString()
     {
         if (null !== $labelProperty = static::getLabelProperty()) {

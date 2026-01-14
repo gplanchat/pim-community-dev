@@ -22,6 +22,7 @@ class DeactivateAttributeSql implements DeactivateAttribute
     ) {
     }
 
+    #[\Override]
     public function execute(TemplateUuid $templateUuid, AttributeUuid $attributeUuid): void
     {
         if (($this->isTemplateDeactivated)($templateUuid)) {

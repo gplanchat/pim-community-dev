@@ -14,6 +14,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_7_0_20220111160750_update_logo_to_be_nullable extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql(<<<SQL
@@ -23,6 +24,7 @@ final class Version_7_0_20220111160750_update_logo_to_be_nullable extends Abstra
         );
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

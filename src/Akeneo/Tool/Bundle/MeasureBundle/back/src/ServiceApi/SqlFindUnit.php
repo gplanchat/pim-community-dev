@@ -17,6 +17,7 @@ class SqlFindUnit implements FindUnit
     {
     }
 
+    #[\Override]
     public function byMeasurementFamilyCodeAndUnitCode(string $measurementFamilyCode, string $unitCode): ?Unit
     {
         $sql = <<<SQL

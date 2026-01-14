@@ -15,6 +15,7 @@ class InitCategoryDbSchemaSubscriber implements EventSubscriberInterface
     {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

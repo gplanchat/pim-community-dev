@@ -33,6 +33,7 @@ class AuthorizeEndToEnd extends WebTestCase
     private RequestAppAuthorizationHandler $appAuthorizationHandler;
     private CreateConnectedAppWithAuthorizationHandler $createConnectedAppWithAuthorizationHandler;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,6 +47,7 @@ class AuthorizeEndToEnd extends WebTestCase
         $this->loadAppsFixtures();
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

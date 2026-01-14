@@ -28,6 +28,7 @@ final class UpdateUserPermissions implements UpdateUserPermissionsInterface
     ) {
     }
 
+    #[\Override]
     public function execute(UserId $userId, int $userRoleId, ?int $userGroupId): void
     {
         /** @var ?UserInterface */

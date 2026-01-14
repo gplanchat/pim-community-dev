@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ListFamilyVariantEndToEnd extends ApiTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -265,6 +266,7 @@ JSON;
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

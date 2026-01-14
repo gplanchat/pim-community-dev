@@ -16,13 +16,14 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
  */
 class AccessDeniedForRevokedAppTokenEventSubscriber implements EventSubscriberInterface
 {
-    private const MESSAGE = 'The access token provided is invalid. Your app has been disconnected from that PIM.';
+    private const string MESSAGE = 'The access token provided is invalid. Your app has been disconnected from that PIM.';
 
     public function __construct(
         private IsAccessTokenRevokedQueryInterface $isAccessTokenRevokedQuery,
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [ApiAuthenticationFailedEvent::class => 'throwIfDeniedAccessTokenIsRevoked'];

@@ -87,6 +87,7 @@ class CommandContext extends PimContext
     /**
      * @return FixturesContext
      */
+    #[\Override]
     protected function getFixturesContext(): FixturesContext
     {
         return $this->getMainContext()->getSubcontext('fixtures');

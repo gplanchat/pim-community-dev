@@ -48,6 +48,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getId(): ?int
     {
         return $this->id;
@@ -56,6 +57,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCode(): ?string
     {
         return $this->code;
@@ -64,6 +66,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setCode(string $code): void
     {
         $this->code = $code;
@@ -72,6 +75,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getCommonAttributes(): CommonAttributeCollection
     {
         $commonAttributes = CommonAttributeCollection::fromCollection($this->family->getAttributes());
@@ -92,6 +96,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getVariantAttributeSet(int $level): ?VariantAttributeSetInterface
     {
         if (0 >= $level) {
@@ -110,6 +115,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getVariantAttributeSets(): Collection
     {
         return $this->variantAttributeSets;
@@ -118,6 +124,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAttributes(): Collection
     {
         $attributes = [];
@@ -132,6 +139,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getAxes(): Collection
     {
         $axes = [];
@@ -146,6 +154,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addVariantAttributeSet(VariantAttributeSetInterface $variantAttributeSet): void
     {
         $this->variantAttributeSets->add($variantAttributeSet);
@@ -154,6 +163,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function updateAxesForLevel(int $level, array $axes): void
     {
         Assert::allIsInstanceOf($axes, AttributeInterface::class);
@@ -184,6 +194,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function updateAttributesForLevel(int $level, array $attributes): void
     {
         Assert::allIsInstanceOf($attributes, AttributeInterface::class);
@@ -214,6 +225,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFamily(): ?FamilyInterface
     {
         return $this->family;
@@ -222,6 +234,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setFamily(FamilyInterface $family): void
     {
         $this->family = $family;
@@ -230,6 +243,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getNumberOfLevel(): int
     {
         return $this->variantAttributeSets->count();
@@ -238,6 +252,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setLocale($locale)
     {
         $this->locale = $locale;
@@ -248,6 +263,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslation(?string $locale = null)
     {
         $locale = $locale ?: $this->locale;
@@ -272,6 +288,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslations()
     {
         return $this->translations;
@@ -280,6 +297,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->translations->contains($translation)) {
@@ -292,6 +310,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function removeTranslation(TranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
@@ -302,6 +321,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTranslationFQCN()
     {
         return FamilyVariantTranslation::class;
@@ -310,6 +330,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLevelForAttributeCode(string $attributeCode): int
     {
         if (!$this->getFamily()->hasAttributeCode($attributeCode)) {
@@ -344,6 +365,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public static function getAvailableAxesAttributeTypes(): array
     {
         return [
@@ -358,6 +380,7 @@ class FamilyVariant implements FamilyVariantInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function releaseEvents(): array
     {
         $events = $this->events;

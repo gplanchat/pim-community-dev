@@ -13,11 +13,13 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version_7_0_20220818143128_remove_zdd_setidentifiernullable_from_pim_one_time_task_table extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql('DELETE FROM pim_one_time_task where code = "zdd_SetProductIdentifierNullable"');
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $sql = <<<SQL

@@ -21,6 +21,7 @@ final class IdentifierGeneratorShouldExistValidator extends ConstraintValidator
     {
     }
 
+    #[\Override]
     public function validate($updateGeneratorCommand, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, IdentifierGeneratorShouldExist::class);

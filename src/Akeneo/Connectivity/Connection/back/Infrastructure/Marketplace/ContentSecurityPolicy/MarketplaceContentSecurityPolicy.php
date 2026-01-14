@@ -14,6 +14,7 @@ use Akeneo\Platform\Bundle\UIBundle\Provider\ContentSecurityPolicy\ContentSecuri
  */
 final class MarketplaceContentSecurityPolicy implements ContentSecurityPolicyProviderInterface
 {
+    #[\Override]
     public function getContentSecurityPolicy(): array
     {
         return [

@@ -24,6 +24,7 @@ final class SimpleSelectPropertyShouldBeValidValidator extends ConstraintValidat
     ) {
     }
 
+    #[\Override]
     public function validate($property, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, SimpleSelectPropertyShouldBeValid::class);

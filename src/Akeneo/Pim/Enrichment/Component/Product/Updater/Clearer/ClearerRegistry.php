@@ -27,6 +27,7 @@ final class ClearerRegistry implements ClearerRegistryInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function register(ClearerInterface $clearer): void
     {
         $this->clearers[] = $clearer;
@@ -35,6 +36,7 @@ final class ClearerRegistry implements ClearerRegistryInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getClearer(string $property): ?ClearerInterface
     {
         foreach ($this->clearers as $clearer) {

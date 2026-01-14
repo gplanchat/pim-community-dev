@@ -75,6 +75,7 @@ final class GetUserRolesIntegration extends ControllerIntegrationTestCase
         }
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

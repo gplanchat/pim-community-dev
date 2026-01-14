@@ -33,6 +33,7 @@ final class EvaluateProductsAndProductModelsCriteriaTasklet implements TaskletIn
     ) {
     }
 
+    #[\Override]
     public function execute(): void
     {
         $continueToEvaluateProducts = true;
@@ -78,6 +79,7 @@ final class EvaluateProductsAndProductModelsCriteriaTasklet implements TaskletIn
         } while ($this->isTimeboxReached($startTime) === false);
     }
 
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;

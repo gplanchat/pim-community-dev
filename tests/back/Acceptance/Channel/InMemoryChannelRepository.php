@@ -25,6 +25,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -33,6 +34,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->channels->get($code);
@@ -41,6 +43,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function save($channel, array $options = [])
     {
         $this->channels->set($channel->getCode(), $channel);
@@ -49,7 +52,8 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $channels = [];
         foreach ($this->channels as $channel) {
@@ -72,6 +76,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countAll()
     {
         throw new NotImplementedException(__METHOD__);
@@ -80,6 +85,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChannelCodes()
     {
         return $this->channels->map(function (ChannelInterface $channel): string {
@@ -90,6 +96,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFullChannels()
     {
         throw new NotImplementedException(__METHOD__);
@@ -98,6 +105,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getChannelCountUsingCurrency(CurrencyInterface $currency)
     {
         throw new NotImplementedException(__METHOD__);
@@ -106,6 +114,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getLabelsIndexedByCode($localeCode)
     {
         throw new NotImplementedException(__METHOD__);
@@ -114,6 +123,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -122,6 +132,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         return array_values($this->channels->toArray());
@@ -130,6 +141,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         $keepThisChannel = true;
@@ -152,6 +164,7 @@ final class InMemoryChannelRepository implements ChannelRepositoryInterface, Sav
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);

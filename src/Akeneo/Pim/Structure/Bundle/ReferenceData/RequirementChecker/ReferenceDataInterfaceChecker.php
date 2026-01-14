@@ -30,6 +30,7 @@ class ReferenceDataInterfaceChecker implements CheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function check(ReferenceDataConfigurationInterface $configuration)
     {
         $this->model = $configuration->getClass();
@@ -51,6 +52,7 @@ class ReferenceDataInterfaceChecker implements CheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDescription()
     {
         return sprintf('Reference data models must implement "%s".', $this->interface);
@@ -59,6 +61,7 @@ class ReferenceDataInterfaceChecker implements CheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFailure()
     {
         return $this->failure;
@@ -67,6 +70,7 @@ class ReferenceDataInterfaceChecker implements CheckerInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function isBlockingOnFailure()
     {
         return false;

@@ -17,8 +17,9 @@ use Akeneo\Pim\Structure\Component\Query\PublicApi\AttributeType\Attribute;
  */
 final class DateValueFactory implements ValueFactory
 {
-    private const DATE_FORMAT = 'yyyy-mm-dd';
+    private const string DATE_FORMAT = 'yyyy-mm-dd';
 
+    #[\Override]
     public function createWithoutCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         $date = new \DateTime($data);
@@ -39,6 +40,7 @@ final class DateValueFactory implements ValueFactory
         return DateValue::value($attributeCode, $date);
     }
 
+    #[\Override]
     public function createByCheckingData(Attribute $attribute, ?string $channelCode, ?string $localeCode, $data): ValueInterface
     {
         if (!\is_string($data)) {
@@ -70,6 +72,7 @@ final class DateValueFactory implements ValueFactory
         return $this->createWithoutCheckingData($attribute, $channelCode, $localeCode, $data);
     }
 
+    #[\Override]
     public function supportedAttributeType(): string
     {
         return AttributeTypes::DATE;

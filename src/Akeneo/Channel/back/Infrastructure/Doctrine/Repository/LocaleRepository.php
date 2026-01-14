@@ -20,7 +20,8 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         if (null === $orderBy) {
             $orderBy = ['code' => 'ASC'];
@@ -32,7 +33,8 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
-    public function findOneBy(array $criteria, array $orderBy = null)
+    #[\Override]
+    public function findOneBy(array $criteria, ?array $orderBy = null)
     {
         if (null === $orderBy) {
             $orderBy = ['code' => 'ASC'];
@@ -44,6 +46,7 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getActivatedLocales()
     {
         $qb = $this->getActivatedLocalesQB();
@@ -54,6 +57,7 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getActivatedLocaleCodes()
     {
         $qb = $this->getActivatedLocalesQB();
@@ -72,6 +76,7 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getActivatedLocalesQB()
     {
         $qb = $this->createQueryBuilder('l');
@@ -84,6 +89,7 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getDeletedLocalesForChannel(ChannelInterface $channel)
     {
         $currentLocaleIds = array_map(
@@ -106,6 +112,7 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($code)
     {
         return $this->findOneBy(['code' => $code]);
@@ -114,6 +121,7 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -122,6 +130,7 @@ class LocaleRepository extends EntityRepository implements LocaleRepositoryInter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function countAllActivated()
     {
         $countQb = $this->createQueryBuilder('l');

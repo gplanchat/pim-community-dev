@@ -24,6 +24,7 @@ final class InMemoryIsLocaleEditable implements IsLocaleEditable
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function forUserId(string $localeCode, int $userId): bool
     {
         /** @var UserInterface|null $user */

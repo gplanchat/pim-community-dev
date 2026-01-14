@@ -39,6 +39,7 @@ class LogArchiver implements EventSubscriberInterface
         }
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

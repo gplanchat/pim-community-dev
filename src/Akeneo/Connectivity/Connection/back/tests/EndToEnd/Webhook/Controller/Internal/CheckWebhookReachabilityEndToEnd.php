@@ -155,6 +155,7 @@ class CheckWebhookReachabilityEndToEnd extends WebTestCase
         Assert::assertEquals(['success' => false, 'message' => 'Failed to connect to server'], $result);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

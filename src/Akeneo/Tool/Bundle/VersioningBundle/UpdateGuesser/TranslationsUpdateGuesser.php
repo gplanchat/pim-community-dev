@@ -42,6 +42,7 @@ class TranslationsUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAction($action)
     {
         return in_array($action, [UpdateGuesserInterface::ACTION_UPDATE_ENTITY, UpdateGuesserInterface::ACTION_DELETE]);
@@ -50,6 +51,7 @@ class TranslationsUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessUpdates(EntityManager $em, $entity, $action)
     {
         $pendings = [];

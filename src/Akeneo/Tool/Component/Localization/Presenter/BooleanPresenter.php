@@ -25,6 +25,7 @@ class BooleanPresenter implements PresenterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function present($value, array $options = [])
     {
         if (in_array($value, [true, 'true', '1', 1], true)) {
@@ -40,6 +41,7 @@ class BooleanPresenter implements PresenterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supports($fieldCode)
     {
         return in_array($fieldCode, $this->allowedFields);

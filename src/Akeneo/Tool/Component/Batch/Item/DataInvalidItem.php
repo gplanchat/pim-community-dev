@@ -26,6 +26,7 @@ class DataInvalidItem implements InvalidItemInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getInvalidData()
     {
         return $this->invalidData;

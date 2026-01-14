@@ -22,6 +22,7 @@ class ChannelValue
         return $this->channel;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->channel;

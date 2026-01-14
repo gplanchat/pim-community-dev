@@ -17,6 +17,7 @@ class QueryTestCase extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -34,6 +35,7 @@ class QueryTestCase extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();
@@ -133,6 +135,7 @@ class QueryTestCase extends TestCase
      *
      * @return CategoryInterface
      */
+    #[\Override]
     protected function createCategory(array $data = []) : CategoryInterface
     {
         $category = $this->get('pim_catalog.factory.category')->create();

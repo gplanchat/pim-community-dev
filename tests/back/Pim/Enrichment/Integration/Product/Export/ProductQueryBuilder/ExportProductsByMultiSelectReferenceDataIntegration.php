@@ -12,6 +12,7 @@ class ExportProductsByMultiSelectReferenceDataIntegration extends AbstractExport
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function loadFixtures() : void
     {
         $this->createFamily([

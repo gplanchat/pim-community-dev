@@ -47,6 +47,7 @@ class RegistrySpec extends ObjectBehavior
 
 class CustomFlagEnabled implements FeatureFlag
 {
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return true;
@@ -54,6 +55,7 @@ class CustomFlagEnabled implements FeatureFlag
 }
 class CustomFlagDisabled implements FeatureFlag
 {
+    #[\Override]
     public function isEnabled(?string $feature = null): bool
     {
         return false;

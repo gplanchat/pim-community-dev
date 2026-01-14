@@ -18,6 +18,7 @@ final class GetAccessTokenQuery implements GetAccessTokenQueryInterface
     {
     }
 
+    #[\Override]
     public function execute(string $appId, string $scopes): ?string
     {
         $query = <<<SQL

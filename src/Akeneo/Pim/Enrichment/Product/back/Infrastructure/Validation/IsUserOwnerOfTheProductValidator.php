@@ -30,6 +30,7 @@ final class IsUserOwnerOfTheProductValidator extends ConstraintValidator
     ) {
     }
 
+    #[\Override]
     public function validate($command, Constraint $constraint): void
     {
         Assert::isInstanceOf($command, UpsertProductCommand::class);

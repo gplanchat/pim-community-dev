@@ -22,6 +22,7 @@ class CheckAttributeIsNotAFamilyVariantAxisOnDeletionSubscriber implements Event
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

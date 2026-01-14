@@ -35,6 +35,7 @@ final class ConsolidateDashboardRatesTasklet implements TaskletInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -43,6 +44,7 @@ final class ConsolidateDashboardRatesTasklet implements TaskletInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function execute()
     {
         try {

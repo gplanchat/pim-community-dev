@@ -33,6 +33,7 @@ class FilterStructureAttributeValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($attributes, Constraint $constraint)
     {
         if (!$constraint instanceof FilterStructureAttribute) {

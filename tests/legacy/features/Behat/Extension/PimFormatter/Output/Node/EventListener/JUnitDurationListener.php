@@ -40,6 +40,7 @@ final class JUnitDurationListener implements EventListener
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function listenEvent(Formatter $formatter, Event $event, $eventName)
     {
         $this->captureBeforeScenarioEvent($event);

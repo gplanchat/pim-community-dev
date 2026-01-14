@@ -15,6 +15,7 @@ use Webmozart\Assert\Assert;
  */
 final class StructureShouldNotContainMultipleAutoNumberValidator extends ConstraintValidator
 {
+    #[\Override]
     public function validate($structure, Constraint $constraint): void
     {
         Assert::isInstanceOf($constraint, StructureShouldNotContainMultipleAutoNumber::class);

@@ -33,6 +33,7 @@ class CategoryExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getFunctions()
     {
         return [
@@ -57,8 +58,8 @@ class CategoryExtension extends AbstractExtension
      */
     public function childrenTreeResponse(
         array $categories,
-        CategoryInterface $selectedCategory = null,
-        CategoryInterface $parent = null,
+        ?CategoryInterface $selectedCategory = null,
+        ?CategoryInterface $parent = null,
         $withProductCount = false,
         $includeSub = false,
         $relatedEntity = 'product',
@@ -98,7 +99,7 @@ class CategoryExtension extends AbstractExtension
      */
     public function childrenResponse(
         array $categories,
-        CategoryInterface $parent = null,
+        ?CategoryInterface $parent = null,
         $withProductCount = false,
         $includeSub = false,
         $relatedEntity = 'product',

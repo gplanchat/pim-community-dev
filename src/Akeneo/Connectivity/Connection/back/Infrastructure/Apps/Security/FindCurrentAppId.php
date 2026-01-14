@@ -22,6 +22,7 @@ class FindCurrentAppId implements FindCurrentAppIdInterface
     /**
      * @inheritdoc
      */
+    #[\Override]
     public function execute(): ?string
     {
         /** @var UserInterface|null $user */

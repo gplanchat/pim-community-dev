@@ -25,6 +25,7 @@ final class PersistTwoWayAssociationSubscriber implements EventSubscriberInterfa
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

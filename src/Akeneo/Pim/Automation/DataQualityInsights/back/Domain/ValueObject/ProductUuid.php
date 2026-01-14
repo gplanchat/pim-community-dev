@@ -31,6 +31,7 @@ final class ProductUuid implements ProductEntityIdInterface
         return new self(Uuid::fromString($uuid));
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->uuid->toString();

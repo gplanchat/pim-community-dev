@@ -18,6 +18,7 @@ class IsAssociatedSorter implements SorterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function apply(DatasourceInterface $datasource, $field, $direction)
     {
         if ($datasource instanceof AssociatedProductDatasource) {

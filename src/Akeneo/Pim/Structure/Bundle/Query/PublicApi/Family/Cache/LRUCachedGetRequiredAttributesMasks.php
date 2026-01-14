@@ -33,6 +33,7 @@ final class LRUCachedGetRequiredAttributesMasks implements GetRequiredAttributes
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fromFamilyCodes(array $familyCodes): array
     {
         if (empty($familyCodes)) {

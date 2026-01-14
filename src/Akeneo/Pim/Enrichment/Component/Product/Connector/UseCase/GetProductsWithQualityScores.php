@@ -18,6 +18,7 @@ final class GetProductsWithQualityScores implements GetProductsWithQualityScores
     ) {
     }
 
+    #[\Override]
     public function fromConnectorProduct(ConnectorProduct $product): ConnectorProduct
     {
         if (!$this->dataQualityInsightsFeature->isEnabled()) {
@@ -29,6 +30,7 @@ final class GetProductsWithQualityScores implements GetProductsWithQualityScores
         );
     }
 
+    #[\Override]
     public function fromConnectorProductList(ConnectorProductList $connectorProductList, ?string $channel = null, array $locales = []): ConnectorProductList
     {
         if (!$this->dataQualityInsightsFeature->isEnabled()) {

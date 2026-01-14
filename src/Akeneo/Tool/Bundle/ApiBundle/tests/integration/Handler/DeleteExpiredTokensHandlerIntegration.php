@@ -23,6 +23,7 @@ class DeleteExpiredTokensHandlerIntegration extends ApiTestCase
     private ?Connection $connection;
     private ?DeleteExpiredTokensHandler $deleteExpiredTokensHandler;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -32,6 +33,7 @@ class DeleteExpiredTokensHandlerIntegration extends ApiTestCase
         $this->deleteExpiredTokensHandler = $this->get(DeleteExpiredTokensHandler::class);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useTechnicalCatalog();

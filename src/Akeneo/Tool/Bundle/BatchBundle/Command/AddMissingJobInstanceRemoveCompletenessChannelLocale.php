@@ -32,6 +32,7 @@ class AddMissingJobInstanceRemoveCompletenessChannelLocale extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function configure()
     {
         $this->setDescription('Add missing job instance remove_completeness_for_channel_and_locale');
@@ -40,6 +41,7 @@ class AddMissingJobInstanceRemoveCompletenessChannelLocale extends Command
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if ($this->jobExists('remove_completeness_for_channel_and_locale')) {

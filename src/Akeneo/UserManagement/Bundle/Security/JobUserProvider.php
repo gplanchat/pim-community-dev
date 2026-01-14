@@ -21,6 +21,7 @@ class JobUserProvider implements UserProviderInterface
     /**
      * @TODO: Remove this function when symfony will be in 6.0
      */
+    #[\Override]
     public function loadUserByUsername(string $username)
     {
         return $this->loadUserByIdentifier($username);
@@ -46,6 +47,7 @@ class JobUserProvider implements UserProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function refreshUser(UserInterface $user): UserInterface
     {
         if (!$this->supportsClass($user::class)) {
@@ -63,6 +65,7 @@ class JobUserProvider implements UserProviderInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportsClass($class): bool
     {
         return is_subclass_of($class, 'Akeneo\UserManagement\Component\Model\UserInterface');

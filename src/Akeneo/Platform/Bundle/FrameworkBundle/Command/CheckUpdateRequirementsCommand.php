@@ -27,6 +27,7 @@ class CheckUpdateRequirementsCommand extends Command
         $this->client = $clientBuilder->setHosts($elasticsearchHosts)->build();
     }
 
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $requirements = new RequirementCollection();

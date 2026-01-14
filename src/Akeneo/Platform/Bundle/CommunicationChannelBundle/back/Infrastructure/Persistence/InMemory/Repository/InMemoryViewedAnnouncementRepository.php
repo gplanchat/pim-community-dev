@@ -19,6 +19,7 @@ class InMemoryViewedAnnouncementRepository implements ViewedAnnouncementReposito
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function create(array $viewedAnnouncements): void
     {
         foreach ($viewedAnnouncements as $viewedAnnouncement) {

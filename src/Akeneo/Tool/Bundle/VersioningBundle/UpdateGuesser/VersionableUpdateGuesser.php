@@ -36,6 +36,7 @@ class VersionableUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function supportAction($action)
     {
         return $action === UpdateGuesserInterface::ACTION_UPDATE_ENTITY;
@@ -44,6 +45,7 @@ class VersionableUpdateGuesser implements UpdateGuesserInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function guessUpdates(EntityManager $em, $entity, $action)
     {
         $pendings = [];

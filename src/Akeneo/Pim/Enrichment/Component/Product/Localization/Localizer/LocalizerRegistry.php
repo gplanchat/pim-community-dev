@@ -17,6 +17,7 @@ class LocalizerRegistry implements LocalizerRegistryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function register(LocalizerInterface $localizer)
     {
         $this->localizers[] = $localizer;
@@ -31,6 +32,7 @@ class LocalizerRegistry implements LocalizerRegistryInterface
      *
      * @return LocalizerInterface|null
      */
+    #[\Override]
     public function getLocalizer($value)
     {
         foreach ($this->localizers as $localizer) {

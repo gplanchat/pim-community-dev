@@ -29,6 +29,7 @@ final class InitMainIdentifierSubscriber implements EventSubscriberInterface
     /**
      * @inheritDoc
      */
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

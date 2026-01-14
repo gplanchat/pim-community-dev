@@ -19,6 +19,7 @@ class AkeneoFeatureFlagBundle extends Bundle implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass($this);
@@ -27,6 +28,7 @@ class AkeneoFeatureFlagBundle extends Bundle implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function process(ContainerBuilder $container): void
     {
         $configs = [];
@@ -48,6 +50,7 @@ class AkeneoFeatureFlagBundle extends Bundle implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function boot(): void
     {
         foreach ($this->container->getParameter('feature_flagged.services') as $id => $config) {

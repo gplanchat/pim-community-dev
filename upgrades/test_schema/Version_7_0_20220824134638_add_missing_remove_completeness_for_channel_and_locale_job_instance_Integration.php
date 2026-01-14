@@ -15,13 +15,14 @@ use PHPUnit\Framework\Assert;
  */
 final class Version_7_0_20220824134638_add_missing_remove_completeness_for_channel_and_locale_job_instance_Integration extends TestCase
 {
-    private const MIGRATION_NAME = '_7_0_20220824134638_add_missing_remove_completeness_for_channel_and_locale_job_instance';
+    private const string MIGRATION_NAME = '_7_0_20220824134638_add_missing_remove_completeness_for_channel_and_locale_job_instance';
 
     use ExecuteMigrationTrait;
 
     private Connection $connection;
 
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -47,6 +48,7 @@ final class Version_7_0_20220824134638_add_missing_remove_completeness_for_chann
         Assert::assertTrue($this->jobInstanceExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

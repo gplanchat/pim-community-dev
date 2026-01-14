@@ -20,6 +20,7 @@ class ConfigurationProvider implements ConfigurationProviderInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function isApplicable($gridName)
     {
         return isset($this->rawConfiguration[$gridName]);
@@ -28,6 +29,7 @@ class ConfigurationProvider implements ConfigurationProviderInterface
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function getConfiguration($gridName)
     {
         if (!isset($this->rawConfiguration[$gridName])) {

@@ -89,6 +89,7 @@ class PurgeEventsApiErrorLogsQueryIntegration extends TestCase
         Assert::assertEquals(0, $warnResults['hits']['total']['value']);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -97,6 +98,7 @@ class PurgeEventsApiErrorLogsQueryIntegration extends TestCase
         $this->esClient = $this->get('akeneo_connectivity.client.events_api_debug');
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

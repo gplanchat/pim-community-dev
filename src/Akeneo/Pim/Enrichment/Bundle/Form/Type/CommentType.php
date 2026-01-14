@@ -40,6 +40,7 @@ class CommentType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $placeholder = (true === $options['is_reply']) ? 'pim_enrich.entity.product.module.comment.reply' : 'pim_enrich.entity.product.module.comment.post';
@@ -69,6 +70,7 @@ class CommentType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
@@ -82,6 +84,7 @@ class CommentType extends AbstractType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return 'pim_comment_comment';

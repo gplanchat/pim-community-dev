@@ -19,6 +19,7 @@ class SqlCountFamilyCodes implements CountFamilyCodes
     ) {
     }
 
+    #[\Override]
     public function fromQuery(FamilyQuery $query): int
     {
         $searchLocaleCondition = null !== $query->search?->labelLocale ? 'AND translation.locale = :locale_code' : '';

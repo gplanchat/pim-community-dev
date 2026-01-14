@@ -20,6 +20,7 @@ class SqlSimpleSelectNomenclatureRepository implements SimpleSelectNomenclatureR
     ) {
     }
 
+    #[\Override]
     public function get(string $attributeCode): ?NomenclatureDefinition
     {
         $nomenclatureDefinition = $this->getNomenclatureDefinition($attributeCode);
@@ -31,6 +32,7 @@ class SqlSimpleSelectNomenclatureRepository implements SimpleSelectNomenclatureR
         return $nomenclatureDefinition;
     }
 
+    #[\Override]
     public function update(string $attributeCode, NomenclatureDefinition $nomenclatureDefinition): void
     {
         $this->connection->beginTransaction();

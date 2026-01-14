@@ -14,7 +14,7 @@ use Psr\Log\LoggerInterface;
  */
 class MigrateToUuidCleanGhostRecords implements MigrateToUuidStep
 {
-    private const BATCH_SIZE = 10000;
+    private const int BATCH_SIZE = 10000;
 
     /** @var string[] */
     private array $ignoredTables = [
@@ -33,16 +33,19 @@ class MigrateToUuidCleanGhostRecords implements MigrateToUuidStep
     ) {
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'clean_ghost_records';
     }
 
+    #[\Override]
     public function getDescription(): string
     {
         return 'Remove database foreign records which do not match any product';
     }
 
+    #[\Override]
     public function addMissing(Context $context): bool
     {
         if ($context->dryRun()) {
@@ -122,6 +125,7 @@ class MigrateToUuidCleanGhostRecords implements MigrateToUuidStep
         return true;
     }
 
+    #[\Override]
     public function getMissingCount(): int
     {
         $count = 0;
@@ -147,6 +151,7 @@ class MigrateToUuidCleanGhostRecords implements MigrateToUuidStep
         return $count;
     }
 
+    #[\Override]
     public function shouldBeExecuted(): bool
     {
         $sql = <<<SQL

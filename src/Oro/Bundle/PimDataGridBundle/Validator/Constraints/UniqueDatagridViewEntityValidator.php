@@ -24,6 +24,7 @@ class UniqueDatagridViewEntityValidator extends ConstraintValidator
         $this->datagridViewRepository = $datagridViewRepository;
     }
 
+    #[\Override]
     public function validate($entity, Constraint $constraint): void
     {
         if (!$constraint instanceof UniqueDatagridViewEntity) {

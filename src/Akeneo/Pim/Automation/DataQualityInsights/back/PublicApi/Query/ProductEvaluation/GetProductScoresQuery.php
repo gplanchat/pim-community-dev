@@ -28,6 +28,7 @@ class GetProductScoresQuery implements GetProductScoresQueryInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function byProductUuids(array $productUuids): array
     {
         $scoresByUuid = $this->getProductScoresByUuidsQuery->byProductUuids($productUuids);
@@ -38,6 +39,7 @@ class GetProductScoresQuery implements GetProductScoresQueryInterface
         );
     }
 
+    #[\Override]
     public function byProductUuid(UuidInterface $productUuid): QualityScoreCollection
     {
         $scores = $this->getProductScoresByUuidsQuery->byProductUuid($productUuid);

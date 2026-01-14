@@ -25,6 +25,7 @@ class VariantProductParent extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validatedBy(): string
     {
         return 'pim_invalid_variant_product_parent';
@@ -33,6 +34,7 @@ class VariantProductParent extends Constraint
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getTargets(): string
     {
         return Constraint::CLASS_CONSTRAINT;

@@ -15,14 +15,15 @@ class Version_6_0_20210101000000_fix_json_columns_Integration extends TestCase
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_6_0_20210101000000_fix_json_columns';
+    private const string MIGRATION_LABEL = '_6_0_20210101000000_fix_json_columns';
 
-    private const AFFECTED_COLUMNS = [
+    private const array AFFECTED_COLUMNS = [
         ['akeneo_batch_job_execution', 'raw_parameters'],
         ['oro_user', 'product_grid_filters'],
         ['oro_user', 'properties'],
     ];
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

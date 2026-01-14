@@ -23,6 +23,7 @@ class AddContentSecurityPolicyListener implements EventSubscriberInterface
         $this->contentSecurityPolicyProvider = $contentSecurityPolicyProvider;
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

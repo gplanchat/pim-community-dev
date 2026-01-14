@@ -54,6 +54,7 @@ class PriceCollectionAttributeRemover extends AbstractAttributeRemover
      * ]
      * "data" index is not used so it can be null
      */
+    #[\Override]
     public function removeAttributeData(
         EntityWithValuesInterface $entityWithValues,
         AttributeInterface $attribute,

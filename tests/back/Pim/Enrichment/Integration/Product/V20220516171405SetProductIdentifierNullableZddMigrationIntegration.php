@@ -20,6 +20,7 @@ class V20220516171405SetProductIdentifierNullableZddMigrationIntegration extends
         Assert::assertTrue($this->isColumnNullable('pim_catalog_product', 'identifier'));
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

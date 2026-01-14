@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  */
 class CountUseableAsGridFilterAttributes implements CountQuery
 {
-    private const VOLUME_NAME = 'count_useable_as_grid_filter_attributes';
+    private const string VOLUME_NAME = 'count_useable_as_grid_filter_attributes';
 
     /** @var Connection */
     private $connection;
@@ -31,6 +31,7 @@ class CountUseableAsGridFilterAttributes implements CountQuery
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function fetch(): CountVolume
     {
         $sql = <<<SQL

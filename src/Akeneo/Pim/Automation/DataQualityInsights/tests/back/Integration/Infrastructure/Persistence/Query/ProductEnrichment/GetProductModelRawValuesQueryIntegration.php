@@ -15,6 +15,7 @@ use Akeneo\Test\Integration\TestCase;
  */
 class GetProductModelRawValuesQueryIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();

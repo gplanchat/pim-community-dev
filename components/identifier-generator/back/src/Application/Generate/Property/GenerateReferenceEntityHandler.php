@@ -14,18 +14,20 @@ use Webmozart\Assert\Assert;
  * @copyright 2023 Akeneo SAS (https://www.akeneo.com)
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class GenerateReferenceEntityHandler implements GeneratePropertyHandlerInterface
+final readonly class GenerateReferenceEntityHandler implements GeneratePropertyHandlerInterface
 {
     public function __construct(
-        private readonly PropertyProcessApplier $propertyProcessApplier
+        private PropertyProcessApplier $propertyProcessApplier
     ) {
     }
 
+    #[\Override]
     public function getPropertyClass(): string
     {
         return ReferenceEntityProperty::class;
     }
 
+    #[\Override]
     public function __invoke(
         PropertyInterface $referenceEntityProperty,
         IdentifierGenerator $identifierGenerator,

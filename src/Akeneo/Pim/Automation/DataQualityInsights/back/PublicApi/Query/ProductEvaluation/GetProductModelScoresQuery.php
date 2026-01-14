@@ -24,6 +24,7 @@ class GetProductModelScoresQuery implements GetProductModelScoresQueryInterface
     ) {
     }
 
+    #[\Override]
     public function byProductModelCodes(array $productModelCodes): array
     {
         $scoresByIdentifiers = $this->getProductModelScoresByCodesQuery->byProductModelCodes($productModelCodes);
@@ -34,6 +35,7 @@ class GetProductModelScoresQuery implements GetProductModelScoresQueryInterface
         );
     }
 
+    #[\Override]
     public function byProductModelCode(string $productModelCode): QualityScoreCollection
     {
         $scores = $this->getProductModelScoresByCodesQuery->byProductModelCode($productModelCode);

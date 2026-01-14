@@ -14,6 +14,7 @@ use Akeneo\Category\Domain\Query\GetCategoryByIds;
  */
 class GetCategoryByIdsSqlIntegration extends CategoryTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

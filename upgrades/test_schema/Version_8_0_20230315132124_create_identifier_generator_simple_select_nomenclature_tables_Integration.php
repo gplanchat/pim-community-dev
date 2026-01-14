@@ -16,7 +16,7 @@ final class Version_8_0_20230315132124_create_identifier_generator_simple_select
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230315132124_create_identifier_generator_simple_select_nomenclature_tables';
+    private const string MIGRATION_LABEL = '_8_0_20230315132124_create_identifier_generator_simple_select_nomenclature_tables';
 
     private Connection $connection;
 
@@ -30,12 +30,14 @@ final class Version_8_0_20230315132124_create_identifier_generator_simple_select
         Assert::assertTrue($this->tableExists('pim_catalog_identifier_generator_simple_select_nomenclature'));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
         $this->connection = $this->get('database_connection');
     }
 
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

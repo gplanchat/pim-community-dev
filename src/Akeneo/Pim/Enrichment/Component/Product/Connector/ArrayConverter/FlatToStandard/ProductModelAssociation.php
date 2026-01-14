@@ -49,6 +49,7 @@ class ProductModelAssociation implements ArrayConverterInterface
      *      }
      * }
      */
+    #[\Override]
     public function convert(array $item, array $options = []): array
     {
         $convertedItem = $this->productModelConverter->convert($item, $options);

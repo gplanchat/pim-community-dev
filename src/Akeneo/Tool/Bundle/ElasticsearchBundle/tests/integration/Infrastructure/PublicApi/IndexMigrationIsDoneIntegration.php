@@ -17,8 +17,8 @@ use Akeneo\Tool\Component\Elasticsearch\PublicApi\Read\IndexMigrationIsDoneInter
 
 class IndexMigrationIsDoneIntegration extends TestCase
 {
-    private const INDEX_ALIAS = 'index_alias';
-    private const INDEX_HASH = '01dc9c40d93e300302c0bee80f7aaaa29f54d6e9';
+    private const string INDEX_ALIAS = 'index_alias';
+    private const string INDEX_HASH = '01dc9c40d93e300302c0bee80f7aaaa29f54d6e9';
 
     /**
      * @test
@@ -41,6 +41,7 @@ class IndexMigrationIsDoneIntegration extends TestCase
         );
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

@@ -16,6 +16,7 @@ class InitProductCompletenessDbSchemaSubscriber implements EventSubscriberInterf
     ) {
     }
 
+    #[\Override]
     public static function getSubscribedEvents(): array
     {
         return [

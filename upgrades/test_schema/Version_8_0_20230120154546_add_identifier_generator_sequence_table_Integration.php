@@ -11,11 +11,12 @@ final class Version_8_0_20230120154546_add_identifier_generator_sequence_table_I
 {
     use ExecuteMigrationTrait;
 
-    private const MIGRATION_LABEL = '_8_0_20230120154546_add_identifier_generator_sequence_table';
-    private const TABLE_NAME = 'pim_catalog_identifier_generator_sequence';
+    private const string MIGRATION_LABEL = '_8_0_20230120154546_add_identifier_generator_sequence_table';
+    private const string TABLE_NAME = 'pim_catalog_identifier_generator_sequence';
 
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -40,6 +41,7 @@ final class Version_8_0_20230120154546_add_identifier_generator_sequence_table_I
         Assert::assertTrue($this->tableExists());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

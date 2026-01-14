@@ -21,6 +21,7 @@ final class AddMultipleValuesApplier implements UserIntentApplier
     ) {
     }
 
+    #[\Override]
     public function apply(UserIntent $userIntent, ProductInterface $product, int $userId): void
     {
         if (!$userIntent instanceof AddMultiSelectValue) {
@@ -48,6 +49,7 @@ final class AddMultipleValuesApplier implements UserIntentApplier
         ]);
     }
 
+    #[\Override]
     public function getSupportedUserIntents(): array
     {
         return [AddMultiSelectValue::class];

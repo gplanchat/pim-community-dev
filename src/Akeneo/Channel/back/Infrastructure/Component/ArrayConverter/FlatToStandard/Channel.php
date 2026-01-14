@@ -58,6 +58,7 @@ class Channel implements ArrayConverterInterface
      *          'viewing_area'      => 'DEKAMETER'
      *      ]
      */
+    #[\Override]
     public function convert(array $item, array $options = [])
     {
         $this->fieldChecker->checkFieldsPresence($item, ['code', 'tree', 'locales', 'currencies']);

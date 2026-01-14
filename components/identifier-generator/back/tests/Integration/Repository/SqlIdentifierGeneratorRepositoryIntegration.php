@@ -32,6 +32,7 @@ class SqlIdentifierGeneratorRepositoryIntegration extends TestCase
     private IdentifierGeneratorRepository $identifierGeneratorRepository;
     private Connection $connection;
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -189,6 +190,7 @@ class SqlIdentifierGeneratorRepositoryIntegration extends TestCase
         Assert::assertEquals(0, $this->identifierGeneratorRepository->count());
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog(['identifier_generator']);

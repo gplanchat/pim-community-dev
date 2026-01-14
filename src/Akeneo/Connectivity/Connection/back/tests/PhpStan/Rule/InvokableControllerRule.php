@@ -10,11 +10,12 @@ use PHPStan\Analyser\Scope;
 
 final class InvokableControllerRule extends AbstractControllerRule
 {
-    private const ERROR_MESSAGE = 'Controller must be invokable';
+    private const string ERROR_MESSAGE = 'Controller must be invokable';
 
     /**
      * @param Class_ $node
      */
+    #[\Override]
     public function processNode(Node $node, Scope $scope): array
     {
         if (!$this->isInControllerNamespace($scope)) {

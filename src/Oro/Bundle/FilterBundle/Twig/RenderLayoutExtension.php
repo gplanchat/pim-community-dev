@@ -20,6 +20,7 @@ class RenderLayoutExtension extends AbstractExtension
      */
     const SUFFIX = '_js';
 
+    #[\Override]
     public function getFunctions(): array
     {
         return [
@@ -61,6 +62,7 @@ class RenderLayoutExtension extends AbstractExtension
         return '';
     }
 
+    #[\Override]
     public function getFilters(): array
     {
         return [

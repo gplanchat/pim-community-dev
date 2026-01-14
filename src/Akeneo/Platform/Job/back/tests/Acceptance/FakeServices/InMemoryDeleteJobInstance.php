@@ -13,13 +13,14 @@ use Akeneo\Platform\Job\Application\DeleteJobInstance\DeleteJobInstanceInterface
 
 final class InMemoryDeleteJobInstance implements DeleteJobInstanceInterface
 {
-    public const JOBS = [
+    public const array JOBS = [
         ['code' => 'job_1'],
         ['code' => 'job_2'],
     ];
 
     private array $jobs = self::JOBS;
 
+    #[\Override]
     public function byCodes(array $codes): void
     {
         $this->jobs = array_filter($this->jobs, static fn (array $job) => !in_array($job['code'], $codes));

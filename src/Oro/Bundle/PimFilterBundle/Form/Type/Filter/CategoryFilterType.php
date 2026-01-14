@@ -27,6 +27,7 @@ class CategoryFilterType extends NumberFilterType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getBlockPrefix(): string
     {
         return self::NAME;
@@ -35,6 +36,7 @@ class CategoryFilterType extends NumberFilterType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getParent(): ?string
     {
         return NumberFilterType::class;
@@ -43,6 +45,7 @@ class CategoryFilterType extends NumberFilterType
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function configureOptions(OptionsResolver $resolver)
     {
         $choices = [

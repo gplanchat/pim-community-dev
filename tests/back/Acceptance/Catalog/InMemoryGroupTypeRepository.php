@@ -26,6 +26,7 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
         $this->groupTypes = new ArrayCollection();
     }
 
+    #[\Override]
     public function save($group, array $options = [])
     {
         if (!$group instanceof GroupTypeInterface) {
@@ -37,6 +38,7 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getIdentifierProperties()
     {
         return ['code'];
@@ -45,6 +47,7 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneByIdentifier($identifier)
     {
         return $this->groupTypes->get($identifier);
@@ -53,6 +56,7 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findTypeIds()
     {
         throw new NotImplementedException(__METHOD__);
@@ -61,6 +65,7 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function find($id)
     {
         throw new NotImplementedException(__METHOD__);
@@ -69,6 +74,7 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findAll()
     {
         throw new NotImplementedException(__METHOD__);
@@ -77,7 +83,8 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    #[\Override]
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $groupTypes = [];
         foreach ($this->groupTypes as $groupType) {
@@ -100,6 +107,7 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function findOneBy(array $criteria)
     {
         throw new NotImplementedException(__METHOD__);
@@ -108,6 +116,7 @@ class InMemoryGroupTypeRepository implements SaverInterface, GroupTypeRepository
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function getClassName()
     {
         throw new NotImplementedException(__METHOD__);

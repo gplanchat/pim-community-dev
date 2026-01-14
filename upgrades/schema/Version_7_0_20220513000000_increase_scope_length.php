@@ -9,6 +9,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 final class Version_7_0_20220513000000_increase_scope_length extends AbstractMigration
 {
+    #[\Override]
     public function up(Schema $schema): void
     {
         $this->addSql("ALTER TABLE pim_api_access_token MODIFY scope VARCHAR(1000) DEFAULT NULL");
@@ -16,6 +17,7 @@ final class Version_7_0_20220513000000_increase_scope_length extends AbstractMig
         $this->addSql("ALTER TABLE pim_api_auth_code MODIFY scope VARCHAR(1000) DEFAULT NULL");
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

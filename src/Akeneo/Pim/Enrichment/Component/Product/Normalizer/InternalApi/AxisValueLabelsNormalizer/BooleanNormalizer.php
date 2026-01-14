@@ -21,6 +21,7 @@ class BooleanNormalizer implements AxisValueLabelsNormalizer
     ) {
     }
 
+    #[\Override]
     public function normalize(ValueInterface $value, string $locale): string
     {
         if (true === $value->getData()) {
@@ -37,6 +38,7 @@ class BooleanNormalizer implements AxisValueLabelsNormalizer
         );
     }
 
+    #[\Override]
     public function supports(string $attributeType): bool
     {
         return AttributeTypes::BOOLEAN === $attributeType;

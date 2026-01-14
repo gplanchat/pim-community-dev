@@ -59,6 +59,7 @@ class StandardFormatToUserIntentsIntegration extends TestCase
         $converter->convert($standardFormat);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

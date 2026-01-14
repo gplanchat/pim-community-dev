@@ -12,6 +12,7 @@ use Akeneo\Tool\Component\Analytics\GetConnectedAppsIdentifiersQueryInterface;
  */
 class GetConnectedAppsIdentifiersQueryInMemory implements GetConnectedAppsIdentifiersQueryInterface
 {
+    #[\Override]
     public function execute(): array
     {
         return ['fcde704d-c557-446a-9e7d-c5594eed6801'];

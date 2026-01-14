@@ -51,6 +51,7 @@ class ProductAndProductModelWriter implements ItemWriterInterface, StepExecution
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function write(array $items)
     {
         $products = array_filter($items, function ($item) {
@@ -71,6 +72,7 @@ class ProductAndProductModelWriter implements ItemWriterInterface, StepExecution
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function setStepExecution(StepExecution $stepExecution)
     {
         $this->stepExecution = $stepExecution;
@@ -79,6 +81,7 @@ class ProductAndProductModelWriter implements ItemWriterInterface, StepExecution
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function initialize()
     {
         $jobParameters = $this->stepExecution->getJobParameters();

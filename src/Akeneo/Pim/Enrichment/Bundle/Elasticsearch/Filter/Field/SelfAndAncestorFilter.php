@@ -37,7 +37,7 @@ use Doctrine\DBAL\Connection;
  */
 class SelfAndAncestorFilter extends AbstractFieldFilter
 {
-    private const ANCESTOR_ID_ES_FIELD = 'ancestors.ids';
+    private const string ANCESTOR_ID_ES_FIELD = 'ancestors.ids';
 
     /**
      * @param string[] $supportedFields
@@ -56,6 +56,7 @@ class SelfAndAncestorFilter extends AbstractFieldFilter
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function addFieldFilter($field, $operator, $values, $locale = null, $channel = null, $options = []): void
     {
         if (null === $this->searchQueryBuilder) {

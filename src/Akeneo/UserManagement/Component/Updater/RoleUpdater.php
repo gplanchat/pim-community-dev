@@ -28,6 +28,7 @@ class RoleUpdater implements ObjectUpdaterInterface
      *     'type': 'default',
      * }
      */
+    #[\Override]
     public function update($role, array $data, array $options = []): self
     {
         if (!$role instanceof RoleInterface) {

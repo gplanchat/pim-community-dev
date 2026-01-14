@@ -15,13 +15,15 @@ use Symfony\Component\Validator\Constraints\Type;
  */
 class PurgeVersioning implements ConstraintCollectionProviderInterface, DefaultValuesProviderInterface
 {
-    private const JOB_NAME = 'versioning_purge';
+    private const string JOB_NAME = 'versioning_purge';
 
+    #[\Override]
     public function supports(JobInterface $job): bool
     {
         return self::JOB_NAME === $job->getName();
     }
 
+    #[\Override]
     public function getDefaultValues(): array
     {
         return [
@@ -38,6 +40,7 @@ class PurgeVersioning implements ConstraintCollectionProviderInterface, DefaultV
      * less-than-days: Purges the versions that are younger than the number of days'
      * batch-size: Purges the versions by batch
      */
+    #[\Override]
     public function getConstraintCollection(): Collection
     {
         return new Collection(

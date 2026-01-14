@@ -14,6 +14,7 @@ use Akeneo\Connectivity\Connection\Application\RandomCodeGeneratorInterface;
  */
 class RandomCodeGenerator implements RandomCodeGeneratorInterface
 {
+    #[\Override]
     public function generate(): string
     {
         if (@\file_exists('/dev/urandom')) { // Get 100 bytes of random data

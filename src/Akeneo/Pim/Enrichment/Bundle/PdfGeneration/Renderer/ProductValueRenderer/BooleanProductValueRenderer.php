@@ -17,6 +17,7 @@ class BooleanProductValueRenderer implements ProductValueRenderer
         $this->translator = $translator;
     }
 
+    #[\Override]
     public function render(Environment $environment, AttributeInterface $attribute, ?ValueInterface $value, string $localeCode): ?string
     {
         if (null === $value) {
@@ -26,6 +27,7 @@ class BooleanProductValueRenderer implements ProductValueRenderer
         return $this->translator->trans($value->getData() ? 'Yes' : 'No');
     }
 
+    #[\Override]
     public function supportsAttributeType(string $attributeType): bool
     {
         return $attributeType === AttributeTypes::BOOLEAN;

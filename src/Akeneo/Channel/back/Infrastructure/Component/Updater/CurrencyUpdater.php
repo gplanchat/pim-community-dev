@@ -25,6 +25,7 @@ class CurrencyUpdater implements ObjectUpdaterInterface
      *     'enabled' => true,
      * ]
      */
+    #[\Override]
     public function update($currency, array $data, array $options = [])
     {
         if (!$currency instanceof CurrencyInterface) {

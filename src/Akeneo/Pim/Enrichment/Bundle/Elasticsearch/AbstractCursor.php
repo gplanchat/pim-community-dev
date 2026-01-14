@@ -31,6 +31,7 @@ abstract class AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function current(): mixed
     {
         if (null === $this->items) {
@@ -43,6 +44,7 @@ abstract class AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function key(): mixed
     {
         if (null === $this->items) {
@@ -55,6 +57,7 @@ abstract class AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function valid(): bool
     {
         if (null === $this->items) {
@@ -67,6 +70,7 @@ abstract class AbstractCursor implements CursorInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function count(): int
     {
         if (null === $this->count) {

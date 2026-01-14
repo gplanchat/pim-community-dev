@@ -19,6 +19,7 @@ use Akeneo\Test\Pim\Automation\DataQualityInsights\Integration\DataQualityInsigh
 
 final class GetProductModelCriterionEvaluationByProductIdAndCriterionCodeQueryIntegration extends DataQualityInsightsTestCase
 {
+    #[\Override]
     protected function setUp(): void
     {
         {

@@ -19,6 +19,7 @@ final class Version_7_0_20221027152057_add_id_field_to_connection_error_index_ma
 {
     private ContainerInterface $container;
 
+    #[\Override]
     public function up(Schema $schema) : void
     {
         $this->disableMigrationWarning();
@@ -122,12 +123,14 @@ final class Version_7_0_20221027152057_add_id_field_to_connection_error_index_ma
         return Yaml::parseFile($path);
     }
 
+    #[\Override]
     public function down(Schema $schema) : void
     {
         $this->throwIrreversibleMigrationException();
     }
 
-    public function setContainer(ContainerInterface $container = null)
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null)
     {
         Assert::notNull($container);
         $this->container = $container;

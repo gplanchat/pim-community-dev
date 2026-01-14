@@ -61,6 +61,7 @@ class EntityWithValuesFilter implements FilterInterface
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function filter(EntityWithValuesInterface $entity, array $newEntity): array
     {
         $originalValues = $this->getOriginalEntity($entity);

@@ -54,6 +54,7 @@ class ElasticsearchBusinessErrorRepositoryIntegration extends TestCase
         Assert::assertEquals('2020-01-01T00:00:00+00:00', $doc2['error_datetime']);
     }
 
+    #[\Override]
     protected function getConfiguration(): Configuration
     {
         return $this->catalog->useMinimalCatalog();

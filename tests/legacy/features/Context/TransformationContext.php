@@ -160,6 +160,7 @@ class TransformationContext extends PimContext
         return $this->getFixturesContext()->getUserGroup($label);
     }
 
+    #[\Override]
     protected function getFixturesContext(): FixturesContext
     {
         return $this->getMainContext()->getSubcontext('fixtures');

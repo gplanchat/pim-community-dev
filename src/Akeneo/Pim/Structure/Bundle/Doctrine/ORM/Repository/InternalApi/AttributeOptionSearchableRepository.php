@@ -47,6 +47,7 @@ class AttributeOptionSearchableRepository implements SearchableRepositoryInterfa
      *
      * @return AttributeOptionInterface[]
      */
+    #[\Override]
     public function findBySearch($search = null, array $options = [])
     {
         $qb = $this->entityManager->createQueryBuilder();

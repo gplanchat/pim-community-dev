@@ -28,8 +28,8 @@ use PHPUnit\Framework\Assert;
  */
 final class ImportUserRoleIntegration extends TestCase
 {
-    private const CSV_IMPORT_JOB_CODE = 'csv_user_role_import';
-    private const XLSX_IMPORT_JOB_CODE = 'xlsx_user_role_import';
+    private const string CSV_IMPORT_JOB_CODE = 'csv_user_role_import';
+    private const string XLSX_IMPORT_JOB_CODE = 'xlsx_user_role_import';
 
     private JobLauncher $jobLauncher;
     private RoleRepositoryInterface $roleRepository;
@@ -44,6 +44,7 @@ final class ImportUserRoleIntegration extends TestCase
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -356,6 +357,7 @@ SQL,
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useMinimalCatalog();

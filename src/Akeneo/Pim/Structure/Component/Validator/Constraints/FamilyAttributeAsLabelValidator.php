@@ -24,6 +24,7 @@ class FamilyAttributeAsLabelValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($family, Constraint $constraint)
     {
         if (!$constraint instanceof FamilyAttributeAsLabel) {

@@ -16,6 +16,7 @@ final class ValidateAlwaysGrantedAttributes implements ValidateGrantedAttributes
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate(?array $attributeCodes): void
     {
     }

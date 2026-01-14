@@ -18,11 +18,13 @@ class GetCategoryTreesSql implements GetCategoryTreesInterface
     {
     }
 
+    #[\Override]
     public function getAll(): ?array
     {
         return $this->execute();
     }
 
+    #[\Override]
     public function byIds(array $categryTreeIds): ?array
     {
         $condition['sqlAnd'] = 'AND category.id IN (:ids)';

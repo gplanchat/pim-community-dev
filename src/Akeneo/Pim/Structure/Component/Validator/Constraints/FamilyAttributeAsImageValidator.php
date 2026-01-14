@@ -34,6 +34,7 @@ class FamilyAttributeAsImageValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
+    #[\Override]
     public function validate($family, Constraint $constraint): void
     {
         if (!$constraint instanceof FamilyAttributeAsImage) {

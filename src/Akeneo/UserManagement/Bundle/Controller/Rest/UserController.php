@@ -42,24 +42,24 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  * @copyright 2015 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class UserController
+final readonly class UserController
 {
     public function __construct(
-        private readonly TokenStorageInterface $tokenStorage,
-        private readonly NormalizerInterface $normalizer,
-        private readonly ObjectRepository $repository,
-        private readonly ObjectUpdaterInterface $updater,
-        private readonly ValidatorInterface $validator,
-        private readonly SaverInterface $saver,
-        private readonly NormalizerInterface $constraintViolationNormalizer,
-        private readonly SimpleFactoryInterface $factory,
-        private readonly RemoverInterface $remover,
-        private readonly NumberFactory $numberFactory,
-        private readonly TranslatorInterface $translator,
-        private readonly SecurityFacade $securityFacade,
-        private readonly PasswordCheckerInterface $passwordChecker,
-        private readonly UpdateUserCommandHandler $updateUserCommandHandler,
-        private readonly EditRolePermissionsUserQuery $editRolePermissionsUserQuery,
+        private TokenStorageInterface $tokenStorage,
+        private NormalizerInterface $normalizer,
+        private ObjectRepository $repository,
+        private ObjectUpdaterInterface $updater,
+        private ValidatorInterface $validator,
+        private SaverInterface $saver,
+        private NormalizerInterface $constraintViolationNormalizer,
+        private SimpleFactoryInterface $factory,
+        private RemoverInterface $remover,
+        private NumberFactory $numberFactory,
+        private TranslatorInterface $translator,
+        private SecurityFacade $securityFacade,
+        private PasswordCheckerInterface $passwordChecker,
+        private UpdateUserCommandHandler $updateUserCommandHandler,
+        private EditRolePermissionsUserQuery $editRolePermissionsUserQuery,
     ) {
     }
 

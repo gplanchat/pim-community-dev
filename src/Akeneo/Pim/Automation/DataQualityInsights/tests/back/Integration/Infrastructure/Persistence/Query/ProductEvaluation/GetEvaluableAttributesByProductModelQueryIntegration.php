@@ -24,11 +24,13 @@ use Webmozart\Assert\Assert;
  */
 class GetEvaluableAttributesByProductModelQueryIntegration extends TestCase
 {
+    #[\Override]
     protected function getConfiguration()
     {
         return $this->catalog->useTechnicalCatalog();
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();

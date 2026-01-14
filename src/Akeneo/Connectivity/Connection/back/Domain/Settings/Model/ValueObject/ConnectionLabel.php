@@ -30,6 +30,7 @@ class ConnectionLabel implements \Stringable
         $this->label = $label;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->label;

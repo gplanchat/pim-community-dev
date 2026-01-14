@@ -33,6 +33,7 @@ class CurrencyValidator extends ConstraintValidator
      * @param mixed      $object
      * @param Constraint $constraint
      */
+    #[\Override]
     public function validate($object, Constraint $constraint): void
     {
         if (!$constraint instanceof Currency) {

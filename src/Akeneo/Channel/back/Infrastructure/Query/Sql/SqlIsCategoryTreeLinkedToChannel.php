@@ -20,6 +20,7 @@ final class SqlIsCategoryTreeLinkedToChannel implements IsCategoryTreeLinkedToCh
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function byCategoryTreeId(int $categoryTreeId): bool
     {
         $sql = <<<SQL

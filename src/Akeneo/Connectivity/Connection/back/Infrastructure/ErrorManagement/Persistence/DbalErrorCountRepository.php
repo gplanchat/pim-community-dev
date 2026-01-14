@@ -19,6 +19,7 @@ class DbalErrorCountRepository implements ErrorCountRepositoryInterface
     {
     }
 
+    #[\Override]
     public function upsert(HourlyErrorCount $hourlyErrorCount): void
     {
         $upsertQuery = <<<SQL

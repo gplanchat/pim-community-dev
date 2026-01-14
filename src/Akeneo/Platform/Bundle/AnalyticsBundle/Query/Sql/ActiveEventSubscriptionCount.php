@@ -21,6 +21,7 @@ class ActiveEventSubscriptionCount implements ActiveEventSubscriptionCountQuery
         $this->connection = $connection;
     }
 
+    #[\Override]
     public function fetch(): int
     {
         $query = <<<SQL

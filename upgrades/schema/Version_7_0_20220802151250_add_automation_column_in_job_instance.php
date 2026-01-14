@@ -22,11 +22,13 @@ final class Version_7_0_20220802151250_add_automation_column_in_job_instance ext
 {
     private ?ContainerInterface $container;
 
-    public function setContainer(ContainerInterface $container = null): void
+    #[\Override]
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }
 
+    #[\Override]
     public function up(Schema $schema): void
     {
         if (!$this->isColumnAlreadyCreated('automation')) {
@@ -69,6 +71,7 @@ final class Version_7_0_20220802151250_add_automation_column_in_job_instance ext
         return !empty($result);
     }
 
+    #[\Override]
     public function down(Schema $schema): void
     {
         $this->throwIrreversibleMigrationException();

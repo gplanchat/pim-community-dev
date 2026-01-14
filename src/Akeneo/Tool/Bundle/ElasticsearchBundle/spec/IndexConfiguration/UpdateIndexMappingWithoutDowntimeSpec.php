@@ -16,10 +16,10 @@ use PhpSpec\ObjectBehavior;
 
 class UpdateIndexMappingWithoutDowntimeSpec extends ObjectBehavior
 {
-    private const INDEX_ALIAS_TO_MIGRATE = 'index_alias_to_migrate';
-    private const INDEX_NAME_TO_MIGRATE = 'index_name_to_migrate';
-    private const MIGRATED_INDEX_NAME = 'migrated_index_name';
-    private const TEMPORARY_INDEX_ALIAS = 'temporary_index_alias';
+    private const string INDEX_ALIAS_TO_MIGRATE = 'index_alias_to_migrate';
+    private const string INDEX_NAME_TO_MIGRATE = 'index_name_to_migrate';
+    private const string MIGRATED_INDEX_NAME = 'migrated_index_name';
+    private const string TEMPORARY_INDEX_ALIAS = 'temporary_index_alias';
 
     public function let(
         ClockInterface $clock,

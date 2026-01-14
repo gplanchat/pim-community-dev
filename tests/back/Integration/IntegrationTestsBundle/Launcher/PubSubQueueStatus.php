@@ -15,13 +15,13 @@ use Google\Cloud\PubSub\Subscription;
  * @copyright 2021 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-final class PubSubQueueStatus
+final readonly class PubSubQueueStatus
 {
     public function __construct(
-        private readonly PubSubClientFactory $pubSubClientFactory,
-        private readonly string $projectId,
-        private readonly string $topicName,
-        private readonly string $subscriptionName
+        private PubSubClientFactory $pubSubClientFactory,
+        private string $projectId,
+        private string $topicName,
+        private string $subscriptionName
     ) {
     }
 

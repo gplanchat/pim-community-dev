@@ -59,6 +59,7 @@ class AddProductScorePropertySpec extends ObjectBehavior
         );
     }
 
+    #[\Override]
     public function getMatchers(): array
     {
         return [

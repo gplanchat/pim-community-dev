@@ -14,45 +14,45 @@ final class AccessLevel
      */
     public static $allAccessLevelNames = ['BASIC', 'LOCAL', 'DEEP', 'GLOBAL', 'SYSTEM'];
 
-    const NONE_LEVEL_NAME = 'NONE';
+    const string NONE_LEVEL_NAME = 'NONE';
 
     /**
      * Unknown access level.
      */
-    const UNKNOWN = -1;
+    const int UNKNOWN = -1;
 
     /**
      * Deny access.
      */
-    const NONE_LEVEL = 0;
+    const int NONE_LEVEL = 0;
 
     /**
      * This access level gives a user access to own records and objects that are shared with the user.
      */
-    const BASIC_LEVEL = 1;
+    const int BASIC_LEVEL = 1;
 
     /**
      * This access level gives a user access to records in all business units are assigned to the user.
      */
-    const LOCAL_LEVEL = 2;
+    const int LOCAL_LEVEL = 2;
 
     /**
      * This access level gives a user access to records in all business units are assigned to the user
      * and all business units subordinate to business units are assigned to the user.
      */
-    const DEEP_LEVEL = 3;
+    const int DEEP_LEVEL = 3;
 
     /**
      * This access level gives a user access to all records within the organization,
      * regardless of the business unit hierarchical level to which the domain object belongs
      * or the user is assigned to.
      */
-    const GLOBAL_LEVEL = 4;
+    const int GLOBAL_LEVEL = 4;
 
     /**
      * This access level gives a user access to all records within the system.
      */
-    const SYSTEM_LEVEL = 5;
+    const int SYSTEM_LEVEL = 5;
 
     /**
      * Gets constant value by its name
