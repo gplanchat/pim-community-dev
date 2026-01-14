@@ -1,0 +1,235 @@
+time="2026-01-14T18:25:32+01:00" level=warning msg="/home/gplanchat/PhpstormProjects/kiboko/akeneo/pim-community-dev/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+time="2026-01-14T18:25:32+01:00" level=warning msg="Found orphan containers ([pim-community-dev-rabbitmq-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+PHPUnit 9.5.27 by Sebastian Bergmann and contributors.
+
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\DependencyInjection\Container::__construct(): Implicitly marking parameter $parameterBag as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/dependency-injection/Container.php on line 65
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\DependencyInjection\Argument\ServiceLocator::__construct(): Implicitly marking parameter $serviceTypes as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/dependency-injection/Argument/ServiceLocator.php on line 27
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\DependencyInjection\ServiceLocator::formatAlternatives(): Implicitly marking parameter $alternatives as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/dependency-injection/ServiceLocator.php on line 137
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bridge\Doctrine\ContainerAwareEventManager::dispatchEvent(): Implicitly marking parameter $eventArgs as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/doctrine-bridge/ContainerAwareEventManager.php on line 52
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\Controller\ControllerResolver::__construct(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 28
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\Controller\ContainerControllerResolver::__construct(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 28
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\Controller\ArgumentResolver::__construct(): Implicitly marking parameter $argumentMetadataFactory as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 36
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\LocaleListener::__construct(): Implicitly marking parameter $router as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/LocaleListener.php on line 38
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\ErrorListener::__construct(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/ErrorListener.php on line 44
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\ErrorListener::logException(): Implicitly marking parameter $logLevel as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/ErrorListener.php on line 158
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch(): Implicitly marking parameter $eventName as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/event-dispatcher-contracts/EventDispatcherInterface.php on line 32
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\EventDispatcher\EventDispatcherInterface::getListeners(): Implicitly marking parameter $eventName as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/event-dispatcher/EventDispatcherInterface.php on line 53
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\EventDispatcher\EventDispatcherInterface::hasListeners(): Implicitly marking parameter $eventName as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/event-dispatcher/EventDispatcherInterface.php on line 69
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\EventDispatcher\EventDispatcher::dispatch(): Implicitly marking parameter $eventName as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/event-dispatcher/EventDispatcher.php on line 48
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\EventDispatcher\EventDispatcher::getListeners(): Implicitly marking parameter $eventName as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/event-dispatcher/EventDispatcher.php on line 68
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\EventDispatcher\EventDispatcher::hasListeners(): Implicitly marking parameter $eventName as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/event-dispatcher/EventDispatcher.php on line 123
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\HttpKernel::__construct(): Implicitly marking parameter $requestStack as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/HttpKernel.php on line 58
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\HttpKernel::__construct(): Implicitly marking parameter $argumentResolver as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/HttpKernel.php on line 58
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\HttpKernel::terminateWithException(): Implicitly marking parameter $request as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/HttpKernel.php on line 103
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Contracts\Translation\TranslatorInterface::trans(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation-contracts/TranslatorInterface.php on line 66
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Contracts\Translation\TranslatorInterface::trans(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation-contracts/TranslatorInterface.php on line 66
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Contracts\Translation\TranslatorTrait::trans(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation-contracts/TranslatorTrait.php on line 46
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Contracts\Translation\TranslatorTrait::trans(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation-contracts/TranslatorTrait.php on line 46
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\AbstractSessionListener::__construct(): Implicitly marking parameter $container as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/AbstractSessionListener.php on line 55
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\TranslatorBagInterface::getCatalogue(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/TranslatorBagInterface.php on line 34
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\Translator::__construct(): Implicitly marking parameter $formatter as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/Translator.php on line 92
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\Translator::__construct(): Implicitly marking parameter $cacheDir as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/Translator.php on line 92
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\Translator::addResource(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/Translator.php on line 130
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\Translator::trans(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/Translator.php on line 197
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\Translator::trans(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/Translator.php on line 197
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\Translator::getCatalogue(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/Translator.php on line 232
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\MessageCatalogue::all(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/MessageCatalogue.php on line 66
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\MessageCatalogueInterface::all(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/MessageCatalogueInterface.php on line 48
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bundle\FrameworkBundle\Translation\Translator::addResource(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/framework-bundle/Translation/Translator.php on line 123
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\Formatter\MessageFormatter::__construct(): Implicitly marking parameter $translator as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/Formatter/MessageFormatter.php on line 31
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Translation\Formatter\MessageFormatter::__construct(): Implicitly marking parameter $intlFormatter as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/translation/Formatter/MessageFormatter.php on line 31
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::__construct(): Implicitly marking parameter $exceptionHandler as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/DebugHandlersListener.php on line 52
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::__construct(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/DebugHandlersListener.php on line 52
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure(): Implicitly marking parameter $event as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/DebugHandlersListener.php on line 76
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\RouterListener::__construct(): Implicitly marking parameter $context as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/RouterListener.php on line 58
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\RouterListener::__construct(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/RouterListener.php on line 58
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\RouterListener::__construct(): Implicitly marking parameter $projectDir as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/RouterListener.php on line 58
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\EventListener\RouterListener::setCurrentRequest(): Implicitly marking parameter $request as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/EventListener/RouterListener.php on line 76
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bridge\Monolog\Handler\ConsoleHandler::__construct(): Implicitly marking parameter $output as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/monolog-bridge/Handler/ConsoleHandler.php on line 63
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface::setToken(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/Token/Storage/TokenStorageInterface.php on line 35
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage::setToken(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/Token/Storage/TokenStorage.php on line 46
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolverInterface::isAnonymous(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/AuthenticationTrustResolverInterface.php on line 35
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolverInterface::isRememberMe(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/AuthenticationTrustResolverInterface.php on line 43
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolverInterface::isFullFledged(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/AuthenticationTrustResolverInterface.php on line 50
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver::isAuthenticated(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/AuthenticationTrustResolver.php on line 25
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver::isAnonymous(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/AuthenticationTrustResolver.php on line 35
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver::isRememberMe(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/AuthenticationTrustResolver.php on line 47
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver::isFullFledged(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/AuthenticationTrustResolver.php on line 55
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Logout\LogoutUrlGenerator::__construct(): Implicitly marking parameter $requestStack as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Logout/LogoutUrlGenerator.php on line 37
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Logout\LogoutUrlGenerator::__construct(): Implicitly marking parameter $router as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Logout/LogoutUrlGenerator.php on line 37
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Logout\LogoutUrlGenerator::__construct(): Implicitly marking parameter $tokenStorage as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Logout/LogoutUrlGenerator.php on line 37
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Logout\LogoutUrlGenerator::registerListener(): Implicitly marking parameter $csrfTokenManager as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Logout/LogoutUrlGenerator.php on line 53
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Logout\LogoutUrlGenerator::registerListener(): Implicitly marking parameter $context as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Logout/LogoutUrlGenerator.php on line 53
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Logout\LogoutUrlGenerator::getLogoutPath(): Implicitly marking parameter $key as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Logout/LogoutUrlGenerator.php on line 63
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Logout\LogoutUrlGenerator::getLogoutUrl(): Implicitly marking parameter $key as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Logout/LogoutUrlGenerator.php on line 73
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Logout\LogoutUrlGenerator::setCurrentFirewall(): Implicitly marking parameter $context as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Logout/LogoutUrlGenerator.php on line 78
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Firewall\ContextListener::__construct(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Firewall/ContextListener.php on line 63
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Firewall\ContextListener::__construct(): Implicitly marking parameter $dispatcher as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Firewall/ContextListener.php on line 63
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Firewall\ContextListener::__construct(): Implicitly marking parameter $trustResolver as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Firewall/ContextListener.php on line 63
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Http\Firewall\ContextListener::__construct(): Implicitly marking parameter $sessionTrackerEnabler as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-http/Firewall/ContextListener.php on line 63
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  FOS\RestBundle\EventListener\BodyListener::__construct(): Implicitly marking parameter $arrayNormalizer as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/friendsofsymfony/rest-bundle/EventListener/BodyListener.php on line 40
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpFoundation\RequestMatcher::__construct(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-foundation/RequestMatcher.php on line 61
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpFoundation\RequestMatcher::__construct(): Implicitly marking parameter $host as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-foundation/RequestMatcher.php on line 61
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpFoundation\RequestMatcher::__construct(): Implicitly marking parameter $port as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-foundation/RequestMatcher.php on line 61
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Monolog\Logger::addRecord(): Implicitly marking parameter $datetime as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/monolog/monolog/src/Monolog/Logger.php on line 328
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\Log\DebugLoggerInterface::getLogs(): Implicitly marking parameter $request as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/Log/DebugLoggerInterface.php on line 32
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\HttpKernel\Log\DebugLoggerInterface::countErrors(): Implicitly marking parameter $request as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/http-kernel/Log/DebugLoggerInterface.php on line 39
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bridge\Monolog\Logger::getLogs(): Implicitly marking parameter $request as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/monolog-bridge/Logger.php on line 28
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bridge\Monolog\Logger::countErrors(): Implicitly marking parameter $request as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/monolog-bridge/Logger.php on line 40
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Routing\Router::__construct(): Implicitly marking parameter $context as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/routing/Router.php on line 100
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Routing\Router::__construct(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/routing/Router.php on line 100
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Routing\Router::__construct(): Implicitly marking parameter $defaultLocale as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/routing/Router.php on line 100
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bundle\FrameworkBundle\Routing\Router::__construct(): Implicitly marking parameter $context as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/framework-bundle/Routing/Router.php on line 43
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bundle\FrameworkBundle\Routing\Router::__construct(): Implicitly marking parameter $parameters as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/framework-bundle/Routing/Router.php on line 43
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bundle\FrameworkBundle\Routing\Router::__construct(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/framework-bundle/Routing/Router.php on line 43
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Bundle\FrameworkBundle\Routing\Router::__construct(): Implicitly marking parameter $defaultLocale as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/framework-bundle/Routing/Router.php on line 43
+PHP Deprecated:  Constant E_STRICT is deprecated in /srv/pim/vendor/phpunit/phpunit/src/Util/ErrorHandler.php on line 99
+PHP Deprecated:  Symfony\Component\Security\Core\Authentication\Token\Storage\UsageTrackingTokenStorage::setToken(): Implicitly marking parameter $token as nullable is deprecated, the explicit nullable type must be used instead in /srv/pim/vendor/symfony/security-core/Authentication/Token/Storage/UsageTrackingTokenStorage.php on line 53
+Clean Category Enriched Values By Channel Or Locale Command Handler Integration (Akeneo\Category\back\tests\Integration\Application\Command\CleanCategoryEnrichedValuesByChannelOrLocale\CleanCategoryEnrichedValuesByChannelOrLocaleCommandHandlerIntegration)
+ ✘ It cleans value collection on channel deletion
+   │
+   │ RuntimeException: Catalog not installable! "18:25:35 CRITICAL  [console] Error thrown while running command "akeneo:batch:job fixtures_attribute_group_csv4 --no-log=1 -v 1". Message: "Trying to access array offset on false" ["exception" => PHPUnit\Framework\Error\Warning { …},"command" => "akeneo:batch:job fixtures_attribute_group_csv4 --no-log=1 -v 1","message" => "Trying to access array offset on false"]
+   │
+   │ In UTCDateTimeType.php line 62:
+   │                                           
+   │   [PHPUnit\Framework\Error\Warning (2)]   
+   │   Trying to access array offset on false  
+   │                                           
+   │
+   │ Exception trace:
+   │   at /srv/pim/src/Akeneo/Tool/Bundle/StorageUtilsBundle/Doctrine/DBAL/Types/UTCDateTimeType.php:62
+   │  PHPUnit\Util\ErrorHandler->__invoke() at /srv/pim/src/Akeneo/Tool/Bundle/StorageUtilsBundle/Doctrine/DBAL/Types/UTCDateTimeType.php:62
+   │  Akeneo\Tool\Bundle\StorageUtilsBundle\Doctrine\DBAL\Types\UTCDateTimeType->convertToPHPValue() at /srv/pim/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php:468
+   │  Doctrine\ORM\Internal\Hydration\AbstractHydrator->gatherRowData() at /srv/pim/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php:325
+   │  Doctrine\ORM\Internal\Hydration\ObjectHydrator->hydrateRowData() at /srv/pim/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php:148
+   │  Doctrine\ORM\Internal\Hydration\ObjectHydrator->hydrateAllData() at /srv/pim/vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php:270
+   │  Doctrine\ORM\Internal\Hydration\AbstractHydrator->hydrateAll() at /srv/pim/vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php:1224
+   │  Doctrine\ORM\AbstractQuery->executeIgnoreQueryCache() at /srv/pim/vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php:1165
+   │  Doctrine\ORM\AbstractQuery->execute() at /srv/pim/vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php:901
+   │  Doctrine\ORM\AbstractQuery->getResult() at /srv/pim/vendor/gedmo/doctrine-extensions/src/Tree/Entity/Repository/NestedTreeRepository.php:296
+   │  Gedmo\Tree\Entity\Repository\NestedTreeRepository->children() at /srv/pim/vendor/gedmo/doctrine-extensions/src/Tree/Entity/Repository/NestedTreeRepository.php:320
+   │  Gedmo\Tree\Entity\Repository\NestedTreeRepository->getChildren() at /srv/pim/src/Akeneo/Category/back/Infrastructure/Doctrine/ORM/Repository/CategoryRepository.php:359
+   │  Akeneo\Category\Infrastructure\Doctrine\ORM\Repository\CategoryRepository->getTrees() at /srv/pim/src/Akeneo/UserManagement/Component/Factory/UserFactory.php:139
+   │  Akeneo\UserManagement\Component\Factory\UserFactory->getDefaultCategoryTree() at /srv/pim/src/Akeneo/UserManagement/Component/Factory/UserFactory.php:90
+   │  Akeneo\UserManagement\Component\Factory\UserFactory->create() at /srv/pim/src/Akeneo/UserManagement/back/Infrastructure/Cli/AuthenticateAdminUser.php:35
+   │  Akeneo\UserManagement\Infrastructure\Cli\AuthenticateAdminUser->__invoke() at /srv/pim/var/cache/test/Container5FP3KSL/AuthenticateAdminUser_3b9da24.php:16
+   │  Container5FP3KSL\AuthenticateAdminUser_3b9da24->__invoke() at /srv/pim/src/Akeneo/UserManagement/back/Infrastructure/Cli/EventListener/AuthenticateCommandAsAdminUserListener.php:34
+   │  Akeneo\UserManagement\Infrastructure\Cli\EventListener\AuthenticateCommandAsAdminUserListener->createUserSystem() at /srv/pim/vendor/symfony/event-dispatcher/EventDispatcher.php:230
+   │  Symfony\Component\EventDispatcher\EventDispatcher->callListeners() at /srv/pim/vendor/symfony/event-dispatcher/EventDispatcher.php:59
+   │  Symfony\Component\EventDispatcher\EventDispatcher->dispatch() at /srv/pim/vendor/symfony/console/Application.php:1055
+   │  Symfony\Component\Console\Application->doRunCommand() at /srv/pim/vendor/symfony/framework-bundle/Console/Application.php:96
+   │  Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand() at /srv/pim/vendor/symfony/console/Application.php:301
+   │  Symfony\Component\Console\Application->doRun() at /srv/pim/vendor/symfony/framework-bundle/Console/Application.php:82
+   │  Symfony\Bundle\FrameworkBundle\Console\Application->doRun() at /srv/pim/vendor/symfony/console/Application.php:171
+   │  Symfony\Component\Console\Application->run() at /srv/pim/tests/back/Integration/IntegrationTestsBundle/Loader/FixturesLoader.php:266
+   │  Akeneo\Test\IntegrationTestsBundle\Loader\FixturesLoader->loadImportFiles() at /srv/pim/tests/back/Integration/IntegrationTestsBundle/Loader/FixturesLoader.php:196
+   │  Akeneo\Test\IntegrationTestsBundle\Loader\FixturesLoader->loadData() at /srv/pim/tests/back/Integration/IntegrationTestsBundle/Loader/FixturesLoader.php:155
+   │  Akeneo\Test\IntegrationTestsBundle\Loader\FixturesLoader->load() at /srv/pim/tests/back/Integration/TestCase.php:65
+   │  Akeneo\Test\Integration\TestCase->setUp() at /srv/pim/vendor/phpunit/phpunit/src/Framework/TestCase.php:1147
+   │  PHPUnit\Framework\TestCase->runBare() at /srv/pim/vendor/phpunit/phpunit/src/Framework/TestResult.php:728
+   │  PHPUnit\Framework\TestResult->run() at /srv/pim/vendor/phpunit/phpunit/src/Framework/TestCase.php:904
+   │  PHPUnit\Framework\TestCase->run() at /srv/pim/vendor/phpunit/phpunit/src/Framework/TestSuite.php:675
+   │  PHPUnit\Framework\TestSuite->run() at /srv/pim/vendor/phpunit/phpunit/src/Framework/TestSuite.php:675
+   │  PHPUnit\Framework\TestSuite->run() at /srv/pim/vendor/phpunit/phpunit/src/Framework/TestSuite.php:675
+   │  PHPUnit\Framework\TestSuite->run() at /srv/pim/vendor/phpunit/phpunit/src/TextUI/TestRunner.php:661
+   │  PHPUnit\TextUI\TestRunner->run() at /srv/pim/vendor/phpunit/phpunit/src/TextUI/Command.php:144
+   │  PHPUnit\TextUI\Command->run() at /srv/pim/vendor/phpunit/phpunit/src/TextUI/Command.php:97
+   │  PHPUnit\TextUI\Command::main() at /srv/pim/vendor/phpunit/phpunit/phpunit:98
+   │  include() at /srv/pim/vendor/bin/phpunit:122
+   │
+   │ akeneo:batch:job [-c|--config CONFIG] [--username USERNAME] [--email EMAIL] [--no-log] [--] <code> [<execution>]
+   │
+   │ "
+   │
+   │ /srv/pim/tests/back/Integration/IntegrationTestsBundle/Loader/FixturesLoader.php:269
+   │ /srv/pim/tests/back/Integration/IntegrationTestsBundle/Loader/FixturesLoader.php:196
+   │ /srv/pim/tests/back/Integration/IntegrationTestsBundle/Loader/FixturesLoader.php:155
+   │ /srv/pim/tests/back/Integration/TestCase.php:65
+   │
+
+Time: 00:01.385, Memory: 184.00 MB
+
+
+ERRORS!
+Tests: 1, Assertions: 0, Errors: 1.

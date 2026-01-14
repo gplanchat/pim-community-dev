@@ -1,0 +1,14 @@
+time="2026-01-14T18:25:39+01:00" level=warning msg="/home/gplanchat/PhpstormProjects/kiboko/akeneo/pim-community-dev/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+time="2026-01-14T18:25:39+01:00" level=warning msg="Found orphan containers ([pim-community-dev-rabbitmq-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+Note: Using configuration file /srv/pim/phpstan.neon.
+PHP Warning:  file_get_contents(/srv/pim/vendor/phpstan/phpstan/../../../var/cache/dev/KernelDevDebugContainer.xml): Failed to open stream: No such file or directory in /srv/pim/vendor/phpstan/phpstan-symfony/src/Symfony/XmlServiceMapFactory.php on line 29
+Warning: file_get_contents(/srv/pim/vendor/phpstan/phpstan/../../../var/cache/dev/KernelDevDebugContainer.xml): Failed to open stream: No such file or directory in /srv/pim/vendor/phpstan/phpstan-symfony/src/Symfony/XmlServiceMapFactory.php on line 29
+
+In XmlServiceMapFactory.php line 31:
+                                                                               
+  Container /srv/pim/vendor/phpstan/phpstan/../../../var/cache/dev/KernelDevD  
+  ebugContainer.xml does not exist                                             
+                                                                               
+
+analyse [-c|--configuration CONFIGURATION] [-l|--level LEVEL] [--no-progress] [--debug] [-a|--autoload-file AUTOLOAD-FILE] [--error-format ERROR-FORMAT] [-b|--generate-baseline [GENERATE-BASELINE]] [--allow-empty-baseline] [--memory-limit MEMORY-LIMIT] [--xdebug] [--tmp-file TMP-FILE] [--instead-of INSTEAD-OF] [--fix] [--watch] [--pro] [--fail-without-result-cache] [--] [<paths>...]
+
