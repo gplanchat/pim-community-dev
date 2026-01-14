@@ -10,18 +10,8 @@ Before starting Phase 2.1, ensure:
 
 1. ✅ Branch is up to date with master (completed)
 2. ⚠️ Docker environment is running and ready
-3. ⚠️ **Build PHP 8.1 image** (if not already built):
-   ```bash
-   docker build --target php81-dev -t akeneo/pim-php-dev:8.1 -f Dockerfile.php .
-   ```
-4. ⚠️ **Start Docker stack**:
-   ```bash
-   docker compose -f docker-compose.yml -f docker-compose.migration.yml up -d
-   ```
-5. ⚠️ Composer dependencies are installed: `docker compose run --rm php composer install`
-6. ⚠️ Rector is available: `docker compose run --rm php vendor/bin/rector --version`
-
-**Note**: See `.llm/upgrade-2026-01/DOCKER-SETUP.md` for detailed Docker setup instructions.
+3. ⚠️ Composer dependencies are installed: `docker compose run --rm php composer install`
+4. ⚠️ Rector is available: `docker compose run --rm php vendor/bin/rector --version`
 
 ## Phase 2.1: PHP_82 Rule Application
 

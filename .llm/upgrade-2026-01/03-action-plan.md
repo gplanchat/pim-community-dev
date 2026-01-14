@@ -34,33 +34,45 @@ Project: Akeneo PIM Community Dev
 - [ ] **DO NOT** set PHP to 8.5 yet (wait until after Symfony 8.0)
 
 ### 2.2 Apply Rector PHP Rules (in order)
-**Rule 1: PHP_82 - PHP 8.2**
-- [ ] Apply: `vendor/bin/rector process --set=PHP_82 --dry-run`
+**Rule 1: PHP_82 - PHP 8.1 → 8.2**
+- [ ] **Update Dockerfile.unified**: Change PHP 8.1 to PHP 8.2 (see `DOCKERFILE-MIGRATION.md`)
+- [ ] **Commit Dockerfile changes**: `git commit -m "chore(docker): update Dockerfile for PHP 8.2"`
+- [ ] **Rebuild Docker images**: `docker compose build php httpd`
+- [ ] **Verify PHP version**: `docker compose run --rm php php -v` (should show 8.2)
+- [ ] Apply: `docker compose run --rm php vendor/bin/rector process --set=PHP_82 --dry-run`
 - [ ] Review proposed changes
-- [ ] Apply: `vendor/bin/rector process --set=PHP_82`
-- [ ] Run tests: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
+- [ ] Apply: `docker compose run --rm php vendor/bin/rector process --set=PHP_82`
+- [ ] Run tests: `docker compose run --rm php vendor/bin/phpstan analyse && docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
 - [ ] Document in `04-php-tracking.md`
 
-**Rule 2: PHP_83 - Typed class constants**
-- [ ] Apply: `vendor/bin/rector process --set=PHP_83 --dry-run`
+**Rule 2: PHP_83 - PHP 8.2 → 8.3**
+- [ ] **Update Dockerfile.unified**: Change PHP 8.2 to PHP 8.3 (see `DOCKERFILE-MIGRATION.md`)
+- [ ] **Commit Dockerfile changes**: `git commit -m "chore(docker): update Dockerfile for PHP 8.3"`
+- [ ] **Rebuild Docker images**: `docker compose build php httpd`
+- [ ] **Verify PHP version**: `docker compose run --rm php php -v` (should show 8.3)
+- [ ] Apply: `docker compose run --rm php vendor/bin/rector process --set=PHP_83 --dry-run`
 - [ ] Review proposed changes
-- [ ] Apply: `vendor/bin/rector process --set=PHP_83`
-- [ ] Run validations: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
+- [ ] Apply: `docker compose run --rm php vendor/bin/rector process --set=PHP_83`
+- [ ] Run validations: `docker compose run --rm php vendor/bin/phpstan analyse && docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
 - [ ] **If PHPStan fails**: Fix errors one by one, commit each fix separately
 - [ ] **If tests fail**: Fix tests one by one, commit each fix separately
 - [ ] **When all pass**: Commit Rector changes atomically
 - [ ] Document in `04-php-tracking.md`
 
-**Rule 3: PHP_84 - PHP 8.4 (REQUIRED before Symfony 8.0)**
-- [ ] Apply: `vendor/bin/rector process --set=PHP_84 --dry-run`
+**Rule 3: PHP_84 - PHP 8.3 → 8.4 (REQUIRED before Symfony 8.0)**
+- [ ] **Update Dockerfile.unified**: Change PHP 8.3 to PHP 8.4 (see `DOCKERFILE-MIGRATION.md`)
+- [ ] **Commit Dockerfile changes**: `git commit -m "chore(docker): update Dockerfile for PHP 8.4"`
+- [ ] **Rebuild Docker images**: `docker compose build php httpd`
+- [ ] **Verify PHP version**: `docker compose run --rm php php -v` (should show 8.4)
+- [ ] Apply: `docker compose run --rm php vendor/bin/rector process --set=PHP_84 --dry-run`
 - [ ] Review proposed changes
-- [ ] Apply: `vendor/bin/rector process --set=PHP_84`
-- [ ] Run validations: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
+- [ ] Apply: `docker compose run --rm php vendor/bin/rector process --set=PHP_84`
+- [ ] Run validations: `docker compose run --rm php vendor/bin/phpstan analyse && docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
 - [ ] **If PHPStan fails**: Fix errors one by one, commit each fix separately
 - [ ] **If tests fail**: Fix tests one by one, commit each fix separately
 - [ ] **When all pass**: Commit Rector changes atomically
 - [ ] Document in `04-php-tracking.md`
-- [ ] **Verify PHP 8.4.0+ is working**: Check `composer.json` and Docker configuration
+- [ ] **Verify PHP 8.4.0+ is working**: Check `composer.json` and Docker container (`docker compose run --rm php php -v`)
 
 ### 2.3 Update PHP Dependencies (PHP 8.4 compatible)
 - [ ] Run: `composer update`

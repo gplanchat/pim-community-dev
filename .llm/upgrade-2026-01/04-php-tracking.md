@@ -29,6 +29,8 @@ End date: [To be completed]
 - Target PHP version Phase 6: 8.5.* (latest stable version, after Symfony 8.0)
 - **Note**: Docker stack is used - system PHP version is irrelevant
 - Rector configuration: ✅ Created and validated (2026-01-14)
+- Dockerfile strategy: ✅ Unified Dockerfile created (`Dockerfile.unified`) - contains ONLY current versions (PHP 8.1, Node 18)
+- Docker Compose: ✅ Updated to use `Dockerfile.unified` with build targets (php-dev, node)
 
 ## Phase 1: Preparation Status
 
@@ -53,7 +55,10 @@ End date: [To be completed]
 
 ## Applied Rector Rules
 
-### Rule 1: PHP_82 - PHP 8.2
+### Rule 1: PHP_82 - PHP 8.1 → 8.2
+- [ ] Dockerfile updated for PHP 8.2: [To be completed]
+- [ ] Docker images rebuilt: [To be completed]
+- [ ] PHP version verified in container: [To be completed]
 - [ ] Application date: [To be completed]
 - [ ] Dry-run executed: [To be completed]
 - [ ] Dry-run review: [To be completed]
@@ -62,24 +67,38 @@ End date: [To be completed]
 - [ ] Test results: [To be completed]
 - [ ] Issues encountered: [To be completed]
 - [ ] Solutions applied: [To be completed]
-- **Status**: ⏳ Waiting for Docker environment to be ready
-- **Next step**: Execute `docker compose run --rm php vendor/bin/rector process --set=PHP_82 --dry-run`
+- **Status**: ⏳ Ready to start - Docker environment available
+- **Next step**: 
+  1. Update `Dockerfile.unified` for PHP 8.2 (see `DOCKERFILE-MIGRATION.md`)
+  2. Rebuild images: `docker compose build php httpd`
+  3. Execute dry-run: `docker compose run --rm php vendor/bin/rector process --set=PHP_82 --dry-run`
 
-### Rule 2: PHP_83 - Typed class constants
+### Rule 2: PHP_83 - PHP 8.2 → 8.3
+- [ ] Dockerfile updated for PHP 8.3: [To be completed]
+- [ ] Docker images rebuilt: [To be completed]
+- [ ] PHP version verified in container: [To be completed]
 - [ ] Application date: [To be completed]
+- [ ] Dry-run executed: [To be completed]
+- [ ] Dry-run review: [To be completed]
 - [ ] Modified files: [To be completed]
 - [ ] Tests executed: [To be completed]
 - [ ] Test results: [To be completed]
 - [ ] Issues encountered: [To be completed]
 - [ ] Solutions applied: [To be completed]
 
-### Rule 3: PHP_84 - PHP 8.4 (if available)
+### Rule 3: PHP_84 - PHP 8.3 → 8.4 (REQUIRED before Symfony 8.0)
+- [ ] Dockerfile updated for PHP 8.4: [To be completed]
+- [ ] Docker images rebuilt: [To be completed]
+- [ ] PHP version verified in container: [To be completed]
 - [ ] Application date: [To be completed]
+- [ ] Dry-run executed: [To be completed]
+- [ ] Dry-run review: [To be completed]
 - [ ] Modified files: [To be completed]
 - [ ] Tests executed: [To be completed]
 - [ ] Test results: [To be completed]
 - [ ] Issues encountered: [To be completed]
 - [ ] Solutions applied: [To be completed]
+- [ ] **PHP 8.4.0+ verified**: Check `composer.json` and Docker container
 
 ## Phase 2: PHP 8.4 → 8.5 Migration (AFTER Symfony 8.0)
 

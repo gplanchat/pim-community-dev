@@ -6,6 +6,8 @@ I am working on migrating the Akeneo PIM Community Dev project to the latest ver
 
 **⚠️ IMPORTANT**: This project uses a Docker stack. System PHP and Node.js versions are irrelevant and should not be checked. All commands should be executed via Docker containers. Only check versions defined in `composer.json` and `package.json` configuration files.
 
+**⚠️ DOCKERFILE STRATEGY**: The project uses a **single unified Dockerfile** (`Dockerfile.unified`) that contains **only the current migration step versions** of PHP and Node.js. This Dockerfile must be updated sequentially at each migration step. See `DOCKERFILE-MIGRATION.md` for detailed instructions.
+
 ## Project Overview
 
 - **Project**: Akeneo PIM Community Dev
@@ -43,6 +45,8 @@ All migration documentation is located in `./.llm/upgrade-2026-01/`:
 16. **README.md** - General guide
 17. **prompt.md** - Session resume prompt (this file)
 18. **rector-example.php** - Rector configuration example
+19. **DOCKERFILE-MIGRATION.md** - Dockerfile migration strategy (CRITICAL - read before updating Dockerfile)
+20. **PHASE2-NEXT-STEPS.md** - Phase 2 migration steps guide
 
 ## Critical Prerequisites and Version Dependencies
 
@@ -210,11 +214,13 @@ After completing each step:
    - Each commit should be deployable to production
    - Use Conventional Commits format (see `00-git-flow-strategy.md`)
 8. **Use Docker for execution** - system PHP/Node.js versions are irrelevant, all commands should run via Docker stack
-9. **Verify version dependencies** before each phase:
+9. **Update Dockerfile sequentially** - `Dockerfile.unified` contains ONLY current migration step versions. Update PHP/Node versions one step at a time, commit each update separately, rebuild images before proceeding
+10. **Verify version dependencies** before each phase:
    - Check `composer.json` for PHP version requirements
    - Verify Symfony version requirements match PHP version
    - Do not proceed if prerequisites are not met
-10. **Merge phase branch** to develop before starting next phase
+11. **Merge phase branch** to master before starting next phase
+12. **Dockerfile updates**: Before applying each Rector rule that changes PHP version, update `Dockerfile.unified` with new PHP version, commit, rebuild images, then proceed with Rector
 
 ## Quick Commands Reference
 
