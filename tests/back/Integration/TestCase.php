@@ -41,7 +41,13 @@ abstract class TestCase extends KernelTestCase
     #[\Override]
     protected function setUp(): void
     {
-        $this->testKernel = static::bootKernel(['debug' => (bool)($_SERVER['APP_DEBUG'] ?? false)]);
+        // S'assurer que APP_ENV est défini à 'test' pour PHPUnit
+        $_SERVER['APP_ENV'] = $_SERVER['APP_ENV'] ?? 'test';
+        
+        $this->testKernel = static::bootKernel([
+            'environment' => 'test',
+            'debug' => (bool)($_SERVER['APP_DEBUG'] ?? false)
+        ]);
 
         /** @var FilePersistedFeatureFlags $featureFlags*/
         $featureFlags = $this->get('feature_flags');
