@@ -28,6 +28,7 @@ End date: [To be completed]
 - Target PHP version Phase 2: 8.4.* (required for Symfony 8.0)
 - Target PHP version Phase 6: 8.5.* (latest stable version, after Symfony 8.0)
 - **Note**: Docker stack is used - system PHP version is irrelevant
+- Rector configuration: ✅ Created and validated (2026-01-14)
 
 ## Applied Rector Rules
 
