@@ -2,10 +2,14 @@
 
 Date: 2026-01-XX
 Project: Akeneo PIM Community Dev
+**GitHub Repository**: https://github.com/gplanchat/pim-community-dev/ (fork repository)
+**Base Repository**: https://github.com/akeneo/pim-community-dev (original - do NOT create PRs here)
 
 ## Overview
 
-This migration uses **Git Flow** with **one branch per phase**. Each phase is developed in its own feature branch, merged to `develop` when complete, before starting the next phase.
+This migration uses **Git Flow** with **one branch per phase**. Each phase is developed in its own feature branch, merged to `master` when complete, before starting the next phase.
+
+**⚠️ IMPORTANT**: All Pull Requests and merges must be created and performed on the fork repository: **https://github.com/gplanchat/pim-community-dev/**. The AI assistant must create and update PRs on GitHub for each phase branch.
 
 ## Branch Naming Convention
 
@@ -23,9 +27,9 @@ Following Git Flow conventions, we use `feature/` prefix for all migration branc
 ### Phase 2: PHP 8.1 → 8.4
 
 ```bash
-# 1. Start from develop
-git checkout develop
-git pull origin develop
+# 1. Start from master
+git checkout master
+git pull origin master
 
 # 2. Create Phase 2 branch
 git checkout -b feature/upgrade-2026-01-php-8.4
@@ -36,19 +40,24 @@ git commit -m "feat(upgrade): apply PHP_82 rule"
 git commit -m "feat(upgrade): apply PHP_83 rule"
 # ... continue with migration steps
 
-# 4. When phase is complete, create pull request
-# (via GitHub/GitLab UI or CLI)
+# 4. Push branch to fork repository
+git push origin feature/upgrade-2026-01-php-8.4
 
-# 5. After code review and approval, merge to develop
-git checkout develop
-git pull origin develop
-git merge feature/upgrade-2026-01-php-8.4
-git push origin develop
+# 5. Create pull request on GitHub fork repository
+# Repository: https://github.com/gplanchat/pim-community-dev/
+# Base: master
+# Head: feature/upgrade-2026-01-php-8.4
+# The AI assistant must create and update this PR
 
-# 6. Delete local branch
+# 6. After code review and approval, merge PR to master on fork repository
+# (via GitHub UI or CLI: gh pr merge)
+git checkout master
+git pull origin master
+
+# 7. Delete local branch
 git branch -d feature/upgrade-2026-01-php-8.4
 
-# 7. Delete remote branch (if exists)
+# 8. Delete remote branch (if exists)
 git push origin --delete feature/upgrade-2026-01-php-8.4
 ```
 
@@ -56,11 +65,11 @@ git push origin --delete feature/upgrade-2026-01-php-8.4
 
 ```bash
 # 1. Verify Phase 2 is merged
-git checkout develop
+git checkout master
 git log --oneline | grep "feature/upgrade-2026-01-php-8.4"
 
-# 2. Pull latest develop
-git pull origin develop
+# 2. Pull latest master
+git pull origin master
 
 # 3. Create Phase 5 branch
 git checkout -b feature/upgrade-2026-01-symfony-8.0
@@ -70,13 +79,20 @@ git add .
 git commit -m "feat(upgrade): migrate Symfony 5.4 → 6.0"
 # ... continue with migration steps
 
-# 5. When phase is complete, create pull request
-# 6. After code review and approval, merge to develop
-git checkout develop
-git merge feature/upgrade-2026-01-symfony-8.0
-git push origin develop
+# 5. Push branch to fork repository
+git push origin feature/upgrade-2026-01-symfony-8.0
 
-# 7. Delete branches
+# 6. Create pull request on GitHub fork repository
+# Repository: https://github.com/gplanchat/pim-community-dev/
+# Base: master
+# Head: feature/upgrade-2026-01-symfony-8.0
+# The AI assistant must create and update this PR
+
+# 7. After code review and approval, merge PR to master on fork repository
+git checkout master
+git pull origin master
+
+# 8. Delete branches
 git branch -d feature/upgrade-2026-01-symfony-8.0
 git push origin --delete feature/upgrade-2026-01-symfony-8.0
 ```
@@ -85,11 +101,11 @@ git push origin --delete feature/upgrade-2026-01-symfony-8.0
 
 ```bash
 # 1. Verify Phase 5 is merged
-git checkout develop
+git checkout master
 git log --oneline | grep "feature/upgrade-2026-01-symfony-8.0"
 
-# 2. Pull latest develop
-git pull origin develop
+# 2. Pull latest master
+git pull origin master
 
 # 3. Create Phase 6 branch
 git checkout -b feature/upgrade-2026-01-php-8.5
@@ -98,13 +114,20 @@ git checkout -b feature/upgrade-2026-01-php-8.5
 git add .
 git commit -m "feat(upgrade): apply PHP_85 rule"
 
-# 5. When phase is complete, create pull request
-# 6. After code review and approval, merge to develop
-git checkout develop
-git merge feature/upgrade-2026-01-php-8.5
-git push origin develop
+# 5. Push branch to fork repository
+git push origin feature/upgrade-2026-01-php-8.5
 
-# 7. Delete branches
+# 6. Create pull request on GitHub fork repository
+# Repository: https://github.com/gplanchat/pim-community-dev/
+# Base: master
+# Head: feature/upgrade-2026-01-php-8.5
+# The AI assistant must create and update this PR
+
+# 7. After code review and approval, merge PR to master on fork repository
+git checkout master
+git pull origin master
+
+# 8. Delete branches
 git branch -d feature/upgrade-2026-01-php-8.5
 git push origin --delete feature/upgrade-2026-01-php-8.5
 ```
@@ -279,42 +302,63 @@ Regenerate composer.lock with PHP 8.2 requirement."
 
 ## Pull Request Strategy
 
+**⚠️ IMPORTANT**: All Pull Requests must be created and managed on the fork repository: **https://github.com/gplanchat/pim-community-dev/**. Do NOT create PRs on the original repository (akeneo/pim-community-dev).
+
 ### For Each Phase Branch
 
-1. **Create PR** when phase is complete and tested
+1. **Create PR** when phase branch is created or when first significant changes are committed
+   - **Repository**: https://github.com/gplanchat/pim-community-dev/
+   - **Base branch**: `master`
+   - **Head branch**: Current phase branch (e.g., `feature/upgrade-2026-01-php-8.4`)
+   - **The AI assistant must create and update PRs** using GitHub API or CLI tools
+
 2. **Title format**: `feat(upgrade): [Phase X] [Description]`
    - Example: `feat(upgrade): Phase 2 - PHP 8.1 → 8.4 migration`
+
 3. **Description should include**:
    - Phase number and description
    - List of major changes
-   - Test results
+   - Test results (updated as migration progresses)
    - Link to tracking file
    - Prerequisites verification
-4. **Review requirements**:
-   - Code review approval
+   - Current status and next steps
+
+4. **Update PR regularly**:
+   - Update PR description with progress after each significant step
+   - Add test results as they become available
+   - Document issues encountered and solutions
+   - Mark completion status
+
+5. **Review requirements**:
+   - Code review approval (if required)
    - All tests passing
    - Documentation updated
-5. **Merge strategy**: Merge to `develop` (not squash, to preserve history)
+
+6. **Merge strategy**: Merge PR to `master` on fork repository (not squash, to preserve history)
+   - Merge via GitHub UI or CLI: `gh pr merge <PR_NUMBER> --merge`
+   - Do NOT merge to original repository
 
 ## Branch Dependencies
 
 ```
-develop
+master (on fork: https://github.com/gplanchat/pim-community-dev/)
   │
   ├── feature/upgrade-2026-01-php-8.4 (Phase 2)
   │     │
-  │     └── (merge to develop)
+  │     └── (PR → merge to master on fork)
   │
   ├── feature/upgrade-2026-01-symfony-8.0 (Phase 5)
-  │     │ (created from develop after Phase 2 merge)
+  │     │ (created from master after Phase 2 merge)
   │     │
-  │     └── (merge to develop)
+  │     └── (PR → merge to master on fork)
   │
   └── feature/upgrade-2026-01-php-8.5 (Phase 6)
-        │ (created from develop after Phase 5 merge)
+        │ (created from master after Phase 5 merge)
         │
-        └── (merge to develop)
+        └── (PR → merge to master on fork)
 ```
+
+**Note**: All branches and PRs are on the fork repository, not the original repository.
 
 ## Parallel Migrations
 
@@ -348,18 +392,20 @@ git rev-parse --abbrev-ref HEAD
 
 ### Verify Phase 2 is Merged
 ```bash
-git checkout develop
+git checkout master
 git log --oneline --grep="feature/upgrade-2026-01-php-8.4"
 # or
-git log --oneline develop | grep "PHP 8.1 → 8.4"
+git log --oneline master | grep "PHP 8.1 → 8.4"
+# or check GitHub PR: https://github.com/gplanchat/pim-community-dev/pulls
 ```
 
 ### Verify Phase 5 is Merged
 ```bash
-git checkout develop
+git checkout master
 git log --oneline --grep="feature/upgrade-2026-01-symfony-8.0"
 # or
-git log --oneline develop | grep "Symfony 5.4 → 8.0"
+git log --oneline master | grep "Symfony 5.4 → 8.0"
+# or check GitHub PR: https://github.com/gplanchat/pim-community-dev/pulls
 ```
 
 ### List All Migration Branches
@@ -369,20 +415,36 @@ git branch -a | grep "upgrade-2026-01"
 
 ### Check if Branch is Merged
 ```bash
-git branch --merged develop | grep "upgrade-2026-01"
+git branch --merged master | grep "upgrade-2026-01"
+```
+
+### Create/Update GitHub PR
+```bash
+# Using GitHub CLI (if available)
+gh pr create --base master --head feature/upgrade-2026-01-php-8.4 \
+  --title "feat(upgrade): Phase 2 - PHP 8.1 → 8.4 migration" \
+  --body "See .llm/upgrade-2026-01/04-php-tracking.md for details"
+
+# Update PR description
+gh pr edit <PR_NUMBER> --body "Updated description..."
+
+# Or use GitHub API/UI to create/update PRs
+# Repository: https://github.com/gplanchat/pim-community-dev/
 ```
 
 ## Important Rules
 
-1. **Always start from develop** when creating a new phase branch
-2. **Always pull latest develop** before creating branch
+1. **Always start from master** when creating a new phase branch
+2. **Always pull latest master** before creating branch
 3. **Never skip phases** - merge order must be respected
 4. **Verify previous phase merge** before creating next phase branch
 5. **Commit frequently** after each successful step
-6. **Create pull requests** for code review
-7. **Merge to develop** only after approval and tests passing
-8. **Delete branches** after merge (local and remote)
-9. **Document branch creation/merge** in tracking files
+6. **Create pull requests on fork repository** (https://github.com/gplanchat/pim-community-dev/) for code review
+7. **The AI assistant must create and update PRs** on GitHub as migration progresses
+8. **Merge PR to master** on fork repository only after approval and tests passing
+9. **Delete branches** after merge (local and remote)
+10. **Document branch creation/merge** in tracking files
+11. **Do NOT create PRs** on the original repository (akeneo/pim-community-dev)
 
 ## Troubleshooting
 

@@ -92,11 +92,18 @@ Project: Akeneo PIM Community Dev
 ### 2.5 Phase 2 Branch Completion
 - [ ] **Verify all commits are atomic**: Each commit should pass validations independently
 - [ ] **No uncommitted changes**: All changes should be committed atomically
-- [ ] Create pull request: `feature/upgrade-2026-01-php-8.4` → `develop`
+- [ ] **Push branch to fork repository**: `git push origin feature/upgrade-2026-01-php-8.4`
+- [ ] **Create/Update pull request** on GitHub fork repository (https://github.com/gplanchat/pim-community-dev/):
+  - Base: `master`
+  - Head: `feature/upgrade-2026-01-php-8.4`
+  - The AI assistant must create and update this PR
+- [ ] **Update PR description** with final status, test results, and completion checklist
 - [ ] **Note**: Do NOT create a "complete migration" commit - all changes should already be committed atomically
-- [ ] Code review and approval
-- [ ] Merge to develop: `git checkout develop && git merge feature/upgrade-2026-01-php-8.4`
+- [ ] Code review and approval (if required)
+- [ ] **Merge PR to master** on fork repository (via GitHub UI or CLI)
+- [ ] **After merge**: `git checkout master && git pull origin master`
 - [ ] Delete Phase 2 branch: `git branch -d feature/upgrade-2026-01-php-8.4`
+- [ ] Delete remote branch: `git push origin --delete feature/upgrade-2026-01-php-8.4`
 - [ ] Document merge completion in `04-php-tracking.md`
 
 ## Phase 3: TypeScript 4.0 → 5.6 Migration

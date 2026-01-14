@@ -6,11 +6,15 @@ I am working on migrating the Akeneo PIM Community Dev project to the latest ver
 
 **⚠️ IMPORTANT**: This project uses a Docker stack. System PHP and Node.js versions are irrelevant and should not be checked. All commands should be executed via Docker containers. Only check versions defined in `composer.json` and `package.json` configuration files.
 
-**⚠️ DOCKERFILE STRATEGY**: The project uses a **single unified Dockerfile** (`Dockerfile.unified`) that contains **only the current migration step versions** of PHP and Node.js. This Dockerfile must be updated sequentially at each migration step. See `DOCKERFILE-MIGRATION.md` for detailed instructions.
+**⚠️ DOCKERFILE STRATEGY**: The project uses the **existing Dockerfile** (`Dockerfile`) that contains **only the current migration step versions** of PHP and Node.js. This Dockerfile must be updated sequentially at each migration step. See `DOCKERFILE-MIGRATION.md` for detailed instructions.
+
+**⚠️ GITHUB REPOSITORY**: All Pull Requests and merges must be created and performed on the fork repository: **https://github.com/gplanchat/pim-community-dev/**. Do NOT create PRs or merge to the original repository (akeneo/pim-community-dev). The AI assistant must create and update PRs on GitHub for each phase branch.
 
 ## Project Overview
 
 - **Project**: Akeneo PIM Community Dev
+- **GitHub Repository**: https://github.com/gplanchat/pim-community-dev/ (fork repository)
+- **Base Repository**: https://github.com/akeneo/pim-community-dev (original - do NOT create PRs here)
 - **Current versions** (from project configuration files):
   - PHP: 8.1.* (required in composer.json)
   - Symfony: 5.4.*
@@ -214,13 +218,19 @@ After completing each step:
    - Each commit should be deployable to production
    - Use Conventional Commits format (see `00-git-flow-strategy.md`)
 8. **Use Docker for execution** - system PHP/Node.js versions are irrelevant, all commands should run via Docker stack
-9. **Update Dockerfile sequentially** - `Dockerfile.unified` contains ONLY current migration step versions. Update PHP/Node versions one step at a time, commit each update separately, rebuild images before proceeding
+9. **Update Dockerfile sequentially** - `Dockerfile` contains ONLY current migration step versions. Update PHP/Node versions one step at a time, commit each update separately, rebuild images before proceeding
 10. **Verify version dependencies** before each phase:
    - Check `composer.json` for PHP version requirements
    - Verify Symfony version requirements match PHP version
    - Do not proceed if prerequisites are not met
 11. **Merge phase branch** to master before starting next phase
-12. **Dockerfile updates**: Before applying each Rector rule that changes PHP version, update `Dockerfile.unified` with new PHP version, commit, rebuild images, then proceed with Rector
+12. **Dockerfile updates**: Before applying each Rector rule that changes PHP version, update `Dockerfile` with new PHP version, commit, rebuild images, then proceed with Rector
+13. **GitHub Pull Requests**: Create and update PRs on GitHub fork repository (https://github.com/gplanchat/pim-community-dev/) for each phase branch. The AI assistant must:
+    - Create PR when phase branch is ready
+    - Update PR description with progress, test results, and status
+    - Update PR as migration progresses
+    - Do NOT create PRs on the original repository (akeneo/pim-community-dev)
+    - All merges must be to the fork repository, not the original
 
 ## Quick Commands Reference
 
@@ -298,9 +308,13 @@ When resuming this migration session:
     - If tests fail: Fix one test at a time, commit each fix separately
     - Example: `git add src/ && git commit -m "feat(php): apply PHP_82 rule\n\nApply Rector PHP_82 rule. All validations passing."`
     - **Never commit broken code** - each commit must pass all validations
-12. **Continue to next step** or pause if issues are encountered
-13. **When phase is complete**: Merge to develop, create PR for review, then create next phase branch
-14. **DO NOT skip phases** - respect the migration order strictly
+12. **Create/Update GitHub PR**: Create or update PR on https://github.com/gplanchat/pim-community-dev/ for current phase branch with progress updates
+13. **Continue to next step** or pause if issues are encountered
+14. **When phase is complete**: 
+    - Update PR description with final status and test results
+    - Merge PR to master on fork repository (https://github.com/gplanchat/pim-community-dev/)
+    - Create next phase branch from master
+15. **DO NOT skip phases** - respect the migration order strictly
 
 ## Notes
 
