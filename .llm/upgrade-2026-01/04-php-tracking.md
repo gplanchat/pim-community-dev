@@ -55,11 +55,15 @@ End date: [To be completed]
 
 ### Rule 1: PHP_82 - PHP 8.2
 - [ ] Application date: [To be completed]
+- [ ] Dry-run executed: [To be completed]
+- [ ] Dry-run review: [To be completed]
 - [ ] Modified files: [To be completed]
 - [ ] Tests executed: [To be completed]
 - [ ] Test results: [To be completed]
 - [ ] Issues encountered: [To be completed]
 - [ ] Solutions applied: [To be completed]
+- **Status**: ⏳ Waiting for Docker environment to be ready
+- **Next step**: Execute `docker compose run --rm php vendor/bin/rector process --set=PHP_82 --dry-run`
 
 ### Rule 2: PHP_83 - Typed class constants
 - [ ] Application date: [To be completed]
