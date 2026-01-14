@@ -29,8 +29,9 @@ End date: [To be completed]
 - Target PHP version Phase 6: 8.5.* (latest stable version, after Symfony 8.0)
 - **Note**: Docker stack is used - system PHP version is irrelevant
 - Rector configuration: ✅ Created and validated (2026-01-14)
-- Dockerfile strategy: ✅ Unified Dockerfile created (`Dockerfile.unified`) - contains ONLY current versions (PHP 8.1, Node 18)
-- Docker Compose: ✅ Updated to use `Dockerfile.unified` with build targets (php-dev, node)
+- Dockerfile strategy: ✅ Dockerfile updated with multi-stage targets (base, dev, node) - contains ONLY current versions (PHP 8.1, Node 18)
+- Docker Compose: ✅ Updated to use `Dockerfile` with build targets (dev for php/httpd, node for node)
+- FrankenPHP migration: ⏳ Planned for Phase 6 (PHP 8.4 → 8.5) - see https://frankenphp.dev/fr/
 
 ## Phase 1: Preparation Status
 
@@ -69,7 +70,7 @@ End date: [To be completed]
 - [ ] Solutions applied: [To be completed]
 - **Status**: ⏳ Ready to start - Docker environment available
 - **Next step**: 
-  1. Update `Dockerfile.unified` for PHP 8.2 (see `DOCKERFILE-MIGRATION.md`)
+  1. Update `Dockerfile` for PHP 8.2 (see `DOCKERFILE-MIGRATION.md`)
   2. Rebuild images: `docker compose build php httpd`
   3. Execute dry-run: `docker compose run --rm php vendor/bin/rector process --set=PHP_82 --dry-run`
 
@@ -100,9 +101,11 @@ End date: [To be completed]
 - [ ] Solutions applied: [To be completed]
 - [ ] **PHP 8.4.0+ verified**: Check `composer.json` and Docker container
 
-## Phase 2: PHP 8.4 → 8.5 Migration (AFTER Symfony 8.0)
+## Phase 6: PHP 8.4 → 8.5 Migration + FrankenPHP (AFTER Symfony 8.0)
 
 **⚠️ CRITICAL**: This phase can ONLY be started after Symfony 8.0 migration (Phase 5) is completed and stable.
+
+**🎯 SPECIAL**: This phase includes migration to **FrankenPHP** (https://frankenphp.dev/fr/) - a modern PHP application server written in Go, using Caddy as web server. FrankenPHP supports PHP 8.2+ and offers better performance than PHP-FPM.
 
 ### Prerequisites Check
 - [ ] Symfony 8.0 migration completed: [To be completed]
@@ -110,14 +113,42 @@ End date: [To be completed]
 - [ ] All Symfony 8.0 tests passing: [To be completed]
 - [ ] Ready to proceed to PHP 8.5: [Yes/No]
 
-### Rule: PHP_85 - PHP 8.5 (if available)
+### Step 1: Update Dockerfile for PHP 8.5
+- [ ] Dockerfile updated for PHP 8.5: [To be completed]
+- [ ] Docker images rebuilt: [To be completed]
+- [ ] PHP version verified in container: [To be completed]
+
+### Step 2: Apply PHP_85 Rector Rule
 - [ ] Application date: [To be completed]
+- [ ] Dry-run executed: [To be completed]
+- [ ] Dry-run review: [To be completed]
 - [ ] Modified files: [To be completed]
 - [ ] Tests executed: [To be completed]
 - [ ] Test results: [To be completed]
 - [ ] Symfony 8.0 compatibility verified: [To be completed]
 - [ ] Issues encountered: [To be completed]
 - [ ] Solutions applied: [To be completed]
+
+### Step 3: Migrate to FrankenPHP
+- [ ] Research FrankenPHP compatibility with Akeneo PIM: [To be completed]
+- [ ] Update Dockerfile to use FrankenPHP image: [To be completed]
+  - Base image: `dunglas/frankenphp` (official image)
+  - PHP version: 8.5 (when available) or 8.4
+- [ ] Update docker-compose.yml for FrankenPHP: [To be completed]
+- [ ] Configure Caddyfile if needed: [To be completed]
+- [ ] Test FrankenPHP worker mode (optional): [To be completed]
+- [ ] Verify HTTP/2 and HTTP/3 support: [To be completed]
+- [ ] Performance testing: [To be completed]
+- [ ] Issues encountered: [To be completed]
+- [ ] Solutions applied: [To be completed]
+
+**FrankenPHP Benefits**:
+- ✅ Native HTTP/2 and HTTP/3 support
+- ✅ Automatic HTTPS certificates (Let's Encrypt)
+- ✅ Worker mode (3.5x faster than FPM for API Platform)
+- ✅ Built-in compression (Brotli, Zstandard, Gzip)
+- ✅ Single binary, no external services needed
+- ✅ Compatible with Symfony, Laravel, API Platform
 
 ### Rule 5: TypedPropertyRector
 - [ ] Application date: [To be completed]

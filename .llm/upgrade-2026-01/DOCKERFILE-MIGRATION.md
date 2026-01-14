@@ -1,21 +1,22 @@
 # Dockerfile Migration Strategy
 
 **Date**: 2026-01-14  
-**File**: `Dockerfile.unified`
+**File**: `Dockerfile`
 
 ## Overview
 
-This document describes the strategy for managing Docker images during the migration process. We use a **single unified Dockerfile** (`Dockerfile.unified`) that contains **only the current migration step versions** of PHP and Node.js.
+This document describes the strategy for managing Docker images during the migration process. We use the **existing Dockerfile** (`Dockerfile`) that contains **only the current migration step versions** of PHP and Node.js.
 
 ## Key Principles
 
-1. **Single Dockerfile**: One `Dockerfile.unified` file contains both PHP and Node.js stages
+1. **Single Dockerfile**: The existing `Dockerfile` contains both PHP and Node.js stages
 2. **Current versions only**: The Dockerfile contains ONLY the versions needed for the current migration step
 3. **Sequential updates**: Update PHP and Node versions sequentially as migration progresses
 4. **Multi-stage targets**: Use Docker multi-stage builds with specific targets:
-   - `php-base`: Base PHP image
-   - `php-dev`: PHP with development tools
+   - `base`: Base PHP image with Apache
+   - `dev`: PHP with development tools (used by php and httpd services)
    - `node`: Node.js image
+5. **FrankenPHP migration**: Phase 6 will migrate to FrankenPHP (https://frankenphp.dev/fr/) for better performance
 
 ## Current Migration Step
 
@@ -44,7 +45,7 @@ FROM debian:bullseye-slim AS node
 
 ### Phase 2.1: PHP 8.1 → 8.2
 
-When applying PHP_82 Rector rule, update `Dockerfile.unified`:
+When applying PHP_82 Rector rule, update `Dockerfile`:
 
 1. **Update PHP version references**:
    - Change `php8.1-*` to `php8.2-*` in package names
@@ -68,7 +69,7 @@ When applying PHP_82 Rector rule, update `Dockerfile.unified`:
 
 When applying PHP_83 Rector rule:
 
-1. **Update PHP version references**:
+1. **Update PHP version references in `Dockerfile`**:
    - Change `php8.2-*` to `php8.3-*`
    - Update paths: `/etc/php/8.2/` → `/etc/php/8.3/`
    - Update symlink: `php-fpm8.2` → `php-fpm8.3`
@@ -89,7 +90,7 @@ When applying PHP_83 Rector rule:
 
 When applying PHP_84 Rector rule:
 
-1. **Update PHP version references**:
+1. **Update PHP version references in `Dockerfile`**:
    - Change `php8.3-*` to `php8.4-*`
    - Update paths: `/etc/php/8.3/` → `/etc/php/8.4/`
    - Update symlink: `php-fpm8.3` → `php-fpm8.4`
@@ -105,6 +106,40 @@ When applying PHP_84 Rector rule:
    ```bash
    docker compose build php httpd
    ```
+
+### Phase 6: PHP 8.4 → 8.5 + FrankenPHP Migration
+
+**🎯 SPECIAL**: This phase includes migration to FrankenPHP for better performance.
+
+1. **Update PHP version references in `Dockerfile`**:
+   - Change `php8.4-*` to `php8.5-*`
+   - Update paths: `/etc/php/8.4/` → `/etc/php/8.5/`
+   - Update symlink: `php-fpm8.4` → `php-fpm8.5`
+
+2. **Migrate to FrankenPHP**:
+   - Replace PHP-FPM with FrankenPHP
+   - Update base image to use `dunglas/frankenphp` or build from FrankenPHP base
+   - Configure Caddyfile if needed
+   - Test worker mode (optional but recommended for performance)
+   - Verify HTTP/2 and HTTP/3 support
+
+3. **Update comments**:
+   ```dockerfile
+   # Current migration step: Phase 6 - PHP 8.4 → 8.5 + FrankenPHP
+   # Current PHP version: 8.5
+   # Current Node version: 18
+   # Using FrankenPHP instead of PHP-FPM
+   ```
+
+4. **Rebuild images**:
+   ```bash
+   docker compose build php httpd
+   ```
+
+**FrankenPHP Resources**:
+- Official website: https://frankenphp.dev/fr/
+- Docker image: `dunglas/frankenphp`
+- Documentation: https://frankenphp.dev/fr/docs/
 
 ### Phase 3/4: Node.js Migration (if needed)
 
@@ -135,26 +170,26 @@ services:
   php:
     build:
       context: .
-      dockerfile: Dockerfile.unified
-      target: php-dev
+      dockerfile: Dockerfile
+      target: dev
   
   httpd:
     build:
       context: .
-      dockerfile: Dockerfile.unified
-      target: php-dev
+      dockerfile: Dockerfile
+      target: dev
   
   node:
     build:
       context: .
-      dockerfile: Dockerfile.unified
+      dockerfile: Dockerfile
       target: node
 ```
 
 ## Workflow for Each Migration Step
 
 1. **Before applying Rector rule**:
-   - Update `Dockerfile.unified` with new PHP/Node version
+   - Update `Dockerfile` with new PHP/Node version
    - Update comments to reflect current migration step
    - Commit Dockerfile changes: `git commit -m "chore(docker): update Dockerfile for PHP 8.2"`
 
@@ -217,11 +252,20 @@ grep '"php"' composer.json
 
 When updating Dockerfile for a new PHP/Node version:
 
-- [ ] Update PHP/Node version references in Dockerfile.unified
-- [ ] Update comments in Dockerfile.unified
+- [ ] Update PHP/Node version references in Dockerfile
+- [ ] Update comments in Dockerfile
 - [ ] Update docker-compose.yml if needed (should already use build)
 - [ ] Commit Dockerfile changes
 - [ ] Rebuild Docker images
 - [ ] Verify versions in containers
 - [ ] Update tracking files with Dockerfile update date
 - [ ] Document in migration tracking file
+
+**For Phase 6 (FrankenPHP migration)**:
+- [ ] Research FrankenPHP compatibility
+- [ ] Update Dockerfile to use FrankenPHP base image
+- [ ] Configure Caddyfile if needed
+- [ ] Test worker mode
+- [ ] Verify HTTP/2 and HTTP/3 support
+- [ ] Performance testing
+- [ ] Document migration in tracking file

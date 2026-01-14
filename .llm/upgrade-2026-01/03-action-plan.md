@@ -35,7 +35,7 @@ Project: Akeneo PIM Community Dev
 
 ### 2.2 Apply Rector PHP Rules (in order)
 **Rule 1: PHP_82 - PHP 8.1 → 8.2**
-- [ ] **Update Dockerfile.unified**: Change PHP 8.1 to PHP 8.2 (see `DOCKERFILE-MIGRATION.md`)
+- [ ] **Update Dockerfile**: Change PHP 8.1 to PHP 8.2 (see `DOCKERFILE-MIGRATION.md`)
 - [ ] **Commit Dockerfile changes**: `git commit -m "chore(docker): update Dockerfile for PHP 8.2"`
 - [ ] **Rebuild Docker images**: `docker compose build php httpd`
 - [ ] **Verify PHP version**: `docker compose run --rm php php -v` (should show 8.2)
@@ -46,7 +46,7 @@ Project: Akeneo PIM Community Dev
 - [ ] Document in `04-php-tracking.md`
 
 **Rule 2: PHP_83 - PHP 8.2 → 8.3**
-- [ ] **Update Dockerfile.unified**: Change PHP 8.2 to PHP 8.3 (see `DOCKERFILE-MIGRATION.md`)
+- [ ] **Update Dockerfile**: Change PHP 8.2 to PHP 8.3 (see `DOCKERFILE-MIGRATION.md`)
 - [ ] **Commit Dockerfile changes**: `git commit -m "chore(docker): update Dockerfile for PHP 8.3"`
 - [ ] **Rebuild Docker images**: `docker compose build php httpd`
 - [ ] **Verify PHP version**: `docker compose run --rm php php -v` (should show 8.3)
@@ -60,7 +60,7 @@ Project: Akeneo PIM Community Dev
 - [ ] Document in `04-php-tracking.md`
 
 **Rule 3: PHP_84 - PHP 8.3 → 8.4 (REQUIRED before Symfony 8.0)**
-- [ ] **Update Dockerfile.unified**: Change PHP 8.3 to PHP 8.4 (see `DOCKERFILE-MIGRATION.md`)
+- [ ] **Update Dockerfile**: Change PHP 8.3 to PHP 8.4 (see `DOCKERFILE-MIGRATION.md`)
 - [ ] **Commit Dockerfile changes**: `git commit -m "chore(docker): update Dockerfile for PHP 8.4"`
 - [ ] **Rebuild Docker images**: `docker compose build php httpd`
 - [ ] **Verify PHP version**: `docker compose run --rm php php -v` (should show 8.4)
@@ -271,17 +271,19 @@ Project: Akeneo PIM Community Dev
 - [ ] Document merge completion in `07-symfony-tracking.md`
 - [ ] **Symfony 8.0 migration complete** - Ready for PHP 8.5 migration (Phase 6)
 
-## Phase 6: PHP 8.4 → 8.5 Migration (AFTER Symfony 8.0)
+## Phase 6: PHP 8.4 → 8.5 Migration + FrankenPHP (AFTER Symfony 8.0)
 
 **⚠️ CRITICAL PREREQUISITE**: 
 - Symfony 8.0 MUST be completed and stable (Phase 5)
-- Phase 5 branch (`feature/upgrade-2026-01-symfony-8.0`) MUST be merged to develop
+- Phase 5 branch (`feature/upgrade-2026-01-symfony-8.0`) MUST be merged to master
 - Only proceed after Symfony 8.0 is fully working
 
+**🎯 SPECIAL**: This phase includes migration to **FrankenPHP** (https://frankenphp.dev/fr/) - a modern PHP application server written in Go, using Caddy as web server. FrankenPHP supports PHP 8.2+ and offers better performance than PHP-FPM.
+
 ### 6.0 Git Flow Branch Setup
-- [ ] Verify you are on `develop` branch: `git checkout develop`
+- [ ] Verify you are on `master` branch: `git checkout master`
 - [ ] Verify Phase 5 branch is merged: Check git log for Phase 5 commits
-- [ ] Pull latest changes: `git pull origin develop`
+- [ ] Pull latest changes: `git pull origin master`
 - [ ] **Create Phase 6 branch**: `git checkout -b feature/upgrade-2026-01-php-8.5`
 - [ ] Document branch creation in `04-php-tracking.md`
 
@@ -290,30 +292,59 @@ Project: Akeneo PIM Community Dev
 - [ ] Verify no critical issues with Symfony 8.0
 - [ ] Document readiness for PHP 8.5 in `04-php-tracking.md`
 
-### 6.2 Update Required PHP Version to 8.5
+### 6.2 Update Dockerfile for PHP 8.5
+- [ ] **Update Dockerfile**: Change PHP 8.4 to PHP 8.5 (see `DOCKERFILE-MIGRATION.md`)
+- [ ] **Commit Dockerfile changes**: `git commit -m "chore(docker): update Dockerfile for PHP 8.5"`
+- [ ] **Rebuild Docker images**: `docker compose build php httpd`
+- [ ] **Verify PHP version**: `docker compose run --rm php php -v` (should show 8.5)
+
+### 6.3 Update Required PHP Version to 8.5
 - [ ] Modify `composer.json`: `"php": "^8.5"`
 - [ ] Run: `composer update --dry-run`
 - [ ] Check for potential conflicts with Symfony 8.0
 - [ ] Verify Symfony 8.0 compatibility with PHP 8.5
 
-### 6.3 Apply Rector PHP 8.5 Rules
-- [ ] Apply: `vendor/bin/rector process --set=PHP_85 --dry-run`
+### 6.4 Apply Rector PHP 8.5 Rules
+- [ ] Apply: `docker compose run --rm php vendor/bin/rector process --set=PHP_85 --dry-run`
 - [ ] Review proposed changes
-- [ ] Apply: `vendor/bin/rector process --set=PHP_85`
-- [ ] Run tests: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
+- [ ] Apply: `docker compose run --rm php vendor/bin/rector process --set=PHP_85`
+- [ ] Run tests: `docker compose run --rm php vendor/bin/phpstan analyse && docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
 - [ ] Document in `04-php-tracking.md`
 
-### 6.4 Verify Symfony 8.0 Compatibility with PHP 8.5
-- [ ] Run all Symfony tests: `vendor/bin/phpunit && vendor/bin/behat`
+### 6.5 Verify Symfony 8.0 Compatibility with PHP 8.5
+- [ ] Run all Symfony tests: `docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
 - [ ] Verify no regressions introduced
 - [ ] Check Symfony 8.0 bundles compatibility
 - [ ] Document in `04-php-tracking.md`
 
-### 6.5 Final PHP 8.5 Verification
-- [ ] Run PHPStan: `vendor/bin/phpstan analyse`
-- [ ] Run PHP-CS-Fixer: `vendor/bin/php-cs-fixer fix`
-- [ ] Run all tests: `vendor/bin/phpstan analyse && vendor/bin/phpunit && vendor/bin/behat`
-- [ ] Verify PHP version: Confirm PHP 8.5 in `composer.json`
+### 6.6 Migrate to FrankenPHP
+**🎯 NEW**: Migrate from PHP-FPM to FrankenPHP for better performance.
+
+- [ ] **Research FrankenPHP compatibility**: Verify Akeneo PIM compatibility with FrankenPHP
+- [ ] **Update Dockerfile**: Replace PHP-FPM with FrankenPHP base image (`dunglas/frankenphp`)
+- [ ] **Configure Caddyfile**: Create/update Caddyfile if needed for FrankenPHP
+- [ ] **Update docker-compose.yml**: Adjust configuration for FrankenPHP
+- [ ] **Test FrankenPHP worker mode** (optional but recommended):
+  - Configure worker mode for Symfony/API Platform
+  - Test performance improvements
+- [ ] **Verify HTTP/2 and HTTP/3 support**: Test modern HTTP protocols
+- [ ] **Performance testing**: Compare FrankenPHP vs PHP-FPM performance
+- [ ] **Run all tests**: `docker compose run --rm php vendor/bin/phpstan analyse && docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
+- [ ] **Document migration**: Update `04-php-tracking.md` with FrankenPHP migration details
+- [ ] **Commit changes**: `git commit -m "feat(docker): migrate to FrankenPHP for PHP 8.5"`
+
+**FrankenPHP Resources**:
+- Official website: https://frankenphp.dev/fr/
+- Docker image: `dunglas/frankenphp`
+- Documentation: https://frankenphp.dev/fr/docs/
+- Benefits: HTTP/2 & HTTP/3, automatic HTTPS, worker mode (3.5x faster), built-in compression
+
+### 6.7 Final PHP 8.5 + FrankenPHP Verification
+- [ ] Run PHPStan: `docker compose run --rm php vendor/bin/phpstan analyse`
+- [ ] Run PHP-CS-Fixer: `docker compose run --rm php vendor/bin/php-cs-fixer fix`
+- [ ] Run all tests: `docker compose run --rm php vendor/bin/phpstan analyse && docker compose run --rm php vendor/bin/phpunit && docker compose run --rm php vendor/bin/behat`
+- [ ] Verify PHP version: Confirm PHP 8.5 in `composer.json` and Docker container
+- [ ] Verify FrankenPHP is running: Check container logs and HTTP/2/HTTP/3 support
 - [ ] Document in `04-php-tracking.md`
 
 ## Phase 7: Development Tools Migration

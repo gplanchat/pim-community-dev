@@ -4,8 +4,8 @@ services:
   php:
     build:
       context: .
-      dockerfile: Dockerfile.unified
-      target: php-dev
+      dockerfile: Dockerfile
+      target: dev
     environment:
       APP_ENV: '${APP_ENV:-prod}'
       COMPOSER_HOME: '/var/www/.composer'
@@ -28,8 +28,8 @@ services:
   httpd:
     build:
       context: .
-      dockerfile: Dockerfile.unified
-      target: php-dev
+      dockerfile: Dockerfile
+      target: dev
     environment:
       APP_ENV: '${APP_ENV:-prod}'
       BEHAT_TMPDIR: '/srv/pim/var/cache/tmp'
@@ -52,7 +52,7 @@ services:
   node:
     build:
       context: .
-      dockerfile: Dockerfile.unified
+      dockerfile: Dockerfile
       target: node
     environment:
       YARN_CACHE_FOLDER: '/home/node/.yarn'

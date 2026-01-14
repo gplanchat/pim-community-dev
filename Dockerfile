@@ -1,3 +1,14 @@
+# Multi-stage Dockerfile for Akeneo PIM Migration
+# This file contains ONLY the current migration step versions
+# Update PHP and Node versions sequentially as migration progresses
+#
+# Current migration step: Phase 2 - PHP 8.1 → 8.4
+# Current PHP version: 8.1
+# Current Node version: 18
+#
+# Note: FrankenPHP migration planned for Phase 6 (PHP 8.4 → 8.5)
+# See: https://frankenphp.dev/fr/
+
 FROM httpd:2.4-bullseye AS base
 
 ENV PHP_CONF_DATE_TIMEZONE=UTC \
@@ -91,3 +102,55 @@ RUN mkdir -p /var/www/.composer && chown www-data:www-data /var/www/.composer
 RUN mkdir -p /var/www/.cache && chown www-data:www-data /var/www/.cache
 
 VOLUME /srv/pim
+
+# ============================================================================
+# Node Stage
+# ============================================================================
+FROM debian:bullseye-slim AS node
+
+RUN groupadd --gid 1000 node \
+    && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+
+RUN echo 'path-exclude=/usr/share/man/*' > /etc/dpkg/dpkg.cfg.d/path_exclusions && \
+    echo 'path-exclude=/usr/share/doc/*' >> /etc/dpkg/dpkg.cfg.d/path_exclusions && \
+    apt-get update && \
+    apt-get --no-install-recommends --no-install-suggests -y -q install \
+    wget apt-transport-https ca-certificates gnupg && \
+    apt-get clean && apt-get --yes --quiet autoremove --purge && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# NodeJS 18 and Yarn
+RUN sh -c 'wget -q -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn apt-key add -' && \
+    sh -c 'echo "deb https://deb.nodesource.com/node_18.x bullseye main" > /etc/apt/sources.list.d/nodesource.list' && \
+    sh -c 'wget -q -O - https://dl.yarnpkg.com/debian/pubkey.gpg | APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn apt-key add -' && \
+    sh -c 'echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list' && \
+    apt-get update && \
+    apt-get install -y nodejs yarn \
+    && apt-get clean && apt-get -y -q autoremove --purge \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Install latest chrome dev package and fonts to support major charsets
+RUN apt-get update \
+    && apt-get --no-install-recommends --no-install-suggests -y -q install \
+            ca-certificates fonts-liberation gconf-service gnupg libasound2 libatk1.0-0 libcairo2 libcups2 \
+            libdbus-1-3 libexpat1 libfontconfig1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 \
+            libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
+            libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
+            libnss3 lsb-release wget xdg-utils \
+    && wget https://dl-ssl.google.com/linux/linux_signing_key.pub \
+    && apt-key add linux_signing_key.pub \
+    && rm linux_signing_key.pub \
+    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+    && apt-get update \
+    && apt-get --no-install-recommends --no-install-suggests --yes --quiet install \
+            google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf \
+    && apt-get clean && apt-get --yes --quiet autoremove --purge \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# It's a good idea to use dumb-init to help prevent zombie chrome processes.
+ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.5/dumb-init_1.2.5_x86_64 /usr/local/bin/dumb-init
+RUN chmod +x /usr/local/bin/dumb-init
+
+USER node
+
+ENTRYPOINT ["dumb-init", "--"]
