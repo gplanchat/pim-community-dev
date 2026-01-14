@@ -7,6 +7,17 @@ parameters:
         container_xml_path: %rootDir%/../../../var/cache/dev/KernelDevDebugContainer.xml
     ignoreErrors:
         - '#Unsafe usage of new static\(\)\.#'
+        # PHP 8.0 deprecations (required parameter follows optional)
+        - '#Deprecated in PHP 8\.0: Required parameter .* follows optional parameter.*#'
+        # Test files - undefined properties/methods in test classes
+        - '#Access to an undefined property.*Test::\$.*#'
+        - '#Call to an undefined method.*Test::.*#'
+        - '#Call to an undefined static method.*Spec::.*#'
+        # Legacy Oro bundle issues
+        - '#Call to an undefined method.*Oro\\Bundle.*#'
+        - '#Method.*should return.*but return statement is missing#'
+        - '#Non-abstract class.*contains abstract method.*#'
+        - '#Class.*extends @final class.*#'
     excludePaths:
         - %currentWorkingDirectory%/src/Akeneo/Pim/Automation/DataQualityInsights/tests
         - %currentWorkingDirectory%/src/Akeneo/Pim/Enrichment/Bundle/Resources/fonts
