@@ -45,7 +45,13 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__ . '/frontend',
     ]);
 
-    // Note: Sets are applied via command line --set parameter
-    // This allows applying one rule at a time for better control
-    // Example: vendor/bin/rector process --set=PHP_82
+    // Phase 2.1: PHP 8.1 → 8.2 migration
+    // Apply PHP_82 rules to migrate codebase to PHP 8.2
+    $rectorConfig->sets([
+        SetList::PHP_82,
+    ]);
+    
+    // Note: For subsequent phases, update this section:
+    // Phase 2.2: Replace SetList::PHP_82 with SetList::PHP_83
+    // Phase 2.3: Replace SetList::PHP_83 with SetList::PHP_84
 };
