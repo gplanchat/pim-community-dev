@@ -1,0 +1,9 @@
+time="2026-01-14T17:58:39+01:00" level=warning msg="/home/gplanchat/PhpstormProjects/kiboko/akeneo/pim-community-dev/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+
+In UninitializedContextEnvironment.php line 44:
+                                                                 
+  `FeatureContext` context class not found and can not be used.  
+                                                                 
+
+behat [-s|--suite SUITE] [-f|--format FORMAT] [-o|--out OUT] [--format-settings FORMAT-SETTINGS] [--init] [--lang LANG] [--name NAME] [--tags TAGS] [--role ROLE] [--story-syntax] [-d|--definitions DEFINITIONS] [--snippets-for [SNIPPETS-FOR]] [--snippets-type SNIPPETS-TYPE] [--append-snippets] [--no-snippets] [--strict] [--order ORDER] [--rerun] [--stop-on-failure] [--dry-run] [--] [<paths>]
+
