@@ -67,15 +67,20 @@ All migration documentation is located in `./.llm/upgrade-2026-01/`:
 
 ## Critical Prerequisites and Version Dependencies
 
-⚠️ **CRITICAL**: Due to version dependencies, migration MUST follow this exact order:
+⚠️ **CRITICAL**: Due to version dependencies, migration MUST follow this **alternating** order:
 
-1. **Phase 2**: PHP 8.1 → 8.4 (MUST complete before Symfony 8.0)
-2. **Phase 5**: Symfony 5.4 → 8.0 (requires PHP 8.4.0+)
-3. **Phase 6**: PHP 8.4 → 8.5 (MUST be done after Symfony 8.0 is stable)
+1. **Phase 2**: PHP 8.1 → 8.2
+2. **Phase 3**: Symfony 5.4 → 6.0 (requires PHP 8.1+)
+3. **Phase 4**: PHP 8.2 → 8.3
+4. **Phase 5**: Symfony 6.0 → 6.4 (requires PHP 8.1+)
+5. **Phase 6**: PHP 8.3 → 8.4
+6. **Phase 7**: Symfony 6.4 → 7.0 (requires PHP 8.2+)
+7. **Phase 8**: Symfony 7.0 → 8.0 (requires PHP 8.4.0+)
+8. **Phase 9**: PHP 8.4 → 8.5 (MUST be done after Symfony 8.0 is stable)
 
-**See `00-version-dependencies.md` for complete dependency matrix.**
+**See `00-version-dependencies.md` and `00-alternating-strategy.md` for complete dependency matrix and strategy.**
 
-**DO NOT skip phases or change order.**
+**DO NOT skip phases or change order. PHP and Symfony migrations alternate to minimize risk.**
 
 ## Migration Methodology
 
@@ -98,39 +103,61 @@ All migration documentation is located in `./.llm/upgrade-2026-01/`:
    - `yarn test:e2e:run`
 5. Document each step in the appropriate tracking files
 
-## Recommended Migration Order (Phased Approach)
+## Recommended Migration Order (Alternating Strategy)
 
-Due to version dependencies between PHP and Symfony, migration MUST follow this exact order:
+Due to version dependencies between PHP and Symfony, migration MUST follow this **alternating** order:
 
-### Phase 1: PHP 8.1 → 8.4 (MUST complete before Symfony 8.0)
-1. **PHP 8.1 → 8.2** (Rector rules)
-2. **PHP 8.2 → 8.3** (Rector rules)
-3. **PHP 8.3 → 8.4** (Rector rules)
-4. **Verify PHP 8.4.0+** is working
-5. **DO NOT proceed to PHP 8.5 yet** (wait until after Symfony 8.0)
+### Phase 2: PHP 8.1 → 8.2
+1. **PHP 8.1 → 8.2** (Rector PHP_82 rule)
+2. **Verify PHP 8.2** is working
 
-**Parallel migrations** (can be done during Phase 1):
+**Parallel migrations** (can be done during any phase):
 - **TypeScript 4.0 → 5.6** (no PHP/Symfony dependency)
 - **React 17 → 19** (no PHP/Symfony dependency)
 
-### Phase 2: Symfony 5.4 → 8.0 (requires PHP 8.4+)
-**Prerequisite**: PHP 8.4.0+ MUST be completed
+### Phase 3: Symfony 5.4 → 6.0
+**Prerequisite**: PHP 8.2 MUST be completed (Phase 2)
 1. **Symfony 5.4 → 6.0** (requires PHP 8.1+)
-2. **Symfony 6.0 → 6.4** (requires PHP 8.1+)
-3. **Symfony 6.4 → 7.0** (requires PHP 8.2+)
-4. **Symfony 7.0 → 8.0** (requires PHP 8.4.0+)
-5. **Verify Symfony 8.0** is stable
+2. **Verify Symfony 6.0** is stable
 
-### Phase 3: PHP 8.4 → 8.5 (after Symfony 8.0)
-**Prerequisite**: Symfony 8.0 MUST be completed and stable
-1. **PHP 8.4 → 8.5** (Rector rules)
+### Phase 4: PHP 8.2 → 8.3
+**Prerequisite**: Symfony 6.0 MUST be completed (Phase 3)
+1. **PHP 8.2 → 8.3** (Rector PHP_83 rule)
+2. **Verify PHP 8.3** is working
+
+### Phase 5: Symfony 6.0 → 6.4
+**Prerequisite**: PHP 8.3 MUST be completed (Phase 4)
+1. **Symfony 6.0 → 6.4** (requires PHP 8.1+)
+2. **Verify Symfony 6.4** (LTS) is stable
+
+### Phase 6: PHP 8.3 → 8.4
+**Prerequisite**: Symfony 6.4 MUST be completed (Phase 5)
+1. **PHP 8.3 → 8.4** (Rector PHP_84 rule)
+2. **Verify PHP 8.4.0+** is working
+3. **⚠️ CRITICAL**: PHP 8.4.0+ is required for Symfony 8.0
+
+### Phase 7: Symfony 6.4 → 7.0
+**Prerequisite**: PHP 8.4 MUST be completed (Phase 6)
+1. **Symfony 6.4 → 7.0** (requires PHP 8.2+)
+2. **Verify Symfony 7.0** is stable
+
+### Phase 8: Symfony 7.0 → 8.0
+**Prerequisite**: PHP 8.4 MUST be completed (Phase 6), Symfony 7.0 MUST be completed (Phase 7)
+1. **Symfony 7.0 → 8.0** (requires PHP 8.4.0+)
+2. **Verify Symfony 8.0** is stable
+
+### Phase 9: PHP 8.4 → 8.5
+**Prerequisite**: Symfony 8.0 MUST be completed and stable (Phase 8)
+1. **PHP 8.4 → 8.5** (Rector PHP_85 rule)
 2. **Verify Symfony 8.0 compatibility** with PHP 8.5
 3. **Final testing**
 
-### Phase 4: Development Tools (after main migrations)
+### Phase 10: Development Tools (after main migrations)
 - **PHPUnit 9 → 10** (requires PHP 8.1+)
 - **Jest 26 → 29+** (no PHP dependency)
 - **ESLint 6 → 9** (no PHP dependency)
+
+**See `00-alternating-strategy.md` for detailed strategy explanation.**
 
 ## How to Resume the Migration
 
@@ -146,22 +173,34 @@ Due to version dependencies between PHP and Symfony, migration MUST follow this 
 2. Identify the last completed step in each tracking file
 
 3. Check which phase is currently in progress:
-   - Phase 1: Preparation
-   - Phase 2: PHP Migration (8.1 → 8.4) - **MUST complete before Symfony 8.0**
-   - Phase 3: TypeScript Migration (4.0 → 5.6) - Can be done in parallel
-   - Phase 4: React Migration (17 → 19) - Can be done in parallel
-   - Phase 5: Symfony Migration (5.4 → 8.0) - **Requires PHP 8.4+**
-   - Phase 6: PHP Migration (8.4 → 8.5) - **MUST be done after Symfony 8.0**
-   - Phase 7: Development Tools Migration
-   - Phase 8: Final Tests and Validation
+   - Phase 0: Pre-Migration Validation - **MUST complete first**
+   - Phase 2: PHP Migration (8.1 → 8.2)
+   - Phase 3: Symfony Migration (5.4 → 6.0) - **Requires PHP 8.2**
+   - Phase 4: PHP Migration (8.2 → 8.3)
+   - Phase 5: Symfony Migration (6.0 → 6.4) - **Requires PHP 8.3**
+   - Phase 6: PHP Migration (8.3 → 8.4)
+   - Phase 7: Symfony Migration (6.4 → 7.0) - **Requires PHP 8.4**
+   - Phase 8: Symfony Migration (7.0 → 8.0) - **Requires PHP 8.4**
+   - Phase 9: PHP Migration (8.4 → 8.5) - **MUST be done after Symfony 8.0**
+   - Phase 10: Development Tools Migration
+   - Phase 11: Final Tests and Validation
+   
+   **Parallel migrations** (can be done during any phase):
+   - TypeScript Migration (4.0 → 5.6)
+   - React Migration (17 → 19)
 
 ### Step 2: Verify Prerequisites
 
 Before continuing, verify:
 - [ ] **Git Flow branch strategy**: One branch per phase using Git Flow naming:
-  - Phase 2 (PHP 8.1 → 8.4): `feature/upgrade-2026-01-php-8.4`
-  - Phase 5 (Symfony 5.4 → 8.0): `feature/upgrade-2026-01-symfony-8.0`
-  - Phase 6 (PHP 8.4 → 8.5): `feature/upgrade-2026-01-php-8.5`
+  - Phase 2 (PHP 8.1 → 8.2): `feature/upgrade-2026-01-php-8.2`
+  - Phase 3 (Symfony 5.4 → 6.0): `feature/upgrade-2026-01-symfony-6.0`
+  - Phase 4 (PHP 8.2 → 8.3): `feature/upgrade-2026-01-php-8.3`
+  - Phase 5 (Symfony 6.0 → 6.4): `feature/upgrade-2026-01-symfony-6.4`
+  - Phase 6 (PHP 8.3 → 8.4): `feature/upgrade-2026-01-php-8.4`
+  - Phase 7 (Symfony 6.4 → 7.0): `feature/upgrade-2026-01-symfony-7.0`
+  - Phase 8 (Symfony 7.0 → 8.0): `feature/upgrade-2026-01-symfony-8.0`
+  - Phase 9 (PHP 8.4 → 8.5): `feature/upgrade-2026-01-php-8.5`
 - [ ] Current phase branch is created or switched to
 - [ ] Docker stack is running (versions are managed via Docker, not system)
 - [ ] All dependencies are installed: `composer install && yarn install` (via Docker if needed)
