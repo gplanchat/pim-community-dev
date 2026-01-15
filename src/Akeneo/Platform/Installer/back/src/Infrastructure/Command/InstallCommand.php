@@ -79,7 +79,7 @@ class InstallCommand extends Command
         try {
             $this
                 ->checkStep()
-                ->databaseStep(['--doNotDropDatabase' => $input->getOption('doNotDropDatabase')])
+                ->databaseStep()
                 ->assetsStep($input);
         } catch (\Exception $e) {
             $output->writeln(sprintf('<error>Error during PIM installation. %s</error>', $e->getMessage()));
